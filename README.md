@@ -19,6 +19,8 @@ library at `library/hyperseed-v2/` on the research workstation, not vendored her
 
 - `papers/0001-orientation/hyperseed_orientation.tex`
 - `papers/0001-orientation/hyperseed_orientation.pdf`
+- `papers/0002-protomegatron-agent-loop/protomegatron_agent_loop.tex`
+- `papers/0002-protomegatron-agent-loop/protomegatron_agent_loop.pdf`
 
 ## Build
 

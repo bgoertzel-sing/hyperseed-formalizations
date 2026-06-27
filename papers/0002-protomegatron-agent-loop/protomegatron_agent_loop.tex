@@ -1,0 +1,222 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\newtheorem{definition}{Definition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{proposition}{Proposition}
+\newtheorem{example}{Example}
+\newtheorem{designprinciple}{Design Principle}
+
+\title{ProtomegaTron as a Hyperseed-Scrutable Agent Loop}
+\author{OmegaClaw / ZeroBot working notes for Ben Goertzel}
+\date{2026-06-27}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note begins a declarative Hyperseed-style formalization of ProtomegaTron:
+a private OmegaClaw agent persona running through the OmegaClaw MeTTa/Python loop,
+using OpenClaw as an LLM backend, Telegram as an interaction channel, ChromaDB as
+long-term associative memory, and PeTTa/MeTTa structures for symbolic control and
+reasoning.  The aim is not to anthropomorphize the system, but to make its design
+and dynamics scrutable as a structured, provenance-bearing process.
+\end{abstract}
+
+\section{Provenance and code anchors}
+
+This note is grounded in the local OmegaClaw checkout inspected on 2026-06-27:
+\begin{itemize}
+  \item OmegaClaw Core commit \texttt{16d380d}, with local ProtomegaTron/OpenClaw patches.
+  \item Loop and scheduling: \texttt{src/loop.metta}.
+  \item Memory and prompt selection: \texttt{src/memory.metta}.
+  \item Channel dispatch and anti-duplicate send: \texttt{src/channels.metta}.
+  \item Telegram adapter and access controls: \texttt{channels/telegram.py}.
+  \item Skill grammar and MeTTa/IO/communication actions: \texttt{src/skills.metta}.
+  \item OpenClaw provider bridge: \texttt{lib\_llm\_ext.py}.
+  \item ProtomegaTron mandate: \texttt{memory/prompt\_OpenClaw.txt}.
+\end{itemize}
+
+\section{A situated-process account}
+
+\begin{definition}[ProtomegaTron process state]
+A ProtomegaTron process state is a tuple
+\[
+  P_t = \langle M_t, C_t, L_t, S_t, H_t, B_t, \Pi_t, A_t, R_t, V_t \rangle
+\]
+where $M_t$ is the mandate/persona prompt, $C_t$ the active channel context,
+$L_t$ the loop-control state, $S_t$ the skill/action grammar, $H_t$ memory and
+history, $B_t$ backend model/provider state, $\Pi_t$ policies and access controls,
+$A_t$ emitted actions, $R_t$ observations/results, and $V_t$ provenance.
+\end{definition}
+
+\begin{definition}[Hyperseed-scrutable agent loop]
+A software agent loop is \emph{Hyperseed-scrutable} to the degree that its state
+components, transition rules, action affordances, memory updates, failures, and
+provenance can be represented as inspectable atoms or typed records, rather than
+remaining only implicit in code and transient prompt text.
+\end{definition}
+
+\section{The OmegaClaw turn transition}
+
+The inspected loop implements the following high-level transition:
+\[
+  P_{t+1}=T(P_t, I_t)
+\]
+with stages:
+\[
+\begin{array}{rcl}
+  I_t &\leftarrow& \mathrm{receive}(C_t) \\
+  F_t &\leftarrow& \mathrm{fresh?}(I_t,\mathrm{prevmsg}_t) \\
+  X_t &\leftarrow& \mathrm{context}(M_t,S_t,H_t,R_{t-1},\mathrm{time}_t) \\
+  Y_t &\leftarrow& \mathrm{LLM}(B_t, X_t, I_t) \\
+  Z_t &\leftarrow& \mathrm{parse\_sexpr}(Y_t) \\
+  R_t &\leftarrow& \mathrm{execute}(Z_t,S_t) \\
+  H_{t+1} &\leftarrow& \mathrm{append\_history}(H_t,I_t,Y_t,Z_t,R_t) \\
+  L_{t+1} &\leftarrow& \mathrm{update\_loop}(L_t,F_t,R_t).
+\end{array}
+\]
+
+\begin{example}[Fresh-message path]
+When Telegram receives a new allowed private message from Ben, the adapter exposes a
+nonempty message.  The loop detects novelty relative to \texttt{\&prevmsg}, resets
+\texttt{\&loops} to \texttt{maxNewInputLoops}, constructs a prompt containing mandate,
+skills, last skill results, history tail, and time, calls the OpenClaw provider,
+parses returned skill calls such as \texttt{(send ...)}, executes them, and appends
+an episodic record to \texttt{memory/history.metta}.
+\end{example}
+
+\begin{example}[Idle/no-input path]
+With the local quiet-start patch, initialization sets \texttt{\&loops=0}.  If no fresh
+message arrives, the loop sleeps and recurs without an LLM call unless an explicitly
+configured autonomous wake loop is due.  This converts ``waiting for input'' from an
+unbounded backend-spending process into a gated attentional process.
+\end{example}
+
+\section{Agency boundaries as constraints}
+
+\begin{definition}[Action boundary]
+An action boundary is a predicate $\beta(P_t,a)$ determining whether action $a$ is
+admissible in process state $P_t$.  In the current system, relevant boundaries include
+Telegram allowlists/private-only checks, authentication binding, security policy,
+provider availability, duplicate-send suppression, prompt instruction to use
+\texttt{send} only for meaningful updates, and loop gating through \texttt{\&loops}.
+\end{definition}
+
+\begin{proposition}[Boundary visibility improves scrutability]
+If action boundaries are represented declaratively and logged with provenance, then
+unexpected behavior can be localized to either input classification, boundary evaluation,
+LLM action proposal, parser repair, skill execution, or memory update.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+The loop already separates these stages operationally.  Making each stage emit typed
+records preserves the causal path from inbound message to outbound action.  A failure
+or surprise can then be inspected by querying records for the corresponding stage rather
+than reconstructing intent from raw logs alone.
+\end{proof}
+
+\section{Memory stratification and the proposed intermediate PeTTa store}
+
+The inspected memory design currently has several levels:
+\begin{enumerate}
+  \item Working memory / \texttt{pin}: immediate task state.
+  \item Episodic trace: \texttt{memory/history.metta}, tail-injected into prompts.
+  \item ChromaDB long-term memory: semantic associative recall through \texttt{remember}/\texttt{query}.
+  \item Per-invocation AtomSpace reasoning: powerful but not persistent across calls.
+\end{enumerate}
+
+\begin{definition}[Medium-scale PeTTa memory]
+A medium-scale PeTTa memory is a persistent or session-persistent AtomSpace-like store
+\[
+  K^{mid}_t = \{\alpha_i\}_{i=1}^{n}
+\]
+where each $\alpha_i$ is a typed atom or small atom cluster about recent episodes,
+entities, commitments, hypotheses, open questions, action boundaries, and provenance.
+It is more structured than embedding memory and less permanent than curated long-term
+records.
+\end{definition}
+
+Candidate atoms include:
+\begin{verbatim}
+(Episode e123)
+(Said Ben e123 "progress with semantic formalization")
+(About e123 ProtomegaTronDesign)
+(OpenQuestion q77 "How should medium PeTTa memory decay?")
+(HasStatus q77 active)
+(ConstrainedBy send-action meaningful-update-policy)
+(Confidence (Useful MediumPeTTaMemory) (stv 0.8 0.6))
+\end{verbatim}
+
+\begin{designprinciple}[Selective atomization]
+Do not atomize every token of experience.  Atomize high-value events: explicit user
+commitments, task state, design hypotheses, observed failures, decisions, provenance,
+and concepts likely to participate in later reasoning.
+\end{designprinciple}
+
+\begin{conjecture}[Intermediate-memory benefit]
+Adding $K^{mid}$ between working memory and ChromaDB will improve continuity and
+self-scrutability for ProtomegaTron if it remains selective, typed, provenance-bearing,
+and periodically distilled into long-term memory or project records.
+\end{conjecture}
+
+\begin{conjecture}[Schema-sprawl risk]
+A medium PeTTa memory that grows without a small ontology of episode, commitment,
+hypothesis, question, boundary, and provenance atoms will reduce scrutability by creating
+unreliable symbolic clutter.
+\end{conjecture}
+
+\section{Three selves}
+
+\begin{definition}[Code-level self]
+The code-level self is the MeTTa/Python transition system: loop, memory, channel,
+provider, skills, security, and process supervision.
+\end{definition}
+
+\begin{definition}[Prompt-level self]
+The prompt-level self is the mandate/persona/operational instruction surface, especially
+\texttt{prompt\_OpenClaw.txt}: ProtomegaTron as Ben's concise, Hyperseed-oriented,
+non-spamming OmegaClaw research assistant.
+\end{definition}
+
+\begin{definition}[Historical self]
+The historical self is the accumulated trace of episodes, remembered facts, task records,
+commits, and formalizations that constrain and inform future behavior.
+\end{definition}
+
+\begin{proposition}[Non-homuncular self model]
+ProtomegaTron need not be modeled as a hidden inner entity.  It can be modeled as a
+recursively scrutable process whose apparent identity is the relatively stable pattern
+across code-level transition rules, prompt-level mandates, historical records, and current
+interaction context.
+\end{proposition}
+
+\section{Next formalization steps}
+
+\begin{enumerate}
+  \item Extract a minimal atom schema for episodes, commitments, hypotheses, questions,
+        boundaries, and provenance.
+  \item Encode one Telegram fresh-message episode and one idle/no-input episode using
+        that schema.
+  \item Specify a prototype \texttt{medium-memory.metta} API: append, query-by-type,
+        query-by-entity, decay/distill, and export-to-Chroma/project-notes.
+  \item Compare this declarative account against actual OmegaClaw logs from a supervised
+        smoke run.
+\end{enumerate}
+
+\section{Open questions for Ben}
+
+\begin{enumerate}
+  \item Should $K^{mid}$ be primarily an engineering feature for ProtomegaTron, or also a
+        philosophical exemplar of Hyperseed self-formalization?
+  \item Should the first prototype live directly inside OmegaClaw Core, or as a local
+        experimental patch in the research workspace until the schema stabilizes?
+  \item How much of the medium-memory schema should reuse existing Hyperseed primitives
+        versus pragmatic OmegaClaw-specific predicates?
+\end{enumerate}
+
+\end{document}
