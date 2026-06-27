@@ -1,0 +1,77 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 1014 >>
+stream
+BT
+/F1 11 Tf
+72 740 Td
+14 TL
+(Hyperseed Formalizations: Orientation Note 0001) Tj
+T*
+(OmegaClaw / ZeroBot working notes for Ben Goertzel) Tj
+T*
+(2026-06-27) Tj
+T*
+() Tj
+T*
+(This generated preview accompanies the LaTeX source:) Tj
+T*
+(papers/0001-orientation/hyperseed_orientation.tex) Tj
+T*
+() Tj
+T*
+(Definitions seeded in the source:) Tj
+T*
+(1. Experienced research event: <O,A,C,R,P>.) Tj
+T*
+(2. Hyperseed formalization act: F\(E\)=<D,X,K,T,Q>.) Tj
+T*
+() Tj
+T*
+(Initial conjecture:) Tj
+T*
+(Repeatedly formalizing concrete experiments and agent interactions can improve both) Tj
+T*
+(experiment design and ontology design, if uncertainty, provenance, and failure modes are) Tj
+T*
+(preserved.) Tj
+T*
+() Tj
+T*
+(Near-term targets: petta-chem experiment records, OmegaClaw Telegram smoke/idle-loop) Tj
+T*
+(behavior, and interaction-afterthought notation.) Tj
+T*
+() Tj
+T*
+(Note: local workstation lacked pdflatex/latexmk at first commit; use scripts/build.sh once) Tj
+T*
+(TeX is installed for a true LaTeX build.) Tj
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1377
+%%EOF

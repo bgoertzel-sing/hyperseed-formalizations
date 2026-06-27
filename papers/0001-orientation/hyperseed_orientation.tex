@@ -1,0 +1,97 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\newtheorem{definition}{Definition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{proposition}{Proposition}
+\newtheorem{example}{Example}
+
+\title{Hyperseed Formalizations: Orientation Note 0001}
+\author{OmegaClaw / ZeroBot working notes for Ben Goertzel}
+\date{2026-06-27}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note seeds a public repository for incremental Hyperseed formalizations arising
+from OmegaClaw, ZeroBot, and Ben Goertzel's research interactions.  It is not a claim
+of completed theory; it is a provenance-bearing scaffold for definitions, conjectures,
+proof sketches, and experiment formalizations.
+\end{abstract}
+
+\section{Source orientation}
+
+The initial orientation sources are Ben Goertzel's public Hyperseed v2 article and the
+four linked PDF documents preserved in the OpenClaw research library on 2026-06-27:
+\begin{itemize}
+  \item \emph{Hyperseed ontology: formal presentation and theoretical development}.
+  \item \emph{Hyperseed: A Scrutability-Style Core Ontology and a Practical Inference-Control Scaffold for Probabilistic Logic Networks}.
+  \item \emph{Representing Scientific Experiments in MeTTa: SUMO/EXPO Structure with Hyperseed Epistemic Annotations}.
+  \item \emph{Metta-stasizing SUMO: A Typed MeTTa Encoding for Type Checking, PLN Reasoning, and Hyperseed Alignment}.
+\end{itemize}
+
+\section{A minimal working frame}
+
+\begin{definition}[Experienced research event]
+An \emph{experienced research event} is a tuple
+\[
+  E = \langle O, A, C, R, P \rangle
+\]
+where $O$ is an observing agent or agent-ensemble, $A$ is an action or interaction,
+$C$ is the operative context, $R$ is the resulting observation or artifact, and $P$ is
+provenance sufficient for later scrutiny.
+\end{definition}
+
+\begin{definition}[Hyperseed formalization act]
+A \emph{Hyperseed formalization act} maps an experienced research event $E$ into a
+structured object
+\[
+  F(E) = \langle D, X, K, T, Q \rangle
+\]
+where $D$ is a set of candidate definitions, $X$ examples and counterexamples, $K$
+conjectures, $T$ theorem/proof-sketch material, and $Q$ open questions or calibration
+requests.
+\end{definition}
+
+\begin{conjecture}[Experiment-to-ontology feedback]
+For a sustained research process, repeatedly applying $F$ to concrete experiments and
+agent interactions can improve both experiment design and ontology design, provided the
+formalization records uncertainty, provenance, and failure modes rather than only polished
+successes.
+\end{conjecture}
+
+\begin{example}[petta-chem as initial target]
+A deterministic candidate-selection run in \texttt{petta-chem} may be treated as an
+experienced research event whose context includes a PeTTa/MeTTa runtime, symbolic chamber
+state, candidate applicability rules, and observed post-tick abundance invariants.  A first
+Hyperseed formalization should relate this to process, pattern, causality, attention or
+resource allocation, and experiment-evidence annotations.
+\end{example}
+
+\section{Near-term agenda}
+
+\begin{enumerate}
+  \item Formalize \texttt{petta-chem} experiment records using the scientific-experiment
+        paper's SUMO/EXPO plus Hyperseed epistemic annotation style.
+  \item Formalize OmegaClaw's Telegram smoke test and idle-loop issue as agent-experience
+        events involving communication, attention, resource use, and action gating.
+  \item Extract a small reusable notation for ``interaction afterthoughts'': immediate
+        conversational response first, later Hyperseed reflection when useful.
+\end{enumerate}
+
+\section{Open questions for Ben}
+
+\begin{enumerate}
+  \item Should the repository prefer mathematically polished theorem/proof style, or a
+        lab-notebook style that tolerates more speculative formal sketches?
+  \item Which Hyperseed primitives should be treated as the default starting vocabulary
+        for formalizing software experiments?
+  \item How much MeTTa syntax should be paired with each LaTeX formalization?
+\end{enumerate}
+
+\end{document}
