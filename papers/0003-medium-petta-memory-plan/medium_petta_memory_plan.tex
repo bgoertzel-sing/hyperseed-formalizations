@@ -80,6 +80,14 @@ GitHub, shell, paid compute, and filesystem permissions remain governed by exist
 boundaries.
 \end{principle}
 
+\begin{principle}[PLN-ready AtomSpace]
+Ben noted on 2026-06-27 that later versions should run PLN inference on this memory
+AtomSpace.  Therefore version 1 should avoid ad hoc string-only structures that would
+be hard to promote into PLN premises.  Atoms should use stable predicates, explicit
+truth values for interpretive claims when appropriate, provenance links, and status
+events that can later be loaded into a reasoning context without lossy translation.
+\end{principle}
+
 \section{Placement in the architecture}
 
 The intended memory stack is:
@@ -428,8 +436,9 @@ Exit criteria:
 \end{milestone}
 
 \begin{milestone}[Step 6: richer PeTTa/MeTTa reasoning]
-After the file-backed store is stable, load selected clusters into a MeTTa reasoning
-context for consistency checks and simple inference.
+After the file-backed store is stable, load selected clusters into a PeTTa/MeTTa
+reasoning context for consistency checks, simple inference, and later PLN inference
+over the memory AtomSpace.
 
 Tasks:
 \begin{enumerate}
@@ -438,12 +447,15 @@ Tasks:
         the same id.
   \item Add rules for surfacing overdue or blocked commitments.
   \item Add rules linking episodes, artifacts, and formalization notes.
+  \item Add PLN-oriented representations for uncertain interpretive atoms such as
+        hypotheses, importance estimates, confidence, and evidence relations.
 \end{enumerate}
 
 Exit criteria:
 \begin{itemize}
   \item A test detects inconsistent statuses.
   \item A test retrieves all active commitments about a target project.
+  \item A test runs at least one PLN-style inference over loaded medium-memory atoms.
   \item The reasoning layer remains optional; basic query still works without it.
 \end{itemize}
 \end{milestone}
