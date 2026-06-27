@@ -27,9 +27,24 @@ episodes, entities, commitments, hypotheses, open questions, action boundaries,
 observations, and distillation links.  The plan is intentionally incremental: first
 add a file-backed atom store and read-only query surface, then add selective
 extraction, then add distillation and eventual integration into the OmegaClaw loop.
+The 2026-06-27 revision makes the design explicitly PLN-ready: the same medium
+memory should later support inference over a normalized, truth-valued AtomSpace
+view without confusing quoted conversation, observed events, decisions, hypotheses,
+and derived beliefs.
 \end{abstract}
 
 \section{Motivation}
+
+\subsection{Revision summary}
+
+This version folds in three constraints that should shape the implementation:
+\begin{enumerate}
+  \item The canonical unit is a \texttt{MemoryCluster}, not an isolated atom line.
+  \item Observed events, quoted utterances, commitments, hypotheses, decisions, and
+        derived beliefs must remain epistemically distinct.
+  \item The store is append-only; current state is a derived view over status,
+        supersession, and truth-value events.
+\end{enumerate}
 
 The current OmegaClaw memory architecture, as inspected in the local
 ProtomegaTron/OmegaClaw checkout, has four important memory surfaces:
@@ -71,6 +86,22 @@ or Hyperseed formalization.  It should not become a complete transcript mirror.
 Every nontrivial assertion should either include direct provenance or link to a
 provenance atom.  A false or stale symbolic assertion without provenance is more
 dangerous than an unstructured text memory, because it looks more formal than it is.
+\end{principle}
+
+\begin{principle}[Epistemic role separation]
+Atoms that record what happened should be separated from atoms that claim what is
+true.  A message from Ben, a quote from an LLM, a derived belief, a standing
+decision, and a speculative hypothesis should have different predicates and should
+not be collapsed into a single untyped fact.  This is especially important once PLN
+inference is run over the memory AtomSpace: quoted claims may provide evidence, but
+they should not automatically become premises.
+\end{principle}
+
+\begin{principle}[Append-only audit semantics]
+The canonical store should append new status, salience, and truth-value events
+rather than silently mutating old atoms.  Current status can be derived from the
+latest non-superseded status event.  This preserves an audit trail and makes
+contradictions inspectable instead of hidden.
 \end{principle}
 
 \begin{principle}[Bounded autonomy]
@@ -115,6 +146,25 @@ Operationally, a turn may use the layers as follows:
   \item Periodically distill older \texttt{MM} atoms into ChromaDB or project notes.
 \end{enumerate}
 
+\subsection{Canonical log and derived views}
+
+Version 1 should distinguish four products:
+\begin{enumerate}
+  \item \texttt{MM-log}: append-only canonical atom journal.  This is the source of
+        truth and should be small enough to inspect with ordinary tools.
+  \item \texttt{MM-index}: rebuildable query acceleration, such as type, id, about,
+        status, and time indexes.  It can be deleted and regenerated.
+  \item \texttt{MM-prompt-view}: bounded, human-readable context injected into LLM
+        prompts.  It should never be treated as canonical.
+  \item \texttt{MM-pln-view}: normalized, typed, truth-valued atoms safe to load as
+        PLN premises or evidence.  It should exclude raw quoted claims unless a
+        rule explicitly promotes them into evidence-bearing beliefs.
+\end{enumerate}
+
+This separation lets the same substrate support auditability, ordinary prompt
+continuity, and later probabilistic reasoning without requiring all consumers to
+share the same representation.
+
 \section{Minimal atom schema}
 
 The schema should be small enough to remember and inspect by eye.  The first version
@@ -131,6 +181,7 @@ Use stable, opaque identifiers:
 (Commitment c-write-medium-memory-plan)
 (Artifact art-medium-memory-plan-tex)
 (Boundary b-telegram-allowlist)
+(MemoryCluster mc-20260627-121018-001)
 (Source src-loop-metta-16d380d)
 \end{verbatim}
 
@@ -139,6 +190,63 @@ Identifier construction rule:
 <kind>-<yyyymmdd>-<hhmmss>-<counter>
 \end{verbatim}
 for event-like records, and stable slugs for durable entities or code anchors.
+
+\subsection{Cluster envelope}
+
+The canonical write unit should be a small cluster, not an isolated line.  This makes
+append-only updates, provenance inspection, and later PLN loading safer.
+
+\begin{verbatim}
+(MemoryCluster mc1)
+(ClusterType mc1 episode-record)
+(ClusterOpenedAt mc1 "2026-06-27 12:10 PDT")
+(ClusterSource mc1 src-telegram-history-20260627)
+(Contains mc1 e1)
+(Contains mc1 c1)
+(Contains mc1 q1)
+(ClusterStatus mc1 active)
+\end{verbatim}
+
+Cluster conventions:
+\begin{enumerate}
+  \item Every append writes one complete cluster.
+  \item A later correction writes a new cluster and links it with \texttt{Supersedes},
+        rather than editing the old cluster in place.
+  \item Queries may return whole clusters even when only one contained atom matched.
+  \item The PLN view may select only premise-safe atoms from a cluster.
+\end{enumerate}
+
+\subsection{Epistemic roles}
+
+The first schema should reserve explicit predicates for epistemic roles, and should
+tag clusters or atoms when the role is not obvious from the predicate name.  This
+makes the memory useful for ordinary retrieval now and safer for PLN inference later.
+
+\begin{verbatim}
+(ObservedEvent e1)
+(SpeechEvent se1)
+(QuotedClaim qc1)
+(DerivedBelief b1)
+(Decision d1)
+(Hypothesis h1)
+(OpenQuestion q1)
+(Commitment c1)
+\end{verbatim}
+
+The intended discipline is:
+\begin{itemize}
+  \item \texttt{ObservedEvent}: something the local system directly observed, such as
+        a Telegram message, file creation, test result, or tool output.
+  \item \texttt{SpeechEvent}: a communicative event, usually linking actor, channel,
+        and message id.
+  \item \texttt{QuotedClaim}: what an actor or model asserted.  It is evidence, not
+        automatically a fact.
+  \item \texttt{DerivedBelief}: a normalized proposition that the agent is willing to
+        use as a belief, with a truth value and evidence links.
+  \item \texttt{Decision}: an adopted course of action with rationale and provenance.
+  \item \texttt{Hypothesis}: a plausible but unsettled proposition, normally with a
+        lower confidence than a decision or directly observed fact.
+\end{itemize}
 
 \subsection{Episode atoms}
 
@@ -153,6 +261,27 @@ for event-like records, and stable slugs for durable entities or code anchors.
 (About e1 MediumPeTTaMemory)
 (HasStatus e1 recorded)
 (HasProvenance e1 src-telegram-history-20260627)
+(EpistemicRole e1 observed-event)
+\end{verbatim}
+
+For PLN-readiness, prefer the more explicit event-plus-claim form when the content
+of a message may later be interpreted as evidence:
+
+\begin{verbatim}
+(ObservedEvent e1)
+(SpeechEvent se1)
+(PartOf se1 e1)
+(AtTime se1 "2026-06-27 14:02 PDT")
+(Channel se1 telegram-group)
+(Speaker se1 Ben)
+(MessageId se1 telegram-msg-505)
+(RawUtterance se1 "Note that later we will be running PLN inference...")
+(QuotedClaim qc1)
+(ClaimSource qc1 se1)
+(ClaimText qc1 "Later versions should run PLN inference on this memory AtomSpace")
+(About qc1 MediumPeTTaMemory)
+(About qc1 PLN)
+(ClaimStatus qc1 quoted-unverified)
 \end{verbatim}
 
 \subsection{Commitment atoms}
@@ -166,6 +295,24 @@ for event-like records, and stable slugs for durable entities or code anchors.
 (OpenedBy c1 e1)
 (HasDueMode c1 immediate-next-step)
 (HasProvenance c1 e1)
+(EpistemicRole c1 commitment)
+\end{verbatim}
+
+When status changes, append status events instead of overwriting the old status:
+
+\begin{verbatim}
+(StatusEvent st1)
+(StatusSubject st1 c1)
+(StatusValue st1 active)
+(StatusTime st1 "2026-06-27 13:51 PDT")
+(StatusProvenance st1 e1)
+
+(StatusEvent st2)
+(StatusSubject st2 c1)
+(StatusValue st2 resolved)
+(StatusTime st2 "2026-06-27 14:10 PDT")
+(Supersedes st2 st1)
+(StatusProvenance st2 art-medium-memory-plan-tex)
 \end{verbatim}
 
 \subsection{Question atoms}
@@ -177,6 +324,7 @@ for event-like records, and stable slugs for durable entities or code anchors.
 (QuestionScope q1 architecture)
 (About q1 MediumPeTTaMemory)
 (HasProvenance q1 e1)
+(EpistemicRole q1 open-question)
 \end{verbatim}
 
 \subsection{Hypothesis atoms}
@@ -191,7 +339,63 @@ requiring every query to invoke PLN.
 (Confidence h1 (stv 0.80 0.60))
 (EvidenceFor h1 e1)
 (HypothesisStatus h1 active)
+(EpistemicRole h1 hypothesis)
 \end{verbatim}
+
+For PLN, the proposition should be explicit rather than trapped inside a string:
+
+\begin{verbatim}
+(Hypothesis h1)
+(HypothesisContent h1 (Improves SelectiveMediumPeTTaMemory AgentContinuity))
+(TruthValue h1 (stv 0.80 0.60))
+(EvidenceFor h1 qc1)
+(HasProvenance h1 se1)
+(StatusSubject st-h1-1 h1)
+(StatusValue st-h1-1 active)
+\end{verbatim}
+
+The string form may still be kept for prompt readability, but the symbolic content
+is what should be loaded into the PLN view.
+
+\subsection{Belief atoms for PLN}
+
+Derived beliefs are the main bridge between audit memory and inference memory:
+
+\begin{verbatim}
+(DerivedBelief b1)
+(BeliefContent b1 (Requires MediumPeTTaMemory ExplicitTruthValues))
+(TruthValue b1 (stv 0.90 0.70))
+(EvidenceFor b1 qc1)
+(EvidenceFor b1 design-review-20260627)
+(BeliefStatus b1 active)
+(HasProvenance b1 se1)
+\end{verbatim}
+
+Rules may later promote quoted claims into evidence-bearing beliefs when a source is
+trusted in a relevant context, for example:
+
+\begin{verbatim}
+(TrustedSource Ben medium-memory-design)
+(CanPromoteToEvidence qc1 b1)
+\end{verbatim}
+
+but promotion should be explicit and logged, not implicit.
+
+\subsection{Salience and retention atoms}
+
+Bounded memory requires explicit attention and retention metadata:
+
+\begin{verbatim}
+(SalienceEvent sal1)
+(SalienceSubject sal1 c1)
+(SalienceValue sal1 0.82)
+(SalienceReason sal1 active-task)
+(RetentionClass c1 active-task)
+(ReviewAfter c1 "2026-06-28")
+\end{verbatim}
+
+The prompt view should prefer high-salience active items.  The distillation pass
+should prefer low-salience resolved items and stale open questions.
 
 \subsection{Boundary atoms}
 
@@ -203,6 +407,7 @@ requiring every query to invoke PLN.
 (ImplementedIn b1 "channels/telegram.py")
 (HasStatus b1 active)
 (HasProvenance b1 src-telegram-py-16d380d-local)
+(EpistemicRole b1 action-boundary)
 \end{verbatim}
 
 \subsection{Artifact atoms}
@@ -214,7 +419,30 @@ requiring every query to invoke PLN.
 (About art1 MediumPeTTaMemory)
 (CreatedBy art1 ProtomegaTron)
 (HasProvenance art1 c1)
+(EpistemicRole art1 artifact-record)
 \end{verbatim}
+
+\subsection{Append-only update atoms}
+
+Status changes, confidence revisions, and corrections should be new atoms or new
+clusters.  The current view is computed from the latest non-superseded update.
+
+\begin{verbatim}
+(StatusEvent se1)
+(StatusSubject se1 c1)
+(StatusValue se1 resolved)
+(AtTime se1 "2026-06-27 12:24 PDT")
+(HasProvenance se1 art1)
+
+(TruthValueEvent tv1)
+(TruthSubject tv1 h1)
+(TruthValue tv1 (stv 0.85 0.65))
+(Supersedes tv1 tv0)
+(HasProvenance tv1 e2)
+\end{verbatim}
+
+This pattern is more verbose than mutation, but it preserves the audit trail needed
+for both scientific provenance and later PLN belief revision.
 
 \section{File layout}
 
@@ -251,6 +479,7 @@ The first API should be deliberately small.
 (mm-append $atom)
 (mm-append-cluster $cluster)
 (mm-record-episode $episode-id $cluster)
+(mm-append-status $subject-id $status $provenance)
 \end{verbatim}
 
 Expected behavior:
@@ -265,14 +494,40 @@ Expected behavior:
 
 \begin{verbatim}
 (mm-tail $max-chars)
+(mm-query-cluster $cluster-id)
 (mm-query-type $type $limit)
 (mm-query-about $entity $limit)
 (mm-query-status $status $limit)
+(mm-query-role $epistemic-role $limit)
 (mm-query-id $id)
 \end{verbatim}
 
 The first implementation can use simple text scanning.  Later versions can load the
 file into an AtomSpace or maintain derived indexes.
+
+\subsection{View API}
+
+The store should expose separate views for separate consumers:
+
+\begin{verbatim}
+(mm-prompt-view $topic $max-chars)
+(mm-pln-view $topic $max-atoms)
+(mm-audit-view $id $max-chars)
+\end{verbatim}
+
+Expected behavior:
+\begin{itemize}
+  \item \texttt{mm-prompt-view} returns a compact textual summary of active
+        commitments, questions, salient observations, and relevant boundaries.
+  \item \texttt{mm-pln-view} returns normalized typed atoms with explicit truth values
+        and evidence links.  It should not include raw quoted claims as factual
+        premises unless they have been explicitly promoted.
+  \item \texttt{mm-audit-view} returns the provenance chain and append-only event
+        history for one id.
+\end{itemize}
+
+This division is a safety feature, not merely an implementation detail: prompt
+selection, human audit, and PLN inference have different failure modes.
 
 \subsection{Distillation API}
 
@@ -331,7 +586,7 @@ Exit criteria:
 
 \begin{milestone}[Step 1: create append-only store]
 Implement \texttt{memory/medium\_memory.metta} and helper functions for appending
-validated atoms.
+validated clusters and atoms.
 
 Tasks:
 \begin{enumerate}
@@ -339,7 +594,11 @@ Tasks:
         \texttt{append\_cluster}, \texttt{tail}, and parse-check helpers.
   \item Add \texttt{src/medium\_memory.metta} wrappers around those Python calls.
   \item Add limits: maximum atom length, maximum cluster length, maximum tail chars.
-  \item Add tests for successful append, malformed atom rejection, and size rejection.
+  \item Add cluster-envelope checks: every cluster needs a \texttt{MemoryCluster} id,
+        \texttt{ClusterType}, timestamp, provenance/source, and at least one
+        \texttt{Contains} link.
+  \item Add tests for successful cluster append, malformed atom rejection, missing
+        cluster metadata, and size rejection.
 \end{enumerate}
 
 Exit criteria:
@@ -356,10 +615,13 @@ Implement text-based query functions before attempting full AtomSpace indexing.
 Tasks:
 \begin{enumerate}
   \item Query by id: return all lines mentioning the id.
+  \item Query by cluster id: return the complete cluster.
   \item Query by type: return clusters beginning with \texttt{(Episode ...)},
         \texttt{(Commitment ...)}, \texttt{(OpenQuestion ...)}, etc.
   \item Query by \texttt{About}: return clusters containing \texttt{(About <id> <entity>)}.
   \item Query by status: active, blocked, resolved, stale, distilled.
+  \item Query by epistemic role: observed-event, quoted-utterance, hypothesis,
+        decision, action-boundary, derived-belief.
   \item Add bounded output limits for prompt safety.
 \end{enumerate}
 
@@ -400,15 +662,21 @@ Tasks:
 \begin{enumerate}
   \item Add prompt guidance: write \texttt{MM} atoms only for commitments, open
         questions, decisions, hypotheses, important observations, and boundaries.
+  \item Add prompt guidance: separate observed events and quoted claims from derived
+        beliefs; do not write a conversational quote as a naked fact.
   \item Add a skill such as \texttt{medium-remember} that appends a validated cluster.
   \item Create examples for common cases: Ben request, completed artifact, blocker,
         design hypothesis, decision, stale belief correction.
+  \item Require explicit epistemic roles for quoted utterances, hypotheses, decisions,
+        and derived beliefs.
   \item Add tests using the mock LLM or deterministic helper outputs.
 \end{enumerate}
 
 Exit criteria:
 \begin{itemize}
   \item A fresh Ben request creates an episode and commitment cluster.
+  \item A design assertion creates a speech event and quoted claim; an optional
+        derived belief is added only with truth value and evidence links.
   \item A completion update marks the commitment resolved and links an artifact.
   \item Routine greetings do not create medium-memory atoms unless they establish
         a durable fact or task.
