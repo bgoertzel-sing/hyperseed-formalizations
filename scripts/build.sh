@@ -5,6 +5,7 @@ cd "$ROOT"
 TEX_FILES=(
   papers/0001-orientation/hyperseed_orientation.tex
   papers/0002-protomegatron-agent-loop/protomegatron_agent_loop.tex
+  papers/0003-medium-petta-memory-plan/medium_petta_memory_plan.tex
 )
 if command -v latexmk >/dev/null 2>&1; then
   latexmk -pdf -interaction=nonstopmode -halt-on-error "${TEX_FILES[@]}"

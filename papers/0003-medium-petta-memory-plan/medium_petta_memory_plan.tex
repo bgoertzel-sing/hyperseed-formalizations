@@ -1,0 +1,546 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\newtheorem{definition}{Definition}
+\newtheorem{principle}{Design Principle}
+\newtheorem{milestone}{Milestone}
+\newtheorem{risk}{Risk}
+
+\title{Medium-Scale PeTTa Memory for ProtomegaTron:\\
+Detailed Design and Step-by-Step Implementation Plan}
+\author{OmegaClaw / ZeroBot working notes for Ben Goertzel}
+\date{2026-06-27}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This ASCII-only LaTeX note specifies a conservative design and implementation plan
+for adding an intermediate-scale PeTTa memory layer to ProtomegaTron.  The layer
+sits between volatile working memory and broad ChromaDB long-term memory.  Its
+purpose is to preserve structured, queryable, provenance-bearing cognitive state:
+episodes, entities, commitments, hypotheses, open questions, action boundaries,
+observations, and distillation links.  The plan is intentionally incremental: first
+add a file-backed atom store and read-only query surface, then add selective
+extraction, then add distillation and eventual integration into the OmegaClaw loop.
+\end{abstract}
+
+\section{Motivation}
+
+The current OmegaClaw memory architecture, as inspected in the local
+ProtomegaTron/OmegaClaw checkout, has four important memory surfaces:
+\begin{enumerate}
+  \item Working memory, represented by \texttt{pin}, useful for immediate task state.
+  \item The episodic text trace, \texttt{memory/history.metta}, whose tail is injected
+        into prompts and whose neighborhoods can be retrieved by \texttt{episodes}.
+  \item ChromaDB long-term memory, accessed by \texttt{remember} and \texttt{query},
+        useful for semantic recall across longer time spans.
+  \item Per-invocation MeTTa/AtomSpace reasoning, useful but not persistent across
+        separate calls unless the agent manually carries atoms forward.
+\end{enumerate}
+
+This leaves a gap.  ProtomegaTron needs a memory layer that is more precise than
+embedding recall, more persistent than a single pin or one fresh AtomSpace call,
+and more structured than a raw text history tail.  The proposed layer is a
+medium-scale PeTTa memory, abbreviated here as \texttt{MM}.
+
+\section{Design goal}
+
+\begin{definition}[Medium-scale PeTTa memory]
+A medium-scale PeTTa memory is a bounded, persistent, typed atom store
+\[
+  MM_t = \{ a_1, a_2, \ldots, a_n \}
+\]
+where each atom or small atom cluster records a currently useful cognitive item:
+an episode, entity, commitment, hypothesis, question, boundary, observation,
+artifact, or provenance relation.  It is intended for active structured cognition,
+not for permanent archival storage of everything the agent sees.
+\end{definition}
+
+\begin{principle}[Selective atomization]
+Only high-value events should enter \texttt{MM}.  The store should contain facts
+that are likely to affect near-future reasoning, task continuity, self-scrutiny,
+or Hyperseed formalization.  It should not become a complete transcript mirror.
+\end{principle}
+
+\begin{principle}[Provenance first]
+Every nontrivial assertion should either include direct provenance or link to a
+provenance atom.  A false or stale symbolic assertion without provenance is more
+dangerous than an unstructured text memory, because it looks more formal than it is.
+\end{principle}
+
+\begin{principle}[Bounded autonomy]
+The first implementation should not grant ProtomegaTron new external authority.  It
+should only write a local structured memory file and read/query that file.  Telegram,
+GitHub, shell, paid compute, and filesystem permissions remain governed by existing
+boundaries.
+\end{principle}
+
+\section{Placement in the architecture}
+
+The intended memory stack is:
+\[
+  WM \rightarrow MM \rightarrow LTM
+\]
+where:
+\begin{itemize}
+  \item \texttt{WM} is working memory: pins, current loop state, current prompt tail.
+  \item \texttt{MM} is medium PeTTa memory: structured atoms over recent and active
+        concerns.
+  \item \texttt{LTM} is ChromaDB plus durable project records and curated Markdown.
+\end{itemize}
+
+Operationally, a turn may use the layers as follows:
+\begin{enumerate}
+  \item Receive message or autonomous wake event.
+  \item Retrieve relevant \texttt{MM} atoms by type, entity, status, or recency.
+  \item Retrieve relevant ChromaDB memories if broad semantic context is needed.
+  \item Construct prompt context from mandate, skills, selected history, selected
+        \texttt{MM} atoms, and recent results.
+  \item Let the LLM propose skill calls and optional memory updates.
+  \item Execute safe skill calls.
+  \item Append high-value structured atoms to \texttt{MM}.
+  \item Periodically distill older \texttt{MM} atoms into ChromaDB or project notes.
+\end{enumerate}
+
+\section{Minimal atom schema}
+
+The schema should be small enough to remember and inspect by eye.  The first version
+should use flat, readable predicates rather than deep ontological machinery.
+
+\subsection{Identifiers}
+
+Use stable, opaque identifiers:
+\begin{verbatim}
+(Episode e-20260627-121018-001)
+(Entity ent-protomegatron)
+(Question q-medium-memory-decay)
+(Hypothesis h-medium-memory-useful)
+(Commitment c-write-medium-memory-plan)
+(Artifact art-medium-memory-plan-tex)
+(Boundary b-telegram-allowlist)
+(Source src-loop-metta-16d380d)
+\end{verbatim}
+
+Identifier construction rule:
+\begin{verbatim}
+<kind>-<yyyymmdd>-<hhmmss>-<counter>
+\end{verbatim}
+for event-like records, and stable slugs for durable entities or code anchors.
+
+\subsection{Episode atoms}
+
+\begin{verbatim}
+(Episode e1)
+(AtTime e1 "2026-06-27 12:10 PDT")
+(Channel e1 telegram-group)
+(Actor e1 Ben)
+(ObservedBy e1 ProtomegaTron)
+(Said e1 Ben "Great please progress w this...")
+(About e1 ProtomegaTronDesign)
+(About e1 MediumPeTTaMemory)
+(HasStatus e1 recorded)
+(HasProvenance e1 src-telegram-history-20260627)
+\end{verbatim}
+
+\subsection{Commitment atoms}
+
+\begin{verbatim}
+(Commitment c1)
+(CommittedBy c1 ProtomegaTron)
+(CommittedTo c1 Ben)
+(CommitmentText c1 "Write an ASCII LaTeX design and implementation plan")
+(CommitmentStatus c1 active)
+(OpenedBy c1 e1)
+(HasDueMode c1 immediate-next-step)
+(HasProvenance c1 e1)
+\end{verbatim}
+
+\subsection{Question atoms}
+
+\begin{verbatim}
+(OpenQuestion q1)
+(QuestionText q1 "How should medium PeTTa memory decay and distill?")
+(QuestionStatus q1 active)
+(QuestionScope q1 architecture)
+(About q1 MediumPeTTaMemory)
+(HasProvenance q1 e1)
+\end{verbatim}
+
+\subsection{Hypothesis atoms}
+
+Truth values can be represented as ordinary MeTTa structures initially, without
+requiring every query to invoke PLN.
+
+\begin{verbatim}
+(Hypothesis h1)
+(HypothesisText h1 "Selective medium PeTTa memory improves continuity")
+(About h1 ProtomegaTronMemory)
+(Confidence h1 (stv 0.80 0.60))
+(EvidenceFor h1 e1)
+(HypothesisStatus h1 active)
+\end{verbatim}
+
+\subsection{Boundary atoms}
+
+\begin{verbatim}
+(Boundary b1)
+(BoundaryName b1 "Telegram allowlist")
+(Constrains b1 send-action)
+(Constrains b1 receive-action)
+(ImplementedIn b1 "channels/telegram.py")
+(HasStatus b1 active)
+(HasProvenance b1 src-telegram-py-16d380d-local)
+\end{verbatim}
+
+\subsection{Artifact atoms}
+
+\begin{verbatim}
+(Artifact art1)
+(ArtifactPath art1 "papers/0003-medium-petta-memory-plan/medium_petta_memory_plan.tex")
+(ArtifactType art1 latex-source)
+(About art1 MediumPeTTaMemory)
+(CreatedBy art1 ProtomegaTron)
+(HasProvenance art1 c1)
+\end{verbatim}
+
+\section{File layout}
+
+The first prototype should avoid database complexity.  Use append-only files under the
+OmegaClaw project or a local experimental branch:
+
+\begin{verbatim}
+OmegaClaw-Core/
+  memory/
+    medium_memory.metta          # append-only canonical atom log
+    medium_memory_index.metta    # optional derived index, rebuildable
+  src/
+    medium_memory.metta          # MeTTa API wrapper
+    medium_memory.py             # Python helper for simple file operations
+\end{verbatim}
+
+If implemented first in the research workspace rather than upstream OmegaClaw Core,
+use:
+
+\begin{verbatim}
+projects/omegaclaw/experiments/medium-memory-prototype/
+  medium_memory.metta
+  medium_memory.py
+  tests/
+\end{verbatim}
+
+\section{API design}
+
+The first API should be deliberately small.
+
+\subsection{Write API}
+
+\begin{verbatim}
+(mm-append $atom)
+(mm-append-cluster $cluster)
+(mm-record-episode $episode-id $cluster)
+\end{verbatim}
+
+Expected behavior:
+\begin{enumerate}
+  \item Validate that the atom is parseable as MeTTa syntax.
+  \item Reject atoms above a configured size limit.
+  \item Append with a timestamp comment or explicit \texttt{AtTime} atom.
+  \item Return a success/failure status that can be fed back into the loop.
+\end{enumerate}
+
+\subsection{Read API}
+
+\begin{verbatim}
+(mm-tail $max-chars)
+(mm-query-type $type $limit)
+(mm-query-about $entity $limit)
+(mm-query-status $status $limit)
+(mm-query-id $id)
+\end{verbatim}
+
+The first implementation can use simple text scanning.  Later versions can load the
+file into an AtomSpace or maintain derived indexes.
+
+\subsection{Distillation API}
+
+\begin{verbatim}
+(mm-candidates-for-distill $older-than $limit)
+(mm-mark-distilled $id $destination)
+(mm-export-summary $ids)
+\end{verbatim}
+
+Distillation should not delete records initially.  It should mark them as distilled
+and link to the destination: ChromaDB memory id, project Markdown file, Git commit,
+or formalization note.
+
+\section{Prompt integration}
+
+The prompt should not include the full \texttt{MM} store.  It should include a bounded
+selection:
+\begin{enumerate}
+  \item Active commitments involving Ben or the current project.
+  \item Active open questions about the current project or agent design.
+  \item Recent episodes relevant to the current message.
+  \item Boundaries relevant to proposed actions.
+  \item Recent failed or surprising observations.
+\end{enumerate}
+
+A possible prompt block:
+\begin{verbatim}
+MEDIUM_MEMORY_ACTIVE:
+- Commitment c1: write ASCII LaTeX design plan. Status active.
+- Question q1: how should medium PeTTa memory decay and distill? Status active.
+- Boundary b1: Telegram allowlist constrains send/receive actions. Status active.
+\end{verbatim}
+
+This human-readable summary can be generated from atoms.  The atoms remain the source
+of truth; the summary is a prompt-facing view.
+
+\section{Step-by-step implementation plan}
+
+\begin{milestone}[Step 0: freeze scope]
+Goal: implement a local experimental medium memory that cannot affect external actions
+except by improving prompt context.
+
+Deliverables:
+\begin{itemize}
+  \item A short design note, this file.
+  \item A minimal schema file with example atoms.
+  \item A decision on prototype location: local experiment first, then OmegaClaw Core.
+\end{itemize}
+
+Exit criteria:
+\begin{itemize}
+  \item No new credentials, services, or external write authority are introduced.
+  \item The atom schema fits on one page and has examples.
+\end{itemize}
+\end{milestone}
+
+\begin{milestone}[Step 1: create append-only store]
+Implement \texttt{memory/medium\_memory.metta} and helper functions for appending
+validated atoms.
+
+Tasks:
+\begin{enumerate}
+  \item Add \texttt{src/medium\_memory.py} with \texttt{append\_atom},
+        \texttt{append\_cluster}, \texttt{tail}, and parse-check helpers.
+  \item Add \texttt{src/medium\_memory.metta} wrappers around those Python calls.
+  \item Add limits: maximum atom length, maximum cluster length, maximum tail chars.
+  \item Add tests for successful append, malformed atom rejection, and size rejection.
+\end{enumerate}
+
+Exit criteria:
+\begin{itemize}
+  \item A test can append an episode cluster and read it back.
+  \item Malformed syntax does not corrupt the store.
+  \item Existing OmegaClaw tests still pass or the prototype tests pass in isolation.
+\end{itemize}
+\end{milestone}
+
+\begin{milestone}[Step 2: add simple query functions]
+Implement text-based query functions before attempting full AtomSpace indexing.
+
+Tasks:
+\begin{enumerate}
+  \item Query by id: return all lines mentioning the id.
+  \item Query by type: return clusters beginning with \texttt{(Episode ...)},
+        \texttt{(Commitment ...)}, \texttt{(OpenQuestion ...)}, etc.
+  \item Query by \texttt{About}: return clusters containing \texttt{(About <id> <entity>)}.
+  \item Query by status: active, blocked, resolved, stale, distilled.
+  \item Add bounded output limits for prompt safety.
+\end{enumerate}
+
+Exit criteria:
+\begin{itemize}
+  \item The agent can retrieve active commitments and active questions.
+  \item Queries are deterministic and bounded.
+  \item Query failure returns explicit error feedback, not an empty hallucination trap.
+\end{itemize}
+\end{milestone}
+
+\begin{milestone}[Step 3: prompt-view selection]
+Generate a compact prompt-facing medium-memory view.
+
+Tasks:
+\begin{enumerate}
+  \item Add \texttt{getMediumMemoryContext} in MeTTa or Python.
+  \item Select active commitments, active questions, relevant boundaries, and recent
+        high-value episodes.
+  \item Insert the resulting bounded text into \texttt{getContext} after history or
+        before history.
+  \item Add a config knob: \texttt{mediumMemoryMaxContextChars}.
+  \item Default the feature off until tests pass; then enable for ProtomegaTron only.
+\end{enumerate}
+
+Exit criteria:
+\begin{itemize}
+  \item A controlled mock run shows the prompt contains selected \texttt{MM} facts.
+  \item Idle/no-input loops still do not trigger backend calls.
+  \item Prompt size remains bounded and observable in logs.
+\end{itemize}
+\end{milestone}
+
+\begin{milestone}[Step 4: selective extraction protocol]
+Teach ProtomegaTron when to write medium-memory atoms.
+
+Tasks:
+\begin{enumerate}
+  \item Add prompt guidance: write \texttt{MM} atoms only for commitments, open
+        questions, decisions, hypotheses, important observations, and boundaries.
+  \item Add a skill such as \texttt{medium-remember} that appends a validated cluster.
+  \item Create examples for common cases: Ben request, completed artifact, blocker,
+        design hypothesis, decision, stale belief correction.
+  \item Add tests using the mock LLM or deterministic helper outputs.
+\end{enumerate}
+
+Exit criteria:
+\begin{itemize}
+  \item A fresh Ben request creates an episode and commitment cluster.
+  \item A completion update marks the commitment resolved and links an artifact.
+  \item Routine greetings do not create medium-memory atoms unless they establish
+        a durable fact or task.
+\end{itemize}
+\end{milestone}
+
+\begin{milestone}[Step 5: distillation]
+Add a non-destructive distillation pass.
+
+Tasks:
+\begin{enumerate}
+  \item Select old resolved commitments and stale questions as candidates.
+  \item Summarize candidates into a ChromaDB \texttt{remember} string or project
+        Markdown entry, with provenance links.
+  \item Mark source atoms as distilled but do not delete them.
+  \item Add a report command showing what would be distilled before writing.
+\end{enumerate}
+
+Exit criteria:
+\begin{itemize}
+  \item Distillation can be run manually and reviewed.
+  \item The ChromaDB memory or project record links back to source atom ids.
+  \item No atom is deleted in version 1.
+\end{itemize}
+\end{milestone}
+
+\begin{milestone}[Step 6: richer PeTTa/MeTTa reasoning]
+After the file-backed store is stable, load selected clusters into a MeTTa reasoning
+context for consistency checks and simple inference.
+
+Tasks:
+\begin{enumerate}
+  \item Load active question and commitment atoms into a temporary AtomSpace.
+  \item Add rules for detecting contradictions, e.g. active and resolved status on
+        the same id.
+  \item Add rules for surfacing overdue or blocked commitments.
+  \item Add rules linking episodes, artifacts, and formalization notes.
+\end{enumerate}
+
+Exit criteria:
+\begin{itemize}
+  \item A test detects inconsistent statuses.
+  \item A test retrieves all active commitments about a target project.
+  \item The reasoning layer remains optional; basic query still works without it.
+\end{itemize}
+\end{milestone}
+
+\section{Validation plan}
+
+\subsection{Unit tests}
+
+Minimum tests:
+\begin{enumerate}
+  \item Append valid atom cluster.
+  \item Reject malformed atom.
+  \item Reject oversized atom.
+  \item Query by id.
+  \item Query by type.
+  \item Query by about-entity.
+  \item Query by status.
+  \item Generate bounded prompt context.
+\end{enumerate}
+
+\subsection{Integration tests}
+
+Use mock channels and mock providers first:
+\begin{enumerate}
+  \item Simulate a Ben request.
+  \item Confirm an episode and commitment cluster are added.
+  \item Simulate completion.
+  \item Confirm the commitment status changes to resolved and links an artifact.
+  \item Confirm prompt context includes the active item before completion and omits
+        or compresses it after completion.
+\end{enumerate}
+
+\subsection{Live supervised smoke}
+
+Only after mock tests pass:
+\begin{enumerate}
+  \item Run ProtomegaTron in supervised Telegram mode.
+  \item Send one explicit memory-worthy request.
+  \item Confirm the reply is concise and the medium-memory atom cluster is correct.
+  \item Confirm no repeated idle backend calls occur.
+  \item Stop or leave running only under the already-approved supervision policy.
+\end{enumerate}
+
+\section{Failure modes and mitigations}
+
+\begin{risk}[Schema sprawl]
+Too many predicates make memory less useful.
+Mitigation: keep version 1 to episode, entity, commitment, question, hypothesis,
+boundary, artifact, provenance, status, and about-links.
+\end{risk}
+
+\begin{risk}[False formality]
+Bad atoms can look authoritative.
+Mitigation: require provenance and confidence/status fields for interpretive atoms.
+\end{risk}
+
+\begin{risk}[Prompt bloat]
+A growing medium memory could overwhelm context.
+Mitigation: bounded prompt views, not full-store injection.
+\end{risk}
+
+\begin{risk}[Write amplification]
+If every turn writes atoms, the store becomes noisy.
+Mitigation: selective atomization guidance and tests that routine chatter writes nothing.
+\end{risk}
+
+\begin{risk}[Stale commitments]
+Resolved or obsolete atoms may keep resurfacing.
+Mitigation: explicit statuses and distillation markers.
+\end{risk}
+
+\section{Recommended first engineering patch}
+
+The smallest useful patch is:
+\begin{enumerate}
+  \item Add \texttt{src/medium\_memory.py} with append, tail, and simple query.
+  \item Add \texttt{src/medium\_memory.metta} exposing \texttt{medium-remember},
+        \texttt{medium-query}, and \texttt{medium-active}.
+  \item Add a config flag \texttt{enableMediumMemory} defaulting to false.
+  \item Add tests using a temporary medium-memory file.
+  \item Enable the feature only in the ProtomegaTron local wrapper after tests pass.
+\end{enumerate}
+
+This patch creates value without requiring a new database, new credentials, a new
+service, or a global change in OmegaClaw behavior.
+
+\section{Open design questions}
+
+\begin{enumerate}
+  \item Should \texttt{MM} be upstreamed into OmegaClaw Core after the local prototype,
+        or remain ProtomegaTron-specific until the ontology stabilizes?
+  \item Should the first query implementation remain text-based, or should it load the
+        atom log into PeTTa on every query despite possible latency?
+  \item What is the right decay policy: age-based, status-based, attention-based, or
+        explicit distillation only?
+  \item Should Hyperseed formalization notes be generated from \texttt{MM} atoms as a
+        semi-automatic paper-writing substrate?
+\end{enumerate}
+
+\end{document}

@@ -21,6 +21,7 @@ library at `library/hyperseed-v2/` on the research workstation, not vendored her
 - `papers/0001-orientation/hyperseed_orientation.pdf`
 - `papers/0002-protomegatron-agent-loop/protomegatron_agent_loop.tex`
 - `papers/0002-protomegatron-agent-loop/protomegatron_agent_loop.pdf`
+- `papers/0003-medium-petta-memory-plan/medium_petta_memory_plan.tex`
 
 ## Build
 
