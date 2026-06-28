@@ -1,0 +1,530 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{designprinciple}{Design Principle}
+\newtheorem{example}{Example}
+
+\title{OmegaSim/OmegaHive Strange-Attractor Tuning:\\
+A Hyperseed-Dynamical Formalization}
+\author{OmegaClaw / ZeroBot working notes for Ben Goertzel}
+\date{2026-06-28}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note formalizes a useful mathematical frame for constructing and tuning
+OmegaSim/OmegaHive-style simulations so that they can explore complex bounded
+nonlinear dynamics, including operational strange-attractor regimes.  The core
+idea is to model hives as delayed, coupled, dissipative nonlinear systems; to
+express tuning through dimensionless control ratios; to prove what follows from
+well-posedness, boundedness, contraction, and delay-instability arguments; and to
+translate the resulting theory into concrete simulation recommendations.  The
+claims here are deliberately split into theorems, conjectures, operational
+criteria, and implementation suggestions.
+\end{abstract}
+
+\section{Provenance and aim}
+
+This note responds to Ben Goertzel's 2026-06-28 request for a rigorous
+mathematical formalization of the ``useful frame'' proposed for tuning one-hive
+and OmegaHive-style simulations toward complex strange-attractor dynamics.  The
+requested steps are:
+\begin{enumerate}
+  \item formalize concepts bridging Hyperseed and nonlinear dynamics;
+  \item state and prove general-purpose theorems applicable across agent hives;
+  \item specialize these results to OmegaHive1/OmegaSim-style simulations;
+  \item give theory-motivated instructions for the Codex/OmegaSim simulation
+        agent.
+\end{enumerate}
+
+The purpose is not to prove that a given current simulation has a strange
+attractor.  Rather, it is to identify mathematically meaningful design knobs and
+verification gates so that such a claim can later become evidence-bearing.
+
+\section{S1. Concepts bridging Hyperseed and nonlinear dynamics}
+
+\subsection{Hyperseed event schema as a state observable}
+
+\begin{definition}[Hyperseed process event]
+A Hyperseed-relevant process event is a typed record
+\[
+  e = \langle \iota, \tau, A, C, R, P, \Theta, \nu \rangle
+\]
+where $\iota$ is identity, $\tau$ time, $A$ the active agents or sub-processes,
+$C$ context, $R$ realized relation or result, $P$ provenance, $\Theta$ an
+interpretive type assignment, and $\nu$ uncertainty/truth-value metadata.
+\end{definition}
+
+\begin{definition}[Hive observable]
+A hive observable is a map
+\[
+  O : E_{\le t} \to X \subseteq \mathbb R^n
+\]
+from a finite or filtered history of Hyperseed process events to a numerical
+state vector.  Components may include agent activation, resource load, attention,
+coordination phase, memory pressure, trust, artifact quality, task backlog,
+message volume, or semantic diversity.
+\end{definition}
+
+\begin{definition}[Scrutable reduction]
+A reduction from Hyperseed events to dynamical state is scrutable when each
+coordinate $x_i$ of $x=O(E)$ has: (i) a declared meaning, (ii) a measurement rule,
+(iii) provenance to events or logs, and (iv) an uncertainty model.  Unscrutable
+coordinates may be useful for machine learning, but should not carry ontological
+interpretation without an additional explanation layer.
+\end{definition}
+
+\subsection{Delayed agent-hive dynamics}
+
+Let $x(t)\in X\subseteq\mathbb R^n$ be a numerical hive state derived from the
+observable map above.  Let the delayed history segment be
+\[
+  x_t(\theta)=x(t+\theta),\qquad \theta\in[-\tau,0],
+\]
+where $\tau\ge0$ is a maximum communication, reaction, or memory delay.
+
+\begin{definition}[Continuous delayed hive system]
+A continuous delayed hive system is a retarded functional differential equation
+\[
+  \dot x(t)=F(x_t,u(t),\eta(t);\theta),
+\]
+where $F:C([ -\tau,0],X)\times U\times E\to\mathbb R^n$, $u(t)$ is a controllable
+intervention/tuning signal, $\eta(t)$ is bounded environmental or stochastic
+forcing, and $\theta$ denotes fixed parameters.
+\end{definition}
+
+\begin{definition}[Discrete delayed hive simulation]
+A discrete delayed hive simulation is a lifted map
+\[
+  x_{k+1}=G(x_k,x_{k-1},\ldots,x_{k-m},u_k,\eta_k;\theta),
+\]
+with lifted state
+\[
+  z_k=(x_k,x_{k-1},\ldots,x_{k-m})\in X^{m+1}.
+\]
+Equivalently,
+\[
+  z_{k+1}=\widehat G(z_k,u_k,\eta_k;\theta)
+  =(G(x_k,\ldots,x_{k-m},u_k,\eta_k),x_k,\ldots,x_{k-m+1}).
+\]
+\end{definition}
+
+\subsection{Dimensionless tuning coordinates}
+
+The raw constants of a hive simulation are usually too numerous to sweep
+intelligently.  We therefore define dimensionless ratios.
+
+\begin{definition}[Dimensionless hive control ratios]
+For a delayed nonlinear hive model, define:
+\[
+  \rho = g\,r(A),
+  \qquad
+  \delta = \frac{\tau}{T_{\rm relax}},
+  \qquad
+  \mu = \frac{T_{\rm memory}}{T_{\rm decision}},
+\]
+\[
+  \kappa = \frac{\|A_{\rm cross}\|}{\|A_{\rm within}\|},
+  \qquad
+  \nu = \frac{\sigma_\eta}{\|F_0\|+\epsilon},
+\]
+where $g$ is a typical nonlinear response gain, $r(A)$ is the spectral radius of
+an interaction matrix or linearized coupling operator, $T_{\rm relax}$ is local
+relaxation time, $T_{\rm memory}$ memory decay time, $T_{\rm decision}$ update
+time, $A_{\rm cross}$ and $A_{\rm within}$ are cross-hive and within-hive
+couplings, and $\sigma_\eta$ is noise magnitude.
+\end{definition}
+
+Interpretation: $\rho$ measures feedback amplification, $\delta$ delay pressure,
+$\mu$ persistence, $\kappa$ modular leakage, and $\nu$ noise-to-drift.  These are
+not universal constants; they are organizing coordinates for phase diagrams.
+
+\begin{definition}[Operational strange-attractor regime]
+A parameter region $\mathcal P$ is an operational strange-attractor regime for a
+simulation if, for a specified observable $O$ and lifted state $z$, the following
+hold robustly over validation runs:
+\begin{enumerate}
+  \item trajectories are ultimately bounded and not merely saturating at hard
+        numerical limits;
+  \item the largest finite-time Lyapunov estimate is positive under controlled
+        perturbations of initial histories;
+  \item long-run statistics are stable under timestep/refinement and seed checks;
+  \item recurrence plots, broadband spectra, or reconstructed dimensions indicate
+        non-periodic structured recurrence rather than white noise.
+\end{enumerate}
+This is an empirical criterion.  It is weaker than a proof of a mathematical
+strange attractor.
+\end{definition}
+
+\section{S2. General theorems}
+
+\subsection{Well-posedness and boundedness}
+
+\begin{theorem}[Local well-posedness for delayed hives]
+Assume $F$ is locally Lipschitz in the history variable $x_t$, uniformly over
+bounded $u$ and $\eta$.  Then for every continuous initial history
+$\phi\in C([ -\tau,0],X)$ there exists a unique maximal solution.
+\end{theorem}
+
+\begin{proof}
+This is the Picard--Lindelof theorem for retarded functional differential
+equations.  The history space $C([ -\tau,0],X)$ is a Banach space under the sup
+norm.  Local Lipschitz continuity gives a contraction on a sufficiently short
+interval.  Repetition extends the solution until it exits every bounded subset of
+the state space.
+\end{proof}
+
+\begin{theorem}[Ultimate boundedness from dissipativity]
+Suppose there is a radially unbounded $C^1$ function
+$V:\mathbb R^n\to\mathbb R_{\ge0}$ and constants $a,b>0$ such that along all
+trajectories with bounded input magnitude $M$,
+\[
+  \dot V(x(t))\le -aV(x(t))+bM.
+\]
+Then
+\[
+  \limsup_{t\to\infty}V(x(t))\le \frac{bM}{a}.
+\]
+\end{theorem}
+
+\begin{proof}
+By Gronwall's inequality,
+\[
+  V(t)\le e^{-at}V(0)+\frac{bM}{a}(1-e^{-at}).
+\]
+Taking $t\to\infty$ gives the result.
+\end{proof}
+
+\begin{corollary}[Attractor-talk requires a bounded regime]
+A simulation run that diverges, explodes numerically, or only bounces against
+uninterpreted clipping bounds does not by itself justify talk of an attractor.
+Dissipativity or empirically verified boundedness is a prerequisite diagnostic.
+\end{corollary}
+
+\begin{theorem}[Forward-invariant box for delayed maps]
+For
+\[
+  x_{k+1}=G(x_k,\ldots,x_{k-m},u_k),
+\]
+assume there is a compact set $K\subseteq\mathbb R^n$ such that
+\[
+  G(K^{m+1},U)\subseteq K.
+\]
+Then $K^{m+1}$ is forward invariant under the lifted map $\widehat G$.
+\end{theorem}
+
+\begin{proof}
+If $z_k=(x_k,\ldots,x_{k-m})\in K^{m+1}$, then each delayed component lies in $K$.
+By assumption the new component $x_{k+1}=G(\cdots)$ lies in $K$.  The remaining
+components of $z_{k+1}$ are shifted copies of previous components in $K$.
+Therefore $z_{k+1}\in K^{m+1}$.
+\end{proof}
+
+\subsection{Contraction: when complex dynamics is impossible}
+
+\begin{theorem}[Delayed-map contraction implies a unique attracting history]
+Let $\widehat G:K^{m+1}\to K^{m+1}$ be the lifted delayed map on compact convex
+$K^{m+1}$, and suppose it is a contraction with Lipschitz constant $L<1$ under
+some norm.  Then there is a unique fixed lifted state $z^\ast$, and every
+trajectory converges to $z^\ast$.
+\end{theorem}
+
+\begin{proof}
+This is Banach's fixed-point theorem applied to $\widehat G$ on the complete
+metric space $K^{m+1}$.  Iterates of a contraction converge to the unique fixed
+point.
+\end{proof}
+
+\begin{corollary}[Low-gain hives cannot be chaotic]
+If the effective lifted update of a hive simulation is contractive, then it cannot
+have a strange attractor, quasiperiodic orbit, or sustained multi-cycle behavior.
+Therefore one route toward complex dynamics is to increase gain, delay,
+cross-coupling, or memory persistence until the lifted system leaves the
+contraction regime while preserving boundedness.
+\end{corollary}
+
+\begin{proposition}[A practical Lipschitz bound]
+Suppose
+\[
+  G(x_k,\ldots,x_{k-m})=S\left(B+\sum_{j=0}^m A_j x_{k-j}\right)
+\]
+where $S$ is componentwise Lipschitz with constant $s$ and the lifted norm is
+chosen so that the shift has unit weight.  A sufficient condition for contraction
+is that the induced lifted Lipschitz constant of the companion map is less than
+one; in particular the response gain $s$ and delayed coupling norms $\|A_j\|$
+provide an upper bound.  Thus the product ``gain times coupling'' is the first
+order control axis.
+\end{proposition}
+
+\begin{proof}
+The non-shift component changes by at most
+$s\sum_j\|A_j\|\,\|\Delta x_{k-j}\|$ under the chosen induced norm, while the shift
+components copy previous differences.  Weighted norms can penalize older delay
+coordinates so that the whole companion map is contractive when the response and
+coupling norms are sufficiently small.  This proves the sufficient, not necessary,
+condition.
+\end{proof}
+
+\subsection{Delay-induced oscillatory instability}
+
+\begin{theorem}[Scalar delay Hopf boundary]
+Consider
+\[
+  \dot x(t)=-a x(t)+b x(t-\tau),\qquad a>0.
+\]
+The characteristic equation is
+\[
+  \lambda+a-b e^{-\lambda\tau}=0.
+\]
+A Hopf crossing candidate satisfies $\lambda=i\omega$, hence
+\[
+  a=b\cos(\omega\tau),\qquad
+  \omega=-b\sin(\omega\tau).
+\]
+Therefore delayed feedback can destabilize an equilibrium through an oscillatory
+root crossing even when the local undelayed term is dissipative.
+\end{theorem}
+
+\begin{proof}
+Substitute $x(t)=e^{\lambda t}$ to obtain the characteristic equation.  At an
+oscillatory stability boundary $\lambda=i\omega$.  Separating real and imaginary
+parts gives the two displayed equations.
+\end{proof}
+
+\begin{corollary}[Why $\delta=\tau/T_{\rm relax}$ matters]
+The ratio of communication/memory delay to local relaxation time is a genuine
+bifurcation coordinate, not just an implementation detail.  Increasing delay can
+convert damped consensus into oscillation and, in higher-dimensional nonlinear
+systems, into period-doubling or more complex regimes.
+\end{corollary}
+
+\subsection{Existence of compact attractors}
+
+\begin{theorem}[Compact global attractor under dissipative smoothing]
+For a continuous delayed hive semiflow on $C([ -\tau,0],X)$, assume: (i) unique
+forward solutions exist, (ii) solutions enter a bounded absorbing set, and (iii)
+the semiflow is asymptotically compact.  Then there is a compact global attractor
+$\mathcal A$ attracting all bounded sets.
+\end{theorem}
+
+\begin{proof}
+This is the standard global-attractor theorem for continuous semiflows: a bounded
+absorbing set plus asymptotic compactness implies the omega-limit of the absorbing
+set is nonempty, compact, invariant, and attracts every bounded set.
+\end{proof}
+
+\begin{corollary}[Delay makes rigor harder]
+Delayed systems are infinite-dimensional in history space.  Compactness and low
+fractal dimension are not automatic.  OmegaSim should therefore treat finite
+state-history simulations as approximations and validate attractor claims under
+history-length and timestep variation.
+\end{corollary}
+
+\subsection{What remains conjectural}
+
+\begin{conjecture}[Useful complex regime window]
+For many OmegaHive-like systems there is a practical window between contraction
+and blow-up/saturation, characterized roughly by $\rho\approx1$, non-negligible
+$\delta$, moderate $\mu$, and controlled $\kappa$, in which bounded complex
+recurrence is most likely.
+\end{conjecture}
+
+This is not a theorem because it depends on nonlinear form, topology, stochastic
+forcing, and measurement.  It is a theory-guided search heuristic.
+
+\begin{conjecture}[Hyperseed-scrutable complexity]
+The most scientifically useful OmegaSim regimes will be those where the
+low-dimensional observables show complex recurrence while Hyperseed event records
+remain interpretable enough to explain which agent roles, memories, artifacts,
+and feedback loops generate the recurrence.
+\end{conjecture}
+
+\section{S3. Specialization to OmegaHive1 / OmegaSim}
+
+Since the exact OmegaHive1 simulation state is still evolving, define a generic
+OmegaHive1 state vector as
+\[
+  x_k=(a_k,r_k,m_k,q_k,h_k,c_k,p_k)\in\mathbb R^n,
+\]
+where $a$ is agent activation/attention, $r$ resource or compute load, $m$ memory
+persistence/pressure, $q$ artifact quality or progress, $h$ semantic diversity,
+$c$ coordination/coherence, and $p$ task pressure.  The components may be vectors
+indexed by agents, roles, artifacts, or sub-hives.
+
+A useful discrete OmegaHive1 skeleton is
+\[
+  x_{k+1}=S\left(W_0x_k+W_1x_{k-d}+W_m M_k+B u_k+\xi_k\right)-D x_k,
+\]
+with memory update
+\[
+  M_{k+1}=(1-\alpha)M_k+\alpha H(x_k,\text{events}_k),
+\]
+where $S$ is saturating nonlinear response, $W_0$ present-time coupling, $W_1$
+delayed coupling, $M_k$ memory state, $u_k$ interventions, $\xi_k$ controlled
+noise, and $D$ local decay.
+
+\begin{proposition}[OmegaHive1 boundedness by saturation and resource accounting]
+If each component of $S$ maps into a compact interval $K_i$ and resource/memory
+updates are either projected into compact budgets or dissipative in the sense of
+the boundedness theorem, then the lifted OmegaHive1 history has a compact forward
+invariant set.
+\end{proposition}
+
+\begin{proof}
+The saturating components satisfy the invariant-box theorem.  Resource and memory
+coordinates either remain in explicit compact budgets or satisfy dissipative
+bounds.  The product of these compact coordinate sets is compact and invariant
+under the lifted delayed map.
+\end{proof}
+
+\begin{proposition}[OmegaHive1 contraction baseline]
+If the fitted or designed Lipschitz constant of the lifted OmegaHive1 update is
+below one, the system will converge to a unique stable regime and should not be
+expected to exhibit strange-attractor-like dynamics.
+\end{proposition}
+
+\begin{proof}
+Immediate from the delayed-map contraction theorem.
+\end{proof}
+
+\begin{proposition}[OmegaHive1 delay/gain destabilization target]
+Let $x^\ast$ be an equilibrium of a smooth deterministic OmegaHive1 skeleton.
+Linearizing gives
+\[
+  \delta x_{k+1}=J_0\delta x_k+J_1\delta x_{k-d}+J_m\delta M_k.
+\]
+The stability of $x^\ast$ is determined by the eigenvalues of the lifted companion
+Jacobian.  Parameter sweeps that increase response gain, delayed coupling, or
+memory persistence move these eigenvalues toward or beyond the unit circle.
+\end{proposition}
+
+\begin{proof}
+Linearization of the lifted map gives an ordinary finite-dimensional map on
+history and memory coordinates.  Local discrete-time stability is equivalent to
+all eigenvalues of the companion Jacobian lying inside the unit disk.  Increasing
+the norms of coupling and persistence terms changes this Jacobian continuously;
+instability occurs when eigenvalues cross the unit circle.
+\end{proof}
+
+\subsection{OmegaHive1 order parameters}
+
+For diagnosis, define low-dimensional order parameters:
+\[
+  R_k=\left|\frac{1}{N}\sum_{j=1}^N e^{i\phi_{j,k}}\right|
+  \quad\text{(coordination/synchrony)},
+\]
+\[
+  H_k=-\sum_a p_k(a)\log p_k(a)
+  \quad\text{(behavioral or semantic diversity)},
+\]
+\[
+  C_k=x_k^\top L x_k
+  \quad\text{(network tension across graph Laplacian $L$)},
+\]
+\[
+  Q_k=\text{artifact-progress or quality metric},
+  \qquad
+  B_k=\text{resource/backlog pressure}.
+\]
+Analyze trajectories in $(R,H,C,Q,B)$ as well as in raw state space.
+
+\begin{designprinciple}[Do not search for chaos in raw logs first]
+Raw agent traces are too high-dimensional and semantically mixed.  First define
+scrutable observables and order parameters, then test whether the induced
+observable dynamics has bounded recurrence, sensitivity, and nonperiodicity.
+\end{designprinciple}
+
+\section{S4. Theory-motivated OmegaSim instructions}
+
+\subsection{Implementation targets}
+
+\begin{enumerate}
+  \item Implement the lifted delayed state $z_k=(x_k,\ldots,x_{k-m},M_k)$
+        explicitly.  Do not hide delays in ad hoc buffers without logging them.
+  \item Define a compact state budget.  Use saturating nonlinearities,
+        normalization, or explicit resource conservation so runs cannot be
+        mistaken for attractors while diverging.
+  \item Expose the control ratios $\rho,\delta,\mu,\kappa,\nu$ as primary sweep
+        parameters.  Raw constants should be derived from these ratios where
+        possible.
+  \item Compute the fixed point or empirical baseline regime at low gain.  Use it
+        as the contraction/control case.
+  \item Linearize the deterministic skeleton around equilibria or recurrent
+        regimes.  Track eigenvalues of the lifted companion Jacobian as parameters
+        change.
+  \item Run sweeps that cross from $\rho<1$ to $\rho>1$, from $\delta\approx0$ to
+        $\delta=O(1)$, and from weak to moderate memory persistence $\mu$.
+  \item Near transitions, run hysteresis sweeps upward and downward in gain/delay
+        to detect multistability and crises.
+  \item Estimate finite-time Lyapunov exponents with paired trajectories, periodic
+        renormalization, multiple perturbation directions, and matched noise
+        paths.
+  \item Add null controls: no-delay, linearized nonlinearity, degree-preserving
+        rewiring, delay-shuffled, phase-randomized surrogate, and frozen-noise
+        paired comparisons.
+  \item Classify each region as fixed point, limit cycle, quasiperiodic,
+        candidate chaotic, transient chaotic, noise-driven irregular, divergent,
+        or trivial saturation.
+\end{enumerate}
+
+\subsection{Specific suggested sweep grid}
+
+A first OmegaSim phase diagram should sweep:
+\[
+  \rho\in[0.2,3.0],\qquad
+  \delta\in\{0,0.1,0.3,1,3\},
+\]
+\[
+  \mu\in\{0.5,1,3,10\},\qquad
+  \kappa\in\{0,0.05,0.2,0.8\},
+  \qquad
+  \nu\in\{0,10^{-3},10^{-2},10^{-1}\}.
+\]
+The exact ranges should be rescaled after measuring the relaxation time and
+state norms of the implemented simulator.
+
+\subsection{Acceptance criteria for a candidate strange-attractor region}
+
+A region should only be reported as a candidate complex/strange-attractor regime
+if it passes all of these gates:
+\begin{enumerate}
+  \item boundedness gate: norms and resource variables remain in a nontrivial
+        compact range;
+  \item refinement gate: the qualitative regime survives smaller timestep or
+        longer history resolution;
+  \item perturbation gate: positive finite-time Lyapunov estimate under fixed
+        noise path;
+  \item surrogate gate: behavior differs from no-delay, linearized, and
+        phase-randomized controls;
+  \item semantic gate: Hyperseed event records identify plausible feedback loops
+        generating the dynamics;
+  \item task gate: the regime is related to useful simulation behavior, not just
+        aesthetic irregularity.
+\end{enumerate}
+
+\section{Conclusion}
+
+The rigorous core is modest but useful.  If the hive update is ill-posed,
+unbounded, or contractive, complex attractor claims are unsupported or impossible.
+If the system is well-posed, bounded, non-contractive, delayed, and nonlinear,
+then gain, delay, memory persistence, modular leakage, and noise become principled
+coordinates for exploring bifurcations and candidate strange-attractor regimes.
+
+The practical OmegaSim instruction is therefore: build the simulator so these
+coordinates are explicit; enforce boundedness; sweep through the contraction
+boundary; test delay-induced instability; and only call a regime
+strange-attractor-like after Lyapunov, recurrence, surrogate, refinement, and
+semantic-provenance checks pass.
+
+\end{document}

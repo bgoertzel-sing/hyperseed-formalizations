@@ -44,6 +44,21 @@ PREVIEWS = {
         '',
         'Next steps: define atom schema; encode fresh-message and idle/no-input episodes; prototype medium-memory.metta API; compare against supervised OmegaClaw logs.',
     ],
+
+    Path('papers/0004-omegasim-strange-attractor-tuning/omegasim_strange_attractor_tuning.pdf'): [
+        'OmegaSim/OmegaHive Strange-Attractor Tuning',
+        'A Hyperseed-Dynamical Formalization',
+        '2026-06-28',
+        '',
+        'This generated preview accompanies the LaTeX source:',
+        'papers/0004-omegasim-strange-attractor-tuning/omegasim_strange_attractor_tuning.tex',
+        '',
+        'Core frame: delayed, coupled, dissipative nonlinear systems with dimensionless tuning axes rho, delta, mu, kappa, and nu.',
+        '',
+        'Results: well-posedness under Lipschitz delayed interactions; boundedness from dissipativity; invariant boxes for delayed maps; contraction implies unique attracting history/no chaos; scalar delay Hopf boundary; compact-attractor assumptions.',
+        '',
+        'OmegaSim recommendations: implement lifted delayed state; enforce bounded budgets; sweep through contraction boundary; linearize the deterministic skeleton; track companion eigenvalues; estimate Lyapunov exponents with matched noise; require boundedness, refinement, surrogate, semantic, and task gates before calling a regime strange-attractor-like.',
+    ],
 }
 
 def esc(s):
