@@ -24,6 +24,8 @@ library at `library/hyperseed-v2/` on the research workstation, not vendored her
 - `papers/0003-medium-petta-memory-plan/medium_petta_memory_plan.tex`
 - `papers/0004-omegasim-strange-attractor-tuning/omegasim_strange_attractor_tuning.tex`
 - `papers/0004-omegasim-strange-attractor-tuning/omegasim_strange_attractor_tuning.pdf`
+- `papers/0006-plain-metta-rholang-spec-ir/plain_metta_rholang_spec_ir.tex`
+- `papers/0006-plain-metta-rholang-spec-ir/plain_metta_rholang_spec_ir.pdf`
 
 ## Build
 
