@@ -19,33 +19,36 @@ attention allocation, urgency, and resource commitment.
 \begin{definition}[Cognitive appraisal response]
 The componentwise response is a logistic (sigmoid) function
 \[
-  \sigma_\alpha(x;\theta,\beta)=\frac{1}{1+\exp(-\alpha(x-\theta))},
+  \sigma_\alpha(x;\theta)=\frac{1}{1+\exp(-\alpha(x-\theta))},
 \]
 where $\alpha>0$ is the appraisal steepness (sensitivity to deviations from
-threshold $\theta$) and $\beta$ is the saturation level (asymptotic maximum
-response).  The effective response in the hive update replaces $S(\cdot)$ with
+threshold $\theta$).  The amplitude $\beta>0$ is applied outside the unit
+sigmoid as the saturation level (asymptotic maximum response).  The effective
+response in the hive update replaces $S(\cdot)$ with
 \[
-  S_i(\cdot)\;\mapsto\; \beta_i\,\sigma_{\alpha_i}(w_i^\top x_k + b_i;\theta_i,\beta_i),
+  S_i(\cdot)\;\mapsto\; \beta_i\,\sigma_{\alpha_i}(w_i^\top x_k + b_i;\theta_i),
 \]
 giving each component $i$ its own threshold, steepness, and amplitude.
 \end{definition}
 
-\begin{proposition}[Appraisal threshold as bifurcation coordinate]
-The appraisal steepness $\alpha$ acts as a gain parameter: low $\alpha$ yields
-near-linear, contractive dynamics; high $\alpha$ creates a switching regime with
-sharp transitions.  The threshold $\theta$ shifts the operating point.  Together
-$(\alpha,\theta)$ provide a two-parameter family of bifurcation diagrams that
-interpolates between smooth contraction and thresholded multi-state dynamics.
-\end{proposition}
+\begin{observation}[Appraisal threshold as bifurcation coordinate]
+The appraisal steepness $\alpha$ acts as a gain parameter: sufficiently low
+$\alpha$ suppresses sensitivity to deviations from threshold, while high
+$\alpha$ creates a switching-like regime with sharp transitions.  The threshold
+$\theta$ shifts the operating point.  Together $(\alpha,\theta)$ define a
+natural two-parameter sweep from low-gain response to thresholded multi-state
+dynamics.  Whether an actual bifurcation occurs depends on the surrounding hive
+update map and must be checked numerically in each experiment.
+\end{observation}
 
-\begin{proof}
-For $\alpha\to 0$, $\sigma_\alpha$ approaches a constant linear function with
-slope $\beta/4$, recovering the low-gain contractive regime.  For $\alpha\to\infty$,
-$\sigma_\alpha$ approaches a Heaviside step, introducing discontinuity-class
-bifurcations.  Intermediate $\alpha$ produces smooth but steep transitions whose
-Jacobian norm scales as $\alpha\beta/4$ at the threshold, directly controlling
-whether the lifted map is contractive.
-\end{proof}
+\begin{justification}
+For $\alpha\to 0$, the unit sigmoid approaches the constant $1/2$ and its
+maximum derivative tends to zero.  For finite $\alpha$, the response
+$\beta\sigma_\alpha$ has maximum derivative $\alpha\beta/4$ at the threshold.
+For $\alpha\to\infty$, the response approaches a scaled Heaviside step.  Thus
+$\alpha\beta/4$ is a local gain bound for the appraisal nonlinearity, not by
+itself a proof of global contraction or bifurcation.
+\end{justification}
 
 \subsection*{R2. Latent Motivational State with Explicit Dynamics}
 
@@ -149,13 +152,14 @@ pushing the system toward the contractive regime; when prediction is cheap,
 full nonlinear dynamics operate.
 \end{definition}
 
-\begin{proposition}[Cost-induced self-regulation]
-If prediction cost scales with the complexity of the dynamics (e.g.,
-$c_k^{\rm pred}\propto$ local finite-time Lyapunov exponent), then highly
-chaotic regimes automatically incur higher costs, reducing effective gain and
-creating a self-regulating feedback loop.  This provides an intrinsic mechanism
-for bounded complexity without external clipping.
-\end{proposition}
+\begin{designprinciple}[Cost-induced self-regulation]
+If prediction cost is chosen to increase with a measured complexity proxy, such
+as a local finite-time Lyapunov estimate or forecast-error budget, then highly
+chaotic regimes incur higher costs, reducing effective gain and creating a
+self-regulating feedback loop.  This is a proposed design mechanism for bounded
+complexity; the strength and stability of the mechanism must be measured in the
+A7 experiments rather than assumed analytically.
+\end{designprinciple}
 
 \subsection*{R5. Hysteresis and Adaptive Thresholds}
 
@@ -169,25 +173,26 @@ adaptation rate.  This drives each component toward a target operating point,
 implementing homeostatic regulation.
 \end{definition}
 
-\begin{proposition}[Adaptive thresholds create hysteresis]
+\begin{hypothesis}[Adaptive thresholds can create hysteresis]
 When the adaptation rate $\eta_i$ is small but nonzero, the threshold
-$\theta_{i,k}$ tracks the recent activation level.  On upward parameter sweeps
-(increasing gain $\alpha$), the threshold rises to suppress over-activation; on
-downward sweeps, it lowers slowly.  This asymmetric adaptation produces
-hysteresis: the system's state at gain $\alpha$ on the upward sweep differs from
-its state at the same $\alpha$ on the downward sweep.  The hysteresis loop width
-scales as $O(\eta_i / \lambda_{\rm bif})$ where $\lambda_{\rm bif}$ is the
-bifurcation parameter sweep rate.
-\end{proposition}
+$\theta_{i,k}$ tracks the recent activation level with a finite relaxation time.
+On upward parameter sweeps (increasing gain $\alpha$), the threshold may rise to
+suppress over-activation; on downward sweeps, it may lower only after a delay.
+This lag can produce hysteresis: the system's state at gain $\alpha$ on the
+upward sweep may differ from its state at the same $\alpha$ on the downward
+sweep.  The loop width should be reported empirically as a function of the
+adaptation rate $\eta_i$ and the imposed sweep rate $\epsilon$.
+\end{hypothesis}
 
-\begin{proof}
-Let $\bar\theta(\alpha)$ be the quasi-steady threshold satisfying
-$\sigma_{\alpha}(w^\top x^\ast(\alpha,\bar\theta);\bar\theta)=p^\ast$.
-Under slow sweep $\alpha_k=\alpha_0+\epsilon k$, the actual threshold lags:
-$\theta_{k}\approx\bar\theta(\alpha_k)-\frac{\eta_i}{\epsilon}\bar\theta'(\alpha_k)$.
-The correction term is direction-dependent (it changes sign with sweep
-direction), producing a hysteresis gap proportional to $\eta_i/\epsilon$.
-\end{proof}
+\begin{justification}
+Let $\bar\theta(\alpha)$ denote a quasi-steady threshold, when such a branch is
+well defined.  Under a sweep $\alpha_k=\alpha_0+\epsilon k$, the adaptive update
+is a first-order lag rather than instantaneous equilibration.  The sign of the
+lag changes with sweep direction, which is the qualitative source of the
+hysteresis test.  A universal scaling law such as $\eta_i/\epsilon$ is not
+asserted here; the relevant scaling depends on the chosen update convention and
+will be estimated in the proposed sweep.
+\end{justification}
 
 \subsection*{R6. Residual-State Lobe Discovery}
 
