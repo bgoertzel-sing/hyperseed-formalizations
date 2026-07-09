@@ -1,0 +1,404 @@
+% 2026-07-01 OmegaSim Feedback Revision
+% Addresses: cognitive appraisal, latent motivation, semantic/artifact fields,
+% costly prediction, hysteresis, residual-state lobe discovery, linear controls,
+% and experiment families A6--A8.
+
+\section*{Revision Addendum (2026-07-01): Cognitive Appraisal, Residual Lobes, and New Experiment Families}
+
+This addendum responds to the 2026-07-01 feedback on the original note.  It
+preserves all prior material and adds eight substantive extensions.
+
+\subsection*{R1. Logistic Response as Bounded Thresholded Cognitive Appraisal}
+
+The original note used a generic saturating nonlinearity $S$.  We now interpret
+the nonlinear response as a \emph{cognitive appraisal function}: each agent or
+hive component evaluates incoming signals through a bounded, thresholded
+transform---not as arbitrary chaos injection, but as a principled encoding of
+attention allocation, urgency, and resource commitment.
+
+\begin{definition}[Cognitive appraisal response]
+The componentwise response is a logistic (sigmoid) function
+\[
+  \sigma_\alpha(x;\theta,\beta)=\frac{1}{1+\exp(-\alpha(x-\theta))},
+\]
+where $\alpha>0$ is the appraisal steepness (sensitivity to deviations from
+threshold $\theta$) and $\beta$ is the saturation level (asymptotic maximum
+response).  The effective response in the hive update replaces $S(\cdot)$ with
+\[
+  S_i(\cdot)\;\mapsto\; \beta_i\,\sigma_{\alpha_i}(w_i^\top x_k + b_i;\theta_i,\beta_i),
+\]
+giving each component $i$ its own threshold, steepness, and amplitude.
+\end{definition}
+
+\begin{proposition}[Appraisal threshold as bifurcation coordinate]
+The appraisal steepness $\alpha$ acts as a gain parameter: low $\alpha$ yields
+near-linear, contractive dynamics; high $\alpha$ creates a switching regime with
+sharp transitions.  The threshold $\theta$ shifts the operating point.  Together
+$(\alpha,\theta)$ provide a two-parameter family of bifurcation diagrams that
+interpolates between smooth contraction and thresholded multi-state dynamics.
+\end{proposition}
+
+\begin{proof}
+For $\alpha\to 0$, $\sigma_\alpha$ approaches a constant linear function with
+slope $\beta/4$, recovering the low-gain contractive regime.  For $\alpha\to\infty$,
+$\sigma_\alpha$ approaches a Heaviside step, introducing discontinuity-class
+bifurcations.  Intermediate $\alpha$ produces smooth but steep transitions whose
+Jacobian norm scales as $\alpha\beta/4$ at the threshold, directly controlling
+whether the lifted map is contractive.
+\end{proof}
+
+\subsection*{R2. Latent Motivational State with Explicit Dynamics}
+
+\begin{definition}[Latent motivational state]
+Introduce a latent motivational vector $\mu_k\in\mathbb R^p$ with explicit
+dynamics
+\[
+  \mu_{k+1}=(1-\lambda)\mu_k+\lambda\,\Phi(x_k,\mu_k)+\zeta_k,
+\]
+where $\lambda\in(0,1)$ is the motivation update rate, $\Phi$ is a feedback
+function from current hive state and current motivation to updated motivation,
+and $\zeta_k$ is endogenous drive noise.  The motivation $\mu_k$ modulates the
+appraisal thresholds:
+\[
+  \theta_i(\mu_k)=\theta_i^{(0)}+\gamma_i^\top\mu_k,
+\]
+so that motivational state shifts what deviations are attended to.
+\end{definition}
+
+\begin{assumption}[Motivational timescale separation]
+We assume $\lambda\ll 1/T_{\rm decision}$, i.e., motivational state evolves
+slower than the decision update.  This yields a slow--fast system where $x_k$
+is the fast variable and $\mu_k$ is the slow variable, enabling
+singular-perturbation analysis.
+\end{assumption}
+
+\begin{proposition}[Slow motivation induces bifurcation sweeping]
+As $\mu_k$ evolves slowly, the appraisal thresholds $\theta_i(\mu_k)$ drift,
+causing the fast dynamics' bifurcation parameters to sweep.  This can produce
+intermittent visits to multiple attractor lobes, hysteresis across bifurcation
+boundaries, and crisis-induced switching---all driven by internal motivational
+state rather than external forcing.
+\end{proposition}
+
+\subsection*{R3. Separate Semantic and Artifact Fields and Their Coupling}
+
+\begin{definition}[Semantic field]
+The semantic field $s_k\in\mathbb R^{d_s}$ captures the representational content
+flowing through the hive: message semantics, task descriptions, shared memory
+content, and interpretive type assignments.  Its dynamics are
+\[
+  s_{k+1}=\Psi_s(s_k,x_k,\mu_k)+\xi^s_k,
+\]
+where $\Psi_s$ may involve embedding-space operations, semantic similarity
+weighting, and type-dependent routing.
+\end{definition}
+
+\begin{definition}[Artifact field]
+The artifact field $a_k\in\mathbb R^{d_a}$ tracks produced artifacts: code,
+documents, test results, structured outputs.  Its dynamics are
+\[
+  a_{k+1}=\Psi_a(a_k,s_k,x_k,\mu_k)+\xi^a_k,
+\]
+where $\Psi_a$ includes quality evaluation, version tracking, and resource cost
+accounting.
+\end{definition}
+
+\begin{definition}[Field coupling]
+The coupled system replaces the monolithic state $x_k$ with
+\[
+  \tilde x_k=(x_k^{\rm op},s_k,a_k,\mu_k),
+\]
+where $x_k^{\rm op}$ are operational/coordination variables.  The semantic field
+influences operational dynamics through appraisal thresholds $\theta_i(s_k)$,
+and the artifact field feeds back through resource load $r_k=g(a_k)$ and
+quality metrics $q_k=Q(a_k)$.  Bidirectional coupling strength is parameterized
+by $\chi_{sa}$ (semantic$\to$artifact) and $\chi_{as}$ (artifact$\to$semantic).
+\end{definition}
+
+\begin{designprinciple}[Separate fields enable distinct diagnostics]
+Treating $s_k$ and $a_k$ as distinct dynamical fields allows separate Lyapunov
+analysis, attractor characterization, and surrogate controls for each.  Semantic
+complexity without artifact complexity, or vice versa, is diagnostically distinct
+from joint complexity.
+\end{designprinciple}
+
+\subsection*{R4. Costly Prediction and Resource Accounting}
+
+\begin{definition}[Prediction cost]
+Each predictive step---whether by an agent predicting outcomes or by the hive
+forecasting its own state---incurs a resource cost
+\[
+  c_k^{\rm pred}=c_{\rm fixed}+c_{\rm var}\|p_k\|^2,
+\]
+where $p_k$ is the prediction depth or model complexity and $c_{\rm var}>0$.
+Total resource consumption must satisfy
+\[
+  \sum_{i} c_{k,i}^{\rm pred}+c_{k,i}^{\rm act}\le R_{\max},
+\]
+where $R_{\max}$ is the hive-wide resource budget per timestep.
+\end{definition}
+
+\begin{definition}[Resource-constrained dynamics]
+The hive update with resource accounting becomes
+\[
+  x_{k+1}=S\bigl(W_0x_k+W_1x_{k-d}+W_mM_k+B u_k+\xi_k;\,R_{\max}-c_k^{\rm pred}\bigr),
+\]
+where the remaining budget $R_{\max}-c_k^{\rm pred}$ gates the effective
+amplitude of activation.  When prediction costs are high, effective gain drops,
+pushing the system toward the contractive regime; when prediction is cheap,
+full nonlinear dynamics operate.
+\end{definition}
+
+\begin{proposition}[Cost-induced self-regulation]
+If prediction cost scales with the complexity of the dynamics (e.g.,
+$c_k^{\rm pred}\propto$ local finite-time Lyapunov exponent), then highly
+chaotic regimes automatically incur higher costs, reducing effective gain and
+creating a self-regulating feedback loop.  This provides an intrinsic mechanism
+for bounded complexity without external clipping.
+\end{proposition}
+
+\subsection*{R5. Hysteresis and Adaptive Thresholds}
+
+\begin{definition}[Adaptive appraisal thresholds]
+Appraisal thresholds evolve according to
+\[
+  \theta_{i,k+1}=\theta_{i,k}+\eta_i\bigl(\sigma_{\alpha_i}(w_i^\top x_k;\theta_{i,k})-p_i^{\ast}\bigr),
+\]
+where $p_i^{\ast}\in(0,1)$ is a target activation rate and $\eta_i>0$ is the
+adaptation rate.  This drives each component toward a target operating point,
+implementing homeostatic regulation.
+\end{definition}
+
+\begin{proposition}[Adaptive thresholds create hysteresis]
+When the adaptation rate $\eta_i$ is small but nonzero, the threshold
+$\theta_{i,k}$ tracks the recent activation level.  On upward parameter sweeps
+(increasing gain $\alpha$), the threshold rises to suppress over-activation; on
+downward sweeps, it lowers slowly.  This asymmetric adaptation produces
+hysteresis: the system's state at gain $\alpha$ on the upward sweep differs from
+its state at the same $\alpha$ on the downward sweep.  The hysteresis loop width
+scales as $O(\eta_i / \lambda_{\rm bif})$ where $\lambda_{\rm bif}$ is the
+bifurcation parameter sweep rate.
+\end{proposition}
+
+\begin{proof}
+Let $\bar\theta(\alpha)$ be the quasi-steady threshold satisfying
+$\sigma_{\alpha}(w^\top x^\ast(\alpha,\bar\theta);\bar\theta)=p^\ast$.
+Under slow sweep $\alpha_k=\alpha_0+\epsilon k$, the actual threshold lags:
+$\theta_{k}\approx\bar\theta(\alpha_k)-\frac{\eta_i}{\epsilon}\bar\theta'(\alpha_k)$.
+The correction term is direction-dependent (it changes sign with sweep
+direction), producing a hysteresis gap proportional to $\eta_i/\epsilon$.
+\end{proof}
+
+\subsection*{R6. Residual-State Lobe Discovery}
+
+\begin{definition}[Residual state]
+Define the residual state as the deviation of the full system state from the
+best-fit low-dimensional attractor model:
+\[
+  \rho_k = \tilde x_k - \Pi_{\mathcal A}(\tilde x_k),
+\]
+where $\tilde x_k=(x_k^{\rm op},s_k,a_k,\mu_k)$ is the full coupled state,
+$\Pi_{\mathcal A}$ is the projection onto the fitted attractor model
+$\mathcal A$ (e.g., a principal manifold, delay-coordinate embedding, or
+low-order DMD approximation), and $\rho_k$ is the residual.  The residual
+captures structure not explained by the low-dimensional attractor model.
+\end{definition}
+
+\begin{definition}[Residual lobe]
+A residual lobe is a persistent cluster in residual-state space
+$\{\rho_k\}$ identified by a clustering algorithm (e.g., Gaussian mixture,
+HDBSCAN, or $k$-medoids in delay-coordinate space) with the following
+properties:
+\begin{enumerate}
+  \item \emph{Persistence}: the cluster survives across multiple validation
+        windows of length $\ge 10\,T_{\rm relax}$.
+  \item \emph{Separation}: the cluster's centroid is at least $2\sigma$ from
+        other cluster centroids in residual norm.
+  \item \emph{Reproducibility}: the cluster appears in $\ge 80\%$ of
+        independent runs with different initial histories under the same
+        parameter setting.
+  \item \emph{Semantic distinguishability}: Hyperseed event records for
+        trajectories within the lobe differ systematically (in agent roles,
+        artifact types, or semantic content) from records for other lobes.
+\end{enumerate}
+\end{definition}
+
+\begin{designprinciple}[Lobe discovery as a validation tool]
+Residual lobe discovery provides a concrete method for detecting whether the
+full system has multi-lobe attractor structure that is invisible to the
+low-dimensional observable.  If lobes are semantically distinguishable, they
+identify distinct cognitive regimes (e.g., exploration vs.\ exploitation,
+problem-attacking vs.\ reflective) that the hive transitions between.
+\end{designprinciple}
+
+\subsection*{R7. Amplitude-Matched Linear Controls}
+
+\begin{definition}[Amplitude-matched linear control]
+Given a nonlinear hive system $x_{k+1}=G(x_k,\ldots,x_{k-m})$ with operational
+state norm $\|x_k\|\le X_{\max}$ in the regime of interest, the
+amplitude-matched linear control is
+\[
+  x_{k+1}^{\rm lin}=A_0 x_k + A_1 x_{k-d} + B u_k + \bar c,
+\]
+where $A_0,A_1$ are obtained by linearizing $G$ around the regime mean
+$\bar x = \frac{1}{T}\sum_{k} x_k$ and $\bar c$ is chosen so that
+$\|x_k^{\rm lin}\|\approx\|x_k\|$ in the matched regime.  The linear control
+uses the same noise path $\xi_k$ (common random numbers) and the same delay
+structure as the nonlinear system.
+\end{definition}
+
+\begin{proposition}[Linear control as a surrogate baseline]
+The amplitude-matched linear control isolates the contribution of nonlinearity
+from delay and noise.  If the linear control exhibits comparable spectral
+breadth, Lyapunov exponent, or recurrence statistics, the nonlinear system's
+complexity is attributable to delay/noise, not to nonlinear structure.  Only
+when the nonlinear system significantly exceeds the linear control on these
+metrics can nonlinear strange-attractor claims be supported.
+\end{proposition}
+
+\begin{proof}
+The linear control shares delay structure, noise realization, and amplitude
+with the nonlinear system; it differs only in the replacement of $G$ by its
+linearization.  Therefore any excess complexity in the nonlinear system is
+attributable to the nonlinear terms.  This is a standard matched-control
+argument from the design-of-experiments tradition.
+\end{proof}
+
+\subsection*{R8. Experiment Families A6, A7, and A8}
+
+\subsubsection*{A6: Cognitive Appraisal Bifurcation Scan}
+
+\textbf{Hypothesis:} Varying appraisal steepness $\alpha$ and threshold
+$\theta$ across the hive produces a smooth bifurcation from contractive
+fixed-point dynamics through damped oscillation to multi-lobe recurrent
+dynamics, mediated by the cognitive appraisal function rather than by external
+noise injection.
+
+\textbf{Sweep variables:}
+\begin{itemize}
+  \item Appraisal steepness $\alpha\in\{0.5,1,2,5,10,20\}$
+  \item Threshold $\theta\in\{-2,-1,0,1,2\}$ (relative to baseline input
+        distribution)
+  \item Motivational coupling $\gamma\in\{0,0.1,0.5,1.0\}$
+\end{itemize}
+
+\textbf{Controls:}
+\begin{itemize}
+  \item Amplitude-matched linear control (R7) at each $(\alpha,\theta)$ point
+  \item No-motivational-dynamics control ($\gamma=0$, frozen $\mu_k$)
+  \item Phase-randomized surrogate
+\end{itemize}
+
+\textbf{Acceptance criteria:}
+\begin{enumerate}
+  \item Bifurcation diagram in $(\alpha,\theta)$ shows a qualitative
+        transition from fixed-point to oscillatory to multi-lobe dynamics.
+  \item The transition region has positive finite-time Lyapunov exponent
+        while the linear control does not.
+  \item Motivational coupling ($\gamma>0$) widens the multi-lobe region
+        compared to $\gamma=0$.
+  \item Hysteresis is observable on upward vs.\ downward $\alpha$ sweeps with
+        adaptive thresholds.
+\end{enumerate}
+
+\subsubsection*{A7: Residual Lobe Discovery and Validation}
+
+\textbf{Hypothesis:} The full coupled system $(x^{\rm op},s,a,\mu)$ has
+multi-lobe attractor structure that is partially invisible to the low-dimensional
+observable $O(E_{\le t})$.  Residual lobes are semantically distinguishable.
+
+\textbf{Sweep variables:}
+\begin{itemize}
+  \item Attractor model dimension $d_{\mathcal A}\in\{2,3,5,8\}$
+  \item Clustering algorithm: HDBSCAN, GMM, $k$-medoids
+  \item Delay embedding dimension for residual space: $m_{\rm emb}\in\{3,5,10\}$
+  \item Validation window length: $\{5,10,20\}\cdot T_{\rm relax}$
+  \item Number of independent runs: $\ge 20$ per parameter setting
+\end{itemize}
+
+\textbf{Controls:}
+\begin{itemize}
+  \item Random-label surrogate: cluster assignments randomly permuted across
+        time to test whether semantic distinguishability exceeds chance.
+  \item Single-field controls: residual computed using only $x^{\rm op}$, only
+        $s$, only $a$, or only $\mu$, to test which field's residual carries
+        lobe structure.
+  \item Null-model residual: residual computed against a trivial (zero-order)
+        attractor model, i.e., the mean state, to verify that the clustering
+        captures genuine attractor structure and not just noise.
+\end{itemize}
+
+\textbf{Acceptance criteria:}
+\begin{enumerate}
+  \item At least one residual lobe satisfies all four properties from the
+        residual lobe definition (R6): persistence, separation, reproducibility,
+        and semantic distinguishability.
+  \item The random-label surrogate produces $<5\%$ false-positive lobe rate
+        at the same clustering thresholds.
+  \item Single-field controls identify which field(s) contribute most to lobe
+        structure, enabling targeted interpretation.
+  \item Lobe membership predicts subsequent behavioral regime with above-chance
+        accuracy ($p<0.01$ by permutation test).
+\end{enumerate}
+
+\subsubsection*{A8: Costly Prediction and Self-Regulation Experiment}
+
+\textbf{Hypothesis:} When prediction cost scales with dynamical complexity
+(high local Lyapunov exponent $\Rightarrow$ higher $c_k^{\rm pred}$), the hive
+system self-regulates into a bounded-complexity regime: chaotic episodes are
+automatically damped by resource depletion, and the system settles into an
+intermittent regime alternating between high-complexity bursts and
+resource-recovery quiescence.
+
+\textbf{Sweep variables:}
+\begin{itemize}
+  \item Prediction cost coefficient $c_{\rm var}\in\{0,0.01,0.1,0.5,1.0\}$
+  \item Resource budget $R_{\max}\in\{0.5,1,2,5\}$ (relative to median
+        unconstrained activation cost)
+  \item Cost complexity coupling: $c_k^{\rm pred}\propto |\lambda_{\rm FTLE}|^p$
+        with exponent $p\in\{0,1,2\}$ (no coupling, linear, quadratic)
+  \item Prediction depth $p_k\in\{1,2,5,10\}$ steps ahead
+\end{itemize}
+
+\textbf{Controls:}
+\begin{itemize}
+  \item Zero-cost control ($c_{\rm var}=0$): standard dynamics without
+        resource accounting, to establish the unconstrained complexity baseline.
+  \item Fixed-cost control: $c_k^{\rm pred}=c_{\rm fixed}$ (constant regardless
+        of complexity), to distinguish resource scarcity effects from
+        complexity-coupled self-regulation.
+  \item Amplitude-matched linear control (R7) with the same resource budget,
+        to separate nonlinear self-regulation from linear resource gating.
+\end{itemize}
+
+\textbf{Acceptance criteria:}
+\begin{enumerate}
+  \item With cost-complexity coupling ($p>0$), the system exhibits
+        intermittent complexity: episodes of positive finite-time Lyapunov
+        exponent alternated with quiescent recovery periods.
+  \item The zero-cost control shows sustained chaos (no self-damping),
+        confirming that the intermittent pattern is caused by cost coupling,
+        not by other parameters.
+  \item The fixed-cost control shows uniform suppression (no intermittency),
+        confirming that the intermittency requires complexity-dependent cost,
+        not just resource scarcity.
+  \item Long-run complexity (time-averaged Lyapunov exponent) decreases
+        monotonically with $c_{\rm var}$ for fixed $R_{\max}$, demonstrating
+        a tunable self-regulation knob.
+  \item Hysteresis in the complexity--cost relationship is observable when
+        $c_{\rm var}$ is swept up and down, due to adaptive thresholds (R5).
+\end{enumerate}
+
+\subsection*{Summary of revisions}
+
+This addendum adds: (R1) cognitive appraisal interpretation of the logistic
+response, (R2) latent motivational state with slow--fast dynamics and
+threshold modulation, (R3) separate semantic and artifact fields with
+bidirectional coupling, (R4) costly prediction with resource accounting and
+self-regulating complexity, (R5) adaptive thresholds producing hysteresis,
+(R6) residual-state lobe discovery with clustering and validation, (R7)
+amplitude-matched linear controls isolating nonlinear contributions, and (R8)
+three new experiment families (A6, A7, A8) with explicit hypotheses, sweep
+variables, controls, and acceptance criteria.  All original material is
+preserved; this content is appended via \texttt{\\input} before
+\texttt{\\end{document}}.
