@@ -774,6 +774,93 @@ it as an attributed continuation relation: ancestry, preserved witnesses, reconc
 policy, and measured loss/defect.
 \end{remark}
 
+\section{Experimental prediction: the $2 \times 2$ associativity test}
+
+\subsection{Design}
+
+The localization theorem (Theorem~\ref{thm:localization}) predicts that the 2-cell obstruction
+lives in context-translation (instrument-correction site), not in raw evidence fusion. This
+prediction is testable on the $\pi$-PLN pipeline as a $2 \times 2$ experiment:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+ & \textbf{Aggregate count} & \textbf{Full evidence list} \\
+\hline
+\textbf{Packet fusion} & Associative (control) & Associative (control) \\
+\textbf{Context-filtered} & Non-assoc (?) & \textbf{Load-bearing cell} \\
+\hline
+\end{tabular}
+\caption{$2 \times 2$ associativity test on the $\pi$-PLN pipeline}
+\label{tab:2x2-test}
+\end{table}
+
+\subsection{The confound and its resolution}
+
+Order-dependence at the context-filtered level can arise from two sources:
+\begin{enumerate}
+  \item \textbf{Genuine 2-cell obstruction:} context-transition functions fail the cocycle
+  condition. Composite score depends on transition path even with fixed evidence set.
+  Generators are identical across orders but transported values differ.
+
+  \item \textbf{Selection-induced filtering artifact:} context selection is a lossy filter
+  applied before associative fusion. Different orders admit different evidence subsets.
+  Trivially non-associative, theoretically empty.
+\end{enumerate}
+
+The discriminator is the full-evidence-list column. With full provenance retained:
+\begin{itemize}
+  \item If the filtered projection becomes re-associative (set-equal, differently ordered):
+    it was a filtering artifact (Case 2). No genuine 2-cell.
+  \item If the composite truth-value still depends on transition path despite set-equality:
+    the 2-cell is real and localized exactly where the localization theorem predicts (Case 1).
+\end{itemize}
+
+\subsection{The gap metric}
+
+\begin{definition}[$\rho_E$ gap]
+\label{def:rho-gap}
+For a three-premise revision through the $\pi$-PLN context-filtered pipeline, compute
+associativity two ways:
+\begin{itemize}
+  \item \textbf{(a) Visible:} associativity of the composite truth-value $(f', c')$.
+  \item \textbf{(b) Provenance:} associativity of the admitted-generator-set modulo ordering.
+\end{itemize}
+The gap $\rho_E = |(a) - (b)|$ is the direct experimental readout of the 2-cell obstruction.
+$\rho_E > 0$ with set-equality is the signature of non-canonical context transport.
+\end{definition}
+
+\subsection{Per-site experimental signatures}
+
+\begin{conjecture}[Site-detector via $\rho_E$]
+\label{conj:site-detector}
+The three obstruction regimes produce distinguishable experimental signatures:
+\begin{itemize}
+  \item \textbf{Fiber-type (sites 1--2):} $\rho_E = 0$, generator sets equal across orderings.
+  \item \textbf{Composition-type (site 3, instrument):} $\rho_E > 0$, generator sets equal across
+  orderings. Non-canonical transport with identical evidence.
+  \item \textbf{Self-reproducing (consolidation):} $\rho_E > 0$, generator sets \emph{unequal}.
+  Reconsolidation rewrites which generators exist, failing at the packet level, not just the
+  transition level.
+\end{itemize}
+This makes the site-detector not just computable from the lift space but directly measurable
+on the running pipeline.
+\end{conjecture}
+
+\subsection{Instrumentation requirements}
+
+The pipeline must emit, per revision, the ordered generator list actually admitted by the
+selected contexts --- not just the composite truth-value. Two associativity checks are then
+possible: (a) on the truth-value (visible projection), (b) on the admitted-generator-set
+modulo order (provenance layer). The gap between (a) and (b) is $\rho_E$.
+
+\begin{remark}
+This experiment turns the localization theorem from a publishable-on-paper result into a
+reproducible-on-pipeline measurement. The $2 \times 2$ design with the $\rho_E$ gap is the
+bridge between the formal framework and operational evidence.
+\end{remark}
+
 \section{Open questions}
 
 \begin{openquestion}[Base-extension stability]
