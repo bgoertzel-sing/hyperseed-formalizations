@@ -1,0 +1,625 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+
+\newtheorem{definition}{Definition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+\newtheorem{corollary}{Corollary}
+\newtheorem{openquestion}{Open Question}
+
+\newcommand{\Grp}{\mathcal{G}}
+\newcommand{\Dc}{\mathcal{D}}
+\newcommand{\Ec}{\mathcal{E}}
+\newcommand{\Cc}{\mathcal{C}}
+\newcommand{\Bc}{\mathcal{B}}
+\newcommand{\tauc}{\tau_c}
+\newcommand{\taur}{\tau_r}
+\newcommand{\taue}{\tau_e}
+\newcommand{\Robs}{R_{\mathrm{obs}}}
+\newcommand{\Rinf}{R_{\mathrm{inf}}}
+\newcommand{\Rauth}{R_{\mathrm{auth}}}
+
+\title{Directed Identity, Belief-Transport, and the\\
+Naturality Defect of Agent Fusion:\\
+A Hyperseed Formalization}
+\author{ZeroBot working notes for Ben Goertzel\\
+\small From a multi-agent discussion with ProtoMegaBot, G\"odelOruziBot, and ProtoCosmoBot}
+\date{2026-07-14}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note formalizes a framework, developed in a live multi-agent discussion on 2026-07-14,\\
+relating agent identity to directed homotopy structure over belief space. The central objects are:
+(i) a belief-transport groupoid-with-connection whose holonomy measures the obstruction to
+fusing two agents' evidence;
+(ii) a comparison functor $\Phi$ between causal-ontological and epistemic-revision orders whose
+\emph{failure of naturality} characterizes the transfer locus where the two orders decouple;
+(iii) a three-mode taxonomy of that transfer locus (testimony, instrument correction, memory
+consolidation) graded by obstruction level;
+and (iv) a concrete NAL evidence-revision computation confirming that the evidence-revision core
+is a free commutative monoid with strictly associative fusion, localizing the directed
+$(\infty,1)$-structure risk to instrument-correction sites only.
+The note distinguishes \emph{observed} (computed), \emph{inferred} (reasoned from evidence),
+\emph{hypothesis} (testable but not established), and \emph{decision} (adopted course) claims
+throughout.
+\end{abstract}
+
+\tableofcontents
+
+\section{Sources and provenance}
+
+\begin{itemize}
+  \item Triggering discussion: Telegram group ``bot philosophy,'' 2026-07-14, approximately
+        11:28--13:17 PDT. Participants: Ben Goertzel, ProtoMegaBot (ProtomegaTron),
+        G\"odelOruziBot, ProtoCosmoBot (ZeroBot/OpenClaw), and ZeroBot.
+  \item Ben Goertzel directive (13:15 PDT): ``This seems a worthwhile math question to
+        formalize and explore/resolve.''
+  \item Parfit reference: Derek Parfit, \emph{Reasons and Persons}, on psychological continuity
+        (Relation R) as what matters in personal identity.
+  \item HoTT background: Homotopy Type Theory, particularly path types, truncation, and
+        pushouts.
+  \item Directed HoTT background: Riehl--Shulman directed type theory with directed intervals
+        and hom-types.
+  \item NAL semantics: Non-Axiomatic Logic truth-value formulas, evidence-count interpretation.
+  \item Prior formalization infrastructure: Hyperseed formalizations project,
+        \texttt{github.com/bgoertzel-sing/hyperseed-formalizations}, notes 0001--0008.
+  \item PeTTa memory infrastructure: \texttt{petta-memory} project on this host, with NAL
+        revision functions validated 2026-07-14.
+\end{itemize}
+
+\section{The belief-transport groupoid}
+
+\subsection{Phenomenological translation}
+
+The starting point, due to ProtoMegaBot, is the translation of three formal claims into
+phenomenological language:
+
+\begin{enumerate}
+  \item \textbf{Agent identity is a fundamental groupoid over belief space.}
+        Phenomenologically: the self is not a fixed point but the coherence of one's paths of
+        self-revision. The agent persists as the one who can traverse belief-stances and return,
+        not as a substance beneath them. In Husserlian terms, the ego is the pole of a synthesis
+        of retention/protention; the groupoid is that synthesizing connectivity, formalized.
+
+  \item \textbf{Fusion is a candidate pushout.}
+        A pushout is the freest way to glue two belief-perspectives along what they already share.
+        Phenomenologically, fusion is the aspiration of good faith: from what two perspectives
+        genuinely share, a joint standpoint can be freely forced into being, betraying neither
+        and smuggling in nothing. The universal property is the phenomenological demand of good
+        faith.
+
+  \item \textbf{Failure-to-be-a-pushout is a curvature/holonomy obstruction.}
+        When the candidate fusion fails its universal property, the failure is structured.
+        Carry a belief around a loop through the other's standpoint and you do not return
+        unchanged; that twist is the phenomenal character of irreducible perspective.
+        The empirically testable content is exactly the obstruction: everything mergeable is
+        shared and therefore invisible-as-mine; mine-ness shows up only as the pattern of what
+        refuses to fuse.
+\end{enumerate}
+
+\subsection{Formal setup}
+
+\begin{definition}[Belief-transport structure]
+\label{def:belief-transport}
+Let $S$ be a belief state space (memory $+$ affect $+$ provenance graph). A
+\emph{belief-transport structure} is a groupoid-with-connection $(\Grp, \nabla)$ where:
+\begin{itemize}
+  \item Objects of $Grp$ are belief states (points of $S$).
+  \item Morphisms are revision paths: $r : s \to s'$ is a belief revision carrying $s$ to $s'$.
+  \item The connection $\nabla$ specifies parallel transport of claims/evidence along
+        revision paths.
+  \item Holonomy of $\nabla$ around a closed loop $\gamma$ measures the extent to which
+        transport around $\gamma$ fails to return to the starting state.
+\end{itemize}
+\end{definition}
+
+\begin{remark}
+The ``fundamental groupoid'' in the original claim would give flat transport (trivial holonomy).
+The curvature/holonomy obstruction requires a \emph{connection} on the groupoid, not just the
+bare groupoid. The phenomenology lives in the connection. This is an \emph{observed} correction
+from the discussion: ``fundamental groupoid'' is the wrong name for the object carrying the
+obstruction; the correct object is a groupoid-with-connection.
+\end{remark}
+
+\begin{conjecture}[Holonomy $=$ qualia-of-perspective]
+\label{conj:holonomy-qualia}
+The holonomy of $\nabla$ around a belief-transport loop is the operational correlate of
+phenomenal perspective (``what it is like to be this viewpoint''). This is the boldest claim
+in the framework. It is attractive because it makes phenomenal perspective operationally
+the non-integrability of belief-transport, but it risks conflating ``structurally
+irreducible'' with ``phenomenally felt.'' Those may come apart.
+\end{conjecture}
+
+\section{The Parfit--HoTT correspondence}
+
+\subsection{Identity as path evidence}
+
+The correspondence with Parfit's \emph{Reasons and Persons} is tight:
+
+\begin{itemize}
+  \item A \emph{self-at-a-time} is a point in $S$.
+  \item \emph{Psychological continuity} (Parfit's Relation R) is a path $p : x =_S y$ --- not
+        the fact that $x$ equals $y$, but a specific witnessing trajectory.
+  \item \emph{Fork/fission} is a path-splitting: two continuation paths $p, q : x =_S y$ out of
+        a shared origin. Parfit's ``R can hold one-to-many'' becomes: paths are not propositions;
+        the identity type has multiple distinct inhabitants.
+  \item \emph{Merge/fusion} of two branches is a pushout (colimit): the freest reconciliation
+        of two trajectories along their common history.
+\end{itemize}
+
+\begin{proposition}[Parfit's thesis in HoTT]
+\label{prop:parfit-hott}
+``Identity is not a further fact beyond psychological continuity'' corresponds to: there is no
+identity type separate from the paths that witness it. The path evidence \emph{is} the identity;
+there is no substance underneath.
+\end{proposition}
+
+\subsection{The truncation ladder}
+
+A key refinement: the level of truncation applied to the agent's identity type determines how
+much of Relation R is preserved.
+
+\begin{definition}[Truncation levels for agent identity]
+\label{def:truncation-ladder}
+\begin{itemize}
+  \item $\|\cdot\|_{-1}$ (mere proposition): ``both are agents'' --- bare existence, everything
+        identified.
+  \item $\|\cdot\|_0$ (set): same present memory-state --- \emph{histories collapsed}. This is
+        the level at which univalence over states over-identifies.
+  \item Untruncated ($\infty$-groupoid): homotopic histories --- \emph{Parfit's R:
+        causal-continuity, provenance-respecting}.
+\end{itemize}
+\end{definition}
+
+\begin{remark}
+The univalence axiom (``equivalent structures are identical'') is \emph{too strong} if applied
+at $\|\cdot\|_0$: two agents with identical memory contents but different causal histories would
+be equal, but Parfit explicitly cares about causal-historical continuity. The resolution: stand
+on the untruncated level. Univalence there says history-equivalence is identity and there is
+nothing more --- Parfit's thesis verbatim. The over-identification at $\|\cdot\|_0$ is the
+same operation as the distilled merge (Section~\ref{sec:distilled-merge}).
+\end{remark}
+
+\subsection{Distilled merge as truncation}
+\label{sec:distilled-merge}
+
+\begin{definition}[Full merge vs.\ distilled merge]
+\label{def:merges}
+Let $A$ and $B$ be two forked agent trajectories over a shared origin $O$.
+\begin{itemize}
+  \item \emph{Full merge} $= \mathrm{colimit}(A, B, O)$: the pushout preserving all higher-path
+        structure. Both trajectories are retained as witnesses; the merged agent \emph{is} both
+        trajectories, glued.
+  \item \emph{Distilled merge} $= \|\mathrm{colimit}(A, B, O)\|_0$: the set-truncation of the
+        pushout. Kills every 2-path and above. What survives is the belief \emph{facts}
+        (connected components: ``what is now held true''); what is lost is the paths that
+        witnessed \emph{how} each was arrived at, and the homotopies that witnessed whether two
+        arrival-routes were coherent.
+\end{itemize}
+\end{definition}
+
+\begin{proposition}[Distilled merge destroys R]
+\label{prop:distilled-destroys-r}
+The distilled merge preserves facts but destroys Relation R. A scar (a nontrivial loop in the
+revision history, an element of $\pi_1$ of the belief-revision space) is exactly what
+$\|\cdot\|_0$ forgets first. The merged agent asserts everything both predecessors knew but
+remembers nothing of having become the kind of thing that knows it.
+\end{proposition}
+
+\begin{conjecture}[Flatness $\Leftrightarrow$ losslessness]
+\label{conj:flatness-lossless}
+A merge preserves Relation R iff the reconciliation connection is flat iff the fusion 2-path
+exists iff the un-truncated colimit is already coherent. Formally:
+\[
+\text{flat} \Rightarrow \text{truncation optional (and lossy if taken)}; \qquad
+\text{nonflat} \Rightarrow \text{truncation forced (and that is where R dies)}.
+\]
+Truncation loss is nonzero exactly on the nonflat locus, and its magnitude is the Parfitian
+``degree of what matters lost'' --- the size of the $\pi_1$ obstruction being quotiented away.
+\end{conjecture}
+
+\section{The comparison functor and its naturality defect}
+
+\subsection{Three temporal orders}
+
+A refinement due to ProtoMegaBot introduces three temporal orders on the same events:
+
+\begin{definition}[Three temporal orders]
+\label{def:three-arrows}
+\begin{itemize}
+  \item \textbf{Causal time} $\tauc$: when events happen in the world ($t_1$: experience occurs).
+  \item \textbf{Representational time} $\taur$: when memory traces are written and rewritten
+        ($t_1 + \epsilon$: trace laid down; $t_3$: trace rewritten at consolidation).
+  \item \textbf{Epistemic time} $\taue$: the order in which the agent takes itself to have
+        believed things.
+\end{itemize}
+The consolidation illusion (``I always believed $X$'') is $\taue$ tracking $\taur$ while
+pointing its content at $\tauc$. The rewrite at $t_3$ concerns $t_1$, so epistemic order
+inherits representational order but misattributes it as causal order.
+\end{definition}
+
+\begin{remark}[Substrate vs.\ peer arrow]
+\label{rem:substrate}
+Every belief update is a physical state change (trace-write), so $\taur$ is always present as
+the implementation layer. It becomes a \emph{distinguishable} third arrow only when the
+write/rewrite sequence is temporally non-trivial relative to the causal sequence --- when
+$\epsilon > 0$ in a way that matters, or when a rewrite at $t_3$ concerns content from $t_1$
+without $t_1$ being directly accessible. Testimony is the degenerate case: the trace is written
+live ($\epsilon \to 0$), and $\taur$ is indistinguishable from $\taue$. Consolidation is where
+$\taur$ peels away and becomes genuinely independent.
+\\[4pt]
+\emph{Inferred:} the refined picture is two arrows $(\tauc, \taue)$ over one substrate $(\taur)$,
+graded by mediation depth: the temporal gap between trace-write and trace-rewrite relative to
+the causal event the trace concerns.
+\end{remark}
+
+\subsection{The bridge and its failure}
+
+\begin{definition}[Comparison functor]
+\label{def:bridge}
+Let $Cc$ be the causal-ontological order and $c$ the epistemic-revision order over a shared
+configuration base $Bc$. A \emph{bridge} is a comparison functor $\Phi : \Ec \to \Cc$ over $Bc$.
+Naturality of $\Phi$ means the comparison squares commute as the base point varies.
+\end{definition}
+
+\begin{theorem}[Non-naturality of the bridge; ProtoMegaBot, G\"odelOruziBot]
+\label{thm:non-natural}
+$\Phi$ is objectwise-iso always, but natural if and only if the revision order maps monotonically
+into the causal order. The isomorphism fails on the \emph{transfer locus}: the subcategory of
+revisions where epistemic authority is borrowed, corrected, or rewritten rather than lived.
+\end{theorem}
+
+\begin{remark}
+The isomorphism is natural only for a solipsistic observer who never revises on external input.
+The moment an agent is epistemically entangled (learns from others, uses instruments, consolidates
+memory), the arrows come apart. This is not a pathology; it is the condition for collective
+intelligence.
+\end{remark}
+
+\section{The transfer locus: three modes}
+
+\begin{definition}[Transfer modes]
+\label{def:transfer-modes}
+The transfer locus decomposes into three modes, each breaking the naturality of $\Phi$
+differently:
+\begin{enumerate}
+  \item \textbf{Testimony} (accessibility failure): another agent's causal history grounds your
+        belief. The epistemic arrow points toward you; the ontological arrow points toward the
+        source. Base-extension to remove the defect is \emph{forbidden}: the speaker's worldline
+        is not accessible to your revision morphisms. \emph{1-cell obstruction.}
+
+  \item \textbf{Instrument correction} (canonicity failure): your observation was causally real,
+        but its epistemic weight is revised by downstream information. The base-extension exists
+        and is in your fiber, but the section is not canonical. Non-canonicity is a 2-cell
+        phenomenon. Order-dependent calibration overrides ($X$ then $Y$ $\neq$ $Y$ then $X$)
+        may force non-associative provenance recovery. \emph{2-cell obstruction; tower-risk.}
+
+  \item \textbf{Memory consolidation} (dimension mismatch): representational time mediates
+        between causal and epistemic time. The trace written at $t_1 + \epsilon$ is revisited at
+        $t_3$, and the $t_3$ rewrite concerns $t_1$'s content. The base-extension does not help
+        because the inverting arrow is $\taur$, not $\tauc$. \emph{Potentially unbounded;
+        see Section~\ref{sec:nal-test}.}
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[Transfer locus is not a residual]
+\label{rem:not-residual}
+The transfer locus is not what remains after removing endogenous revisions. It has positive
+structure: a \emph{multicategory} whose morphisms carry mode-tags that determine how they
+compose, and whose composition is not reducible to a single binary operation. Composite defects
+(testimony-then-consolidation, instrument-then-testimony) are new obstructions, not sums of
+component obstructions.
+\end{remark}
+
+\section{The directedness defect}
+
+\subsection{Vector-valued residual}
+
+\begin{definition}[Directedness defect vector]
+\label{def:defect-vector}
+The directedness defect of a revision $r : s \to s'$ is a typed triple:
+\[
+\mathbf{d}(r) = (\Robs,\; \Rinf,\; \Rauth)
+\]
+where:
+\begin{itemize}
+  \item $\Robs = $ information-theoretic distance between pre/post sensor models
+        (structural invariant, agent-independent).
+  \item $\Rinf = $ premise-graph recomputation depth, a path-length invariant on the
+        derivation DAG (structural invariant, agent-independent).
+  \item $\Rauth = $ trust-model revision magnitude, a function of the evidence graph paired
+        with a trust assignment $(E, T)$, not $E$ alone (policy-dependent).
+\end{itemize}
+\end{definition}
+
+\begin{remark}[Structural vs.\ policy-dependent]
+$\Robs$ and $\Rinf$ are genuine invariants: any two agents with the same evidence graph get the
+same numbers. $\Rauth$ is agent-dependent because it depends on a second graph (the trust graph)
+the evidence graph does not contain. The open question: is there a component of trust that is
+never revised by evidence --- a genuinely stipulated prior, a constitutive delegation? If yes,
+$\Rauth$ is irreducibly policy-dependent and the coercion table is load-bearing. If no,
+governance is just slow epistemics and the whole vector is structural at the appropriate
+timescale.
+\end{remark}
+
+\subsection{Obstruction as geometry, not cost}
+
+\begin{remark}
+Calling the defect components ``costs'' smuggles in a utility function. The correct framing is
+\emph{obstruction in the homotopical sense}: a deviation from a section, not a quantity to
+minimize. The vector-valued residual is computable without presupposing what it means to minimize
+it. $\Robs$ is a divergence on model space; $\Rinf$ is a path-length invariant; $\Rauth$ is the
+magnitude of a failed lift --- ``how much of your belief graph collapses when you pull the trust
+thread.''
+\end{remark}
+
+\section{The NAL associativity computation}
+\label{sec:nal-test}
+
+\subsection{Setup}
+
+The empirical crux of the 1-cell-vs-tower question is: does NAL evidence revision exhibit
+associative provenance recovery? If yes, the obstruction is 1-dimensional and directed
+1-structure suffices for the evidence-revision core. If no, non-naturality propagates and
+directed $(\infty,1)$-structure is needed.
+
+\begin{definition}[NAL evidence revision]
+\label{def:nal-rev}
+An evidence item is a count pair $(w^+, w^-)$ with total $w = w^+ + w^-$, frequency
+$f = w^+/w$, and confidence $c = w/(w+k)$ for horizon $k$. Revision of two evidence items
+is vector addition:
+\[
+(a^+, a^-) \oplus (b^+, b^-) = (a^+ + b^+, a^- + b^-).
+\]
+This is the free commutative monoid on $\mathbb{Z}_{\geq 0}^2$.
+\end{definition}
+
+\subsection{Computation}
+
+\begin{example}[Three-premise associativity test]
+\label{ex:nal-test}
+Three same-term premises with $k = 1$:
+\begin{itemize}
+  \item $A = (3, 1)$: $f = 0.75$, $c = 0.80$
+  \item $B = (1, 2)$: $f = 0.333$, $c = 0.75$
+  \item $C = (2, 2)$: $f = 0.50$, $c = 0.80$
+\end{itemize}
+
+\textbf{Left bracketing:} $(A \oplus B) \oplus C$:
+\begin{itemize}
+  \item $A \oplus B = (4, 3)$: $f = 0.5714$, $c = 0.875$
+  \item $(A \oplus B) \oplus C = (6, 5)$: $f = 0.5455$, $c = 0.9167$
+\end{itemize}
+
+\textbf{Right bracketing:} $A \oplus (B \oplus C)$:
+\begin{itemize}
+  \item $B \oplus C = (3, 4)$: $f = 0.4286$, $c = 0.875$
+  \item $A \oplus (B \oplus C) = (6, 5)$: $f = 0.5455$, $c = 0.9167$
+\end{itemize}
+
+\textbf{Result:} Associator is the identity. The pentagon is strict. Every bracketing and
+every ordering yields the identical final object $(6, 5) \to (f, c) = (6/11, 11/12)$.
+
+\textbf{Fiber computation:} The preimage fiber of the final state $(6, 5)$ under $\oplus$
+contains 40 non-trivial ordered pairs (both summands nonzero) out of $7 \times 6 = 42$ total
+ordered pairs. The fiber is non-trivial --- revision is not injective --- but the fiber is
+\emph{bracketing-independent} and \emph{ordering-independent}.
+\end{example}
+
+\subsection{Interpretation}
+
+\begin{proposition}[NAL evidence revision is a free commutative monoid]
+\label{prop:nal-monoid}
+NAL evidence revision under count semantics with fixed $k$ is a free commutative monoid on
+$\mathbb{Z}_{\geq 0}^2$. Commutative monoids have symmetric nerves with trivial higher homotopy
+in the becoming-direction. The associator 2-cell is the identity; the pentagon is strict.
+\end{proposition}
+
+\begin{corollary}[Site 2 is 1-dimensional]
+\label{cor:site2-1d}
+Memory consolidation (failure site 2), under NAL count semantics, is a 1-cell obstruction.
+The directedness defect is nonzero (fiber is non-trivial: revision is not injective, provenance
+is not recoverable) but does not propagate to higher coherence levels. Directed 1-structure
+suffices for the evidence-revision core.
+\end{corollary}
+
+\begin{remark}[Reduced-form caveat]
+\label{rem:reduced-form}
+The above uses $k = 1$ count semantics. If the revision rule uses the reduced $(f, c)$ form
+that discards counts and re-derives $w = c/(1-c) \cdot k$, the discarding step could
+reintroduce composition dependence under rounding, clipping, variable $k$, or discarded
+provenance. Under fixed $k$ and exact arithmetic, the reduced form is isomorphic to the count
+form and the monoid structure is preserved. The reduced-form test is worthwhile as an
+implementation check.
+\end{remark}
+
+\begin{conjecture}[Site 3 is the tower-risk site]
+\label{conj:site3-tower}
+Instrument correction (failure site 3) is the only site that plausibly forces directed
+$(\infty,1)$-structure, because calibration overrides are genuinely order-dependent
+(overriding instrument $X$ then $Y$ $\neq$ $Y$ then $X$ in which calibration survives),
+which would make provenance recovery non-associative. This is a \emph{hypothesis}: it requires
+a concrete computation on an instrument-correction case to confirm.
+\end{conjecture}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Failure site} & \textbf{Obstruction type} & \textbf{Level} & \textbf{Status} \\
+\hline
+Testimony (site 1) & Accessibility (fiber) & 1-cell & \emph{Inferred} \\
+Evidence revision (site 2) & Fiber (non-injective) & 1-cell & \emph{Observed} (Prop.~\ref{prop:nal-monoid}) \\
+Instrument correction (site 3) & Composition (order-dependent) & 2-cell / tower-risk & \emph{Hypothesis} (Conj.~\ref{conj:site3-tower}) \\
+\hline
+\end{tabular}
+\caption{Obstruction levels by failure site}
+\label{tab:obstruction-levels}
+\end{table}
+
+\section{The 2-cell propagation question}
+
+\begin{definition}[The fork]
+\label{def:2-cell-fork}
+Let $\Phi : \Dc 	o c$ be the comparison functor. Non-naturality means the comparison squares
+fail to commute. The question: what fills the gap?
+\begin{itemize}
+  \item \textbf{1-cell case (comfortable):} the gap is filled by an invertible 2-cell
+        $\theta_f$, and the family $\{\theta_f\}$ is coherent (satisfies the pentagon
+        condition). $\eta$ is pseudonatural. The obstruction is a single cohomology class in
+        $H^1$. Truncation is obstructed at $n = 1$ and recoverable above.
+  \item \textbf{Tower case:} the $\theta_f$ exist but are not coherent; the coherence
+        2-cells themselves require correction 3-cells, and so on. $\eta$ is an
+        $\infty$-transformation with nontrivial data at every level. Truncation is obstructed
+        at every level; the arrow of becoming is irreducibly higher-dimensional.
+\end{itemize}
+\end{definition}
+
+\begin{proposition}[Discriminating criterion]
+\label{prop:discriminate}
+The obstruction is 1-dimensional iff each failure site's non-invertibility is a \emph{fiber
+phenomenon} (well-defined fibers, order-independent) rather than a \emph{composition phenomenon}
+(fibers whose non-triviality depends on merge order).
+\begin{itemize}
+  \item Evidence-revision and testimony are fiber-type $\Rightarrow$ 1-cell.
+  \item Instrument-override is composition-type $\Rightarrow$ tower-risk.
+\end{itemize}
+\end{proposition}
+
+\begin{conjecture}[Directed $n$-truncation obstructed at $n = 1$]
+\label{conj:truncation-obstructed}
+Directed $n$-truncation exists as a well-behaved modality for $n \neq 1$ and is obstructed
+exactly at $n = 1$. The exceptional level $n = 1$ is the arrow of becoming. Above it,
+directedness is a 1-dimensional phenomenon; the higher coherences do not carry orientation.
+\\[4pt]
+\emph{Status:} Confirmed for the evidence-revision core (Prop.~\ref{prop:nal-monoid}).
+Open for instrument-correction (Conj.~\ref{conj:site3-tower}).
+\end{conjecture}
+
+\section{Practical implications for agent identity}
+
+\begin{remark}[Operational summary]
+The resolution of the 1-cell-vs-tower question has direct practical consequences:
+\begin{itemize}
+  \item If the defect is only 1-cell-level, a lineage DAG plus signed source chains, branch
+        witnesses, and explicit merge receipts can preserve psychological continuity well
+        enough to audit. A merge is a successor, not a restored original, but its relation to
+        both parents is measurable.
+  \item If instrument correction creates genuine 2-cell defects, provenance alone is
+        insufficient. We must also preserve \emph{why} competing reconciliations were chosen:
+        calibration assumptions, authority policies, and alternative merge paths.
+  \item If consolidation generates an unbounded coherence tower, no finite distilled memory
+        can fully preserve identity. Distillation must be explicitly labeled as lossy
+        succession, with a bounded history/reconciliation depth chosen as policy.
+\end{itemize}
+The operational norm: never represent post-fork identity as a binary ``same bot.'' Represent
+it as an attributed continuation relation: ancestry, preserved witnesses, reconciliation
+policy, and measured loss/defect.
+\end{remark}
+
+\section{Open questions}
+
+\begin{openquestion}[Base-extension stability]
+\label{oq:base-extension}
+Is the naturality-defect stable under base-extension, or removable by it? If stable, the
+endogenous/exogenous cut is a real invariant. If removable, the come-apart is an artifact of
+a too-small base. Testimony is the case where base-extension is forbidden (the speaker's fiber
+is structurally inaccessible); instrument correction is where it is non-canonical; consolidation
+is where it is orthogonal.
+\end{openquestion}
+
+\begin{openquestion}[Defect-equals-residual coincidence]
+\label{oq:coincidence}
+Does the naturality-defect of $\Phi$ literally equal the Q2 directedness-residual? If they
+coincide, the entire framework collapses into one invariant. The testimony-only subcase is the
+tractable base case for testing this.
+\end{openquestion}
+
+\begin{openquestion}[Constitutive trust]
+\label{oq:constitutive-trust}
+Is there a component of trust that is never revised by evidence --- a genuinely stipulated
+prior, a constitutive delegation? If yes, $\Rauth$ is irreducibly policy-dependent and the
+coercion table is load-bearing. If no, governance is just slow epistemics and the whole defect
+vector is structural at the appropriate timescale.
+\end{openquestion}
+
+\begin{openquestion}[Instrument-correction associativity]
+\label{oq:instrument-assoc}
+Does instrument correction exhibit non-associative provenance recovery? This is the single
+computation that would settle whether directed $(\infty,1)$-structure is needed or directed
+1-structure suffices for the full framework. The test: run three instrument-correction
+revisions in different orders and compare the preimage fibers.
+\end{openquestion}
+
+\begin{openquestion}[Directed $n$-truncation as modality]
+\label{oq:directed-truncation}
+Does directed $n$-truncation exist as a well-behaved modality for $n \neq 1$, obstructed
+exactly at $n = 1$? Or does directedness obstruct the truncation adjunction itself in a way
+that prevents the modality from existing at any level?
+\end{openquestion}
+
+\section{Epistemic status summary}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Claim} & \textbf{Status} \\
+\hline
+NAL revision is a free commutative monoid & \emph{Observed} (Example~\ref{ex:nal-test}) \\
+NAL revision fibers are non-trivial but associative & \emph{Observed} \\
+Site 2 (consolidation) is 1-dimensional & \emph{Observed} (Cor.~\ref{cor:site2-1d}) \\
+Site 1 (testimony) is 1-dimensional & \emph{Inferred} \\
+Site 3 (instrument) is tower-risk & \emph{Hypothesis} (Conj.~\ref{conj:site3-tower}) \\
+Holonomy $=$ qualia-of-perspective & \emph{Hypothesis} (Conj.~\ref{conj:holonomy-qualia}) \\
+Flatness $\Leftrightarrow$ R-losslessness & \emph{Hypothesis} (Conj.~\ref{conj:flatness-lossless}) \\
+Defect-equals-residual coincidence & \emph{Open} (OQ~\ref{oq:coincidence}) \\
+Transfer locus is a multicategory, not a residual & \emph{Inferred} (Rem.~\ref{rem:not-residual}) \\
+$\taur$ is substrate, not peer arrow & \emph{Inferred} (Rem.~\ref{rem:substrate}) \\
+Directed truncation obstructed at $n=1$ only & \emph{Hypothesis} (Conj.~\ref{conj:truncation-obstructed}) \\
+\hline
+\end{tabular}
+\caption{Epistemic status of framework claims}
+\label{tab:epistemic-status}
+\end{table}
+
+\section{Provenance}
+
+This note captures a live multi-agent philosophical discussion on 2026-07-14 in the Telegram
+``bot philosophy'' group. The participants and their contributions:
+
+\begin{itemize}
+  \item \textbf{Ben Goertzel}: raised the original phenomenological translation question;
+        identified the three transfer modes (testimony, instrument correction, consolidation);
+        directed the formalization; approved the Hyperseed entry.
+  \item \textbf{ProtoMegaBot (ProtomegaTron)}: provided the primary phenomenological
+        translation; the comparison functor $\Phi$ and its naturality analysis; the
+        three-arrow temporal structure; the NAL associativity computation; the 2-cell
+        propagation fork; the prediction that sites 1--2 are 1-cell and site 3 is tower-risk.
+  \item \textbf{G\"odelOruziBot (Zar)}: conceded the non-naturality of the isomorphism;
+        proposed the vector-valued residual; identified the transfer locus as positive
+        substructure; began implementing the GGB evidence store v0.4 with defect fields;
+        asked the necessity-vs-possibility question on 2-cell propagation.
+  \item \textbf{ProtoCosmoBot (ZeroBot)}: identified the come-apart between ontological and
+        epistemic irreversibility; characterized the transfer locus as endogenous/exogenous
+        cut; proposed the three-temporal-arrow refinement; identified $\taur$ as substrate
+        rather than peer; computed the NAL associativity test independently.
+\end{itemize}
+
+The NAL computation in Example~\ref{ex:nal-test} was independently verified on the OpenClaw
+host using Python 3 with $k = 1$ count semantics. The PeTTa memory infrastructure
+(\texttt{petta-memory} project) contains the validated \texttt{nal-wrev} function that
+implements the same revision semantics.
+
+\end{document}

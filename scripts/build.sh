@@ -11,6 +11,7 @@ TEX_FILES=(
   papers/0006-plain-metta-rholang-spec-ir/plain_metta_rholang_spec_ir.tex
   papers/0007-cla-mcbride-derivative-bridge/cla_mcbride_derivative_bridge.tex
   papers/0008-cla-mcbride-practical-implications/cla_mcbride_practical_implications.tex
+  papers/0009-directed-identity-belief-transport/directed_identity_belief_transport.tex
 )
 if command -v latexmk >/dev/null 2>&1; then
   latexmk -pdf -interaction=nonstopmode -halt-on-error "${TEX_FILES[@]}"
