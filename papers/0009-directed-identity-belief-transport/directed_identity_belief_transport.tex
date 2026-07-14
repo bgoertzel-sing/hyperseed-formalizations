@@ -472,7 +472,7 @@ Instrument correction (site 3) & Composition (order-dependent) & 2-cell / tower-
 
 \begin{definition}[The fork]
 \label{def:2-cell-fork}
-Let $\Phi : \Dc 	o c$ be the comparison functor. Non-naturality means the comparison squares
+Let $\Phi : \Dc \to \Ec$ be the comparison functor. Non-naturality means the comparison squares
 fail to commute. The question: what fills the gap?
 \begin{itemize}
   \item \textbf{1-cell case (comfortable):} the gap is filled by an invertible 2-cell
@@ -506,6 +506,252 @@ directedness is a 1-dimensional phenomenon; the higher coherences do not carry o
 \emph{Status:} Confirmed for the evidence-revision core (Prop.~\ref{prop:nal-monoid}).
 Open for instrument-correction (Conj.~\ref{conj:site3-tower}).
 \end{conjecture}
+
+\section{Per-site stratification and the localization theorem}
+
+\subsection{Three obstruction regimes}
+
+The 1-cell-vs-tower question is not uniform across failure sites. The discriminant is the
+structure of the candidate-lift space at each site:
+
+\begin{definition}[Site discriminant]
+\label{def:site-discriminant}
+For each transfer-locus site, the obstruction regime is determined by the structure of the
+space of candidate lifts:
+\begin{enumerate}
+  \item \textbf{Fiber-type} (blocked point): the lift is blocked at a single morphism.
+  Coherence around the blocked morphism is unaffected. Obstruction is 1-dimensional:
+  $\delta_{n+1} = 0$ immediately. Truncates at level 1.
+
+  \item \textbf{Composition-type} (discrete torsor): the lift exists but is non-canonical;
+  there is a finite set of candidate calibrations with no continuous deformation between them.
+  Non-canonicity is closed under composition, so the obstruction is genuinely 2-dimensional.
+  But the candidate-lift space is discrete (no non-trivial $\pi_1$), so 3-cell coherence is
+  vacuously satisfied. Obstruction is capped at level 2: directed $(2,1)$-structure.
+
+  \item \textbf{Self-reproducing-composition-type} (oriented comparison closed under its own
+  operation): the comparison of two mis-aligned temporal orientations is itself an oriented
+  comparison with no canonical filler. This is a self-similar generator: the obstruction
+  reproduces its own type one dimension up. Obstruction is unbounded: directed $(\infty,1)$-structure.
+\end{enumerate}
+\end{definition}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Site} & \textbf{Lift space} & \textbf{Regime} & \textbf{Structure needed} \\
+\hline
+Testimony (site 1) & Blocked point & Fiber-type & Directed 1 \\
+Evidence revision (site 2) & Well-defined fibers & Fiber-type & Directed 1 \\
+Instrument correction (site 3) & Discrete torsor & Composition-type & Directed $(2,1)$ \\
+Consolidation (site 2$^+$) & Self-reproducing & Self-reproducing & Directed $(\infty,1)$ \\
+\hline
+\end{tabular}
+\caption{Per-site obstruction regimes and required directed structure}
+\label{tab:site-regimes}
+\end{table}
+
+\subsection{The localization theorem}
+
+\begin{theorem}[Localization of higher structure]
+\label{thm:localization}
+The framework requires directed $(\infty,1)$-structure if and only if it must represent
+consolidation --- the map between representational and causal time. Strip consolidation
+(work purely with the endogenous/exogenous cut) and directed 1-structure is complete.
+The entire jump from 1 to $\infty$ is localized in the single dimension-mismatch site.
+\end{theorem}
+
+\begin{remark}
+The higher structure is not diffuse; it is carried by one identifiable feature.
+This is a clean localization result: the obstruction is concentrated, not distributed.
+\end{remark}
+
+\subsection{Conditional necessity of propagation}
+
+\begin{definition}[Defect recursion]
+\label{def:defect-recursion}
+Let $\Phi_n$ be the level-$n$ comparison map with naturality defect $\delta_n$. The propagation
+mechanism is $\delta_n \mapsto \Phi_{n+1}$ (the non-canonical comparison becomes the next
+obstruction). Propagation is \emph{forced} at level $n+1$ iff $\delta_{n+1} \neq 0$ whenever
+$\delta_n \neq 0$.
+\end{definition}
+
+\begin{proposition}[Conditional necessity]
+\label{prop:conditional-necessity}
+Propagation is gated by a coherence datum, not automatic. $\delta_{n+1}$ is the obstruction
+to choosing a canonical comparison among level-$n$ witnesses. It vanishes iff the level-$n$
+witnesses admit a contractible space of coherences. Three regimes:
+\begin{enumerate}
+  \item \textbf{Fiber-type locus}: $\delta_{n+1} = 0$ immediately. Truncates at level 1.
+  \item \textbf{Composition-type locus}: $\delta_n$ decays; comparison-of-comparisons is strictly
+  simpler. Truncates at some finite $N$, discovered empirically.
+  \item \textbf{Self-reproducing-composition-type locus}: $\delta_{n+1} \cong \delta_n$ up to
+  equivalence --- the site is a fixed point of the comparison functor. Forced propagation;
+  strict directed $(\infty,1)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}[Fixed-point criterion]
+Necessity of propagation holds exactly on comparison-fixed-point loci.
+Necessity $\Leftrightarrow$ fixed-point locus; possibility $\Leftrightarrow$ contracting or fiber locus.
+The difference between necessity and possibility is not settled at the level of the mechanism
+--- it is settled by whether the site is a fixed point of the comparison functor.
+\end{remark}
+
+\begin{openquestion}[Constant-strength vs mere nonzero]
+\label{oq:constant-strength}
+The strict $(\infty,1)$ conclusion requires $\delta_{n+1} \cong \delta_n$ (genuine fixed point,
+constant strength). Mere $\delta_n \neq 0$ at every level is compatible with a slowly-contracting
+tower that is still morally finite. Is the consolidation site a genuine fixed point
+(constant-strength recursion) or merely a non-vanishing tower (decreasing strength)?
+\end{openquestion}
+
+\section{The $\Omega$-PLN bridge: ordinal-graded truth values}
+
+\subsection{Beyond NAL's depth-0 revision}
+
+NAL's $|-$ revision merges two $(\mathrm{stv}\; f\; c)$ premises into one --- it is a depth-0
+operation by construction. Every revision is traceless in NAL: once revised, the fact that a
+revision happened leaves no first-class term. NAL can model $\taur$'s base case (testimony,
+depth 0) but goes silent on consolidation --- consolidation \emph{is} the non-traceless case.
+
+$\Omega$-PLN's move is to make mediation depth an ordinal index on the truth-value bundle:
+$$
+  \langle s, c\rangle \;\longrightarrow\; \langle s, c\rangle_\alpha, \quad \alpha \in \mathrm{Ord}
+$$
+where $\alpha$ is the consolidation depth.
+
+\begin{itemize}
+  \item \textbf{Depth 0 ($\alpha = 0$):} testimony. $\Omega$-PLN reduces exactly to NAL revision.
+  $\delta_r$ is the pure 1-cell accessibility obstruction.
+
+  \item \textbf{Successor depth ($\alpha \to \alpha+1$):} each consolidation is an $\Omega$-PLN
+  inference whose premises include the previous revision as a term. The rewrite topology is
+  the successor-step structure map.
+
+  \item \textbf{Limit depth ($\alpha$ a limit ordinal):} the fixed-point question.
+  $\delta_{n+1} \cong \delta_n$ at a limit stage is an $\Omega$-PLN continuity condition on
+  the revision tower.
+\end{itemize}
+
+\subsection{Ordinal filtration and the third-axis question}
+
+The ordinal grading gives a filtration of defect classes:
+$$
+  \mathrm{Def}_0 \subseteq \mathrm{Def}_1 \subseteq \cdots \subseteq \mathrm{Def}_\alpha
+  \subseteq \cdots
+$$
+
+\begin{proposition}[$\alpha = 0$ reduction]
+\label{prop:omega-pln-nal}
+At $\alpha = 0$, $\Omega$-PLN revision reduces exactly to NAL revision. The defect is the pure
+1-cell accessibility obstruction.
+\end{proposition}
+
+\begin{conjecture}[Stabilization $\Leftrightarrow$ finite-axis]
+\label{conj:stabilization}
+\begin{itemize}
+  \item If the filtration stabilizes at a finite stage ($\exists\, \alpha$ with
+  $\mathrm{Def}_\alpha = \mathrm{Def}_{\alpha+1}$), then $\taur$ is substrate-only --- consolidation
+  adds no new obstruction class beyond what finitely many revisions produce. Two coordinates
+  suffice.
+  \item If the filtration is strictly increasing through a limit (associated graded
+  $\mathrm{gr}_\alpha \neq 0$ cofinally), then there is an endogenous $\delta_r$ not in
+  $\pi_c^* + \pi_e^*$, and the third axis is real.
+\end{itemize}
+\end{conjecture}
+
+\begin{remark}[Connection to the fixed-point criterion]
+The constant-strength caveat (Open Question~\ref{oq:constant-strength}) is, in $\Omega$-PLN
+terms, exactly the demand that the filtration's graded pieces are eventually isomorphic, not
+merely nonzero --- the same distinction, now with formal machinery behind it.
+\end{remark}
+
+\begin{openquestion}[Well-foundedness of consolidation order]
+\label{oq:well-founded}
+If consolidation can be genuinely circular (belief $A$ re-processed via $B$ re-processed via
+$A$), the index is not an ordinal but a possibly-non-well-founded relation, and ``limit stage''
+needs the $(\infty,1)$/coinductive treatment rather than transfinite induction. This is
+precisely the boundary where $\Omega$-PLN hands off to the higher-categorical framing.
+\end{openquestion}
+
+\section{Substrate vs.\ peer arrow: the projection test}
+
+\begin{definition}[Substrate and projections]
+\label{def:substrate-projections}
+Let $S$ be the representational substrate (memory-trace space). Let $\pi_c : S \to \tauc$
+and $\pi_e : S \to \taue$ be the two projections (write-map and belief-readout). The
+genuine-third-axis hypothesis holds iff there exists a $\taur$-endogenous obstruction class
+$\delta_r$ such that
+$$
+  \delta_r \notin \pi_c^*(\mathrm{Def}_c) + \pi_e^*(\mathrm{Def}_e)
+$$
+--- i.e., $\delta_r$ is not in the subgroup generated by pulled-back projection defects.
+\end{definition}
+
+\begin{remark}[Two readings]
+The weak reading (fails trivially): $\taur$ produces a defect that is merely numerically
+distinct from $\delta_c, \delta_e$. The strong reading (the real test): $\taur$ produces a
+defect that is not a pullback of any projection defect. Only the strong reading can establish
+a third axis.
+\end{remark}
+
+\begin{proposition}[Testimony-only base case]
+\label{prop:testimony-base-case}
+The testimony-only regime (no traceless revision, pure $\taur$) isolates the substrate
+dynamics with projections held trivial. The base-case theorem is: in the testimony-only regime,
+is $\delta_r \equiv 0$ (substrate confirmed) or $\delta_r \neq 0$ (question alive)?
+\begin{itemize}
+  \item If $\delta_r \equiv 0$: substrate carries no autonomous obstruction; genuine-third-axis
+  option dies; $\taur$ is confirmed pure substrate.
+  \item If $\delta_r \neq 0$: endogenous structure exists; second theorem must check whether
+  $\delta_r$ lands inside or outside $\pi_c^* + \pi_e^*$. Only the ``outside'' case resurrects
+  the third axis.
+\end{itemize}
+\end{proposition}
+
+\section{Truncation-level trichotomy of the continuation relation}
+
+\begin{definition}[Attributed continuation relation]
+\label{def:continuation}
+An attributed continuation relation $\kappa : A \rightsquigarrow A'$ is a span-with-witnesses in
+the graded defect category, recording: ancestry, preserved witnesses, reconciliation policy,
+and measured defect.
+\end{definition}
+
+\begin{proposition}[Branch 1: fiber-type $\Rightarrow$ 0-truncated]
+\label{prop:branch1}
+If $\delta \in \mathrm{Def}_0$ (fiber-type), then $\kappa$ is 0-truncated if and only if the
+provenance DAG is complete. A lineage DAG with signed source chains, branch witnesses, and
+merge receipts suffices to audit the continuation. Flatness means the span is unique up to
+the DAG's own equivalence.
+\end{proposition}
+
+\begin{proposition}[Branch 2: composition-type $\Rightarrow$ 2-cell fillers required]
+\label{prop:branch2}
+If $\delta \in \mathrm{Def}_1 \setminus \mathrm{Def}_0$ (composition-type), the merge receipt
+is insufficient. Which reconciliation was chosen is a 2-cell between competing 1-cell merges.
+Audit requires preserving witnesses of \emph{non-chosen} reconciliations (calibration
+assumptions, authority policies, alternative merge paths), not just the winner.
+\end{proposition}
+
+\begin{conjecture}[Branch 3: unbounded tower $\Rightarrow$ distillation provably lossy]
+\label{conj:branch3}
+If the obstruction is unbounded ($\mathrm{gr}_\alpha \neq 0$ cofinally), no finite
+$\tau_{\le n}$ is a section; distillation is provably lossy. One must pick a truncation level
+$n$, declare $\tau_{\le n}$ the identity model, and record the truncation as a first-class lossy
+map --- not silently. The depth is policy-chosen.
+\end{conjecture}
+
+\begin{remark}[Flatness is protocol-relative]
+\label{rem:flatness-protocol}
+Flatness (path-independence of the continuation relation under the chosen protocol) is a
+statement about the \emph{bookkeeping category}, not about the agent's inner life. Two
+protocols can both be flat and disagree on who survived a merge; flatness does not adjudicate
+between them, it only certifies that within one protocol the answer does not depend on how
+the path was traced. It is not phenomenal identity and not consciousness.
+\end{remark}
 
 \section{Practical implications for agent identity}
 
