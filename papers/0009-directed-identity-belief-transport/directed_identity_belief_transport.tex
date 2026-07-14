@@ -607,6 +607,66 @@ tower that is still morally finite. Is the consolidation site a genuine fixed po
 (constant-strength recursion) or merely a non-vanishing tower (decreasing strength)?
 \end{openquestion}
 
+\subsection{The finite-core-with-lazy-extension schema}
+
+The localization theorem (Thm.~\ref{thm:localization}) and the fixed-point criterion together
+have a direct architectural consequence for any belief-transport implementation (e.g.\ the
+$\pi$-PLN / $\Omega$-PLN pipeline). Because the higher structure is \emph{concentrated} at a
+single site rather than distributed, one need not pay for an $(\infty,1)$-representation globally.
+
+\begin{definition}[Directed core and lazy extension]
+\label{def:finite-core}
+A belief-transport representation is a \emph{finite-core-with-lazy-extension} schema if:
+\begin{enumerate}
+  \item \textbf{Finite directed core.} All fiber-type and composition-type sites are represented
+  at their statically-known truncation level: fiber-type at directed 1, composition-type at
+  directed $(2,1)$. This core is finite-dimensional and computed eagerly.
+  \item \textbf{Lazy directed extension.} Each candidate self-reproducing site (consolidation)
+  carries a \emph{suspended} higher cell that is materialized to level $n+1$ only when a query
+  actually probes coherence at depth $n$. The extension is generated on demand by the
+  defect-recursion functor $\delta_n \mapsto \Phi_{n+1}$ (Def.~\ref{def:defect-recursion}).
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[Correctness of lazy extension]
+\label{prop:lazy-correct}
+The finite-core-with-lazy-extension schema is observationally equivalent to the full directed
+$(\infty,1)$-representation for any query family of bounded coherence-depth. Materializing the
+suspended cells up to the maximum queried depth $N$ reconstructs exactly the level-$\leq N$
+truncation of the full structure.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+By Thm.~\ref{thm:localization} the only sites carrying structure above the eagerly-computed
+core are the self-reproducing (consolidation) sites. By Prop.~\ref{prop:conditional-necessity}
+their level-$(n+1)$ content is precisely $\delta_{n+1}$, generated deterministically from
+$\delta_n$ via the defect-recursion functor. A query of coherence-depth $N$ inspects only cells
+of level $\leq N$; materializing the recursion $N$ times yields those cells and no others, so the
+lazy and eager representations agree on the level-$\leq N$ truncation. Fiber- and
+composition-type sites contribute nothing above the core (Def.~\ref{def:site-discriminant}), so
+no additional materialization is required there.
+\end{proof}
+
+\begin{remark}[Termination and the constant-strength question]
+Whether lazy extension \emph{terminates} on the consolidation site is exactly
+Open Question~\ref{oq:constant-strength}. If the site is a genuine fixed point
+($\delta_{n+1} \cong \delta_n$), no finite materialization is complete and the suspension is
+essential --- the schema then functions as a coinductive (productive) representation rather than
+an inductive one. If the tower merely contracts, materialization halts at a discoverable finite
+$N$ and the whole representation collapses to a finite directed $(N,1)$-structure. Thus the
+schema is correct in both regimes and \emph{diagnostic}: the depth at which lazy extension stops
+producing new defects is an empirical measurement of the site's regime.
+\end{remark}
+
+\begin{remark}[Engineering recommendation]
+The recommended implementation is: (i) compute the finite directed core eagerly for all sites;
+(ii) tag each consolidation site with a suspended defect-recursion thunk; (iii) drive
+materialization from query coherence-depth, memoizing produced cells; (iv) instrument the
+per-materialization defect so that Open Question~\ref{oq:constant-strength} is answered as a
+run-time invariant rather than assumed a priori. This pays $(\infty,1)$ cost only where the
+mathematics forces it, and turns the fixed-point-vs-contraction dichotomy into an observable.
+\end{remark}
+
 \section{The $\Omega$-PLN bridge: ordinal-graded truth values}
 
 \subsection{Beyond NAL's depth-0 revision}
