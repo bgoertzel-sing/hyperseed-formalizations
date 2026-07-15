@@ -15,6 +15,7 @@ TEX_FILES=(
   papers/0010-governance-seam-policy-differential/governance_seam_policy_differential.tex
   papers/0011-phenomenological-identity-formalization/phenomenological_identity_formalization.tex
   papers/0012-closing-primitives-identity-tension/closing_primitives_identity_tension.tex
+  papers/0013-clarityomega-ingestion-guide/clarityomega_ingestion_guide.tex
 )
 if command -v latexmk >/dev/null 2>&1; then
   latexmk -pdf -interaction=nonstopmode -halt-on-error "${TEX_FILES[@]}"
