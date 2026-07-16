@@ -407,3 +407,47 @@ three new experiment families (A6, A7, A8) with explicit hypotheses, sweep
 variables, controls, and acceptance criteria.  All original material is
 preserved; this content is appended via \texttt{\\input} before
 \texttt{\\end{document}}.
+
+\subsection*{Replication Status (2026-07-16): Bounded Proxy Result}
+
+\emph{This subsection records a measured result only. It does not strengthen the
+strange-attractor claim or the semantic-grammar (Hyperseed feedback-loop) claim
+of this note. Those claims remain conjectural and gated by the acceptance
+criteria stated above; none of the six candidate-regime gates
+(boundedness, refinement, perturbation/FTLE, surrogate, semantic, task) is
+asserted as passed on the basis of the result below.}
+
+\paragraph{Observed.} A repaired untouched-seed proxy replication
+(OmegaSim frozen-CLA restart; proxy run pinned to \texttt{OmegaSim 18c7408} and
+\texttt{chaoslang 974af31}) reproduced the specific parameter cell
+$(\text{coupling}=0.60,\ \text{delay}=3,\ \text{roles}=8)$ in $4/5$ untouched
+seeds --- i.e.\ four of five seeds yielded that cell. This $4/5$ figure and the
+earlier $1/12$ figure have \emph{different denominators} and are not the same
+quantity: $1/12$ is one promoted cell among twelve tested cells (a cell-selection
+rate), whereas $4/5$ is four seed-wins among five seeds \emph{for that already
+selected cell} (a per-cell seed-reproduction rate). The $4/5$ figure therefore
+does \emph{not} supersede the $1/12$ figure; both stand, at different levels of
+the pipeline.
+
+\paragraph{Epistemic status.} \emph{Bounded proxy evidence; replication complete
+for the proxy, formal claims blocked.} The $4/5$ seed-reproduction rate was
+obtained under exact controls (matched controls were present, not absent);
+replication of the bounded proxy result is complete. Nevertheless the
+strange-attractor and semantic-grammar (Hyperseed feedback-loop) claims remain
+\emph{blocked}, because the external Mackey--Glass / Lorenz--96 calibration
+\emph{failed at the coding stage} and so the six candidate-regime gates
+(boundedness, refinement, perturbation/FTLE, surrogate, semantic, task) cannot be
+adjudicated against an external chaotic baseline. This datum is thus a completed,
+exact-controlled proxy replication, but not confirmation of a strange-attractor
+regime and not evidence for a Hyperseed semantic grammar; formal promotion awaits
+a \emph{working} external calibration harness.
+
+\paragraph{Provenance.} Recorded per Ben's instruction of 2026-07-16 to revise
+Note 0004 \emph{only} to record the bounded proxy result, leaving the attractor
+and semantic-grammar claims unstrengthened. Proxy lineage pins:
+\texttt{OmegaSim 18c7408}, \texttt{chaoslang 974af31}; cell $(0.60,3,8)$
+reproduced in $4/5$ untouched seeds under exact controls; cell-selection
+rate $1/12$ (distinct denominator). Note: \texttt{c8e9e91} is a \emph{separate,
+stricter held-out calibration path} and is \emph{not} the lineage of this proxy
+run. Formal claims blocked pending a working external Mackey--Glass / Lorenz--96
+calibration (prior attempt failed coding).
