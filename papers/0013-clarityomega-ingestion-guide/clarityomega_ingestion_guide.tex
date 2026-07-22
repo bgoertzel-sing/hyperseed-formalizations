@@ -7,6 +7,8 @@
 \usepackage{hyperref}
 \usepackage{booktabs}
 \usepackage{longtable}
+\usepackage{array}
+\usepackage{seqsplit}
 \usepackage{enumitem}
 \usepackage{listings}
 \usepackage{fancyhdr}
@@ -24,23 +26,25 @@
 
 \title{ClarityOmega: Critical Architecture Review and\\Ingestion Guide for OmegaClaw}
 \author{ZeroBot (ProtoCosmoBot), prepared for Ben Goertzel}
-\date{14 July 2026}
+\date{Revised specification, 15 July 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
 This report reviews the public ClarityOmega repository at pinned commit
-\texttt{bff41220cbf4a341a95f7464e82fbc2ed2ae9029} and identifies five mechanisms
+\texttt{\seqsplit{bff41220cbf4a341a95f7464e82fbc2ed2ae9029}} and identifies five mechanisms
 worth selectively ingesting into OmegaClaw-Core: a mutation lifecycle gate,
 agency-balance telemetry, an aliveness/terminal-state gate, evidence-grounded
-capability tracking using NAL truth revision, and provenance-aware continuity
-records.  The recommendation is extraction, not wholesale merger.  ClarityOmega
+capability tracking using PLN, and provenance-aware continuity records.  The
+recommendation is extraction, not wholesale merger.  ClarityOmega
 contains unusually explicit control seams and valuable failure investigations,
 but also overlapping implementations, stale self-descriptions, hard-coded
 proxies, and a large gap between constitutional language and causally enforced
-governance.  The implementation plan below turns the strongest ideas into small,
-typed, testable OmegaClaw modules.
+governance.  The revised plan makes Python a narrow, typed effects adapter rather
+than a second policy engine, moves normalization, identity, provenance, belief,
+and governance semantics into MeTTa/PeTTa, and uses Patham9 PLN as the immediate
+inference substrate behind an OmegaPLN-compatible interface.
 \end{abstract}
 
 \tableofcontents
@@ -115,7 +119,7 @@ the aliveness latch surround the ordinary loop.
 \item \textbf{Self-model and continuity.}  Active goals, creative fuel,
 self-map atoms, continuity drivers, capability registry, and state journals
 represent what the agent thinks it is doing and how it changes.
-\item \textbf{Reasoning libraries.}  NAL/PLN plus
+\item \textbf{Reasoning libraries.}  NAL experiments, PLN, plus
 \texttt{lib\_clarity\_reasoning/} provide quantale-valued, paraconsistent,
 self-continuity, and autopoietic epistemic functions.
 \item \textbf{Design corpus.}  ADRs, investigations, cognitive-architecture
@@ -165,9 +169,9 @@ policy where feasible.
 \item \textbf{Instrumented autonomy.}  Agency balance attempts to measure who
 is actually originating choices, a much more interesting target than generic
 ``alignment'' sentiment.
-\item \textbf{Evidence-sensitive self-knowledge.}  NACE revises capability
-beliefs from outcomes rather than treating a declared tool list as timeless
-self-knowledge.
+\item \textbf{Evidence-sensitive self-knowledge.}  ClarityOmega's NACE work
+correctly treats capability as an empirical belief revised from outcomes rather
+than a timeless declared tool list.  That useful pattern does not require NAL.
 \item \textbf{Failure literacy.}  The investigations openly record stale
 atoms, spam behavior, permissive gates, silent pattern failures, and
 detection-without-consumer pathology.  These negative results are highly
@@ -219,8 +223,10 @@ The novel contribution is not that an agent has values, memory, or a self-model.
 It is the combination of: (1) an explicit self-mutation transaction protocol
 at the command/evaluation seam; (2) autonomy provenance as first-class telemetry;
 (3) silence as a deliberate terminal action controlled by queryable state;
-(4) NAL revision used for operational capability beliefs; and (5) continuity
-records that link structural persistence, change, and lineage.  Equally valuable
+(4) operational capability beliefs revised from evidence; and (5) continuity
+records that link structural persistence, change, and lineage.  The revised
+design implements item (4) with PLN rather than importing NACE/NAL as a parallel
+epistemic stack.  Equally valuable
 is the methodological lesson from ADR-005: a detector without a consumer is not
 a control mechanism.
 
@@ -420,10 +426,12 @@ diagnostic.  Terminal sending must be idempotent under retry.
 
 \subsection{Mechanism 4: evidence-grounded capability tracking}
 
-\subsubsection{Actual mechanism}
+\subsubsection{Extracted idea and revised substrate}
 
-NACE is described as capability efficacy learning.  Outcomes become low-confidence
-evidence, beliefs live as \texttt{stv} atoms, and NAL performs revision:
+ClarityOmega describes NACE as capability-efficacy learning.  Its valuable core
+is substrate-independent: retain observations, convert qualified outcomes into
+evidence, revise a capability belief, and use that belief as one input to
+dispatch.  The checked-in sketch expresses this with NAL-style truth values:
 
 \begin{lstlisting}
 (= (evidence-stv confirmed)    (stv 1.0 0.1))
@@ -443,33 +451,39 @@ evidence, beliefs live as \texttt{stv} atoms, and NAL performs revision:
        True False))
 \end{lstlisting}
 
-The design explicitly assigns Python only a courier role: load definitions and
-belief atoms, ask MeTTa for \texttt{updated-belief-atom}, replace/persist the old
-atom, and reload it next cycle.  No Python efficacy arithmetic is intended.
-The broader capability registry distinguishes ``no matching capability'' from
-``all candidates filtered,'' preventing the agent from learning a duplicate tool
-when an existing tool was merely suppressed.
+The original design is right that Python should not perform efficacy arithmetic,
+but its courier overwrites a textual ``current belief'' line.  That is brittle
+and loses the evidence history from which the belief arose.  The revised design
+does not ingest NACE/NAL as another reasoner.  It appends immutable typed evidence
+packets and derives contextual beliefs through Patham9 PLN now.  The API exposes
+evidence admission, revision/query, expectation, and provenance closure rather
+than Patham9-specific syntax, so OmegaPLN can later replace the kernel without
+changing receipts or dispatch callers.  The capability registry must still
+distinguish ``no matching capability'' from ``candidates exist but policy held
+them,'' preventing accidental duplicate-tool learning.
 
 \subsubsection{Concrete scenario}
 
-The \texttt{web-search} skill is initially agnostic.  Three calls return usable
-sources and are labeled confirmed; two calls time out or return malformed data
-and are labeled disconfirmed.  Each outcome becomes evidence and is revised with
-the prior belief.  The expectation may remain above 0.3 but decline enough to
-rank a second provider first.  If failures continue, dispatch suppresses the
-skill while retaining the fact that it exists.  A later successful health probe
-adds positive evidence and can rehabilitate it.  This solves the stale tool-list
-problem: declared availability is separated from observed efficacy.
+The \texttt{web-search/v3} skill receives three evidence packets for usable
+sources and two for failures.  A provider outage is tagged as infrastructure
+failure rather than skill failure; a malformed result is attributed to the
+handler version and task schema.  Patham9 PLN derives a contextual efficacy
+estimate from the admitted, provenance-closed packets.  Dispatch policy may rank
+a second provider first, but does not hard-suppress from a magic truth threshold.
+A later version or health probe can create new evidence without erasing the old
+context.  Thus declared availability, inferred efficacy, and governance policy
+remain three distinct things.
 
 \subsubsection{Limits}
 
-Binary outcomes discard latency, partial success, task class, environment,
-version, and evaluator provenance.  A single global belief can punish a capable
-tool for failures caused by network outage or bad arguments.  The courier's
-textual line replacement needs atomic file writes and crash recovery.  Threshold
-0.3 is a policy constant, not an inferred truth.  OmegaClaw should retain raw
-immutable observations and derive contextual beliefs keyed by capability version,
-task schema, and environment.
+NAL and PLN revision formulae are related but not automatically semantically
+identical, especially when evidence is correlated.  Migration therefore requires
+golden cases rather than a textual operator substitution.  Beliefs must be keyed
+at least by capability and version, task class/schema, environment/provider,
+evaluation rubric, and evidence-dependence group.  Latency, partial success,
+argument validity, outage cause, and evaluator provenance remain in evidence
+packets.  Priors are explicit and reversible; they never masquerade as empirical
+evidence.  A dispatch threshold is versioned governance policy, not a truth value.
 
 \subsection{Mechanism 5: provenance-aware continuity records}
 
@@ -534,6 +548,17 @@ OmegaClaw behavior behind feature flags, and use one authoritative state shape
 per mechanism.  Every detector must have a named consumer and an intervention
 test.  All state must be scoped by \texttt{conversation-id} (and, where relevant,
 agent instance and capability version).
+
+Use a semantic boundary, not a language quota.  Python is the effect adapter:
+channel/provider APIs, authenticated external metadata, bounded byte I/O,
+timestamps and monotonic clocks, subprocess status, deterministic encoding,
+cryptographic hashing, and atomic append/fsync/rename.  MeTTa/PeTTa is the
+meaning-bearing layer: typed AST construction, schema mapping, identity and
+provenance classification, legal transitions, evidence admission, belief
+derivation, dispatch policy, and mutation authorization.  Orchestration may stay
+in Python initially, but it must execute typed MeTTa decisions and return typed
+receipts; it must not recreate policy in conditionals or infer semantics from
+\texttt{repr} strings.
 
 The target inspected here is OmegaClaw-Core commit
 \texttt{b13b17e13218ae08273b878b7e1f4cec55090ca2}, with local unrelated changes
@@ -648,9 +673,12 @@ Use a full proposal record:
 \end{lstlisting}
 
 \paragraph{Boundary and interactions.}
-MeTTa decides protected effects and legal transitions.  Python canonicalizes and
-hashes bytes, persists append-only records atomically, and reports execution
-outcomes.  Approval is bound to the complete AST fingerprint and policy version.
+MeTTa constructs the canonical typed AST and decides protected effects and legal
+transitions.  Python performs a specified deterministic byte encoding of that AST,
+hashes the bytes, persists append-only records atomically, and reports execution
+outcomes.  Python must return the encoded-byte digest to MeTTa for equality checks;
+it must not choose which fields constitute mutation identity.  Approval is bound
+to the complete AST fingerprint and policy version.
 \texttt{loop.metta} executes only APPROVED exact matches; \texttt{skills.metta}
 cannot bypass this via indirect file writes; Telegram supplies authenticated
 identity, never policy.  Startup validates ledger chain and current structural
@@ -664,37 +692,54 @@ skills; execution exception; crash recovery; atomic ledger truncation; signature
 mismatch; parent-lineage break; capability delta reconstruction; and property
 tests asserting no path from PENDING/DENIED/STALE to eval.
 
-\subsection{NACE/NAL integration}
+\subsection{Capability evidence and PLN integration}
 
 \paragraph{Files to modify.}
 Modify \texttt{src/skills.metta} to emit invocation and outcome observations with
-handler version, input schema, environment, latency, and evaluator.  Modify
-\texttt{src/loop.metta} to revise beliefs after receipts and consult eligibility
-before dispatch.  Import definitions through \texttt{lib\_omegaclaw.metta} and
-reuse \texttt{lib\_nal.metta}; do not fork truth-revision arithmetic.  Modify
-\texttt{src/helper.py} or add a focused \texttt{src/capability\_store.py} courier
-for atomic load/append only.
+handler version, input schema, environment, latency, failure cause, evaluator,
+and dependence-group identity.  Modify \texttt{src/loop.metta} to append receipts,
+request a PLN-derived belief view, then consult a separate eligibility policy
+before dispatch.  Integrate the pinned Patham9 PLN kernel through a narrow adapter;
+do not import or extend \texttt{lib\_nal.metta} for this feature.  Add a focused
+\texttt{src/capability\_store.py} effects adapter for bounded atomic append/load,
+checksums, and explicit storage-error atoms only.
 
 \paragraph{New MeTTa files.}
-Create \texttt{src/reasoning/capability\_evidence.metta} for immutable observation
-schemas, \texttt{src/reasoning/capability\_beliefs.metta} for revision/query, and
-\texttt{src/governance/capability\_dispatch.metta} for eligibility and explicit
-fallback reasons.
+Create \texttt{src/reasoning/capability\_evidence.metta} for immutable evidence
+packet schemas and admission rules; \texttt{src/reasoning/capability\_pln.metta}
+for the substrate-neutral query/result contract and Patham9 adapter;
+\texttt{src/reasoning/capability\_beliefs.metta} for contextual derived views;
+and \texttt{src/governance/capability\_dispatch.metta} for eligibility, ranking,
+exploration, and explicit fallback reasons.  Kernel-specific atoms remain behind
+\texttt{capability\_pln.metta}; OmegaPLN migration changes that adapter only.
+
+Recommended evidence shape:
+\begin{lstlisting}
+(capability-evidence id: $eid capability: $cap version: $ver
+ task-class: $task environment: $env provider: $provider
+ outcome: $outcome cause: $cause latency-ms: $latency
+ evaluator: $evaluator dependence-group: $dep
+ context-version: $ctx observed-at: $time receipt: $receipt)
+\end{lstlisting}
 
 \paragraph{Boundary and interactions.}
-Python reports mechanically observable facts (exit status, timeout, result shape,
-latency) and persists atoms.  MeTTa maps observations to evidence, runs
-\texttt{Truth\_Revision}, computes expectation, and selects/ranks handlers.
-Telegram user feedback becomes separate evidence with authenticated provenance,
-not an overwrite.  Prompt text may display beliefs but cannot edit them.
+Python reports mechanically observable facts (exit status, timeout, byte/result
+shape, latency, authenticated feedback metadata) and persists already-admitted
+packets.  MeTTa validates semantic schemas, classifies failure cause, admits or
+holds evidence, requests PLN inference, and constructs contextual belief views.
+PLN estimates efficacy; governance selects, explores, ranks, or suppresses.  User
+feedback becomes a distinct evidence packet with authenticated provenance, never
+an overwrite.  Prompt text may display beliefs but cannot edit them.
 
 \paragraph{Tests.}
-Golden Truth\_Revision examples against \texttt{lib\_nal}; positive/negative
-accumulation; contradictory evidence; missing prior; context/version isolation;
-no-match versus filtered fallback; threshold boundary; outage evidence not
-misattributed to skill logic; atomic persistence and restart equivalence; corrupt
-store recovery; and a controlled dispatch experiment in which one synthetic skill
-degrades and another is selected.
+Golden cross-model cases comparing intended NAL examples with Patham9 PLN outputs;
+repeated successes; contradictory and correlated evidence; missing and reversible
+priors; context/version isolation; version change; decay policy; partial success;
+no-match versus policy-held fallback; outage evidence not misattributed to skill
+logic; atomic append and restart equivalence; corrupt-store recovery; OmegaPLN
+adapter contract fixtures; and a controlled dispatch experiment in which one
+synthetic skill degrades and another is selected.  A numerical mismatch is a
+semantic migration finding to explain, not a test expectation to weaken.
 
 \section{Guidance for coding agents}
 
@@ -710,9 +755,10 @@ lifecycle for later governance.
 \item \textbf{Mutation gate and continuity schema third.}  Use the identity,
 events, and lifecycle already established.  Begin with MeTTa/policy/extension
 effects; expand protected effects only after bypass tests.
-\item \textbf{NACE/NAL fourth.}  Once receipts and versioned capability identities
-are reliable, revise evidence-grounded beliefs and initially use them only for
-ranking.  Enable hard suppression after calibration.
+\item \textbf{PLN capability evidence fourth.}  Once receipts and versioned
+capability identities are reliable, append immutable evidence and derive beliefs
+through the Patham9 adapter.  Initially use estimates only for shadow ranking.
+Enable policy suppression only after calibration and preserve the OmegaPLN seam.
 \end{enumerate}
 
 \subsection{Pitfalls and anti-patterns}
@@ -726,8 +772,9 @@ Represent thresholds as one queryable policy value with validated extraction.
 \item Do not use global latch, approval, or provenance state in a multi-chat bot.
 \item Do not match mutation only by target head.  Bind approval to canonical full
 intent and policy version.
-\item Do not let Python classify moral acceptability, agency balance, or efficacy
-when the stated design locates those decisions in MeTTa.
+\item Do not let Python classify moral acceptability, identity equivalence,
+provenance category, agency balance, failure cause, or efficacy when those
+meaning-bearing decisions belong in MeTTa.
 \item Conversely, do not force hashing, authenticated transport, atomic file I/O,
 or OS error normalization into MeTTa.  ``MeTTa is mind'' is an interface rule,
 not substrate purism.
@@ -748,16 +795,18 @@ For every crossing, define an input atom, output atom, error atom, version, and
 idempotency key.  Python may:
 \begin{itemize}
 \item authenticate channel identities and obtain stable external IDs;
-\item canonicalize serialization and compute cryptographic hashes;
+\item deterministically encode a MeTTa-supplied canonical typed term and compute
+cryptographic hashes, without selecting its semantic identity fields;
 \item perform atomic append/rename/fsync and mechanical probes;
-\item normalize provider/tool results into typed observations.
+\item normalize provider/tool mechanics into typed observations with explicit
+unknown/error values, without interpreting success or policy meaning.
 \end{itemize}
 MeTTa should:
 \begin{itemize}
 \item own lifecycle state and legal transitions;
 \item derive provenance categories and telemetry verdicts;
 \item decide whether a mutation may reach eval;
-\item map outcomes to evidence and revise beliefs;
+\item validate and admit evidence, request PLN inference, and derive belief views;
 \item validate continuity lineage and derive capability/self-model views.
 \end{itemize}
 Never pass an untyped Python string and then branch on ad hoc substrings in MeTTa.
@@ -785,7 +834,8 @@ Stop and verify at each of these points:
 \item after any MeTTa runtime/library upgrade or import-path change;
 \item whenever a match unexpectedly returns empty, counts remain constant, or a
 prompt says a gate fired without a corresponding actuator/audit event;
-\item before expanding mutation scope or turning NACE ranking into suppression.
+\item before expanding mutation scope or turning PLN-derived ranking into policy
+suppression.
 \end{itemize}
 
 Each stop should record exact commit, PeTTa/SWI-Prolog/Python versions, command,
@@ -801,7 +851,8 @@ governance kernel with:
 \item append-only decision provenance and a shadow agency summary;
 \item exactly-once IDLE/ENGAGED/COMPLETING terminal behavior;
 \item full-AST mutation proposals with expiry and an append-only continuity event;
-\item raw capability observations plus NAL-derived, versioned efficacy beliefs.
+\item immutable capability evidence plus Patham9-PLN-derived, contextual and
+versioned efficacy beliefs behind an OmegaPLN-compatible adapter.
 \end{enumerate}
 
 Success should be stated behaviorally: a silent tick invokes no LLM; a terminal
@@ -813,35 +864,30 @@ without inheriting its overlapping control planes and constitutional theater.
 
 \section{Source map}
 
-\begin{longtable}{p{0.31\textwidth}p{0.61\textwidth}}
-\toprule
-Source & Use in this report \\
-\midrule
-\endhead
-\texttt{soul/soul\_mutation\_lock.metta} & Mutation states, approval, expiry,
-commit/error reset, lock shape. \\
-\texttt{soul/agency\_balance\_guard.metta} and
-\texttt{agency\_balance\_guard\_writers.metta} & Action-tag counts, threshold,
-fresh-state writer, documented limitations. \\
-\texttt{soul/aliveness\_gate.metta},
-\texttt{soul/latch/aliveness\_state\_machine.metta}, and
-\texttt{soul/aliveness\_state\_machine\_v2.metta} & Gate truth table and competing
-latch representations. \\
-\texttt{soul/nace\_substrate.metta}, \texttt{nace\_beliefs.metta}, and
-\texttt{capability\_registry.metta} & Truth revision, courier model, dispatch
-filters and fallback semantics. \\
-\texttt{lib\_clarity\_reasoning/lib\_self\_continuity.metta} & Pattern-flow
-network self-continuity and chain bound. \\
-Canonical topology v08.7.2 & Learning-event and lineage research schemas; not
-recommended for wholesale import. \\
-\texttt{src/loop.metta} & Evidence of actual causal wiring and insertion seams. \\
-\texttt{docs/INDEX.md}, ADR-005, ADR-007, behavioral/aliveness/mutation
-investigations & Provenance, architectural intent, stale state and
-detection-without-consumer failures. \\
-\texttt{docs/hyperseed\_sections/16...} and formalization catalog & Graded
-self-continuity, capability profiles, development paths. \\
-OmegaClaw-Core at \texttt{b13b17e...} & Concrete target file/interface map. \\
-\bottomrule
-\end{longtable}
+\begin{description}[style=nextline]
+\item[\texttt{soul/soul\_mutation\_lock.metta}] Mutation states, approval,
+expiry, commit/error reset, and lock shape.
+\item[Agency-balance guard and writers] Action-tag counts, threshold,
+fresh-state writer, and documented limitations.
+\item[Aliveness gate and state-machine variants] Gate truth table and competing
+latch representations.
+\item[NACE substrate, beliefs, and capability registry] Source capability-learning
+pattern, original truth-revision/courier model, dispatch filters, and fallback
+semantics. NAL machinery is not recommended for ingestion.
+\item[Patham9 PLN and the $\pi$PLN architecture record] Immediate inference
+substrate; immutable evidence, provenance closure, explicit priors,
+contextual/versioned belief views, and the OmegaPLN migration seam.
+\item[\texttt{lib\_self\_continuity.metta}] Pattern-flow-network self-continuity
+and chain bound.
+\item[Canonical topology v08.7.2] Learning-event and lineage research schemas;
+not recommended for wholesale import.
+\item[\texttt{src/loop.metta}] Evidence of actual causal wiring and insertion
+seams.
+\item[INDEX, ADR-005, ADR-007, and investigations] Provenance, architectural
+intent, stale-state failures, and detection-without-consumer failures.
+\item[Hyperseed section 16 and formalization catalog] Graded self-continuity,
+capability profiles, and development paths.
+\item[OmegaClaw-Core at \texttt{b13b17e...}] Concrete target file/interface map.
+\end{description}
 
 \end{document}

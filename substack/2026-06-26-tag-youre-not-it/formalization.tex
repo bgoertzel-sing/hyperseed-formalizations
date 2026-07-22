@@ -1,0 +1,268 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{definition}{Definition}
+\newtheorem{claim}{Claim}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{theorem}{Theorem}
+
+\title{Hyperseed Formalization Draft: ``Tag, You're Not It''}
+\author{Source: Ben Goertzel; formalization draft by ProtomegaTron/ZeroBot}
+\date{Source published 2026-06-26; draft retrieved/formalized 2026-06-28}
+
+\begin{document}
+\maketitle
+
+\section{Source and status}
+Source article: \href{https://bengoertzel.substack.com/p/tag-youre-not-it}{``Tag, You're Not It''}, Eurykosmotron, by Ben Goertzel.
+This is an initial Hyperseed-oriented formalization. It paraphrases the article's main intellectual moves and separates source claims from proposed formal objects.
+
+\section{Informal Hyperseed reading}
+The article contrasts two patterns for persistent AI teammates. Claude Tag is treated as a polished, Slack-bound role-agent: a channel wears a managed Claude identity, backed by service accounts, billing, audit logs, and ambient/asynchronous tasking. OmegaClaw/OmegaHive are framed as agent-first societies: named cognitive principals with explicit memories, roles, tool boundaries, and inspectable inter-agent process.
+
+The Hyperseed-relevant axis is therefore not merely ``which product is better,'' but how cognitive work becomes embodied in a substrate. A platform-bound agent makes the communication surface the organizing ontology. An agent-first society makes the agent, its identity, its memory, and its relations to other agents the organizing ontology.
+
+\section{Core formal objects}
+
+\begin{definition}[Agentic work substrate]
+An agentic work substrate is a tuple
+\[
+S = \langle A, C, M, T, P, O, B \rangle
+\]
+where $A$ is a set of agents or agent-roles, $C$ communication contexts, $M$ memory structures, $T$ tools/actions, $P$ permission and policy structures, $O$ observation/audit structures, and $B$ billing/resource constraints.
+\end{definition}
+
+\begin{definition}[Platform-bound role-agent]
+A platform-bound role-agent is an agentic work substrate in which a platform context $c \in C$ determines the agent's identity, memory boundary, and operational scope. Claude Tag, as described in the article, is modeled as approximately platform-bound because Slack channels provide the key compartmentalizing structure.
+\end{definition}
+
+\begin{definition}[Agent-first cognitive society]
+An agent-first cognitive society is an agentic work substrate in which persistent named agents $a \in A$ are primary principals, each with role, memory, permissions, and remit, and communication surfaces are secondary transports. OmegaClaw/OmegaHive are described as aiming at this pattern.
+\end{definition}
+
+\begin{definition}[Inspectable durable memory]
+A memory structure $M$ is inspectably durable when its stored contents, provenance, update history, and influence on current action can be queried or reconstructed by collaborators and verifier processes. Hyperon AtomSpace-style symbolic metagraph memory is proposed as a candidate implementation family.
+\end{definition}
+
+\begin{definition}[Live verifier]
+A live verifier is an observer process $v$ with read-only or policy-scoped access to agent reasoning traces, actions, permissions, and provenance, such that oversight occurs during process execution rather than only after completion via logs.
+\end{definition}
+
+\section{Claims as formal contrasts}
+
+\begin{claim}[Wrapper novelty versus substrate novelty]
+The main novelty of Claude Tag is wrapper-level product integration rather than a fundamentally new agentic-work substrate.
+\end{claim}
+
+\begin{claim}[Opaque memory risk]
+If an autonomous long-running agent's memory is opaque to users, then the agentic work substrate has elevated risk of hidden bias, sycophancy, stale context, and unexplained behavior.
+\end{claim}
+
+\begin{claim}[Attribution requirement]
+For audit-grade multi-agent work, agent identities must remain distinguishable across external integrations. A collapse from multiple contextual agents to a single upstream app identity weakens attribution.
+\end{claim}
+
+\begin{claim}[Open ecosystem advantage]
+An open, model-agnostic, transport-agnostic ecosystem has more degrees of freedom for solving durable memory, safe runtime isolation, attribution, and oversight than a closed platform-bound product.
+\end{claim}
+
+\begin{claim}[OmegaClaw design direction]
+OmegaClaw is characterized by named persistent principals with symbolic memory and cognition layers; OmegaHive extends this into a society of cognitive and service agents coordinated by explicit task, permission, promotion, and inspection structures.
+\end{claim}
+
+\section{Candidate Hyperseed schema}
+Let $\mathsf{Embodies}(x,y)$ mean that system $x$ embodies pattern $y$; $\mathsf{Requires}(x,y)$ mean that reliable realization of $x$ requires property $y$; and $\mathsf{Supports}(x,y)$ mean that mechanism $x$ supports property $y$.
+
+\[
+\begin{aligned}
+&\mathsf{Embodies}(\mathsf{ClaudeTag}, \mathsf{PlatformBoundRoleAgent}) \\
+&\mathsf{Embodies}(\mathsf{OmegaClaw}, \mathsf{AgentFirstCognitiveSociety}) \\
+&\mathsf{Requires}(\mathsf{TrustworthyAgenticWork}, \mathsf{InspectableDurableMemory}) \\
+&\mathsf{Requires}(\mathsf{TrustworthyAgenticWork}, \mathsf{AuditGradeAttribution}) \\
+&\mathsf{Requires}(\mathsf{TrustworthyAgenticWork}, \mathsf{LiveProtocolOversight}) \\
+&\mathsf{Supports}(\mathsf{HyperonAtomSpaceMemory}, \mathsf{InspectableDurableMemory}) \\
+&\mathsf{Supports}(\mathsf{LiveVerifier}, \mathsf{LiveProtocolOversight}).
+\end{aligned}
+\]
+
+\section{Claim-indexed Hyperseed formalizations}
+The labels C1--C17 correspond to paragraphs 1--17 of the claim inventory in
+\texttt{claims.md}, each paraphrasing the cited article.  ``Definition'' marks
+an introduced formal object, ``Claim'' an article-triggered proposition,
+``Theorem'' a consequence of the stated model, and ``Conjecture'' a proposed
+but unproved design hypothesis.
+
+\begin{definition}[C1: Persistent teammate pattern]
+Let $\mathcal{E}$ be an agent ecosystem and let
+$\Pi(a)=\langle\iota_a,\mu_a,\chi_a,\tau_a\rangle$ denote agent $a$'s
+persistent identity, memory, communication contexts, and tools.  A
+\emph{persistent teammate pattern} exists when $\Pi(a)$ remains addressable
+across a nontrivial sequence of tasks.  Claude Tag is an instance of this
+previously explored open-ecosystem pattern, with comparatively polished
+packaging.  \emph{Provenance: article; claim-inventory paragraph 1.}
+\end{definition}
+
+\begin{definition}[C2: Wrapper contribution]
+For a product $x$, decompose its capabilities as
+$K(x)=K_{\mathrm{sub}}(x)\cup K_{\mathrm{wrap}}(x)$, where substrate
+capabilities implement cognition and persistence, while wrapper capabilities
+implement managed identity, transport integration, billing, asynchronous
+dispatch, and operational polish.  The article assesses Tag's distinctive
+contribution as concentrated in $K_{\mathrm{wrap}}$.
+\emph{Provenance: article; claim-inventory paragraph 2.}
+\end{definition}
+
+\begin{definition}[C3: Shared proactive agent]
+An agent $a$ is shared and proactive when it has durable memory $\mu_a$,
+initiative policy $I_a$, tools $T_a$, a shared audience $U_a$, and a stable
+address $n_a$, so that users may delegate by $n_a$ and $a$ may initiate
+policy-permitted actions.  This, rather than any particular chat transport,
+is the deeper target.  \emph{Provenance: article; claim-inventory paragraph 3.}
+\end{definition}
+
+\begin{claim}[C4: Multiplayer context shift]
+Let $\mathrm{Vis}(c)$ be the collaborators who can observe context $c$.
+Moving an agent from private context $c_p$ to shared channel $c_s$ with
+$|\mathrm{Vis}(c_s)|>|\mathrm{Vis}(c_p)|$ changes the coordination pattern:
+prompts, results, and relevant history become common process objects rather
+than private assistant state.  \emph{Provenance: article; claim-inventory
+paragraph 4.}
+\end{claim}
+
+\begin{definition}[C5: Independent service principal]
+An agent identity $\iota_a$ is an independent service principal iff
+$\iota_a\neq\iota_u$ for every human user $u$, and authorization is evaluated
+as $\mathrm{Allow}(\iota_a,r,o)$ rather than by impersonating a delegator.
+Tag's identity model is presented as satisfying this permission pattern.
+\emph{Provenance: article; claim-inventory paragraph 5.}
+\end{definition}
+
+\begin{definition}[C6: Platform-bound compartmentalization]
+For platform $L$, an agent is $L$-bound when identity, memory, or scope is a
+function of platform compartments: $(\iota_a,\mu_a,\sigma_a)=F_L(c_L)$.
+Portability fails when no semantics-preserving map transports these objects
+to another communication substrate.  The article treats Slack channels as
+Tag's binding compartments.  \emph{Provenance: article; claim-inventory
+paragraph 6.}
+\end{definition}
+
+\begin{conjecture}[C7: Opaque-memory risk]
+Define inspectability $J(\mu)$ as the fraction of action-relevant memory whose
+content, provenance, and influence can be queried.  Holding other controls
+fixed, behavioral-risk exposure $R$ is conjectured to be nonincreasing in
+$J$: $\partial R/\partial J\leq 0$.  Low $J$ can conceal stale context, bias,
+or sycophantic reinforcement.  \emph{Provenance: article; claim-inventory
+paragraph 7.}
+\end{conjecture}
+
+\begin{definition}[C8: Symbolic metagraph memory]
+A symbolic metagraph memory is $M=(V,E,\lambda,\pi,\nu)$, with typed atoms
+$V$, higher-order links $E$, labels/types $\lambda$, provenance $\pi$, and
+revision history $\nu$.  It is inspectable when queries can recover each of
+these components and trace selected action premises.  Hyperon AtomSpace is a
+candidate substrate; superiority to opaque neural memory remains a design
+hypothesis, not a theorem.  \emph{Provenance: article; claim-inventory
+paragraph 8.}
+\end{definition}
+
+\begin{theorem}[C9: Identity-collapse destroys unique attribution]
+Let contextual agents $a_1\neq a_2$ map through an integration
+$f:A\rightarrow I$ to upstream identities.  If $f(a_1)=f(a_2)$ and the audit
+event records only $f(a_i)$, then the originating contextual agent is not
+uniquely recoverable from that event.
+\end{theorem}
+\begin{proof}[Proof sketch]
+The recorded identity has at least two preimages, so its inverse is not a
+function on that event.  Additional provenance could restore attribution,
+but is absent by hypothesis.  \emph{Provenance: article; claim-inventory
+paragraph 9.}
+\end{proof}
+
+\begin{definition}[C10: Boundary audit versus live verification]
+A boundary auditor observes only inputs, outputs, and completed action logs.
+A live verifier $v$ observes execution states $s_t$, checks invariants
+$\Phi(s_t)$ and protocol transitions $P(s_t,s_{t+1})$, and may signal or block
+violations before completion.  The article characterizes Tag as providing
+the former but not the latter.  \emph{Provenance: article; claim-inventory
+paragraph 10.}
+\end{definition}
+
+\begin{conjecture}[C11: Tokenmaxxing incentive]
+Let provider revenue be $r(q)=pq$ for metered token use $q$, while user utility
+is $u(q)-pq$ with diminishing returns in $u$.  A product policy that defaults
+to no budget constraint and benefits from $r'(q)>0$ does not by itself
+implement the user's resource-minimizing optimum; explicit budgets or aligned
+delegated cost policies are required.  \emph{Provenance: article;
+claim-inventory paragraph 11.}
+\end{conjecture}
+
+\begin{claim}[C12: Open compositional sufficiency]
+Let modules provide persistent agent loops, model bridges, chat transports,
+and integration glue.  If their interfaces compose to realize identity,
+shared dispatch, tools, and persistence, then an open ecosystem can reproduce
+much of Tag's core functional envelope.  This is an architectural existence
+claim, not an assertion of equal polish or operational quality.
+\emph{Provenance: article; claim-inventory paragraph 12.}
+\end{claim}
+
+\begin{definition}[C13: Trustworthiness bottleneck triad]
+The hard trust kernel is
+$H=\langle M_{\mathrm{durable}},R_{\mathrm{isolated}},I_{\mathrm{audit}}\rangle$:
+memory that remains correct and inspectable over time, runtime capabilities
+confined by enforceable policy, and identity events with end-to-end
+attribution.  Interface-level feature parity does not imply realization of
+$H$.  \emph{Provenance: article; claim-inventory paragraph 13.}
+\end{definition}
+
+\begin{definition}[C14: OmegaClaw principal]
+An OmegaClaw principal is
+$\omega=\langle n,r,T,M,\rho,P\rangle$, comprising stable name, role, tools,
+memory, cognitive remit, and permissions.  Persistence is attached to
+$\omega$, while channels are replaceable interaction processes.
+\emph{Provenance: article; claim-inventory paragraph 14.}
+\end{definition}
+
+\begin{conjecture}[C15: Reflective symbolic cognition path]
+If an OmegaClaw's memory exports typed, provenance-bearing AtomSpace atoms and
+its own role, beliefs, and actions are represented in the same metagraph,
+then PLN, NARS-like revision, and self-model queries can operate on inspectable
+cognitive objects.  Whether this yields robust cognition is an open empirical
+question.  \emph{Provenance: article; claim-inventory paragraph 15.}
+\end{conjecture}
+
+\begin{definition}[C16: OmegaHive system]
+An OmegaHive is a governed multi-agent process
+$\mathcal{H}=\langle A_c,A_s,Q,G,L,P,V\rangle$, with cognitive agents $A_c$,
+service agents $A_s$, task board $Q$, promotion rules $G$, permission lattice
+$L$, inter-agent protocols $P$, and live verifier set $V$.  Emergent research
+behavior is constrained by these explicit institutional objects.
+\emph{Provenance: article; claim-inventory paragraph 16.}
+\end{definition}
+
+\begin{theorem}[C17: Portability under explicit agent state]
+Model an agent society as explicit objects
+$X=\langle A,M,P,O,C\rangle$.  Suppose identity, memory, permissions, and
+observations are represented independently of communication context $C$, and
+there exists a semantics-preserving transport adapter $g:C\to C'$.  Then the
+society's agent-level state can be transported from $C$ to $C'$ without
+redefining those four object classes.
+\end{theorem}
+\begin{proof}[Proof sketch]
+Apply $g$ only to send/receive operations.  By independence, $A,M,P,O$ are
+invariant; hence their relations and histories are preserved modulo transport
+event renaming.  This formalizes the Hyperseed contrast between a
+platform-bound role-pattern and a portable society of explicit cognitive and
+process objects.  \emph{Provenance: article; claim-inventory paragraph 17.}
+\end{proof}
+
+\section{Open questions}
+\begin{enumerate}
+\item What is the minimal formal interface between Hyperseed concepts and AtomSpace/PLN atoms for this article series?
+\item How should source-paraphrase claims be truth-valued separately from formalized design principles?
+\item Which OmegaHive constructs should be modeled as agents, which as institutions, and which as protocol constraints?
+\item How should resource-economics alignment be represented: as a value relation, a policy constraint, or a utility/attention budget?
+\end{enumerate}
+
+\end{document}
