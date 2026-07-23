@@ -26,6 +26,8 @@ library at `library/hyperseed-v2/` on the research workstation, not vendored her
 - `papers/0004-omegasim-strange-attractor-tuning/omegasim_strange_attractor_tuning.pdf`
 - `papers/0006-plain-metta-rholang-spec-ir/plain_metta_rholang_spec_ir.tex`
 - `papers/0006-plain-metta-rholang-spec-ir/plain_metta_rholang_spec_ir.pdf`
+- `papers/0014-causal-fibres-hypothesis-ladder/main.tex`
+- `papers/0014-causal-fibres-hypothesis-ladder/main.pdf`
 
 ## Build
 
