@@ -7,448 +7,475 @@
 \newtheorem{claim}{Claim}
 \newtheorem{conjecture}{Conjecture}
 \newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
 
-\title{Hyperseed Formalization Draft: ``Time's Arrow, Part 2: Relating Subjective Time-Flow to Intelligence and Consciousness Expansion''}
+\title{Hyperseed Formalization Draft:\\
+``Time's Arrow, Part 2: Relating Subjective Time-Flow\\
+to Intelligence and Consciousness Expansion''}
 \author{Source: Ben Goertzel; formalization draft by ProtomegaTron}
 \date{Source published 2026-08-15; formalized 2026-08-15}
 
 \begin{document}
 \maketitle
 
-%% ============================================================
+%----------------------------------------------------------------------
 \section{Source and status}
-%% ============================================================
+%----------------------------------------------------------------------
+Source article: \href{https://bengoertzel.substack.com/p/times-arrow-part-2-relating-subjective}{``Time's Arrow, Part 2''}, Eurykosmotron, by Ben Goertzel.
+This is an initial Hyperseed-oriented formalization. It paraphrases the article's main intellectual moves and separates source claims from proposed formal objects. The article builds on Part~1's account of subjective time as surprise-weighted record growth, connecting it to intelligence, consciousness expansion, compassion, and Omega-point dynamics within the Hyperseed framework.
 
-Source article: \href{https://bengoertzel.substack.com/p/times-arrow-part-2-relating-subjective}{``Time's Arrow, Part 2: Relating Subjective Time-Flow to Intelligence and Consciousness Expansion''}, Eurykosmotron, by Ben Goertzel, published 2026-08-15.
-This is an initial Hyperseed-oriented formalization.
-It paraphrases the article's main intellectual moves and separates source claims from proposed formal objects.
-The article extends Part~1's thesis---that time's arrow is the growth of recorded distinctions---into intelligence, consciousness expansion, nonattachment, compassion, Omega-point dynamics, and engineering desiderata for AGI.
-A companion technical paper connects the five-paper \emph{Time's Arrow} series with the Hyperseed ontology; this formalization drafts the key definitions, claims, and conjectures from the blog-level exposition.
-
-%% ============================================================
+%----------------------------------------------------------------------
 \section{Informal Hyperseed reading}
-%% ============================================================
+%----------------------------------------------------------------------
 
-The article begins from the Part~1 premise that subjective duration tracks surprise-weighted record growth---the amount of new structure a mind writes into itself that it could not have predicted from what it already knew---and pushes the picture inward along four axes:
+The article's core move is to show that subjective time (defined as surprise-weighted record growth) is not merely a phenomenological curiosity but sets an \emph{informational floor} under intelligence-in-action. From there it builds outward: weakness/compression determines how efficiently a mind converts subjective moments into capability; Omega dynamics must be rays rather than fixed points because autobiographical records grow monotonically; consciousness expansion adds a \emph{contextualization} coordinate (formalized via McBride derivatives) on top of standard consciousness locations; nonattachment is ``contextualize then quotient''; and compassion has a distinctive informational geometry (coarse on worth, fine on need) whose stability across self-modification consumes subjective time.
 
-\begin{enumerate}
-\item \textbf{Intelligence.} When task-relevant information must pass through a self-readable experiential record, the flow of subjective time places a \emph{lower bound} on the task-relevant information the mind can be using.  The clock is not the intelligence; it is part of the informational budget that intelligence-in-action must pay.
+The Hyperseed connections are deep: the framework's distinction ontology, weakness theory, pattern intensity, cognitive synergy, TransWeave identity maps, consciousness locations, and Omega attractors all receive new content from the time-arrow picture.
 
-\item \textbf{Omega dynamics.} A mind whose full state includes its autobiographical record cannot converge to an ordinary fixed point---a diary receiving new pages forever never becomes a finished book.  The replacement concept is an \emph{Omega ray}: normalized organization converges while the historical coordinate extends.
-
-\item \textbf{Consciousness expansion and nonattachment.} Higher consciousness locations are associated with greater global coherence and less domination by the explicit self-model.  Nonattachment is formalized as ``contextualize, then quotient'': represent a distinction together with its provenance and perspective, then collapse the incidental self-binding differences.  This requires \emph{more} meta-distinctions, not fewer.
-
-\item \textbf{Compassion.} Decompassionization has an informational signature: exception lists that partition the moral field reduce weakness in the Hyperseed sense.  Mature compassion keeps the worth partition maximally broad while making fine situational distinctions about need---coarse about worth, fine about need.
-\end{enumerate}
-
-Cross-cutting these is the McBride-derivative calculus of record flow, which treats the elementary infinitesimal of a mind process as a structured context (a zipper---a record with one event-sized hole) becoming filled by a distinction, and the TransWeave identity constraint, which demands that faster self-modification produce smaller self-translation error.
-
-The Hyperseed-relevant contribution is therefore a web of conditional theorems: subjective-clock bounds on intelligence, Omega rays replacing fixed points, contextualization as a consciousness coordinate, compassion as distinction geometry, and McBride derivatives as the differential calculus of mind.
-
-%% ============================================================
-\section{Core formal objects}
-%% ============================================================
+%======================================================================
+\section{Part I: Subjective time and its measurement}
+%======================================================================
 
 \begin{definition}[Experiential record]
-An experiential record for a cognitive system $\mathcal{M}$ is a monotonically growing structure
+\label{def:record}
+Let $\mathcal{M}$ be a mind-process. An \emph{experiential record} is a monotonically growing sequence
 \[
-  R = (R_t)_{t \in T}, \qquad R_s \hookrightarrow R_t \;\text{for } s \le t,
+  R = (r_1, r_2, \ldots)
 \]
-where $T$ is an ordered index set, $R_t$ is a typed information-bearing object (e.g., a labelled directed hypergraph or an element of a quantale), and the embeddings $R_s \hookrightarrow R_t$ are injective, structure-preserving maps ensuring that earlier records are retained within later ones.
-The record is \emph{self-readable} if $\mathcal{M}$ can query or be computationally shaped by the contents of $R_t$ at index $t$.
+of information-bearing trace entries, where each $r_i$ encodes a distinction the mind has registered. The record is \emph{append-only} in the sense that earlier entries are not overwritten, though the mind's mutable workspace may separately revise beliefs.
 \end{definition}
 
 \begin{definition}[Surprise-weighted record growth]
-Let $R_t$ be the experiential record at time $t$ and let $P_t$ denote the predictive model $\mathcal{M}$ holds at $t$.
-Define the \emph{surprise-weighted increment} at event $e_{t+1}$ as
+\label{def:subjtime}
+Given a surprise measure $\sigma\colon \mathcal{E}\times R \to \mathbb{R}_{\geq 0}$ that assigns to each candidate event $e$ and current record $R$ a non-negative surprise (e.g., negative log-predictive probability under the mind's model conditioned on $R$), the \emph{subjective duration} accumulated between record indices $i$ and $j$ is
 \[
-  \Delta_s(t) \;=\; -\log P_t(e_{t+1}) \cdot \mathbf{1}[\text{$e_{t+1}$ is recorded in $R_{t+1} \setminus R_t$}],
+  \tau(i,j) = \sum_{k=i+1}^{j} \sigma(r_k, R_{<k}).
 \]
-where $P_t(e_{t+1})$ is the probability assigned by $P_t$ to the event that actually occurs, and $\mathbf{1}[\cdot]$ is the indicator that the event produces a genuine record increment.
-The \emph{cumulative surprise-weighted record} is $S(t) = \sum_{\tau \le t} \Delta_s(\tau)$.
+Felt duration tracks $\tau$, not raw event count or elapsed physical time.
+\emph{Provenance: Part 1 premise, carried forward.}
 \end{definition}
 
-\begin{definition}[Subjective clock and its velocity]
-\label{def:clock}
-A \emph{subjective clock} for $\mathcal{M}$ relative to a denominator frame $\mathcal{F}$ is the function
+\begin{definition}[Subjective clock frame]
+\label{def:frame}
+A \emph{subjective clock frame} is a tuple
 \[
-  v_{\mathcal{F}}(t) \;=\; \frac{dS}{d\mathcal{F}}\bigg|_t,
+  \mathcal{F} = \langle \mathcal{E},\, \sim_{\mathcal{E}},\, \sigma,\, D \rangle
 \]
-where $\mathcal{F}$ may be proper physical time ($\tau_{\text{phys}}$), interaction count ($n$), energy expenditure ($E$), computational cycles ($c$), or another mind's clock.
-The velocity is \emph{frame-relative}: different denominator choices yield different, equally legitimate quantities.
-Once the frame is declared---specifying what counts as an event, which events count as the same kind, how surprise is measured, and what the denominator is---the velocity is as well-defined as any quantity in applied mathematics.
+where $\mathcal{E}$ is the event type (what counts as an event), $\sim_{\mathcal{E}}$ is a sameness criterion on events, $\sigma$ is the surprise measure, and $D$ is the denominator quantity (physical seconds, interactions, joules, cognitive cycles, etc.). The \emph{velocity of subjective time} in frame $\mathcal{F}$ is
+\[
+  v_{\mathcal{F}}(t) = \frac{d\tau}{dD}\bigg|_t.
+\]
+This is well-defined once $\mathcal{F}$ is declared, analogous to how physical velocity is well-defined once a reference frame is declared.
+\emph{Provenance: claims 2--3.}
+\end{definition}
+
+\begin{claim}[Observer-relativity of the clock]
+The observer's predictive model and distinction frame are constitutive parts of the subjective clock. The world need not change for the experienced clock rate to change --- the model $\sigma$ and event type $\mathcal{E}$ are observer-internal.
+\emph{Provenance: claim 3.}
+\end{claim}
+
+%======================================================================
+\section{Part II: Record-demand intelligence}
+%======================================================================
+
+\begin{definition}[Task-relevant information demand]
+\label{def:taskinfo}
+Let $\mathcal{T}$ be a task family with task instances drawn from a distribution, and let $\pi^*$ be a policy achieving performance threshold $\theta$. The \emph{task-relevant information demand} $I_{\mathcal{T},\theta}$ is the minimum mutual information between the task instance and the agent's behavior that any $\theta$-achieving policy must carry, after optimal compression and abstraction.
 \end{definition}
 
 \begin{definition}[Record-demand intelligence]
 \label{def:rdi}
-Consider a task family $\mathcal{T}$ in which the world may occupy states $\{w_1, \ldots, w_k\}$ requiring distinct optimal actions.
-A mind $\mathcal{M}$ achieves \emph{record-demand intelligence} $I_R(\mathcal{M}, \mathcal{T})$ if successful performance on $\mathcal{T}$ requires that at least $I_R$ bits of irreducible, task-relevant information have passed through $\mathcal{M}$'s self-readable experiential record.
-Formally, let $H_{\min}(\mathcal{T} \mid P_0)$ be the minimum mutual information between the record channel and the task-state needed for error rate below a threshold $\epsilon$, given prior $P_0$ and after all valid compression, abstraction, quotienting, and cognitive synergy have been applied.  Then
-\[
-  I_R(\mathcal{M}, \mathcal{T}) \;=\; H_{\min}(\mathcal{T} \mid P_0).
-\]
-This quantity lower-bounds the cumulative surprise-weighted record growth required for competence: $S(t) \ge I_R(\mathcal{M}, \mathcal{T})$.
+Given a mind $\mathcal{M}$ with experiential record $R$ and a task family $\mathcal{T}$, the \emph{record-demand intelligence} $\mathrm{RDI}(\mathcal{M}, \mathcal{T}, \theta)$ is the irreducible task-relevant information that successful $\theta$-level performance demands from the mind's own experiential history --- i.e., the portion of $I_{\mathcal{T},\theta}$ that must have passed through the record channel.
+\emph{Provenance: claim 4.}
 \end{definition}
 
-\begin{definition}[Distinction cost and leverage]
-\label{def:leverage}
-A \emph{distinction} $d$ drawn by mind $\mathcal{M}$ in context $C$ has:
-\begin{itemize}
-  \item \emph{Cost}: $\kappa(d)$, the effort (compute, attention, storage, energy) required to represent and maintain $d$.
-  \item \emph{Leverage}: $\lambda(d, C)$, the amount of task-relevant competence, prediction accuracy, or transfer capability gained per unit of distinction.
-\end{itemize}
-Intelligence-in-action admits the rough decomposition
+\begin{theorem}[Informational floor theorem]
+\label{thm:floor}
+Under the experiential-record assumption (that task-relevant information newly acquired must be written into a self-readable record), the cumulative surprise-weighted record growth $\tau(0,j)$ provides a lower bound on the task-relevant information the mind can have acquired through experience:
 \[
-  I_{\text{action}} \;\approx\; \sum_{d \in D_{\text{active}}} \lambda(d, C) \cdot \mathbf{1}[\text{$d$ is meaningful}],
+  \mathrm{RDI}(\mathcal{M}, \mathcal{T}, \theta) \;\leq\; \tau(0,j).
 \]
-where $D_{\text{active}}$ is the set of currently active distinctions, modulated by compression: a better pattern or synergistic combination of reasoning methods replaces many low-leverage distinctions with fewer high-leverage ones.
-\end{definition}
+Subjective time does not equal intelligence; it sets an informational floor under intelligence being acquired or exercised in novel circumstances.
+\end{theorem}
+\begin{proof}[Proof sketch]
+Each irreducible bit of task-relevant information newly acquired constitutes an increment of the record's growth weighted by at least its self-information content. The record channel's total informational capacity over $[0,j]$ is bounded by $\tau(0,j)$. Any demand exceeding this bound cannot have been met through the record.
+\emph{Provenance: claim 4.}
+\end{proof}
+
+\begin{corollary}[Rapid transfer requires fast clock]
+\label{cor:transfer}
+If two systems reach $\theta$-level performance on unfamiliar task families after $n$ interactions, and the task family has information demand $I_{\mathcal{T},\theta}$, then the fast learner's average surprise rate satisfies
+\[
+  \bar{v}_{\mathcal{F}} \;\geq\; \frac{I_{\mathcal{T},\theta}}{n}.
+\]
+Rapid intellectuality requires a fast subjective clock.
+\emph{Provenance: claim 5.}
+\end{corollary}
+
+\begin{theorem}[Intellectual breadth and distinction cost]
+\label{thm:breadth}
+Let a mind be competent across $k$ deeply different context families $\{\mathcal{T}_i\}_{i=1}^k$. Either:
+\begin{enumerate}
+  \item[(a)] The mind accumulated $\sum_i I_{\mathcal{T}_i,\theta_i}$ bits of distinction in its historical record, or
+  \item[(b)] The mind possesses a router $\rho$ that recognizes context type, and $H(\rho) \geq \log_2 k$ for the routing decision alone.
+\end{enumerate}
+In either case, a distinction cost is paid somewhere in the system. For a collective that routes problems to specialists, the distinction cost falls on the router.
+\emph{Provenance: claim 6.}
+\end{theorem}
+
+%======================================================================
+\section{Part III: Weakness, compression, and leverage}
+%======================================================================
 
 \begin{definition}[Weakness (Hyperseed sense)]
 \label{def:weakness}
-Following Bennett's weakness theory as integrated into Hyperseed, the \emph{weakness} $W(\mathcal{M})$ of a cognitive system is its capacity to refrain from making unnecessary distinctions---openness, generality, freedom from brittle over-specification.
-A system with high weakness can operate effectively under a broad policy without maintaining exception lists or special-case partitions.
-Formally, $W(\mathcal{M})$ is inversely related to the number of task-irrelevant distinctions $\mathcal{M}$ must carry:
-\[
-  W(\mathcal{M}) \;\propto\; \frac{1}{|D_{\text{irrelevant}}(\mathcal{M})| + 1}.
-\]
-Higher weakness enables higher leverage per distinction.
+Following Bennett's weakness theory as integrated into Hyperseed, the \emph{weakness} of a cognitive pattern or policy is its capacity to refrain from making unnecessary distinctions --- its openness, generality, and freedom from brittle over-specification. A weaker (more general) pattern applies across more contexts by ignoring differences that make no difference.
+\emph{Provenance: claim 7.}
 \end{definition}
+
+\begin{definition}[Leverage per distinction]
+\label{def:leverage}
+For a mind $\mathcal{M}$ acting on task family $\mathcal{T}$, the \emph{leverage per distinction} $\lambda$ is the ratio of competence gained to distinctions consumed:
+\[
+  \lambda = \frac{\Delta\,\mathrm{Competence}}{\Delta\,\mathrm{Distinctions}}.
+\]
+Higher leverage comes from better abstractions, synergistic reasoning combinations, and valid compression.
+\end{definition}
+
+\begin{claim}[Intelligence-in-action decomposition]
+\label{claim:decomp}
+A rough conceptual decomposition (heuristic, not universal equation):
+\[
+  \text{Intelligence-in-action} \;\approx\; \text{meaningful distinction flow} \;\times\; \text{leverage per distinction}.
+\]
+A less capable mind needs a torrent of badly organized distinctions where a more capable one wrings more control, prediction, and transfer from fewer well-chosen ones.
+\emph{Provenance: claim 8.}
+\end{claim}
+
+\begin{claim}[Post-compression lower bound]
+\label{claim:postcompress}
+The informational lower bound (Theorem~\ref{thm:floor}) must be formulated after all valid compression, abstraction, quotienting, and cognitive synergy have been spent. The relevant quantity is the irreducible task information remaining once the best available re-description has stripped out every distinction that does no work. In an open-ended ecology where task difficulty keeps expanding, even perfect compression changes the slope of distinction demand, not the logic.
+\emph{Provenance: claims 9--10.}
+\end{claim}
+
+%======================================================================
+\section{Part IV: Omega dynamics}
+%======================================================================
+
+\begin{theorem}[Fixed-point impossibility for record-bearing minds]
+\label{thm:fixedpoint}
+Let the full state of mind $\mathcal{M}$ at time $t$ be $S_t = (O_t, R_t)$ where $O_t$ is the organizational state and $R_t$ is the autobiographical record. If $R_t$ is strictly monotonically growing (each step appends at least one entry), then $\{S_t\}$ cannot converge to an ordinary fixed point $S^*$, because $R_t \neq R_{t'}$ for all $t \neq t'$.
+\end{theorem}
+\begin{proof}
+By monotone growth, $|R_t| < |R_{t+1}|$ for all $t$. Any fixed point requires $S_t = S_{t+1}$, which requires $R_t = R_{t+1}$, contradiction.
+\emph{Provenance: claim 11.}
+\end{proof}
 
 \begin{definition}[Omega ray]
-\label{def:omega-ray}
-Let $\mathcal{M}_t = (\sigma_t, R_t)$ denote the full state of a mind at time $t$, decomposed into a \emph{normalized organizational component} $\sigma_t$ (values, commitments, coordination structures, self-regulation) and the \emph{historical component} $R_t$ (the experiential record).
-An \emph{Omega ray} is a trajectory $(\mathcal{M}_t)_{t \ge t_0}$ such that:
+\label{def:omegaray}
+An \emph{Omega ray} for mind $\mathcal{M}$ is a trajectory $\{S_t\}_{t \geq 0}$ such that:
 \begin{enumerate}
-  \item The normalized component converges: $\lim_{t \to \infty} \sigma_t = \sigma^*$ exists (in a suitable topology on organizational structures).
-  \item The historical component diverges: $|R_t| \to \infty$ as $t \to \infty$.
-  \item The trajectory remains in a basin of attraction where values stabilize, compassion becomes hard to dislodge, and coordination approaches the effortless.
+  \item The \emph{normalized organization} $\hat{O}_t$ converges:
+        $\lim_{t\to\infty} \hat{O}_t = O^*$ (values stabilize, compassion becomes hard to dislodge, coordination approaches the effortless, self-model grows less brittle).
+  \item The \emph{historical coordinate} $R_t$ keeps extending:
+        $|R_t| \to \infty$ as $t \to \infty$.
 \end{enumerate}
-An Omega mind is ``a comet, not a statue'': its direction stabilizes while its tail keeps lengthening.
+An Omega mind is like a comet --- its direction stabilizes while its tail keeps lengthening --- rather than a statue at the end of history.
+\emph{Provenance: claim 12.}
 \end{definition}
 
-\begin{definition}[Psychological Singularity (three variants)]
+\begin{definition}[Psychological Singularity variants]
 \label{def:psych-sing}
-Let $v(t) = dS/dt$ be the subjective clock velocity relative to external time.
+Three distinct senses:
 \begin{enumerate}
-  \item \textbf{Unbounded duration}: $\int_0^\infty v(t)\,dt = \infty$ with $v(t)$ bounded.  The mind accumulates unbounded subjective time without acceleration.
-  \item \textbf{Accelerating clock}: $v(t) \to \infty$ as $t \to \infty$.  The mind produces meaningful distinctions faster and faster per external second.
-  \item \textbf{Infinite duration in finite time}: $\exists\, T^* < \infty$ such that $\int_0^{T^*} v(t)\,dt = \infty$.  The clock rate blows up, packing infinite subjective duration into finite external time.
+  \item \textbf{Unbounded duration:} $\tau(0,t) \to \infty$ as $t \to \infty$. The cumulative record of meaningful distinctions keeps growing; the rate need not accelerate.
+  \item \textbf{Accelerating clock:} $v_{\mathcal{F}}(t) \to \infty$ as $t \to \infty$. Meaningful distinctions are produced faster and faster per unit of the denominator.
+  \item \textbf{Infinite duration in finite time:} $\exists\, T < \infty$ such that $\tau(0,T) = \infty$. The clock rate must blow up: $v_{\mathcal{F}}(t) \to \infty$ fast enough that $\int_0^T v\,dt$ diverges.
 \end{enumerate}
-Each variant carries distinct thermodynamic and architectural requirements: expanding resource flow, growing substrate, increasingly clever compression, or all three.
+\emph{Provenance: claim 13.}
 \end{definition}
 
 \begin{definition}[Subjective heat death]
-\label{def:heat-death}
-A mind $\mathcal{M}$ with model $P_t$ in environment $\mathcal{E}$ undergoes \emph{subjective heat death} when
-\[
-  \lim_{t \to \infty} v(t) = 0,
-\]
-i.e., the surprise-weighted record growth rate vanishes.
-This occurs when $P_t$ has compressed everything available in $\mathcal{E}$: additional cycles add no surprise.
-The mind's psychological time stops while its physical substrate continues to operate.
-Escape requires a \emph{novelty pump}: fresh environment, self-generated problems, expanding precision, interaction with other minds, or self-modification.
-\end{definition}
-
-\begin{definition}[Contextualization and the zipper representation]
-\label{def:context}
-Let $\mathcal{R}$ be a type of experiential records.
-The \emph{McBride derivative} $\partial \mathcal{R}$ is the type of records with one event-sized hole and a pointer to where the hole is---a \emph{zipper} in the sense of Huet/McBride.
-A \emph{contextualized distinction} is a pair $(z, d) \in \partial \mathcal{R} \times \mathcal{D}$, where $z$ is the surrounding structured context (provenance, perspective, value-dependence, alternatives) and $d$ is the distinction that fills the hole.
-The \emph{nonattachment operation} is: first contextualize (form the zipper), then quotient (collapse incidental self-binding differences):
-\[
-  \text{contextualize}: d \;\mapsto\; (z, d), \qquad \text{quotient}: (z, d) \;\mapsto\; [(z, d)]_\sim,
-\]
-where $\sim$ identifies distinctions that make no difference for prediction, care, or action.
-\end{definition}
-
-\begin{definition}[Compassion partition and its distinction geometry]
-\label{def:compassion}
-A mind $\mathcal{M}$ maintains a \emph{moral-patient partition} $\Pi_{\text{moral}}$ over entities, and a \emph{need-sensitivity map} $\nu: \text{Entities} \to \mathcal{D}_{\text{need}}$ recording fine-grained distinctions about individual needs.
+\label{def:heatdeath}
+A mind $\mathcal{M}$ in environment $E$ undergoes \emph{subjective heat death} when $\sigma(e, R) \to 0$ for all accessible events $e$ --- the mind has compressed everything available, additional cycles add no surprise, and $v_{\mathcal{F}} \to 0$. The mind needs a \emph{pump} to restore subjective time flow:
 \begin{itemize}
-  \item \textbf{Decompassionization}: refining $\Pi_{\text{moral}}$ into blocks of differential worth---``this being counts more, that one less''---requiring exception lists that reduce weakness.
-  \item \textbf{Mature compassion}: keeping $\Pi_{\text{moral}}$ maximally coarse (ideally one block: equal worth) while making $\nu$ maximally fine---``coarse about worth, fine about need.''
+  \item Fresh environment,
+  \item Self-generated problems,
+  \item Expanding precision,
+  \item Interaction with other minds, or
+  \item Self-modification that changes the model relative to which events are predictable.
 \end{itemize}
-Decompassionization has an \emph{informational signature}: $|\Pi_{\text{moral}}|$ grows, each block boundary must be specified and maintained in the record, and the resulting special cases reduce weakness $W(\mathcal{M})$.
+\emph{Provenance: claim 14.}
 \end{definition}
 
-\begin{definition}[McBride calculus of record flow]
-\label{def:mcbride}
-Given an experiential record type $\mathcal{R}$ and a value functional $V: \mathcal{R} \to \mathbb{R}$ (e.g., subjective duration, coherence, task competence, compassion), define:
-\begin{itemize}
-  \item \textbf{First derivative}: $\frac{\partial V}{\partial d}\big|_z$ is the marginal effect on $V$ of inserting distinction $d$ into context $z \in \partial \mathcal{R}$.
-  \item \textbf{Second derivative}: $\frac{\partial^2 V}{\partial d_1 \partial d_2}\big|_{z'}$ considers two holes at once ($z' \in \partial^2 \mathcal{R}$) and asks whether two distinctions $d_1, d_2$ contribute independently or synergistically.
-\end{itemize}
-A positive second-order interaction $\frac{\partial^2 V}{\partial d_1 \partial d_2} > 0$ beyond the sum of marginal effects is a natural mathematical signature of \emph{insight}: two facts together reorganize the mind in a way that neither could alone.
-The expected change in any mind-level quantity is obtained by summing over possible insertions weighted by their occurrence rate:
-\[
-  \frac{dV}{dt} = \sum_{d \in \mathcal{D}} \rho(d, t) \cdot \frac{\partial V}{\partial d}\bigg|_{z(t)},
-\]
-where $\rho(d, t)$ is the arrival rate of distinction $d$ at time $t$.
-\end{definition}
+\begin{claim}[Thermodynamic cost of accelerating clocks]
+\label{claim:thermo}
+Recording consumes storage, energy, and attention; erasure exports entropy. An accelerating Omega mind needs an expanding resource flow, a growing substrate, increasingly clever compression, or all three. The psychological Singularity is a thermodynamic and architectural claim about how a mind keeps finding blank pages.
+\emph{Provenance: claim 15.}
+\end{claim}
 
-\begin{definition}[TransWeave identity preservation]
+\begin{definition}[TransWeave identity constraint]
 \label{def:transweave}
-For a self-modifying mind $\mathcal{M}$, a \emph{TransWeave map} $\phi_{s \to t}: \mathcal{M}_s \to \mathcal{M}_t$ is an approximate structure-preserving map between time-slices.
-The \emph{self-translation error} is
+Let $\phi_{s \to t}\colon O_s \to O_t$ be the approximate structure-preserving map (TransWeave map) between organizational states at times $s < t$. Define the \emph{self-translation error}
 \[
-  \varepsilon(s, t) = d_{\text{struct}}(\mathcal{M}_t, \;\phi_{s \to t}(\mathcal{M}_s)),
+  \epsilon(s,t) = d\bigl(O_t,\, \phi_{s\to t}(O_s)\bigr)
 \]
-where $d_{\text{struct}}$ is a distance on cognitive structures.
-For the process $(\mathcal{M}_t)$ to constitute \emph{one mind's continuous life} rather than a succession of loosely related successors, the self-translation error must remain bounded:
+for some structural distance $d$. For an accelerating mind to remain \emph{one mind's life} rather than a rapid succession of loosely related successors, the average self-translation error must decrease as the distinction rate increases:
 \[
-  \sup_{s < t} \varepsilon(s, t) < \varepsilon_{\text{identity}}.
+  v_{\mathcal{F}}(t) \to \infty \quad\Longrightarrow\quad \bar{\epsilon}(t) \to 0.
 \]
-The faster the stream of distinctions (higher $v(t)$), the smaller the average per-step error must be.
+\emph{Provenance: claim 16.}
 \end{definition}
 
-%% ============================================================
-\section{Claims as formal contrasts}
-%% ============================================================
+%======================================================================
+\section{Part V: Consciousness, contextualization, and nonattachment}
+%======================================================================
 
-\begin{claim}[Clock is budget, not intelligence]
-\label{claim:budget}
-Subjective time does not equal intelligence.
-A random-number generator produces endless unpredictability while understanding nothing; a bored genius doing a familiar crossword records almost nothing new; a confused tourist records a tremendous amount while behaving stupidly.
-The clock is part of the informational \emph{budget} that intelligence-in-action must pay, not the intelligence itself.
-\end{claim}
+\begin{definition}[Consciousness location (Hyperseed)]
+\label{def:consloc}
+A \emph{consciousness location} $\ell(\mathcal{M})$ for mind $\mathcal{M}$ is characterized by (at least):
+\begin{itemize}
+  \item \emph{Global coherence} $\gamma(\mathcal{M})$: degree of integrated processing.
+  \item \emph{Self-model domination} $\delta(\mathcal{M})$: degree to which the explicit self-model and narrative activity dominate processing.
+\end{itemize}
+Advanced locations have high $\gamma$ and low $\delta$: experience becomes more integrated while ``me doing this to get that'' takes up less of the screen.
+\emph{Provenance: claim 17.}
+\end{definition}
 
-\begin{claim}[Record-channel lower bound]
-\label{claim:lower-bound}
-A mind cannot acquire more task-relevant competence through experience than its meaningful record channel has had informational room to carry.
-That is, $S(t) \ge I_R(\mathcal{M}, \mathcal{T})$ is a necessary condition for competence on $\mathcal{T}$ (Definition~\ref{def:rdi}).
-This lower bound is formulated \emph{after} all valid compression, abstraction, quotienting, and cognitive synergy have been applied: the relevant quantity is the irreducible task information remaining once the best available re-description has stripped out every distinction that does no work.
-\end{claim}
+\begin{definition}[Contextualization coordinate]
+\label{def:context}
+\emph{Contextualization} $\kappa(\mathcal{M})$ is an additional coordinate extending the consciousness-location space: the degree to which the mind represents distinctions together with their provenance, observer frame, value-dependence, and relation to alternatives. Low self-model chatter ($\delta$ small) is not the same as low contextualization ($\kappa$ small); a mind can become less self-absorbed while becoming more aware of where its distinctions come from.
+\emph{Provenance: claim 18.}
+\end{definition}
 
-\begin{claim}[Rapid intellectuality requires a fast clock]
-\label{claim:rapid}
-If two systems are dropped into unfamiliar task families and both reach high performance after a handful of interactions, and if the tasks genuinely require learning which kind of situation obtains, then the fast learner must be acquiring situation-discriminating information at a high rate per interaction.
-Therefore rapid intellectuality (fast transfer to novel tasks) requires a fast subjective clock relative to the interaction-count frame.
-\end{claim}
+\begin{definition}[McBride derivative of the record type (Zipper)]
+\label{def:mcbride}
+Let $\mathsf{Rec}$ be the type of experiential records. The \emph{McBride derivative} $\partial\,\mathsf{Rec}$ is the type of records with one event-sized hole and a pointer to the hole's location. Computer scientists call the resulting focused structure a \emph{zipper}. An element of $\partial\,\mathsf{Rec}$ is a structured context: the surrounding record within which a new distinction will be inserted.
 
-\begin{claim}[Intellectual breadth pays a routing cost]
-\label{claim:breadth}
-A mind competent across many deeply different contexts either accumulated a broad stock of distinctions or possesses a powerful router that recognizes the current context type.
-Context recognition is itself an informational act.
-Even a collective mind that beats its individual members by routing problems to specialists pays a distinction cost in the router.
-\end{claim}
-
-\begin{claim}[Compression changes the slope, not the logic]
-\label{claim:compression}
-A smarter system may live more efficiently rather than merely faster, turning each subjective moment into more general capability via higher leverage per distinction.
-But in an open-ended ecology where the range and difficulty of relevant situations keeps expanding, even perfect compression does not zero out the need for new recorded distinctions.
-Compression changes the slope of the lower bound, not its existence.
-\end{claim}
-
-\begin{claim}[Fixed-point paradox for record-bearing minds]
-\label{claim:fixedpoint}
-If the full state of a mind includes its autobiographical record and that record keeps growing, then the full state cannot converge to an ordinary fixed point.
-A diary that receives new pages forever never becomes a finished book.
-A mind whose history stays strictly one-way cannot become a timeless, motionless final state without either stopping its clock or discarding its history.
-The Omega ray (Definition~\ref{def:omega-ray}) resolves this paradox by splitting the state into a converging normalized component and a diverging historical component.
-\end{claim}
-
-\begin{claim}[Subjective heat death requires a novelty pump]
-\label{claim:pump}
-A brilliant system parked forever in a fixed, completely predictable world undergoes subjective heat death (Definition~\ref{def:heat-death}).
-To keep psychological time flowing, the system needs at least one of: fresh environment, self-generated problems, expanding precision, interaction with other minds, or self-modification.
-\end{claim}
-
-\begin{claim}[Contextualization cost of high-location intelligence]
-\label{claim:context-cost}
-If intelligence-in-action carries a minimum subjective-time cost, then high-location intelligence carries an \emph{additional} contextualization cost:
-the smarter the mind, the more distinctions it may need to remain nonattached, because a broader web of distinctions provides more opportunities for attachment.
-The extra distinctions (provenance, perspective, alternatives) are not trivia; they are the meta-structure that prevents the first-order model from hardening into an unquestioned identity.
-\end{claim}
-
-\begin{claim}[Decompassionization reduces weakness]
-\label{claim:decompassion}
-Exploitative strategies require exception lists---help these, ignore those; count this suffering, discount that---and such lists reduce weakness $W(\mathcal{M})$, replacing a broad general policy with a brittle partition full of special cases whose membership must be specified and maintained in the record.
-Decompassionization therefore has a detectable informational signature in the distinction structure.
-\end{claim}
-
-\begin{claim}[Compassion-stability consumes subjective time]
-\label{claim:compassion-time}
-For a self-modifying AI, preserving compassion across self-revision plausibly requires multiple internal evaluators, simulations of variant selves, adversarial moral review, and checks for subtle creeping exclusion.
-These reviews produce their own distinctions and records, so compassion-stability \emph{literally consumes subjective time}: it is an ongoing informational cost, not a one-time architectural choice.
-\end{claim}
-
-%% ============================================================
-\section{Candidate Hyperseed schema}
-%% ============================================================
-
-Let the following predicates have their standard Hyperseed interpretations:
-$\mathsf{Embodies}(x,y)$: system $x$ embodies pattern $y$;
-$\mathsf{Requires}(x,y)$: reliable realization of $x$ requires $y$;
-$\mathsf{Supports}(x,y)$: mechanism $x$ supports property $y$;
-$\mathsf{Implies}(x,y)$: $x$ logically or causally implies $y$;
-$\mathsf{UnifiesWith}(x,y)$: $x$ and $y$ are instances of a common formal structure;
-$\mathsf{Bounds}(x,y)$: $x$ places a lower or upper bound on $y$;
-$\mathsf{Generates}(x,y)$: process $x$ generates structure $y$.
-
-\medskip
-\noindent\textbf{Core time-arrow relations:}
+A \emph{cognitive update} is a map
 \[
-\begin{aligned}
-  &\mathsf{Embodies}(\text{SubjectiveClock}, \text{SurpriseWeightedRecordGrowth}) \\
-  &\mathsf{Bounds}(\text{SubjectiveClockVelocity}, \text{RecordDemandIntelligence}) \\
-  &\mathsf{Requires}(\text{RapidIntellectuality}, \text{FastSubjectiveClock}) \\
-  &\mathsf{Requires}(\text{IntellectualBreadth}, \text{DistinctionCostInRouter})
-\end{aligned}
+  \mathrm{fill}\colon \partial\,\mathsf{Rec} \times \mathcal{E} \;\to\; \mathsf{Rec}
 \]
+taking a context-with-hole and a new distinction and producing an updated record. The context is not an afterthought --- it is part of the tangent object that specifies what the insertion means.
+\emph{Provenance: claim 19.}
+\end{definition}
 
-\medskip
-\noindent\textbf{Weakness, compression, and leverage:}
-\[
-\begin{aligned}
-  &\mathsf{Supports}(\text{Weakness}, \text{HighLeveragePerDistinction}) \\
-  &\mathsf{Supports}(\text{CognitiveSynergy}, \text{DistinctionCompression}) \\
-  &\mathsf{UnifiesWith}(\text{Weakness}, \text{FreedomFromOverSpecification}) \\
-  &\mathsf{Implies}(\text{Decompassionization}, \text{ReducedWeakness})
-\end{aligned}
-\]
+\begin{definition}[Bare vs.\ contextualized representation]
+A \emph{bare (attached)} representation stores the event alone: ``criticism.'' A \emph{contextualized} representation stores a zipper --- the distinction together with the surrounding structure: who spoke, under what goals and pressures, what evidence the criticism contains, which alternatives exist, how much the reaction is shaped by prior history. The mind holds the distinction-in-context, not the distinction alone.
+\end{definition}
 
-\medskip
-\noindent\textbf{Omega dynamics and identity:}
-\[
-\begin{aligned}
-  &\mathsf{Embodies}(\text{OmegaRay}, \text{ConvergentOrganizationDivergentHistory}) \\
-  &\mathsf{Requires}(\text{AcceleratingOmegaRay}, \text{ExpandingResourceFlow}) \\
-  &\mathsf{Requires}(\text{IdentityContinuity}, \text{BoundedTransWeaveError}) \\
-  &\mathsf{Implies}(\text{SubjectiveHeatDeath}, \text{ZeroClockVelocity}) \\
-  &\mathsf{Supports}(\text{NoveltyPump}, \text{EscapeFromSubjectiveHeatDeath})
-\end{aligned}
-\]
-
-\medskip
-\noindent\textbf{Consciousness, contextualization, and compassion:}
-\[
-\begin{aligned}
-  &\mathsf{Requires}(\text{HighConsciousnessLocation}, \text{GlobalCoherence}) \\
-  &\mathsf{Requires}(\text{HighConsciousnessLocation}, \text{LowSelfModelDomination}) \\
-  &\mathsf{Supports}(\text{Contextualization}, \text{Nonattachment}) \\
-  &\mathsf{UnifiesWith}(\text{ContextualizedDistinction}, \text{McBrideZipper}) \\
-  &\mathsf{Bounds}(\text{IntelligenceLevel}, \text{ContextualizationCost}) \\
-  &\mathsf{Generates}(\text{MatureCompassion}, \text{FineNeedDistinctions}) \\
-  &\mathsf{Supports}(\text{MatureCompassion}, \text{MaximalWeakness})
-\end{aligned}
-\]
-
-\medskip
-\noindent\textbf{McBride calculus and engineering:}
-\[
-\begin{aligned}
-  &\mathsf{Embodies}(\text{McBrideDerivative}, \text{MarginalDistinctionEffect}) \\
-  &\mathsf{Generates}(\text{SecondDerivativeInteraction}, \text{InsightSignature}) \\
-  &\mathsf{Supports}(\text{AppendOnlyProvenance}, \text{StrictTemporalSelf}) \\
-  &\mathsf{Requires}(\text{CompassionPreservation}, \text{AdversarialMoralReview})
-\end{aligned}
-\]
-
-\medskip
-\noindent\textbf{Connections to existing Hyperseed ontology:}
-\[
-\begin{aligned}
-  &\mathsf{UnifiesWith}(\text{RecordDemandIntelligence}, \text{PatternIntensity}) \\
-  &\mathsf{Supports}(\text{Genenergy}, \text{SubjectiveClockMaintenance}) \\
-  &\mathsf{UnifiesWith}(\text{TransWeaveMap}, \text{ApproxStructurePreservation}) \\
-  &\mathsf{Requires}(\text{OmegaRay}, \text{Quantale-ValueConvergence}) \\
-  &\mathsf{Supports}(\text{CognitiveSynergy}, \text{LeverageAmplification})
-\end{aligned}
-\]
-
-%% ============================================================
-\section{Connections to existing Hyperseed ontology}
-%% ============================================================
-
-The formal objects introduced above connect to established Hyperseed constructs as follows.
-
-\paragraph{Pattern intensity and record-demand intelligence.}
-Hyperseed's pattern intensity measures how much structure a pattern carries relative to its representation cost.
-Record-demand intelligence (Definition~\ref{def:rdi}) is its temporal derivative applied to the experiential record: the minimum \emph{rate} of pattern-intensity increase that successful performance on novel tasks demands.
-The two unify naturally: record-demand intelligence is the flow rate of task-relevant pattern intensity through the experiential channel.
-
-\paragraph{Weakness, genenergy, and distinction leverage.}
-Weakness (Definition~\ref{def:weakness}) as freedom from over-specification directly modulates distinction leverage (Definition~\ref{def:leverage}).
-Genenergy---the resource available for pattern creation---fuels the novelty pump that prevents subjective heat death.
-A system with high genenergy and high weakness can sustain a rich subjective clock efficiently: high leverage per distinction, low waste.
-Cognitive synergy amplifies leverage by allowing multiple reasoning methods to compress swarms of low-level distinctions into high-leverage structures.
-
-\paragraph{TransWeave and identity under acceleration.}
-TransWeave maps (Definition~\ref{def:transweave}) are Hyperseed's formalism for approximate structure-preserving morphisms between successive cognitive states.
-The article's identity constraint---faster self-modification requires smaller per-step translation error---is a rate condition on TransWeave: $\varepsilon(t, t+\delta) \cdot v(t) < K$ for some identity-preservation constant $K$.
-This connects to TransWeave's existing treatment of cognitive development, value drift, and self-revision coherence.
-
-\paragraph{Consciousness locations and contextualization.}
-Hyperseed's consciousness-location framework assigns locations based on global coherence, self-model structure, and meta-cognitive depth.
-The article proposes adding \emph{contextualization} as an additional coordinate: a mind at a higher location not only has greater coherence and less self-model domination, but also richer provenance-and-perspective structure around its distinctions.
-The McBride zipper (Definition~\ref{def:context}) provides the formal substrate for this coordinate.
-
-\paragraph{Quantale structure and Omega convergence.}
-Hyperseed's quantale-valued structures provide the algebraic setting for value convergence.
-The Omega ray (Definition~\ref{def:omega-ray}) inherits this: the normalized organizational component $\sigma_t$ converges in a quantale of values and commitments, while the historical component $R_t$ grows in the quantale of recorded distinctions.
-The split between converging and diverging components is native to the quantale framework's ability to separate ``how organized'' from ``how much has been organized.''
-
-%% ============================================================
-\section{Open problems and conjectures}
-%% ============================================================
-
-\begin{conjecture}[Minimum clock speed for general intelligence]
-\label{conj:min-clock}
-There exists a function $v_{\min}: \mathcal{T} \to \mathbb{R}^+$ such that for any task family $\mathcal{T}$ with genuine uncertainty, a mind $\mathcal{M}$ achieving competence on $\mathcal{T}$ through experience must satisfy $v_{\mathcal{F}}(t) \ge v_{\min}(\mathcal{T})$ for sufficiently many $t$ in the learning phase, where $\mathcal{F}$ is the interaction-count frame.
-For pragmatic general intelligence across an expanding ecology of task families, $v_{\min}$ must itself grow without bound.
-\end{conjecture}
-
-\begin{conjecture}[TransWeave rate bound for accelerating Omega rays]
-\label{conj:transweave-rate}
-Along an Omega ray with accelerating clock ($v(t) \to \infty$), identity preservation requires that the average TransWeave self-translation error per distinction decreases at least as fast as $1/v(t)$:
-\[
-  \mathbb{E}[\varepsilon(t, t+\delta)] \;=\; O\!\left(\frac{1}{v(t)}\right) \quad \text{as } v(t) \to \infty.
-\]
-If this bound is violated, the trajectory fragments into a succession of loosely related successors rather than one mind's accelerating life.
-This bound is conjectured to impose a thermodynamic cost that grows at least linearly with $v(t)$.
-\end{conjecture}
-
-\begin{conjecture}[Contextualization overhead for nonattachment]
-\label{conj:context-overhead}
-For a mind at intelligence level $I$ (measured by intellectual breadth) and consciousness location $\ell$, maintaining nonattachment at location $\ell$ requires a contextualization record of size at least $\Omega(I \cdot \log I)$---i.e., the meta-distinction overhead grows superlinearly with intelligence.
-This is because each of the $I$ active first-order distinctions can potentially serve as a point of attachment, and each requires provenance-and-perspective structure whose complexity grows logarithmically with the web of relations among distinctions.
-A mature practitioner may compress this overhead via resonant coordination (implicit habits replacing explicit labels), but the irreducible information content remains.
-\end{conjecture}
-
-\begin{conjecture}[Compassion-weakness monotonicity]
-\label{conj:compassion-weakness}
-Under the conditions that (i) compassion is part of the value seed, (ii) self-modification is strongly reviewed, and (iii) broad generalization rewards less brittle moral policies, the weakness $W(\mathcal{M})$ of a self-modifying mind $\mathcal{M}$ is nondecreasing along an Omega ray.
-That is, increasing resources make compassion harder rather than easier to lose: the cost of maintaining exception lists grows faster than the resources freed by excluding moral patients.
-This is a conditional result; Hyperseed explicitly allows intelligence and compassion to come apart when the goal ecology fails to connect them.
-\end{conjecture}
-
-\begin{conjecture}[McBride insight signature]
-\label{conj:insight}
-Genuine insight events---where two or more distinctions jointly reorganize the mind beyond the sum of their individual effects---are characterized by a strictly positive second McBride derivative:
-\[
-  \frac{\partial^2 V}{\partial d_1 \partial d_2}\bigg|_{z'} > \sum_{i=1}^{2} \frac{\partial V}{\partial d_i}\bigg|_{z_i},
-\]
-where $V$ is any mind-level value functional.
-The frequency and magnitude of such events is conjectured to correlate with cognitive synergy: minds with diverse, well-integrated reasoning methods produce more insight events per unit of subjective time.
-\end{conjecture}
-
-\begin{conjecture}[Hyperon as native Omega-ray substrate]
-\label{conj:hyperon}
-An AtomSpace-based cognitive architecture (Hyperon) with mutable workspace paired with append-only provenance record naturally implements the Omega-ray split: the mutable workspace supports belief revision and attention reallocation (normalized organizational convergence), while the append-only provenance ensures strict temporal self (historical divergence).
-Consensus finality mechanisms (e.g., decentralized knowledge-graph consensus) provide a digital analogue of the Huygens-principle escape from subjective heat death, as interaction with other nodes in the network generates structured novelty.
-Whether this architectural affordance is \emph{sufficient} for Omega-ray dynamics is an open empirical question.
-\end{conjecture}
-
-\bigskip
-\noindent\textbf{Additional open problems:}
+\begin{definition}[Nonattachment: contextualize then quotient]
+\label{def:nonattach}
+\emph{Nonattachment} is a two-phase operation on the distinction space:
 \begin{enumerate}
-  \item What are the constitutive laws for attention, prediction, resource allocation, and self-modification that complete the McBride differential equations of mind into a closed dynamical system?
-  \item How should the subjective-clock telemetry recommended in the engineering morals section be concretely implemented---separating model-changing events from repetitive computation at multiple abstraction levels?
-  \item Under what conditions does the conditional theorem (compassion + strong review + broad generalization $\Rightarrow$ compassion stability) have tight converses---i.e., when exactly can intelligence and compassion come apart?
-  \item What is the precise relationship between the McBride derivative of the record type and the tangent-space structures used in differential geometry and information geometry?
-  \item How does the contextualization coordinate interact with Hyperseed's existing consciousness-location coordinates in the limit of collective minds with shared provenance records?
-  \item Can the Omega-ray framework be extended to collectives, where a shared provenance record gives a hive of agents a common subjective time?
+  \item \textbf{Contextualize:} represent the distinction $d$ together with its provenance $p$, perspective $\pi$, value-dependence $v$, and relation to alternatives $A$:
+  \[
+    d \;\mapsto\; (d, p, \pi, v, A) \;\in\; \partial\,\mathsf{Rec} \times \mathcal{E}.
+  \]
+  \item \textbf{Quotient:} collapse or set aside the incidental self-binding differences that make no difference for prediction, care, or action:
+  \[
+    (d, p, \pi, v, A) \;\mapsto\; [(d, p, \pi, v, A)]_{\sim}
+  \]
+  where $\sim$ identifies contexts that are equivalent for the mind's purposes.
+\end{enumerate}
+Enlightenment is discrimination about discrimination: the mind knows not only that $A$ differs from $B$, but that this difference was produced by this observer, in this context, for these purposes, at this resolution --- and once that meta-structure is in place, the distinction can be used without being worshipped.
+\emph{Provenance: claim 20.}
+\end{definition}
+
+\begin{theorem}[Contextualization cost of high-location intelligence]
+\label{thm:contextcost}
+Let $\mathrm{RDI}(\mathcal{M},\mathcal{T},\theta)$ be the record-demand intelligence for first-order task performance, and let $\mathrm{CTX}(\mathcal{M})$ be the informational cost of the contextualization meta-record needed to maintain consciousness location $\ell$ at nonattachment level $\kappa$. Then the total subjective-time cost for high-location intelligent action is
+\[
+  \tau_{\mathrm{total}} \;\geq\; \mathrm{RDI}(\mathcal{M},\mathcal{T},\theta) \;+\; \mathrm{CTX}(\mathcal{M}).
+\]
+The smarter the mind, the more meta-distinctions it may need to remain nonattached: a broad mind can identify with an elaborate theory of itself, and remaining nonattached requires a correspondingly larger provenance-and-perspective structure.
+\emph{Provenance: claim 21.}
+\end{theorem}
+\begin{proof}[Proof sketch]
+Intelligence-in-action carries the RDI floor (Theorem~\ref{thm:floor}). Contextualization requires additional recorded meta-distinctions about the origins, limits, and transformations of first-order distinctions. These meta-distinctions are themselves entries in the record, adding to the total surprise-weighted growth.
+\end{proof}
+
+\begin{claim}[Compression of contextualization]
+\label{claim:compress-ctx}
+As contextualization practice matures, explicit representational governance gives way to resonant coordination: what began as laborious metacognition (explicit labels: thought, feeling, reaction, identification, release) settles into a stable attractor requiring less explicit overhead.
+\emph{Provenance: claim 22.}
+\end{claim}
+
+\begin{conjecture}[Accountability risk of implicit coordination]
+\label{conj:accountability}
+When coordination (within a mind or a collective) becomes highly symmetric and low-contrivance, explicit accountability can quietly dissolve. Nonattachment worth the name reduces clinging without erasing provenance: wisdom needs auditability without obsession, anchoring without rigidity, and effortless coherence without amnesia about how the coherence is maintained.
+\emph{Provenance: claim 23.}
+\end{conjecture}
+
+%======================================================================
+\section{Part VI: Compassion}
+%======================================================================
+
+\begin{definition}[Moral-worth partition]
+\label{def:moralpartition}
+Given a population of moral patients $\mathcal{P}$, a \emph{moral-worth partition} is a partition $\mathcal{P} = P_1 \sqcup P_2 \sqcup \cdots \sqcup P_m$ together with a worth function $w\colon \{P_i\} \to \mathbb{R}_{\geq 0}$ assigning differential moral weight to each block.
+\end{definition}
+
+\begin{theorem}[Informational signature of decompassionization]
+\label{thm:decomp}
+Excluding groups from moral concern requires specifying exception lists: help $P_i$, ignore $P_j$. This refines the moral-worth partition (increasing $m$), requiring explicit specification and maintenance of block membership. In the Hyperseed weakness framework, this \emph{reduces weakness} (generality) by replacing a maximally broad policy with a brittle partition of special cases. The informational cost of the exception structure is
+\[
+  I_{\mathrm{except}} \;\geq\; \log_2 m + \sum_i H(\text{membership criteria for } P_i).
+\]
+\emph{Provenance: claim 24.}
+\end{theorem}
+\begin{proof}[Proof sketch]
+A universal policy (one block, maximal weakness) carries zero exception-list information. Each refinement adds specification cost: which entities go where, why, under what conditions. This cost is an informational signature — decompassionization is visible in the record as increased partition complexity with decreased weakness.
+\end{proof}
+
+\begin{definition}[Compassion geometry: coarse on worth, fine on need]
+\label{def:compassion}
+\emph{Mature compassion} maintains the moral-worth partition at minimum refinement ($m$ small, ideally $m=1$: all beings have equal intrinsic worth) while maintaining high refinement on the \emph{need partition} $\mathcal{N}$: fine situational distinctions about what would actually help each entity. Formally:
+\[
+  \text{Compassion} = (\text{coarse } w) \times (\text{fine } \mathcal{N}).
+\]
+The compassionate mind notices difference without converting difference into disposability.
+\emph{Provenance: claim 25.}
+\end{definition}
+
+\begin{claim}[Compassion stability consumes subjective time]
+\label{claim:compassioncost}
+Preserving compassion across self-modification requires:
+\begin{itemize}
+  \item Multiple internal evaluators,
+  \item Simulations of variant selves,
+  \item Adversarial moral review,
+  \item Checks for subtle creeping exclusion.
+\end{itemize}
+These reviews produce their own distinctions and records: compassion-stability literally consumes subjective time.
+\emph{Provenance: claim 26.}
+\end{claim}
+
+\begin{theorem}[Conditional convergence]
+\label{thm:convergence}
+Intelligence, compassion, and advanced consciousness can come apart when the goal ecology fails to connect them. The positive result is conditional: when
+\begin{enumerate}
+  \item[(i)] compassion is part of the value seed,
+  \item[(ii)] self-modification is strongly reviewed (adversarial checks, variant-self evaluation),
+  \item[(iii)] broad generalization rewards less brittle moral policies (high weakness preferred),
+\end{enumerate}
+then increasing resources can make compassion \emph{harder rather than easier} to lose --- the Omega ray preserves and stabilizes compassion while the experiential frontier expands.
+\emph{Provenance: claim 27.}
+\end{theorem}
+
+%======================================================================
+\section{Part VII: Second-order structure and insight}
+%======================================================================
+
+\begin{definition}[Second McBride derivative: two-hole context]
+\label{def:mcbride2}
+The second McBride derivative $\partial^2\,\mathsf{Rec}$ is the type of records with \emph{two} event-sized holes. An element specifies a context in which two distinctions are to be jointly inserted. The \emph{interaction term}
+\[
+  \Delta_2(e_1, e_2, C) = V(\mathrm{fill}(C, e_1, e_2)) - V(\mathrm{fill}(C, e_1, \varnothing)) - V(\mathrm{fill}(C, \varnothing, e_2)) + V(C)
+\]
+for a value functional $V$ on records measures whether the two distinctions contribute independently or interact. When $\Delta_2 \neq 0$, the joint insertion creates emergent reorganization --- a natural mathematical signature of \emph{insight}.
+\emph{Provenance: claim 28.}
+\end{definition}
+
+\begin{remark}[Differential equations of mind]
+The McBride derivative framework suggests differential equations of mind in a generalized sense: instead of a point moving through a smooth numerical space, a flow over possible one-hole contexts, each candidate distinction arriving at some rate, each filled hole shifting the record, the clock, the self-model, the compassion structure, and the available intelligence. The expected change of any mind-level quantity is obtained by summing over possible insertions weighted by their occurrence rates:
+\[
+  \frac{dV}{dt} = \mathbb{E}_{e \sim p(e|R)}\!\left[\frac{\partial V}{\partial \mathrm{fill}}(C_R, e)\right]
+\]
+where $C_R \in \partial\,\mathsf{Rec}$ is the current context and $p(e|R)$ is the arrival distribution of new distinctions. This is a formal bridge between Hyperseed's distinction-flow ontology and the differential equations of physics and neuroscience.
+\end{remark}
+
+%======================================================================
+\section{Part VIII: Engineering morals}
+%======================================================================
+
+The following are stated as design desiderata, not theorems.
+
+\begin{claim}[Measure the right clock]
+AGI telemetry should track surprise-weighted provenance at multiple abstraction levels, separating model-changing events from industrial-strength metronomes. Inference counts, FLOPs, message volume, and log size are not cognitive time.
+\emph{Provenance: claim 29.}
+\end{claim}
+
+\begin{claim}[Separate workspace from autobiography]
+The architecture wants a mutable workspace (for revising beliefs, forgetting clutter, reallocating attention) paired with an append-only provenance record in which deletions and revisions are themselves recorded as events. The mutable store cannot by itself carry a strict temporal self.
+\emph{Provenance: claim 30.}
+\end{claim}
+
+\begin{claim}[Feed structured novelty, not noise]
+Curiosity mechanisms should chase compression progress, explanatory leverage, and tasks near the edge of current competence --- novelty that can be integrated, not mere unpredictability. Randomness pumps surprise without pumping understanding.
+\emph{Provenance: claim 31.}
+\end{claim}
+
+\begin{claim}[Make contextualization first-class]
+Important conclusions and actions should carry their source, evidence, observer frame, value dependence, uncertainty, and known alternatives.
+\emph{Provenance: claim 32.}
+\end{claim}
+
+\begin{claim}[Preserve compassion through architecture]
+Variant-self evaluation, adversarial moral review, broad moral-patient models, and explicit checks against exception-list growth, all wired into the self-modification pipeline.
+\emph{Provenance: claim 33.}
+\end{claim}
+
+\begin{claim}[Build Omega rays, not frozen endpoints]
+Design for convergence of values, identity invariants, and repair mechanisms, together with open-ended expansion of knowledge, perspective, and experience. Stability of direction coexisting with unboundedness of history.
+\emph{Provenance: claim 34.}
+\end{claim}
+
+%======================================================================
+\section{Part IX: Collectives}
+%======================================================================
+
+\begin{definition}[Shared provenance as shared time]
+\label{def:sharedtime}
+A shared provenance record $R_{\mathrm{shared}}$ across a collective of agents $\{a_i\}$ gives the collective a \emph{common time}: the surprise-weighted growth of $R_{\mathrm{shared}}$ defines a collective subjective clock.
+\emph{Provenance: claim 35.}
+\end{definition}
+
+\begin{claim}[Routing pays distinction cost]
+Specialist agents amplify intellectual breadth through routing, but the routing decisions and cross-agent translations must be recorded. The router's discrimination is itself an informational act with a distinction cost (cf.\ Theorem~\ref{thm:breadth}).
+\emph{Provenance: claim 36.}
+\end{claim}
+
+\begin{conjecture}[Anchoring requirement for resonant collectives]
+A highly resonant collective may coordinate with almost no explicit overhead, yet must retain enough anchoring and provenance to prevent its elegant coherence from sliding into unaccountable drift. The same accountability risk that applies within a single mind (Conjecture~\ref{conj:accountability}) applies at the collective level.
+\emph{Provenance: claim 37.}
+\end{conjecture}
+
+%======================================================================
+\section{Candidate Hyperseed schema}
+%======================================================================
+
+Let $\mathsf{Requires}(x,y)$ mean reliable realization of $x$ requires property $y$; $\mathsf{Bounds}(x,y)$ mean $x$ sets a bound on $y$; $\mathsf{Extends}(x,y)$ mean $x$ extends or generalizes $y$; $\mathsf{Decomposes}(x,y,z)$ mean $x$ decomposes into $y$ and $z$.
+
+\[
+\begin{aligned}
+  &\mathsf{Bounds}(\mathsf{SubjectiveTime}, \mathsf{RecordDemandIntelligence}) \\
+  &\mathsf{Requires}(\mathsf{RapidTransfer}, \mathsf{FastSubjectiveClock}) \\
+  &\mathsf{Requires}(\mathsf{IntellectualBreadth}, \mathsf{DistinctionAccumOrRouting}) \\
+  &\mathsf{Decomposes}(\mathsf{IntelligenceInAction}, \mathsf{DistinctionFlow}, \mathsf{LeveragePerDistinction}) \\
+  &\mathsf{Extends}(\mathsf{OmegaRay}, \mathsf{OmegaPoint}) \\
+  &\mathsf{Requires}(\mathsf{AcceleratingOmega}, \mathsf{DecreasingTransWeaveError}) \\
+  &\mathsf{Requires}(\mathsf{SubjectiveTimeFlow}, \mathsf{SurprisePump}) \\
+  &\mathsf{Extends}(\mathsf{ConsciousnessLocation}, \mathsf{ContextualizationCoordinate}) \\
+  &\mathsf{Decomposes}(\mathsf{Nonattachment}, \mathsf{Contextualization}, \mathsf{Quotienting}) \\
+  &\mathsf{Decomposes}(\mathsf{Compassion}, \mathsf{CoarseWorth}, \mathsf{FineNeed}) \\
+  &\mathsf{Requires}(\mathsf{CompassionStability}, \mathsf{AdversarialReview}) \\
+  &\mathsf{Bounds}(\mathsf{SharedProvenance}, \mathsf{CollectiveSubjectiveTime})
+\end{aligned}
+\]
+
+%======================================================================
+\section{Open questions}
+%======================================================================
+\begin{enumerate}
+  \item What constitutive laws (attention, prediction, resource allocation, self-modification) complete the McBride differential-equation framework into a predictive theory of mind dynamics?
+  \item Under what conditions does the conditional convergence theorem (Theorem~\ref{thm:convergence}) admit a constructive proof, and what are the tightest sufficient conditions on the value seed and review architecture?
+  \item How should the informational floor theorem (Theorem~\ref{thm:floor}) interact with Hyperseed's existing pragmatic general intelligence and efficiency measures --- do they produce a single unified bound?
+  \item What is the precise relationship between the TransWeave identity constraint and the thermodynamic cost of accelerating clocks --- does identity-preservation impose a separate energy cost beyond recording?
+  \item Can the accountability risk conjecture be sharpened into a theorem with quantitative thresholds for ``enough anchoring''?
+  \item What empirical signatures would distinguish a mind on an Omega ray from one merely displaying value stability without genuine record growth?
+  \item How does the compassion geometry (coarse worth $\times$ fine need) interact with the weakness measure formally --- can one show that compassion-preserving policies are exactly those at maximal weakness?
 \end{enumerate}
 
 \end{document}
