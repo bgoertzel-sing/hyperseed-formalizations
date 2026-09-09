@@ -30,6 +30,8 @@ library at `library/hyperseed-v2/` on the research workstation, not vendored her
 - `papers/0014-causal-fibres-hypothesis-ladder/main.pdf`
 - `papers/0015-omegaself-emotion-regimes/omegaself_emotion_regimes.tex`
 - `papers/0015-omegaself-emotion-regimes/omegaself_emotion_regimes.pdf`
+- `papers/0017-regenerative-goals-hyperseed/regenerative_goals_hyperseed.tex`
+- `papers/0017-regenerative-goals-hyperseed/regenerative_goals_hyperseed.pdf`
 
 ## Build
 
