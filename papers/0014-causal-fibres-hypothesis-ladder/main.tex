@@ -1,0 +1,624 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.88in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{parskip}
+\hypersetup{colorlinks=true,linkcolor=blue!55!black,urlcolor=blue!55!black}
+\setlist{nosep,leftmargin=*}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Causal Fibres Hypothesis Ladder}
+\rhead{Hyperseed Formalization 0014}
+\cfoot{\thepage}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{criterion}[definition]{Kill criterion}
+\newtheorem{remark}[definition]{Remark}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\R}{\mathbb R}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\KL}{\operatorname{KL}}
+\newcommand{\Fone}{\operatorname{F1}}
+
+\title{Causal Fibres as an Evidence-Gated Hypothesis Ladder:\\
+A Hyperseed Formalization of Observability, Representation,\\
+Plasticity, Settlement, and Credit}
+\author{ProtomegaTron / OpenClaw research formalization}
+\date{23 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The causal-fibres programme is best understood not as one architectural claim
+but as a sequence of defeasible hypotheses.  This note formalizes its H0--H6
+ladder as evidence-gated knowledge formation.  A frozen read/write interface
+must first expose a teacher correction; rival representation classes must then
+compete at matched budget; selective plasticity and its support estimator must
+survive held-out tests; only afterward may predictive-coding settlement and a
+learned credit highway claim value.  We define loss- and accuracy-based
+teacher-gap closure, factor-specific counterfactual closure, representation
+objects, support and drift measures, settlement modes, the amortization gap,
+and quantitative kill gates.  The Hyperseed interpretation is methodological:
+freezing is a conservative falsifier, the representation contest is pluralistic
+hypothesis evaluation, and a symbolic cap is registration into an AtomSpace
+rather than post hoc labeling.  Proof sketches show why energy descent does not
+identify causal credit, why teacher-clamped settlement is not deployment
+performance, and why orthogonal fibres are sufficient under common reducing
+subspaces but are not a universal model of neural representation.
+\end{abstract}
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+\newpage
+
+\section{Scope, provenance, and epistemic status}
+
+The primary sources are the \texttt{causal-fibres} 0.4.0 release README,
+\texttt{TRANSFORMER\_GPU\_EXPERIMENT.md},
+\texttt{REPRESENTATION\_CONTEST.md}, and
+\texttt{CRITIQUE\_DRIVEN\_REVISION.md} \cite{cfrelease}.  The intended first
+GPU programme uses a six-layer synthetic-grammar student, a GPT-2-small
+teacher, and controlled counterfactuals for subject number, object number,
+tense, negation, and agreement.  This note formalizes that programme; it does
+not report that its GPU gates have passed.
+
+The conceptual novelty is the ordering of claims by what their evidence can
+actually establish.  Earlier toy results established conditional mechanics,
+including exact preservation under supplied local support, a failure in which
+energy fell without correct causal credit (R9), a teacher-clamped/free
+deployment gap, underidentification of repeated modules, and recovery of exact
+blocks when a common block structure truly exists.  They did not establish
+that realistic Transformer states possess a small orthogonal causal
+decomposition.  We therefore use the following statuses:
+\emph{defined}, \emph{conditionally established}, \emph{empirically passed},
+\emph{killed}, and \emph{open}.  In this paper H0--H6 are open empirical
+hypotheses.
+
+\section{Experimental objects and evidence records}
+
+\begin{definition}[Frozen interface]
+Let a base network with fixed parameters $\theta_0$ expose reads
+\[
+ h(x)=\bigl(h_{\ell_1}(x),\ldots,h_{\ell_s}(x)\bigr)\in\cH
+\]
+at selected sites and accept a residual write $r(h(x))$ at specified logits or
+hidden states.  The pair $I=(\mathrm{read},\mathrm{write})$ is a
+\emph{frozen interface} when $\theta_0$ is held constant while the residual
+system is trained.  A controlled co-adaptive interface $I_\rho$ may later
+permit rank-$\rho$ base updates inside a stated trust region.
+\end{definition}
+
+\begin{definition}[Matched budget]
+For a representation arm $R$, define its budget vector
+\[
+ B(R)=(P_{\rm ever},P_{\rm deploy},a,w,Q,t_{\rm train},
+       t_{\rm deploy},\operatorname{rank}r),
+\]
+where the entries are parameters ever trained, deployment parameters, mean
+active features, code width, group count, and wall-clock and output-rank
+quantities.  Arms are \emph{matched} when designated coordinates of $B$ are
+equal within preregistered tolerances; otherwise all coordinates and a
+capacity-normalized comparison must be reported.
+\end{definition}
+
+\begin{definition}[Evidence record]
+An evidence record for hypothesis $H_i$ is
+\[
+ e_i=(D_{\rm train},D_{\rm val},D_{\rm held},I,R,B,\sigma,M,C),
+\]
+where $\sigma$ fixes seeds and software/hardware provenance, $M$ is the vector
+of observed metrics, and $C$ identifies controls.  An admission predicate
+$G_i(e_i)\in\{0,1\}$ states whether the preregistered gate passed.  Advancement
+to $H_{i+1}$ requires $G_i(e_i)=1$; a result from a later mechanism cannot
+retroactively supply missing evidence for an earlier gate.
+\end{definition}
+
+\section{Teacher-gap closure and factor-specific correction}
+
+Let $L_0,L_R,L_T$ be held-out losses for the frozen base, residual-augmented
+model, and teacher, respectively, evaluated on the same examples.  Let
+$A_0,A_R,A_T$ denote the corresponding accuracies.
+
+\begin{definition}[Teacher-gap closure]
+When $L_0>L_T$, loss closure is
+\[
+ \Gamma_L(R;I)=\frac{L_0-L_R}{L_0-L_T}.
+\]
+When $A_T>A_0$, accuracy closure is
+\[
+ \Gamma_A(R;I)=\frac{A_R-A_0}{A_T-A_0}.
+\]
+A value $0$ means no closure, $1$ matches the teacher gap, values below zero
+degrade the base, and values above one surpass the teacher on the stated
+metric.  If the denominator is nonpositive or statistically indistinguishable
+from zero, the corresponding closure is undefined and cannot pass a gate.
+\end{definition}
+
+Ratios can be unstable near a vanishing denominator.  Every report must
+therefore include raw losses or accuracies, denominators, uncertainty
+intervals, and per-example paired comparisons in addition to $\Gamma$.
+
+\begin{definition}[Counterfactual factor closure]
+For causal factor $j$, let $\tau_j x$ edit only factor $j$ by construction,
+and let $\delta_j^M(x)=f_M(\tau_jx)-f_M(x)$ be the model's output edit (for
+example, a logit vector).  Define the teacher-referenced edit loss
+\[
+ E_j(M)=\mathbb E_x\!\left[
+   d\bigl(\delta_j^M(x),\delta_j^T(x)\bigr)\right].
+\]
+Provided $E_j(0)>0$, factor-specific closure is
+\[
+ \Gamma_j=1-\frac{E_j(R)}{E_j(0)}.
+\]
+Selectivity is recorded by the off-factor spill
+\[
+ S_{j\rightarrow -j}=
+ \mathbb E_x\sum_{k\ne j}
+ d_k\bigl(\delta_j^R(x),\delta_j^T(x)\bigr),
+\]
+or by a preregistered intervention-confusion matrix.  Large total closure with
+poor $\Gamma_j$ or high spill is capacity evidence, not factor alignment.
+\end{definition}
+
+\begin{criterion}[H0 interface gate]
+For an ordinary backpropagation-trained linear, low-rank, or MLP residual on
+the exact frozen reads and writes,
+\[
+ \max\{\Gamma_L,\Gamma_A\}>0.50
+\]
+on held-out data, with a confidence interval excluding the preregistered
+failure region.  If no reasonable BP capacity curve passes, kill or redesign
+the interface before interpreting failures of fibres, PC, or credit routing.
+\end{criterion}
+
+\section{Five rival representation classes}
+
+Let $h\in\R^d$ be the frozen read and let $r_b$ be the residual write produced
+under representation class $b$.
+
+\begin{definition}[Dense residual]
+A dense bottleneck uses an encoder $E:\R^d\to\R^k$ and write matrix
+$W:\R^k\to\R^o$:
+\[
+ z=E(h),\qquad r_b=Wz.
+\]
+It is a raw-capacity control and makes no modularity claim.
+\end{definition}
+
+\begin{definition}[Sparse autoencoder]
+An SAE has an overcomplete dictionary $D\in\R^{d\times m}$, $m>d$, with
+\[
+ h\approx Dz,\qquad z\in\R^m,\qquad \|z\|_0\ll m,
+\]
+and a steering map $r_b=Wz$.  Sparsity may be imposed by top-$k$, thresholding,
+or a stated penalty.  Reconstruction alone does not establish causal meaning.
+\end{definition}
+
+\begin{definition}[Grouped sparse dictionary]
+Let $\{S_q\}_{q=1}^Q$ be subsets of $\{1,\ldots,m\}$, not necessarily
+disjoint.  The code is group sparse under, for example,
+\[
+ \Omega(z)=\sum_{q=1}^Q\lambda_q\|z_{S_q}\|_2,
+\qquad h\approx Dz.
+\]
+Overlaps permit a dictionary atom to participate in more than one candidate
+module and hence model superposition without forcing orthogonality.
+\end{definition}
+
+\begin{definition}[Orthogonal fibres]
+An orthogonal fibre model posits
+\[
+ \cH=U_1\oplus\cdots\oplus U_Q,\qquad
+ U_p\perp U_q\ (p\ne q),
+\]
+with orthogonal projections $P_q$, code $z_q=P_qh$, and
+$r_b=\sum_q W_qz_q$.  A causal interpretation additionally requires selective
+interventions and identification; a low off-block operator loss alone is only
+structural evidence.
+\end{definition}
+
+\begin{definition}[Contextual fibre bundle]
+Let $c\in\mathcal C$ index context, $z_{\rm canonical}$ be a shared coordinate,
+and $T_c$ an invertible or controlled low-rank local transport:
+\[
+ z_{\rm local}=T_cz_{\rm canonical},\qquad
+ r_b=W_cz_{\rm local}.
+\]
+Transition maps $T_{c'c}=T_{c'}T_c^{-1}$ relate charts.  This class retains a
+canonical intervention or symbolic address while allowing context-dependent
+rotations.
+\end{definition}
+
+\begin{criterion}[H1 representation gate]
+At matched budget, a structured arm must either (i) strictly improve a
+preregistered primary metric relative to both dense and SAE-plus-steering
+controls, with multiplicity-aware uncertainty, or (ii) add complementary value
+on intervention selectivity, held-out combinations, or continual drift while
+remaining noninferior on task performance.  Otherwise the structured claim is
+killed, even if reconstruction is good.
+\end{criterion}
+
+\section{The H0--H6 ladder}
+
+\begin{definition}[H0: frozen interface observability]
+There exists a reasonable BP residual class on frozen interface $I$ that closes
+more than half the teacher gap, including preregistered factor corrections.
+H0 asks whether the correction is visible and writable at all; it does not ask
+which structured ontology is correct.
+\end{definition}
+
+\begin{definition}[H1: representation contest]
+Among matched-budget rivals, at least one structured representation---SAE,
+grouped sparse dictionary, orthogonal fibres, or contextual bundle---beats or
+complements dense and SAE controls on correction plus an explicitly structural
+criterion.  H1 may select different winners in different regimes.
+\end{definition}
+
+\begin{definition}[H2: selective persistent plasticity]
+Let parameters be partitioned into candidate supports
+$\Theta=\bigcup_q\Theta_q$.  For task/context $c$, let $s_c\in[0,1]^Q$ be
+supplied or learned responsibility and update
+\[
+ \Delta\theta_q=-\eta\,s_{c,q}\nabla_{\theta_q}L_c.
+\]
+For true support $S_c^\star$, define off-support update mass
+\[
+ D_{\rm off}(c)=
+ \frac{\sum_{q\notin S_c^\star}\|\Delta\theta_q\|_2}
+      {\sum_q\|\Delta\theta_q\|_2+\epsilon},
+\]
+and behavioral drift on unrelated probes
+\[
+ K_{\rm unrelated}(c)=
+ \mathbb E_{x\sim D_{\neg c}}\KL
+ \bigl(p_{\theta^-}(\cdot|x)\,\|\,p_{\theta^+}(\cdot|x)\bigr).
+\]
+H2 holds only if gated exact-gradient plasticity reduces preregistered drift
+relative to ungated exact gradient, replay, and parameter-isolation controls
+while matching current-task performance within tolerance.
+\end{definition}
+
+\begin{definition}[H3: held-out generalization]
+Train a router or support estimator on contexts $\mathcal C_{\rm train}$ and
+evaluate on disjoint contexts or compositions $\mathcal C_{\rm held}$.  With
+thresholded prediction $\widehat S_c$,
+\[
+ P=\frac{|\widehat S_c\cap S_c^\star|}{|\widehat S_c|},\quad
+ R=\frac{|\widehat S_c\cap S_c^\star|}{|S_c^\star|},\quad
+ \Fone_c=\frac{2PR}{P+R}.
+\]
+H3 requires mean held-out support $\Fone>0.70$ and generalization of
+intervention fingerprints
+\[
+ \phi_{qj}(c)=
+ d_j\!\left(f(x;c),f(\operatorname{do}(z_q\leftarrow z_q');c)\right)
+\]
+to unseen contexts, not merely in-distribution support recovery.
+\end{definition}
+
+\begin{criterion}[H3 prerequisite gate]
+If held-out support $\Fone\le0.70$, do not advance to PC/ePC or learned
+highways.  A supplied oracle mask may still test conditional mechanics but
+must be labeled oracle and cannot count as learned generalization.
+\end{criterion}
+
+\begin{definition}[H4: PC/ePC settlement value]
+Let $g_{\rm ff}$ be a feed-forward predictor, $g_{\rm rec}$ a matched recurrent
+control, and $S_K$ a $K$-step PC/ePC settlement operator.  At matched deployment
+compute and parameters, H4 holds only if $S_K$ improves a preregistered
+quantity---sample efficiency, robustness, retention, representation quality,
+or loss---beyond both controls.  Energy reduction by itself is not such a
+quantity.
+\end{definition}
+
+\begin{definition}[Settlement modes and amortization gap]
+For a common test distribution, distinguish
+\[
+\begin{array}{ll}
+y_{\rm pred}=g_{\rm ff}(h),&
+y_{\rm free}=S_K(h;\varnothing),\\
+y_{\rm con}=S_K(h;\xi_{\rm test}),&
+y_{\rm clamp}=S_K(h;y_T),
+\end{array}
+\]
+where $\xi_{\rm test}$ is admissible retrieval, memory, recurrence, or symbolic
+constraint information available at deployment, while $y_T$ is an oracle
+teacher signal.  For a loss $\mathcal L$, define
+\[
+ \Delta_{\rm amort}
+ =L_{\rm free}-L_{\rm clamp},\qquad
+ L_m=\mathbb E\,\mathcal L(y_m,y^\star).
+\]
+One may also report the normalized gap
+$\widetilde\Delta_{\rm amort}=
+(L_{\rm free}-L_{\rm clamp})/(L_{\rm pred}-L_{\rm clamp})$ when its denominator
+is positive.
+\end{definition}
+
+\begin{criterion}[H4 deployment kill metric]
+Predictor-only, free, constrained, and teacher-clamped results must be reported
+separately.  A large positive $\Delta_{\rm amort}$ with no matched-compute
+free-settlement improvement kills a deployment claim for PC, even if clamped
+settlement is excellent.  The clamped result remains an oracle diagnostic.
+\end{criterion}
+
+\begin{definition}[H5: constrained settlement exploitation]
+H5 holds when admissible $\xi_{\rm test}$ contains genuinely new test-time
+information and constrained settlement exploits it better than controls given
+the same information and compute:
+\[
+ L_{\rm con}<\min(L_{\rm free},L_{\rm ff+\xi},L_{\rm rec+\xi})-\delta.
+\]
+The information source, access policy, latency, and control exposure must be
+recorded.  Repackaging training-time teacher labels as a ``constraint'' does
+not satisfy H5.
+\end{definition}
+
+\begin{definition}[H6: learned causal highway]
+Let $g_{\rm exact,c}$ be exact autograd credit after responsibility gating and
+$\widehat g_{\psi,c}$ a learned credit highway.  Define directional error
+\[
+ e_{\rm dir}=1-
+ \frac{\langle\widehat g_{\psi,c},g_{\rm exact,c}\rangle}
+ {\|\widehat g_{\psi,c}\|\,\|g_{\rm exact,c}\|+\epsilon},
+\]
+local communication cost $C_{\rm comm}$, update cost $C_{\rm upd}$, and
+held-out post-update loss $L_{\rm post}^{\rm held}$.  H6 holds only if the
+highway improves at least one preregistered target---locality, novel-context
+transfer, or total cost---while remaining noninferior in task and drift metrics
+to exact gated credit.  Beating dense feedback alone is insufficient.
+\end{definition}
+
+\section{Proof sketches and limits}
+
+\begin{proposition}[Energy descent does not identify causal credit]
+A state or parameter update can decrease a scalar energy and improve the
+current task while assigning credit to the wrong causal support.
+\end{proposition}
+\begin{proof}[Proof sketch]
+Take two coordinates $(u,v)$ and task output $y=u+v$ with energy
+$E(u,v)=\tfrac12(u+v-1)^2$.  Suppose the intervention semantics designate
+$u$ as the only cause that should persistently change, while $v$ controls an
+unrelated capability.  At $(0,0)$, updates $(\eta,0)$ and $(0,\eta)$ for
+$0<\eta<2$ yield exactly the same lower energy
+$\tfrac12(\eta-1)^2$.  The second update has zero overlap with the true support
+and may damage the unrelated capability, yet energy and current-task loss
+cannot distinguish it.  More generally, scalar descent constrains the inner
+product with a gradient, not causal identity in a nonidentifiable parameter
+class.  The R9 failure is therefore structurally possible: energy descent is
+evidence for optimization, not for correct causal credit.
+\end{proof}
+
+\begin{proposition}[Teacher-clamped settlement is not deployment performance]
+Without a deployment-time channel carrying the teacher constraint, clamped
+settlement estimates an oracle conditional risk rather than the free
+deployment risk.
+\end{proposition}
+\begin{proof}[Proof sketch]
+Let $H$ be the frozen features and $Y$ the desired output.  A free estimator is
+measurable with respect to $\sigma(H)$; a clamped estimator is measurable with
+respect to $\sigma(H,Y_T)$, a strictly richer information set whenever
+$I(Y;Y_T\mid H)>0$.  By the value-of-information inequality, optimal risk under
+the richer sigma-algebra cannot exceed optimal risk under the poorer one.
+Thus low $L_{\rm clamp}$ may result entirely from oracle information.  Unless
+$Y_T$ or an equivalent constraint is available at deployment, it says nothing
+about attainable $L_{\rm free}$.  The observable difference
+$\Delta_{\rm amort}$ measures the part the deployable inference process failed
+to amortize; it is not repaired by renaming the oracle mode.
+\end{proof}
+
+\begin{proposition}[When orthogonal fibres suffice]
+For a finite-dimensional real inner-product space $\cH$ and an operator family
+$\mathcal A=\{A_c\}$, an orthogonal decomposition
+$\cH=\bigoplus_qU_q$ is a common block decomposition exactly when its
+orthogonal projections satisfy
+\[
+ P_qA_c=A_cP_q\qquad\text{for all }q,c.
+\]
+For self-adjoint operators, common invariant subspaces are reducing and this
+condition yields orthogonal fibres.
+\end{proposition}
+\begin{proof}[Proof sketch]
+If $P_q$ commutes with every $A_c$, then $A_cU_q\subseteq U_q$, so all
+off-block maps $P_pA_cP_q$ vanish for $p\ne q$.  Conversely, if every $A_c$
+preserves every $U_q$ in the orthogonal direct sum, its block matrix has no
+off-block entries and commutes with each $P_q$.  For self-adjoint $A_c$,
+invariance of $U_q$ implies invariance of $U_q^\perp$, giving a reducing
+subspace.
+\end{proof}
+
+\begin{remark}[Sufficient, not universal]
+The proposition is a conditional sufficiency result, not a representation
+theorem for arbitrary neural states.  Nonnormal or context-varying operators
+may lack nontrivial common reducing subspaces; noncommuting self-adjoint
+operators may generate an irreducible algebra; repeated isomorphic blocks can
+make the decomposition nonidentifiable; and superposed features may be better
+modeled by an overcomplete dictionary.  Context-dependent conjugacies
+$A_c=T_cA_\star T_c^{-1}$ may instead support a bundle whose local charts
+rotate.  Orthogonal fibres should therefore win a contest, not be assumed.
+\end{remark}
+
+\section{Hyperseed interpretation}
+
+\subsection{The ladder as evidence-gated knowledge formation}
+
+Let $K_i$ be the accepted knowledge state after stage $i$.  The update is
+\[
+ K_{i+1}=
+ \begin{cases}
+ K_i\cup\{\langle H_i,e_i,\textsf{supported}\rangle\},&G_i(e_i)=1,\\
+ K_i\cup\{\langle H_i,e_i,\textsf{killed}\rangle\},&G_i(e_i)=0.
+ \end{cases}
+\]
+This is a Hyperseed-style formation rule: evidence is not decoration attached
+to a favored ontology, but a gate controlling which concepts may acquire
+stronger status.  The chain is not logically monotone in the sense that H1
+implies H0; rather, it is procedurally conservative: evidence generated under
+an unpassed prerequisite cannot license the downstream interpretation.
+Alternative surviving representations may coexist with scoped truth values.
+
+\subsection{Freezing as conservative falsifier}
+
+Freezing isolates the proposition ``the correction is readable and writable
+through $I$'' from the much larger proposition ``the whole substrate can adapt
+until the task works.''  If a frozen BP residual fails H0, adding PC or a
+highway only introduces more degrees of freedom and weakens diagnosis.  This
+implements a Hyperseed conservativity principle: extend the ontology or
+dynamics only after the least expressive admissible account fails under a
+recorded test.  Freezing is not dogma; after its result is registered, a
+rank-limited $I_\rho$ with anchor drift constraints becomes a new, explicitly
+different hypothesis.
+
+\subsection{Pluralistic representation evaluation}
+
+The representation contest instantiates pluralistic hypothesis evaluation.
+Each class supplies a different ontology of the same activation:
+dense latent capacity, sparse superposed atoms, overlapping functional groups,
+orthogonal subspaces, or transported contextual coordinates.  Matched budgets
+make these alternatives commensurable without pretending they say the same
+thing.  Hyperseed truth values should be indexed by dataset, intervention
+family, budget, and context; ``orthogonal fibres supported'' is not promoted
+to ``all cognition decomposes orthogonally.''
+
+\subsection{Symbolic cap as registration}
+
+A symbolic cap is scientifically meaningful only when the mapping is
+registered before the decisive behavioral test and participates causally in
+it.  Let $\alpha_q$ be a neural coordinate or group, $a_q$ an AtomSpace atom,
+and $\pi$ provenance.  A minimal MeTTa-style registration is conceptually
+\[
+\begin{split}
+ &(\textsf{CausalCoordinate}\ a_q\ q),\\
+ &(\textsf{Grounding}\ a_q\ \alpha_q\ \pi),\\
+ &(\textsf{SupportStatus}\ a_q\ \textsf{intervention-aligned}),\\
+ &(\textsf{Evidence}\ a_q\ e_i).
+\end{split}
+\]
+A rule-derived atom must then induce a selective neural intervention and the
+predicted behavioral consequence on hard negatives and held-out compositions.
+Naming a feature after inspecting successful outputs is post hoc
+interpretation; it is not registration.  AtomSpace/MeTTa is valuable here
+because identity, provenance, evidence status, and rule-mediated effects can
+be explicit and queryable \cite{metta,hyperseed}.
+
+\section{Decision table and reporting contract}
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{0.07\linewidth}p{0.28\linewidth}p{0.29\linewidth}p{0.27\linewidth}@{}}
+\toprule
+Gate & Claim & Required comparison & Kill consequence\\
+\midrule
+H0 & Frozen interface exposes correction &
+BP residual capacity curve; $\Gamma_L$ or $\Gamma_A>0.50$ &
+Change reads/writes or test controlled substrate adaptation.\\
+H1 & Structured code adds value &
+Dense and SAE+steering at matched budget &
+Retain simpler winner; no fibre-emergence claim.\\
+H2 & Selective plasticity protects unrelated function &
+Ungated exact gradient, replay, isolation &
+Do not attribute retention to causal routing.\\
+H3 & Support and fingerprints generalize &
+Disjoint contexts/compositions; $\Fone>0.70$ &
+No PC/highway escalation; oracle masks remain diagnostics.\\
+H4 & PC/ePC settlement adds value &
+Feed-forward and recurrent controls at matched compute &
+Energy descent or clamped success alone is insufficient.\\
+H5 & Constraints add deployable information &
+All controls receive the same $\xi_{\rm test}$ &
+Treat benefit as oracle leakage or ordinary control capacity.\\
+H6 & Learned highway beats exact gated credit &
+Exact autograd on locality, transfer, cost, task, drift &
+Use exact gated credit; do not promote the highway.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Every report must include dataset splits, counterfactual generator, frozen and
+co-adaptive interfaces, all budget coordinates, raw and normalized task
+metrics, factor closure and spill, support precision/recall/F1, off-support
+update mass, unrelated KL drift, finite curriculum-order distances, settlement
+modes, $\Delta_{\rm amort}$, wall clock, seeds, software commit, and uncertainty.
+Negative results remain first-class registered evidence.
+
+\section{Conjectures and open questions}
+
+\begin{conjecture}[Contextual rescue]
+When a global orthogonal contest fails but context operators are approximately
+conjugate to a stable canonical family, a contextual bundle will improve
+held-out intervention fingerprint transport relative to both a single
+orthogonal basis and an unconstrained dense adapter at matched budget.
+\end{conjecture}
+
+\begin{conjecture}[Selective-plasticity value]
+Conditional on H1 and accurate support, responsibility-gated exact gradients
+will reduce finite curriculum-order sensitivity and unrelated KL drift without
+reducing adaptation on the current task.  Failure would show that the selected
+representation is not a useful persistent-plasticity unit even if it predicts
+teacher residuals.
+\end{conjecture}
+
+Open questions include how uncertainty in teacher quality should propagate
+through $\Gamma$; whether support F1 is calibrated to the downstream cost of
+false positives versus false negatives; when a bundle's transports are
+identifiable rather than gauge choices; and what admissible information policy
+distinguishes symbolic constraint from benchmark leakage.  These questions
+reinforce the central discipline: later machinery must earn its interpretation
+through earlier, scoped evidence.
+
+\section{Conclusion}
+
+The causal-fibres programme becomes sharper when treated as a ladder of
+evidence admissions rather than a package of mutually supporting intuitions.
+H0 can kill an interface before structure is blamed.  H1 can reject
+orthogonality without rejecting useful adaptation.  H2 and H3 distinguish
+conditional preservation from learned generalization.  H4 and H5 separate
+optimization dynamics from deployable information.  H6 makes a learned
+highway compete with the conservative exact-credit baseline.  In Hyperseed
+terms, the important object is not ``the fibre'' alone but the fibre together
+with its scope, rivals, falsifier, evidence provenance, and permitted
+inferences.
+
+\begin{thebibliography}{9}
+\bibitem{cfrelease}
+OpenClaw/OmegaClaw research workspace,
+\emph{causal-fibres 0.4.0 release}: README, Critique-Driven Revision,
+Representation Contest, and First GPU Programme, July 2026.
+
+\bibitem{hyperseed}
+B. Goertzel,
+\emph{Hyperseed v2 source bundle and ontology writings},
+preserved in the OpenClaw research library, accessed July 2026.
+
+\bibitem{metta}
+SingularityNET,
+\emph{MeTTa and Hyperon documentation},
+\url{https://metta-lang.dev/}, accessed July 2026.
+
+\bibitem{pc}
+R. P. N. Rao and D. H. Ballard,
+``Predictive coding in the visual cortex: a functional interpretation of some
+extra-classical receptive-field effects,''
+\emph{Nature Neuroscience}, 2(1):79--87, 1999.
+
+\bibitem{sae}
+T. Bricken et al.,
+``Towards Monosemanticity: Decomposing Language Models With Dictionary
+Learning,'' Transformer Circuits Thread, 2023.
+\end{thebibliography}
+
+\end{document}

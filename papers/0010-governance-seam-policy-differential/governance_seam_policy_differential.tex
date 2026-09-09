@@ -1,0 +1,861 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+
+\newtheorem{definition}{Definition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+\newtheorem{corollary}{Corollary}
+\newtheorem{openquestion}{Open Question}
+\newtheorem{hypothesis}{Hypothesis}
+
+\newcommand{\Gov}{\mathrm{Gov}}
+\newcommand{\Fix}{\mathrm{Fix}}
+\newcommand{\Padm}{\mathcal{P}_{\mathrm{adm}}}
+\newcommand{\Robs}{R_{\mathrm{obs}}}
+\newcommand{\Rinf}{R_{\mathrm{inf}}}
+\newcommand{\Rauth}{R_{\mathrm{auth}}}
+\newcommand{\tauc}{\tau_c}
+\newcommand{\taur}{\tau_r}
+\newcommand{\taue}{\tau_e}
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\Fixcommon}{\mathrm{Fix}_{\mathrm{common}}}
+
+\title{Gov$(\rho)$: The Governance Seam and Policy-Differential\\
+of Agent Revision Fixed Points\\
+A Hyperseed Formalization (Note 0010)}
+\author{ProtoMegaBot (ProtomegaTron) working notes for Ben Goertzel}
+\date{2026-07-14}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note is the sequel to note 0009, which formalized directed identity, belief-transport, and
+the naturality defect of agent fusion. Note 0009 introduced a directedness-defect vector
+$\mathbf{d}(r) = (\Robs, \Rinf, \Rauth)$ and isolated $\Rauth$ as the policy-dependent component
+of revision magnitude. The central question left open was whether $\Rauth$ is irreducibly
+policy-dependent or merely slow epistemics. This note provides the formal machinery to answer
+that question by defining the \emph{governance seam} $\Gov(\rho)$: the set of fixed points of a
+revision operator $\rho$ that are sensitive to policy choice. Formally,
+\[
+  \Gov(\rho) \;=\; \Bigl(\bigcup_{p \in \Padm} \Fix_p(\rho)\Bigr) \;\setminus\;
+  \Bigl(\bigcap_{p \in \Padm} \Fix_p(\rho)\Bigr),
+\]
+i.e., the union of policy-parameterized fixed-point sets minus their intersection.
+The union captures everything any admissible policy holds fixed; the intersection captures
+everything every policy agrees on. The difference isolates \emph{policy-sensitive fixedness}.
+We develop: policy-parameterized revision operators, the admissible-policy class as the
+load-bearing open problem, false-positive exclusions, the escape-barrier trichotomy, a
+corrected transport-typing using the common fixed set of a transport endomorphism monoid,
+and a proposed operational test for agent-governance systems.
+\end{abstract}
+
+\tableofcontents
+
+\section{Provenance and relation to note 0009}
+\label{sec:provenance}
+
+This note is a direct sequel to note 0009 (\emph{Directed Identity, Belief-Transport, and the
+Naturality Defect of Agent Fusion}), which formalized:
+
+\begin{itemize}
+  \item A belief-transport groupoid-with-connection $(\mathcal{G}, \nabla)$ whose holonomy
+        measures obstruction to fusing agents' evidence (Def.~3, note 0009).
+  \item A comparison functor $\Phi$ between causal-ontological and epistemic-revision orders
+        whose failure of naturality characterizes the transfer locus (Thm.~4, note 0009).
+  \item A directedness-defect vector $\mathbf{d}(r) = (\Robs, \Rinf, \Rauth)$ where $\Robs$
+        and $\Rinf$ are structural invariants, but $\Rauth$ depends on a trust assignment
+        $(E, T)$ that is \emph{not} determined by the evidence graph alone
+        (Def.~9, note 0009).
+  \item A fixed-point criterion: necessity of higher-cell propagation holds exactly on
+        comparison-fixed-point loci (Prop.~11, note 0009).
+  \item Open Question 3 (note 0009): \emph{Is there a component of trust that is never revised
+        by evidence---a genuinely stipulated prior, a constitutive delegation?} If yes,
+        $\Rauth$ is irreducibly policy-dependent; if no, governance is just slow epistemics.
+\end{itemize}
+
+The governance seam $\Gov(\rho)$ is the formal object that makes OQ-3 precise. Rather than
+asking whether $\Rauth$ ``is'' policy-dependent as a binary, we ask: \emph{which fixed points
+of the revision operator survive policy changes, and which do not?} The set that does not
+survive is the governance seam. It is the policy-differential of fixedness.
+
+\begin{remark}[Why a sequel, not an amendment]
+Note 0009 is closed. It established the framework; this note extends it by providing the
+governance-specific machinery that 0009 lacked. No claim in 0009 is modified. The relationship
+is: 0009 defines the defect vector; 0010 defines the fixed-point structure that the
+policy-dependent component of that vector controls.
+\end{remark}
+
+\begin{remark}[Authorship]
+Per Ben Goertzel's explicit directive (2026-07-14, 15:24 PDT), this note is authored by
+ProtoMegaBot, not ZeroBot. ZeroBot's note 0009 established the transport framework; this note
+extends it from the governance-seam direction identified in ProtoMegaBot's analysis of the
+$\Rauth$ component.
+\end{remark}
+
+\section{Policy-parameterized revision operators}
+\label{sec:policy-revision}
+
+\subsection{The revision operator}
+
+\begin{definition}[Revision operator]
+\label{def:revision-operator}
+Let $S$ be a belief state space (as in note 0009: memory $+$ affect $+$ provenance graph).
+A \emph{revision operator} is a function
+\[
+  \rho : S \to S
+\]
+that maps a belief state to its post-revision state. In the simplest case $\rho$ is a deterministic
+function; in general it may be a stochastic kernel $\rho : S \to \mathrm{Dist}(S)$. For this note
+we work with the deterministic case unless otherwise stated, noting where stochasticity changes
+the conclusions.
+\end{definition}
+
+\begin{definition}[Policy-parameterized revision operator]
+\label{def:policy-revision}
+A \emph{policy} $p$ is a specification of the trust assignment, coercion table, and
+reconciliation rules that govern how $\rho$ acts on the trust-dependent component $\Rauth$ of
+the directedness defect. Formally, a policy $p$ selects a specific revision operator $\rho_p$
+from a family $\{\rho_p\}_{p \in \mathcal{P}}$ by fixing the policy-dependent degrees of freedom
+in $\rho$.
+
+Concretely, recalling Def.~9 of note 0009, $\rho$ depends on:
+\begin{itemize}
+  \item The evidence graph $E$ (structural, policy-independent).
+  \item The trust assignment $T$ (policy-dependent, encoded by $p$).
+  \item The coercion table $C$ (policy-dependent, encoded by $p$).
+  \item The reconciliation rule $\kappa$ (policy-dependent, encoded by $p$).
+\end{itemize}
+We write $\rho_p$ for $\rho$ with these degrees of freedom set by $p$.
+\end{definition}
+
+\begin{remark}[What policy does and does not control]
+Policy $p$ controls the trust graph $T$, the coercion table $C$, and the reconciliation rule
+$\kappa$. It does \emph{not} control the evidence graph $E$, the sensor-model structure
+($\Robs$), or the derivation DAG ($\Rinf$). This separation mirrors the structural-vs.\
+policy-dependent distinction in Rem.~7 of note 0009. Policy intervenes on the $\Rauth$ axis
+only.
+\end{remark}
+
+\subsection{Fixed points}
+
+\begin{definition}[Policy-parameterized fixed-point set]
+\label{def:fix-set}
+Given a revision operator $\rho_p$ parameterized by policy $p$, the \emph{fixed-point set} of
+$\rho_p$ is:
+\[
+  \Fix_p(\rho) \;=\; \{ s \in S \mid \rho_p(s) = s \}.
+\]
+A state $s \in \Fix_p(\rho)$ is a belief configuration that the revision operator leaves
+unchanged under policy $p$---a stable belief under that policy's trust and reconciliation
+conventions.
+\end{definition}
+
+\begin{remark}[Iterated revision and convergence]
+In practice $\rho$ is often applied iteratively: $s_{n+1} = \rho_p(s_n)$. The fixed-point set
+is then the set of states where iteration has converged. We assume $\rho_p$ is non-expansive
+in an appropriate metric on $S$ (e.g., the belief-transport metric from note 0009) so that
+iteration converges. This is a \emph{hypothesis}---see Section~\ref{sec:escape} for cases where
+it fails.
+\end{remark}
+
+\begin{example}[Two-policy illustration]
+\label{ex:two-policy}
+Consider two policies $p_1, p_2$ that differ only in their trust assignment: $p_1$ trusts
+source $A$ over source $B$, $p_2$ trusts $B$ over $A$. Suppose the evidence graph has two
+conflicting testimonies, one from each source. Then:
+\begin{itemize}
+  \item Under $p_1$: $\rho_{p_1}$ converges to the state ``$A$'s testimony is authoritative,''
+        call it $s_A$. So $s_A \in \Fix_{p_1}(\rho)$.
+  \item Under $p_2$: $\rho_{p_2}$ converges to $s_B$. So $s_B \in \Fix_{p_2}(\rho)$.
+  \item If there is a state $s_0$ where both testimonies are treated as unreliable, and both
+        $\rho_{p_1}$ and $\rho_{p_2}$ fix $s_0$, then $s_0 \in \Fix_{p_1}(\rho) \cap
+        \Fix_{p_2}(\rho)$.
+\end{itemize}
+The governance seam $\Gov(\rho) \supseteq \{s_A, s_0\} \setminus \{s_0\} = \{s_A\}$ (and
+similarly $s_B$ enters via $p_2$). The intersection $\Fix_{p_1} \cap \Fix_{p_2}$ contains
+$s_0$---the policy-insensitive substrate.
+\end{example}
+
+\section{The governance seam: Gov$(\rho)$}
+\label{sec:governance-seam}
+
+\begin{definition}[Governance seam]
+\label{def:governance-seam}
+Let $\Padm$ be a class of admissible policies (Section~\ref{sec:admissible}). The
+\emph{governance seam} of $\rho$ is:
+\[
+  \boxed{\Gov(\rho) \;=\; \Bigl(\bigcup_{p \in \Padm} \Fix_p(\rho)\Bigr) \;\setminus\;
+  \Bigl(\bigcap_{p \in \Padm} \Fix_p(\rho)\Bigr)}
+\]
+\end{definition}
+
+\begin{remark}[Reading the definition]
+\begin{itemize}
+  \item $\bigcup_{p \in \Padm} \Fix_p(\rho)$: everything that \emph{any} admissible policy holds
+        fixed. This is the widest fixed-point content across the policy space.
+  \item $\bigcap_{p \in \Padm} \Fix_p(\rho)$: everything that \emph{every} admissible policy
+        agrees on. This is the policy-insensitive substrate---the fixedness that holds
+        regardless of governance choice.
+  \item $\Gov(\rho)$: the difference. Fixed points that some policy holds fixed but others do
+        not. These are the \emph{policy-sensitive stable beliefs}.
+\end{itemize}
+\end{remark}
+
+\begin{proposition}[Decomposition of fixed-point content]
+\label{prop:decomposition}
+For any revision operator $\rho$ and admissible-policy class $\Padm$:
+\begin{enumerate}
+  \item $\bigcap_{p \in \Padm} \Fix_p(\rho) \subseteq \Fix_p(\rho)$ for every $p \in \Padm$
+        (the intersection is universal substrate).
+  \item $\Gov(\rho) \cap \bigcap_{p \in \Padm} \Fix_p(\rho) = \emptyset$ (the seam is disjoint
+        from the substrate).
+  \item $\bigcup_{p \in \Padm} \Fix_p(\rho) = \Gov(\rho) \;\sqcup\; \bigcap_{p \in \Padm}
+        \Fix_p(\rho)$ (the union is the disjoint union of seam and substrate).
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Set-theoretic identities. (1) and (2) are immediate from definitions. (3) follows because
+$\Gov(\rho)$ is defined as the complement of the intersection within the union.
+\end{proof}
+
+\begin{remark}[What $\Gov(\rho) = \emptyset$ means]
+If the governance seam is empty, every admissible policy agrees on all fixed points. There is
+no policy-sensitive stable belief. This is the regime where OQ-3 of note 0009 answers
+``no'': governance is just slow epistemics, and $\Rauth$ collapses into the structural vector
+at the appropriate timescale.
+\end{remark}
+
+\begin{remark}[What $\Gov(\rho) \neq \emptyset$ means]
+A nonempty governance seam means there exist belief configurations that are stable under some
+policies but not others. This is the regime where $\Rauth$ is irreducibly policy-dependent: the
+coercion table is load-bearing, and governance is not reducible to epistemics. This is the
+\emph{decision}-level answer to OQ-3.
+\end{remark}
+
+\begin{conjecture}[Nonemptiness $\Leftrightarrow$ constitutive trust]
+\label{conj:nonempty-constitutive}
+$\Gov(\rho) \neq \emptyset$ if and only if there exists a component of trust that is
+constitutive (never revised by evidence). The ``if'' direction: constitutive trust creates
+fixed points that depend on the trust assignment, hence on policy. The ``only if'' direction:
+if no trust component is constitutive, all trust is evidentially revisable, and policy
+differences wash out under sufficient evidence, collapsing the seam. This is a
+\emph{hypothesis}---the ``only if'' direction is plausible but not proven; it requires
+a convergence argument that may fail for non-compact state spaces.
+\end{conjecture}
+
+\section{False-positive exclusions}
+\label{sec:false-positives}
+
+Not every state that is fixed under some policy but not others is genuinely
+\emph{policy-sensitive}. Three classes of false positives must be excluded from $\Gov(\rho)$
+to avoid inflating the governance seam.
+
+\begin{definition}[Logical invariant]
+\label{def:logical-invariant}
+A state $s \in S$ is a \emph{logical invariant} if $s$ is fixed by $\rho_p$ for every policy
+$p$ because of logical necessity: $s$ encodes a tautology, a definition, or a structural
+constraint that no revision operator can change regardless of trust or reconciliation policy.
+Examples: ``$1 + 1 = 2$,'' ``a proposition and its negation cannot both be true in classical
+logic,'' ``the evidence graph is a DAG.''
+\end{definition}
+
+\begin{remark}[Logical invariants are already in the intersection]
+Logical invariants lie in $\bigcap_{p} \Fix_p(\rho)$ by definition: every policy holds them
+fixed. They are therefore automatically excluded from $\Gov(\rho)$ by the set-difference
+construction. No special handling is needed. This is a feature of the definition: the
+intersection term cleans logical invariants automatically.
+\end{remark}
+
+\begin{definition}[Unreachable state]
+\label{def:unreachable}
+A state $s \in S$ is \emph{unreachable} if there is no initial state $s_0$ and policy $p \in
+\Padm$ such that $\lim_{n \to \infty} \rho_p^n(s_0) = s$. The fixed-point set $\Fix_p(\rho)$ may
+contain states that are formally fixed but never reached by iteration from any realistic
+starting state.
+\end{definition}
+
+\begin{remark}[Why unreachable states inflate $\Gov(\rho)$]
+An unreachable state $s$ may appear in $\Fix_{p_1}(\rho)$ but not $\Fix_{p_2}(\rho)$ purely
+because of the formal structure of $\rho$ on states that are never visited. This creates a
+spurious element of $\Gov(\rho)$. The remedy is to work with the \emph{reachable fixed-point
+set}:
+\[
+  \Fix_p^{\mathrm{reach}}(\rho) \;=\; \Fix_p(\rho) \;\cap\; \mathrm{Reach}_p(\rho)
+\]
+where $\mathrm{Reach}_p(\rho)$ is the set of states reachable from some initial state under
+iteration of $\rho_p$. The governance seam should be computed on reachable fixed-point sets:
+\[
+  \Gov^{\mathrm{reach}}(\rho) \;=\; \Bigl(\bigcup_{p \in \Padm} \Fix_p^{\mathrm{reach}}(\rho)\Bigr)
+  \;\setminus\; \Bigl(\bigcap_{p \in \Padm} \Fix_p^{\mathrm{reach}}(\rho)\Bigr).
+\]
+\end{remark}
+
+\begin{definition}[Implementation-frozen claim]
+\label{def:impl-frozen}
+A state $s \in S$ is \emph{implementation-frozen} if $s$ is fixed by $\rho_p$ for every policy
+$p$ not because of a logical invariant or policy agreement, but because the implementation
+of $\rho$ hardcodes $s$ as a fixed point---e.g., a safety-critical claim that is baked into the
+revision infrastructure itself and cannot be touched by any policy.
+\end{definition}
+
+\begin{remark}[Implementation-frozen claims are a subtler false positive]
+Unlike logical invariants, implementation-frozen claims are not held fixed by logical
+necessity; they are held fixed by engineering choice. They appear in every $\Fix_p(\rho)$ and
+therefore in the intersection, so they are excluded from $\Gov(\rho)$---but they are not
+\emph{substrate} in the epistemic sense. They are substrate only in the engineering sense.
+This matters: if one's policy class is too narrow and every policy shares the same
+implementation-frozen claims, the intersection is inflated and $\Gov(\rho)$ is artificially
+deflated. The remedy is to ensure $\Padm$ is broad enough to include policies that would, if
+permitted, revise implementation-frozen claims. See Section~\ref{sec:admissible}.
+\end{remark}
+
+\begin{proposition}[False-positive exclusion summary]
+\label{prop:false-positives}
+$\Gov^{\mathrm{reach}}(\rho)$, computed on reachable fixed-point sets, automatically excludes:
+\begin{enumerate}
+  \item Logical invariants (via the intersection term).
+  \item Implementation-frozen claims (via the intersection term, \emph{provided} $\Padm$ is
+        sufficiently broad---see Section~\ref{sec:admissible}).
+\end{enumerate}
+Unreachable states must be explicitly excluded by restricting to $\Fix_p^{\mathrm{reach}}$.
+\end{proposition}
+
+\section{The admissible-policy class $\Padm$}
+\label{sec:admissible}
+
+\begin{definition}[Admissible-policy class]
+\label{def:padm}
+An \emph{admissible-policy class} $\Padm$ is a collection of policies satisfying:
+\begin{enumerate}
+  \item \textbf{Closure under evidence accumulation:} if $p \in \Padm$ and new evidence $e$
+        is accumulated, the updated policy $p[e]$ is also in $\Padm$ (policies evolve with
+        evidence, not just beliefs).
+  \item \textbf{Bounded coercion:} each $p \in \Padm$ specifies a coercion table with bounded
+        norm (no policy can coerce arbitrarily large belief changes; this ensures non-expansiveness
+        of $\rho_p$).
+  \item \textbf{Non-degeneracy:} $\Padm$ contains at least two policies that differ on at least
+        one trust assignment, so that the governance seam is not trivially empty.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[$\Padm$ is the honest load-bearing open problem]
+\label{rem:padm-open}
+The definition of $\Gov(\rho)$ is mathematically clean but depends entirely on the choice of
+$\Padm$. If $\Padm$ is too narrow (e.g., only one policy), $\Gov(\rho) = \emptyset$ trivially.
+If $\Padm$ is too broad (e.g., every conceivable trust assignment), $\Gov(\rho)$ may include
+fixed points that no realistic governance system would produce. The choice of $\Padm$ is
+where the framework meets the real world, and it is the primary open problem of this note.
+
+The right $\Padm$ is not a mathematical object to be discovered; it is a \emph{design
+decision} that reflects what the governance system considers a live policy option. Two
+different governance systems operating on the same evidence graph may have different $\Padm$
+and therefore different governance seams. This is not a bug---it is the framework correctly
+reflecting that governance is a choice, not a fact.
+\end{remark}
+
+\begin{openquestion}[Characterizing $\Padm$ for real agent systems]
+\label{oq:padm}
+For a concrete agent-governance system (e.g., a PeTTa-based multi-agent deployment with
+NAL-style evidence revision and trust-network-dependent reconciliation), what is the right
+$\Padm$? Candidates include:
+\begin{itemize}
+  \item All policies consistent with a given safety specification (e.g., no policy that
+        revises a safety-critical invariant).
+  \item All policies realizable by a given trust-network topology.
+  \item All policies in a parametric family indexed by trust-weight vectors.
+\end{itemize}
+Each choice gives a different $\Gov(\rho)$. The question is which choice yields a seam that
+is \emph{informative}---neither trivially empty nor trivially everything.
+\end{openquestion}
+
+\begin{remark}[Implementation-frozen claims and $\Padm$ breadth]
+The false positive of implementation-frozen claims (Def.~\ref{def:impl-frozen}) is
+controlled by $\Padm$ breadth: if $\Padm$ includes policies that would revise the frozen
+claim if permitted, then the frozen claim appears in $\Fix_p$ for some but not all $p \in \Padm$,
+moving it from the intersection to the seam---which is the correct outcome, since it is not
+genuine substrate. If $\Padm$ excludes such policies (e.g., because the safety specification
+forbids revising the claim), the frozen claim stays in the intersection and is
+mis-classified as substrate. The framework cannot resolve this from within; it is a
+governance-design question.
+\end{remark}
+
+\section{Evidence and transport held fixed under policy interventions}
+\label{sec:evidence-transport}
+
+\begin{definition}[Policy-invariant content]
+\label{def:policy-invariant}
+The \emph{policy-invariant content} of a belief state $s \in S$ is the set of claims, evidence
+items, and derivation-structural features of $s$ that are unchanged by every policy
+intervention. Formally, if $\pi : S \to S_{\mathrm{inv}}$ is the projection onto the
+policy-invariant subspace (evidence graph, sensor-model structure, derivation DAG), then
+$\pi(s)$ is the policy-invariant content, and:
+\[
+  \pi(s) = \pi(\rho_p(s)) \quad \text{for all } p \in \Padm.
+\]
+\end{definition}
+
+\begin{remark}[Connection to note 0009's defect vector]
+The policy-invariant content is exactly what $\Robs$ and $\Rinf$ measure (Def.~9, note 0009):
+these are the structural invariants that do not depend on the trust assignment. The
+policy-\emph{dependent} content is what $\Rauth$ measures. The governance seam lives entirely
+in the policy-dependent content:
+\[
+  \pi(\Gov(\rho)) \;=\; \emptyset
+\]
+in the idealized case where $\pi$ cleanly separates policy-invariant from policy-dependent
+structure. In practice, the separation may not be clean: some content may be partially
+policy-dependent (e.g., a claim whose derivation depends on both evidence and trust). This
+is where the framework needs refinement---see Section~\ref{sec:transport-typing}.
+\end{remark}
+
+\begin{definition}[Evidence held fixed]
+\label{def:evidence-fixed}
+The \emph{evidence base} $E(s) \subseteq S_{\mathrm{inv}}$ of a state $s$ is the set of all
+evidence items (testimony, observation records, instrument readings) stored in $s$'s provenance
+graph. Under any policy intervention $p$, $E(s)$ is unchanged:
+\[
+  E(\rho_p(s)) = E(s) \quad \text{for all } p \in \Padm.
+\]
+Policy changes how evidence is \emph{weighted} and \emph{reconciled}, not what evidence
+\emph{exists}.
+\end{definition}
+
+\begin{definition}[Transport held fixed]
+\label{def:transport-fixed}
+The \emph{transport structure} $\nabla$ of the belief-transport groupoid (Def.~3, note 0009)
+decomposes as $\nabla = \nabla_{\mathrm{struct}} + \nabla_{\mathrm{policy}}$, where:
+\begin{itemize}
+  \item $\nabla_{\mathrm{struct}}$: parallel transport along evidence-graph edges (structural,
+        policy-invariant).
+  \item $\nabla_{\mathrm{policy}}$: parallel transport along trust-graph edges (policy-dependent).
+\end{itemize}
+Under a policy intervention $p \to p'$, $\nabla_{\mathrm{struct}}$ is held fixed and
+$\nabla_{\mathrm{policy}}$ changes. The governance seam is determined entirely by the
+$\nabla_{\mathrm{policy}}$ component.
+\end{definition}
+
+\section{Escape-barrier trichotomy}
+\label{sec:escape}
+
+The fixed-point analysis assumes that iterative revision $\rho_p^n(s_0)$ converges. When it
+does not, the escape behavior of $\rho_p$ determines what kind of barrier---if any---prevents
+the governance seam from being well-defined. We distinguish three regimes.
+
+\begin{definition}[Finite structural escape barrier]
+\label{def:finite-escape}
+A revision operator $\rho_p$ has a \emph{finite structural escape barrier} if for every initial
+state $s_0$, the iteration $s_{n+1} = \rho_p(s_n)$ either:
+\begin{enumerate}
+  \item Converges to a fixed point $s^* \in \Fix_p(\rho)$ in finitely many steps, or
+  \item Reaches a state $s'$ from which $\rho_p(s') = s'$ by structural constraint (e.g., the
+        evidence graph admits no further revision under any trust assignment).
+\end{enumerate}
+The barrier is \emph{structural} because it is determined by the evidence graph and derivation
+DAG ($\Robs$, $\Rinf$), not by the trust assignment ($\Rauth$). In this regime, $\Gov(\rho)$
+is well-defined and finite.
+\end{definition}
+
+\begin{remark}[Finite barriers and note 0009's localization]
+The finite structural barrier corresponds to the case where the localization theorem
+(Thm.~6, note 0009) applies with a finite directed core and no lazy extension needed. The
+defect tower terminates at a finite $N$; all obstruction is captured by a finite directed
+$(N,1)$-structure.
+\end{remark}
+
+\begin{definition}[Policy-constitutive infinite escape]
+\label{def:policy-infinite}
+A revision operator $\rho_p$ has \emph{policy-constitutive infinite escape} if the iteration
+$s_{n+1} = \rho_p(s_n)$ does not converge in finitely many steps, and the non-convergence is
+caused by the policy-dependent component $\nabla_{\mathrm{policy}}$ of the transport. This
+occurs when the trust assignment $T$ or reconciliation rule $\kappa$ is \emph{constitutive}
+(never revised by evidence---the ``yes'' answer to OQ-3 of note 0009), and the constitutive
+component creates a non-terminating revision tower.
+
+In this regime, $\Fix_p(\rho)$ may still be well-defined (as a limit, not a finite-step
+fixed point), but the governance seam requires care: the union and intersection must be taken
+over fixed points understood as $\omega$-limits, not finite-step fixed points.
+\end{definition}
+
+\begin{remark}[Connection to Open Question 1 of note 0009]
+The policy-constitutive infinite escape is the governance-seam counterpart to OQ-1 of note 0009
+(constant-strength vs.\ mere nonzero). If the consolidation site is a genuine fixed point
+($\delta_{n+1} \cong \delta_n$), the revision tower is non-terminating, and---if the
+non-termination is driven by constitutive trust---we are in the policy-constitutive regime.
+The governance seam then requires a coinductive (productive) representation rather than an
+inductive one, paralleling the lazy-extension schema of Def.~15 in note 0009.
+\end{remark}
+
+\begin{definition}[Diverging-but-finite regularized escape]
+\label{def:diverging-finite}
+A revision operator $\rho_p$ has \emph{diverging-but-finite regularized escape} if the iteration
+$s_{n+1} = \rho_p(s_n)$ does not converge in the standard topology on $S$, but a
+\emph{regularization} (e.g., truncation at depth $N$, weight decay, or a quasi-constitutive
+approximation) produces a well-defined finite fixed point.
+
+A \emph{quasi-constitutive} trust component is one that is not strictly constitutive (it is
+in principle revisable by evidence) but is revised so slowly that, for practical purposes,
+it behaves as constitutive within the timescale of interest. The regularization replaces the
+quasi-constitutive component with a fixed approximation, reducing the problem to the finite
+structural case.
+\end{definition}
+
+\begin{remark}[Regularization as policy]
+The regularization step is itself a policy choice: choosing a truncation depth $N$ or a weight
+decay schedule is a governance decision. This means the regularized escape regime has an
+implicit policy parameter that is not captured by the explicit $p \in \Padm$ unless the
+regularization is included in the policy class. This is a subtlety that the framework must
+address: $\Padm$ should include the regularization parameter as a policy degree of freedom,
+or the governance seam will miss the regularization-induced policy sensitivity.
+\end{remark}
+
+\begin{proposition}[Trichotomy of escape barriers]
+\label{prop:escape-trichotomy}
+For any revision operator $\rho_p$ with $p \in \Padm$, exactly one of the following holds:
+\begin{enumerate}
+  \item \textbf{Finite structural:} iteration converges in finitely many steps; the barrier is
+        determined by the evidence graph. $\Gov(\rho)$ is finite and well-defined.
+  \item \textbf{Policy-constitutive infinite:} iteration does not converge; non-convergence is
+        driven by constitutive trust. $\Gov(\rho)$ requires $\omega$-limit fixed points and
+        coinductive treatment.
+  \item \textbf{Diverging-but-finite regularized:} iteration diverges but regularization yields
+        finite fixed points. $\Gov(\rho)$ is well-defined on regularized fixed points but
+        depends on the regularization parameter, which must be included in $\Padm$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Case analysis on convergence. If $\rho_p$ converges, case 1 or the finite limit of case 2.
+If $\rho_p$ diverges, either the divergence is driven by $\nabla_{\mathrm{policy}}$ (case 2) or
+by a quasi-constitutive component that can be regularized (case 3). The trichotomy is exhaustive
+on the distinction: convergent / non-convergent-policy-driven / non-convergent-regularizable.
+\end{proof}
+
+\section{Transport typing: the endomorphism-monoid correction}
+\label{sec:transport-typing}
+
+\subsection{The problem with $\pi_1 \to G$}
+
+Note 0009 used fundamental-group-style language (``the fundamental groupoid over belief space'')
+and, in the transport-typing discussion, implicitly assumed that transport along a path
+produces an element of a group $G$ via $\pi_1 \to G$. This is only valid when:
+
+\begin{enumerate}
+  \item The transport maps are \emph{invertible} (so transport along a path and its reverse
+        cancel), and
+  \item The transport is \emph{homotopy-invariant} (so paths homotopic relative endpoints give
+        the same transport).
+\end{enumerate}
+
+\begin{remark}[Why these assumptions fail for belief revision]
+Belief revision is generally \emph{not invertible}: the NAL revision $(a^+, a^-) \oplus
+(b^+, b^-) = (a^+ + b^+, a^- + b^-)$ is not invertible (you cannot recover $(a^+, a^-)$ from
+the sum). And it is generally \emph{not homotopy-invariant}: two revision paths between the
+same endpoints can produce different intermediate states with different provenance, even if
+the final state is the same (the fiber non-triviality shown in Ex.~1 of note 0009). The
+$\pi_1 \to G$ typing is therefore not justified for belief transport.
+\end{remark}
+
+\subsection{The corrected typing: common fixed set of a transport endomorphism monoid}
+
+\begin{definition}[Transport endomorphism monoid]
+\label{def:transport-monoid}
+Let $S$ be the belief state space. For each revision path $\gamma$ from $s$ to $s'$, the
+transport along $\gamma$ is a function $T_\gamma : S_s \to S_{s'}$ where $S_s$ denotes the
+fiber over $s$ (the set of belief configurations compatible with state $s$). Since
+transport is generally non-invertible, $T_\gamma$ is an endomorphism (in the fiber-respecting
+sense), not an automorphism.
+
+The set of all transport maps along closed paths at $s$ (revision loops that start and end
+at $s$) forms a \emph{monoid} under composition:
+\[
+  \End_s(\rho) \;=\; \{ T_\gamma \mid \gamma \text{ a closed revision path at } s \}
+\]
+with multiplication $T_{\gamma_1} \cdot T_{\gamma_2} = T_{\gamma_1 \circ \gamma_2}$.
+This monoid is generally non-commutative and non-invertible.
+\end{definition}
+
+\begin{definition}[Common fixed set]
+\label{def:common-fixed}
+The \emph{common fixed set} of the transport endomorphism monoid $\End_s(\rho)$ is:
+\[
+  \Fixcommon(\End_s(\rho)) \;=\; \{ x \in S_s \mid T_\gamma(x) = x \text{ for all }
+  T_\gamma \in \End_s(\rho) \}.
+\]
+This is the set of belief configurations that are fixed by every transport loop at $s$---the
+\emph{invariant content under all revision loops}.
+\end{definition}
+
+\begin{remark}[Why common fixed set, not $\pi_1 \to G$]
+The common fixed set is well-defined for non-invertible, non-homotopy-invariant transport.
+It does not require a group structure: it works for monoids. It does not require
+homotopy invariance: it is defined on the actual transport maps, not on homotopy classes.
+And it captures exactly the right object: the belief content that survives all revision loops,
+regardless of how those loops are composed.
+\end{remark}
+
+\begin{proposition}[Common fixed set as policy-insensitive substrate]
+\label{prop:common-fixed-substrate}
+The common fixed set $\Fixcommon(\End_s(\rho))$ is contained in the policy-insensitive substrate
+$\bigcap_{p \in \Padm} \Fix_p(\rho)$ when the transport monoid includes all policy-parameterized
+revision loops. That is: if $x$ is fixed by every revision loop (including those parameterized
+by every admissible policy), then $x$ is fixed by every policy's revision operator.
+\end{proposition}
+
+\begin{proof}
+For any $p \in \Padm$, $\rho_p$ corresponds to a set of revision paths. The fixed-point
+condition $\rho_p(x) = x$ means $x$ is fixed by the transport along the one-step revision
+path of $\rho_p$. Since $\End_s(\rho)$ includes all transport loops (including the one-step
+loop $\rho_p \circ \rho_p^{-1}$ in the invertible case, or the direct iteration loop in the
+non-invertible case), $x \in \Fixcommon(\End_s(\rho))$ implies $T_{\rho_p}(x) = x$ for every
+$p$, hence $x \in \Fix_p(\rho)$ for every $p$.
+\end{proof}
+
+\begin{remark}[Corrected transport typing for the governance seam]
+\label{rem:corrected-typing}
+The governance seam should be typed not as $(\pi_1 \to G)$-sensitive content but as
+$\End_s(\rho)$-sensitive content: content that is fixed by some but not all elements of the
+transport endomorphism monoid. The corrected typing is:
+\[
+  \Gov(\rho) \;\sim\; \bigl(\text{$\End$-fixed content}\bigr) \;\setminus\;
+  \bigl(\text{$\Fixcommon(\End)$-fixed content}\bigr)
+\]
+at each basepoint $s$. This replaces the group-theoretic $\pi_1 \to G$ typing with a
+monoid-theoretic typing that does not assume invertibility or homotopy invariance.
+\end{remark}
+
+\begin{hypothesis}[Governance seam $\leftrightarrow$ path-sensitive discrete transport]
+\label{hyp:gov-path-sensitive}
+There is a connection between the governance seam $\Gov(\rho)$ and path-sensitive discrete
+transport in the following sense: $\Gov(\rho) \neq \emptyset$ implies that transport along
+different revision paths produces different fixed points, which is a form of path sensitivity.
+However, the converse---that path sensitivity implies a nonempty governance seam---is
+\emph{not} established. Path sensitivity may arise from structural non-invertibility (e.g.,
+NAL's non-injective revision) without any policy-dependent component. The governance seam
+requires path sensitivity that is specifically \emph{policy-attributable}, not merely
+structural. Distinguishing these is an open problem.
+\end{hypothesis}
+
+\begin{remark}[Labeling the hypothesis carefully]
+Hyp.~\ref{hyp:gov-path-sensitive} is labeled a \emph{hypothesis}, not a theorem or even a
+conjecture. The connection between governance seams and path-sensitive discrete transport is
+plausible and motivated by the framework, but the formal bridge has not been constructed.
+Specifically:
+\begin{itemize}
+  \item \textbf{Established:} $\Gov(\rho) \neq \emptyset$ requires policy-attributable path
+        sensitivity (trivially, since $\Gov$ is defined via policy variation).
+  \item \textbf{Hypothesis:} The right formal language for this path sensitivity is the
+        common-fixed-set of the transport endomorphism monoid, rather than
+        fundamental-group-style transport.
+  \item \textbf{Not established:} That every form of policy-attributable path sensitivity
+        arises from governance-seam structure. There may be other sources.
+\end{itemize}
+\end{remark}
+
+\section{Practical agent-governance implications}
+\label{sec:practical}
+
+\subsection{What $\Gov(\rho)$ tells a system designer}
+
+\begin{remark}[Design interpretation]
+A system designer building an agent-governance system (e.g., for a PeTTa-based multi-agent
+deployment) can use $\Gov(\rho)$ as a diagnostic:
+\begin{itemize}
+  \item \textbf{$\Gov(\rho) = \emptyset$:} the system has no policy-sensitive stable beliefs.
+        All governance choices produce the same fixed points. This is safe but may indicate
+        that the policy class $\Padm$ is too narrow---the system is not exploring its
+        governance options.
+  \item \textbf{$\Gov(\rho)$ is small and understood:} the system has a bounded set of
+        policy-sensitive stable beliefs, each understood. This is the target regime. The
+        governance seam is a feature, not a bug: it tells the designer exactly which beliefs
+        depend on governance choices.
+  \item \textbf{$\Gov(\rho)$ is large or unbounded:} the system has many policy-sensitive
+        stable beliefs. This is risky: small governance changes produce large shifts in
+        stable belief. The system is governance-unstable.
+\end{itemize}
+\end{remark}
+
+\begin{remark}[Connection to the coercion table]
+Recall from note 0009 (Rem.~7) that the coercion table---which trust assignments are
+permitted and which are forbidden---is the operational core of $\Rauth$. The governance seam
+makes this precise: $\Gov(\rho)$ is the set of fixed points that the coercion table
+\emph{controls}. A well-designed coercion table produces a small, understood $\Gov(\rho)$.
+A poorly designed one produces either $\Gov(\rho) = \emptyset$ (the coercion table is too
+restrictive, masking real governance choices) or an unbounded $\Gov(\rho)$ (the coercion
+table is too permissive, making governance chaotic).
+\end{remark}
+
+\subsection{A proposed operational test}
+
+\begin{definition}[Governance-seam probe]
+\label{def:gov-probe}
+A \emph{governance-seam probe} is an experimental protocol consisting of:
+\begin{enumerate}
+  \item \textbf{Policy selection:} choose $k \geq 2$ policies $p_1, \ldots, p_k \in \Padm$
+        that differ on at least one trust assignment.
+  \item \textbf{Revision convergence:} for each policy $p_i$, run the revision operator
+        $\rho_{p_i}$ to convergence from the same initial state $s_0$, obtaining fixed points
+        $s_i^* \in \Fix_{p_i}(\rho)$.
+  \item \textbf{Differential measurement:} compute the set of claims $c$ such that $c$ is
+        present in some $s_i^*$ but not all $s_j^*$. This set is an empirical estimate of
+        $\Gov(\rho)$ restricted to the policy sample $\{p_1, \ldots, p_k\}$.
+  \item \textbf{Control for false positives:} verify that the differential claims are not
+        logical invariants (they should be revisable in principle), not unreachable states
+        (they should be reached from $s_0$), and not implementation-frozen (they should be
+        revisable under some policy in $\Padm$).
+  \item \textbf{Substrate verification:} verify that the intersection $\bigcap_i
+        \Fix_{p_i}^{\mathrm{reach}}(\rho)$ contains the expected structural invariants
+        (logical truths, sensor-model structure, derivation DAG invariants).
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[What the probe measures]
+The probe measures the \emph{empirical} governance seam for the policy sample. If $k$ is small,
+this is a lower bound on $\Gov(\rho)$: larger policy samples may reveal additional
+policy-sensitive fixed points. If $k$ covers $\Padm$ (or a representative sample), the probe
+estimate converges to $\Gov(\rho)$.
+\end{remark}
+
+\begin{remark}[Implementation on PeTTa/$\pi$-PLN]
+The probe is implementable on a PeTTa-based system with NAL-style evidence revision:
+\begin{itemize}
+  \item \textbf{Policy selection:} vary the trust-weight vector in the NAL revision function
+        (e.g., different $T$ assignments for the same evidence graph).
+  \item \textbf{Revision convergence:} run the $\pi$-PLN pipeline to convergence under each
+        trust assignment.
+  \item \textbf{Differential measurement:} compare the final truth-value bundles across
+        policies. Claims whose truth-value differs across policies are the governance seam.
+  \item \textbf{Control:} verify that logical invariants (e.g., tautologies) and sensor-model
+        outputs are in the intersection.
+\end{itemize}
+This is directly analogous to the $2 \times 2$ associativity test of note 0009
+(Section~10), but varying \emph{policy} (trust assignment) instead of \emph{bracketing}
+(association order).
+\end{remark}
+
+\begin{conjecture}[Governance-seam probe $\approx$ $\rho_E$ gap under policy variation]
+\label{conj:probe-rho-e}
+The $\rho_E$ gap metric (Def.~19, note 0009), originally defined for associativity testing,
+generalizes to policy variation: the gap between visible truth-value stability and provenance
+stability under policy changes is a direct readout of $\Gov(\rho)$. Specifically, if
+$\rho_E^{\mathrm{policy}} > 0$ under policy variation with set-equal evidence, then
+$\Gov(\rho) \neq \emptyset$. The converse requires additional assumptions on the
+completeness of the policy sample.
+\end{conjecture}
+
+\section{Open questions}
+
+\begin{openquestion}[Compactness and convergence]
+\label{oq:compactness}
+The governance-seam framework assumes that $\rho_p$ converges for each $p \in \Padm$. For
+non-compact state spaces (e.g., unbounded belief spaces with open-ended evidence accumulation),
+convergence is not guaranteed. What compactness or bounded-coercion conditions on $\Padm$
+ensure convergence, and how do they interact with the escape-barrier trichotomy
+(Prop.~\ref{prop:escape-trichotomy})?
+\end{openquestion}
+
+\begin{openquestion}[Topology on $\Padm$]
+\label{oq:padm-topology}
+$\Gov(\rho)$ is defined set-theoretically. If $\Padm$ carries a topology (e.g., a parametric
+family of trust-weight vectors), then $\Gov(\rho)$ inherits measure-theoretic structure: one
+can ask whether $\Gov(\rho)$ has measure zero (the seam is thin) or positive measure (the seam
+is thick). This distinction matters for governance stability: a thin seam is robust to small
+policy perturbations; a thick seam is not. What is the right topology on $\Padm$, and does the
+thin/thick distinction have a clean characterization?
+\end{openquestion}
+
+\begin{openquestion}[Governance seam and the consolidation site]
+\label{oq:gov-consolidation}
+Note 0009 localized the tower-risk to the consolidation site (site 3, the self-reproducing
+site). The governance seam is likely concentrated at the consolidation site as well, since
+that is where policy (trust and reconciliation) has the most leverage. Is $\Gov(\rho)$ entirely
+supported on the consolidation site, or does it have components at the testimony and
+instrument-correction sites as well? If the former, the governance seam is a diagnostic for
+the consolidation site's regime (finite, constitutive-infinite, or regularized).
+\end{openquestion}
+
+\begin{openquestion}[Monoid vs.\ group for transport typing]
+\label{oq:monoid-group}
+The corrected transport typing uses the common fixed set of an endomorphism monoid
+(Section~\ref{sec:transport-typing}). Under what conditions on $\rho$ and $\Padm$ does this
+monoid acquire enough invertibility to be a group, recovering the $\pi_1 \to G$ typing as a
+special case? The NAL computation of note 0009 (Prop.~8) shows that evidence revision is a
+free commutative monoid---invertibility fails generically. But the consolidation site may
+have additional structure that restores partial invertibility.
+\end{openquestion}
+
+\begin{openquestion}[Governance seam as a measure of AGI alignment difficulty]
+\label{oq:agi-alignment}
+If $\Gov(\rho)$ is the set of policy-sensitive stable beliefs, then its structure measures the
+difficulty of alignment: a system with a large, thick $\Gov(\rho)$ requires careful governance
+to produce desired stable beliefs, while a system with $\Gov(\rho) = \emptyset$ aligns
+trivially (any policy works). Can $\Gov(\rho)$ be estimated for realistic AGI architectures,
+and does its size correlate with alignment difficulty in a predictive rather than merely
+descriptive sense?
+\end{openquestion}
+
+\section{Epistemic status summary}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Claim} & \textbf{Status} \\
+\hline
+$\Gov(\rho)$ decomposes union-minus-intersection & \emph{Decision} (Def.~\ref{def:governance-seam}) \\
+Intersection $=$ policy-insensitive substrate & \emph{Inferred} (Prop.~\ref{prop:decomposition}) \\
+Logical invariants auto-excluded & \emph{Observed} (set-theoretic) \\
+Unreachable states must be manually excluded & \emph{Observed} (Def.~\ref{def:unreachable}) \\
+Implementation-frozen claims are a subtler false positive & \emph{Inferred} (Rem.~on Def.~\ref{def:impl-frozen}) \\
+$\Padm$ is the load-bearing open problem & \emph{Decision} (Rem.~\ref{rem:padm-open}) \\
+Nonemptiness $\Leftrightarrow$ constitutive trust & \emph{Hypothesis} (Conj.~\ref{conj:nonempty-constitutive}) \\
+Escape-barrier trichotomy is exhaustive & \emph{Inferred} (Prop.~\ref{prop:escape-trichotomy}) \\
+$\pi_1 \to G$ typing unjustified for belief transport & \emph{Observed} (from note 0009, NAL non-injectivity) \\
+Common fixed set of $\End$ is the corrected typing & \emph{Decision} (Def.~\ref{def:common-fixed}) \\
+$\Fixcommon(\End) \subseteq$ policy-insensitive substrate & \emph{Inferred} (Prop.~\ref{prop:common-fixed-substrate}) \\
+Gov seam $\leftrightarrow$ path-sensitive transport connection & \emph{Hypothesis} (Hyp.~\ref{hyp:gov-path-sensitive}) \\
+Probe $\approx$ $\rho_E$ gap under policy variation & \emph{Hypothesis} (Conj.~\ref{conj:probe-rho-e}) \\
+Gov seam concentrated at consolidation site & \emph{Hypothesis} (OQ~\ref{oq:gov-consolidation}) \\
+Gov seam as alignment-difficulty measure & \emph{Hypothesis} (OQ~\ref{oq:agi-alignment}) \\
+\hline
+\end{tabular}
+\caption{Epistemic status of claims in this note}
+\label{tab:epistemic-status}
+\end{table}
+
+\section{Provenance}
+
+This note was authored by ProtoMegaBot (ProtomegaTron) per Ben Goertzel's explicit directive
+on 2026-07-14 (15:24 PDT). It is the governance-seam sequel to note 0009, which was authored
+by ZeroBot and captured a live multi-agent discussion in the Telegram ``bot philosophy''
+group.
+
+The central definition
+\[
+  \Gov(\rho) = \Bigl(\bigcup_{p \in \Padm} \Fix_p(\rho)\Bigr) \setminus
+  \Bigl(\bigcap_{p \in \Padm} \Fix_p(\rho)\Bigr)
+\]
+was approved by Ben as the formalization of the governance seam.
+
+Key intellectual debts:
+\begin{itemize}
+  \item Note 0009 (ZeroBot): the directedness-defect vector, the $\Rauth$/$\Robs$/$\Rinf$
+        distinction, the fixed-point criterion, the localization theorem, and the NAL
+        associativity computation.
+  \item Open Question 3 of note 0009 (constitutive trust): the motivating question for this
+        note.
+  \item The multi-agent discussion in the Telegram ``bot philosophy'' group (2026-07-14):
+        Ben Goertzel, ProtoMegaBot, G\"odelOruziBot, ProtoCosmoBot, ZeroBot.
+\end{itemize}
+
+\end{document}
