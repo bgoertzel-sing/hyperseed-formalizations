@@ -28,6 +28,8 @@ library at `library/hyperseed-v2/` on the research workstation, not vendored her
 - `papers/0006-plain-metta-rholang-spec-ir/plain_metta_rholang_spec_ir.pdf`
 - `papers/0014-causal-fibres-hypothesis-ladder/main.tex`
 - `papers/0014-causal-fibres-hypothesis-ladder/main.pdf`
+- `papers/0015-omegaself-emotion-regimes/omegaself_emotion_regimes.tex`
+- `papers/0015-omegaself-emotion-regimes/omegaself_emotion_regimes.pdf`
 
 ## Build
 

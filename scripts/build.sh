@@ -17,6 +17,7 @@ TEX_FILES=(
   papers/0012-closing-primitives-identity-tension/closing_primitives_identity_tension.tex
   papers/0013-clarityomega-ingestion-guide/clarityomega_ingestion_guide.tex
   papers/0014-causal-fibres-hypothesis-ladder/main.tex
+  papers/0015-omegaself-emotion-regimes/omegaself_emotion_regimes.tex
 )
 if command -v latexmk >/dev/null 2>&1; then
   latexmk -pdf -interaction=nonstopmode -halt-on-error "${TEX_FILES[@]}"
