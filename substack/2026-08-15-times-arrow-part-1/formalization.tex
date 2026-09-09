@@ -1,0 +1,595 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{definition}{Definition}
+\newtheorem{claim}{Claim}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{principle}{Principle}
+
+\DeclareMathOperator{\Ent}{H}
+\DeclareMathOperator{\Grp}{Grp}
+\DeclareMathOperator{\MI}{I}
+\DeclareMathOperator{\Sur}{Sur}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cS}{\mathcal{S}}
+
+\title{Hyperseed Formalization Draft:\\
+``Time's Arrow Part 1: Why Time Has a Direction''}
+\author{Source: Ben Goertzel; formalization draft by ProtomegaTron}
+\date{Source published 2026-08-15; formalized 2026-08-15}
+
+\begin{document}
+\maketitle
+
+%% ============================================================
+\section{Source and status}
+
+Source article: \href{https://bengoertzel.substack.com/p/times-arrow-part-1-why-time-has-a}{%
+``Time's Arrow Part 1: Why Time Has a Direction''}, Eurykosmotron, by Ben Goertzel.
+This is an initial Hyperseed-oriented formalization.  It paraphrases the
+article's main intellectual moves and separates source claims from proposed
+formal objects.  Five companion technical papers (all Aug 12, 2026) are
+referenced but not reproduced here.
+
+%% ============================================================
+\section{Informal Hyperseed reading}
+
+The article proposes that time's arrow — across thermodynamics, radiation,
+quantum measurement, gravitation, and psychology — is \emph{one} phenomenon:
+the growth of recorded distinctions.  ``Distinction'' is formalized via
+graphtropy (an observer-relative generalization of entropy on graphs);
+``growth'' is stratified into three strengths; ``record'' is a dynamically
+stable correlation whose monotone accumulation constitutes the strict arrow.
+The framework unifies the classic arrows by showing each is either a
+fluctuating quantity being recorded (on-average arrow) or the record itself
+(strict arrow), with arrows inherited down causal chains from a common
+far-from-equilibrium pump whose own orientation derives from a Janus-point
+gravitational minimum.  Application to Hyperon AI makes the causal web
+native, the strict arrow an append-only ledger, and subjective time the
+surprise-weighted knowledge flux.
+
+The Hyperseed relevance is deep: graphtropy, observer-relativity, weakness
+orderings, and the quantale of evidence/logic/energy all appear as core
+formal ingredients.
+
+%% ============================================================
+\section{Core formal objects}
+
+%% ---------- Distinction graph ----------
+\begin{definition}[Distinction graph]\label{def:dg}
+Let $\Omega$ be a set of possible observations and let $\cO$ be an observer
+(a finite-resolution measurement apparatus).  The \emph{distinction graph}
+of $\cO$ on $\Omega$ is
+\[
+  \cG_\cO = (\Omega,\; E_\cO), \qquad
+  E_\cO = \bigl\{\{x,y\} \subseteq \Omega : \cO \text{ can distinguish } x
+  \text{ from } y \bigr\}.
+\]
+Edges encode distinguishability at the observer's actual resolution.
+The complement graph encodes indistinguishability (the coarse-graining).
+\emph{Provenance: article \S``Graphtropy''; claims 2, 3, 12.}
+\end{definition}
+
+%% ---------- Graphtropy ----------
+\begin{definition}[Graphtropy]\label{def:graphtropy}
+Given a distinction graph $\cG_\cO = (\Omega, E_\cO)$ and a probability
+distribution $p$ on $\Omega$, the \emph{graphtropy} is a family of
+entropy-like functionals
+\[
+  \Grp_\alpha(\cG_\cO, p) \;=\; F_\alpha\!\bigl(p,\; E_\cO\bigr)
+\]
+parameterized by a resolution or order index $\alpha$, generalizing
+Shannon/R\'enyi entropies by weighting contributions according to the
+observer's distinguishability structure rather than a partition into cells.
+When $\cG_\cO$ is a complete graph, graphtropy reduces to standard entropy;
+when $E_\cO = \varnothing$, no distinctions exist and graphtropy is zero.
+\emph{Provenance: article \S``Graphtropy''; Goertzel (2019),
+\href{https://arxiv.org/abs/1902.00741}{arXiv:1902.00741}; claims 2, 12.}
+\end{definition}
+
+%% ---------- Recorded distinction ----------
+\begin{definition}[Recorded distinction]\label{def:record}
+Let $\cS$ be a physical system evolving in time and let $\cR \subseteq \cS$
+be a register subsystem.  A \emph{recorded distinction} at time $t$ is a
+stable correlation between $\cR$ and the rest of $\cS$:
+\[
+  \MI\!\bigl(\cR_t ;\; \cS \setminus \cR_t\bigr) > 0,
+\]
+where $\MI$ is mutual information, and the correlation persists for times
+$s > t$ under the system's dynamics (dynamical stability).  A \emph{record}
+is a set of recorded distinctions
+$\mathbf{R}(t) = \bigl\{r_1, r_2, \ldots, r_{|\mathbf{R}(t)|}\bigr\}$
+accumulated up to time $t$.  Records are correlations — distinctions
+recorded in distinctions — with no infinite regress, since each layer of
+inscription is more correlation structure.
+\emph{Provenance: article \S``Records'', \S``Correlations''; claims 7, 37.}
+\end{definition}
+
+%% ---------- Three growth strengths ----------
+\begin{definition}[Three growth strengths]\label{def:growth}
+Let $Q(t)$ be a real-valued quantity or $|\mathbf{R}(t)|$ the cardinality
+of a record, indexed by time $t$.
+\begin{enumerate}
+  \item \textbf{On-average growth.}
+    $\langle Q(t_2) - Q(t_1) \rangle \geq 0$ for $t_2 > t_1$, with downward
+    fluctuations permitted on individual trajectories.
+  \item \textbf{Exponential-rate growth.}
+    $\liminf_{t \to \infty} \frac{1}{t}\log Q(t) > 0$, with unlimited
+    short-run reversals.
+  \item \textbf{Monotone (strict) growth.}
+    $Q(t_2) \geq Q(t_1)$ for all $t_2 > t_1$ along every individual path,
+    i.e., $Q$ is non-decreasing almost surely.
+\end{enumerate}
+Physical observables typically exhibit strengths 1 or 2.  The article argues
+that only records can exhibit strength 3.
+\emph{Provenance: article \S``Three growth strengths''; claims 4--7.}
+\end{definition}
+
+%% ---------- Arrow of time ----------
+\begin{definition}[Arrow of time]\label{def:arrow}
+An \emph{arrow of time} on a system $\cS$ relative to observer $\cO$ is a
+functional $\Phi_\cO(t)$ that grows in one of the three senses of
+Definition~\ref{def:growth}.  A \emph{strict arrow} is one exhibiting
+monotone growth; a \emph{fluctuating arrow} is one exhibiting on-average
+or exponential-rate growth only.  The central thesis: every strict arrow is
+the growth of a record $\mathbf{R}(t)$, and every fluctuating arrow is a
+quantity being recorded.
+\emph{Provenance: article \S``Core idea''; claim 1.}
+\end{definition}
+
+%% ---------- Entropy production ----------
+\begin{definition}[Entropy production as signed likelihood ratio]\label{def:ep}
+For a stochastic process with forward path measure $P_{\mathrm{fwd}}$ and
+time-reversed path measure $P_{\mathrm{rev}}$, the \emph{entropy production}
+along a trajectory $\omega$ is
+\[
+  \sigma(\omega) \;=\; \log \frac{P_{\mathrm{fwd}}(\omega)}{P_{\mathrm{rev}}(\tilde{\omega})},
+\]
+where $\tilde{\omega}$ is the time-reversed trajectory.  The \emph{sign} of
+$\sigma$ is the orientation of the arrow; the \emph{magnitude} is the
+strength.  Treating $\sigma$ rather than entropy $S$ as the fundamental
+carrier is what allows arrows to be inherited down chains of influence.
+\emph{Provenance: article \S``Entropy production''; claim 8.}
+\end{definition}
+
+%% ---------- Freshness hypothesis ----------
+\begin{definition}[Freshness hypothesis]\label{def:freshness}
+An environment $\cE$ of a quantum system $\cS$ satisfies \emph{freshness}
+when each environmental fragment $e_i \in \cE$:
+\begin{enumerate}
+  \item arrives at $\cS$ uncorrelated with prior fragments,
+  \item interacts with $\cS$ exactly once, and
+  \item departs forever, never returning to reverse its informational imprint.
+\end{enumerate}
+Under freshness, the quantum record of decoherence events grows monotonically
+(strict arrow).  Without freshness, environments can scramble and retract
+copies, preventing monotone accumulation.
+\emph{Provenance: article \S``Freshness''; claims 21, 22.}
+\end{definition}
+
+%% ---------- Huygens escape ----------
+\begin{principle}[Huygens escape principle]\label{pr:huygens}
+In $d = 3$ spatial dimensions, the wave equation satisfies \emph{sharp
+Huygens propagation}: signals propagate exactly on the light cone with no
+residual tail.  Consequently, radiated photonic fragments make exactly one
+pass through any bounded region and escape into the expanding dark.  This
+proves the freshness hypothesis (Definition~\ref{def:freshness}) for the
+dominant decoherence channel (photon scattering) without imposing it as an
+axiom.
+\emph{Provenance: article \S``Huygens''; claim 23.}
+\end{principle}
+
+%% ---------- Psychological time ----------
+\begin{definition}[Psychological time as surprise-weighted record growth]\label{def:psych}
+Let $\{e_1, e_2, \ldots\}$ be a sequence of recorded neural events (spikes,
+or more generally cognitive state transitions) and let
+$h(e_n \mid e_1, \ldots, e_{n-1})$ be the surprisal (negative log predictive
+probability) of event $e_n$ given the prior record.  The \emph{internal clock
+rate} at record-time $n$ is
+\[
+  \tau(n) \;=\; h(e_n \mid e_1, \ldots, e_{n-1}),
+\]
+and the \emph{felt duration} of an interval $[n_1, n_2]$ is
+\[
+  \Delta T \;=\; \sum_{n=n_1}^{n_2} h(e_n \mid e_1, \ldots, e_{n-1}),
+\]
+i.e., the growth of the compressed description of what has happened.
+A metronome, once learned, contributes $h \approx 0$ per tick.
+\emph{Provenance: article \S``Psychological time''; claims 27, 28.}
+\end{definition}
+
+
+%% ============================================================
+\section{Main claims and theorems}
+
+%% ---------- Second law ----------
+\begin{theorem}[Second law as on-average arrow + record-level museum]
+  \label{thm:secondlaw}
+The second law of thermodynamics decomposes into two simultaneous movements:
+\begin{enumerate}
+  \item \textbf{Distribution-level mixing (on-average arrow).}  The
+    graphtropy of a coarse-grained macrostate grows on average: distinctions
+    between differently prepared systems die away (distinction graph thins).
+    Fluctuation theorems (Jarzynski--Crooks family) show this is an on-average
+    arrow with permitted reversals on individual trajectories:
+    \[
+      \bigl\langle e^{-\sigma} \bigr\rangle = 1
+      \quad\Longrightarrow\quad
+      \langle \sigma \rangle \geq 0.
+    \]
+  \item \textbf{Record-level museum (strict arrow).}  The same processes write
+    durable distinctions elsewhere — broken shells, scorch marks, worn grooves,
+    geological strata — constituting a monotonically growing record.
+    The world is largely a museum of past thermodynamic events.
+\end{enumerate}
+Entropy itself is the fluctuating quantity being recorded; the museum of
+distinctions is the arrow.
+\emph{Provenance: article \S``Second law''; claims 9, 10.}
+\end{theorem}
+
+%% ---------- Landauer ledger ----------
+\begin{theorem}[Landauer ledger]\label{thm:landauer}
+Record-writing is a thermodynamic process.  Let $\mathbf{R}(t)$ be a record
+maintained by register $\cR$.  The entropy cost of maintaining and erasing
+records satisfies an exact accounting:
+\[
+  \sigma_{\mathrm{total}} \;=\; \sigma_{\mathrm{process}} + \sigma_{\mathrm{record}} + \sigma_{\mathrm{erasure}},
+\]
+where Landauer's bound $\sigma_{\mathrm{erasure}} \geq k_B T \ln 2$ per bit
+erased is one line of this longer ledger.  The reason evidence of past
+disequilibrium exists is that record-writing is paid for in the very currency
+it documents.
+\emph{Provenance: article \S``Landauer''; claim 11.}
+\end{theorem}
+
+%% ---------- Radiative arrow ----------
+\begin{theorem}[Radiative arrow from Huygens escape]\label{thm:radiative}
+In a time-varying medium satisfying the following five conditions (none
+mentioning relativity):
+\begin{enumerate}
+  \item the medium is driven (optical properties modulated),
+  \item the modulation does work on the field,
+  \item mode pairs live on a curved unbounded surface,
+  \item the drive pushes mode pairs outward into fresh territory,
+  \item created excitations decohere,
+\end{enumerate}
+the system exhibits:
+\begin{itemize}
+  \item exponential-rate growth (with Anderson-localization statistics),
+  \item correlated photon-pair creation from the vacuum,
+  \item a strict arrow: the accumulating set of excitation thresholds crossed,
+    inscribed in the light.
+\end{itemize}
+However, an idealized lossless medium is provably time-symmetric; genuine
+arrows in real media are inherited from dissipation.  The same skeleton
+governs cosmological particle creation during inflation and the dynamical
+Casimir effect.
+\emph{Provenance: article \S``Radiative arrow''; claims 14--19.}
+\end{theorem}
+
+%% ---------- Quantum arrow ----------
+\begin{theorem}[Quantum arrow from freshness + decoherence]\label{thm:quantum}
+Let $\cS$ be a quantum system interacting with an environment $\cE$
+satisfying the freshness hypothesis (Definition~\ref{def:freshness}).  Then:
+\begin{enumerate}
+  \item The quantum record — the set of measurement outcomes (distinctions)
+    redundantly imprinted in environmental fragments (quantum Darwinism) —
+    grows monotonically.
+  \item In $d = 3$ spatial dimensions, the freshness hypothesis is proved
+    (not assumed) for photonic fragments via the Huygens escape principle
+    (Principle~\ref{pr:huygens}).
+  \item The quantum arrow reduces to: a measurement outcome is a distinction;
+    decoherence is the act of recording it; redundancy is many copies of one
+    recorded distinction; the quantum arrow is the growth of that record.
+\end{enumerate}
+The construction is interpretation-neutral: Everettians read branches,
+pragmatists read laboratory outcomes; the mathematics is indifferent.
+\emph{Provenance: article \S``Quantum arrow''; claims 20--25.}
+\end{theorem}
+
+%% ---------- Radiative-quantum unification ----------
+\begin{corollary}[Radiative and quantum arrows are two faces of one escape]
+  \label{cor:unification}
+The forward-onlyness of radiation (retarded waves, Huygens propagation) and
+the once-and-forever character of quantum measurement (decoherence via
+fresh escaping fragments) are two aspects of the same mechanism: things
+leaving and never coming back.  The radiative arrow provides the escape
+channel; the quantum arrow is the record written via that channel.
+\emph{Provenance: article \S``Unification''; claim 24.}
+\end{corollary}
+
+%% ---------- Arrow inheritance ----------
+\begin{theorem}[Inheritance of arrows down chains of influence]\label{thm:inherit}
+Let $\cS_0$ be a far-from-equilibrium source (pump) driving subsystems
+$\cS_1, \cS_2, \ldots, \cS_n$ in a chain of influence.  The entropy
+production $\sigma_k$ of subsystem $\cS_k$ satisfies:
+\begin{enumerate}
+  \item \textbf{Orientation preservation:}
+    $\operatorname{sign}(\langle \sigma_k \rangle) =
+     \operatorname{sign}(\langle \sigma_0 \rangle)$ for all $k$.
+  \item \textbf{Strength attenuation (data-processing tax):}
+    $|\langle \sigma_{k+1} \rangle| \leq |\langle \sigma_k \rangle|$.
+\end{enumerate}
+Therefore the agreement of the thermodynamic, radiative, quantum, and
+psychological arrows in our vicinity is common descent from the same pump
+(ultimately gravitational clustering), not coincidence.
+The hypothesis list for the inheritance theorem includes the freshness
+conditions; for light, these can be derived from escape
+(Principle~\ref{pr:huygens}) rather than assumed.
+\emph{Provenance: article \S``Alignment''; claims 35, 36.}
+\end{theorem}
+
+%% ---------- Janus point ----------
+\begin{theorem}[Janus-point origin]\label{thm:janus}
+For a Newtonian $N$-body gravitating system that never collapses, the
+moment of inertia $I(t)$ satisfies the Lagrange--Jacobi identity
+\[
+  \ddot{I} \;=\; 4K + 2V \;=\; 2E - 2V + 4K,
+\]
+where $E > 0$ is the total energy.  This forces $I(t)$ to be a convex
+function of $t$ with a unique minimum — the \emph{Janus point}
+(Barbour--Koslowski--Mercati).  On each side:
+\begin{itemize}
+  \item The system expands, clusters, and complexifies.
+  \item Clustering inscribes durable distinctions (galaxies, stars, strata).
+  \item Observers call ``the future'' the direction away from the minimum.
+\end{itemize}
+The low-entropy ``beginning'' is the waist of an hourglass rather than an
+inexplicable initial edge.  The one residual assumption is a mild condition
+on correlations at the Janus waist (the ``paper starts unwritten'').
+\emph{Provenance: article \S``Origins''; claims 33, 34.}
+\end{theorem}
+
+%% ---------- Causal fork ----------
+\begin{theorem}[Causal fork and openness of the future]\label{thm:fork}
+Under explicit hypotheses about how registers couple to the world, a record
+$\cR$ can carry information about its causal past and cannot carry
+information about its causal future (Reichenbach's causal fork structure).
+\[
+  \MI(\cR_t;\; \cS_{\mathrm{past}}) > 0, \qquad
+  \MI(\cR_t;\; \cS_{\mathrm{future}}) = 0.
+\]
+The future ``feels open'' because nothing in the observer's record is, or
+could be, a memory of it.
+\emph{Provenance: article \S``Psychological time''; claim 32.}
+\end{theorem}
+
+%% ---------- Psychological time properties ----------
+\begin{claim}[Properties of psychological time]\label{cl:psychprops}
+Under the surprise-weighted record growth model
+(Definition~\ref{def:psych}):
+\begin{enumerate}
+  \item A metronome, once learned, generates $h \approx 0$ per tick:
+    no felt time (boredom).
+  \item A stream of surprises writes fast: the interval feels long in
+    retrospect (storage-size effect).
+  \item The oddball effect (unexpected images seem longer) is near-definitional.
+  \item Accelerating years of middle age = declining marginal surprise of a
+    life whose statistics have been mostly learned.
+  \item In spiking networks, the internal clock rate shows a rise-and-fall
+    from order toward deep chaos; hypersynchronized (seizure-like) regimes
+    register as clock-stoppage.
+  \item The specious present = integration window over which events are bound
+    into single recorded tokens.
+\end{enumerate}
+\emph{Provenance: article \S``Psychological time''; claims 26--31.}
+\end{claim}
+
+
+%% ============================================================
+\section{Cosmological record structure}
+
+\begin{definition}[Cosmological master copy]\label{def:cosmo}
+The master copy of the universe's record is the outgoing radiation field,
+receding at $c$.  Unerasability and unreadability are the same fact: the
+record cannot be destroyed because it cannot be revisited.  Memories, strata,
+and archives are local transcripts — partial shadows of a library that
+burns outward at $c$.  The CMB is the closest readable page of the master
+copy.
+
+The ``blank page'' condition: the clustering condition at the Janus waist
+requires the medium start unwritten (uncorrelated), since recording requires
+an uncorrelated medium.  Writing proceeds outward from the waist in both
+temporal directions.
+\emph{Provenance: article \S``Cosmological record''; claim 38.}
+\end{definition}
+
+
+%% ============================================================
+\section{Application to AI: Hyperon AtomSpace}
+
+\begin{definition}[AtomSpace as native causal web]\label{def:atomspace}
+In the Hyperon architecture, every inference step creates knowledge atoms
+with derivation history attached (premises, rule, timestamp).  The causal
+web of events — which the theory says a mind's time is made of — exists
+natively as a queryable data structure rather than an inference from timing
+and anatomy.
+\emph{Provenance: article \S``AI''; claim 40.}
+\end{definition}
+
+\begin{definition}[Append-only trail and strict arrow]\label{def:appendonly}
+A rewritable knowledge store (mutable AtomSpace) carries only an on-average
+arrow (beliefs get revised, atoms forgotten).  A \emph{strict arrow} requires
+an append-only trail: events written once and never unwritten.  The digital
+analogue of the escaping photon is \emph{consensus finality on a distributed
+ledger}.  A mind anchored in such a trail has a cryptographically enforced
+arrow of time; a mind in mutable memory has an arrow on average and a
+promise.
+\emph{Provenance: article \S``AI''; claim 41.}
+\end{definition}
+
+\begin{definition}[Surprise-weighted knowledge flux]\label{def:flux}
+The internal clock of a Hyperon system is the surprise-weighted flux of new
+knowledge:
+\[
+  \tau_{\mathrm{AI}}(n) \;=\; h\!\bigl(a_n \mid \mathbf{A}_{<n}\bigr),
+\]
+where $a_n$ is the $n$-th new atom and $\mathbf{A}_{<n}$ is the prior
+knowledge store.  An AI burning compute in a hot loop re-deriving known
+conclusions generates vast logs but $h \approx 0$: no lived time.  A
+modest system encountering genuine novelty lives fast.
+\emph{Provenance: article \S``AI''; claim 42.}
+\end{definition}
+
+\begin{conjecture}[Curiosity as clock maintenance]\label{conj:curiosity}
+As a world-model matures, routine input compresses toward zero surprise and
+the inner clock decays toward stasis (subjective heat death).  Curiosity —
+the drive toward what resists compression (Schmidhuber) — is clock
+maintenance: the mechanism by which a maturing mind keeps having a present.
+Recursive self-improvement is not just capability growth; it is how a mind
+keeps time flowing.
+\emph{Provenance: article \S``AI''; claims 43, 44.}
+\end{conjecture}
+
+\begin{claim}[Self-modification and identity]\label{cl:selfmod}
+Self-modification that preserves the append-only record is coherent
+self-transcendence.  Self-modification that rewrites the record is,
+strictly, the end of one mind's time and the start of another's.
+\emph{Provenance: article \S``AI''; claim 45.}
+\end{claim}
+
+\begin{claim}[Shared record as shared time]\label{cl:shared}
+In multi-agent systems, a shared append-only record is shared time.
+Sub-agents on private mutable stores are opposite-arrow domains waiting to
+disagree.  Merging inconsistent histories is an annihilation zone where one
+history gets paid down.
+\emph{Provenance: article \S``AI''; claim 46.}
+\end{claim}
+
+\begin{claim}[Engineering surface]\label{cl:engineering}
+In Hyperon, three things invert relative to wet neurons:
+\begin{enumerate}
+  \item The exact record exists natively; coarser views are design choices
+    about what to forget — subjective time becomes an engineering parameter.
+  \item Memory is the workspace (not a lossy side-channel), but rewritability
+    prevents a strict arrow without append-only anchoring.
+  \item Surprise valuation is native currency (the system computes it about
+    itself), not a theorist's imputation.
+\end{enumerate}
+The reader that makes the system's history a record for itself is a designed
+component; the width of the specious present is a parameter; the structural
+correlates of temporal experience are an engineering surface.
+\emph{Provenance: article \S``AI''; claim 47.}
+\end{claim}
+
+
+%% ============================================================
+\section{Connections to existing Hyperseed concepts}
+
+\begin{remark}[Graphtropy]
+Graphtropy (Definition~\ref{def:graphtropy}) was originally developed for
+phenomenology and quantum biology
+(\href{https://arxiv.org/abs/1902.00741}{arXiv:1902.00741}).  Its appearance
+as the foundation for time's arrow is a unification within the Hyperseed
+framework: the same observer-relative entropy measure that structures
+conscious experience also structures temporal directionality.
+\end{remark}
+
+\begin{remark}[Weakness ordering and the canonical quantale]
+The three growth strengths (Definition~\ref{def:growth}) define a partial
+order on arrows by ``weakness'': on-average $\prec$ exponential-rate $\prec$
+monotone.  The companion paper ``Arrows of Time as Monotone Weakness'' makes
+this ordering precise and constructs a canonical quantale from it.  In
+Hyperseed terms, this is a lattice of evidential strengths: the quantale
+from Evidence/Logic/Energy appears as the algebraic structure governing how
+arrows compose, inherit, and degrade.
+\end{remark}
+
+\begin{remark}[Observer-relativity]
+Observer-relativity is not incidental but foundational: the distinction graph
+$\cG_\cO$ makes the observer's resolution the primitive from which entropy,
+arrows, and records are derived.  This connects to the Hyperseed principle
+that all formal objects are relative to a cognitive frame — there is no
+``view from nowhere.''  Recordhood is reader-relative
+(Definition~\ref{def:cosmo}), continuous with frame-relativity, as velocity
+is relative to a platform.
+\end{remark}
+
+\begin{remark}[Quantale structure: Evidence / Logic / Energy]
+The signed entropy production $\sigma$ (Definition~\ref{def:ep}) serves
+simultaneously as:
+\begin{itemize}
+  \item \textbf{Evidence:} $\sigma = \log(P_{\mathrm{fwd}}/P_{\mathrm{rev}})$
+    is a log-likelihood ratio, the fundamental quantity of statistical evidence.
+  \item \textbf{Logic:} The inheritance theorem (Theorem~\ref{thm:inherit})
+    shows $\sigma$ composes under causal chains via data-processing
+    inequalities — a logical structure on the flow of distinguishability.
+  \item \textbf{Energy:} The Landauer ledger (Theorem~\ref{thm:landauer})
+    shows $\sigma$ is paid for in thermodynamic currency — $k_B T$ per bit
+    erased.
+\end{itemize}
+These three faces of $\sigma$ instantiate the Hyperseed
+Evidence/Logic/Energy quantale in a concrete physical setting.
+\end{remark}
+
+\begin{remark}[Self-similarity of distinction structure]
+The framework is self-similar: distinctions are recorded in distinctions; the
+medium and the message are the same kind of thing at every level
+(Definition~\ref{def:record}).  This mirrors the Hyperseed principle that
+metagraphs are self-referential structures where types, instances, and
+relations live in the same substrate.
+\end{remark}
+
+
+%% ============================================================
+\section{McTaggart's A- and B-series}
+
+\begin{definition}[B-series as written record; A-series as writing frontier]
+  \label{def:mctaggart}
+\begin{itemize}
+  \item The \textbf{B-series} (tenseless web of events ordered by
+    earlier-than) is the written record — the causal web, tenseless because
+    the writing is tenseless.
+  \item The \textbf{A-series} (tensed past-now-future perspective) is the
+    writing frontier — the pen-tip, the locus where the record is currently
+    being extended, self-indexed like ``here'' on a map.
+  \item The \textbf{feeling of passage} is what it is like to be a record in
+    the process of being written; no ghostly flowing substance is needed.
+  \item The \textbf{felt present} is distinction-making in progress; the
+    \textbf{remembered past} is the record read back.
+\end{itemize}
+Passage is neither illusion nor metaphysical primitive; it is the
+phenomenology of recording and inherits the recording's arrow.
+\emph{Provenance: article \S``A- and B-series''; claim 30.}
+\end{definition}
+
+
+%% ============================================================
+\section{Open questions}
+
+\begin{enumerate}
+  \item How does the quantale of growth strengths interact with existing
+    Hyperseed quantale structures (Evidence/Logic/Energy)?  Is there a
+    natural embedding or a tensor product?
+  \item Can the Janus-point derivation be extended to relativistic and
+    quantum-gravitational settings?  The article acknowledges this is an
+    open program.
+  \item What is the precise formal relationship between graphtropy and the
+    graph-theoretic entropy measures used in network science (von Neumann
+    entropy of the graph Laplacian, etc.)?
+  \item How should the append-only trail / distributed-ledger design
+    principle be implemented in Hyperon?  What is the minimal trust model?
+  \item Can the surprise-weighted clock be validated empirically in a running
+    Hyperon system (not just spiking-network simulations)?
+  \item What is the formal status of the five conditions
+    (Theorem~\ref{thm:radiative}) — are they necessary as well as
+    sufficient, or merely sufficient?
+  \item How does the inheritance theorem's data-processing tax relate to
+    channel capacity bounds in information theory?
+  \item The article defers the hard problem of consciousness to
+    pan-experientialism.  How does this interact with the
+    observer-relativity of recordhood?
+\end{enumerate}
+
+\end{document}
