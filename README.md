@@ -54,6 +54,7 @@ library at `library/hyperseed-v2/` on the research workstation, not vendored her
 - `substack/2026-06-26-tag-youre-not-it/`
 - `substack/2026-08-15-times-arrow-part-1/`
 - `substack/2026-08-15-times-arrow-part-2/`
+- `substack/2026-09-09-navier-stokes-blows-up/`
 
 Each folder contains source metadata, a claim inventory, a LaTeX formalization,
 and candidate MeTTa atoms.
