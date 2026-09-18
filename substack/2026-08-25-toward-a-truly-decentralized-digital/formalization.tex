@@ -1,0 +1,234 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Toward a Truly Decentralized Digital Provenance Layer}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Toward a Truly Decentralized Digital Provenance Layer''
+(2026-08-25) within the Hyperseed ontology. The article introduces the
+OpenWater protocol for decentralized digital provenance. We model
+cryptographic provenance chains as proper fiber transport (in contrast to
+watermarks as lossy base-space signals), decentralized trust as a flat
+connection on the trust bundle, and the liar's dividend as a provenance
+vacuum that the most powerful actor fills.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{The provenance crisis as fiber detachment}
+\label{sec:crisis}
+%% =================================================================
+
+\begin{definition}[Digital artifact bundle --- claims 1--2]
+\label{def:artifact-bundle}
+Let $\pi : E \to B$ be a fiber bundle where:
+\begin{itemize}
+\item $B$ = the space of digital artifacts (images, audio, video, text),
+\item $F_b = \pi^{-1}(b)$ = the provenance fiber over artifact $b$,
+  containing the complete causal history of $b$: which cameras, microphones,
+  keyboards, or generative models produced it, and what transformations
+  it has undergone.
+\end{itemize}
+\end{definition}
+
+\begin{proposition}[Provenance detachment --- claim 1]
+\label{prop:detachment}
+Modern generative technology has decoupled $B$ from $F$: for any
+artifact $b \in B$, there exist multiple manufacturing paths
+$p_1, p_2, \ldots \in F_b$ that produce perceptually identical outputs.
+The projection $\pi$ is no longer injective on perceptual equivalence
+classes:
+\[
+  b_{\text{real}} \approx_{\text{percept}} b_{\text{fake}}
+  \quad \text{but} \quad
+  F_{b_{\text{real}}} \neq F_{b_{\text{fake}}}
+\]
+The fiber carries the distinction; the base space does not.
+\end{proposition}
+
+\begin{corollary}[Scale defeats intuition --- claim 2]
+Human perceptual judgment operates on $B$ (the artifact itself), not on
+$F$ (its provenance). As generative fidelity increases, the information
+available in $B$ alone becomes insufficient to distinguish real from
+synthetic. ``Squint at it'' is a base-space heuristic applied to a
+fiber-level problem.
+\end{corollary}
+
+%% =================================================================
+\section{The liar's dividend as provenance vacuum}
+\label{sec:liar}
+%% =================================================================
+
+\begin{definition}[Liar's dividend --- claim 3]
+\label{def:liar}
+When no artifact can be reliably authenticated (i.e., the provenance
+fiber is inaccessible to all parties), the most powerful actor in a
+dispute can deny any inconvenient evidence by asserting it belongs to
+$F_{\text{fake}}$ without the accuser being able to prove otherwise:
+\[
+  \forall b,\; \text{if } F_b \text{ is inaccessible}: \quad
+  \text{Power}(a) > \text{Power}(a') \implies
+  a \text{ controls the narrative about } b
+\]
+\end{definition}
+
+\begin{proposition}[Asymmetric corrosion --- claim 3]
+\label{prop:corrosion}
+The liar's dividend is more corrosive than deepfakes themselves because:
+\begin{enumerate}
+\item Deepfakes add false positives to the evidence pool (fixable by
+  better detection).
+\item The liar's dividend removes true positives by making all evidence
+  dismissable (not fixable without provenance infrastructure).
+\end{enumerate}
+The second effect is structurally harder to counter because it exploits
+the \emph{absence} of fiber access, not the presence of a specific fake.
+\end{proposition}
+
+%% =================================================================
+\section{AI detection as base-space arms race}
+\label{sec:detection}
+%% =================================================================
+
+\begin{proposition}[Detection is structurally losing --- claims 5--8]
+\label{prop:detection-losing}
+AI-based detection operates entirely in $B$: it examines artifact features
+(pixel statistics, token distributions, stylometric patterns) and attempts
+to infer $F_b$ from $b$ alone. This is a base-space inference about
+fiber data, which is:
+\begin{enumerate}
+\item \textbf{Fundamentally underdetermined}: multiple fibers project to
+  the same base-space region as generative fidelity increases.
+\item \textbf{Co-evolutionarily unstable}: generators learn to evade
+  detectors by matching the base-space statistics of authentic artifacts.
+\item \textbf{Asymmetrically costly}: the attacker can train against the
+  detector itself, making attack cost $\leq$ defense cost.
+\end{enumerate}
+\end{proposition}
+
+%% =================================================================
+\section{Cryptographic provenance as proper fiber transport}
+\label{sec:openwater}
+%% =================================================================
+
+\begin{definition}[OpenWater provenance chain --- claims 12--14]
+\label{def:openwater}
+The OpenWater protocol attaches provenance data directly to the fiber
+via cryptographic primitives:
+\begin{itemize}
+\item A \emph{provenance chain} $C(b) = (s_1, s_2, \ldots, s_n)$ is a
+  sequence of signed claims, where each $s_i$ asserts that party $p_i$
+  observed or transformed artifact $b$ at time $t_i$.
+\item Each signature $s_i$ is verifiable without a central authority.
+\item The chain $C(b)$ is metadata attached to $b$, not a perturbation
+  of $b$'s content --- it survives content transformations.
+\end{itemize}
+\end{definition}
+
+\begin{theorem}[Fiber transport preservation --- claim 13]
+\label{thm:transport}
+Let $T : B \to B$ be a content transformation (compression, transcoding,
+cropping, translation). The OpenWater provenance chain satisfies:
+\[
+  C(T(b)) = C(b) \cup \{s_{T}\}
+\]
+where $s_T$ is the signature of the party applying $T$. The provenance
+fiber \emph{grows} through transformations rather than being destroyed,
+because it is fiber data (metadata) rather than base-space data
+(content perturbation).
+
+Compare with statistical watermarking (Section~5 of the companion
+formalization), where $\rho(T) \ll 1$ --- the base-space signal is
+destroyed by the same transformations.
+\end{theorem}
+
+\begin{remark}[Signed claims, not truth --- claim 14]
+OpenWater does not claim to determine truth. It provides a verifiable
+record of who claimed what about an artifact and when. Trust is built
+from the network structure of claims, not from any single authoritative
+assertion. This is the Hyperseed approach to provenance: provenance is
+path data in the fiber, not a binary label.
+\end{remark}
+
+%% =================================================================
+\section{Decentralized trust as flat connection}
+\label{sec:flat}
+%% =================================================================
+
+\begin{definition}[Decentralized trust bundle --- claims 17--18]
+\label{def:flat}
+Let $\pi_T : E_T \to B_T$ be the trust bundle over the network of
+provenance participants, with fiber $F_T = \{\text{trust level in
+participant } p\}$. In a decentralized network:
+\begin{itemize}
+\item No participant has a privileged position (no ``Ministry of Reality'').
+\item Trust is computed from the graph structure of mutual attestations.
+\item The connection on $E_T$ is flat: parallel-transporting trust around
+  any closed loop returns the same trust level.
+\end{itemize}
+\end{definition}
+
+\begin{proposition}[No institutional holonomy --- claim 18]
+\label{prop:no-holonomy}
+In a centralized provenance system, trust can accumulate non-trivially
+around institutional loops (cf.\ the EA holonomy in the companion
+formalization). In the OpenWater decentralized network, there is no
+closed institutional loop to traverse:
+\[
+  \mathrm{Hol}(\gamma) = \mathrm{id} \quad \forall \gamma \in \pi_1(B_T)
+\]
+The connection is flat because no single entity controls enough of the
+network to create a monodromy.
+\end{proposition}
+
+%% =================================================================
+\section{d-calculus perspective}
+\label{sec:d-calc}
+%% =================================================================
+
+\begin{remark}[Hash chains as discrete parallel transport]
+In the d-calculus framework, each cryptographic signature in the
+OpenWater chain is a discrete parallel transport step: it maps the
+provenance fiber from one transformation stage to the next while
+preserving the accumulated history. The chain is a discretization of
+the continuous parallel transport that Hyperseed uses to model
+provenance flow through inference networks.
+\end{remark}
+
+\begin{remark}[Provenance as adaptive primitive]
+The primitive decomposition of ``authentic content'' should include:
+\texttt{capture-device-signature}, \texttt{transformation-chain},
+\texttt{attester-network}, \texttt{temporal-ordering}. The current
+media ecosystem operates with at most one primitive (``looks real''),
+which is why deepfakes succeed. OpenWater implements the full
+primitive set as cryptographic infrastructure.
+\end{remark}
+
+\begin{remark}[Subordinate AI role --- claim 11]
+AI operates within the OpenWater framework as a fiber-consistency
+checker: given a provenance chain $C(b)$, AI can verify that the
+claimed transformations are consistent with the observed artifact
+features. This is a fiber-to-base consistency check, not a base-only
+inference --- a fundamentally more tractable problem than blind
+detection.
+\end{remark}
+
+\end{document}
