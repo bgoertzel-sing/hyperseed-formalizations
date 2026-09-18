@@ -1,0 +1,218 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  LeCun's SAI Is a Special Case of AGI}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``LeCun's SAI Is a Special Case of AGI'' (2026-03-07) within the Hyperseed
+ontology. The article shows that Superhuman Adaptable Intelligence (SAI)
+reduces to a specific parameterization of the Efficient Pragmatic General
+Intelligence (EPGI) framework. Key mappings: SAI as a section within the
+EPGI fiber space, missing dimensions as truncated fiber, LeCun's pattern
+as section-claiming-to-be-bundle, credit erasure as fiber provenance
+deletion, safety as fiber constraint, and RSI as fiber self-modification.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Section within fiber space: SAI $\subset$ EPGI}
+\label{sec:subset}
+%% =================================================================
+
+\begin{theorem}[SAI as parameterization --- claims 6--10, 26, 30]
+\label{thm:subset}
+The Efficient Pragmatic General Intelligence (EPGI) framework measures
+intelligence as a weighted average performance across task distributions,
+with explicit parameters for environment weighting, resource constraints,
+and generality scope:
+\[
+  \text{EPGI}(\pi, w, r, g) = \sum_{t \in \mathcal{T}}
+  w(t) \cdot \text{Perf}(\pi, t, r) \cdot \mathbf{1}_{g}(t)
+\]
+where $\pi$ is the agent policy, $w$ is the environment weighting, $r$
+is the resource constraint, and $g$ is the generality scope.
+
+SAI drops out as one specific parameterization:
+\[
+  \text{SAI} = \text{EPGI}(\cdot, w_{\text{SAI}}, r_{\text{SAI}},
+  g_{\text{SAI}})
+\]
+with specific (largely implicit) choices about which tasks count
+($g_{\text{SAI}}$), how environments are weighted ($w_{\text{SAI}}$: heavy
+on adaptability), and resource constraints ($r_{\text{SAI}}$: efficiency).
+
+In Hyperseed terms, EPGI defines the full \emph{cognitive fiber space}:
+each parameter choice (task distribution, environment weighting, resources,
+generality scope) selects a different intelligence measure. The space of
+all such measures is the cognitive fiber space. SAI is one section ---
+one specific parameter choice --- within this space:
+\[
+  \text{SAI} \in \Gamma(\mathcal{F}_{\text{EPGI}})
+  \qquad \text{(one section of the EPGI bundle)}
+\]
+
+This is not a different thing from AGI --- it's the form AGI takes when
+you impose specific assumptions about what's interesting. The reduction
+has practical consequences: by seeing SAI as a point within EPGI, you
+can identify exactly which parameters it fixes and which it ignores.
+\end{theorem}
+
+%% =================================================================
+\section{Section claiming to be bundle}
+\label{sec:pattern}
+%% =================================================================
+
+\begin{proposition}[The pattern --- claims 1--5, 28--29]
+\label{prop:pattern}
+LeCun has a documented pattern of dismissing ideas from the AGI community,
+then re-deriving them under new branding without credit. Three instances:
+cognitive architectures (dismissed then re-proposed), LLM limits (dismissed
+then re-argued), and AGI itself (dismissed then re-parameterized as SAI).
+
+In Hyperseed terms, this is \emph{section-claiming-to-be-bundle}:
+presenting a particular section (one parameterization of EPGI) as if
+it were the whole bundle (the correct framing for intelligence), rather
+than acknowledging it as one point in a larger space:
+\[
+  s_{\text{SAI}} \xrightarrow{\text{presented as}} E_{\text{intelligence}}
+  \qquad \text{but actually} \qquad
+  s_{\text{SAI}} \in \Gamma(E_{\text{intelligence}})
+\]
+
+This is the intellectual equivalent of the single-section projection from
+``Beyond Human Comparison'': flattening a rich multi-dimensional space
+(EPGI's parameter space) into a single ``this is the right way to think
+about intelligence'' claim.
+
+The credit erasure compounds the problem: not crediting prior work is
+\emph{fiber provenance deletion} --- removing the evidence trail that
+connects current ideas to their sources. In Hyperseed terms, it's
+severing the fiber connections that link a section to its historical
+base. The provenance fiber (who thought of this, when, building on what)
+is part of the intellectual structure; deleting it distorts the bundle.
+\end{proposition}
+
+%% =================================================================
+\section{Truncated fiber: missing dimensions}
+\label{sec:missing}
+%% =================================================================
+
+\begin{theorem}[Safety and self-improvement --- claims 15--18, 27, 31--32]
+\label{thm:missing}
+SAI leaves two critical dimensions unturned: safety constraints
+(alignment) and open-ended self-improvement (RSI toward superintelligence).
+Without these, SAI is a solid but relatively routine benchmark --- not a
+vision for the field.
+
+In Hyperseed terms, SAI \emph{truncates the cognitive fiber} by omitting
+two essential dimensions:
+\[
+  \mathcal{F}_{\text{SAI}} \subset \mathcal{F}_{\text{full}}
+  = G \times A \times R \times S \times \text{Safety} \times \cdots
+\]
+
+SAI projects onto a subspace that excludes Safety and Self-improvement
+(S), retaining only Generality, Adaptability, and Resource-efficiency.
+
+\textbf{Safety as fiber constraint:} Safety constraints restrict which
+fiber states (system behaviors) are acceptable. Without safety
+constraints, the fiber is unconstrained --- the system can produce any
+behavior, including catastrophically harmful ones:
+\[
+  \mathcal{F}_{\text{safe}} = \{f \in \mathcal{F} :
+  \text{Safety}(f) \geq \theta\} \subset \mathcal{F}
+\]
+
+Adding safety constraints restricts the fiber to the safe subspace.
+This is not optional for AGI --- it's a necessary fiber constraint that
+SAI completely omits.
+
+\textbf{RSI as fiber self-modification:} Open-ended self-improvement is
+the fiber modifying its own type --- not just changing fiber content
+(learning) but changing fiber architecture (self-modification). This is
+the most consequential dimension for long-term AGI trajectory, connecting
+to the $S$ (Self-improvement) factor in the Four-Factor Model:
+\[
+  S(f) = \text{capacity of } f \text{ to modify its own}
+  \{g_{ij}\} \text{ (transition functions)}
+\]
+
+SAI completely omits this dimension, which means it cannot address the
+most urgent question: what happens when the system can improve itself?
+
+The two additions proposed --- safety constraints and open-ended
+evolution --- transform SAI from a benchmark (a single section in EPGI
+space) into something that addresses the questions the field most urgently
+needs to answer (a section that spans the critical dimensions of the
+fiber space).
+\end{theorem}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Beyond Human Comparison} (2026-03-19): Four-Factor Model.
+  SAI's missing dimensions ($S$ and Safety) are exactly two of the
+  fiber dimensions identified in the Four-Factor Model. SAI measures
+  $G$ (generality/adaptability) and $R$ (resourcefulness/efficiency)
+  but omits $A$ (autonomy beyond adaptability) and $S$
+  (self-improvement).
+\item \textbf{Three Things the World Doesn't Understand} (2026-03-26):
+  organizational architecture. The ``who builds AGI'' question connects:
+  SAI, coming from centralized big-tech (Meta/FAIR), naturally omits
+  decentralization and community governance dimensions.
+\item \textbf{Seeding RSI} (2026-07-28): self-improvement. The RSI
+  architecture that SAI completely omits --- the most consequential
+  missing dimension.
+\item \textbf{Seven Flavors of AGI Catastrophe} (2026-06-23): safety.
+  The safety constraints that SAI omits --- without which AGI becomes
+  an existential risk.
+\item \textbf{Sanders' Stupid Superintelligence} (2026-06-30): policy.
+  Policy responses that ignore the full EPGI space (focusing only on
+  capability without safety) make the same truncation error as SAI.
+\item \textbf{What Should an AGI Curriculum Look Like?} (2026-07-19):
+  education. An AGI curriculum should cover the full EPGI space, not
+  just the SAI subspace.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Dimensional completeness for AGI measures]
+Conjecture: any AGI measure that omits safety and self-improvement
+dimensions is fundamentally incomplete --- it measures performance
+without addressing the two properties that determine whether AGI is
+beneficial or catastrophic.
+
+If this conjecture holds, the minimum viable AGI measure must include
+at least: (1) generality (what can it do?), (2) efficiency (how
+resourcefully?), (3) safety (does it avoid harm?), and (4)
+self-improvement (can it get better?). Measures that omit (3) and (4)
+--- like SAI --- are benchmarks for narrow optimization, not measures
+of general intelligence in the sense that matters for humanity's future.
+
+This connects to the fiber completeness principle: a fiber that doesn't
+span all relevant dimensions can't capture the full structure of the
+bundle. SAI's truncated fiber misses the dimensions that matter most
+for the long-term trajectory of intelligence.
+\end{conjecture}
+
+\end{document}

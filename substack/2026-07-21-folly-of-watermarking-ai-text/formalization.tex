@@ -1,0 +1,280 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  The Folly of Statistically Watermarking AI-Generated Text}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``The Folly of Statistically Watermarking AI-Generated Text'' (2026-07-21)
+within the Hyperseed ontology. The article argues that statistical text
+watermarking (SynthID-style) cannot achieve what its proponents claim and
+will instead produce a surveillance infrastructure concentrating control
+over text production. Each structural insight maps onto Hyperseed structures:
+statistical watermarking as 0-cell observable property (vs.\ cryptographic
+provenance as directed history), the arms race as a centralizing cocycle
+trending toward frozen directed type, the split ecosystem as fiber bundle
+fracture, reasoning-path watermarks as higher-cell fingerprinting, and
+the detector as cocycle controller.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Statistical watermarking as 0-cell property}
+\label{sec:watermark}
+%% =================================================================
+
+\begin{definition}[Dice-loading, not signing --- claims 1--5, 26]
+\label{def:watermark}
+SynthID-Text works by biasing the model's word choices during generation
+toward patterns detectable by a companion algorithm. This is a
+\emph{fingerprint on one generation process}, not a signature on the
+content. In Hyperseed terms, the watermark is a 0-cell observable
+property:
+\begin{itemize}
+\item It examines observable properties of the current text state
+  (word-choice distributions) without accessing the directed history
+  of how the text was produced.
+\item It tells you about one particular generation path --- not about
+  the full causal history of ideas, research, reasoning, and authorship.
+\item Constrained writing (proofreading, factual reporting) carries
+  almost no watermark because the model has no distributional freedom
+  to exploit.
+\item Short passages lack sufficient statistical evidence for confident
+  detection.
+\end{itemize}
+This is the same detection-vs-provenance distinction from the Provenance
+Layer article: detection examines 0-cells (current observable state);
+provenance asks about 1-cells and higher (transformation history).
+\end{definition}
+
+%% =================================================================
+\section{Five removal pathways: increasing cell level}
+\label{sec:removal}
+%% =================================================================
+
+\begin{proposition}[Removal taxonomy --- claims 6--11]
+\label{prop:removal}
+The five removal pathways form a hierarchy by the cell level at which
+the watermark operates:
+\begin{enumerate}
+\item \textbf{Closed API + paraphrase} (0-cell removal): the watermark
+  lives in surface word choices; replacing enough word choices destroys
+  it. No key knowledge needed --- the attacker just operates at the
+  0-cell level.
+\item \textbf{Open weights + sampler swap} (0-cell removal, trivial):
+  whoever controls inference controls everything downstream. The
+  watermark lives in the sampling procedure; swapping the sampler
+  removes it entirely.
+\item \textbf{Weight-baked + retraining} (0.5-cell removal): the
+  watermark is baked into the model's output distribution, surviving
+  sampler swap. Capability-preserving retraining on clean data removes
+  it. Harder but very plausible for a motivated actor.
+\item \textbf{Reasoning-path watermarks} (1-cell removal): the watermark
+  encodes preferences in reasoning strategy, explanation structure,
+  problem decomposition --- 1-cells in the cognitive directed type.
+  Removing this requires changing how the model thinks, not just how
+  it talks. This is \emph{higher-cell fingerprinting}: harder to remove
+  because it touches the directed structure rather than just the
+  observable surface.
+\item \textbf{Detector feedback} (adaptive): with detector access,
+  removal becomes adaptive optimization --- preserve capabilities while
+  driving the detector score down. This is the arms-race endpoint
+  where all previous categories merge into an optimization problem.
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}[Watermark radioactivity]
+A student model trained on a watermarked teacher inherits faint watermark
+traces (``radioactivity'') because the student absorbs the teacher's
+subtle lexical preferences. But the radioactivity decays with fresh data,
+RL, or preference tuning --- these interventions rewrite the inherited
+biases. The radioactivity is a 0-cell echo, not a robust signal.
+\end{remark}
+
+%% =================================================================
+\section{The arms race as centralizing cocycle}
+\label{sec:arms}
+%% =================================================================
+
+\begin{theorem}[Centralizing cocycle --- claims 12, 27]
+\label{thm:arms}
+The watermark arms race is an enduring co-evolutionary cycle:
+\[
+  \text{watermark}_n \to \text{scrubber}_n \to \text{watermark}_{n+1}
+  \to \text{scrubber}_{n+1} \to \cdots
+\]
+Each turn of the ratchet increases the intrusiveness of the watermarking
+scheme:
+\[
+  \text{sampling bias} \to \text{weight baking} \to \text{detector secrecy}
+  \to \text{legal restrictions} \to \text{trusted-computing lockdown}
+\]
+In Hyperseed terms, this is a \emph{centralizing cocycle}: each transition
+function $g_n$ in the arms race takes the system further from distributed
+text production and closer to centralized control. The cocycle trends
+toward frozen directed type --- the same pathology as in Seven Flavors,
+where capturing the development environment prevents cooperative dynamics
+and leaves only adversarial ones.
+
+The arms race does not converge to a solution. It converges to a control
+infrastructure.
+\end{theorem}
+
+%% =================================================================
+\section{Cryptographic provenance as directed history}
+\label{sec:provenance}
+%% =================================================================
+
+\begin{definition}[Accent vs.\ signature --- claims 13--16, 30]
+\label{def:provenance}
+Two fundamentally different mechanisms:
+\begin{itemize}
+\item \textbf{Statistical watermark} (accent): a detectable pattern in
+  the surface text, operating at the 0-cell level. Cannot be deliberately
+  verified or explicitly checked by the user. Fragile under transformation.
+\item \textbf{Cryptographic credential} (signature): a deliberate,
+  checkable declaration recording the transformation history of the
+  artifact. Operates at the 1-cell level (who did what, in what order,
+  with what tools). Tamper-evident. Standards like C2PA and protocols
+  like OpenWater.
+\end{itemize}
+
+Signed provenance gives strong positive evidence when the chain is intact.
+But the absence of a credential proves nothing about human origin ---
+copy the text into a fresh document and the metadata is gone. Cryptography
+authenticates a declared chain of custody; it cannot force every causal
+influence on an idea to stay attached to it forever.
+
+The fundamental distinction: statistical watermarking examines the
+observable surface (0-cells); cryptographic provenance records the
+directed history (1-cells and higher). This is the same
+detection-vs-provenance distinction, now applied to text rather than media.
+\end{definition}
+
+%% =================================================================
+\section{The split ecosystem as fiber bundle fracture}
+\label{sec:split}
+%% =================================================================
+
+\begin{proposition}[Compliance perimeter --- claims 17--20, 28]
+\label{prop:split}
+The likely outcome of widespread watermarking deployment is a
+\emph{compliance perimeter} splitting the text production fiber into
+two disconnected components:
+\begin{enumerate}
+\item \textbf{Compliant side}: certified models, signed runtimes,
+  approved enterprise services, watermarked outputs.
+\item \textbf{Non-compliant side}: open models, modified derivatives,
+  locally run systems, models deliberately cleaned to resist detection.
+\end{enumerate}
+
+This perimeter does not track the AI-human boundary. It tracks the
+institutional-control boundary --- which text came through an approved
+pipeline and which didn't.
+
+In Hyperseed terms, this is a \emph{fiber bundle fracture}: the
+transition functions between the two components are broken. Text from
+one side cannot be authenticated by the other's standards. The result
+is a class structure in text production --- approved-source text treated
+as trustworthy by default; unapproved-source text treated as suspect
+regardless of quality.
+\end{proposition}
+
+%% =================================================================
+\section{Absence as guilt and the detector as chokepoint}
+\label{sec:political}
+%% =================================================================
+
+\begin{proposition}[Absence $\neq$ guilt --- claims 15, 21, 29]
+\label{prop:absence}
+Two rhetorical sleights of hand:
+\begin{enumerate}
+\item ``This signed artifact came through an approved pipeline''
+  $\Rightarrow$ ``this unsigned artifact must be suspect.''
+\item ``This AI system is institutionally approved''
+  $\Rightarrow$ ``its outputs are epistemically superior.''
+\end{enumerate}
+Both are instances of the absence-as-guilt fallacy --- the same design
+refusal that OpenWater explicitly encodes: ``no absence-as-guilt.''
+The absence of a watermark is absence of evidence, not evidence of AI
+generation.
+\end{proposition}
+
+\begin{proposition}[Detector as cocycle controller --- claims 23, 32]
+\label{prop:detector}
+If watermark detection becomes legally mandated, the detector becomes a
+chokepoint: whoever controls the detector controls what counts as
+``AI-generated.'' In Hyperseed terms, the detector is the
+\emph{cocycle controller} --- it controls the transition function between
+the two halves of the split ecosystem:
+\[
+  g_{\text{detector}} : E_{\text{compliant}} \to E_{\text{non-compliant}}
+\]
+This is the same chokepoint-capture dynamic as centralized provenance
+infrastructure (the failure mode OpenWater's decentralized resolution
+is designed to prevent).
+\end{proposition}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Provenance Layer} (2026-08-25): detection vs.\ provenance
+  as observables vs.\ directed history. Here the same distinction applied
+  to text: statistical watermarking is detection (0-cells); cryptographic
+  provenance is directed history (1-cells).
+\item \textbf{Proof of Humanity} (2026-08-26): OpenWater's four design
+  refusals, including ``no absence-as-guilt.'' Here that refusal is
+  violated by the assumption that unwatermarked text is suspect.
+\item \textbf{Seven Flavors} (2026-07-01): frozen directed type as evil
+  mode. The watermark arms race converges toward frozen directed type ---
+  centralized control over text production that eliminates cooperative
+  dynamics.
+\item \textbf{Sanders Ban} (2026-09-05): state capture of AI development.
+  Mandatory watermark detection is the text-production version of the
+  Sanders ban --- using compliance infrastructure to control who gets to
+  produce what.
+\item \textbf{Big Tech's Bets} (2026-08-02): too-strategic-to-fail
+  dynamics. If watermarking infrastructure becomes too entrenched to
+  dismantle, it becomes a permanent control layer regardless of whether
+  it achieves its stated goals.
+\item \textbf{Zuck's Future} (2026-08-10): access vs.\ ownership. The
+  compliance perimeter creates distributed access to approved AI text
+  without distributed power over what counts as approved.
+\item \textbf{$(f,c)$-lossy critique} (LTM 5a4d150b): binary
+  watermark-detected/not-detected is the ultimate scalar collapse ---
+  reducing the rich provenance question to a single bit.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Reasoning-path watermark persistence]
+Conjecture: reasoning-path watermarks (1-cell fingerprints) are
+exponentially harder to remove than surface watermarks (0-cell fingerprints),
+but also exponentially harder to \emph{inject} reliably. The difficulty
+of injection limits their practical deployment, creating an asymmetry:
+the most robust watermark type is also the least deployable, while the
+most deployable type (sampling-layer) is the least robust. This
+asymmetry means the watermarking approach is fundamentally
+self-undermining at every cell level.
+\end{conjecture}
+
+\end{document}

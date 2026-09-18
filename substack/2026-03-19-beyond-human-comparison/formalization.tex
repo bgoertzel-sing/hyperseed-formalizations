@@ -1,0 +1,328 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Beyond Human Comparison}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Beyond Human Comparison'' (2026-03-19) within the Hyperseed ontology.
+The article critiques anthropocentric AI evaluation and proposes the
+Four-Factor Model of general intelligence. Key mappings: the four factors
+as fiber dimensions, human comparison as single-section projection, beyond
+comparison as fiber type incommensurability, orthogonal dimensions as
+independent fiber components, self-improvement as fiber self-modification,
+and proper evaluation as fiber space mapping.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Single-section projection: the anthropocentric bias}
+\label{sec:bias}
+%% =================================================================
+
+\begin{theorem}[The wrong reference point --- claims 1--5, 21]
+\label{thm:bias}
+Most AI evaluation uses human cognition as the reference point:
+``human-level performance,'' ``superhuman at X,'' ``can't do what
+a 5-year-old can.'' This anchors evaluation to a single point in
+the space of possible intelligences.
+
+In Hyperseed terms, this is \emph{single-section projection}:
+projecting the multi-dimensional cognitive fiber space onto a single
+human section --- flattening a rich space into a single ``how
+human-like is it?'' dimension:
+\[
+  \pi_{\text{human}}: \mathcal{F}_{\text{cognitive}} \to \mathbb{R}
+  \qquad \text{where} \quad \pi_{\text{human}}(f) =
+  \text{similarity}(f, f_{\text{human}})
+\]
+
+This projection loses most of the information about what a system
+actually is. It has two specific failure modes:
+\begin{itemize}
+\item \textbf{Blindness to novel strengths:} capabilities with no
+  human analog (perfect memory recall, parallel processing, instant
+  knowledge sharing, lossless copying) are invisible to human-comparison
+  metrics. These are fiber dimensions that the human section doesn't
+  span.
+\item \textbf{Blindness to fundamental differences:} lack of embodiment,
+  lack of evolutionary history, lack of developmental trajectory,
+  different failure modes --- differences that matter enormously for
+  understanding the system but are invisible when you only ask ``how
+  human-like?''
+\end{itemize}
+
+The submarine/fish analogy captures this precisely: both swim, but the
+mechanisms, capabilities, and limitations are fundamentally different.
+Evaluating a submarine by how fish-like it is misses what makes it
+actually useful --- and dangerously underestimates its capabilities
+in dimensions that fish don't have (depth, cargo capacity, nuclear
+propulsion).
+
+The same applies to AI: evaluating an LLM by how human-like its
+reasoning is misses its actual strengths (parallel processing of
+vast corpora) and its actual weaknesses (lack of grounded understanding)
+because neither maps cleanly onto human capabilities.
+\end{theorem}
+
+%% =================================================================
+\section{The cognitive fiber space}
+\label{sec:fiber-space}
+%% =================================================================
+
+\begin{definition}[Four-Factor Model --- claims 6--10, 20, 23]
+\label{def:factors}
+The Four-Factor Model proposes four substrate-independent dimensions
+of general intelligence:
+\begin{enumerate}
+\item \textbf{Generality} ($G$): the range of tasks and domains a
+  system can handle. From narrow specialist to universal generalist.
+\item \textbf{Autonomy} ($A$): the degree of independence from human
+  guidance. From fully dependent to fully self-directed.
+\item \textbf{Resourcefulness} ($R$): the ability to acquire and deploy
+  resources (computational, informational, physical, social) in pursuit
+  of goals. From using only what's given to finding what's needed.
+\item \textbf{Self-Improvement} ($S$): the ability to improve one's own
+  capabilities --- learning new skills, optimizing existing processes,
+  expanding one's own architecture.
+\end{enumerate}
+
+In Hyperseed terms, each factor is a \emph{dimension of the cognitive
+fiber space}. The cognitive fiber space is the product:
+\[
+  \mathcal{F}_{\text{cognitive}} \subseteq G \times A \times R \times S
+\]
+
+Different intelligent systems occupy different positions in this space.
+The space is genuinely multi-dimensional --- not a line from ``dumb''
+to ``smart'' but a manifold of possible cognitive configurations.
+
+The four factors being \emph{relatively independent} means the
+cognitive fiber has genuinely independent components. Intelligence is
+not a single scalar property (``IQ'') but a composite of structurally
+independent dimensions. A system can be high on generality but low on
+autonomy (current LLMs: broad knowledge, no self-direction), high on
+autonomy but low on generality (specialized robots: independent
+operation, narrow capability), or any other combination.
+
+These factors are substrate-independent: they apply to biological,
+silicon, hybrid, or any other substrate. The fiber properties
+(generality, autonomy, resourcefulness, self-improvement) are
+independent of the base (physical substrate). This is the Four-Factor
+instantiation of the general principle that fiber properties are
+base-independent.
+\end{definition}
+
+%% =================================================================
+\section{Fiber profiles of existing systems}
+\label{sec:profiles}
+%% =================================================================
+
+\begin{proposition}[System profiles --- claims 11--15, 25]
+\label{prop:profiles}
+Different systems occupy characteristically different positions in the
+cognitive fiber space:
+
+\begin{center}
+\begin{tabular}{lcccc}
+\textbf{System} & $G$ & $A$ & $R$ & $S$ \\
+\hline
+Current LLMs & moderate & low & low & low \\
+Specialized robots & low & high & moderate & low \\
+Humans & moderate & high & moderate & moderate \\
+True AGI & high & high & high & high \\
+\end{tabular}
+\end{center}
+
+In Hyperseed terms, each row is a \emph{fiber profile}: a position
+in the cognitive fiber space. The profiles reveal the structural
+differences between systems:
+\begin{itemize}
+\item \textbf{LLMs:} broad but passive. Wide generality (many topics)
+  but no autonomy (need prompting), no resourcefulness (can't acquire
+  new resources), no self-improvement (can't modify own architecture).
+  The fiber is wide but shallow --- large base coverage, minimal
+  fiber depth.
+\item \textbf{Specialized robots:} narrow but autonomous. Low generality
+  (one task) but high autonomy (operate independently). The fiber is
+  deep but narrow --- significant depth in one base region, no coverage
+  elsewhere.
+\item \textbf{Humans:} moderate across the board. The fiber is
+  moderately deep and moderately wide, with notable limitations in
+  self-improvement (can learn but cannot rewrite cognitive architecture).
+\item \textbf{True AGI:} high in all four dimensions simultaneously.
+  This is a much stronger requirement than being high in any single
+  dimension. Current systems are strong in at most one or two.
+\end{itemize}
+
+The self-improvement dimension ($S$) is the most distinctive for AGI:
+a system that can modify its own fiber type (cognitive architecture),
+not just its fiber content (knowledge). This is the recursive
+self-improvement (RSI) capability --- the fiber modifying itself.
+Humans have limited $S$ (can learn but can't rewrite neural
+architecture); current AI has near-zero $S$ (trained architecture
+is fixed). True AGI would have high $S$ --- the ability to
+restructure its own cognitive fiber.
+\end{proposition}
+
+%% =================================================================
+\section{Fiber type incommensurability}
+\label{sec:incommensurability}
+%% =================================================================
+
+\begin{theorem}[Beyond comparison --- claims 16--19, 22]
+\label{thm:incommensurability}
+At some point, AI systems will be so different from human cognition
+that comparison becomes meaningless. ``Beyond human'' doesn't mean
+``better than human'' --- it means ``different enough that comparison
+isn't meaningful.''
+
+In Hyperseed terms, this is \emph{fiber type incommensurability}:
+when two cognitive systems have sufficiently different fiber types,
+no meaningful single ordering exists between them:
+\[
+  \nexists\, \leq_{\text{total}} \text{ on } \mathcal{F}_{\text{cognitive}}
+  \text{ such that all systems are comparable}
+\]
+
+You can compare systems dimension by dimension ($G$, $A$, $R$, $S$)
+but cannot collapse them to a single ranking. A submarine isn't a
+``better fish'' or a ``worse fish'' --- it's a different thing that
+happens to operate in the same medium. Similarly, a future AGI won't
+be a ``better human'' or a ``worse human'' --- it'll be a different
+cognitive architecture that happens to operate in the same problem
+space.
+
+This has practical implications for evaluation: \emph{fiber space
+mapping} replaces single-axis comparison. Proper evaluation determines
+where a system sits in the multi-dimensional cognitive fiber space,
+rather than projecting onto a single human-comparison axis:
+\[
+  \text{Evaluate}(f) = (G(f), A(f), R(f), S(f)) \in
+  \mathcal{F}_{\text{cognitive}}
+  \qquad \text{not} \qquad
+  \pi_{\text{human}}(f) \in \mathbb{R}
+\]
+
+The fiber space mapping preserves the multi-dimensional structure of
+intelligence. The single-axis projection destroys it. Moving beyond
+human comparison means moving from projection to mapping ---
+from ``how human-like?'' to ``what is it?''
+\end{theorem}
+
+%% =================================================================
+\section{Fiber self-modification}
+\label{sec:self-mod}
+%% =================================================================
+
+\begin{proposition}[Self-improvement as fiber self-modification --- claim 24]
+\label{prop:self-mod}
+The self-improvement factor ($S$) is the most distinctive dimension
+of the cognitive fiber space because it represents the fiber's ability
+to modify itself:
+\begin{itemize}
+\item \textbf{Fiber content modification} (learning): changing what
+  the fiber contains (new knowledge, new skills) without changing
+  the fiber's architecture. All cognitive systems do this to some
+  degree.
+\item \textbf{Fiber type modification} (self-improvement): changing
+  the fiber's architecture itself --- how information is represented,
+  how reasoning proceeds, how learning happens. This is qualitatively
+  different from content modification.
+\end{itemize}
+
+In Hyperseed terms, fiber self-modification is the fiber's ability to
+change its own transition functions --- not just the data that flows
+through the transitions but the transitions themselves:
+\[
+  S(f) = \text{capacity of } f \text{ to modify }
+  \{g_{ij}\}_{i,j} \text{ (its own transition functions)}
+\]
+
+This is what makes RSI (recursive self-improvement) possible and
+what distinguishes true AGI from powerful narrow AI. A system with
+high $S$ can:
+\begin{enumerate}
+\item Identify limitations in its own cognitive architecture.
+\item Design modifications to address those limitations.
+\item Implement the modifications.
+\item Evaluate whether the modifications improved performance.
+\item Iterate.
+\end{enumerate}
+
+This cycle is the fiber modifying its own fiber type --- the deepest
+form of cognitive flexibility. It's also the most consequential
+dimension for long-term trajectory: a system with high $G$, $A$, $R$
+but low $S$ is powerful but static; a system with moderate $G$, $A$, $R$
+but high $S$ will eventually surpass it by improving itself.
+\end{proposition}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Three Things the World Doesn't Understand} (2026-03-26):
+  complementary. What AGI is (Four-Factor Model, this article) vs.\
+  how it should be built (organizational architecture, that article).
+\item \textbf{In What Sense Might LLMs Be Conscious?} (2026-05-05):
+  consciousness profiles. The multi-dimensional consciousness space
+  (phenomenal, access, metacognitive) is analogous to the Four-Factor
+  cognitive space --- both reject single-axis evaluation.
+\item \textbf{Seeding RSI} (2026-07-28): self-improvement in detail.
+  The $S$ dimension of the Four-Factor Model corresponds to the RSI
+  architecture of Hyperon.
+\item \textbf{The Last of the Unmodified} (2026-04-21): cognitive
+  modification. The Four-Factor Model provides a framework for
+  evaluating what cognitive modification changes: which dimensions
+  are enhanced? which are preserved? which are lost?
+\item \textbf{Playing Around with ARC-AGI-3} (2026-05-08): evaluation.
+  ARC-AGI is an evaluation benchmark --- the Four-Factor Model suggests
+  it primarily measures $G$ (generality), with limited assessment of
+  $A$, $R$, and $S$.
+\item \textbf{What Is It Like to Be a Bot} (2026-07-16): alien cognition.
+  The ``beyond comparison'' insight applies: bot cognition may be
+  incommensurable with human cognition, requiring evaluation on its
+  own terms.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Self-improvement dominance]
+Conjecture: in the long run, the self-improvement dimension ($S$)
+dominates all other dimensions. A system with high $S$ will eventually
+achieve high $G$, $A$, and $R$ through self-modification, but high
+$G$, $A$, $R$ with low $S$ remains static.
+
+If this conjecture holds, the most important evaluation of any AI
+system is not its current performance on any task (which measures $G$)
+but its capacity for self-improvement ($S$). Current AI evaluation
+overwhelmingly measures $G$ (benchmarks, tasks, competitions) and
+almost entirely ignores $S$ (can the system improve itself?).
+
+This suggests a fundamental misalignment between current evaluation
+practices and what actually matters for AGI trajectory. The system
+most likely to become AGI is not the one that currently performs best
+on benchmarks but the one with the highest capacity for
+self-modification --- even if its current benchmark performance is
+modest.
+\end{conjecture}
+
+\end{document}

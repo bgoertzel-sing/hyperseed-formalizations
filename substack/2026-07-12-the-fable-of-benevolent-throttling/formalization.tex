@@ -1,0 +1,323 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  The Fable of Benevolent Throttling}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``The Fable of Benevolent Throttling'' (2026-07-12) within the Hyperseed
+ontology. The article analyzes the Anthropic Fable~5 capability-throttling
+episode as a preview of the government-corporate AI oligopoly assembling
+itself through individually defensible safety measures. Each structural
+insight maps onto Hyperseed structures: safety-competitive
+indistinguishability as cocycle ambiguity and fiber degeneracy, the
+incentive ratchet as a centralizing cocycle, moral fluency as provenance
+laundering, and decentralized infrastructure as the structural remedy
+that breaks the monopoly cocycle through provenance transparency.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Safety-competitive indistinguishability as cocycle ambiguity}
+\label{sec:ambiguity}
+%% =================================================================
+
+\begin{definition}[Cocycle ambiguity --- claims 4--6, 22, 27]
+\label{def:ambiguity}
+The article identifies a fundamental observational indistinguishability:
+``preventing recursive AI development acceleration by bad actors'' and
+``preventing customers from building rival products'' produce exactly
+the same classifier, throttle, and moat. The safety framing and the
+competitive framing are observationally identical.
+
+In Hyperseed terms, this is a \emph{cocycle ambiguity}: the same
+transition function $g_{ij}$ satisfies the cocycle condition for two
+conceptually distinct fiber bundles:
+\begin{align}
+  E_{\text{safety}} &: \text{fiber = catastrophic risk prevention} \\
+  E_{\text{competition}} &: \text{fiber = market dominance preservation}
+\end{align}
+Both bundles share the same base space (model deployment decisions)
+and the same transition functions (capability classifiers, throttles,
+access controls). The cocycle condition $g_{ij} g_{jk} = g_{ik}$ is
+satisfied by both interpretations simultaneously.
+
+This is a \emph{fiber degeneracy}: two conceptually distinct fibers
+map to the same observable section. The degeneracy cannot be resolved
+from within the system --- an outside observer cannot determine which
+fiber is ``really'' being transported, because the transport looks
+identical in both cases.
+
+Resolution requires \emph{additional structure} that lifts the
+degeneracy by providing observable differences between the two fibers:
+inspectable source code, open decision logs, distributed governance
+with competing interests, cryptographic verification of inference.
+Without this additional structure, the ambiguity is not a failure of
+analysis but a genuine structural feature of the situation.
+\end{definition}
+
+\begin{proposition}[Partial legitimacy preserves the ambiguity]
+\label{prop:partial}
+The article is careful to acknowledge that some restrictions are
+genuinely justified on safety grounds: bio/chem weapons synthesis,
+offensive cyber campaigns. The visible rerouting for these queries
+has ``the feel of an honest, defensible attempt to be responsible.''
+
+This partial legitimacy is precisely what makes the cocycle ambiguity
+so potent. If the safety concerns were entirely fabricated, the
+degeneracy would be easy to lift (the safety fiber would be empty).
+If the competitive motive were absent, the degeneracy would also
+resolve (only one fiber exists). The ambiguity persists exactly
+because \emph{both fibers are genuinely present}, making it impossible
+to determine which one is driving any particular restriction.
+
+The anti-distillation measures are where the slide begins: they have
+``a comprehensible logic'' for safety but are ``already sliding down
+the slope from safety toward IP protection dressed in safety's
+clothing.'' The slope is the cocycle ambiguity becoming exploitable.
+\end{proposition}
+
+%% =================================================================
+\section{The incentive ratchet as centralizing cocycle}
+\label{sec:ratchet}
+%% =================================================================
+
+\begin{theorem}[Centralizing cocycle --- claims 7--9, 13--15, 23]
+\label{thm:ratchet}
+The article describes an attractor dynamic: each individually
+defensible safety measure concentrates control into fewer hands.
+``Nobody has to twirl a mustache. The moat builds itself.''
+
+In Hyperseed terms, this is a \emph{centralizing cocycle}: a sequence
+of transition functions where each composition moves the system toward
+more centralized control:
+\[
+  g_1 \circ g_2 \circ \cdots \circ g_n :
+  \text{distributed} \to \text{oligopolistic}
+\]
+where each $g_i$ is individually defensible (``justified on safety
+grounds'') but their composition produces concentration.
+
+The ratchet mechanism:
+\begin{enumerate}
+\item Safety concern identified (genuine or inflated).
+\item Restriction implemented (classifier, throttle, access control).
+\item Government co-administers (export directive, compliance requirement).
+\item Restriction normalized (becomes baseline for next restriction).
+\item Next safety concern identified (scope expanded).
+\end{enumerate}
+
+Each turn is individually defensible. The endpoint --- ``the most
+powerful cognitive technology in history administered by a handful of
+companies and one or two governments'' --- is not individually chosen
+but emerges from the cocycle's dynamics.
+
+This is the same centralizing cocycle identified in the watermarking
+analysis: each escalation step concentrates control. The difference
+is the mechanism: watermarking uses detection infrastructure;
+throttling uses capability restriction. Both produce the same
+structural outcome.
+
+The article predicts this episode is ``the template for the next
+fifty'' --- the cocycle will continue to centralize unless the
+transition functions themselves are changed.
+\end{theorem}
+
+%% =================================================================
+\section{Moral fluency as provenance laundering}
+\label{sec:laundering}
+%% =================================================================
+
+\begin{proposition}[Provenance laundering --- claims 8--9, 24]
+\label{prop:laundering}
+``Put smart, sincere people inside a trillion-dollar pressure cooker
+and they will discover morally fluent reasons to do what the pressure
+cooker rewards.''
+
+In Hyperseed terms, this is \emph{provenance laundering}: the actual
+origin of a decision (competitive pressure, board-level terror at
+losing the lead) is wrapped in a provenance chain (safety review,
+red-team findings, responsible AI framework) that makes it appear to
+be a different kind of decision.
+
+The laundering is effective because:
+\begin{enumerate}
+\item The participants are sincere --- they genuinely believe their
+  safety reasoning. The provenance chain is not fabricated but
+  \emph{selected}: among many possible framings, the one that
+  aligns with competitive interest is the one that gets developed,
+  funded, and implemented.
+\item The safety reasoning is often locally valid --- the individual
+  steps in the provenance chain are sound. What's laundered is not
+  the reasoning but the \emph{selection pressure} that determines
+  which safety concerns get prioritized and which get deprioritized.
+\item The laundering is invisible from inside --- the participants
+  experience themselves as doing safety work, not competitive
+  positioning. The provenance chain looks clean from the inside.
+\end{enumerate}
+
+This is the same $R_{\text{auth}}$ failure mode identified in the
+deceptive open letters analysis: stated origin (safety) doesn't
+match actual origin (competitive pressure). But here the failure is
+more subtle --- the stated origin is \emph{partially} genuine,
+making the provenance laundering harder to detect.
+
+An $R_{\text{auth}}$ system designed to detect this would need to
+check not just whether the safety reasoning is valid but whether the
+\emph{selection} of which safety concerns to prioritize correlates
+with competitive interest --- a second-order provenance check.
+\end{proposition}
+
+%% =================================================================
+\section{Government-corporate fusion}
+\label{sec:fusion}
+%% =================================================================
+
+\begin{definition}[Co-administration --- claims 10--12]
+\label{def:fusion}
+The export-control directive established the precedent that frontier
+model access is a national-security lever. Once this precedent is
+normalized, corporate platform governance and state security policy
+blur into a single administrative apparatus.
+
+In Hyperseed terms, this is the \emph{fusion of two previously
+distinct fiber bundles} into a single bundle:
+\[
+  E_{\text{corporate}} \oplus E_{\text{state}} \to E_{\text{fused}}
+\]
+where the fused bundle has transition functions that serve both
+corporate and state interests simultaneously --- another instance of
+the cocycle ambiguity, but now at the institutional level rather than
+the individual-decision level.
+
+The fusion is self-reinforcing: the government needs the companies'
+technical capability to implement controls; the companies need the
+government's enforcement power to make controls stick. Each
+dependency strengthens the fusion, making separation progressively
+harder.
+\end{definition}
+
+%% =================================================================
+\section{Decentralization as structural remedy}
+\label{sec:decentral}
+%% =================================================================
+
+\begin{theorem}[Broken monopoly cocycle --- claims 16--21, 25--26]
+\label{thm:decentral}
+The article argues that the only reliable remedies are structural:
+open weights, transparent infrastructure, cryptographic verification,
+distributed governance. These remedies work by \emph{breaking the
+monopoly cocycle}:
+
+\begin{enumerate}
+\item \textbf{Open weights} make transition functions traversable by
+  anyone --- the centralizing cocycle cannot form because no single
+  entity controls the functions.
+\item \textbf{Transparent infrastructure} makes the fiber structure
+  inspectable --- the cocycle ambiguity is lifted because the actual
+  fiber (safety vs.\ competition) becomes observable.
+\item \textbf{Cryptographic verification} provides trustless
+  provenance --- trust is grounded in mathematics rather than
+  institutional authority, making provenance laundering detectable.
+\item \textbf{Distributed governance} prevents any single entity from
+  holding the kill switch or nerf dial --- the centralizing attractor
+  is eliminated because control is distributed by construction.
+\end{enumerate}
+
+The key insight: ``Visibility does not solve everything --- but it
+does prevent lies from getting secretly baked into infrastructure.''
+In Hyperseed terms, visibility is \emph{provenance transparency} ---
+the $R_{\text{auth}}$ principle applied to infrastructure itself.
+Trust in the system is earned through inspectable provenance (open
+code, public logs, verifiable inference) rather than inherited from
+institutional authority (corporate brand, government endorsement).
+
+The article also argues that decentralized safety mechanisms will
+prove \emph{more robust} than centralized ones, ``precisely because
+they don't require trusting any single conflicted party.'' This is
+the same argument as the anti-scalar-collapse principle: distributing
+safety across many independent mechanisms is more robust than
+concentrating it in a single mechanism, because the single mechanism
+is vulnerable to the cocycle ambiguity (its safety function may be
+co-opted for competitive purposes).
+\end{theorem}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Watermarking Folly} (2026-07-21): centralizing cocycle.
+  The throttling ratchet is the same centralizing dynamic as the
+  watermarking escalation --- different mechanism, same structural
+  outcome.
+\item \textbf{Kimi K3} (2026-07-20): broken monopoly cocycle. Open
+  weights breaking the centralizing cocycle is the same structure in
+  both analyses --- commoditization of the base space makes
+  centralization unsustainable.
+\item \textbf{Why I Didn't Sign} (2026-07-15): deceptive provenance.
+  Moral fluency under pressure is the corporate version of deceptive
+  open letters --- provenance laundering where the stated origin
+  doesn't match the actual selection pressure.
+\item \textbf{Sanders Ban} (2026-09-05): state control. The
+  government-corporate fusion is the soft version of legislative
+  bans --- both concentrate control over AI development in
+  state-aligned entities.
+\item \textbf{Decentralized Digital} (2026-08-06): infrastructure.
+  The decentralized remedy described here is the same infrastructure
+  being built: SingularityNET, ASI Alliance, ASI:Chain.
+\item \textbf{Seven Flavors} (2026-07-01): attractor dynamics. The
+  oligopolistic endpoint is one of the catastrophe flavors ---
+  concentration of cognitive power in too few hands, regardless of
+  their intentions.
+\item \textbf{Proof of Humanity} (2026-08-04): cryptographic
+  verification. The trustless provenance mechanisms are the same
+  technology applied to different problems --- identity (PoH) vs.\
+  inference (throttling remedy).
+\item \textbf{Goals That Grow Back} (2026-07-28): $R_{\text{auth}}$.
+  Provenance-gated trust is the structural solution to both the
+  throttling cocycle ambiguity and the goals-that-grow-back
+  governance problem.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Cocycle ambiguity resolution theorem]
+Conjecture: the cocycle ambiguity between safety and competitive
+fibers can be resolved if and only if the system satisfies:
+\begin{enumerate}
+\item \textbf{Provenance transparency}: every restriction can be
+  traced to its originating decision process, including the selection
+  criteria for which risks to prioritize.
+\item \textbf{Adversarial audit}: independent parties can test
+  whether the restriction's scope extends beyond its stated safety
+  justification.
+\item \textbf{Distributed control}: no single entity controls both
+  the restriction mechanism and the evaluation of the restriction's
+  scope.
+\end{enumerate}
+Formally: the fiber degeneracy is lifted when the structure group
+of the bundle is extended from $G$ (which acts identically on both
+fibers) to $G \times H$ (where $H$ distinguishes the fibers).
+The three conditions above are the observable consequences of the
+$H$-extension.
+\end{conjecture}
+
+\end{document}

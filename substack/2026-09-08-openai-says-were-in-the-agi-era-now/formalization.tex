@@ -1,0 +1,205 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  OpenAI Says We're in the AGI Era Now}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``OpenAI Says We're in the AGI Era Now -- Well, Kind Of\ldots''
+(2026-09-08) within the Hyperseed ontology. The article responds to
+OpenAI's GPT-6 Astra launch and the claim that ``the AGI era has arrived,''
+arguing that AGI is a continuous gradation whose scientific definition
+(effective generalization beyond training data) differs fundamentally from
+the marketing usage. We model AGI-as-continuum as a fiber metric, the
+marketing redefinition as a section collapse, and the distinction between
+routine competence and radical innovation as fiber decomposition.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{AGI as continuous fiber metric}
+\label{sec:continuum}
+%% =================================================================
+
+\begin{definition}[Intelligence continuum --- claims 1--3]
+\label{def:continuum}
+Let $\mathcal{I} : \mathcal{S} \to [0, \infty)$ be a generalization measure
+over the space $\mathcal{S}$ of cognitive systems, where $\mathcal{I}(s)$
+quantifies how far beyond its training distribution system $s$ can
+effectively operate. This is a continuous function, not a characteristic
+function:
+\[
+  \mathcal{I}(\text{dog}) < \mathcal{I}(\text{avg human})
+  < \mathcal{I}(\text{best human}) < \mathcal{I}(\text{human society + internet})
+\]
+There is no natural threshold $\theta^*$ such that $\mathcal{I}(s) \geq \theta^*$
+constitutes ``AGI achieved.''
+\end{definition}
+
+\begin{proposition}[Human-level as arbitrary section --- claim 2]
+\label{prop:arbitrary}
+Defining ``human-level AGI'' as $\mathcal{I}(s) \geq \mathcal{I}(\text{human}_h)$
+for some reference human $h$ introduces an arbitrary choice of $h$. The
+interval $[\mathcal{I}(\text{avg human}), \mathcal{I}(\text{best human at best})]$
+is wide, making the threshold selection a social/commercial decision, not a
+scientific one.
+\end{proposition}
+
+%% =================================================================
+\section{Dual formalization of AGI}
+\label{sec:dual}
+%% =================================================================
+
+\begin{definition}[Goal-environment formalization --- claim 5]
+\label{def:goal-env}
+Let $\mathcal{G}$ be a space of goals and $\mathcal{E}$ a space of
+environments, with a complexity-based weighting $w : \mathcal{G} \times \mathcal{E} \to \mathbb{R}_+$
+(simpler pairs weighted more). Then:
+\[
+  \mathcal{I}_{\text{GE}}(s) = \int_{\mathcal{G} \times \mathcal{E}}
+    \mathbb{1}[s \text{ achieves } g \text{ in } e] \cdot w(g, e)\, d(g, e)
+\]
+\end{definition}
+
+\begin{definition}[Open-ended intelligence formalization --- claim 6]
+\label{def:open-ended}
+Let $\mathrm{Ind}(s, t)$ measure the degree to which system $s$ maintains
+self-individuation at time $t$, and $\mathrm{Trans}(s, t)$ measure the degree
+to which $s$ self-transcends (grows beyond its current state). Then:
+\[
+  \mathcal{I}_{\text{OE}}(s) = \liminf_{T \to \infty}
+    \frac{1}{T} \int_0^T \mathrm{Ind}(s, t) \cdot \mathrm{Trans}(s, t)\, dt
+\]
+A system with high $\mathrm{Ind}$ but zero $\mathrm{Trans}$ is merely stable;
+high $\mathrm{Trans}$ but zero $\mathrm{Ind}$ is dissolution. AGI requires
+both simultaneously, which is what makes it hard.
+\end{definition}
+
+\begin{remark}[Fiber decomposition of ``AGI'']
+In the Hyperseed fiber-bundle framework, the concept ``AGI'' has fiber
+$F_{\text{AGI}} = F_{\text{GE}} \times F_{\text{OE}} \times F_{\text{social}}$
+--- at minimum three independent sub-primitives. Different stakeholders project
+onto different sub-fibers, creating the illusion of disagreement when the
+real issue is dimensional collapse.
+\end{remark}
+
+%% =================================================================
+\section{Marketing as section collapse}
+\label{sec:marketing}
+%% =================================================================
+
+\begin{definition}[AGIPO section --- claims 8--10]
+\label{def:agipo}
+Let $\pi : E \to B$ be the bundle of AGI concepts over the space
+$B$ of discourse contexts. Define the marketing section:
+\[
+  \sigma_{\text{mkt}}(b_{\text{launch}}) =
+    (\text{``AGI era arrived''}, p_{\text{IPO-positioning}})
+\]
+and the scientific section:
+\[
+  \sigma_{\text{sci}}(b_{\text{launch}}) =
+    (\text{``impressive increment on continuum''}, p_{\text{evidence}})
+\]
+The marketing section collapses the continuous $\mathcal{I}$ to a binary
+announcement, discarding the gradation structure entirely.
+\end{definition}
+
+\begin{proposition}[Terminology capture as fiber hijacking --- claim 18]
+\label{prop:capture}
+OpenAI's strategy redefines AGI by implicitly replacing the scientific
+section $\sigma_{\text{sci}}$ with $\sigma_{\text{mkt}}$ across public
+discourse:
+\[
+  \text{AGI}_{\text{public}} \leftarrow \sigma_{\text{mkt}}
+  \quad \text{instead of} \quad
+  \text{AGI}_{\text{public}} \leftarrow \sigma_{\text{sci}}
+\]
+This is fiber hijacking: the same base-space label (``AGI'') now points to
+a different fiber element, and the substitution is invisible to consumers
+who lack access to the original definition.
+\end{proposition}
+
+%% =================================================================
+\section{Routine competence vs.\ radical innovation}
+\label{sec:routine-radical}
+%% =================================================================
+
+\begin{definition}[Generalization decomposition --- claims 11--14]
+\label{def:decomp}
+Decompose the generalization measure into two components:
+\[
+  \mathcal{I}(s) = \mathcal{I}_{\text{routine}}(s) + \mathcal{I}_{\text{radical}}(s)
+\]
+where $\mathcal{I}_{\text{routine}}$ measures performance on tasks well-represented
+in training data, and $\mathcal{I}_{\text{radical}}$ measures the ability to
+produce qualitatively novel outputs (new science, new art forms, new strategies).
+\end{definition}
+
+\begin{proposition}[Jobs definition captures only routine --- claim 12]
+\label{prop:jobs}
+Altman's ``vast majority of human jobs'' criterion is approximately:
+\[
+  \mathcal{I}_{\text{routine}}(s) \geq \theta_{\text{jobs}}
+\]
+This is satisfiable by large-scale pattern matching against internet data
+without requiring $\mathcal{I}_{\text{radical}}(s) > 0$. It is therefore
+a necessary but not sufficient condition for AGI in the scientific sense.
+\end{proposition}
+
+\begin{corollary}[GPT-6 Astra assessment --- claims 15--17]
+GPT-6 Astra plausibly satisfies $\mathcal{I}_{\text{routine}} \geq \theta_{\text{jobs}}$
+for many job categories, but the evidence for
+$\mathcal{I}_{\text{radical}} > 0$ is absent or marginal. Declaring AGI
+on the basis of routine competence alone conflates the two components.
+\end{corollary}
+
+%% =================================================================
+\section{d-calculus perspective}
+\label{sec:d-calc}
+%% =================================================================
+
+\begin{remark}[Semantic highway from benchmark to AGI]
+In the d-calculus framework, the public inference ``high benchmark score
+$\Rightarrow$ AGI'' follows a pre-computed semantic highway that skips the
+curvature in the AGI concept space. The highway is well-worn because media
+consumers have been trained by repeated model-launch narratives. A
+curvature-aware inference engine would flag that the transport from
+``routine benchmark'' to ``genuine generalization'' crosses a region of
+high conceptual curvature where the shortcut fails.
+\end{remark}
+
+\begin{remark}[Continuum thinking as curvature revelation]
+Goertzel's insistence on AGI-as-continuum is, in Hyperseed terms, a demand
+that the full fiber structure be preserved in public discourse rather than
+collapsed to a binary. The continuum reveals curvature (the space of possible
+intelligence levels has non-trivial geometry) that the binary ``achieved /
+not achieved'' framing erases.
+\end{remark}
+
+\begin{remark}[Adaptive primitives]
+The primitive decomposition of ``AGI'' should include at minimum:
+\texttt{routine-competence}, \texttt{radical-innovation},
+\texttt{open-ended-self-transcendence}, \texttt{self-individuation}.
+Current public discourse operates with at most one primitive
+(``can do impressive things''), which is why the marketing hijack succeeds.
+\end{remark}
+
+\end{document}

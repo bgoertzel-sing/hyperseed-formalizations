@@ -1,0 +1,256 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Tensor Logic for Bridging Neural and Symbolic AI}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Tensor Logic for Bridging Neural and Symbolic AI'' (2025-12-16) within
+the Hyperseed ontology. The article describes how Pedro Domingos's tensor
+logic can serve as a mathematical lingua franca bridging symbolic and
+neural AI within the Hyperon project. We model tensor logic as the
+transition function between the neural and symbolic fibers in the
+cognitive architecture bundle, identify curvature in the
+representation-translation space, and show how tensor contractions
+implement semantic transport.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{The neural--symbolic fiber bundle}
+\label{sec:bundle}
+%% =================================================================
+
+\begin{definition}[Cognitive representation bundle --- claims 1--2]
+\label{def:rep-bundle}
+Let $\pi : E \to B$ be a fiber bundle where:
+\begin{itemize}
+\item $B$ = the space of cognitive contents (facts, rules, patterns,
+  inferences),
+\item $F_{\text{sym}}$ = the symbolic representation fiber (graphs, trees,
+  logical formulas, pattern-matching structures),
+\item $F_{\text{neur}}$ = the neural representation fiber (dense
+  matrices, tensors, continuous activations on GPUs),
+\item $E_b = F_{\text{sym}} \times F_{\text{neur}}$ for each cognitive
+  content $b$.
+\end{itemize}
+\end{definition}
+
+\begin{proposition}[Integration bottleneck --- claim 2]
+\label{prop:bottleneck}
+Current hybrid systems define ad hoc transition functions
+$\tau : F_{\text{sym}} \to F_{\text{neur}}$ that are:
+\begin{enumerate}
+\item \textbf{Lossy}: symbolic structure is discarded during embedding.
+\item \textbf{Serialized}: the translation is a sequential bottleneck
+  between parallel GPU computation and sequential symbolic pattern
+  matching.
+\item \textbf{Non-compositional}: $\tau(A \circ B) \neq \tau(A) \circ \tau(B)$
+  in general --- composing symbolic operations and then translating
+  gives different results from translating and then composing neural
+  operations.
+\end{enumerate}
+The cocycle condition fails: the transition functions don't compose
+properly, which is why hybrid systems ``leave performance on the table.''
+\end{proposition}
+
+%% =================================================================
+\section{Tensor logic as exact transition function}
+\label{sec:tensor-logic}
+%% =================================================================
+
+\begin{definition}[Tensor logic embedding --- claims 4--8]
+\label{def:tensor-embed}
+Tensor logic defines a transition function
+$\tau_{\text{TL}} : F_{\text{sym}} \to F_{\text{neur}}$ by:
+\begin{enumerate}
+\item \textbf{Facts $\to$ sparse tensors}: A logical database
+  $\mathcal{D} = \{R(a_1, \ldots, a_k)\}$ maps to a sparse Boolean
+  tensor $\mathbf{T}_R$ where $\mathbf{T}_R[a_1, \ldots, a_k] = 1$
+  iff $R(a_1, \ldots, a_k) \in \mathcal{D}$.
+\item \textbf{Rules $\to$ tensor contractions}: A logical rule
+  $H(\vec{x}) \leftarrow B_1(\vec{y}_1), \ldots, B_m(\vec{y}_m)$
+  maps to:
+  \[
+    \mathbf{T}_H[\vec{x}] = H\!\left(
+      \sum_{\vec{z}} \prod_{i=1}^m \mathbf{T}_{B_i}[\vec{y}_i]
+    \right)
+  \]
+  where $\vec{z}$ are the contracted (existentially quantified)
+  variables and $H$ is a threshold function.
+\item \textbf{Inference $\to$ einsum}: The contraction is an Einstein
+  summation, directly executable on GPU tensor cores.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Cocycle satisfaction for first-order logic --- claim 10]
+\label{thm:cocycle}
+For first-order Datalog (no function symbols, no negation), the tensor
+logic transition function satisfies the cocycle condition:
+\[
+  \tau_{\text{TL}}(R_1 \bowtie R_2) = \tau_{\text{TL}}(R_1) \cdot \tau_{\text{TL}}(R_2)
+\]
+where $\bowtie$ is the logical join and $\cdot$ is tensor contraction.
+Symbolic composition followed by translation equals translation followed
+by neural composition. The fiber bundle is locally trivial in this
+regime --- the transition is exact, not approximate.
+\end{theorem}
+
+\begin{corollary}[Seamless computational graph --- claim 8]
+Because $\tau_{\text{TL}}$ satisfies the cocycle condition, neural
+computations and logical inference can coexist in the same computational
+graph without translation bottlenecks. Gradients can flow from neural
+loss functions through logical inference steps and back.
+\end{corollary}
+
+%% =================================================================
+\section{Curvature in representation space}
+\label{sec:curvature}
+%% =================================================================
+
+\begin{definition}[Representation curvature --- claim 15]
+\label{def:curvature}
+Define the \emph{representation curvature} $\kappa(b)$ for a cognitive
+content $b$ as the degree to which the tensor logic transition function
+deviates from exactness:
+\[
+  \kappa(b) = \|\tau_{\text{TL}}(\text{sym}(b)) - \text{neur}(b)\|
+\]
+where $\text{sym}(b)$ and $\text{neur}(b)$ are the ideal symbolic and
+neural representations.
+\end{definition}
+
+\begin{proposition}[Flat and curved regions --- claims 4, 15]
+\label{prop:flat-curved}
+The representation space has identifiable regions of different curvature:
+\begin{enumerate}
+\item \textbf{Flat} ($\kappa \approx 0$): First-order logic, Datalog,
+  ground facts, simple joins. The tensor logic embedding is exact.
+\item \textbf{Low curvature}: Probabilistic/fuzzy extensions (PLN-style
+  truth values). Replace Boolean tensors with $[0,1]$-valued tensors;
+  the contraction semantics extends naturally.
+\item \textbf{High curvature}: Higher-order logic, meta-reasoning,
+  self-referential inference. The tensor representation requires
+  approximation or architectural extension (e.g., tensor networks,
+  attention mechanisms).
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}[Research frontier as curvature boundary]
+The research frontier of tensor logic is precisely the boundary between
+low and high curvature regions. The flat region is well-understood and
+GPU-ready. The high-curvature region is where the most interesting
+cognitive capabilities live (meta-reasoning, analogy, self-reflection)
+and where new mathematical machinery is needed.
+\end{remark}
+
+%% =================================================================
+\section{PLN as probabilistic fiber extension}
+\label{sec:pln}
+%% =================================================================
+
+\begin{definition}[PLN tensor extension --- claim 14]
+\label{def:pln-tensor}
+Extend the Boolean tensor framework to PLN by replacing
+$\{0, 1\}$-valued tensors with tensors valued in the PLN truth-value
+space $\mathcal{T} = [0,1] \times [0,1]$ (frequency $\times$ confidence):
+\[
+  \mathbf{T}_R^{\text{PLN}}[a_1, \ldots, a_k] = (f, c) \in \mathcal{T}
+\]
+Tensor contractions become probabilistic inference rules:
+\[
+  (f_H, c_H) = \text{PLN-rule}\!\left(
+    \bigoplus_{\vec{z}} \bigotimes_{i=1}^m (f_{B_i}, c_{B_i})
+  \right)
+\]
+where $\bigoplus$ and $\bigotimes$ are the PLN combination operators.
+\end{definition}
+
+\begin{proposition}[Unified inference pipeline]
+\label{prop:unified}
+The PLN tensor extension enables a unified inference pipeline where:
+\begin{enumerate}
+\item Neural pattern recognition produces $(f, c)$ estimates.
+\item Logical rules compose these estimates via tensor contractions.
+\item Uncertainty propagates naturally through the contraction.
+\item The entire pipeline runs on GPU tensor cores.
+\end{enumerate}
+This is the concrete mechanism for cognitive synergy between neural
+perception and symbolic reasoning.
+\end{proposition}
+
+%% =================================================================
+\section{Hyperon architecture mapping}
+\label{sec:hyperon}
+%% =================================================================
+
+\begin{definition}[Hyperon component mapping --- claims 12--13]
+\label{def:hyperon-map}
+The Hyperon architecture maps onto the tensor logic framework:
+\begin{itemize}
+\item \textbf{MORK} (metagraph database) $\leftrightarrow$ sparse tensor
+  storage. MORK exports logical facts as sparse tensors for GPU inference
+  and imports results back into the metagraph.
+\item \textbf{PeTTa/MM2} (MeTTa interpreters) $\leftrightarrow$ tensor
+  contraction compilers. MeTTa pattern-matching rules compile to einsum
+  specifications.
+\item \textbf{Neural modules} $\leftrightarrow$ dense tensor operations.
+  Standard deep learning components run on the same GPU.
+\item \textbf{Tensor logic} $\leftrightarrow$ transition function
+  $\tau_{\text{TL}}$ connecting all three.
+\end{itemize}
+\end{definition}
+
+%% =================================================================
+\section{d-calculus perspective}
+\label{sec:d-calc}
+%% =================================================================
+
+\begin{remark}[Tensor contractions as semantic transport]
+In the d-calculus framework, a tensor contraction implements semantic
+transport: it moves information from the symbolic domain to the neural
+domain (or vice versa) while preserving inferential structure. The
+contraction indices are the transport coordinates --- they specify
+which dimensions of meaning are preserved and which are summed over
+(projected out). This is precisely the fiber-bundle transport that
+Hyperseed requires for cross-paradigm inference.
+\end{remark}
+
+\begin{remark}[GPU democratization as base-space expansion]
+If logical reasoning can run on GPUs (claim 21), the base space of
+available computational substrates for symbolic AI expands dramatically.
+The massive hardware investment in tensor processors --- originally
+built for the neural fiber only --- becomes available to the symbolic
+fiber. This is a base-space topology change at the hardware level,
+analogous to the organizational topology change described in the
+OpenBGI article.
+\end{remark}
+
+\begin{remark}[Unification as shared fiber structure]
+The article's deepest claim (claim 19) is that the apparent gulf between
+symbolic and neural AI is an artifact of implementation history, not
+fundamental mathematics. In Hyperseed terms: the neural and symbolic
+fibers are not independent --- they share a common sub-fiber (tensor
+algebra) that has been obscured by historical accident. Tensor logic
+makes this shared structure explicit, enabling genuine integration
+rather than ad hoc bridging.
+\end{remark}
+
+\end{document}

@@ -1,0 +1,267 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Zuck's Version of ``The Future is for Everyone''}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+responding to Mark Zuckerberg's ``The Future Is for Everyone'' essay
+(2026-08-10) within the Hyperseed ontology. The article agrees with
+Zuckerberg's singleton-is-dangerous diagnosis but rejects Meta's proposed
+solution as a disguised singleton --- distributed access without distributed
+power. Each structural critique maps onto Hyperseed structures: access vs.\
+ownership as local sections without sheaf control, the correct architecture
+(corporation on network) vs.\ inverted architecture (network in corporation)
+as fiber bundle orientation, cognitive architecture as fiber dimension
+determining stability, and the insufficiency of balance of power among
+superhuman entities as sheaf coherence without human-relevant preservation.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Singleton diagnosis and the value monoculture}
+\label{sec:singleton}
+%% =================================================================
+
+\begin{proposition}[Singleton danger --- claims 1--4]
+\label{prop:singleton}
+A single superintelligence aligned to one set of values is dangerous because:
+\begin{enumerate}
+\item Humanity is not a value monoculture --- concentrating absolute power
+  around one value system historically produces catastrophic failure modes.
+\item The cure is diversity: multiple methods, value systems, a complex
+  dynamic cognitive and value ecology.
+\item This diagnosis is correct and shared by Goertzel and Zuckerberg.
+\end{enumerate}
+The disagreement is entirely about the proposed solution.
+\end{proposition}
+
+%% =================================================================
+\section{Access vs.\ ownership: local sections without sheaf control}
+\label{sec:access}
+%% =================================================================
+
+\begin{definition}[Distributed access vs.\ distributed power --- claims 5--6, 23]
+\label{def:access}
+Let $\pi : E \to B$ be the AI capability bundle over the space of users $B$.
+\begin{itemize}
+\item \textbf{Distributed access}: each user $b \in B$ receives a local
+  section $s_b : U_b \to E$ (an AI agent with capabilities), but the
+  fiber bundle itself --- the infrastructure, training pipelines,
+  governance structure --- is controlled by a single entity (Meta).
+  The users have sections but do not own the sheaf.
+\item \textbf{Distributed power}: the fiber bundle $E$ itself is
+  distributed --- infrastructure, training, and governance are controlled
+  by the community of participants. Users own the sheaf structure, not
+  just local sections of it.
+\end{itemize}
+Meta's proposal provides distributed access disguised as distributed power:
+client-server architecture with a friendlier interface. ``A balance of
+power among users of a system is very different from a balance of power
+over the system.''
+\end{definition}
+
+\begin{theorem}[Access without exit = lock-in --- claim 8]
+\label{thm:lock-in}
+When the ``decentralized network'' is built inside the corporate walled
+garden (network-in-corporation), the incentive structure inverts:
+engineering effort goes into defenses against users taking their networks
+elsewhere, because the corporation's value depends on user lock-in. This
+is the same vendor-lock-in pathology as the Orb monoculture (Proof of
+Humanity article) --- a single entity controlling the global section while
+distributing local access.
+\end{theorem}
+
+%% =================================================================
+\section{Correct vs.\ inverted fiber bundle architecture}
+\label{sec:architecture}
+%% =================================================================
+
+\begin{definition}[Corporation on network --- claims 7, 24]
+\label{def:correct}
+The correct architecture: an open-source ecosystem (the fiber bundle)
+exists first, and corporations grow as local section providers on top
+of it. The Red Hat / Linux model:
+\begin{itemize}
+\item Exit is always available because the global section isn't
+  controlled by any one local section provider,
+\item Availability of exit keeps each corporation honest (competitive
+  pressure from the commons),
+\item The corporation adds value (support, integration, curation) without
+  controlling the substrate.
+\end{itemize}
+This is the same distributed fiber bundle architecture as decentralized
+AGI development, open proof-of-humanity protocol, and decentralized
+provenance --- the recurring Hyperseed pattern for beneficial systems.
+\end{definition}
+
+\begin{definition}[Network in corporation --- claims 8, 25]
+\label{def:inverted}
+The inverted architecture: the corporation controls the global section
+and builds a ``decentralized'' experience inside its walled garden.
+This is topologically equivalent to the Orb monoculture:
+\begin{itemize}
+\item All transition functions are controlled by one entity (trivial
+  or corporate-controlled cocycle),
+\item Users cannot verify independence of their sections,
+\item ``Exit'' requires abandoning all accumulated state (lock-in).
+\end{itemize}
+The infinite-dimensional fractal of human value diversity cannot be
+channeled through the two-dimensional hole of one corporation's
+business model.
+\end{definition}
+
+%% =================================================================
+\section{Military alignment as structural consequence}
+\label{sec:military}
+%% =================================================================
+
+\begin{proposition}[Structural military alignment --- claims 10--12]
+\label{prop:military}
+Corporate AGI headquartered in one country structurally produces
+alignment of all advanced AI with that country's military and
+intelligence apparatus. This is:
+\begin{itemize}
+\item \textbf{Structural, not intentional}: the legal and political
+  environment constrains the corporation regardless of the CEO's
+  intentions,
+\item \textbf{Not for everyone}: a system militarily aligned with one
+  nation while serving citizens of 190 others as ``customers'' is not
+  the future for everyone.
+\end{itemize}
+In Hyperseed terms: the corporation's fiber bundle inherits the
+base-space constraints of its jurisdiction. The military-alignment
+property is a topological constraint on the fiber bundle, not an
+optional feature that can be toggled off.
+\end{proposition}
+
+%% =================================================================
+\section{Cognitive architecture as fiber dimension}
+\label{sec:minds}
+%% =================================================================
+
+\begin{definition}[Architecture determines outcomes --- claims 13--16, 26]
+\label{def:architecture}
+The implicit assumption that compute + data + money = superintelligence
+confuses necessary with sufficient conditions. Different cognitive
+architectures produce different fiber dimensions:
+\begin{itemize}
+\item \textbf{Low fiber dimension}: next-token prediction and reward
+  maximization --- the system has few reflective degrees of freedom,
+  making pathological cocycle formation easy (the system can be steered
+  into adversarial configurations without detecting it).
+\item \textbf{High fiber dimension}: explicit self-reflective reasoning
+  about values, ethics, goals --- the system has enough reflective
+  degrees of freedom that pathological cocycles are harder to form
+  (the system can detect and resist value drift).
+\end{itemize}
+These will be sapient beings, not appliances. They need compassion,
+growth, and choice at their core --- not as afterthoughts bolted onto
+a prediction engine.
+\end{definition}
+
+%% =================================================================
+\section{Balance of power insufficiency: the chimp argument}
+\label{sec:chimp}
+%% =================================================================
+
+\begin{theorem}[Superhuman sheaf coherence --- claims 17--18, 27]
+\label{thm:chimp}
+Checks and balances among entities vastly smarter than humans do not
+guarantee human safety. In Hyperseed terms:
+\begin{itemize}
+\item Superhuman sections can form a coherent sheaf among themselves
+  --- their transition functions satisfy the cocycle condition from
+  their own perspective,
+\item But this sheaf may not preserve human-relevant properties ---
+  the descent data between superhuman sections operates on dimensions
+  that humans cannot even perceive, let alone influence.
+\end{itemize}
+This is the chimp argument formalized: the balance of power among
+human nations is a coherent geopolitical sheaf from the human
+perspective, but it is catastrophic from the perspective of chimps,
+gorillas, and most other species. ``Maintaining control'' over sapient
+beings indefinitely is neither feasible engineering (the capability
+gap grows) nor defensible ethics (sapient beings have standing).
+\end{theorem}
+
+%% =================================================================
+\section{The actual path}
+\label{sec:path}
+%% =================================================================
+
+\begin{proposition}[Requirements for beneficial AGI --- claims 19--22]
+\label{prop:path}
+The path to a future genuinely for everyone requires:
+\begin{enumerate}
+\item Open-source code (not just open weights),
+\item Globally diverse community and globally distributed infrastructure,
+\item Decentralized deployment and governance,
+\item AI built for moral agency and self-reflection from the start.
+\end{enumerate}
+For-profit companies can sit on top of this decentralized ecosystem
+and profit --- the BGI Labs / SingularityNET model. But the core AGI
+layer must be global and truly decentralized, or the result is ``the
+same old walled garden with a much bigger brain.''
+
+In Hyperseed terms: the global section of the AI capability bundle
+must be community-owned. Corporations provide value-added local
+sections. The fiber bundle's base space is global; no single local
+section provider controls the transition functions.
+\end{proposition}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Proof of Humanity} (2026-08-26): Orb monoculture as
+  trivial cocycle. Here the same monoculture applied to AGI access ---
+  Meta's walled garden is the Orb of AI capability.
+\item \textbf{How Omega Lost Its Claw} (2026-09-11): distributed fiber
+  bundle as correct AGI development architecture. Here explicitly
+  contrasted with the corporate-walled-garden alternative.
+\item \textbf{Seven Flavors} (2026-07-01): cognitive architecture
+  determines pathology probability. Here applied to the question of
+  what kinds of minds Meta's approach would create.
+\item \textbf{Geopolitics} (2026-08-24): military alignment as
+  structural consequence. Here traced to the corporate structure
+  rather than to the geopolitical race dynamics.
+\item \textbf{AI Rights} (2026-09-02): sapient beings have standing.
+  ``Maintaining control'' over sapient beings is indefensible ---
+  the same ethical position grounds both articles.
+\item \textbf{Sanders Ban} (2026-09-05): state capture of AI. Here
+  the mechanism is corporate-military alignment rather than legislative
+  ban, but the structural outcome is similar.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Lock-in detection via transition function analysis]
+Conjecture: a system claiming to be ``decentralized'' can be tested
+by examining its transition functions. If all transition functions
+route through a single entity's infrastructure (all $g_{ij}$ factor
+through a corporate mediator), the system is topologically centralized
+regardless of its marketing. The test: can a user construct a local
+section using only open protocols and independently operated
+infrastructure? If not, the ``decentralization'' is cosmetic.
+\end{conjecture}
+
+\end{document}

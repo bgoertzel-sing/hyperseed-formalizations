@@ -1,0 +1,401 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Linguistic Universals as Shadows of Cognitive Structure, Part 3}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Linguistic Universals as Shadows of Cognitive Structure, Part 3''
+(2026-06-08) within the Hyperseed ontology. The article draws out the
+AGI-architecture implications of the cognition-to-language categorical
+framework: causal factorization as fiber decomposition, small commutators
+as approximate fiber commutativity, semantic frames as transition functions,
+graded stability as fiber depth, naturality loss as cocycle condition,
+mediator loss as anti-scalar-collapse in coupling, closure loss as
+hierarchical cocycle, and linguistic typology as distributed fiber
+inspection of cognitive architecture. The concrete training recipe
+(category-guided causal-coding Transformers) maps each categorical
+requirement onto a differentiable loss with a clean Hyperseed interpretation.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Causal factorization as fiber decomposition}
+\label{sec:factorization}
+%% =================================================================
+
+\begin{theorem}[Cognitive substrate decomposition --- claims 1--5, 31--32]
+\label{thm:factorization}
+The article identifies two structural requirements for a language-capable
+AGI's cognitive substrate:
+
+\begin{enumerate}
+\item \textbf{Causal factorization.} The system's internal state must
+  decompose into pieces capturing genuinely separate aspects of the
+  world --- different domains, modalities, conceptual neighborhoods,
+  skills. Updates targeting one piece should mostly leave others alone.
+
+\item \textbf{Small commutators.} Learning situation A then B should
+  produce nearly the same state as B then A, when they touch genuinely
+  different parts. If learning Spanish overwrites French, the
+  architecture has gotten this wrong.
+\end{enumerate}
+
+In Hyperseed terms, causal factorization is \emph{fiber decomposition}:
+the cognitive substrate decomposes into fibers over different domains,
+and updates are local to the relevant fiber:
+\[
+  S_{\text{cognitive}} \cong \bigoplus_{d \in \text{Domains}} F_d
+  \qquad \text{with} \qquad
+  \text{Update}_A \text{ local to } F_{d(A)}
+\]
+
+Small commutators are \emph{approximate commutativity of fiber updates}:
+updates to independent fibers commute:
+\[
+  U_A \circ U_B \approx U_B \circ U_A
+  \qquad \text{when } F_{d(A)} \cap F_{d(B)} = \emptyset
+\]
+
+Non-commutativity (interference between unrelated domains) is a
+\emph{fiber defect} --- a failure of the decomposition to be genuine.
+The commutator $[U_A, U_B] = U_A \circ U_B - U_B \circ U_A$ measures
+the defect; a well-factorized architecture has small commutators for
+updates to unrelated domains.
+
+The implementation is deliberately left open: cortical columns, expert
+sub-networks, mixture-of-experts, dedicated parameter regions, or
+separate symbolic processes. What matters is the relevant separability
+--- the fiber decomposition --- not the mechanism that implements it.
+
+Without causal factorization, ``every new thing learned fights every
+old thing known.'' This is catastrophic forgetting viewed as a fiber
+defect: the fibers are not genuinely separate, so updates to one
+fiber corrupt others. The factorization theorem behind broad universals
+\emph{requires} this property --- it's the structural precondition for
+cross-domain generalization.
+\end{theorem}
+
+%% =================================================================
+\section{Semantic frames as transition functions}
+\label{sec:frames}
+%% =================================================================
+
+\begin{definition}[The cognition-to-language bundle --- claims 6--8, 33]
+\label{def:frames}
+The article identifies semantic frames (event frames, force-dynamic
+frames, argument-role frames, person and number frames, possession
+frames, attention frames) as the intermediate layer bridging cognition
+and language. A single causal module typically supports a cluster of
+related conceptual schemas; a single linguistic feature externalizes
+only a piece of one schema.
+
+In Hyperseed terms, semantic frames are the \emph{transition functions}
+of the cognition-to-language bundle:
+\[
+  E_{\text{cog}} \xrightarrow{g_{\text{frame}}} E_{\text{lang}}
+\]
+
+The frame layer is what makes the bundle well-defined: without it,
+the cognition-to-language map is ``too rigid to do useful work'' ---
+in bundle terms, the transition functions would have to be the identity
+(every cognitive structure maps directly to a linguistic structure),
+which is empirically false. The frame layer provides the necessary
+degrees of freedom for the transition functions to vary across
+contexts while preserving the bundle structure.
+
+The frame layer can be ``discrete, continuous, hybrid, or
+neural-symbolic'' --- what matters is that frame transformations and
+linguistic transformations be comparable through a loss. This is the
+implementation-agnostic requirement: the transition functions must
+exist as a well-defined mathematical structure, but their realization
+is unconstrained.
+\end{definition}
+
+%% =================================================================
+\section{Sparse routing and anti-scalar-collapse in coupling}
+\label{sec:sparse}
+%% =================================================================
+
+\begin{proposition}[Explicit mediators --- claims 9--11, 23, 36]
+\label{prop:sparse}
+The article requires sparse externalization routing: connections
+between cognitive and linguistic structure should be sparse --- a
+small number of dedicated high-traffic pathways rather than dense
+coupling everywhere. The evidence: the small number of broad
+cross-module universals that survive genealogical and areal
+correction (case marking, agreement morphology, argument-structure
+resolution) are precisely the high-traffic mediators.
+
+The mediator loss formalizes this: two distant module families should
+be conditionally independent given an explicit mediator module. The
+architecture is forbidden from implementing broad dependencies as
+diffuse dense coupling between every relevant head; a small number of
+explicit mediator heads must absorb that traffic.
+
+In Hyperseed terms, this is \emph{anti-scalar-collapse applied to
+inter-module coupling}: the coupling structure must be explicit and
+inspectable, not collapsed into diffuse dense connections. Dense
+coupling is scalar collapse of inter-module structure --- it hides
+the dependency structure inside a matrix of small interactions
+rather than exposing it as a small number of identifiable pathways.
+
+The cost of dense coupling: interference, inference cost, and
+catastrophic forgetting. These are the practical consequences of
+scalar collapse in coupling --- when everything couples to everything,
+there's no way to update one part without affecting all others, and
+there's no way to inspect the dependency structure to understand why
+a change propagated.
+\end{proposition}
+
+%% =================================================================
+\section{Graded stability as fiber depth}
+\label{sec:stability}
+%% =================================================================
+
+\begin{definition}[Three layers of universality --- claims 12, 15, 25, 34]
+\label{def:stability}
+The article identifies three layers of linguistic universality,
+corresponding to three levels of cognitive stability:
+
+\begin{enumerate}
+\item \textbf{Hierarchical universals (bedrock).} Person, number,
+  case, and accessibility hierarchies. These name cognitive bedrock
+  --- the most stable, most protected, most deeply encoded structures.
+  Slow learning rates, strong consolidation.
+
+\item \textbf{Narrow word-order regularities (consolidated preferences).}
+  These name a layer of externalization preference that is stable but
+  not as deeply protected as the hierarchies. Moderate stability.
+
+\item \textbf{Long tail of context-bound universals (outer shell).}
+  Where most actual cognitive variation lives. High plasticity,
+  fast adaptation, context-sensitivity.
+\end{enumerate}
+
+In Hyperseed terms, this is \emph{fiber depth}: core universals live
+in deep (protected) fiber layers; context-local patterns live in
+shallow (plastic) layers. The stability schedule --- slow learning
+rates for deep layers, fast learning rates for shallow layers ---
+mechanically distinguishes the rigid inner kernel from the flexible
+outer shells by what kind of universal structure they represent.
+
+This is the same graded-fiber-depth structure as the four-layer
+architecture in the AGI Catastrophe Part 2 article, applied to
+cognitive architecture rather than security architecture: the
+deepest layers are most protected, and the system accesses deeper
+layers only when the task requires it.
+\end{definition}
+
+%% =================================================================
+\section{Training losses as categorical conditions}
+\label{sec:losses}
+%% =================================================================
+
+\begin{theorem}[Category-guided training recipe --- claims 17--27, 35, 37]
+\label{thm:losses}
+The article's engineering contribution: a concrete training recipe
+for Transformer neural networks in which each loss has a clean
+categorical (and therefore Hyperseed) interpretation.
+
+\begin{enumerate}
+\item \textbf{Naturality loss $\to$ cocycle condition.} Updating the
+  hidden state then reading out linguistic structure should give the
+  same result as reading out then applying the corresponding
+  linguistic update:
+  \[
+    \text{Readout} \circ \text{Update}_{\text{cog}} \approx
+    \text{Update}_{\text{lang}} \circ \text{Readout}
+  \]
+  This is the cocycle condition on the cognition-to-language bundle:
+  the transition functions must compose consistently. If the diagram
+  doesn't commute, the cognition-to-language map is not a well-defined
+  bundle morphism --- the linguistic readout is not faithfully tracking
+  the cognitive state.
+
+\item \textbf{Closure loss $\to$ hierarchical cocycle.} Detecting a
+  marked feature (dual number, third-person object agreement) implies
+  detecting every feature below it on the hierarchy. This is a
+  hierarchical cocycle condition: the fiber structure at each level
+  must be consistent with all levels below:
+  \[
+    \text{Detect}(f_{\text{marked}}) \implies
+    \bigwedge_{f' \leq f_{\text{marked}}} \text{Detect}(f')
+  \]
+
+\item \textbf{Mediator loss $\to$ anti-scalar-collapse.} Two distant
+  module families should be conditionally independent given an
+  explicit mediator. The dependency structure must be explicit and
+  inspectable.
+
+\item \textbf{Low-frustration loss $\to$ sparse signed graph.}
+  Linearization choices organize into a sparse signed graph with
+  mostly compatible local pulls. This reflects the constraint that
+  externalization preferences should be locally consistent even if
+  globally they can't all be simultaneously satisfied.
+
+\item \textbf{Stability schedule $\to$ fiber depth.} Slow learning
+  for deep (high-stability) layers, fast learning for shallow
+  (context-local) layers. The depth assignment is not hand-coded
+  but learned from which structures the other losses identify as
+  stable.
+\end{enumerate}
+
+The key design principle: ``linguistic universals are not curiosities
+but training targets --- a route by which thousands of years of
+cross-cultural averaging done by human language itself can be fed
+back into machine learning systems as architectural and training-time
+signals about what the latent causal structure of cognition should
+look like.''
+\end{theorem}
+
+%% =================================================================
+\section{Linguistic typology as distributed fiber inspection}
+\label{sec:typology}
+%% =================================================================
+
+\begin{proposition}[Cross-cultural averaging --- claims 13--14, 16, 38]
+\label{prop:typology}
+The article makes a strong methodological claim: linguistic typology,
+once corrected for genealogy and area, gives cleaner evidence about
+what's stable in the human cognitive machinery than most direct
+cognitive experiments can.
+
+In Hyperseed terms, this is \emph{distributed fiber inspection}:
+many independent languages, developed over thousands of years by
+millions of speakers across diverse cultures, are all inspecting
+the same underlying cognitive fiber through their surface
+externalizations. The typological record is the result of this
+distributed inspection --- features that appear across unrelated
+languages in unrelated areas are features of the shared fiber,
+not accidents of particular sections.
+
+The power of this approach: the cross-cultural averaging that
+``would normally take heroic effort for any individual (human or AI)
+mind to do has already been done by language itself.'' Each language
+is a section of the cognition-to-language bundle; the typological
+universals are the fiber properties that persist across all sections.
+
+This connects to the broader Hyperseed theme of provenance through
+diversity: the more independent the inspectors (languages) and the
+stronger the correction for shared ancestry (phylogenetic control),
+the higher the confidence that a detected universal is a genuine
+fiber property rather than a section artifact.
+\end{proposition}
+
+%% =================================================================
+\section{Convergence of independent lines}
+\label{sec:convergence}
+%% =================================================================
+
+\begin{theorem}[Structural identity --- claims 28--30]
+\label{thm:convergence}
+The article's strongest claim: two independent lines of work ---
+linguistic typology (empirical) and brain-like continual learning
+(theoretical) --- converge on the same mathematical structure:
+
+\begin{itemize}
+\item Closure systems with diachronic Lyapunov flow.
+\item Factorization theorems with mediator exceptions.
+\item Sparse signed interaction graphs.
+\item Graded stability under transition dynamics.
+\item Gluing of context-indexed local closure operators.
+\end{itemize}
+
+This convergence is evidence that both lines are tracking the same
+underlying phenomenon: the mathematical structure of cognition itself,
+as it manifests both in the typological record (downstream linguistic
+consequences) and in the design requirements for artificial cognitive
+systems (upstream architectural constraints).
+
+The Occam-like principle that picks out the right cognitive explanation
+of a linguistic pattern is formalized as an algebraic order on
+explanations combining five criteria: indistinction, fit, cost,
+confusion, and double-counting. The result that causal explanations
+beat correlation-only explanations ``falls out as a theorem in that
+order'' --- it's not a preference but a consequence of the algebraic
+structure.
+
+In Hyperseed terms, this convergence is evidence for the Hyperseed
+ontology itself: if two independent investigations of cognitive
+architecture arrive at the same fiber-bundle structure (decomposition,
+commutativity, transition functions, depth, cocycle conditions), that
+structure is a genuine property of cognition, not an artifact of
+either investigation's methodology.
+\end{theorem}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Linguistic Universals Parts 1--2}: companion articles
+  developing the categorical framework and its empirical grounding.
+\item \textbf{Avoiding AGI Catastrophe Part 2} (2026-06-10): graded
+  fiber depth. The four-layer security architecture has the same
+  graded-depth structure as the three-layer stability architecture
+  here.
+\item \textbf{Seeding RSI} (2026-07-28): Hyperon architecture. The
+  causal-coding Transformer recipe is a complement to the Hyperon
+  neural-symbolic architecture --- both aim at language-capable AGI
+  with inspectable internal structure.
+\item \textbf{The Orchard Bug} (2026-06-05): cocycle defects. The
+  naturality loss is designed to prevent the cognitive analog of
+  the Orchard bug --- composition failures where individual modules
+  work but their interaction doesn't.
+\item \textbf{Un-Jailbreakable AI} (2026-07-10): generate-and-verify.
+  The closure loss and mediator loss implement a form of
+  generate-and-verify: the model generates internal representations
+  and the losses verify that they satisfy the categorical constraints.
+\item \textbf{What Should an AGI Curriculum Look Like?} (2026-07-22):
+  learning architecture. The graded stability schedule connects to
+  the curriculum design question --- what should be learned first
+  (deep, stable structures) vs.\ last (shallow, context-local ones).
+\item \textbf{$(f,c)$-lossy} (LTM 5a4d150b): anti-scalar-collapse.
+  The mediator loss is anti-scalar-collapse applied to inter-module
+  coupling --- the same principle applied to a different substrate.
+\item \textbf{Non-invertible 2-cells} (LTM 85c02e32): composition
+  structure. The naturality loss ensures that cognitive-to-linguistic
+  composition is well-defined --- preventing the non-invertible
+  witness from infecting the mapping.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Universality of the fiber-depth pattern]
+Conjecture: the three-layer stability pattern (bedrock / consolidated
+preferences / context-local residue) is not specific to language but
+appears in every cognitive domain with sufficient developmental depth.
+Visual perception (basic features / object categories / scene
+interpretation), motor control (reflexes / skills / strategies),
+and social cognition (basic emotion recognition / social norms /
+cultural conventions) should all exhibit the same graded-stability
+structure with the same mathematical properties (closure at the
+deepest level, factorization at the middle level, sparse signed
+interaction at the surface level).
+
+If this conjecture holds, the linguistic universals training recipe
+generalizes: any domain's ``universals'' (stable cross-context
+features) can serve as training targets for the corresponding
+cognitive module, using the same categorical loss functions with
+domain-appropriate probes.
+\end{conjecture}
+
+\end{document}
