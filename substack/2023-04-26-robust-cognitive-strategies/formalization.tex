@@ -1,0 +1,115 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Robust Cognitive Strategies for Resource Abundance}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Robust Cognitive Strategies for Resource
+Abundance'' (2023-04-26) within the Hyperseed ontology. Key mappings:
+resource scarcity as thin fiber constraint, abundance as thick fiber
+enablement, heuristics as fiber shortcuts, the inability to foresee
+abundance strategies as a fiber horizon, and attention as fiber allocation.
+\end{abstract}
+
+\tableofcontents
+
+\section{Fiber thickness: scarcity vs abundance}
+
+\begin{theorem}[Resource regime determines fiber thickness --- claims 1--10, 19--20]
+Resource scarcity forces thin fiber --- limited perspectives, limited
+inference paths, because each path costs compute:
+\[
+  \text{Resources} \downarrow \implies \text{thickness}(F) \downarrow
+  \implies |\text{perspectives}| \downarrow
+\]
+Resource abundance enables thick fiber --- many perspectives, exhaustive
+inference, ensemble reasoning:
+\[
+  \text{Resources} \uparrow \implies \text{thickness}(F) \uparrow
+  \implies \text{qualitatively different strategies}
+\]
+The transition from thin to thick fiber is qualitative, not quantitative.
+Thick fiber enables cognitive strategies (brute-force search, massive
+parallelism, exhaustive verification, redundancy) that are structurally
+impossible under thin fiber, not just expensive.
+\end{theorem}
+
+\section{Fiber shortcuts: heuristics under scarcity}
+
+\begin{proposition}[Heuristics as compressed fiber --- claims 2, 11, 21]
+Heuristics are fiber shortcuts --- compressed inference paths that trade
+accuracy for speed:
+\[
+  h: F_{\text{full}} \to F_{\text{compressed}} \quad \text{with} \quad
+  \text{cost}(F_{\text{compressed}}) \ll \text{cost}(F_{\text{full}})
+\]
+These shortcuts become ingrained under scarcity and feel like ``the right
+way to think.'' Under abundance, full inference becomes feasible and
+shortcuts become suboptimal --- but systems shaped by scarcity continue
+to use them from habit.
+\end{proposition}
+
+\section{Fiber horizon: can't foresee thick from thin}
+
+\begin{theorem}[Fiber horizon --- claims 3, 11--14, 22]
+The inability to foresee abundance strategies from within scarcity is a
+\emph{fiber horizon}: thin fiber literally can't represent what thick
+fiber would do:
+\[
+  F_{\text{thin}} \not\models \text{description}(F_{\text{thick}})
+\]
+Thick-fiber solutions are invisible from within thin fiber --- they
+``feel wasteful'' because thin fiber has no way to evaluate their
+benefits. This is not ignorance but a structural limitation: the
+representational capacity of thin fiber is insufficient to model
+thick-fiber reasoning.
+\end{theorem}
+
+\section{Fiber allocation: attention under scarcity}
+
+\begin{proposition}[Attention as fiber allocation --- claims 18, 23--24]
+Attention (selecting what to think about) is fiber allocation under
+scarcity --- choosing which fibers to maintain given limited resources:
+\[
+  \text{Attention}(b) = \arg\max_S \text{value}(S) \quad
+  \text{subject to} \quad |S| \leq \text{budget}
+\]
+Under abundance, attention becomes less constrained. Ensemble methods
+(maintaining multiple fiber sections simultaneously) become feasible ---
+this is multi-section fiber, comparing outputs from multiple perspectives
+rather than committing to one.
+\end{proposition}
+
+\section{Cross-references}
+
+\begin{remark}[Connections]
+\begin{itemize}
+\item \textbf{A BGI Manifesto} (2023-11-25): intelligence explosion
+  as transition to compute abundance, enabling qualitatively different
+  cognitive strategies.
+\item \textbf{Seeding RSI} (2026-07-28): self-improvement under abundance
+  --- exploring many improvement paths simultaneously.
+\item \textbf{GPT o1 Does Not Know What It's Doing} (2024-10-03):
+  current LLMs as scarcity-shaped cognition --- pattern matching as
+  a fiber shortcut.
+\item \textbf{Introducing Hyperseed-1} (2024-11-27): ontology as
+  inference accelerator --- a scarcity-regime strategy for speeding
+  up reasoning with limited resources.
+\end{itemize}
+\end{remark}
+
+\end{document}

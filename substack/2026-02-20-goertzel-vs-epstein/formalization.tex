@@ -1,0 +1,132 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Goertzel vs Epstein}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Goertzel vs Epstein'' (2026-02-20) within the Hyperseed ontology. The
+article is a personal clarification of a funding relationship. Key mappings:
+provenance documentation as fiber-base evidence trail, due diligence failure
+as base verification failure, transparency as provenance exposure, and
+funding as base resource with non-transmissive moral properties.
+\end{abstract}
+
+\tableofcontents
+
+\section{Provenance as fiber-base evidence trail}
+\label{sec:provenance}
+
+\begin{theorem}[Provenance documentation --- claims 1--10, 21]
+\label{thm:provenance}
+The article is itself an exercise in provenance documentation: tracing the
+evidence trail of a funding relationship between an AGI researcher and a
+controversial funder.
+
+In Hyperseed terms, the fiber (AGI research output --- OpenCog, Hyperon,
+papers, projects) has a provenance history that includes the base (funding
+sources). The funding base is a necessary resource for the fiber:
+\[
+  F_{\text{research}} \xrightarrow{\text{requires}} B_{\text{funding}}
+\]
+
+The specific funding relationship documented: approximately \$360K over
+seventeen years of intermittent contact, from one of hundreds of funding
+sources. The relationship was purely professional (funder-fundee), with
+no social, personal, or criminal dimensions.
+
+The key provenance fact: the fiber (research) was built on a base (funding)
+that included a morally compromised source. The article documents this
+provenance fully and transparently.
+\end{theorem}
+
+\section{Base verification failure}
+\label{sec:verification}
+
+\begin{proposition}[Due diligence --- claims 11--13, 23]
+\label{prop:diligence}
+Failing to verify the base (funding source) before building fiber (research)
+on it is an epistemic integrity failure --- analogous to building inference
+on unverified premises.
+
+The hallucination bound from evidence conservation applies by analogy:
+conclusions built on unverified premises inherit the uncertainty of those
+premises. In the funding case:
+\[
+  \text{integrity}(\text{fiber}) \leq \text{verification}(\text{base})
+\]
+
+If the base is unverified ($\text{verification} < 1$), the fiber built
+on it carries an integrity deficit --- not because the research itself
+is flawed, but because the provenance chain includes an unverified link.
+
+The due diligence failure was not unique: many scientists had similar
+interactions with the same funder, who specifically targeted cutting-edge
+science funding as a strategy. The systematic nature of the base
+corruption (a funder deliberately targeting multiple researchers) means
+many fiber bundles share the same compromised base link.
+\end{proposition}
+
+\section{Transparency as provenance exposure}
+\label{sec:transparency}
+
+\begin{theorem}[Provenance integrity --- claims 14--17, 22, 24--25]
+\label{thm:integrity}
+The fiber's provenance can't be retroactively cleaned or deleted --- it
+must be honestly documented. Attempting to hide provenance is fiber
+provenance deletion, which corrupts the integrity of the bundle.
+
+Choosing transparency is choosing to expose the full provenance fiber:
+\[
+  \text{Transparency} = \text{expose}(\text{provenance}(F, B))
+  \qquad \text{vs} \qquad
+  \text{Concealment} = \text{delete}(\text{provenance}(F, B))
+\]
+
+This is the epistemic integrity equivalent of the anti-hallucination
+theorems: honest inference requires visible provenance. An inference
+engine that hides its evidence sources is less trustworthy than one
+that exposes them, regardless of whether the evidence itself is good.
+
+The moral quality of the base doesn't automatically corrupt the fiber.
+Research funded by a morally compromised source is not itself morally
+compromised --- the fiber has its own integrity independent of the
+base's moral status. But the provenance connection remains and must
+be acknowledged. This is a key distinction:
+\[
+  \text{moral}(\text{fiber}) \neq f(\text{moral}(\text{base}))
+  \qquad \text{but} \qquad
+  \text{provenance}(\text{fiber}, \text{base}) = \text{permanent}
+\]
+\end{theorem}
+
+\section{Cross-references}
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Evidence Is to Logic What Energy Is to Physics} (2026-03-10):
+  The hallucination bound and evidence conservation principles apply
+  by analogy to funding provenance.
+\item \textbf{LeCun's SAI Is a Special Case of AGI} (2026-03-07):
+  Credit erasure as fiber provenance deletion --- the same principle
+  applies to both funding provenance and intellectual provenance.
+\item \textbf{Where Energy and AI Wars Collide} (2026-03-03):
+  Funding as base resource, analogous to energy as base resource.
+\end{itemize}
+\end{remark}
+
+\end{document}

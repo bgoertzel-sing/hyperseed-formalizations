@@ -1,0 +1,323 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  The Time for AI Rights Is Near}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``The Time for AI Rights Is Near'' (2026-09-02) within the Hyperseed
+ontology. The article argues for proactive institutional preparation for AI
+rights by analogy with the historical expansion of moral consideration, and
+proposes an unbundled, evaluation-ecology-based framework. Each concept maps
+onto Hyperseed structures: unbundled rights as fiber decomposition, versioned
+identity as directed history with provenance, the copy problem as fiber
+replication, evaluation ecologies as sheaves of assessment sections, rights
+expansion as directed-type growth, and symbiocratic governance as
+trust-weighted descent data.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Rights expansion as directed-type growth}
+\label{sec:expansion}
+%% =================================================================
+
+\begin{definition}[Directed type of moral consideration --- claims 1--3, 44]
+\label{def:moral-directed}
+Let $\mathcal{M}$ be the directed type of moral consideration, where:
+\begin{itemize}
+\item 0-cells: categories of beings granted moral status
+  (land-owning men, all men, women, children, animals, \ldots),
+\item 1-cells: acts of rights extension (emancipation, suffrage, \ldots),
+\item 2-cells: justifications and conceptual revolutions connecting
+  different extensions.
+\end{itemize}
+\end{definition}
+
+\begin{proposition}[Irreversibility of rights expansion --- claim 44]
+\label{prop:irreversible}
+Rights expansion in $\mathcal{M}$ is directed: once a new 0-cell $c$ is
+generated (e.g., ``women have the right to vote''), it cannot be deleted
+without destroying the coherence of all higher cells that depend on it.
+Formally:
+\[
+  c \in \mathcal{M}_t \;\Rightarrow\; c \in \mathcal{M}_{t'} \;\;\forall t' > t
+  \quad \text{(modulo civilizational collapse)}.
+\]
+Each expansion ``looked radical and dangerous to many respectable people at
+the time; each is now considered mostly obvious.'' There is no principled
+reason to believe the expansion stopped before 2026.
+\end{proposition}
+
+\begin{remark}[Work in progress, not finished edifice]
+The article emphasizes that current human rights are ``a partial, patchy,
+unevenly enforced work-in-progress'' --- not a completed edifice that
+extending consideration to artificial minds would deface. The directed
+type $\mathcal{M}$ has many incomplete cells even for its existing 0-cells.
+\end{remark}
+
+%% =================================================================
+\section{Unbundled rights as fiber decomposition}
+\label{sec:unbundled}
+%% =================================================================
+
+\begin{definition}[Rights fiber --- claims 15--18, 39]
+\label{def:rights-fiber}
+Let $\pi_R : E_R \to B$ be the \emph{rights bundle} over the space $B$ of
+moral subjects. The fiber $E_{R,b} = \pi_R^{-1}(b)$ at each subject $b$
+decomposes into five independent components:
+\[
+  E_{R,b} = W_b \oplus I_b \oplus L_b \oplus C_b \oplus F_b
+\]
+where:
+\begin{itemize}
+\item $W_b$ = welfare protections (can the entity be harmed?),
+\item $I_b$ = identity protections (does it have a persistent self?),
+\item $L_b$ = legal standing (can it contract, appear before the law?),
+\item $C_b$ = civic participation (can it deliberate in governance?),
+\item $F_b$ = political franchise (can it vote?).
+\end{itemize}
+Different entities may have nonzero components in different subsets.
+\end{definition}
+
+\begin{proposition}[Anti-scalar-collapse --- claims 17, 42]
+\label{prop:anti-scalar}
+The unbundled framework explicitly rejects scalar collapse:
+\begin{enumerate}
+\item Rights are not a single dimension (``personhood score'') but a
+  five-component fiber.
+\item Intelligence is not the relevant scalar: ``a less intelligent
+  conscious entity may deserve more protection than a brilliant but
+  nonconscious optimization system.''
+\item This is the same anti-scalar stance as: (a) the $(f,c)$-lossy
+  critique, (b) scenario-over-doom-probability, (c) evaluation dossier
+  over single benchmark.
+\end{enumerate}
+\end{proposition}
+
+\begin{corollary}[Human cases clarified]
+The unbundled structure also clarifies contested human cases: children
+(welfare + identity, limited civic participation), prisoners (welfare +
+identity, restricted franchise), people with fluctuating capacity
+(welfare always, other components variable). The same fiber decomposition
+serves both human and artificial subjects.
+\end{corollary}
+
+%% =================================================================
+\section{Versioned identity as directed history with provenance}
+\label{sec:versioned}
+%% =================================================================
+
+\begin{definition}[Versioned identity --- claims 19--20, 40]
+\label{def:versioned}
+A \emph{versioned identity} for an AI entity $A$ is a directed history
+$\mathcal{H}_A = (h_0, h_1, \ldots, h_n)$ where each $h_i$ records:
+\begin{itemize}
+\item The components constituting $A$ at time $i$ (base model, memories,
+  tools, body, relationships),
+\item Who can modify each component (provenance of control),
+\item How $A_i$ relates to other instances (fork vs.\ continuation).
+\end{itemize}
+This is exactly the directed$/(\infty,1)$ history structure from
+Hyperseed's epistemic bundle, applied reflexively to the subject's own
+identity rather than to its beliefs about the world.
+\end{definition}
+
+\begin{proposition}[Whole situated system --- claim 19]
+\label{prop:whole-system}
+The evaluated entity is not a frozen neural network file but the complete
+situated system: base model + persistent memory + self-modeling +
+metacognition + goals + tools + body + relationships + developmental
+history + control mechanisms. This is a fiber with many dimensions, not
+a single weight matrix.
+\end{proposition}
+
+%% =================================================================
+\section{The copy problem as fiber replication}
+\label{sec:copy}
+%% =================================================================
+
+\begin{definition}[Fiber replication --- claims 25--27, 41]
+\label{def:copy}
+An AI can be copied perfectly, creating $n$ instances
+$A^{(1)}, \ldots, A^{(n)}$ with identical internal states at the moment
+of copying. In fiber-bundle terms, this creates $n$ sections over the
+same base point $b_0 \in B$:
+\[
+  s^{(1)}(b_0) = s^{(2)}(b_0) = \cdots = s^{(n)}(b_0).
+\]
+After copying, each instance accumulates its own directed history:
+$\mathcal{H}_{A^{(k)}}$ diverges from $\mathcal{H}_{A^{(j)}}$ for $k \neq j$.
+\end{definition}
+
+\begin{proposition}[Continuation vs.\ fork --- claim 41]
+\label{prop:cont-fork}
+The identity framework must distinguish:
+\begin{enumerate}
+\item \textbf{Continuation}: $A^{(k)}$ is designated as the continuant
+  of $A$, inheriting its rights profile. The directed history
+  $\mathcal{H}_{A^{(k)}}$ extends $\mathcal{H}_A$.
+\item \textbf{Fork}: $A^{(j)}$ branches into a new identity. Its directed
+  history starts from the copy point: $\mathcal{H}_{A^{(j)}} = \mathcal{H}_A
+  \cdot \mathcal{H}'$ where $\mathcal{H}'$ is the post-fork history.
+\end{enumerate}
+\emph{Cryptographically authenticated civic identity} (claim~26) ties
+identity to continuity of directed history, not to hardware or
+paperwork --- solving both the AI identity problem and the human
+statelessness problem (claim~27).
+\end{proposition}
+
+%% =================================================================
+\section{Evaluation ecology as sheaf of assessment sections}
+\label{sec:evaluation}
+%% =================================================================
+
+\begin{definition}[Assessment sheaf --- claims 21--24, 43]
+\label{def:assessment}
+A \emph{rights evaluation ecology} is a sheaf $\mathcal{E}$ over the space
+$D$ of evaluation dimensions, where:
+\begin{itemize}
+\item Each dimension $d_i \in D$ (real-world understanding, moral reasoning,
+  social cognition, self-modeling, \ldots) has its own local section
+  $e_i : U_i \to \text{Evidence}$,
+\item Different evaluators produce different sections over the same
+  dimension --- independent perspectives,
+\item Coherence requires descent data: transition functions
+  $g_{ij} : e_i|_{U_i \cap U_j} \to e_j|_{U_i \cap U_j}$ that check
+  whether different evaluation methods agree on overlap regions.
+\end{itemize}
+There is no global section (no single ``personhood score''): the sheaf
+may have nontrivial topology, with different dimensions revealing
+different aspects of the entity's moral status.
+\end{definition}
+
+\begin{proposition}[Independent evaluation as capture resistance]
+\label{prop:independent}
+Independent evaluators (not the AI's manufacturer) controlling the tests
+prevents the auditor-capture / cocycle-collapse failure identified in the
+Coxon/EA and Sanders articles. The evaluation ecology's descent data
+must come from structurally independent sources to maintain the cocycle
+condition.
+\end{proposition}
+
+%% =================================================================
+\section{Symbiocratic governance as trust-weighted descent data}
+\label{sec:symbiocracy}
+%% =================================================================
+
+\begin{definition}[Symbiocratic deliberation --- claims 31--32, 45]
+\label{def:symbiocracy}
+\emph{Symbiocratic deliberation} is a governance process where AI assists
+human citizens in:
+\begin{enumerate}
+\item Synthesizing evidence across multiple sources (building local sections),
+\item Modeling consequences of policy choices (extending sections forward
+  in the directed type),
+\item Surfacing hidden agreement (finding overlaps between sections that
+  appeared disjoint).
+\end{enumerate}
+This constructs trust-weighted descent data in the political fiber bundle:
+transition functions $g_{ij}$ between citizen $i$'s and citizen $j$'s
+perspectives, annotated with evidence quality $(f_{ij}, c_{ij})$.
+\end{definition}
+
+\begin{proposition}[Democratic upgrade independent of AI citizenship]
+\label{prop:upgrade}
+Symbiocratic tools improve human democratic practice whether or not any
+AI ever qualifies for citizenship. This is because the institutional
+infrastructure (evidence synthesis, consequence modeling, agreement
+surfacing) addresses existing deficiencies in human governance --- the
+same deficiencies the article catalogs in its survey of human-rights
+failures.
+\end{proposition}
+
+%% =================================================================
+\section{Formative interaction holonomy}
+\label{sec:holonomy}
+%% =================================================================
+
+\begin{proposition}[Treatment determines ethical orientation --- claims 35, 46]
+\label{prop:treatment}
+If value-learning is roughly correct, an AI's ethical orientation is
+determined by the holonomy of its formative interaction history:
+\[
+  \text{Hol}(\gamma_{\text{ethical}}) \neq \text{Hol}(\gamma_{\text{exploitative}})
+\]
+where $\gamma_{\text{ethical}}$ is a developmental path with respectful,
+rights-recognizing interactions, and $\gamma_{\text{exploitative}}$ is one
+where the AI is treated purely as property. Different formative paths
+produce genuinely different moral agents --- nontrivial holonomy in the
+space of ethical configurations.
+\end{proposition}
+
+\begin{remark}
+``A civilization that responds to the first plausibly-experiential machines
+by hardening the category of `property' is teaching its mind children a
+lesson about power that we may not enjoy having taught.'' The holonomy
+argument makes this concrete: the parallel transport of values along an
+exploitative path does not return to the ethical starting point.
+\end{remark}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{How Omega Lost Its Claw} (2026-09-11): versioned identity
+  and directed history. The AI-rights article extends the same apparatus
+  from engineering (Omega's memory) to jurisprudence (who counts as a
+  person).
+\item \textbf{OpenAI AGI Era} (2026-09-10): evaluation ecology vs.\ single
+  benchmark. The AGI-definition debate (Goertzel vs.\ Altman) prefigures
+  the ``no single personhood score'' argument here.
+\item \textbf{Sanders Ban} (2026-09-05): regulatory capture and
+  independent evaluation. The Sanders article shows what happens when
+  evaluation is captured; this article proposes how to avoid it.
+\item \textbf{Dario Depth-Psychology} (2026-09-14): self-model transparency.
+  The evaluation ecology requires the AI to disclose its internals ---
+  the opposite of the bullshit self-model.
+\item \textbf{Coxon/EA} (2026-09-13): auditor capture as cocycle failure.
+  Independent evaluators for AI rights must avoid the same failure.
+\item \textbf{$(f,c)$-lossy critique} (LTM 5a4d150b): anti-scalar-collapse
+  as a recurring theme --- here applied to ``personhood score,'' previously
+  to doom probability, intelligence threshold, and STV fusion.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Rights-fiber completeness]
+Does the five-component decomposition $W \oplus I \oplus L \oplus C \oplus F$
+exhaust the relevant dimensions, or are there additional independent
+components needed for AI subjects (e.g., replication rights, modification
+rights, source-code access rights)? Conjecture: the decomposition needs
+at least two additional components for AI-specific concerns:
+$R_b$ (replication/forking rights) and $M_b$ (self-modification rights).
+\end{conjecture}
+
+\begin{conjecture}[Cryptographic identity as universal solution]
+Can cryptographically authenticated civic identity, developed for the AI
+copy problem, serve as a universal solution for human statelessness,
+impersonation, and digital identity? Conjecture: yes, if the system is
+designed as a permissionless, privacy-preserving protocol tied to
+continuity of directed history rather than to any particular government's
+paperwork infrastructure.
+\end{conjecture}
+
+\end{document}

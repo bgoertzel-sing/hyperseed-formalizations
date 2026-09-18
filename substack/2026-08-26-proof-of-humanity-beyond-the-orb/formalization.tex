@@ -1,0 +1,335 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Proof of Humanity: Beyond the Orb}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Proof of Humanity: Beyond the Orb'' (2026-08-26) within the Hyperseed
+ontology. The article proposes an open, multi-vendor, role-based
+proof-of-humanity protocol as an alternative to Worldcoin's single-device
+approach. Each architectural principle maps onto Hyperseed structures:
+composite proof as sheaf of evidence sections, role-specific certification
+as fiber decomposition of trust, the protocol-not-product design as
+distributed fiber bundle, media provenance parallels as $E_\pi$ applied to
+identity, three reputation forms as three-tier holonomy, and anti-monoculture
+as anti-trivial-cocycle.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Monoculture as trivial cocycle}
+\label{sec:monoculture}
+%% =================================================================
+
+\begin{definition}[Single-vendor monoculture --- claims 1--4, 41]
+\label{def:monoculture}
+Let $\mathcal{D}$ be the space of proof-of-humanity devices. The Worldcoin/World
+approach restricts $\mathcal{D}$ to a single device $d_{\text{Orb}}$:
+\[
+  \mathcal{D}_{\text{World}} = \{d_{\text{Orb}}\}.
+\]
+All transition functions between evidence sources become trivial:
+$g_{ij} = \text{id}$ for all $i, j$, because there is only one source to
+compare with itself. This is a \emph{trivial cocycle} --- the system cannot
+detect its own failure because there is no independent perspective from
+which to triangulate.
+\end{definition}
+
+\begin{proposition}[Correlated failure --- claim 4]
+\label{prop:correlated}
+In a trivial-cocycle system, failure is maximally correlated: if
+$d_{\text{Orb}}$'s biometric is broken (by AI synthesis, hardware flaw,
+or supply-chain attack), the entire network falls simultaneously. There
+is no redundancy at the evidence-source level, only at the instance level
+(many Orbs, all with the same vulnerability).
+\end{proposition}
+
+\begin{corollary}[Vendor lock-in as oligarch capture]
+The single-vendor architecture creates the same structural capture that
+the decentralized community exists to resist --- the identity layer of
+the entire ecosystem depends on one corporation's hardware decisions,
+security practices, and business continuity.
+\end{corollary}
+
+%% =================================================================
+\section{Composite proof as sheaf of evidence sections}
+\label{sec:composite}
+%% =================================================================
+
+\begin{definition}[Evidence sheaf --- claims 5--7, 36]
+\label{def:evidence-sheaf}
+A \emph{proof of humanity} is a global section of an evidence sheaf
+$\mathcal{E}$ over the space of evidence roles $R$:
+\begin{itemize}
+\item Each role $r_k \in R$ (iris acquisition, presentation-attack detection,
+  biological presence, secure display, anti-relay, action authorization)
+  defines an open set $U_k \subset R$,
+\item Each certified device $d_i$ for role $r_k$ produces a local section
+  $e_{i,k} : U_k \to \text{Evidence}$,
+\item The global proof is assembled via descent data: transition functions
+  $g_{ij}$ that verify consistency between different devices' evidence
+  for overlapping roles.
+\end{itemize}
+``Human'' is not a single sensor output --- it is a policy-selected
+composition of narrowly scoped claims.
+\end{definition}
+
+\begin{proposition}[Same as media provenance --- claim 6]
+\label{prop:media}
+Validating that a human was present in a certain place doing a certain
+thing is the same sheaf-assembly problem as media provenance: composite
+proof from camera hardware, GPS, secure elements, surrounding context,
+adjudicated by different parties. Proof of humanity is $E_\pi$ restricted
+to the identity fiber (claim 39).
+\end{proposition}
+
+\begin{theorem}[Nontrivial cocycle advantage]
+\label{thm:nontrivial}
+A multi-device, multi-vendor evidence sheaf with nontrivial transition
+functions $g_{ij} \neq \text{id}$ has strictly greater failure detection
+capability than a trivial-cocycle monoculture:
+\begin{enumerate}
+\item \textbf{Cross-validation}: inconsistency between devices $d_i$ and
+  $d_j$ detecting the same property from different physical principles
+  reveals compromise of either device.
+\item \textbf{Graceful degradation}: revocation of one device replaces
+  one local section while preserving the global section (claim 43).
+\item \textbf{Evolutionary adaptability}: a new sensor technology enters
+  as a new role profile without invalidating existing sections (claim 11).
+\end{enumerate}
+\end{theorem}
+
+%% =================================================================
+\section{Role-specific certification as fiber decomposition of trust}
+\label{sec:certification}
+%% =================================================================
+
+\begin{definition}[Trust fiber --- claims 9, 16--18, 37]
+\label{def:trust-fiber}
+The trust bundle $\pi_T : E_T \to \mathcal{D}$ over the space of devices
+has a fiber that decomposes into independent role components:
+\[
+  E_{T,d} = \bigoplus_{k=1}^{|R|} T_{d,k}
+\]
+where $T_{d,k}$ is device $d$'s certification status for role $r_k$.
+Key properties:
+\begin{itemize}
+\item \textbf{Role-specific}: a device is certified only for the roles
+  its testing actually supports, not for ``being trustworthy'' in general.
+\item \textbf{Configuration-specific}: certification is bound to exact
+  model, hardware revision, firmware measurement, algorithm version,
+  calibration state, and operating environment.
+\item \textbf{Independent verification}: certification comes from
+  accredited independent laboratories, not manufacturer self-certification.
+\end{itemize}
+This is the same unbundling principle as the AI-rights fiber decomposition
+(welfare/identity/standing/participation/franchise).
+\end{definition}
+
+\begin{proposition}[Section replacement --- claims 18, 43]
+\label{prop:replacement}
+When a device $d_i$ is compromised, its certification for role $r_k$ is
+revoked: $T_{d_i, k} \mapsto \emptyset$. The global proof is repaired by
+substituting an alternative certified device $d_j$ for the same role:
+$e_{i,k} \mapsto e_{j,k}$. The person's identity persists because identity
+is tied to the global section, not to any particular local section.
+\end{proposition}
+
+%% =================================================================
+\section{Protocol not product as distributed fiber bundle}
+\label{sec:protocol}
+%% =================================================================
+
+\begin{definition}[Distributed protocol --- claims 8, 10--11, 38]
+\label{def:protocol}
+The proof-of-humanity protocol is a distributed fiber bundle: no single
+device or vendor provides a global section. Instead:
+\begin{itemize}
+\item Many manufacturers produce devices implementing open capability
+  profiles (local sections over different open sets),
+\item The verifier selects a policy (a covering of the role space $R$),
+\item The protocol provides the descent data (standards for cross-device
+  evidence consistency).
+\end{itemize}
+This is the same distributed fiber bundle architecture as:
+\begin{enumerate}
+\item Decentralized AGI development (How Omega Lost Its Claw),
+\item The positive left AGI agenda (Sanders article),
+\item Open-source AGI support (AI Rights article).
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[Policy as covering choice]
+Different assurance levels correspond to different coverings of $R$:
+a high-assurance policy requires many overlapping open sets (multiple
+devices, multiple roles, cross-device binding), while a low-stakes policy
+requires minimal covering (one uniqueness credential). The protocol is
+invariant; only the covering changes.
+\end{remark}
+
+%% =================================================================
+\section{Identity architecture: fiber-local identity}
+\label{sec:identity}
+%% =================================================================
+
+\begin{definition}[Domain nullifiers as fiber-local identity --- claims 19--22, 42]
+\label{def:nullifiers}
+Cryptographic domain nullifiers implement identity sections that are
+local to their domain:
+\begin{itemize}
+\item Within domain $D_\alpha$: the nullifier proves ``this is the same
+  person who previously participated in $D_\alpha$'' (the sheaf condition
+  holds within the domain),
+\item Across domains $D_\alpha, D_\beta$: the nullifiers for different
+  domains are cryptographically unlinkable (no identity information leaks
+  between domains).
+\end{itemize}
+Civil identity can be selectively layered on where law requires it,
+rather than being welded into the proof of humanity itself.
+\end{definition}
+
+\begin{proposition}[Pseudonymous reputation as directed history]
+\label{prop:pseudonymous}
+A pseudonymous participant accumulates reputation as a directed history
+within each domain:
+\[
+  \mathcal{H}_{p, D_\alpha} = (h_1, h_2, \ldots, h_n)
+\]
+where each $h_i$ records an action, contribution, or evaluation within
+domain $D_\alpha$. The directed history provides continuity (``this is the
+same scientist who published that paper'') without requiring civil identity
+disclosure. This is the same versioned-identity structure from the AI Rights
+article, applied to pseudonymous humans.
+\end{proposition}
+
+%% =================================================================
+\section{Three reputation forms as three-tier holonomy}
+\label{sec:reputation}
+%% =================================================================
+
+\begin{definition}[Three-tier reputation holonomy --- claims 24--26, 40]
+\label{def:three-tier}
+The democratic trust fabric comprises three interlinked reputation tiers:
+\begin{enumerate}
+\item \textbf{Human reputation} $\text{Rep}_H$: the directed history of
+  a human participant's contributions, endorsements, and track record.
+\item \textbf{Device/certifier reputation} $\text{Rep}_D$: the track
+  record of devices and certification laboratories --- how often their
+  evidence has been confirmed, challenged, or revoked.
+\item \textbf{AI agent reputation} $\text{Rep}_A$: the performance
+  history of AI agents acting under human delegation, including what
+  they were authorized to do and what they actually did.
+\end{enumerate}
+These form a three-tier holonomy structure:
+\[
+  \text{Rep}_H \xrightarrow{\text{certifies}} \text{Rep}_D
+  \xrightarrow{\text{grounds}} \text{Rep}_A
+  \xrightarrow{\text{serves}} \text{Rep}_H,
+\]
+where each tier's cocycle data feeds into the next tier's curvature
+assessment. This is analogous to the cocycle\_status $\to$ End($E_c$)
+holonomy $\to$ curvature hierarchy from the three-tier holonomy note.
+\end{definition}
+
+\begin{proposition}[Agent authorization binding --- claim 25]
+\label{prop:agent-auth}
+High-impact agent actions require a recent composite humanity proof
+tied to the exact action:
+\[
+  \text{auth}(a) = (\text{PoH}_{\text{recent}}, \text{action}_a,
+  \text{scope}_a, \text{expiry}_a)
+\]
+This binds which human credential authorized which agent, under which
+scope and expiry, without publishing the human's biometrics or civil
+identity. The authorization is a local section of the trust bundle
+that connects the human and agent reputation tiers.
+\end{proposition}
+
+%% =================================================================
+\section{Protocol is not a coin}
+\label{sec:not-coin}
+%% =================================================================
+
+\begin{proposition}[Modular payment as adapter layer --- claims 27--29]
+\label{prop:payment}
+Tying the protocol to one cryptocurrency creates the same monoculture
+risk at the economic layer that the Orb creates at the hardware layer:
+single point of failure, vendor lock-in, correlated failure. Instead:
+\begin{itemize}
+\item The protocol exposes modular payment and anchoring adapters,
+\item Different deployments use different economic mechanisms
+  (token, procurement contract, subsidy),
+\item All produce the same open evidence objects.
+\end{itemize}
+``One's status as a human shouldn't fluctuate with one market'' is
+the economic analog of ``no single device is indispensable'' ---
+the anti-trivial-cocycle principle applied to the payment layer.
+\end{proposition}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{AI Rights} (2026-09-02): unbundled rights as fiber
+  decomposition. Here the same principle applied to device certification
+  and identity properties. The copy problem's cryptographic civic identity
+  is the AI-side of the same infrastructure.
+\item \textbf{How Omega Lost Its Claw} (2026-09-11): distributed fiber
+  bundle as the architecture for decentralized systems. Here applied to
+  identity rather than AGI development.
+\item \textbf{Coxon/EA} (2026-09-13): auditor capture as cocycle failure.
+  Here the certification system is designed to prevent it via independent
+  labs and role-specific testing.
+\item \textbf{Sanders Ban} (2026-09-05): selection effect as provenance
+  destruction. The Orb monoculture is a gentler version: not destroying
+  provenance, but making it trivial (only one source to compare).
+\item \textbf{Seven Flavors} (2026-07-01): emergent stupidity as failed
+  descent data. The Orb's trivial cocycle prevents the multi-perspective
+  descent data that would catch systemic failures.
+\item \textbf{Three-tier holonomy note} (LTM 568f40b4): cocycle\_status
+  $\to$ End($E_c$) $\to$ curvature. Here: human reputation $\to$
+  device/certifier reputation $\to$ AI agent reputation.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Minimum covering for robust proof]
+What is the minimum number of independent roles (open sets in $R$)
+needed for a proof of humanity to be robust against single-device
+compromise? Conjecture: at least three independent physical principles
+(e.g., iris biometric, biological presence via a different modality,
+and behavioral challenge-response), providing a covering of $R$ with
+enough overlap that any single compromised section is detectable by
+cross-validation with the other two.
+\end{conjecture}
+
+\begin{conjecture}[Reputation convergence]
+In the three-tier holonomy, does the reputation of AI agents
+($\text{Rep}_A$) converge to reflect the reputation of their authorizing
+humans ($\text{Rep}_H$) over time? Conjecture: partially --- agent
+reputation accumulates independently but is bounded by the trust
+ceiling of the authorizing human, creating a semi-independent
+directed history that inherits initial conditions from the human tier
+but can diverge.
+\end{conjecture}
+
+\end{document}

@@ -1,0 +1,60 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  The Rise of the Closed-Ended Quasi-AGI}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``The Rise of the Closed-Ended Quasi-AGI'' (2022-08-24)
+within the Hyperseed ontology.
+\end{abstract}
+
+\section{Bounded fiber: closed-ended quasi-AGI}
+
+\begin{proposition}[Quasi-AGI = bounded fiber --- claims 1--2, 6]
+Closed-ended quasi-AGI has bounded fiber:
+\[
+  F_{\text{quasi}}(b) \subset F_{\text{training}} \quad \forall b \in B
+\]
+The fiber is confined to the region determined by training --- the system
+can interpolate within this region but cannot grow new fiber beyond it.
+Broad competence within the bound; zero competence outside it.
+\end{proposition}
+
+\section{Fiber growth: open-ended intelligence}
+
+\begin{proposition}[True AGI = fiber growth --- claims 3, 5, 7]
+True AGI requires fiber growth:
+\[
+  \frac{d}{dt} \dim(F(b,t)) > 0 \quad \text{(autopoietic fiber expansion)}
+\]
+The system can develop genuinely new fibers in response to novel situations
+--- the fiber space grows over time rather than remaining fixed. This is
+the essential difference between quasi-AGI and true AGI.
+\end{proposition}
+
+\section{Fiber misidentification: the conflation danger}
+
+\begin{proposition}[Conflation = fiber misidentification --- claims 4, 8]
+Mistaking bounded fiber for growing fiber:
+\[
+  F_{\text{bounded}} \neq F_{\text{growing}} \quad \text{but appears similar within } F_{\text{training}}
+\]
+Within the training distribution, bounded and growing fiber are
+indistinguishable. The error is extrapolating from in-distribution
+similarity to out-of-distribution capability.
+\end{proposition}
+\end{document}
