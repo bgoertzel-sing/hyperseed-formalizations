@@ -1,0 +1,207 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  OpenBGI Is Building Its Initial Network}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``OpenBGI Is Building Its Initial Network'' (2026-05-07) within the
+Hyperseed ontology. The article describes a decentralized AGI development
+network as a structural alternative to corporate and governmental
+concentration. Key mappings: decentralized network as distributed fiber
+bundle, open protocols as shared transition functions, reputation-weighted
+governance as fiber-weighted governance, structural openness as fiber
+modularity, anti-capture design as cocycle robustness, and network
+persistence beyond any anchor organization as fiber persistence.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Distributed fiber bundle}
+\label{sec:bundle}
+%% =================================================================
+
+\begin{theorem}[Network as bundle --- claims 1--5, 18]
+\label{thm:bundle}
+OpenBGI is structured as a network, not a single organization. Each
+participating node (individual, lab, organization) contributes its own
+capabilities --- compute, algorithms, data, domain expertise --- to
+the network. No single entity can control, shut down, or redirect the
+entire network.
+
+In Hyperseed terms, this is a \emph{distributed fiber bundle}: each
+node contributes its own fiber (capabilities, knowledge, compute), and
+the network is the bundle --- the collection of fibers coordinated by
+shared transition functions (protocols):
+\[
+  E_{\text{OpenBGI}} = \bigcup_{n \in \text{Nodes}} F_n
+  \quad \text{with transition functions } g_{nm}: F_n|_{U_{nm}} \to F_m|_{U_{nm}}
+\]
+
+The transition functions are the open protocols that allow fibers from
+different nodes to compose. The bundle structure ensures that no single
+fiber is the whole bundle --- removing any single node leaves the
+bundle intact (possibly with reduced capability but not structural
+collapse).
+
+The article's argument against concentration is a fiber argument:
+concentrated AGI is a single-fiber system (one organization's fiber
+determines everything), while decentralized AGI is a genuine bundle
+(many fibers, shared transition functions, no single fiber dominant).
+Single-fiber systems are fragile (one point of failure, one set of
+values) while bundles are robust (distributed failure modes, diverse
+value inputs).
+\end{theorem}
+
+%% =================================================================
+\section{Shared transition functions}
+\label{sec:protocols}
+%% =================================================================
+
+\begin{definition}[Open protocols --- claims 8--9, 19]
+\label{def:protocols}
+Coordination through open protocols that any node can implement.
+Not proprietary APIs but public standards. Structural openness means
+anyone can fork, extend, or replace any component without permission.
+
+In Hyperseed terms, the protocols are \emph{shared transition functions}:
+the maps that allow fibers from different nodes to compose into a
+coherent bundle. Key properties:
+\begin{itemize}
+\item \textbf{Public:} anyone can inspect the transition functions.
+\item \textbf{Verifiable:} anyone can check that a node correctly
+  implements the transition functions.
+\item \textbf{Improvable:} anyone can propose better transition
+  functions (protocol upgrades).
+\item \textbf{Composable:} transition functions from different parts
+  of the network compose correctly (cocycle condition).
+\end{itemize}
+
+The contrast with proprietary APIs: proprietary APIs are \emph{opaque
+transition functions} controlled by a single entity. The entity can
+change the transition functions unilaterally, breaking composition
+for other nodes. Open protocols prevent this by making the transition
+functions public and governed collectively.
+\end{definition}
+
+%% =================================================================
+\section{Fiber-weighted governance}
+\label{sec:governance}
+%% =================================================================
+
+\begin{proposition}[Reputation over capital --- claims 14--17, 20]
+\label{prop:governance}
+Governance weight proportional to demonstrated contribution to the
+network, not to capital invested or tokens held. Contributions include
+code, research, compute, data, mentorship, community building.
+Explicitly rejecting plutocratic governance.
+
+In Hyperseed terms, this is \emph{fiber-weighted governance}: weight
+proportional to fiber contribution (demonstrated value), not to a
+scalar proxy (capital). This is anti-scalar-collapse applied to
+governance:
+\[
+  w_{\text{gov}}(n) \propto \text{FiberContribution}(n) \in \mathbb{R}^k
+  \quad \text{not} \quad w_{\text{gov}}(n) \propto \text{Capital}(n) \in \mathbb{R}
+\]
+
+The multi-dimensional contribution vector (code, research, compute,
+data, mentorship, community) captures the structured reality of what
+``contribution'' means. Collapsing this to a single scalar (money)
+loses the structure --- a node that contributes essential research
+but little capital would be marginalized under plutocratic governance
+but properly weighted under fiber-weighted governance.
+
+The anti-capture measures (term limits, rotation, transparency) are
+\emph{cocycle robustness}: ensuring that the governance cocycle can't
+be captured by a single actor altering the transition functions in
+their favor. Just as cocycle conditions ensure geometric consistency
+in a fiber bundle, governance cocycle conditions ensure that no
+actor can manipulate the governance structure to concentrate power.
+\end{proposition}
+
+%% =================================================================
+\section{Fiber modularity and persistence}
+\label{sec:modularity}
+%% =================================================================
+
+\begin{definition}[Structural openness --- claims 6, 9, 21, 23]
+\label{def:modularity}
+Structural openness means any component can be forked, extended, or
+replaced without breaking the rest of the system. OpenBGI is designed
+to outlast and outgrow SingularityNET as anchor organization.
+
+In Hyperseed terms:
+\begin{itemize}
+\item \textbf{Fiber modularity:} any fiber can be replaced without
+  breaking the bundle. The transition functions (protocols) are
+  designed so that swapping one fiber for a compatible one doesn't
+  require changing all the others. This is the same modularity
+  property that the linguistic universals articles identify in
+  cognitive architecture (independent modules with shared interfaces).
+
+\item \textbf{Fiber persistence:} the bundle's structure (protocols,
+  governance, technical standards) persists even if the original
+  anchor fiber (SingularityNET) is removed or replaced. The persistence
+  is in the transition functions and governance structure, not in any
+  particular node.
+\end{itemize}
+
+The combination of modularity and persistence is a structural guarantee
+that the network can evolve: new nodes join (new fibers added), old
+nodes leave (fibers removed), components are upgraded (fibers replaced)
+--- all without losing the bundle's overall coherence. This is the
+decentralized analog of the kernel-shell architecture in cognitive
+systems: the protocols and governance are the kernel (persistent,
+slowly changing), while individual nodes are shells (replaceable,
+fast-changing).
+\end{definition}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Bernie's Proposal to Nationalize AGI} (2026-06-02):
+  governance alternatives. OpenBGI is the concrete implementation of
+  the decentralized alternative to both corporate and governmental
+  AGI ownership.
+\item \textbf{Pope Leo \& Anthropic vs Teilhard} (2026-05-27):
+  fiber-compatible governance. OpenBGI's governance structure is an
+  instance of fiber-compatible governance --- it can evolve with the
+  AI capabilities it governs.
+\item \textbf{Toward a Truly Decentralized Digital} (2026-08-14):
+  decentralization technology. The technical infrastructure (NuNet,
+  blockchain coordination) that makes OpenBGI's decentralization
+  possible.
+\item \textbf{Proof of Humanity Beyond the Orb} (2026-08-16):
+  identity and reputation. Reputation-weighted governance requires
+  reliable identity --- you need to know who contributed what.
+\item \textbf{Seeding RSI} (2026-07-28): Hyperon architecture.
+  Hyperon/MeTTa is the technical core of OpenBGI's neural-symbolic
+  stack.
+\item \textbf{How Decentralized AI Can Help Avert} (2026-06-19):
+  decentralized AI safety. The structural argument that decentralized
+  development is safer than concentrated development.
+\end{itemize}
+\end{remark}
+
+\end{document}

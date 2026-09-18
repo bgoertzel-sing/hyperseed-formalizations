@@ -1,0 +1,235 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Playing Around with the ARC-AGI-3}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Playing Around with the ARC-AGI-3'' (2026-05-08) within the Hyperseed
+ontology. The article reports SingularityNET's 33\% human-normalized score
+on ARC-AGI-3 using executable world models with LLM-driven coding and
+formal verification. The five-stage loop (observe-model-verify-plan-execute)
+maps onto a fiber inspection loop; the executable world model is an explicit
+fiber representation; verification is a cocycle consistency check;
+informative failures are fiber defect localizations; and the LLM + verifier
+architecture is generate-and-verify on fiber hypotheses.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{The fiber inspection loop}
+\label{sec:loop}
+%% =================================================================
+
+\begin{theorem}[Five-stage loop --- claims 6--10, 21]
+\label{thm:loop}
+The system's core architecture is a five-stage loop:
+\begin{enumerate}
+\item \textbf{Observe:} receive environment state.
+\item \textbf{Model:} LLM writes/edits Python code representing
+  state, transitions, goals.
+\item \textbf{Verify:} formal verifier replays all observations
+  against the model.
+\item \textbf{Plan:} search within the verified model for a
+  path to the goal.
+\item \textbf{Execute:} commit actions from the plan, checking
+  predictions against reality step by step.
+\end{enumerate}
+
+In Hyperseed terms, this is a \emph{fiber inspection loop}:
+\begin{itemize}
+\item \textbf{Observe} = inspect the environment fiber (read the
+  current section).
+\item \textbf{Model} = update the model fiber (revise the agent's
+  representation of the environment's fiber structure).
+\item \textbf{Verify} = check cocycle consistency (do the model's
+  transition functions compose consistently with all observed
+  transitions?).
+\item \textbf{Plan} = compute a path in the model fiber (find a
+  section that reaches the goal).
+\item \textbf{Execute} = act in the environment fiber and compare
+  (test whether the model fiber matches the environment fiber).
+\end{itemize}
+
+The key design insight: most reasoning happens in the \emph{model
+fiber} (cheap, reversible simulation), not the \emph{environment
+fiber} (expensive, irreversible action). This separation of fiber
+exploration from fiber commitment is what makes the system efficient:
+the agent explores many possible fiber paths in simulation before
+committing to one in reality.
+\end{theorem}
+
+%% =================================================================
+\section{Executable world model as explicit fiber representation}
+\label{sec:model}
+%% =================================================================
+
+\begin{definition}[Code as fiber --- claims 6, 22]
+\label{def:model}
+The executable world model is a Python codebase containing:
+\begin{itemize}
+\item State representation (the fiber's state space).
+\item Transition dynamics (the fiber's transition functions).
+\item Goal conditions (target sections of the fiber).
+\item A planner (path-finding in the fiber).
+\end{itemize}
+
+In Hyperseed terms, this is an \emph{explicit fiber representation}:
+the code \emph{is} the fiber structure, written in a form that can
+be inspected, verified, revised, and executed. This explicitness is
+what enables verification --- you can't verify a black-box neural
+network's world model against observations the way you can verify
+an explicit codebase.
+
+The choice of code as substrate is significant: code is symbolic,
+inspectable, compositional, and verifiable. An implicit world model
+(hidden in neural network weights) might capture the same dynamics
+but can't be verified component by component. The explicit fiber
+representation enables \emph{targeted fiber repair}: when verification
+fails, you know which function to revise, not just that the overall
+model is wrong.
+\end{definition}
+
+%% =================================================================
+\section{Verification as cocycle check}
+\label{sec:verify}
+%% =================================================================
+
+\begin{proposition}[Transition-by-transition consistency --- claims 8, 16, 23]
+\label{prop:verify}
+The verifier replays all recorded observations against the model and
+confirms rules transition by transition. A model revision is accepted
+only if it's consistent with \emph{every} observed transition.
+
+In Hyperseed terms, this is a \emph{cocycle consistency check}: the
+model's transition functions must compose consistently with the
+observed transitions:
+\[
+  \forall (s_t, a_t, s_{t+1}) \in \text{History}: \quad
+  T_{\text{model}}(s_t, a_t) = s_{t+1}
+\]
+
+If any observed transition violates the model's predicted transition,
+the cocycle fails at that point. The model is rejected until it
+satisfies the full cocycle condition.
+
+This is a strong form of verification: not just checking the model
+against the most recent observation but against \emph{all} observations.
+The cocycle condition is cumulative --- each new observation adds a
+constraint, and the model must satisfy all of them simultaneously.
+This prevents the model from ``forgetting'' earlier observations when
+accommodating new ones.
+\end{proposition}
+
+%% =================================================================
+\section{Informative failure as fiber defect localization}
+\label{sec:failure}
+%% =================================================================
+
+\begin{theorem}[Targeted repair --- claims 14--17, 24]
+\label{thm:failure}
+When a verified plan fails in execution (the environment produces a
+state the model didn't predict), the failure is \emph{informative}:
+it points at exactly which part of the model was wrong.
+
+In Hyperseed terms, this is \emph{fiber defect localization}: the
+failure identifies which transition function is incorrect. The defect
+is localized to a specific fiber component, enabling targeted repair
+rather than global model replacement.
+
+The cycle of hypothesis formation, verification, execution, and
+mismatch-driven revision is a systematic fiber repair process:
+\begin{enumerate}
+\item Form a hypothesis about a transition function (e.g., ``key
+  cycles every K moves'').
+\item Verify against all known observations (cocycle check).
+\item Execute until mismatch.
+\item Localize the defect (``the shape change is tile-triggered,
+  not move-triggered'').
+\item Revise the specific transition function.
+\item Re-verify against all observations.
+\end{enumerate}
+
+Each iteration narrows the space of possible fiber defects. The
+process converges when the model's fiber structure matches the
+environment's fiber structure on all observed transitions.
+\end{theorem}
+
+%% =================================================================
+\section{Generate-and-verify on fiber hypotheses}
+\label{sec:genverify}
+%% =================================================================
+
+\begin{proposition}[LLM + verifier --- claims 10, 26]
+\label{prop:genverify}
+The architecture is explicitly neural-symbolic: the LLM proposes
+(generates candidate fiber structures), the verifier disposes
+(checks cocycle consistency). Code is the shared substrate.
+
+In Hyperseed terms, this is \emph{generate-and-verify on fiber
+hypotheses}: the same pattern as un-jailbreakable AI (the LLM
+generates, a separate system verifies), applied to world-modeling
+rather than safety.
+
+The generate-and-verify pattern is fiber-appropriate because:
+\begin{itemize}
+\item Generation (LLM) operates at the fiber level: proposing
+  structural hypotheses about how the world works.
+\item Verification operates at the section level: checking
+  predictions against specific observations.
+\item The gap between fiber (general model) and section (specific
+  observation) is exactly where errors live, and the verification
+  step systematically closes that gap.
+\end{itemize}
+
+The 33\% human-normalized score validates the pattern: even with
+current-generation LLMs as the hypothesis generator, the
+generate-and-verify architecture achieves qualitatively different
+results (33\% vs.\ $<$1\%) compared to LLMs alone. The verification
+step is what makes the difference --- it converts noisy fiber
+proposals into reliable fiber representations.
+\end{proposition}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Seeding RSI} (2026-07-28): Hyperon architecture. The
+  ARC-AGI-3 system is a concrete instance of Hyperon's
+  neural-symbolic philosophy.
+\item \textbf{Un-Jailbreakable AI} (2026-07-10): generate-and-verify.
+  Same structural pattern (LLM generates, separate system verifies),
+  applied to world-modeling rather than safety.
+\item \textbf{Wild Times in the AGI Lab} (2026-05-26): OmegaClaw.
+  Both systems use LLM + meta-control; the ARC system adds formal
+  verification.
+\item \textbf{The Orchard Bug} (2026-06-05): cocycle condition.
+  The verifier prevents Orchard-bug-type composition failures by
+  checking all transitions, not just the most recent.
+\item \textbf{What Should an AGI Curriculum Look Like?} (2026-07-22):
+  learning architecture. The hypothesis-revision loop is a form of
+  curriculum --- the agent learns the world's rules in order of
+  discoverability.
+\end{itemize}
+\end{remark}
+
+\end{document}

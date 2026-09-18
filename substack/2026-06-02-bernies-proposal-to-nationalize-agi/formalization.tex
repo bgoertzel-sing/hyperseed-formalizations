@@ -1,0 +1,285 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Bernie's Proposal to Nationalize AGI}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Bernie's Proposal to Nationalize AGI'' (2026-06-02) within the Hyperseed
+ontology. The article argues that Sanders correctly identifies the problem
+(corporate concentration of AGI) but proposes the wrong solution
+(nationalization), which merely swaps the base point of a centralized-control
+fiber rather than changing the fiber structure. Each structural insight maps
+onto Hyperseed structures: corporate vs.\ government ownership as section
+swap (same fiber, different base point), decentralization as fiber-level
+solution, regulatory capture as fiber corruption through base-point
+pressure, the international coordination problem as a non-trivializable
+bundle, the private-vs-public binary as scalar collapse of governance
+design, and the government-AI speed mismatch as temporal fiber
+incompatibility.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Section swap vs.\ fiber change}
+\label{sec:section-swap}
+%% =================================================================
+
+\begin{theorem}[Corporate vs.\ government ownership --- claims 1--6, 18]
+\label{thm:section-swap}
+The article's central structural argument: both corporate ownership and
+government ownership of AGI are \emph{sections of the same fiber bundle}
+--- the fiber is ``centralized control,'' and the sections differ only
+in which base point (which entity) the control is anchored to.
+
+Let $E \xrightarrow{\pi} B$ be the governance bundle over the space
+$B$ of possible controlling entities. The fiber $F$ at each point is
+the set of control structures (decisions about development, access,
+safety, deployment). Corporate ownership is a section
+$s_{\text{corp}}: B_{\text{corp}} \to E$ and government ownership is
+a section $s_{\text{gov}}: B_{\text{gov}} \to E$, but both are
+sections of the \emph{same bundle} with the \emph{same fiber}
+$F = \text{CentralizedControl}$:
+\[
+  s_{\text{corp}} \in \Gamma(E|_{B_{\text{corp}}}) \qquad
+  s_{\text{gov}} \in \Gamma(E|_{B_{\text{gov}}})
+\]
+
+Sanders' proposal is a \emph{section swap}: moving from $s_{\text{corp}}$
+to $s_{\text{gov}}$ without changing the bundle structure. The failure
+modes differ (corporate: profit over safety, monopoly extraction,
+shareholder capture; government: bureaucratic ossification, political
+weaponization, regulatory capture) but the structural vulnerability
+--- single point of control --- is identical.
+
+The article acknowledges that Sanders is right about the problem:
+concentration of transformative technology in private hands creates
+unprecedented power asymmetry and a democratic deficit. But the solution
+must change the \emph{fiber}, not just the \emph{section}.
+\end{theorem}
+
+%% =================================================================
+\section{Decentralization as fiber-level solution}
+\label{sec:fiber-solution}
+%% =================================================================
+
+\begin{definition}[Fiber change --- claims 13--17, 19]
+\label{def:fiber-change}
+Decentralization changes the fiber structure itself:
+\[
+  F_{\text{old}} = \text{CentralizedControl} \quad \to \quad
+  F_{\text{new}} = \text{DistributedControl}
+\]
+
+This is not a section swap (different entity controlling) but a
+\emph{bundle reconstruction}: the new bundle $E'$ has a fundamentally
+different fiber at every point. In the new bundle:
+\begin{itemize}
+\item No single base point has a global section (no single entity
+  controls everything).
+\item Control is distributed across many base points, each with
+  a local section.
+\item The transition functions between local sections are governed
+  by open protocols, not by institutional authority.
+\item Governance is transparent, auditable, and participatory.
+\end{itemize}
+
+The ASI Alliance / SingularityNET / ASI:Chain model is a concrete
+implementation of this fiber change: decentralized AI infrastructure
+with distributed governance, open protocols, and no single owner.
+
+The key structural difference from nationalization: decentralization
+is robust to base-point corruption. If one participant becomes
+malicious or incompetent, the distributed structure contains the
+damage. In centralized control (corporate or governmental), corruption
+of the single base point corrupts the entire system.
+\end{definition}
+
+%% =================================================================
+\section{Regulatory capture as fiber corruption}
+\label{sec:capture}
+%% =================================================================
+
+\begin{proposition}[Base-point pressure deforms fiber --- claims 7--9, 20]
+\label{prop:capture}
+The article identifies regulatory capture as a structural vulnerability
+of nationalization: even with government ownership, the same corporate
+interests influence the agency through lobbying, revolving doors, and
+advisory boards.
+
+In Hyperseed terms, this is \emph{fiber corruption through base-point
+pressure}: the base point (political power, lobbying money) deforms
+the fiber (regulatory intent, public interest) through institutional
+channels:
+\[
+  F_{\text{intended}} \xrightarrow{\text{capture}} F_{\text{actual}}
+  \neq F_{\text{intended}}
+\]
+
+This is the opposite of the desired relationship, where the fiber
+(public interest) should constrain the base (institutional action).
+Instead, the base deforms the fiber --- the institution's actual
+behavior diverges from its stated purpose because the base-point
+pressure (lobbying, political influence) is stronger than the fiber's
+structural constraints.
+
+The speed mismatch compounds this: government bureaucracies operate
+on legislative timescales (years) while AI capability evolves on
+research timescales (months). This \emph{temporal fiber incompatibility}
+means that by the time government processes produce a decision, the
+technological reality has already shifted --- the decision addresses
+a state of affairs that no longer exists.
+
+The temporal incompatibility is structural, not fixable by hiring
+better people or streamlining processes: the democratic deliberation
+that gives government legitimacy inherently operates on longer
+timescales than the technology it's trying to govern.
+\end{proposition}
+
+%% =================================================================
+\section{International coordination as non-trivializable bundle}
+\label{sec:international}
+%% =================================================================
+
+\begin{theorem}[Non-trivializable national interests --- claims 10--12, 21]
+\label{thm:international}
+The article observes that ``nationalize AGI'' is implicitly US-centric:
+it means ``the US government should own AGI.'' Other nations won't
+accept this, creating an adversarial dynamic.
+
+In Hyperseed terms, the bundle of national interests over AGI
+governance is \emph{non-trivializable}: it can't be reduced to a
+single global section (one nation's ownership) because the transition
+functions between national perspectives don't compose into a
+consistent global section.
+
+Let $g_{ij}$ be the trust relationship between nation $i$ and nation
+$j$ --- the transition function mapping nation $i$'s acceptable
+governance structure to nation $j$'s. The cocycle condition fails:
+\[
+  g_{ij} \circ g_{jk} \neq g_{ik} \quad \text{in general}
+\]
+
+Nation A trusts Nation B on AI safety but not on access; Nation B
+trusts Nation C on access but not on safety; the composition of these
+partial trusts does not produce a consistent trust relationship between
+A and C. There is no consistent global section --- no single national
+ownership that all nations would accept.
+
+This is why ``nationalize'' merely reframes the concentration from
+``which company'' to ``which country'' --- a lateral move in the
+base space that doesn't resolve the non-trivializability of the
+bundle. Decentralization resolves it by replacing the
+non-trivializable bundle (national ownership) with a trivializable
+one (distributed participation under open protocols) --- the open
+protocols provide consistent transition functions that compose
+into a global section.
+\end{theorem}
+
+%% =================================================================
+\section{The false binary as scalar collapse}
+\label{sec:scalar}
+%% =================================================================
+
+\begin{proposition}[Governance scalar collapse --- claim 22]
+\label{prop:scalar}
+The private-vs-public framing of AGI ownership collapses a
+multi-dimensional governance space into a single binary dimension.
+The actual governance space has at least the following dimensions:
+\begin{itemize}
+\item \textbf{Ownership:} who holds the assets?
+\item \textbf{Governance:} who makes decisions?
+\item \textbf{Participation:} who can contribute?
+\item \textbf{Auditing:} who can inspect?
+\item \textbf{Benefit:} who receives the value?
+\item \textbf{Accountability:} who is responsible for harm?
+\end{itemize}
+
+Collapsing these six dimensions into a single binary
+(private/public) loses the structure that determines actual
+outcomes. A system can be publicly owned but privately governed
+(captured agency), privately owned but publicly auditable
+(regulated utility), or community-governed with no single owner
+(decentralized protocol).
+
+This is the same anti-scalar-collapse principle that appears
+throughout the Hyperseed ontology: the Seven Hinges (risk
+assessment), $(f,c)$ vs.\ scalar truth, scoped reputation vs.\
+scalar trust. The governance problem cannot be meaningfully
+addressed by a single binary choice because the relevant
+structure is multi-dimensional.
+\end{proposition}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Avoiding AGI Catastrophe Part 1} (2026-06-09): Seven
+  Hinges. The stewardship hinge directly addresses who governs ---
+  this article argues that neither corporate nor governmental
+  stewardship is structurally adequate; distributed stewardship
+  is needed.
+\item \textbf{The Fable of Benevolent Throttling} (2026-07-12):
+  centralized control failure. The Fable's throttling regime is
+  the corporate-ownership version of centralized control; Sanders'
+  proposal is the governmental version. Both fail for the same
+  structural reasons.
+\item \textbf{The Anthropic Fable Farce} (2026-07-08): institutional
+  capture. The Fable Farce demonstrates how institutional
+  interests (Anthropic's market position) distort the stated
+  purpose (safety). This is the corporate version of the
+  regulatory capture described here.
+\item \textbf{Toward a Truly Decentralized Digital} (2026-08-06):
+  ASI:Chain. The decentralized alternative proposed here is built
+  on the ASI:Chain infrastructure described in the Decentralized
+  Digital article.
+\item \textbf{The Geopolitics of the Great AI Bet} (2026-08-10):
+  international dynamics. The non-trivializable bundle of
+  national interests is analyzed in geopolitical detail.
+\item \textbf{Zuck's Version of the Future} (2026-08-14):
+  corporate concentration. Meta's version of AGI ownership is
+  the corporate section that Sanders wants to replace with a
+  governmental section.
+\item \textbf{$(f,c)$-lossy} (LTM 5a4d150b): anti-scalar-collapse.
+  The private-vs-public binary is governance scalar collapse ---
+  the same principle applied to institutional design.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Section-swap futility]
+Conjecture: for any centralized-control fiber bundle $E$ over
+the space of possible controlling entities $B$, every section
+swap $s_1 \to s_2$ preserves the structural vulnerability
+(single point of failure) while changing only the failure mode
+distribution. Formally, if $V(s)$ is the vulnerability profile
+of section $s$:
+\[
+  \|V(s_1)\|_1 \approx \|V(s_2)\|_1 \quad
+  \text{while} \quad V(s_1) \neq V(s_2)
+\]
+The total vulnerability is approximately conserved under section
+swaps; only its distribution across failure modes changes. Genuine
+vulnerability reduction requires fiber change (decentralization),
+not section swap (different owner).
+\end{conjecture}
+
+\end{document}

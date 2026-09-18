@@ -1,0 +1,112 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Open-Ended Motivations}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Open-Ended Motivations'' (2021-08-13)
+within the Hyperseed ontology. Key mappings: open-ended motivation as
+open fiber evolution (no fixed attractor), growth as fiber thickening,
+fixed utility as frozen fiber, and Goodhart's law as fiber-base divergence.
+\end{abstract}
+
+\tableofcontents
+
+\section{Open fiber evolution: against fixed attractors}
+
+\begin{theorem}[Open-ended motivation = open fiber evolution --- claims 1--8, 16, 18]
+Open-ended motivation is fiber evolution without a fixed attractor:
+\[
+  F_t \xrightarrow{\text{evolve}} F_{t+1} \quad \text{with no fixed } F^*
+  \text{ such that } F_t \to F^*
+\]
+Fixed utility functions freeze the fiber at $F_0$ --- preventing the
+evolution that is genuine growth. This is ``fiber death'': a fiber that
+can't evolve. Goodhart's law shows that fixing a fiber target causes
+fiber-base divergence --- the optimization target diverges from the
+intended outcome.
+
+Open-ended goals include meta-goals (fiber about fiber) and are
+self-transcending --- pointing beyond themselves to goals not yet
+conceived. Open-ended does not mean arbitrary: there are structural
+criteria for evaluating motivational evolution without fixing a target.
+\end{theorem}
+
+\section{Fiber thickening: growth as motivation}
+
+\begin{theorem}[Growth = fiber thickening --- claims 9--12, 17, 19]
+Growth as motivation is the drive to thicken fiber --- develop richer
+perspectives, more inference paths, more sections:
+\[
+  \text{Growth}(F_t) = \text{thickness}(F_{t+1}) > \text{thickness}(F_t)
+\]
+The triad of joy, growth, and choice maps to fiber properties:
+\begin{itemize}
+\item Joy = fiber-base resonance (positive alignment between perspective
+  and reality)
+\item Growth = fiber thickening (more structure, richer understanding)
+\item Choice = fiber branching (more options, expanded freedom)
+\end{itemize}
+All three are unbounded and open-ended --- there is always more resonance,
+more structure, and more branching possible.
+\end{theorem}
+
+\section{Meta-goals: fiber about fiber}
+
+\begin{proposition}[Meta-motivation = higher-order fiber --- claims 6--7, 20]
+Meta-goals (goals about goals) are higher-order fiber --- fiber that
+describes and evaluates the fiber's own evolution:
+\[
+  F_2 \text{ (meta-goals)} \to F_1 \text{ (goals)} \to B \text{ (world)}
+\]
+This is the same tower structure as the meta-abstracted dragon: each
+level of the motivation tower evaluates and guides the level below.
+The tower is open-ended --- there's always a higher level of
+meta-motivation possible.
+\end{proposition}
+
+\section{Fiber-base divergence: Goodhart's law}
+
+\begin{proposition}[Goodhart = divergence --- claims 3--4, 21]
+Goodhart's law is fiber-base divergence: when the fiber (optimization
+target) is fixed and optimized aggressively, it diverges from the base
+(intended outcome):
+\[
+  \text{optimize}(F_{\text{fixed}}) \implies
+  |F_{\text{fixed}} - B_{\text{intended}}| \uparrow
+\]
+Open-ended fiber avoids Goodhart by not fixing a target --- the fiber
+evolves in response to the base, maintaining alignment through
+ongoing adaptation rather than fixed specification.
+\end{proposition}
+
+\section{Cross-references}
+
+\begin{remark}[Connections]
+\begin{itemize}
+\item \textbf{Evolving Deeply Ethical AGI} (2026-01-06): non-dual
+  motivation as open-ended --- same principle applied to ethics.
+\item \textbf{Facing the Meta-Abstracted Dragon} (2022-07-31): meta-goal
+  tower parallels meta-abstraction tower.
+\item \textbf{A BGI Manifesto} (2023-11-25): value alignment through
+  architecture --- open-ended motivation as architectural principle.
+\item \textbf{Why Everyone Dies Gets AGI All Wrong} (2025-10-01):
+  beyond optimization --- intelligence as growth, not maximization.
+\end{itemize}
+\end{remark}
+
+\end{document}
