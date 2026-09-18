@@ -1,0 +1,414 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Avoiding AGI Catastrophe, Part 2}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Avoiding AGI Catastrophe, Part 2'' (2026-06-10) within the Hyperseed
+ontology. The article provides the technical mechanisms that make
+forkability low and lead-scaling high in a decentralized AGI network:
+super-additivity through cross-domain inference control, essential
+laterality as genuine multi-node dependency, cryptographic laterality
+via MPC, cognitive-cryptographic alignment, and defense against
+distillation through moving-target fiber regeneration. Each structural
+insight maps onto Hyperseed structures: super-additivity as non-separable
+fiber, essential laterality as fiber dependency structure, cognitive-
+cryptographic alignment as cocycle-access alignment, the four-layer
+architecture as graded fiber depth, and safety from strategy choice as
+the anti-monoculture principle.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Super-additivity as non-separable fiber}
+\label{sec:superadd}
+%% =================================================================
+
+\begin{definition}[Non-separable capability --- claims 1--5, 30]
+\label{def:superadd}
+The article's central requirement for safe decentralized AGI:
+the whole must be more than the sum of its parts. A fork that steals
+a shard must get a husk, not a working AGI.
+
+The super-additivity comes from inference-control heuristics learned
+across the full network --- cross-domain meta-patterns at multiple
+levels of a self-organizing fractal knowledge hierarchy. These
+patterns cannot be reproduced from a single-domain shard because
+they emerge from the \emph{interactions} between domains, not from
+any domain alone.
+
+In Hyperseed terms, the capability fiber is \emph{non-separable}:
+\[
+  F_{\text{capability}} \neq \bigoplus_{i} F_i
+\]
+
+The cross-domain inference-control patterns are 2-cells between
+domain-specific 1-cells. A fork that copies individual 1-cells
+(domain capabilities) loses the 2-cells (cross-domain interactions)
+--- and those 2-cells are precisely where general intelligence lives.
+
+The key technical enabler: MeTTa serves as both the AGI language
+of thought (in Hyperon) and the smart-contract language of ASI:Chain.
+This dual role means that the cognitive structure and the
+cryptographic protection structure operate in the same formal
+language, enabling the cognitive-cryptographic alignment described
+below.
+
+A fork gets a snapshot that is immediately stale --- cut off from
+the network's ongoing learning, evolving provenance graphs, live
+reputation state. The snapshot is a time-slice of a fiber that is
+constantly being regenerated from the network's current state.
+\end{definition}
+
+%% =================================================================
+\section{Essential laterality as fiber dependency structure}
+\label{sec:laterality}
+%% =================================================================
+
+\begin{theorem}[Genuine multi-node dependency --- claims 6--8, 31]
+\label{thm:laterality}
+Not all multi-node derivations are genuinely lateral. A derivation
+might touch many nodes while really depending on just one. The
+entropy of shard participation (how many nodes appear in the
+derivation log) is necessary but not sufficient for security.
+
+The article introduces \emph{essential laterality}: a derivation
+$\tau$ has essential laterality $\geq k$ if removing or hiding any
+set of fewer than $k$ of its essential participating nodes or
+provenance domains drops the probability of reproducing the
+conclusion below threshold:
+\[
+  \forall S \subset \text{Nodes}(\tau), \; |S| < k \implies
+  P(\text{reproduce}(\tau) \mid \text{hide}(S)) < \theta
+\]
+
+The reasoning genuinely fails if enough of the right live pieces
+are absent --- that's the property a fork can't fake.
+
+In Hyperseed terms, essential laterality is the \emph{fiber
+dependency structure}: the fiber bundle is non-trivial precisely
+because local sections don't extend globally. A derivation with
+high essential laterality is one whose section requires contributions
+from many base points --- the section genuinely lives in a
+non-trivializable region of the bundle.
+
+The contrast with trivial laterality (many nodes touched but only
+one essential) is the contrast between a trivializable bundle
+(looks multi-node but is actually a product bundle that factors
+through one node) and a genuinely non-trivial bundle (the fiber
+structure is irreducibly distributed).
+
+This gives a formal criterion for evaluating whether a cognitive
+architecture is genuinely resistant to forking: compute the
+essential laterality of its critical derivations. If the essential
+laterality is low (most derivations genuinely depend on only a
+few nodes), the super-additivity claim is hollow regardless of
+how many nodes appear in the logs.
+\end{theorem}
+
+%% =================================================================
+\section{Cognitive-cryptographic alignment as cocycle-access alignment}
+\label{sec:cogcrypto}
+%% =================================================================
+
+\begin{theorem}[Access mirrors cognition --- claims 13--16, 32]
+\label{thm:cogcrypto}
+The article's organizing design principle: the access structure
+$\Gamma(q, x_t)$ --- the set of coalitions authorized to activate
+a control step --- should be derived from the task's essential
+laterality. The coalition you need to \emph{think the thought}
+should be the coalition you need to \emph{cryptographically
+activate the controller} for that thought.
+
+A task drawing on biological, chemical, security, and ethical
+provenance might require a threshold of reputable nodes from each
+domain, plus independent validators and a governance quorum. A
+narrow low-risk query needs a trivial $\Gamma$ or none at all.
+The quorum isn't a random committee --- it mirrors the genuine
+cognitive dependency.
+
+In Hyperseed terms, this is \emph{cocycle-access alignment}: the
+cryptographic access structure mirrors the cognitive cocycle. The
+cocycle condition in the cognitive bundle (which nodes contribute
+which reasoning to which conclusions) is reflected in the access
+structure of the cryptographic layer (which nodes must cooperate
+to evaluate which control decisions):
+\[
+  \Gamma_{\text{crypto}}(q, x_t) \cong
+  \Gamma_{\text{cognitive}}(q, x_t)
+\]
+
+This alignment ensures that the security boundary matches the
+cognitive boundary: you can't do the reasoning without also
+satisfying the security constraint, and you can't satisfy the
+security constraint without actually doing the reasoning. There's
+no gap between ``what the system needs to think'' and ``what the
+system is authorized to compute.''
+
+The alignment is task-proportional: trivial tasks have trivial
+security requirements (no MPC overhead); catastrophe-relevant
+tasks have broad quorum requirements (high MPC overhead). This
+proportionality prevents the system from being either too
+expensive (MPC everything) or too vulnerable (MPC nothing).
+\end{theorem}
+
+%% =================================================================
+\section{Cryptographic laterality via MPC}
+\label{sec:mpc}
+%% =================================================================
+
+\begin{proposition}[No plaintext resting place --- claims 9--12]
+\label{prop:mpc}
+The high-value control policy $\theta$ and sensitive trace corpus
+$D^*$ exist only as secret shares:
+\[
+  \langle\theta\rangle_1, \ldots, \langle\theta\rangle_n
+  \quad\text{and}\quad
+  \langle D^*\rangle_1, \ldots, \langle D^*\rangle_n
+\]
+Every authorized use is a threshold evaluation revealing only
+bounded outputs. The MPC output is deliberately narrow: route
+this subquery, request that premise, expand this rule instance,
+merge conclusions with weights, downweight this source, preserve
+this contradiction, escalate to broader quorum, or refuse/sandbox.
+What it \emph{never} reveals is the full policy or the sensitive
+trace corpus.
+
+The no-plaintext-resting-place claim: there is no single machine
+state from which an adversary can copy the whole controller as a
+portable plaintext artifact. Extraction is forced onto harder
+channels:
+\begin{enumerate}
+\item Corrupt an authorized coalition (social/political attack).
+\item Break the cryptographic assumptions (mathematical attack).
+\item Exploit implementation leakage (engineering attack).
+\item Distill behavior through monitored queries (statistical attack).
+\end{enumerate}
+
+Each of these is harder than direct copy, and each can be defended
+against independently --- another instance of the anti-scalar-collapse
+principle: multiple independent defense layers with uncorrelated
+failure modes.
+\end{proposition}
+
+%% =================================================================
+\section{Distillation defense as regenerated fiber}
+\label{sec:distill}
+%% =================================================================
+
+\begin{proposition}[Moving target --- claims 17--20, 33]
+\label{prop:distill}
+MPC stops direct copy but not behavioral imitation. An adversary
+who watches the network long enough and trains an imitation
+$\hat{\pi}$ can approximate the controller. The moat is only as
+strong as the budgeted distillation loss stays large:
+\[
+  \text{DistillLoss}_{B,T,Q}(W) = \text{Cap}_Q(W) -
+  \sup_{\hat{\pi} \in \text{Distill}(W; B, T)}
+  \text{Cap}_Q(\hat{\pi})
+\]
+
+The defense: the protected controller must be a genuinely moving
+target, depending on fresh, high-dimensional, hard-to-compress
+live state:
+\begin{itemize}
+\item Current provenance graphs (who contributed what, when).
+\item Reputation under distribution shift (trust scores changing
+  as nodes join, leave, behave differently).
+\item Node availability (which coalition is currently live).
+\item Recent contradictions (unresolved tensions in the knowledge
+  base).
+\item Nonstationary attention flows (where the system is currently
+  focusing).
+\item Task-specific quorum composition (which nodes are assigned
+  to this task).
+\end{itemize}
+
+The query channel itself must be constrained: bounded outputs,
+query auditing, rate limits, anomaly detection, canary tasks.
+
+In Hyperseed terms, this is a \emph{regenerated fiber}: the fiber
+is constantly regenerated from the network's current state. A
+snapshot captures a time-slice that is immediately stale. The
+fiber has a directed temporal structure --- past sections don't
+determine future sections because the regeneration process
+incorporates genuinely new information from the network's ongoing
+activity.
+
+This connects to the directed-type principle: the controller's
+state space is a directed type where each moment's state depends
+on the entire history of the network's activity, not just on any
+finite snapshot. The direction is irreversible --- you can't
+reconstruct the current state from a past snapshot because
+information has been created (new inferences, new reputation
+events, new contradictions) that wasn't present in the snapshot.
+\end{proposition}
+
+%% =================================================================
+\section{Four-layer architecture as graded fiber depth}
+\label{sec:layers}
+%% =================================================================
+
+\begin{definition}[Escalation ladder --- claims 21--26, 34]
+\label{def:layers}
+The architecture has four layers, only one of which is
+cryptographically heavy:
+
+\begin{enumerate}
+\item \textbf{Public layer (0-depth).} Public Atomspace fragments,
+  public PLN/MeTTa rules, ordinary local reasoning. Fully
+  transparent, no protection needed.
+\item \textbf{Local-private layer (1-depth).} Node-local data,
+  traces, reputational judgments. Protected by standard access
+  control, not MPC.
+\item \textbf{Thin threshold-control layer (2-depth).}
+  Secret-shared trajectory features, routing/merge/escalation/refusal
+  policies, update rules. This is the MPC-protected layer ---
+  thin because only inference control decisions are protected,
+  not all computation.
+\item \textbf{Governance-and-audit layer (3-depth).} Commitments,
+  selective-disclosure proofs, quorum records, revocation,
+  resharing, human review. Provides accountability and
+  transparency about the protection mechanisms themselves.
+\end{enumerate}
+
+Cognition escalates up the ladder as stakes rise:
+\begin{itemize}
+\item Low-risk: ordinary local inference (0-depth).
+\item Moderate cross-node: small-committee review (1-depth).
+\item High-impact lateral: threshold-protected merge (2-depth).
+\item Catastrophe-relevant: broad quorum + governance (3-depth).
+\end{itemize}
+
+In Hyperseed terms, this is \emph{graded fiber depth}: the fiber
+structure has layers of increasing depth, and the system accesses
+deeper layers only when the task requires it. This is
+computationally efficient (trivial tasks don't pay MPC overhead)
+and security-proportional (higher stakes trigger deeper
+protection).
+
+The key design principle: ``Don't put the whole mind inside MPC.''
+Only the thin control layer --- the inference control decisions
+that determine the system's cognitive trajectory --- is
+cryptographically protected. Everything else operates at lower
+depth with correspondingly lower overhead.
+\end{definition}
+
+%% =================================================================
+\section{Safety from strategy choice as anti-monoculture}
+\label{sec:strategy}
+%% =================================================================
+
+\begin{theorem}[Slack-funded safety --- claims 27--29, 35]
+\label{thm:strategy}
+Let $S^*_\varepsilon$ be the set of near-optimal cognitive
+strategies --- those within $\varepsilon$ of the best attainable
+capability:
+\[
+  S^*_\varepsilon = \{s : \text{Cap}(s) \geq
+  \sup_{s'} \text{Cap}(s') - \varepsilon\}
+\]
+
+If $S^*_\varepsilon$ contains both a default portable strategy
+$s_{\text{loc}}$ and at least one threshold-lateral strategy
+$s_{\text{tl}}$ with strictly lower forkability, then selecting
+the lowest-forkability element of $S^*_\varepsilon$ buys reduced
+forkability at a capability cost of at most $\varepsilon$.
+
+The safety is paid for out of slack in the strategy landscape ---
+not out of making the system dumber. You're choosing among
+equally-good strategies, not sacrificing capability for safety.
+
+In Hyperseed terms, this is the \emph{anti-monoculture} principle
+applied to cognitive architecture: there is no single best strategy
+(the near-optimal set has volume), and the slack in the strategy
+landscape can be spent on structural safety properties rather than
+raw capability. The system \emph{chooses} to be safe by selecting
+from the available near-optimal strategies the one with the best
+safety properties.
+
+This connects to the broader Hyperseed theme of multi-optimality:
+when the near-optimal set has non-trivial structure (multiple
+strategies with different properties), the system can optimize
+along secondary axes (safety, interpretability, fairness) without
+leaving the near-optimal set. The anti-monoculture ensures that
+safety is a design choice within the capability frontier, not a
+sacrifice below it.
+\end{theorem}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Avoiding AGI Catastrophe Part 1} (2026-06-09):
+  companion article. Part 1 establishes the Seven Hinges framework;
+  Part 2 provides the technical mechanisms (super-additivity,
+  essential laterality, MPC) that set the forkability and
+  lead-scaling hinges.
+\item \textbf{How Decentralized AI Can Help Avert Bioterrorism}
+  (2026-06-11): bio-specific application. Part 2's forkability
+  analysis explains why these mechanisms don't help in bio
+  (dangerous capability is small and copyable), motivating the
+  physical-layer approach.
+\item \textbf{Seeding RSI} (2026-07-28): Hyperon architecture.
+  The inference-control patterns described here are the same
+  patterns whose architecture is detailed in the RSI article.
+\item \textbf{Goals That Grow Back} (2026-07-28): goal preservation.
+  The super-additivity argument connects to goal stability: if
+  the goal system's inference control is super-additive, a fork
+  that changes goals also loses capability.
+\item \textbf{Decentralized Digital} (2026-08-06): ASI:Chain
+  infrastructure. The MeTTa-as-smart-contract mechanism runs on
+  the ASI:Chain infrastructure described there.
+\item \textbf{Proof of Humanity} (2026-08-04): reputation system.
+  The live reputation state that the moving-target defense depends
+  on uses the same reputation infrastructure.
+\item \textbf{Un-Jailbreakable AI} (2026-07-10): MPC aspiration.
+  The cryptographic laterality described here is the aspiration
+  mentioned in the jailbreak article --- ``not how things work now''
+  but the direction being built toward.
+\item \textbf{$(f,c)$-lossy} (LTM 5a4d150b): the essential laterality
+  criterion (genuine dependency, not just participation) is the
+  anti-$(f,c)$-lossy principle applied to distributed computation:
+  don't confuse ``touched many nodes'' (high $f$, low $c$) with
+  ``genuinely depends on many nodes'' (high $f$, high $c$).
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Essential laterality scaling]
+Conjecture: in a well-designed Hyperon network with $n$ domain-specialized
+nodes, the essential laterality of catastrophe-relevant inference-control
+decisions scales as $\Omega(\sqrt{n})$ --- growing with network size,
+making forking progressively harder as the network grows. The growth
+rate is sublinear because not every node contributes essentially to
+every decision, but it grows unboundedly because the cross-domain
+meta-patterns that constitute general intelligence draw from an
+ever-widening base of domain-specific expertise as the network expands.
+
+If this conjecture holds, the safety moat widens with network growth
+--- a positive feedback loop where more participation makes the system
+both smarter (more inference control patterns) and safer (higher
+essential laterality for critical decisions).
+\end{conjecture}
+
+\end{document}

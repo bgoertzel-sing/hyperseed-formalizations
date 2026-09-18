@@ -1,0 +1,299 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Bootleggers, Baptists, and the Coming AI Regulation}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Bootleggers, Baptists, and the Coming AI Regulation'' (2026-04-28)
+within the Hyperseed ontology. The article applies Bruce Yandle's
+regulatory capture theory to AI regulation: safety advocates (Baptists)
+provide moral cover while Big Tech incumbents (Bootleggers) benefit from
+compliance barriers. Key mappings: the Baptist/Bootlegger coalition as
+section-fiber misalignment, regulatory capture as transition function
+hijacking, compliance barriers as artificial fiber costs, concentration
+as single-fiber fragility, the safety narrative as frozen section, and
+pro-diversity regulation as fiber-promoting governance.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Section-fiber misalignment}
+\label{sec:misalignment}
+%% =================================================================
+
+\begin{theorem}[The Bootlegger/Baptist pattern --- claims 1--7, 21]
+\label{thm:misalignment}
+The Bootleggers and Baptists pattern: two groups support the same
+policy for fundamentally different reasons. The Baptists (safety
+advocates) support AI regulation out of genuine moral concern. The
+Bootleggers (Big Tech incumbents) support the same regulations because
+compliance costs create barriers to entry.
+
+In Hyperseed terms, this is \emph{section-fiber misalignment}: the
+policy has a visible section (moral justification, stated purpose)
+that is misaligned with its structural fiber (actual effect on the
+ecosystem):
+\[
+  s_{\text{stated}} = \text{``make AI safer''} \qquad \text{but} \qquad
+  F_{\text{actual}} = \text{``concentrate AI development''}
+\]
+
+The section and fiber tell different stories. The section is what
+gets debated in public (safety, responsibility, harm prevention).
+The fiber is what actually happens when the policy is implemented
+(barriers to entry, reduced competition, incumbent protection).
+
+The structural insight: this misalignment isn't a conspiracy but a
+\emph{structural property} of the regulatory process. The Bootleggers
+don't need to conspire with the Baptists --- they just need to support
+the same regulations. The section-fiber misalignment arises naturally
+from the structure of regulatory politics, not from intentional
+deception.
+
+This is a general pattern: any time a policy has broad moral appeal
+(compelling section) and concentrated economic beneficiaries (fiber
+that favors specific actors), the Bootlegger/Baptist dynamic is
+likely. The moral appeal provides political cover; the economic
+benefit provides funding and lobbying power.
+\end{theorem}
+
+%% =================================================================
+\section{Transition function hijacking}
+\label{sec:capture}
+%% =================================================================
+
+\begin{proposition}[Regulatory capture --- claims 9--12, 22, 27]
+\label{prop:capture}
+The regulatory process is a transition function: it maps from the
+current state (unregulated or lightly regulated) to a new state
+(regulated). Regulatory capture means this transition function has
+been hijacked --- it nominally serves the public interest but
+actually maps to incumbent advantage.
+
+Three mechanisms of hijacking:
+\begin{enumerate}
+\item \textbf{Compliance costs as fixed barriers.} Safety testing,
+  documentation, auditing, and liability insurance create fixed costs
+  that scale sublinearly with organization size. Large companies
+  absorb them easily; small projects cannot afford them. The
+  transition function maps ``new entrant'' to ``blocked.''
+
+\item \textbf{Revolving door.} Regulators come from industry and
+  return to industry. The regulations reflect industry's understanding
+  of what's ``feasible'' --- which naturally favors existing approaches.
+  The transition function is written by the entities it nominally
+  regulates.
+
+\item \textbf{Standard-setting capture.} When incumbents dominate
+  standard-setting, the standards reflect their architecture, their
+  tooling, their workflow. New fiber types (genuinely different AI
+  approaches) are structurally excluded because they don't fit the
+  standard's assumptions.
+\end{enumerate}
+
+In fiber bundle terms, standard-setting capture is a \emph{transition
+function monopoly}: the incumbents control which transition functions
+are ``valid'' (compliant), and only transition functions compatible
+with their fiber structure qualify. New fiber types that would require
+different transition functions are excluded not because they're
+unsafe but because they're structurally incompatible with the
+captured standards.
+\end{proposition}
+
+%% =================================================================
+\section{Single-fiber fragility}
+\label{sec:fragility}
+%% =================================================================
+
+\begin{theorem}[Concentration as safety risk --- claims 13--16, 24]
+\label{thm:fragility}
+The article's central irony: regulations meant to make AI safer may
+make it more dangerous by reducing diversity and competition.
+Concentrating AI development in a few large companies creates a
+\emph{single-fiber system}: one dominant approach, one set of
+assumptions, one failure mode.
+
+In Hyperseed terms, concentration reduces the fiber bundle toward
+a single-fiber system:
+\[
+  \text{Rich bundle: } E = \bigcup_{i=1}^{N} F_i \quad (N \text{ large})
+  \qquad \xrightarrow{\text{regulation}} \qquad
+  \text{Poor bundle: } E \approx F_1 \cup F_2 \cup F_3
+\]
+
+Single-fiber systems are fragile:
+\begin{itemize}
+\item \textbf{Correlated failures:} similar architectures fail in
+  similar ways. A vulnerability in one system is likely present in
+  all similar systems.
+\item \textbf{Monoculture risk:} no diversity of approaches means
+  no fallback if the dominant approach has fundamental limitations.
+\item \textbf{Single point of capture:} a few organizations are
+  easier to capture (by governments, by market forces, by internal
+  misalignment) than a diverse ecosystem.
+\end{itemize}
+
+A rich fiber bundle (diverse ecosystem) is robust:
+\begin{itemize}
+\item \textbf{Uncorrelated failures:} different architectures fail
+  differently. A vulnerability in one approach is unlikely to affect
+  unrelated approaches.
+\item \textbf{Multiple fallbacks:} if one approach has fundamental
+  limitations, others can compensate.
+\item \textbf{Distributed resilience:} many organizations with
+  different governance structures resist capture better than a few
+  similar ones.
+\end{itemize}
+
+The incumbents are not inherently safer: they have their own
+misaligned incentives (profit maximization, market dominance,
+shareholder value). Treating them as the ``responsible'' actors
+is itself a section-fiber misalignment --- the section
+(``responsible company'') doesn't match the fiber
+(profit-driven corporation).
+\end{theorem}
+
+%% =================================================================
+\section{Frozen section narrative}
+\label{sec:narrative}
+%% =================================================================
+
+\begin{proposition}[The safety narrative --- claims 12, 25]
+\label{prop:narrative}
+The narrative ``AI is dangerous, only responsible large companies
+should develop it'' serves both Baptist and Bootlegger interests
+simultaneously. It's a compelling story that happens to have
+concentration-promoting consequences.
+
+In Hyperseed terms, this narrative is a \emph{frozen section}: a
+particular framing of the situation, treated as if it were the
+complete picture (the fiber itself), when in fact it captures only
+one perspective:
+\begin{itemize}
+\item \textbf{What the section captures:} AI can cause harm; some
+  development practices are careless; oversight is needed.
+\item \textbf{What the section misses:} concentration itself is a
+  risk; diversity promotes safety; incumbents have misaligned
+  incentives; small players bring innovation.
+\end{itemize}
+
+This is the same structure as the Bible-as-frozen-section in the
+Pope Leo article: a particular historical perspective (``big
+companies are the responsible actors'') frozen as if it were an
+eternal truth, when in fact it's a contingent framing that serves
+particular interests.
+
+The frozen section is difficult to challenge because it has genuine
+moral content (the Baptist part). Criticizing the regulatory
+framework sounds like criticizing safety itself --- which is exactly
+the cover the Bootleggers need.
+\end{proposition}
+
+%% =================================================================
+\section{Fiber-promoting governance}
+\label{sec:alternative}
+%% =================================================================
+
+\begin{definition}[Pro-diversity regulation --- claims 17--20, 26]
+\label{def:alternative}
+The alternative: regulation that promotes diversity, competition, and
+decentralization rather than concentration. Open standards,
+interoperability requirements, anti-monopoly provisions, support for
+small players.
+
+In Hyperseed terms, this is \emph{fiber-promoting governance}:
+governance that encourages the creation of new fibers rather than
+protecting existing ones:
+\begin{itemize}
+\item \textbf{Open standards} = public transition functions. Anyone
+  can implement them; no proprietary lock-in.
+\item \textbf{Interoperability} = composable fibers. Different
+  systems can interact through shared interfaces.
+\item \textbf{Anti-monopoly} = fiber diversity maintenance. Actively
+  prevent the bundle from collapsing to few fibers.
+\item \textbf{Small-player support} = new fiber encouragement. Reduce
+  barriers to creating new fibers, don't increase them.
+\end{itemize}
+
+This is the same structural principle as OpenBGI's fiber-compatible
+governance and the Pope Leo article's fiber-level thinking: governance
+that can accommodate diversity and evolution, not governance that
+freezes the current state.
+
+The key design criterion: regulation should be evaluated by its
+\emph{fiber effect} (does it increase or decrease ecosystem
+diversity?), not just by its \emph{section appeal} (does it sound
+like it promotes safety?). Section-attractive, fiber-harmful
+regulation is the Bootlegger/Baptist pattern in action.
+\end{definition}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Pope Leo \& Anthropic vs Teilhard} (2026-05-27): frozen
+  sections. The safety narrative is a frozen section parallel to the
+  Bible as frozen section --- both capture one perspective and treat
+  it as complete.
+\item \textbf{OpenBGI} (2026-05-07): fiber-promoting governance.
+  OpenBGI's decentralized structure is the concrete alternative to
+  the concentration that Bootlegger/Baptist regulation produces.
+\item \textbf{The Anthropic Fable Farce} (2026-07-08): Anthropic as
+  Bootlegger. Anthropic's RSP framework examined through the lens
+  of regulatory capture.
+\item \textbf{The Fable of Benevolent Throttling} (2026-07-12):
+  defensive framing. The throttling regime embodies the
+  Bootlegger/Baptist dynamic --- moral justification (safety) for
+  structural concentration.
+\item \textbf{How Decentralized AI Can Help Avert} (2026-06-19):
+  decentralized safety. The structural argument that decentralization
+  is safer than concentration.
+\item \textbf{The Geopolitics of the Great AI Bet} (2026-08-08):
+  geopolitical dimension. The Bootlegger/Baptist dynamic plays out
+  internationally as well as domestically.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Bootlegger/Baptist detection]
+Conjecture: section-fiber misalignment in regulation can be detected
+by checking whether the regulation's compliance costs scale
+sublinearly with organization size. If they do, the regulation
+disproportionately burdens small players --- a structural signature
+of the Bootlegger/Baptist pattern regardless of the regulation's
+stated intent.
+
+More formally: for a regulation $R$, define the compliance cost
+function $C_R(s)$ where $s$ is organization size. If
+$C_R(s)/s$ is decreasing in $s$ (compliance cost per unit size
+decreases with size), the regulation has concentration-promoting
+fiber regardless of its stated section.
+
+This test doesn't prove the regulation is bad --- some genuinely
+safety-promoting regulations may have economies of scale. But it
+flags regulations that require the Bootlegger/Baptist analysis:
+is the concentration-promoting fiber an unavoidable consequence of
+a genuine safety need, or is it the actual purpose disguised by a
+safety section?
+\end{conjecture}
+
+\end{document}

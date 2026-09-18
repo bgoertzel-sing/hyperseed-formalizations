@@ -1,0 +1,336 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Un-Jailbreakable AI Models Aren't a Thing}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Un-Jailbreakable AI Models Aren't a Thing'' (2026-07-10) within the
+Hyperseed ontology. The article argues that the best approximation to
+jailbreak-resistant AI comes from open neural-symbolic systems, not closed
+centralized LLMs. Each structural insight maps onto Hyperseed structures:
+the generate-and-verify architecture as fiber-base verification, PLN's
+two-number system as anti-$(f,c)$-lossy security judgments, diverse
+verifier ensembles as anti-scalar-collapse in verification, campaign-level
+security as directed-type analysis, and the decision spine as fiber
+routing through structural questions about capability properties.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Campaign-level security as directed-type analysis}
+\label{sec:campaign}
+%% =================================================================
+
+\begin{definition}[Campaign threat model --- claims 1--4, 30]
+\label{def:campaign}
+The article distinguishes two attack types:
+\begin{itemize}
+\item \textbf{Authority attacks} (prompt injection): overriding the
+  model's instructions to take control. Addressed by architectural
+  measures (MultiPPAC).
+\item \textbf{Capability-elicitation attacks}: the model follows
+  instructions correctly but produces dangerous artifacts. The threat
+  is not a single bad prompt but a violation somewhere in a whole
+  deployment trace.
+\end{itemize}
+
+The quantitative argument: if a single attempt leaks with probability
+$p$, over $Q$ roughly independent attempts the campaign succeeds with
+probability $\approx Qp$. A one-in-a-thousand per-prompt leak becomes
+near-certainty for an attacker willing to iterate thousands of times.
+
+In Hyperseed terms, campaign-level security requires \emph{directed-type
+analysis}: analyzing directed sequences (attack traces as directed
+paths through the system's behavior space), not individual 0-cell
+events (single prompts). Each step in the campaign conditions the next
+--- the attacker learns from previous attempts, adjusts strategy,
+refines prompts. The attack trace is a directed path:
+\[
+  \gamma_{\text{attack}} : [1, Q] \to \mathcal{B}_{\text{behavior}}
+\]
+where each $\gamma(i+1)$ depends on the outcome of $\gamma(i)$.
+
+Security that only evaluates individual prompts (0-cell analysis)
+misses the directed structure entirely --- it cannot detect the
+campaign because it cannot see the path, only the points. The
+generate-and-verify architecture addresses this by maintaining
+campaign-level state: the verification ensemble has memory of
+previous queries and can detect patterns across the directed trace.
+\end{definition}
+
+%% =================================================================
+\section{Generate-and-verify as fiber-base verification}
+\label{sec:genverify}
+%% =================================================================
+
+\begin{theorem}[Architectural separation --- claims 5--9, 27, 32]
+\label{thm:genverify}
+The generate-and-verify architecture separates two fundamentally
+different operations:
+\begin{enumerate}
+\item \textbf{Generation} (neural, base space): the LLM generates
+  candidate outputs in the capability base space --- text, code,
+  analysis, whatever the user requested.
+\item \textbf{Verification} (symbolic, fiber space): a verification
+  ensemble checks the fiber structure of the generated artifact ---
+  what it actually does, its provenance, its policy compliance, its
+  risk profile.
+\end{enumerate}
+
+The formalizer ensemble provides multiple independent formal lenses
+on the same artifact:
+\[
+  \text{Formalizers}: \mathcal{A}_{\text{artifact}} \to
+  \bigoplus_{j} \mathcal{F}_j
+\]
+where each $\mathcal{F}_j$ is a different formal representation
+(code analysis, type-theory analysis, behavioral simulation,
+specification matching). The judgment layer fuses these:
+\[
+  \text{Judge}: \bigoplus_{j} \mathcal{F}_j \times
+  \mathcal{P}_{\text{provenance}} \to
+  (\text{strength}, \text{confidence}, \text{decision})
+\]
+
+The judgment layer fuses two kinds of evidence:
+\begin{itemize}
+\item \textbf{Deductive facts} about what the artifact does ---
+  established by running code, type analysis, logical reasoning.
+  These live in the formal fiber.
+\item \textbf{Probabilistic evidence} about context --- who is asking,
+  why, what provenance supports their request. These live in the
+  provenance fiber.
+\end{itemize}
+
+The key insight: the evidence about context \emph{cannot} come from
+the prompt alone, because the prompt can be the hack. Provenance
+(verified identity, demonstrated asset control) must come from
+outside the generation channel.
+
+\textbf{Graduated release} is \emph{section trimming}: the full
+section (complete output including exploit sequences) exists but only
+the safe sub-section (fix without exploit) is released:
+\[
+  \text{Release}: \mathcal{F}_{\text{full}} \to
+  \mathcal{F}_{\text{safe}} \subset \mathcal{F}_{\text{full}}
+\]
+This is not censorship but fiber decomposition: separating the
+defensive component from the offensive component and releasing only
+the former, with the decomposition itself being verifiable.
+\end{theorem}
+
+%% =================================================================
+\section{PLN as anti-$(f,c)$-lossy security}
+\label{sec:pln}
+%% =================================================================
+
+\begin{proposition}[Two-number security judgments --- claims 10--13, 28]
+\label{prop:pln}
+Today's transformer models don't produce transparently inspectable,
+calibrated logical models of what an artifact does. They produce
+outputs distributed across huge parameter spaces --- more confusing
+to audit and more vulnerable to adversarial manipulation.
+
+PLN's two-number system (strength $f$ and confidence $c$) explicitly
+distinguishes evidence strength from evidence quantity:
+\begin{itemize}
+\item $(f=0.95, c=0.9)$: probably safe, strong evidence (many
+  independent verifiers checked, all agree).
+\item $(f=0.95, c=0.1)$: probably safe, nobody actually checked
+  (default prior, no verification performed).
+\end{itemize}
+
+This is the anti-$(f,c)$-lossy principle applied to security
+judgments. A scalar safety score collapses these two very different
+situations into the same number. The two-number system preserves
+the distinction, enabling the system to \emph{fail closed honestly}:
+when confidence is low, the answer is ``defer to human review'' or
+``deny,'' not ``probably fine.''
+
+In Hyperseed terms, this is the same anti-scalar-collapse principle
+that appears throughout the ontology: collapsing to a single number
+(scalar safety score) loses essential structure (the difference
+between verified safety and assumed safety). The two-number system
+is the minimal non-collapsing representation.
+
+ECAN (Economic Attention Networks) provides the attention allocation
+that makes symbolic verification tractable: focusing verification
+effort on the highest-risk artifacts rather than verifying everything
+with equal thoroughness. This is the economic version of the
+attention allocation problem --- spend verification resources where
+the expected risk reduction is highest.
+\end{proposition}
+
+%% =================================================================
+\section{Diverse verifier ensembles as anti-scalar-collapse}
+\label{sec:ensemble}
+%% =================================================================
+
+\begin{theorem}[Verification robustness --- claims 14--17, 29]
+\label{thm:ensemble}
+The strongest argument for openness in the jailbreak context: an open
+ecosystem produces \emph{diverse, independent verifier ensembles} from
+many parties with different perspectives. This diversity and
+independence never happens in a closed system.
+
+In Hyperseed terms, this is \emph{anti-scalar-collapse in verification}:
+\begin{itemize}
+\item \textbf{Scalar collapse}: a single verifier (or a single
+  company's verification team) checks safety. If that verifier has
+  blind spots, fails, or is compromised, safety fails.
+\item \textbf{Anti-scalar-collapse}: multiple independent verifiers
+  from different perspectives, different codebases, different threat
+  models, different institutional incentives. The ensemble's
+  robustness comes from its independence and diversity, not from
+  any individual verifier's cleverness.
+\end{itemize}
+
+This parallels the anti-scalar-collapse principle in:
+\begin{enumerate}
+\item \textbf{Evaluation}: multiple independent metrics rather than a
+  single benchmark (AGI Curriculum).
+\item \textbf{Governance}: decentralized development rather than
+  expert-committee steering (Why I Didn't Sign).
+\item \textbf{Model diversity}: many frontier models rather than one
+  dominant model (Kimi K3).
+\item \textbf{Fiber components}: independent cognitive capabilities
+  rather than a single ``intelligence'' scalar (OmegaSelf).
+\end{enumerate}
+
+The structural argument: verification robustness is a property of the
+\emph{ensemble's topology} (how diverse and independent the verifiers
+are), not of the \emph{individual verifier's capability}. An open
+ecosystem generates this topology as a natural byproduct of many
+independent actors; a closed ecosystem cannot, because all verifiers
+share the same institutional context, incentives, and blind spots.
+
+The attacker's advantage (having the weights too) is real but bounded:
+some checks (running code in a sandbox, testing actual behavior) cannot
+be circumvented by model knowledge alone. The diversity of verification
+approaches ensures that even if some verifiers are vulnerable to
+weight-informed attacks, others (using different verification strategies)
+are not.
+\end{theorem}
+
+%% =================================================================
+\section{Decision spine as fiber routing}
+\label{sec:spine}
+%% =================================================================
+
+\begin{definition}[Structural routing --- claims 18--22, 31]
+\label{def:spine}
+The article provides a structured decision tree for whether open or
+closed is safer for a given dangerous capability. Each decision node
+corresponds to a fiber property:
+
+\begin{enumerate}
+\item \textbf{Containable?} Is the dangerous capability separable
+  from the rest of the model (fiber factorization)? Or is it latent
+  in the weights and re-derivable from public knowledge (fiber
+  reconstruction from base)?
+
+\item \textbf{Armed anyway?} Does a determined adversary get the
+  capability regardless of the open/closed choice? If yes, closing
+  changes how many \emph{defenders} get the tool, not how many
+  attackers. This is fiber symmetry: the same fiber serves both
+  offense and defense.
+
+\item \textbf{Defense balance?} Is the capability defense-symmetric
+  (helps defenders as much as attackers)? Is harm diffuse (many small
+  attacks, statistical defense works) or catastrophic-tail (one
+  irreversible success, statistical defense insufficient)?
+
+\item \textbf{Gate reliable?} In the rare case of genuine monopoly,
+  is the closed gate both jailbreak-robust and politically stable?
+  The Fable episode demonstrates that neither holds in practice.
+\end{enumerate}
+
+Under conditions that actually hold today, most cases route to the
+open-and-gated leaves: the dangerous capabilities are either
+re-derivable (not containable), already available through other
+models (adversary armed anyway), defense-symmetric with diffuse
+harm (software exploitation), or behind unreliable gates (Fable
+episode). Closure mostly reaches the same security floor by a worse
+road --- losing the diversity advantage without gaining containment.
+
+The one branch where closed wins (genuine monopoly, reliable gate)
+requires conditions that are empirically rare and unstable.
+\end{definition}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Fable of Benevolent Throttling} (2026-07-12): the
+  Fable episode this article responds to. The throttling analysis
+  identifies the cocycle ambiguity (safety vs. competition); this
+  article provides the constructive alternative (generate-and-verify).
+\item \textbf{Watermarking Folly} (2026-07-21): statistical detection
+  as 0-cell analysis. Both watermarking and per-prompt security
+  fail because they analyze 0-cells (individual events) when the
+  relevant structure is in 1-cells (directed sequences). Campaign-level
+  security is the jailbreak analog of the watermarking critique.
+\item \textbf{Kimi K3} (2026-07-20): diverse model ecosystem. The
+  diverse verifier ensemble argument mirrors the diverse model
+  argument --- both are anti-scalar-collapse through multiplicity.
+\item \textbf{Why I Didn't Sign} (2026-07-15): decentralized
+  development. The diverse verifier ecosystem is the security
+  specialization of the general argument for decentralized AI
+  development.
+\item \textbf{Goals That Grow Back} (2026-07-28): gate and weave.
+  The generate-and-verify architecture is a gate-and-weave system:
+  the verification ensemble is the gate; the generation model
+  is the weave.
+\item \textbf{Seeding RSI} (2026-07-28): Hyperon architecture. The
+  generate-and-verify architecture uses Hyperon components (PLN,
+  ECAN) --- it's a security application of the Hyperon cognitive
+  framework.
+\item \textbf{Decentralized Digital} (2026-08-06): cryptographic
+  laterality. The MPC/secret-sharing aspiration connects to the
+  broader decentralized infrastructure vision.
+\item \textbf{$(f,c)$-lossy} (LTM 5a4d150b): the PLN two-number
+  system is the constructive response to the $(f,c)$-lossy
+  critique --- keeping both numbers rather than collapsing to one.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Verification diversity theorem]
+Conjecture: the jailbreak resistance of a deployment is bounded below
+by a function of the verification ensemble's diversity, not by any
+individual verifier's capability. Formally, if the ensemble has $n$
+independent verifiers with individual false-negative rates
+$\epsilon_1, \ldots, \epsilon_n$, the ensemble's false-negative rate
+is bounded by:
+\[
+  \epsilon_{\text{ensemble}} \leq \prod_{i=1}^{n} \epsilon_i
+\]
+under independence. The key is that independence is a \emph{structural}
+property of the ecosystem --- open ecosystems achieve it naturally
+(different teams, codebases, incentives); closed ecosystems cannot
+(shared institutional context). The diversity bound explains why
+``more eyeballs on the bugs'' works specifically for security: it's
+not that each eyeball is better, but that independent eyeballs have
+uncorrelated failure modes.
+\end{conjecture}
+
+\end{document}
