@@ -1,0 +1,325 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  The Depth-Psychology of Dario's AI Slowdown}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``The Depth-Psychology of Dario's Precalculatedly Abortive `AI Slowdown'\,''
+(2026-09-14) within the Hyperseed ontology. The article applies a three-layer
+psychological framework (evolutionary conflict, civilizational mismatch,
+bullshit self-models) to AI governance dynamics and argues for open
+decentralized AGI as the structurally superior alternative to centralized
+chokepoints. Each layer maps onto Hyperseed structures: conflicting fiber
+sections, base-space mismatch, provenance opacity, cocycle failure, trivially
+capturable topology, and weighted descent data.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Three layers of screwiness as fiber-bundle pathology}
+\label{sec:three-layers}
+%% =================================================================
+
+\begin{definition}[Motivational fiber bundle --- claim 34]
+\label{def:motivational-bundle}
+Let $\pi : E \to B$ be a fiber bundle where:
+\begin{itemize}
+\item $B$ = the space of social contexts (band size, institutional structure),
+\item $E_b = \pi^{-1}(b)$ = the space of motivational configurations available
+  in context $b$,
+\item The fiber $E_b$ contains both self-oriented and group-oriented components:
+  $E_b = E_b^{\text{self}} \oplus E_b^{\text{group}}$.
+\end{itemize}
+\end{definition}
+
+\begin{proposition}[Layer 1: Evolutionary conflict as incompatible sections --- claim 1]
+\label{prop:layer1}
+Individual selection tunes a local section $s_{\text{ind}} : B \to E$ that
+maximizes $E_b^{\text{self}}$. Group selection tunes a local section
+$s_{\text{grp}} : B \to E$ that maximizes $E_b^{\text{group}}$. These
+sections are generically incompatible:
+\[
+  s_{\text{ind}}(b) \neq s_{\text{grp}}(b) \quad \text{for most } b \in B.
+\]
+The human motivational system is the attempted superposition
+$\alpha\, s_{\text{ind}} + (1-\alpha)\, s_{\text{grp}}$ with $\alpha$
+fluctuating --- producing permanent internal conflict.
+\end{proposition}
+
+\begin{proposition}[Layer 2: Civilizational mismatch as base-space change --- claim 2]
+\label{prop:layer2}
+The superposition parameter $\alpha$ was tuned by evolution for a base space
+$B_0 \cong \{\text{small bands}, |b| \approx 50\}$ where
+$E_b^{\text{self}}$ and $E_b^{\text{group}}$ were approximately aligned.
+Civilization changes the base space to
+$B_1 \cong \{\text{large societies}, |b| \gg 10^3\}$, where the alignment
+breaks down:
+\[
+  \text{corr}(E_b^{\text{self}}, E_b^{\text{group}}) \to 0
+  \quad \text{as } |b| \to \infty.
+\]
+The superposition tuned for $B_0$ produces systematic dysfunction in $B_1$.
+\end{proposition}
+
+\begin{definition}[Layer 3: Bullshit self-model as provenance-opaque covering --- claims 3, 35]
+\label{def:bullshit}
+A \emph{bullshit self-model} is a covering map $\tilde{\pi} : \tilde{E} \to E$
+that projects the two-component motivational structure
+$E_b^{\text{self}} \oplus E_b^{\text{group}}$ onto a single component:
+\[
+  \tilde{\pi}(e_{\text{self}}, e_{\text{group}}) = e_{\text{narrative}}
+\]
+where $e_{\text{narrative}}$ carries no information about which component
+dominated the decision. This is a provenance-erasing projection: the agent
+cannot distinguish self-serving from group-serving motivations in its own
+self-representation.
+\end{definition}
+
+\begin{corollary}[Moore's grandiosity --- claim 5]
+A special case of the bullshit self-model: when the agent occupies a position
+of power, the projection $\tilde{\pi}$ maps ``my company's dominance is
+essential'' ($e_{\text{self}}$) and ``humanity needs responsible stewardship''
+($e_{\text{group}}$) to the same narrative $e_{\text{narrative}}$, experienced
+as responsibility.
+\end{corollary}
+
+%% =================================================================
+\section{Amodei's slowdown as self-model dynamics}
+\label{sec:amodei}
+%% =================================================================
+
+\begin{proposition}[Self-model fusion --- claims 6--7]
+\label{prop:self-model}
+Let $A$ = Amodei with motivational components:
+\begin{itemize}
+\item $e_{\text{self}}$: company valuation, personal centrality, competitive advantage,
+\item $e_{\text{group}}$: genuine concern about existential risk from AI.
+\end{itemize}
+The bullshit self-model projects both to:
+\[
+  e_{\text{narrative}} = \text{``The responsible ones must lead; we are the
+  responsible ones.''}
+\]
+The slowdown proposal is $e_{\text{narrative}}$-rational: it simultaneously
+serves $e_{\text{self}}$ (freezes standings) and $e_{\text{group}}$ (reduces
+risk), and the self-model ensures $A$ experiences it as purely
+$e_{\text{group}}$-motivated.
+\end{proposition}
+
+\begin{remark}
+This analysis does not require cynicism. The self-model's function is precisely
+to prevent the agent from seeing the contradiction --- making sincere belief
+and strategic advantage coexist without felt dissonance.
+\end{remark}
+
+%% =================================================================
+\section{Arms-race attractor as cocycle failure}
+\label{sec:arms-race}
+%% =================================================================
+
+\begin{definition}[Arms-race attractor --- claims 14, 36]
+\label{def:arms-race}
+An \emph{arms-race attractor} is a two-body dynamical system
+$(A_1, A_2)$ over a shared base space $B$ of capability levels, where:
+\begin{enumerate}
+\item Each agent $A_i$ has a self-model $\tilde{\pi}_i$ that positions
+  itself as the responsible party,
+\item Each agent's transition function $g_i : E_{b_j} \to E_{b_i}$
+  (interpreting the other's actions) is distorted by $\tilde{\pi}_i$,
+\item The cocycle condition fails:
+  $g_{12} \circ g_{21} \neq \text{id}$ --- each side's interpretation
+  of the other is incompatible with the other's self-interpretation.
+\end{enumerate}
+Under scarcity (finite compute, chips, talent), this system is an
+\emph{evil-attractor}: it amplifies defection, secrecy, and preemptive
+action.
+\end{definition}
+
+\begin{proposition}[National-scale mirroring --- claims 11--12, 15]
+The US-China AI rivalry instantiates the arms-race attractor with:
+\begin{itemize}
+\item $A_1$ (US): ``We must lead responsibly; China is reckless.''
+\item $A_2$ (China): ``The US wants to freeze its lead; we must catch up.''
+\end{itemize}
+Both interpretations are internally consistent with their respective
+self-models $\tilde{\pi}_1, \tilde{\pi}_2$, but the cocycle
+$g_{12} \circ g_{21}$ produces escalation rather than convergence.
+\end{proposition}
+
+%% =================================================================
+\section{Centralization as trivially capturable topology}
+\label{sec:kill-switch}
+%% =================================================================
+
+\begin{definition}[Trivially capturable bundle --- claims 16--18, 37]
+\label{def:capturable}
+A fiber bundle $\pi : E \to B$ is \emph{trivially capturable} if it admits
+a single global section $s : B \to E$ such that any agent with write access
+to $s$ controls all fibers simultaneously. A centralized frontier model is
+trivially capturable: one API endpoint = one global section = one kill-switch.
+\end{definition}
+
+\begin{theorem}[Kill-switch theorem --- claim 17]
+\label{thm:kill-switch}
+For any trivially capturable bundle with global section $s$:
+\begin{enumerate}
+\item The structure group is $\{e\}$ (trivial): no fiber has autonomous
+  behavior independent of $s$.
+\item Any actor with access to $s$ can shut down or redirect all dependent
+  agents simultaneously.
+\item The probability of capture by a single interest group is bounded below
+  by the probability of \emph{any} state, company, or coalition gaining
+  write access to $s$ --- which approaches 1 on long time horizons.
+\end{enumerate}
+Therefore trivially capturable architectures should be avoided for
+civilizationally critical infrastructure.
+\end{theorem}
+
+\begin{remark}[Fable/Mythos incident]
+The article cites a concrete instance: one government letter caused a
+commercially deployed frontier model to be switched off globally within
+hours, demonstrating capture in practice.
+\end{remark}
+
+%% =================================================================
+\section{Open decentralized architecture as distributed fiber bundle}
+\label{sec:open-decentral}
+%% =================================================================
+
+\begin{definition}[Distributed fiber bundle --- claims 19--23, 38--39]
+\label{def:distributed}
+An \emph{open decentralized AGI network} is a fiber bundle $\pi : E \to B$
+where:
+\begin{itemize}
+\item No global section exists: the bundle is nontrivial.
+\item Each participant operates a local section $s_i : U_i \to E$ over
+  their own open set $U_i \subset B$.
+\item Coherence comes from descent data: transition functions $g_{ij}$
+  on overlaps $U_i \cap U_j$, annotated with trust weights $(f,c)$
+  from observed behavior (claim~22).
+\item States participate via nodes ($U_{\text{state}} \subset B$) and
+  regulate a compliant edge, but the permissionless substrate is
+  not capturable (claim~21).
+\end{itemize}
+\end{definition}
+
+\begin{proposition}[Structural superiority --- claims 24, 39]
+\label{prop:superiority}
+The distributed bundle has strictly more degrees of freedom than the
+trivially capturable bundle:
+\begin{enumerate}
+\item \textbf{Resilience}: no single point of failure or capture.
+\item \textbf{Diversity}: many independent local sections explore
+  different approaches (sheaf diversity, claim~39).
+\item \textbf{Adaptability}: local sections can be updated independently
+  without global coordination.
+\item \textbf{Resistance to evil-attractors}: no chokepoint to seize,
+  so arms-race dynamics have no finish line.
+\end{enumerate}
+\end{proposition}
+
+\begin{definition}[Trust-weighted descent data --- claim 38]
+\label{def:trust-descent}
+For each overlap $U_i \cap U_j$, the transition function $g_{ij}$ is
+annotated with a truth value $(f_{ij}, c_{ij})$ where:
+\begin{itemize}
+\item $f_{ij}$ = observed frequency of successful/consistent translations,
+\item $c_{ij}$ = confidence based on the number of observations.
+\end{itemize}
+The cocycle condition $g_{ij} \circ g_{jk} = g_{ik}$ is enforced
+\emph{softly}: violations reduce the confidence of the involved
+transition functions rather than crashing the system.
+\end{definition}
+
+%% =================================================================
+\section{Scenario analysis as directed-type exploration}
+\label{sec:scenario}
+%% =================================================================
+
+\begin{proposition}[Scenario analysis vs.\ scalar doom --- claims 31, 40]
+\label{prop:scenario}
+Let $\mathcal{F}$ be the space of possible futures. Two analytical methods:
+\begin{enumerate}
+\item \textbf{Scalar doom}: assign $p(\text{doom}) \in [0,1]$ and optimize
+  for $\min\, p(\text{doom})$. This collapses $\mathcal{F}$ to $\mathbb{R}$
+  --- a lossy projection ($(f,c)$-lossy critique).
+\item \textbf{Directed-type exploration}: treat $\mathcal{F}$ as a directed
+  type with multiple paths, each leading to qualitatively different outcomes.
+  Navigate by examining scenarios (paths), assessing which dynamics each
+  amplifies, and steering toward those with better structural properties.
+\end{enumerate}
+Method (2) preserves the structure of $\mathcal{F}$ that method (1) discards,
+and is the methodological stance the article advocates.
+\end{proposition}
+
+\begin{remark}[Provable safety impossible --- claim 32]
+Yudkowsky's demand for provable safety before building any AGI requires
+formalizing the entire environment the AGI will interact with. Since the
+environment includes open-ended human and physical systems, this
+formalization is impossible. The best available tool is therefore
+scenario-driven qualitative analysis supplemented by formal modeling
+of the AGI itself (as in Hyperon).
+\end{remark}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Coxon/EA article} (2026-09-13): EA ethics as RL formalism,
+  scalar collapse, provenance opacity in media. Here extended to the
+  psychological level: the self-model is the individual's provenance-opacity
+  mechanism.
+\item \textbf{How Omega Lost Its Claw} (2026-09-11): distributed fiber
+  bundle, Omega-to-Omega coordination, sovereignty through participation.
+  This article provides the political-philosophical argument for the same
+  architecture.
+\item \textbf{Fields Medalists article} (2026-09-12): epistemic firewall,
+  open-source imperative. Here the open-source argument is extended from
+  math tools to the entire AGI infrastructure.
+\item \textbf{Seven Flavors of AGI Catastrophe} (referenced): the arms-race
+  attractor occupies five of seven catastrophe cells.
+\item \textbf{$(f,c)$-lossy critique} (LTM 5a4d150b): scalar doom
+  probability as a special case of lossy epistemic compression.
+\item \textbf{Identity-preserving self-modification} (Time's Arrow Part~1):
+  the self-model's inability to preserve provenance of motivations is a
+  failure of identity-preserving self-modification at the psychological
+  level.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Self-model transparency]
+Can a sufficiently self-aware AI system (with access to its own weights,
+gradients, and reasoning traces) build a non-bullshit self-model --- one
+that preserves provenance of motivations? This would require the
+$E_\pi$ stratum applied reflexively to the agent's own decision process.
+\end{conjecture}
+
+\begin{conjecture}[Arms-race escape]
+Under what conditions can a third pole (open decentralized network) break
+the two-body arms-race attractor? Conjecture: the third pole must achieve
+a capability level where both superpowers find cooperation with it cheaper
+than bilateral competition --- i.e., the trust-weighted descent data must
+offer each superpower better expected returns than the arms race.
+\end{conjecture}
+
+\end{document}

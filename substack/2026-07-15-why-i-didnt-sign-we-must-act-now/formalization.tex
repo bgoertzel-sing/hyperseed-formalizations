@@ -1,0 +1,299 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Why I Didn't Sign ``We Must Act Now''}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Why I Didn't Sign `We Must Act Now'\,'' (2026-07-15) within the Hyperseed
+ontology. The article critiques a genre of blandly agreeable open letters
+that carry sharper agendas underneath, and argues for decentralized,
+participatory AI development over expert-committee steering. Each
+structural insight maps onto Hyperseed structures: centralized steering as
+frozen directed type, decentralized development as parallel transport
+across many fibers, surface agreement masking directed disagreement as
+0-cell vs.\ 1-cell structure, complementarity as emergent sheaf, and
+deceptive provenance as the failure mode $R_{\text{auth}}$ is designed
+to detect.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Surface agreement masking directed disagreement}
+\label{sec:surface}
+%% =================================================================
+
+\begin{definition}[0-cell agreement, 1-cell disagreement --- claims 1--4, 22]
+\label{def:surface}
+The ``We Must Act Now'' letter achieves agreement at the 0-cell level:
+\begin{itemize}
+\item AI might get much more powerful soon --- true.
+\item It may reshape the economy faster than the Industrial Revolution --- true.
+\item Economists and policymakers should act with understanding --- true.
+\end{itemize}
+
+But the directed implications (1-cells) carry a specific agenda: the
+Acemoglu school's preference for steering AI development away from
+autonomous AGI toward tools-only AI. The phrase ``steering AI in a
+direction that complements humans'' is the tell --- it encodes a specific
+economic framework hostile to autonomous AGI.
+
+In Hyperseed terms, the letter operates by presenting 0-cells
+(observable surface properties that everyone agrees on) while
+smuggling in 1-cells (directed trajectories toward specific policy
+outcomes) that many would reject if stated explicitly. This is the
+same surface-vs-structure distinction that appears in statistical
+watermarking: detecting 0-cell text properties while missing the
+directed structure that determines actual meaning.
+
+The technique works because 0-cell agreement is cheap (surface
+premises are deliberately chosen to be unobjectionable) while 1-cell
+inspection is expensive (you have to trace the directed implications
+to specific policy proposals, economic schools, and institutional
+interests).
+\end{definition}
+
+%% =================================================================
+\section{The genre of deceptive open letters}
+\label{sec:genre}
+%% =================================================================
+
+\begin{proposition}[Broken provenance --- claims 9--12, 24]
+\label{prop:genre}
+The article identifies a genre of deceptive open letters sharing a
+common structure:
+\begin{enumerate}
+\item \textbf{Tobacco ``Frank Statement'' (1954)}: Caring surface
+  (``we take your health seriously''), actual purpose to manufacture
+  doubt and delay regulation for decades.
+\item \textbf{Oregon Petition (1998)}: Formatted to mimic NAS
+  proceedings with a former NAS president's cover letter, deceiving
+  signers about institutional endorsement of climate denial.
+\item \textbf{``Pause Giant AI Experiments'' (2023)}: Signed by people
+  whose own labs never paused, serving to consolidate advantage for
+  incumbents under the guise of safety.
+\end{enumerate}
+
+In Hyperseed terms, this genre operates via \emph{broken provenance}:
+the stated origin (caring experts, scientific institutions, safety
+advocates) doesn't match the actual origin (industry interests,
+economic school agendas, competitive positioning). The provenance
+cues --- prestigious signers, institutional formatting, scientific
+language --- are the 0-cell properties that signal trustworthiness.
+The actual directed content (what the letter will be used to justify)
+is the 1-cell structure that the cues don't track.
+
+This is exactly the failure mode that $R_{\text{auth}}$ is designed
+to detect: trust earned through demonstrated provenance chain, not
+inherited from surface cues. A provenance-aware system would check
+whether the signers' actions match the letter's implications (they
+don't --- labs that signed the pause letter kept developing), creating
+a provenance contradiction that downgrades trust.
+\end{proposition}
+
+%% =================================================================
+\section{Prediction impossibility and the steam engine}
+\label{sec:prediction}
+%% =================================================================
+
+\begin{proposition}[Unpredictable directed type --- claims 5--8]
+\label{prop:predict}
+Nobody can predict which jobs AGI will replace vs.\ complement, at what
+point, with what capability, or what impact a given AI technology will
+have after people pivot and adapt. The steam engine analogy: nobody in
+the 1760s could have predicted its employment effects.
+
+Between obvious extremes (plumbing robot replaces human; preschool
+teacher stays human), there is an enormous space of intermediate cases
+whose resolution will elude foresight.
+
+In Hyperseed terms, the directed type of economic transformation is
+\emph{inherently unpredictable} at the 1-cell level: while the 0-cells
+(that transformation will occur) are visible, the specific directed
+trajectories through which it unfolds cannot be computed in advance.
+This is a fundamental property of sufficiently complex directed types
+--- the space of possible 1-cells is too large and context-dependent
+for any finite prediction model.
+
+The implication for governance: any policy framework that presupposes
+the ability to predict specific outcomes (``steer AI toward X'') is
+operating on a fiction. The honest approach is to create conditions for
+robust adaptation rather than to prescribe trajectories --- exactly
+the design philosophy of robust sheaf structures that work with
+arbitrary local sections rather than requiring specific ones.
+\end{proposition}
+
+%% =================================================================
+\section{Centralized steering as frozen directed type}
+\label{sec:frozen}
+%% =================================================================
+
+\begin{theorem}[Frozen directed type --- claims 4, 20]
+\label{thm:frozen}
+Expert-committee steering of AI development is a \emph{frozen directed
+type}: a small group decides the trajectory, preventing the organic
+multi-path exploration that complex adaptation requires.
+
+This is the same frozen directed type identified in ``Seven Flavors of
+AGI Catastrophe'' as evil mode: a system whose directed type has been
+frozen by external constraint, preventing the organic growth and
+self-correction that safety requires. The difference is only the agent:
+\begin{itemize}
+\item Evil mode: frozen by a powerful AI preventing human intervention.
+\item Expert steering: frozen by a powerful committee preventing
+  decentralized exploration.
+\end{itemize}
+
+Both produce the same structural pathology: a monoculture directed type
+that cannot self-correct because alternative trajectories have been
+pruned. When the chosen trajectory turns out to be wrong (as it must,
+given prediction impossibility), there is no fallback --- the other
+paths have been eliminated.
+
+The centralizing cocycle concentrates control into fewer hands with
+each iteration: letter $\to$ policy framework $\to$ regulation $\to$
+licensing $\to$ enforcement --- each step further freezing the directed
+type.
+\end{theorem}
+
+%% =================================================================
+\section{Decentralized development as parallel transport across fibers}
+\label{sec:decentral}
+%% =================================================================
+
+\begin{definition}[Anti-scalar-collapse in governance --- claims 13--16, 21]
+\label{def:decentral}
+The alternative to centralized steering: make AI development as
+decentralized, participatory, and self-organizing as possible. Many
+architectures, many value systems, many cultures, many economic
+arrangements --- all running in parallel, competing, cooperating,
+combining, correcting one another.
+
+In Hyperseed terms, this is \emph{parallel transport across many
+independent fibers} of the AI development bundle:
+\[
+  E_{\text{AI}} = \bigoplus_{i \in \text{cultures}} E_i
+\]
+where each fiber $E_i$ represents an independent development
+trajectory (architecture, value system, culture, economic arrangement).
+
+This is the anti-scalar-collapse principle applied to governance:
+\begin{itemize}
+\item Scalar collapse: reducing AI development to a single
+  committee-chosen trajectory.
+\item Anti-scalar-collapse: maintaining many independent fibers, each
+  carrying its own trajectory, with the global outcome emerging from
+  their interaction.
+\end{itemize}
+
+The ``diverse mechanism of the global brain of human society'' is the
+sheaf structure that composes the local sections from many fibers into
+a global section --- not by choosing one local section and imposing it,
+but by letting the gluing conditions emerge from interaction.
+\end{definition}
+
+%% =================================================================
+\section{Complementarity as emergent sheaf}
+\label{sec:complement}
+%% =================================================================
+
+\begin{proposition}[Global section from local interactions --- claims 17--19, 23]
+\label{prop:complement}
+Real human-AI complementarity is:
+\begin{itemize}
+\item A \textbf{relationship}, not a specification --- worked out in
+  the messy back-and-forth of billions of people and AI agents.
+\item \textbf{Emergent}, not designed --- arising from building,
+  forking, remixing systems in ways no committee could anticipate or
+  approve.
+\item \textbf{Local-to-global}: each interaction, each fork, each
+  remix is a local section; complementarity is the global section
+  that emerges when local sections glue consistently.
+\end{itemize}
+
+In Hyperseed terms, complementarity is an \emph{emergent sheaf}:
+\[
+  \text{Complementarity} = \varinjlim_{U \in \mathcal{U}} \mathcal{F}(U)
+\]
+where $\mathcal{U}$ is the open cover of human-AI interaction contexts
+and $\mathcal{F}(U)$ is the local complementarity relationship in
+context $U$. The global section (overall complementarity pattern)
+exists only as the colimit of local sections --- it cannot be computed
+or specified in advance.
+
+A top-down committee trying to specify complementarity is trying to
+write a global section without computing the colimit --- imposing a
+predetermined pattern that may not be consistent with the local
+sections that actually arise. The bottom-up approach lets the local
+sections form first, then discovers (rather than dictates) the global
+pattern.
+\end{proposition}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Seven Flavors} (2026-07-01): frozen directed type as
+  evil mode. Centralized steering produces the same structural
+  pathology as AI-imposed freezing --- monoculture trajectory with
+  no self-correction.
+\item \textbf{Watermarking Folly} (2026-07-21): surface vs.\ structure.
+  Statistical watermarking detects 0-cell properties; deceptive open
+  letters exploit 0-cell agreement. Both miss directed structure.
+\item \textbf{Sanders Ban} (2026-09-05): state control of AI. The
+  letter-to-regulation pipeline is the softer version of legislative
+  bans --- both freeze the directed type through centralized control.
+\item \textbf{Kimi K3} (2026-07-20): open weights break the monopoly
+  cocycle. Decentralized development is the governance analog of
+  open weights --- making transition functions traversable rather
+  than controlled by gatekeepers.
+\item \textbf{Goals That Grow Back} (2026-07-28): $R_{\text{auth}}$
+  and provenance-gated trust. The deceptive letter genre is a
+  provenance failure that $R_{\text{auth}}$ would detect: stated
+  origin doesn't match actual origin.
+\item \textbf{Paperclip Maximizers} (2026-07-27): containment
+  insufficiency. Expert steering is another form of containment
+  (constraining AI development to approved trajectories), subject
+  to the same insufficiency when the constrained entities are
+  sufficiently capable and motivated.
+\item \textbf{Proof of Humanity} (2026-08-04): decentralized identity.
+  The decentralized alternative for AI governance mirrors the
+  decentralized alternative for identity --- bottom-up participation
+  rather than top-down certification.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Steering impossibility theorem]
+Conjecture: for any sufficiently complex technology (complexity measured
+by the dimension of its directed type), there exists no finite committee
+whose predictions about the technology's socioeconomic impact are
+reliably better than the collective predictions emerging from
+decentralized experimentation. Formally: the prediction error of any
+centralized model grows superlinearly with the dimension of the
+technology's directed type, while the collective prediction error from
+decentralized exploration grows sublinearly. The crossover point ---
+where decentralized exploration becomes more reliable than centralized
+prediction --- occurs well before the technology reaches AGI-level
+complexity.
+\end{conjecture}
+
+\end{document}

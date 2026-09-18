@@ -1,0 +1,249 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Sanders' Stupid Superintelligence Ban}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Sanders' Stupid Superintelligence Ban'' (2026-09-05) within the Hyperseed
+ontology. The article critiques the Sanders--Casar ``Ban Artificial
+Superintelligence Act'' as a case study in how well-intentioned policy
+can produce structurally perverse outcomes. Each failure mode maps onto
+Hyperseed structures: the selection effect as provenance-filtered sheaf
+destruction, regulatory capture as cocycle collapse, definitional vagueness
+as scalar collapse, and the unstoppability of AGI development as directed-type
+irreversibility.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{The selection effect as provenance-filtered sheaf}
+\label{sec:selection}
+%% =================================================================
+
+\begin{definition}[Provenance-filtered sheaf --- claims 7--10, 29, 34]
+\label{def:prov-filter}
+Let $\mathcal{F}$ be a sheaf of AI development activities over the base
+space $B$ of global actors. Each section $s_i : U_i \to E$ carries
+provenance metadata $\pi(s_i) \in \{\text{open}, \text{opaque}\}$:
+\begin{itemize}
+\item \textbf{Open sections}: published research, open-source code,
+  internationally collaborative work. Provenance is visible and queryable.
+\item \textbf{Opaque sections}: classified military programs, intelligence
+  agency projects, offshore corporate work. Provenance is hidden.
+\end{itemize}
+\end{definition}
+
+\begin{theorem}[Inverse selection theorem --- claims 7--10]
+\label{thm:inverse-sel}
+A ban enforced with criminal penalties applies a \emph{provenance filter}
+$\phi : \mathcal{F} \to \mathcal{F}'$ that removes sections by visibility:
+\[
+  \phi(s_i) = \begin{cases}
+    \emptyset & \text{if } \pi(s_i) = \text{open} \\
+    s_i & \text{if } \pi(s_i) = \text{opaque}
+  \end{cases}
+\]
+The resulting sheaf $\mathcal{F}' = \phi(\mathcal{F})$ contains only
+opaque sections. This is structurally anti-$E_\pi$: it degrades the
+aggregate provenance quality of the global AI ecosystem by removing
+exactly the actors whose provenance is transparent.
+\end{theorem}
+
+\begin{corollary}[Safety paradox]
+The bill's stated goal is safety. But the selection effect ensures that
+surviving AI development has minimal provenance transparency --- precisely
+the condition under which safety monitoring, oversight, and course correction
+are impossible. The ban maximizes the probability of the outcome it seeks
+to prevent.
+\end{corollary}
+
+%% =================================================================
+\section{Regulatory capture as cocycle collapse}
+\label{sec:regulatory}
+%% =================================================================
+
+\begin{definition}[Regulatory cocycle --- claims 11--12, 30]
+\label{def:reg-cocycle}
+A regulatory system requires:
+\begin{itemize}
+\item \textbf{Regulator} $R$: the new federal agency conducting reviews,
+\item \textbf{Regulated entities} $\{E_i\}$: AI developers seeking approval,
+\item \textbf{Independence condition}: $R$ must be structurally independent
+  of $\{E_i\}$, with distinct personnel, funding, and perspectives.
+\end{itemize}
+The cocycle condition requires that different oversight perspectives
+triangulate consistently: $g_{R,E_i} \circ g_{E_i,E_j} = g_{R,E_j}$.
+\end{definition}
+
+\begin{proposition}[Compliance moat $\Rightarrow$ cocycle collapse --- claim 12]
+\label{prop:moat}
+Standing up a new agency takes years. When reviews begin, only entities
+with compliance infrastructure can navigate the process:
+\begin{enumerate}
+\item The review criteria are shaped by the entity class that can engage
+  with the process (large companies with lawyers),
+\item Personnel flow between regulator and regulated creates shared
+  perspective ($g_{R,E_i} \approx \text{id}$),
+\item The cocycle degenerates: all transition functions factor through
+  the incumbent perspective $\Gamma$, and independent oversight is lost.
+\end{enumerate}
+This is the same auditor-capture failure identified in the Coxon/EA
+article (cocycle failure in governance descent data).
+\end{proposition}
+
+%% =================================================================
+\section{Definitional swamp as scalar collapse}
+\label{sec:definitional}
+%% =================================================================
+
+\begin{proposition}[Intelligence binary as scalar collapse --- claims 13--14, 31]
+\label{prop:def-swamp}
+The bill requires identifying systems that ``surpass human intelligence.''
+This projects the intelligence continuum $g : \mathcal{I} \to \mathbb{R}_{\geq 0}$
+(a fiber dimension, per the AGI Era article) onto a binary:
+\[
+  \text{proj}_{\text{ban}} : g(S) \mapsto \begin{cases}
+    \text{legal} & \text{if } g(S) < g_{\text{human}} \\
+    \text{illegal} & \text{if } g(S) \geq g_{\text{human}}
+  \end{cases}
+\]
+This projection is a scalar collapse that loses essential structure:
+\begin{enumerate}
+\item There is no well-defined $g_{\text{human}}$ (which human? at what task?),
+\item Systems exceed human performance in some domains while remaining
+  subhuman in others --- no single scalar captures the profile,
+\item The vagueness of the threshold makes the statute a tool of
+  selective enforcement rather than objective regulation.
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}
+The article notes that recommendation algorithms have arguably done more
+to destabilize democratic governance than any hypothetical superintelligence.
+This illustrates that the real risks are orthogonal to the scalar
+``surpass human intelligence'' --- a system need not be super-intelligent
+to be socially destructive.
+\end{remark}
+
+%% =================================================================
+\section{Unstoppability as directed-type irreversibility}
+\label{sec:unstoppable}
+%% =================================================================
+
+\begin{proposition}[AGI development as directed type --- claims 16--19, 32]
+\label{prop:directed}
+Let $\mathcal{D}$ be the directed type of global technological capability.
+AGI development generates new cells at every level:
+\begin{itemize}
+\item 0-cells: new algorithms, architectures, training techniques,
+\item 1-cells: new capability combinations, deployment patterns,
+\item 2-cells: new emergent behaviors, meta-level insights.
+\end{itemize}
+Once generated, these cells cannot be deleted by legislative fiat:
+\[
+  \forall k \geq 0: \;\; \text{cell}(k) \in \mathcal{D}_t
+  \;\Rightarrow\; \text{cell}(k) \in \mathcal{D}_{t'} \;\;\forall t' > t.
+\]
+This is the irreversibility of directed history: knowledge, once created
+and disseminated, cannot be un-known.
+\end{proposition}
+
+\begin{corollary}[Prohibition as trivial-holonomy enforcement --- claim 35]
+Attempting to freeze AI development at current levels is attempting to
+enforce trivial holonomy on the technology ecosystem: no experiential
+path should change the capability state. This fails because:
+\begin{enumerate}
+\item The ecosystem has nontrivial holonomy --- different research paths
+  produce genuinely different capability states,
+\item The directed type is irreversible --- even if some paths are blocked,
+  others continue generating new cells,
+\item The global base space $B$ includes actors outside any single
+  jurisdiction's enforcement reach.
+\end{enumerate}
+\end{corollary}
+
+%% =================================================================
+\section{The positive alternative: shape rather than stop}
+\label{sec:positive}
+%% =================================================================
+
+\begin{definition}[Left AGI agenda as distributed fiber bundle --- claims 23--28, 33]
+\label{def:left-agenda}
+The article proposes a positive left agenda that maps onto the distributed
+fiber bundle architecture:
+\begin{enumerate}
+\item \textbf{Universal digital dividend}: redistribution of gains from
+  AI productivity across the fiber (ensuring no section is left without
+  resources).
+\item \textbf{Open-source AGI support}: maintaining many independent local
+  sections (no global-section monopoly).
+\item \textbf{Progressive data rights}: provenance transparency for
+  training data ($E_\pi$ for data provenance).
+\item \textbf{International cooperation}: building descent data
+  (transition functions) between national sections.
+\item \textbf{Shape rather than stop}: steering the directed type toward
+  better outcomes rather than attempting impossible reversal.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[Structural superiority of shaping]
+\label{prop:shaping}
+Shaping preserves the nontrivial holonomy of the technology ecosystem
+(allowing beneficial developments) while constructing trust-weighted
+descent data that steers away from harmful outcomes. This has strictly
+more degrees of freedom than prohibition (which attempts zero holonomy
+and fails).
+\end{proposition}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Coxon/EA article} (2026-09-13): auditor capture as cocycle
+  failure. Here extended to regulatory capture by incumbents.
+\item \textbf{Dario Depth-Psychology} (2026-09-14): arms-race attractor
+  and kill-switch danger. The Sanders ban creates a different kill-switch:
+  a legal one where prosecution power replaces API access.
+\item \textbf{OpenAI AGI Era} (2026-09-10): intelligence as continuous
+  gradation (fiber dimension). The Sanders bill's binary threshold
+  collapses this gradation.
+\item \textbf{How Omega Lost Its Claw} (2026-09-11): distributed fiber
+  bundle as the positive alternative to centralization. Here the same
+  architecture appears as the left's positive AGI agenda.
+\item \textbf{$(f,c)$-lossy critique} (LTM 5a4d150b): scalar collapse
+  loses essential information; here applied to legal definitions.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Provenance-quality monotonicity]
+For any policy $P$ applied to a sheaf $\mathcal{F}$ of development
+activities, define the \emph{aggregate provenance quality}
+$Q(P, \mathcal{F}) = \sum_i w_i \cdot \text{transparency}(\pi(s_i))$
+where $w_i$ weights by capability level. Conjecture: any ban-type
+policy $P_{\text{ban}}$ satisfies
+$Q(P_{\text{ban}}, \mathcal{F}) < Q(\text{status quo}, \mathcal{F})$
+--- bans always reduce aggregate provenance quality because they
+selectively remove the transparent.
+\end{conjecture}
+
+\end{document}

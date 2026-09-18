@@ -1,0 +1,233 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  What Is Science, Exactly?}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``What Is Science, Exactly?'' (2026-01-02) within the Hyperseed ontology.
+The article examines science as a social-epistemic process rather than a
+single method. Key mappings: science as communal fiber construction,
+reproducibility as fiber verification, Bayesian updating as fiber revision,
+reproducibility crisis as fiber-base decoupling, peer review as inter-observer
+fiber comparison, and AI science tools as base interface expansion.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Communal fiber construction: science as social process}
+\label{sec:communal}
+%% =================================================================
+
+\begin{theorem}[Science as communal fiber --- claims 1--9, 25]
+\label{thm:communal}
+There is no single ``scientific method.'' Science is a family of practices
+organized around structured skepticism, reproducibility, and communal
+evidence evaluation. The textbook version (hypothesis $\to$ experiment
+$\to$ theory) is a pedagogical simplification.
+
+Science is fundamentally social: individual brilliance matters, but the
+epistemic power comes from the community process --- peer review,
+replication, critique, synthesis.
+
+In Hyperseed terms, science is \emph{communal fiber construction}: many
+observers contributing to a shared fiber (theory) over a shared base
+(evidence):
+\[
+  F_{\text{science}} = \bigcup_{i \in \text{community}}
+  f_i(B_{\text{shared}})
+\]
+
+No single observer builds the full fiber. Each contributes observations,
+interpretations, and critiques that collectively shape the community
+fiber. The result is community-wide knowledge --- not what any individual
+knows but what the community collectively knows through its distributed
+evidence evaluation process.
+
+Key mechanisms of communal fiber construction:
+\begin{itemize}
+\item \textbf{Peer review} = inter-observer fiber comparison: different
+  observers compare their fibers (interpretations) over the same base
+  (data/methods), and discrepancies signal errors or ambiguities.
+\item \textbf{Replication} = fiber verification: checking that the same
+  base produces the same fiber when traversed by different observers.
+\item \textbf{Critique} = fiber error detection: identifying where the
+  community fiber doesn't faithfully represent the base.
+\item \textbf{Synthesis} = fiber integration: combining partial fibers
+  from different observers into a coherent whole.
+\end{itemize}
+
+The demarcation problem (what distinguishes science from non-science)
+maps to the question of what distinguishes rigorous communal fiber
+construction from other kinds of collective belief formation. No clean
+criterion captures all of science --- the boundary is fuzzy because
+the fiber construction practices vary across domains.
+\end{theorem}
+
+%% =================================================================
+\section{Fiber revision: the Bayesian core}
+\label{sec:bayesian}
+%% =================================================================
+
+\begin{proposition}[Bayesian fiber revision --- claims 10--13, 27]
+\label{prop:bayesian}
+At its best, science approximates Bayesian updating on a community-wide
+prior. Each experiment revises the community fiber based on new base
+evidence:
+\[
+  F_{t+1} = \text{Update}(F_t, e_{\text{new}}, w(e_{\text{new}}))
+\]
+
+where $w(e)$ is the evidential weight: controlled experiments weigh
+more than observational studies, large samples more than small ones,
+pre-registered studies more than post-hoc analyses.
+
+The community prior evolves through accumulation of evidence, theory
+development, and paradigm shifts. In Hyperseed terms, this is the
+fiber's temporal evolution: the community fiber at time $t+1$ depends
+on the fiber at time $t$ plus new base evidence.
+
+Real science deviates from ideal Bayesianism in systematic ways:
+confirmation bias (over-weighting evidence that confirms the current
+fiber), anchoring (the prior fiber has too much inertia), social
+pressure (the fiber reflects community politics, not just evidence),
+and career incentives (the fiber reflects what's rewarded, not just
+what's true).
+
+These deviations are \emph{fiber distortions}: systematic ways in which
+the community fiber fails to faithfully represent the base evidence.
+Understanding these distortions is essential for improving the
+fiber-construction process.
+\end{proposition}
+
+%% =================================================================
+\section{Fiber-base decoupling: the reproducibility crisis}
+\label{sec:crisis}
+%% =================================================================
+
+\begin{theorem}[Reproducibility crisis --- claims 14--18, 28]
+\label{thm:crisis}
+The current reproducibility crisis reveals what happens when the
+social-epistemic machinery breaks down --- when the fiber (published
+claims) decouples from the base (actual evidence):
+\[
+  \|F_{\text{published}} - F_{\text{evidence}}\| \gg 0
+  \quad \text{(fiber-base decoupling)}
+\]
+
+The decoupling is driven by incentive misalignment:
+\begin{itemize}
+\item \textbf{Publish-or-perish}: rewards fiber quantity over fiber
+  quality. The system incentivizes producing more fiber (papers)
+  regardless of whether it faithfully represents the base (evidence).
+\item \textbf{Publication bias}: journals preferentially accept fiber
+  that shows positive results, creating a distorted community fiber.
+  The ``file drawer problem'' means negative-result fiber disappears.
+\item \textbf{Statistical malpractice}: p-hacking, HARKing, underpowered
+  studies --- systematic methods for making the fiber \emph{appear} to
+  represent the base when it doesn't.
+\end{itemize}
+
+The crisis extends beyond psychology to biomedical research, economics,
+and other fields. It's a systemic fiber-base decoupling, not a
+disciplinary one.
+
+In Hyperseed terms, the reproducibility crisis is a failure of
+\emph{fiber verification}: the community has stopped systematically
+checking that the fiber faithfully represents the base. Without
+verification (replication), the fiber floats free of its evidential
+base --- claims accumulate without adequate base support.
+\end{theorem}
+
+%% =================================================================
+\section{AI as base interface expansion for science}
+\label{sec:ai}
+%% =================================================================
+
+\begin{proposition}[AI and science --- claims 19--24, 30]
+\label{prop:ai}
+AI could either help fix science or make it worse. In Hyperseed terms,
+AI tools for science expand the base interface (faster analysis, more
+data processing) but don't necessarily improve the fiber (better
+theories, better reasoning):
+
+\textbf{Helpful applications (base interface improvement):}
+\begin{itemize}
+\item Better statistical analysis (detecting fiber-base discrepancies).
+\item Automated replication checking (systematic fiber verification).
+\item Bias detection (identifying fiber distortions).
+\item Literature synthesis (integrating partial fibers).
+\end{itemize}
+
+\textbf{Harmful applications (base interface abuse):}
+\begin{itemize}
+\item P-hacking at scale (automated fiber-base decoupling).
+\item Publication mills (mass-produced unreliable fiber).
+\item Deepfake data (corrupting the base itself).
+\end{itemize}
+
+AI is an amplifier: it amplifies whatever the system incentivizes. If
+incentives are broken, AI amplifies the brokenness. This mirrors the
+OpenClaw analysis: better hands for a scientific brain. The hands
+(AI tools) amplify what the brain (scientific community) does, for
+better or worse.
+
+AGI-as-scientist requires genuine reasoning capabilities (abstraction,
+causal inference, creative hypothesis generation) AND social integration
+(participating in the communal epistemic process). This requires both
+fiber improvement (better reasoning) and base integration (participating
+in the community fiber construction).
+\end{proposition}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{OpenClaw: Amazing Hands for a Brain} (2026-02-03): AI tools
+  as base interface expansion. The same hands-vs-brain distinction applies
+  to AI-for-science.
+\item \textbf{Evidence Is to Logic What Energy Is to Physics} (2026-03-10):
+  evidence conservation. The anti-hallucination theorems apply to science:
+  scientific claims should be bounded by evidence (hallucination bound).
+\item \textbf{Goertzel vs Epstein} (2026-02-20): provenance. Scientific
+  provenance (who found what, funded by whom) is part of the fiber's
+  evidence trail.
+\item \textbf{LeCun's SAI Is a Special Case of AGI} (2026-03-07): credit.
+  Credit erasure in science is fiber provenance deletion --- the same
+  pattern LeCun exhibits with AGI research.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Fiber verification as science's defining property]
+Conjecture: the defining property of science (what distinguishes it from
+other forms of collective belief) is systematic fiber verification ---
+the commitment to checking that the communal fiber faithfully represents
+the base evidence, through replication, peer review, and structured
+skepticism.
+
+If this conjecture holds, the reproducibility crisis is not a peripheral
+problem but an existential threat to science itself: when fiber
+verification breaks down, science ceases to be science and becomes
+another form of collective myth-making. Restoring science requires
+restoring fiber verification --- which means fixing the incentive
+structures that currently discourage it.
+\end{conjecture}
+
+\end{document}

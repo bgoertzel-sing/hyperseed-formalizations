@@ -1,0 +1,60 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  God Doesn't Double-Count Evidence}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``God Doesn't Double-Count Evidence'' (2022-01-15)
+within the Hyperseed ontology.
+\end{abstract}
+
+\section{Fiber independence and double-counting}
+
+\begin{proposition}[No double-counting = fiber independence --- claims 1, 3, 6]
+Independent evidence corresponds to independent fibers:
+\[
+  F_{e_1} \perp F_{e_2} \implies \text{count separately}; \quad
+  F_{e_1} \not\perp F_{e_2} \implies \text{fuse, do not double-count}
+\]
+Double-counting is the error of treating dependent fibers as independent,
+inflating confidence beyond what the evidence warrants.
+\end{proposition}
+
+\section{Homotopy independence certificate}
+
+\begin{proposition}[Homotopy criterion --- claims 4, 7]
+Two evidence paths that are homotopic (share a common derivation) must not
+be counted separately:
+\[
+  \gamma_1 \simeq \gamma_2 \implies \text{single count}; \quad
+  \gamma_1 \not\simeq \gamma_2 \implies \text{independent contributions}
+\]
+Homotopy class membership serves as the independence certificate ---
+the key structural invariant preventing double-counting.
+\end{proposition}
+
+\section{Base-space non-redundancy}
+
+\begin{proposition}[Physics enforces non-redundancy --- claims 2, 5, 8]
+Physical laws enforce non-redundancy as a base-space constraint:
+\[
+  \sum_i w_i \leq W_{\max}(B) \quad \text{(information budget)}
+\]
+The base space imposes an information budget that prevents unlimited
+evidence accumulation. AGI systems must respect this constraint.
+\end{proposition}
+\end{document}

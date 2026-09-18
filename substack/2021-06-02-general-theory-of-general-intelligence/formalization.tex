@@ -1,0 +1,60 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  The General Theory of General Intelligence}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``The General Theory of General Intelligence'' (2021-06-02)
+within the Hyperseed ontology.
+\end{abstract}
+
+\section{Intelligence as fiber richness}
+
+\begin{proposition}[Intelligence = thick fiber --- claims 1, 4, 7]
+General intelligence is thick, diverse fiber over base space:
+\[
+  \text{GI}(b) = \{F_i(b)\}_{i \in I} \quad \text{with} \quad |I| \gg 1
+\]
+The richness of fiber (number and diversity of fibers over each base point)
+determines the system's ability to respond flexibly to diverse environmental
+conditions. Thin fiber = narrow intelligence; thick fiber = general intelligence.
+\end{proposition}
+
+\section{Functors as fiber maps}
+
+\begin{proposition}[Functors = fiber transport --- claims 2, 8]
+Category-theoretic functors between environment and action categories
+correspond to coherent fiber transport:
+\[
+  \mathcal{F}: \text{Env} \to \text{Act} \quad \leftrightarrow \quad
+  \text{parallel transport along } \gamma \in B
+\]
+Natural transformations between functors correspond to learning ---
+changing the fiber map while preserving coherence.
+\end{proposition}
+
+\section{Self-modification as fiber evolution}
+
+\begin{proposition}[Self-modification = autopoietic fiber --- claims 3, 9]
+Self-modification is the fiber reshaping itself:
+\[
+  \frac{d}{dt} F(b,t) = \Phi(F(b,t), b) \quad \text{(autopoietic dynamics)}
+\]
+The evolution operator $\Phi$ depends on the current fiber state ---
+the system modifies its own structure based on its current structure.
+\end{proposition}
+\end{document}

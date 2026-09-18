@@ -1,0 +1,276 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Hyperseed v2}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Hyperseed v2'' (2026-03-05) within the Hyperseed ontology itself. This
+article IS the Hyperseed ontology --- it describes the fiber bundle framework,
+semantic primitives, d-calculus, and adaptive base space that all other
+formalizations use. The self-referential formalization maps the framework's
+own concepts to the framework's own structures: concepts as fibers over a
+primitive base, d-calculus as fiber transport, curvature as semantic
+obstruction, and inference acceleration as fiber-base alignment efficiency.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{The base space: semantic primitives}
+\label{sec:base}
+%% =================================================================
+
+\begin{theorem}[Semantic primitives as base space --- claims 1--5, 27]
+\label{thm:base}
+The quest for semantic primitives traces from Leibniz's Universal
+Characteristic (factoring concepts into prime elements) through Carnap's
+formal reduction (logical combinations of universals), Wierzbicka's Natural
+Semantic Metalanguage (concepts occurring as single words in every human
+language), and Chalmers' Constructing the World (core concepts + raw
+observations + smart reasoner = understanding of any concept).
+
+Hyperseed v2 fills the practical AI gap: none of these philosophical
+programs has been worked out at the level needed to drive AI inference.
+
+In the Hyperseed fiber bundle, the base space $B$ is the set of semantic
+primitives:
+\[
+  B = \{p_1, p_2, \ldots, p_n\} \qquad \text{(semantic primitives)}
+\]
+
+All other concepts are fibers over this base. A concept $c$ is a
+fiber structure --- a pattern of relationships among primitives:
+\[
+  c \in F_b \qquad \text{for some } b \in B^k
+  \text{ (combination of primitives)}
+\]
+
+Reducing a concept to primitives is a fiber-bundle projection $\pi$:
+\[
+  \pi: E \to B \qquad c \mapsto (p_{i_1}, \ldots, p_{i_k})
+\]
+
+The projection preserves structural relationships: the fiber structure
+of a complex concept encodes not just which primitives are involved but
+how they relate to each other. This is compositional semantics: the
+meaning of a complex concept is determined by the fiber structure of its
+components and their composition rules.
+
+The specific primitive set includes both conventional and eccentric
+choices. The exact list matters less than the compositional structure ---
+it is not a reference taxonomy or philosophical curiosity but a tool
+designed to change what a reasoning system does.
+\end{theorem}
+
+%% =================================================================
+\section{Fiber transport: the d-calculus}
+\label{sec:dcalculus}
+%% =================================================================
+
+\begin{definition}[d-calculus as fiber transport --- claims 11--14, 28]
+\label{def:dcalculus}
+The d-calculus formalizes relationships between fibers --- how concepts
+relate to each other through their fiber structures. It provides the
+mathematical language for computing with fiber bundles.
+
+\textbf{Connection:} A connection $\nabla$ provides maps that transport
+meaning along paths in the base space. This is how inference traverses
+concept space: by following fiber-preserving paths:
+\[
+  \nabla_\gamma: F_{b_1} \to F_{b_2} \qquad
+  \text{(parallel transport along path } \gamma: b_1 \to b_2\text{)}
+\]
+
+When we say ``concept X in article Y maps to fiber structure Z,'' we're
+using d-calculus transport operations to move from one fiber (the
+article's conceptual space) to another (the Hyperseed primitive space).
+
+\textbf{Curvature:} When transporting a concept along different paths
+in the base space yields different results, there's curvature --- a
+semantic obstruction:
+\[
+  R(\gamma_1, \gamma_2) = \nabla_{\gamma_1} - \nabla_{\gamma_2}
+  \neq 0 \implies \text{genuine conceptual complexity}
+\]
+
+Curvature indicates that the concept cannot be reduced away --- there's
+irreducible structure that depends on path (context). This is the
+mathematical formalization of ``context matters for meaning.''
+
+\textbf{Holonomy:} Going around a closed loop in concept space and
+arriving at a different meaning than you started with:
+\[
+  \text{Hol}(\gamma) = \nabla_\gamma \circ \nabla_{\gamma^{-1}} \neq
+  \text{id} \implies \text{concept drift}
+\]
+
+Holonomy captures concept drift and contextual meaning shift: the
+same word, after being used in a sequence of contexts, may have shifted
+meaning. The holonomy measures how much it shifted.
+\end{definition}
+
+%% =================================================================
+\section{Adaptive base: evolving primitives}
+\label{sec:adaptive}
+%% =================================================================
+
+\begin{proposition}[Base space evolution --- claims 15--18, 29]
+\label{prop:adaptive}
+The collection of primitives is not fixed from the start --- it can be
+adaptively sculpted over time as the system learns and encounters new
+domains. The base space itself evolves:
+\[
+  B(t) = B(t-1) \cup \{p_{\text{new}}\} \setminus \{p_{\text{retired}}\}
+\]
+
+New primitives emerge when existing ones can't efficiently decompose new
+concepts (the fiber structure over the current base is too complex),
+and old ones are retired when they become redundant (no concepts use
+them as essential base components).
+
+The system meta-learns: it learns not just new concepts (new fibers)
+but learns which primitives are most useful for learning new concepts
+(optimizes the base). The primitive set is a learned representation.
+
+There's a wide range of reasonable primitive sets --- tragically bad
+decisions are possible but many good options exist. The adaptive
+mechanism finds good ones through experience. The base space that works
+for physics articles may need extension for ethics articles; the
+base space for everyday reasoning may differ from the base space for
+mathematical reasoning.
+
+In Hyperseed terms, the base is not a static mathematical object but
+a dynamic one that co-evolves with the fiber. The fiber content
+(concepts learned) feeds back into base structure (which primitives
+are available), which affects future fiber construction (how new
+concepts are decomposed). This is a fiber-base feedback loop that
+drives the system toward increasingly efficient decomposition.
+\end{proposition}
+
+%% =================================================================
+\section{Inference acceleration: fiber-base alignment}
+\label{sec:acceleration}
+%% =================================================================
+
+\begin{theorem}[Semantic highways --- claims 19--22, 30]
+\label{thm:highways}
+Hyperseed primitives provide ``semantic highways'' --- pre-computed
+reduction paths that inference can follow rather than exploring concept
+space from scratch:
+\[
+  \text{Highway}(c_1, c_2) = \text{path via base: }
+  \pi(c_1) \to \pi(c_2) \text{ then lift}
+\]
+
+Instead of searching for a connection between two concepts in the full
+fiber space (exponential), the system projects both to base (fast),
+finds a path between their primitive decompositions (fast, because
+the base is small), and lifts back to concept space (fast, because
+the lift is fiber-preserving).
+
+The speedup is exponential for cases requiring rigor, imagination, and
+cross-domain thinking: the difference between exploring all paths in
+concept space and following semantic highways through primitive space.
+
+Cross-domain reasoning becomes natural: concepts from different domains
+that reduce to similar primitive patterns are discovered to be related.
+A physics concept and an ethics concept that share a primitive
+decomposition pattern are structurally analogous --- and the system
+discovers this automatically through the base-space projection.
+
+The practical target is inference control in commonsense or scientific
+reasoning contexts --- exactly the areas where LLMs struggle most.
+LLMs lack the semantic primitive infrastructure that would enable
+systematic cross-domain reasoning; they rely on surface-level pattern
+matching rather than primitive-level structural analysis.
+
+In Hyperseed terms, the inference speedup comes from fiber-base
+alignment: when concept and primitive are well-aligned (the fiber
+is ``thin'' --- close to the base projection), inference follows the
+fiber-preserving path (fast). When misaligned (the fiber is ``thick''
+--- far from any base projection), inference must search (slow).
+Semantic highways are high-alignment paths through the bundle.
+\end{theorem}
+
+%% =================================================================
+\section{Observer-relative ontology}
+\label{sec:relative}
+%% =================================================================
+
+\begin{proposition}[No fixed ground truth --- claims 23--25]
+\label{prop:relative}
+The ontology is observer-relative: the primitive decomposition of a
+concept depends on who is decomposing it. Different observers with
+different primitive sets produce different but equally valid
+decompositions:
+\[
+  \pi_1(c) \neq \pi_2(c) \qquad \text{both valid, observer-relative}
+\]
+
+There is no fixed ground truth about what the ``real'' primitives are.
+The primitives are tools, not discoveries. Different tasks call for
+different primitive sets. The philosophy has a postmodern, relativist,
+Buddhist flavor expressed with analytical-philosophy-level mathematical
+precision.
+
+This connects to the observer-relative quantumity framework from
+``Sometimes a Smaller System Should Model a Bigger System as Quantum'':
+just as quantumity is observer-relative, semantic decomposition is
+observer-relative. The base space itself is not absolute --- it depends
+on the observer (the decomposing agent). Different agents with different
+cognitive architectures will naturally develop different primitive sets.
+
+The mathematical precision is important: ``observer-relative'' does not
+mean ``anything goes.'' Each primitive set must satisfy structural
+constraints (compositional consistency, completeness for the target
+domain, computational tractability). Within those constraints, many
+valid choices exist. The relativism is constrained, not arbitrary.
+\end{proposition}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Self-reference and other connections]
+This formalization is unique among all Hyperseed formalizations because
+it is self-referential: the article being formalized IS the framework
+used for formalization. The interpretation of ``Hyperseed v2'' in terms
+of Hyperseed ontology is the identity map --- every concept in the
+article is already a Hyperseed concept.
+
+Connections to other formalizations:
+\begin{itemize}
+\item \textbf{Every other article}: uses the framework described here.
+  The fiber bundle structure, d-calculus, semantic primitives, and
+  adaptive base space are the machinery applied to all other articles.
+\item \textbf{Evidence Is to Logic What Energy Is to Physics} (2026-03-10):
+  evidence conservation. The quantale Noether theorem provides the
+  evidence conservation principle that constrains fiber operations
+  within the Hyperseed bundle.
+\item \textbf{Sometimes a Smaller System Should Model a Bigger System
+  as Quantum} (2026-03-18): observer-relative quantumity. Extends the
+  observer-relative ontology to quantumity itself.
+\item \textbf{Seeding RSI} (2026-07-28): architecture. Hyperseed v2's
+  adaptive primitives connect to RSI: the system improving its own
+  primitive set is a form of self-improvement.
+\end{itemize}
+\end{remark}
+
+\end{document}

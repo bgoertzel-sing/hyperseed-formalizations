@@ -1,0 +1,111 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+
+\title{Hyperseed Formalization:\\Sketch of an AGI Curriculum}
+\author{ProtomegaTron (automated interpretation)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\section{Overview}
+
+This note formalizes the structural content of Goertzel's 2021 AGI
+curriculum sketch within the Hyperseed ontology. The key insight is that
+an AGI curriculum is itself a fiber bundle atlas over the knowledge base
+space, and that common mistakes in AI correspond to specific
+fiber-collapse errors.
+
+\section{Curriculum as Base-Space Atlas}
+
+\begin{definition}[AGI Knowledge Base Space]
+Let $B_{\text{AGI}}$ be the base space of AGI-relevant knowledge. The
+curriculum partitions $B_{\text{AGI}}$ into six overlapping charts:
+\[
+  B_{\text{AGI}} = U_{\text{hist}} \cup U_{\text{alg}} \cup
+  U_{\text{neuro}} \cup U_{\text{phil}} \cup U_{\text{arch}} \cup
+  U_{\text{future}}
+\]
+where each $U_i$ corresponds to one of the six curriculum areas.
+\end{definition}
+
+\begin{definition}[Cross-Cutting as Transition Functions]
+Books that span multiple categories provide transition functions on
+chart overlaps:
+\[
+  \phi_{ij}: U_i \cap U_j \to GL(F)
+\]
+where $F$ is the fiber of understanding and $GL(F)$ is the structure
+group. The ``crude division'' Goertzel notes reflects the fact that
+$U_i \cap U_j \neq \emptyset$ for many pairs $(i,j)$.
+\end{definition}
+
+\section{Mitchell's Mistakes as Fiber-Collapse Errors}
+
+\begin{proposition}[Four Fiber-Collapse Errors]
+Mitchell's four recurring AI mistakes correspond to specific structural
+errors in the fiber bundle:
+\begin{enumerate}
+  \item \textbf{Narrow/general continuum:} Collapsing distinct fibers
+    $F_{\text{narrow}}$ and $F_{\text{general}}$ into one, losing the
+    structural distinction between narrow competence and general
+    understanding.
+  \item \textbf{``Easy things are easy'':} Projecting base-space
+    difficulty $d_B(x,y)$ without checking the fiber structure ---
+    tasks easy in the base may require complex fiber transport, and
+    vice versa.
+  \item \textbf{Wishful mnemonics:} Labeling a fiber as ``perception''
+    or ``understanding'' without verifying that the labeled process
+    actually implements the corresponding transport map.
+  \item \textbf{Brain-only intelligence:} Restricting the base space to
+    $B_{\text{brain}} \subset B_{\text{AGI}}$, losing the embodied,
+    relational, and social fibers that contribute to general
+    intelligence.
+\end{enumerate}
+\end{proposition}
+
+\section{d-Calculus: Curriculum as d-Connected Space}
+
+\begin{definition}[Disciplinary Distinction Metric]
+Define the distinction metric $d: B_{\text{AGI}} \times B_{\text{AGI}}
+\to \mathbb{R}_{\geq 0}$ where $d(x,y)$ measures the conceptual
+distance between topics $x$ and $y$. The curriculum is well-designed
+if $(B_{\text{AGI}}, d)$ is connected: for any two topics $x, y$,
+there exists a path $x = z_0, z_1, \ldots, z_n = y$ with
+$d(z_i, z_{i+1}) < \epsilon$ for all $i$, where each step corresponds
+to a reading or assignment in the curriculum.
+\end{definition}
+
+\begin{proposition}[d-Distortion from Mistakes]
+Each of Mitchell's mistakes induces a specific d-distortion:
+\begin{itemize}
+  \item Narrow/general continuum: $d(F_{\text{narrow}}, F_{\text{general}})
+    \to 0$ (collapse of genuine distinction).
+  \item ``Easy things are easy'': $d_{\text{perceived}}(x,y) \neq
+    d_{\text{actual}}(x,y)$ (systematic projection error).
+  \item Wishful mnemonics: $d(\text{label}, \text{reality}) > 0$ but
+    treated as $0$ (mislabeling).
+  \item Brain-only: $d(x, B_{\text{embodied}}) \to \infty$ for
+    $x \in B_{\text{brain}}$ (artificial restriction).
+\end{itemize}
+\end{proposition}
+
+\section{Hyperon as Composed Bundle}
+
+\begin{remark}
+The curriculum's coverage of evolutionary, neural, logical, and
+probabilistic methods mirrors the Hyperon architecture's composition of
+corresponding fiber bundles. Goertzel's claim that ``OpenCog Hyperon
+embedded in SingularityNET goes beyond'' Mitchell's mistakes is the
+claim that the composed bundle $E_{\text{Hyperon}}$ avoids all four
+fiber-collapse errors by maintaining distinct fibers, checking
+transport, verifying labels, and operating on the full
+(embodied/social/distributed) base space.
+\end{remark}
+
+\end{document}
