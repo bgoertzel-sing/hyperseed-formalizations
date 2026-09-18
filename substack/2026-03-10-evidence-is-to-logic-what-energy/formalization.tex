@@ -1,0 +1,282 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Evidence Is to Logic What Energy Is to Physics}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Evidence Is to Logic What Energy Is to Physics'' (2026-03-10) within the
+Hyperseed ontology. The article develops the evidence/energy analogy into
+rigorous mathematics: a discrete quantale Noether theorem, five
+anti-hallucination theorems, a non-commutative extension yielding quantum
+logic, and QLN generalizing PLN. Key mappings: evidence conservation as
+fiber conservation, the Noether theorem as fiber-base symmetry,
+hallucination bound as fiber-base constraint, non-commutativity as fiber
+operation order, and QLN as quantum fiber inference.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Fiber conservation: the quantale Noether theorem}
+\label{sec:noether}
+%% =================================================================
+
+\begin{theorem}[Evidence conservation --- claims 1--8, 25--26]
+\label{thm:noether}
+Evidence is to logic what energy is to physics. An inference engine
+traversing a proof graph converts premise-evidence into conclusion-evidence,
+just as a ball rolling down a hill converts potential energy into kinetic
+energy. If the engine is honest --- neither fabricating evidence nor
+double-counting it --- then evidence is conserved along optimal inference
+paths.
+
+The mathematical setting is quantales: complete lattices equipped with a
+monoidal product $\otimes$ that distributes over joins. Different quantale
+choices give different logics:
+\begin{itemize}
+\item Nonnegative reals $(\mathbb{R}_{\geq 0}, +, \times)$: probabilistic reasoning.
+\item Tropical semiring $(\mathbb{R} \cup \{\infty\}, \min, +)$: shortest-path problems.
+\item Boolean $(\{0,1\}, \lor, \land)$: classical logic.
+\end{itemize}
+
+Along an inference path, define forward factor $f$ and backward factor $g$.
+Their product $\rho = f \otimes g$ is the ``reinforcement'' at each node.
+
+\textbf{Discrete Quantale Noether Theorem:} Along geodesic (optimal)
+inference paths, the reinforcement $\rho$ is constant:
+\[
+  \rho(n_i) = f_i \otimes g_i = \text{const} \quad
+  \text{for all nodes } n_i \text{ on the geodesic}
+\]
+
+The proof is purely lattice-theoretic: it uses only that $\otimes$
+distributes over joins and that paths through a given node are a subset
+of all paths. This is the exact analogue of energy conservation ---
+not metaphor but isomorphic mathematical structure.
+
+In Hyperseed terms, this is \emph{fiber conservation}: evidence (fiber
+content) is conserved along optimal inference paths (base geodesics).
+The fiber can't create evidence from nothing --- it can only transport,
+transform, and distribute the evidence that enters from the base:
+\[
+  \nabla_{\gamma} \rho = 0 \quad \text{along geodesic } \gamma
+\]
+
+The conservation follows from \emph{fiber-base symmetry}: invariance
+under translation along the inference path. The fiber-base connection
+has a symmetry (path-translation invariance), and evidence conservation
+is the corresponding conserved quantity --- the Noether correspondence
+applied to the fiber bundle.
+\end{theorem}
+
+%% =================================================================
+\section{Anti-hallucination as fiber-base constraints}
+\label{sec:hallucination}
+%% =================================================================
+
+\begin{proposition}[Five theorems --- claims 9--13, 27, 32]
+\label{prop:hallucination}
+Evidence conservation alone doesn't fully constrain inference, just as
+energy conservation alone doesn't fully constrain physics. Five additional
+theorems complete the picture:
+
+\textbf{1. Hallucination Bound (fiber can't exceed base evidence):}
+Conclusion strength is bounded by premise evidence mass. No inference
+chain can manufacture support that wasn't there at the start:
+\[
+  \text{evidence}(\text{conclusion}) \leq \text{evidence}(\text{premises})
+\]
+
+In Hyperseed terms: the fiber can't contain more evidence than the base
+provides. This is a fundamental fiber-base constraint: no matter how
+sophisticated the fiber operations (inference steps), the total evidence
+is bounded by the base input.
+
+\textbf{2. Weakness-Bounded Leakage (fiber operation reordering cost):}
+Reordering near-commutative inference steps introduces discrepancy
+bounded by their pairwise ``weakness'' --- a quantale-valued measure of
+how much order matters:
+\[
+  \|f \circ g - g \circ f\| \leq w(f, g) \quad \text{(weakness bound)}
+\]
+
+This makes parallel and asynchronous inference safe: you can schedule
+steps freely, and the evidence integrity cost is controlled.
+
+\textbf{3. Evidence Monotonicity (fiber data-processing inequality):}
+Capsule-respecting inference cannot increase total evidence content ---
+the quantale analog of the classical data-processing inequality.
+
+\textbf{4. Join-Collision Entropy Non-Decrease (fiber second law):}
+Under join-bistochastic inference maps, evidence concentration can only
+decrease --- the logical second law of thermodynamics:
+\[
+  H_{\text{join}}(\rho_{t+1}) \geq H_{\text{join}}(\rho_t)
+\]
+
+In Hyperseed terms: without new evidence input from the base, the
+fiber's evidence becomes increasingly diffuse. The fiber tends toward
+maximum uncertainty (maximum entropy) without external input.
+
+\textbf{5. Together:} An honest inference engine conserves evidence along
+optimal paths, cannot hallucinate beyond its premises, degrades gracefully
+under reordering, and tends toward increasing uncertainty without new input.
+These are mathematical consequences of evidence conservation, not
+engineering desiderata.
+\end{proposition}
+
+%% =================================================================
+\section{Fiber operation order: the non-commutative extension}
+\label{sec:noncommutative}
+%% =================================================================
+
+\begin{theorem}[Non-commutative evidence --- claims 14--17, 28--30]
+\label{thm:noncommutative}
+When $a \otimes b \neq b \otimes a$ (the quantale is non-commutative),
+the order of inference steps matters --- just as the order of measurements
+matters in quantum mechanics.
+
+In the non-commutative extension, the Noether theorem splits into left
+and right conservation laws:
+\[
+  \rho_L = f \otimes g = \text{const} \qquad
+  \rho_R = g \otimes f = \text{const}
+\]
+
+These correspond to left and right fiber currents --- two independent
+conservation laws arising from the non-commutativity. In the commutative
+case they coincide ($\rho_L = \rho_R$); in the non-commutative case they
+diverge.
+
+This yields an \emph{uncertainty principle for inference}: you cannot
+simultaneously know the evidence for two non-commuting propositions to
+arbitrary precision. In Hyperseed terms, this is fiber measurement
+incompatibility: the fiber can't simultaneously resolve two non-commuting
+base properties. This connects directly to Level~2 (incompatibility) in
+the observer-relative quantumity hierarchy.
+
+The non-commutative extension leads to a new derivation of quantum
+mechanics itself: QM emerges from evidence conservation in
+non-commutative settings. The Hilbert space structure, the Born rule,
+the unitary evolution --- all follow from evidence conservation in a
+non-commutative quantale. This is not QM-by-analogy but QM-from-evidence:
+the mathematical structure of quantum mechanics is the inevitable
+consequence of conserving evidence when operations don't commute.
+\end{theorem}
+
+%% =================================================================
+\section{Quantum fiber inference: QLN}
+\label{sec:qln}
+%% =================================================================
+
+\begin{definition}[Quantum Logic Networks --- claims 18--24, 31]
+\label{def:qln}
+QLN (Quantum Logic Networks) generalizes PLN (Probabilistic Logic
+Networks) into the quantum regime:
+\begin{itemize}
+\item \textbf{Evidence states} are represented as density matrices ---
+  mixed states capturing uncertainty about the evidence configuration.
+\item \textbf{Inference steps} are completely positive, trace-preserving
+  (CPTP) maps --- the quantum analog of stochastic maps.
+\item \textbf{Algebraic setting} is a non-commutative quantale --- the
+  generalization of the probabilistic quantale that PLN uses.
+\end{itemize}
+
+In Hyperseed terms, QLN is the inference engine for \emph{quantum fibers}:
+fibers whose operations are inherently non-commutative. PLN is the
+commutative special case:
+\[
+  \text{QLN} \xrightarrow{[\cdot, \cdot] = 0} \text{PLN}
+\]
+
+The unification is precise: PLN and QLN share the same evidence
+conservation principle (quantale Noether theorem), the same
+anti-hallucination guarantees, and the same fiber-conservation
+framework. The only difference is whether the fiber operations commute.
+
+QLN + conserved fluidic routing = FluQNets. The evidence/energy analogy
+connects to the fluidic neural network architecture through the shared
+conservation principle:
+\[
+  \underbrace{\text{QLN}}_{\text{fiber inference}} +
+  \underbrace{\text{conserved routing}}_{\text{base dynamics}} =
+  \underbrace{\text{FluQNets}}_{\text{fiber-conserved bundle}}
+\]
+
+The HJB-Navier-Stokes-Schr\"odinger mapping chain provides the
+mathematical bridge: HJB (dynamic programming on the base) maps to
+Navier-Stokes (fluidic routing on the base) and to Schr\"odinger
+(quantum evolution on the fiber). All three descriptions are equivalent
+--- different perspectives on the same fiber-conserved bundle.
+
+The paper series includes results on algorithmic tractability: QLN
+reasoning can be made tractable on appropriate quantum hardware,
+suggesting that quantum computers may be natural inference engines
+for quantum fiber operations.
+\end{definition}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Sometimes a Smaller System Should Model a Bigger System
+  as Quantum} (2026-03-18): observer-relative quantumity. The evidence
+  conservation framework provides the mathematical foundation for why
+  classical systems exhibit quantum-like behavior from limited observers.
+\item \textbf{Rethinking the Classical/Quantum Brain} (2026-03-17):
+  FluQNets. The evidence conservation principle is the foundation of
+  FluQNets, which the brain article applies to neuroscience.
+\item \textbf{Google's Quantum Crypto Paper} (2026-04-01): quantum
+  hardware. The tractability results for QLN connect to the quantum
+  computing capabilities discussed in the crypto article.
+\item \textbf{A New Approach to Grand Unified Physics} (2026-05-12):
+  physics connections. The evidence/energy analogy connects to the
+  broader physics unification program --- evidence conservation as a
+  fundamental physical principle.
+\item \textbf{Navier-Stokes Blows Up the Internet} (2026-07-01):
+  Navier-Stokes. The HJB-NS mapping chain connects evidence conservation
+  to fluid dynamics, which connects to the Navier-Stokes work.
+\item \textbf{Seeding RSI} (2026-07-28): Hyperon architecture. QLN/FluQNets
+  as potential components of Hyperon's inference engine.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Evidence conservation as foundation of logic]
+Conjecture: evidence conservation is the correct foundation for all of
+logic --- classical, probabilistic, quantum, and beyond. Every sound
+logic can be derived from an appropriate evidence conservation principle
+(quantale Noether theorem) applied to an appropriate quantale.
+
+If this conjecture holds, the classification of logics reduces to the
+classification of quantales: each quantale determines a logic through
+its Noether theorem, and the anti-hallucination theorems hold
+universally. The question ``what logic should an AGI use?'' becomes
+``what quantale should an AGI's evidence live in?'' --- and the answer
+may be ``a non-commutative quantale,'' which gives QLN.
+
+This would mean that quantum mechanics is not just a physical theory
+but a logical necessity: any sufficiently rich inference system operating
+in a non-commutative evidence space must exhibit quantum-like structure.
+QM is not a fact about physics --- it's a fact about evidence conservation.
+\end{conjecture}
+
+\end{document}

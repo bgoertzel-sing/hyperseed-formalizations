@@ -1,0 +1,305 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  OpenAI Says We're in the AGI Era Now}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual content of Ben Goertzel's Substack article
+``OpenAI Says We're in the AGI Era Now'' (2026-09-10) within the Hyperseed
+ontology. The article disambiguates AGI as a continuous gradation from
+AGI as a marketing event, identifies three critical gaps in current LLMs
+(episodic memory, continual learning, radical innovation), and positions
+the Omega architecture as a viable path to genuine AGI. Each concept maps
+onto Hyperseed structures: fiber dimension for the intelligence continuum,
+trivial vs.\ nontrivial holonomy for frozen vs.\ learning systems, directed
+types for open-ended intelligence, and local-section autonomy for the
+disappearance test.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{AGI as continuous gradation}
+\label{sec:continuum}
+%% =================================================================
+
+\begin{definition}[Intelligence continuum --- claims 1--4, 30]
+\label{def:continuum}
+Let $\mathcal{I}$ be the space of cognitive systems. \emph{General intelligence}
+is a function $g : \mathcal{I} \to \mathbb{R}_{\geq 0}$ measuring the degree
+to which a system can generalize beyond its history and training data.
+This function is continuous: small changes in architecture or training
+produce small changes in generalization ability.
+\end{definition}
+
+\begin{proposition}[Human-level as arbitrary cross-section --- claim 2]
+\label{prop:arbitrary}
+The set $\mathcal{H} = g^{-1}(\{g_{\text{human}}\})$ (systems at human-level
+generalization) is a level set of $g$, not a topological boundary or phase
+transition. In particular:
+\[
+  g(\text{dog}) < g(\text{human}) < g(\text{society}) < g(\text{society+internet})
+\]
+and $g_{\text{human}}$ is no more special in $\text{Im}(g)$ than any other value.
+\end{proposition}
+
+\begin{remark}[Fiber-dimension interpretation --- claim 30]
+In Hyperseed's epistemic bundle $\pi : E \to B$, general intelligence
+corresponds to the \emph{dimension} of the fiber $E_b$: a richer fiber
+(more independent epistemic dimensions) supports more generalization.
+Human-level is a particular fiber dimension, not a topological invariant
+of the bundle.
+\end{remark}
+
+%% =================================================================
+\section{Definitions of AGI}
+\label{sec:definitions}
+%% =================================================================
+
+\begin{definition}[Goertzel's definition --- claims 5--7]
+\label{def:goertzel-agi}
+AGI is a system $S$ such that:
+\[
+  \forall \text{ environment } E,\; \forall \text{ goal } G \text{ achievable in } E:
+  \quad P(S \text{ achieves } G \text{ in } E) \geq \alpha(E, G)
+\]
+where $\alpha$ weights simpler environments/goals more heavily. Equivalently,
+$S$ exhibits \emph{open-ended intelligence}: it can individuate (maintain
+self and boundaries) while self-transcending (growing beyond current state).
+\end{definition}
+
+\begin{definition}[Jobs definition --- claim 11]
+\label{def:jobs-agi}
+Altman's definition: AGI = ability to do the vast majority of human jobs.
+This is a \emph{closed-world} criterion: it assumes a fixed catalog of
+tasks and measures coverage.
+\end{definition}
+
+\begin{proposition}[Jobs $\neq$ AGI --- claims 11--13, 36]
+\label{prop:jobs-not-agi}
+The jobs definition is neither necessary nor sufficient for AGI:
+\begin{enumerate}
+\item \textbf{Not sufficient:} If vast training data covers 95\% of jobs,
+  pattern-matching (not generalization) suffices. A system doing all
+  routine jobs but never innovating is not at human level.
+\item \textbf{Closed-world:} It cannot capture radical innovation ---
+  creating new task categories that don't yet exist in the catalog.
+\item \textbf{One-year-old refutation:} A normal one-year-old exceeds
+  current LLMs in creative generalization while performing zero jobs.
+\end{enumerate}
+\end{proposition}
+
+\begin{corollary}[Directed type vs.\ closed world --- claim 36]
+Goertzel's open-ended definition requires the system to operate in an
+\emph{open world} (directed type with genuinely new higher cells),
+while Altman's requires only coverage of a fixed set (closed world).
+\end{corollary}
+
+%% =================================================================
+\section{Three gaps: what Astra lacks}
+\label{sec:gaps}
+%% =================================================================
+
+\begin{definition}[Episodic memory gap --- claims 14--15, 31]
+\label{def:episodic-gap}
+A system has an \emph{episodic memory gap} if it lacks persistent access
+to its own interaction history $H = (e_1, \ldots, e_n)$ across sessions.
+Without $H$:
+\begin{enumerate}
+\item The system cannot build a self-model from accumulated experience,
+\item It cannot recognize long-range patterns across its life history,
+\item Its identity fiber $F$ is trivial: $|F| = 1$ (no differentiated
+  persistent state).
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Continual learning gap --- claims 16--17, 32]
+\label{def:continual-gap}
+A system has a \emph{continual learning gap} if its parameters
+$\theta$ are frozen after training:
+\[
+  \theta_{t+1} = \theta_t \quad \forall t \text{ during inference}.
+\]
+This implies \emph{trivial holonomy}: for any experiential path
+$\gamma : [0,1] \to \text{ExperienceSpace}$, parallel transport of
+parameters along $\gamma$ returns to the starting point:
+\[
+  \text{PT}_\gamma(\theta) = \theta
+  \quad \Rightarrow \quad
+  \text{Hol}(\theta\text{-bundle}) = \{e\}.
+\]
+The system is literally unchanged by experience.
+\end{definition}
+
+\begin{definition}[Radical innovation gap --- claims 12, 37]
+\label{def:innovation-gap}
+A system has a \emph{radical innovation gap} if it cannot create genuinely
+new cells in its directed type --- i.e., it can recombine existing concepts
+but cannot generate qualitatively novel ones (new branch of science, new
+genre of music, new kind of business strategy).
+\end{definition}
+
+\begin{theorem}[Three-gap characterization of Astra --- claim 18]
+\label{thm:three-gaps}
+GPT-6 Astra exhibits all three gaps simultaneously:
+\begin{enumerate}
+\item Episodic memory gap $\Rightarrow$ trivial identity fiber,
+\item Continual learning gap $\Rightarrow$ trivial holonomy,
+\item Radical innovation gap $\Rightarrow$ no nontrivial higher cells.
+\end{enumerate}
+These three deficiencies are structurally related: without persistent
+memory (gap 1), the system cannot accumulate the experiential basis for
+learning (gap 2), and without real-time learning, it cannot bootstrap
+the novel representations needed for innovation (gap 3).
+\end{theorem}
+
+%% =================================================================
+\section{The Omega architecture}
+\label{sec:omega}
+%% =================================================================
+
+\begin{definition}[Omega agentic loop --- claims 19--23]
+\label{def:omega-loop}
+The Omega architecture consists of:
+\begin{enumerate}
+\item An \textbf{agentic loop} that orchestrates cognitive cycles,
+\item Within each cycle: (a) an LLM call for linguistic facility and
+  knowledge breadth, (b) symbolic uncertain logical reasoning over
+  a symbolic working memory and long-term memory (Hyperon components),
+\item A \textbf{continual-learning cap}: a small neural network on top
+  of a frozen open-weights base LLM, with weights updatable in real time,
+\item A \textbf{knowledge oracle}: an Astra-class model consulted for
+  hard problems but not placed at the cognitive core.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[Omega addresses all three gaps]
+\label{prop:omega-addresses}
+\begin{enumerate}
+\item \textbf{Episodic memory:} Hyperon's symbolic long-term memory
+  provides persistent directed history $H$ (gap 1 addressed).
+\item \textbf{Continual learning:} The cap's real-time weight updates
+  provide nontrivial holonomy (gap 2 addressed):
+  \[
+    \text{PT}_\gamma(\theta_{\text{cap}}) \neq \theta_{\text{cap}}
+    \quad \text{for nontrivial } \gamma.
+  \]
+\item \textbf{Radical innovation:} Symbolic reasoning + continual learning
+  + self-modification enable the creation of genuinely new representations
+  (gap 3 addressed in principle, empirically TBD).
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}[Knowledge oracle as detached fiber consultation --- claim 38]
+Using Astra as a knowledge oracle rather than the cognitive core is a
+fiber-bundle decomposition: the static knowledge fiber (Astra's frozen
+weights) is a reference section consulted but not lived in, while the
+dynamic reasoning loop operates in a fiber with nontrivial holonomy.
+This separation prevents the trivial holonomy of the oracle from infecting
+the core cognitive process.
+\end{remark}
+
+%% =================================================================
+\section{The disappearance test}
+\label{sec:disappearance}
+%% =================================================================
+
+\begin{definition}[Disappearance test --- claims 24--26, 35]
+\label{def:disappearance}
+Given a population of AI agents $\{A_i\}_{i=1}^N$, the
+\emph{disappearance test} asks: if all humans disappeared, would
+$\{A_i\}$ carry on civilization and keep it growing in creative new
+directions?
+\end{definition}
+
+\begin{proposition}[Local-section autonomy --- claim 35]
+\label{prop:autonomy}
+The disappearance test is equivalent to asking whether local sections
+$\{s_i : U_i \to E\}$ can sustain and extend the sheaf $\mathcal{F}$
+of civilizational capabilities without the original base-space support
+(human prompters, human society).
+\begin{itemize}
+\item \textbf{Astra fails:} Without human prompts, the sections collapse
+  (wait for input) or degenerate (prompt each other in loops).
+\item \textbf{True AGI passes:} Autonomous sections maintain coherence,
+  extend to new open sets, and create genuinely new sections
+  (radical innovation).
+\end{itemize}
+\end{proposition}
+
+\begin{remark}
+The article notes that the failure is ``not just because they aren't
+connected to the right robot bodies'' --- it's structural: missing
+self-understanding (trivial identity fiber) and inability to innovate
+(no nontrivial higher cells). Embodiment is necessary but not sufficient.
+\end{remark}
+
+%% =================================================================
+\section{Open-ended intelligence as directed type}
+\label{sec:open-ended}
+%% =================================================================
+
+\begin{proposition}[Open-ended intelligence = directed type --- claim 34]
+\label{prop:open-ended}
+Goertzel's open-ended intelligence (individuate + self-transcend) is the
+operational definition of a directed type $\mathcal{D}$:
+\begin{itemize}
+\item \textbf{Individuate} = maintain coherence of lower cells (identity
+  preservation: the 0-cells and 1-cells that define the system's self
+  remain coherent under modification),
+\item \textbf{Self-transcend} = generate genuinely new higher cells
+  (the system creates concepts, capabilities, and self-representations
+  that were not present in its training data or prior history).
+\end{itemize}
+A system with trivial holonomy and no higher-cell generation (Astra)
+cannot exhibit open-ended intelligence: it is stuck at its training-time
+state, which is the definition of ``not self-transcending.''
+\end{proposition}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{How Omega Lost Its Claw} (2026-09-11): the Omega architecture
+  described here is the same system; the ``How Omega'' article focuses on
+  memory/identity emergence while this one focuses on what LLMs lack.
+\item \textbf{Fields Medalists article} (2026-09-12): radical innovation
+  (proving new theorems) as the test that separates AGI from advanced
+  pattern-matching.
+\item \textbf{Time's Arrow Part~1}: identity-preserving self-modification
+  as the formal apparatus for ``individuate while self-transcending.''
+\item \textbf{Dario Depth-Psychology} (2026-09-14): pre-IPO positioning
+  analyzed as a self-model dynamic.
+\item \textbf{$(f,c)$-lossy critique} (LTM 5a4d150b): the jobs definition
+  as a lossy projection of the full intelligence continuum.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Holonomy sufficiency for AGI]
+Is nontrivial holonomy (continual learning) sufficient for radical
+innovation, or does it also require symbolic reasoning over structured
+representations? Conjecture: holonomy alone (e.g., continual-learning
+neural net without symbolic reasoning) produces adaptation but not
+radical innovation; the symbolic component is needed for the
+``genuinely new higher cells'' that define self-transcendence.
+\end{conjecture}
+
+\end{document}

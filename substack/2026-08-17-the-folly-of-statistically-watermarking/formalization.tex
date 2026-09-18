@@ -1,0 +1,244 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  The Folly of Statistically Watermarking LLM-Gen Text}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``The Folly of Statistically Watermarking LLM-Gen Text''
+(2026-08-17) within the Hyperseed ontology. The article argues that
+statistical watermarking of AI-generated text is a category error that
+conflates pipeline compliance with intellectual provenance. We model
+this as a fiber-bundle mismatch (compliance and provenance live in
+different fibers), the watermark-vs-scrubber arms race as a
+non-convergent cocycle, and the resulting ecosystem bifurcation as a
+base-space topology distortion.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Compliance vs.\ provenance as distinct fibers}
+\label{sec:fibers}
+%% =================================================================
+
+\begin{definition}[Content bundle --- claims 1--4]
+\label{def:content-bundle}
+Let $\pi : E \to B$ be a fiber bundle where:
+\begin{itemize}
+\item $B$ = the space of text artifacts (token sequences),
+\item $F_{\text{comp}} = \{0, 1\}$ = compliance fiber (did the text pass
+  through an approved, watermarked pipeline?),
+\item $F_{\text{prov}}$ = provenance fiber (which minds, human or machine,
+  contributed which ideas?),
+\item $E_b = F_{\text{comp}} \times F_{\text{prov}}$ for each $b \in B$.
+\end{itemize}
+\end{definition}
+
+\begin{proposition}[Watermarking captures only $F_{\text{comp}}$ --- claim 4]
+\label{prop:compliance-only}
+A statistical watermark detector defines a section
+$\sigma_{\text{wm}} : B \to F_{\text{comp}}$ that reads the compliance
+fiber. It does \emph{not} define a section into $F_{\text{prov}}$:
+\[
+  \sigma_{\text{wm}}(b) = \begin{cases}
+    1 & \text{if } b \text{ carries detectable watermark pattern} \\
+    0 & \text{otherwise}
+  \end{cases}
+\]
+The provenance fiber $F_{\text{prov}}$ is invisible to $\sigma_{\text{wm}}$.
+This is the core category error: compliance $\neq$ provenance.
+\end{proposition}
+
+\begin{corollary}[Unmarked $\not\Rightarrow$ human --- claim 2]
+$\sigma_{\text{wm}}(b) = 0$ does not imply $b$ was human-authored.
+The absence of a watermark is evidence about the pipeline, not about
+the author. Similarly, $\sigma_{\text{wm}}(b) = 1$ does not imply
+$b$ lacks human authorship.
+\end{corollary}
+
+%% =================================================================
+\section{Fragility under transformation}
+\label{sec:fragility}
+%% =================================================================
+
+\begin{definition}[Text transformations --- claim 3]
+\label{def:transforms}
+Let $T : B \to B$ be a text transformation (paraphrasing, translation,
+model-to-model rewriting, fine-tuning, distillation). Define the
+watermark survival function:
+\[
+  \rho(T) = \Pr[\sigma_{\text{wm}}(T(b)) = 1 \mid \sigma_{\text{wm}}(b) = 1]
+\]
+\end{definition}
+
+\begin{proposition}[Watermark fragility --- claim 3]
+\label{prop:fragility}
+For most non-trivial transformations $T$, $\rho(T) \ll 1$. In particular:
+\begin{enumerate}
+\item Paraphrasing: $\rho(T_{\text{para}}) \approx 0$ for sufficiently
+  aggressive rewording.
+\item Translation: $\rho(T_{\text{trans}}) \approx 0$ because the token
+  distribution changes language entirely.
+\item Distillation: $\rho(T_{\text{distill}}) = 0$ because the watermark
+  pattern is not preserved in gradient updates.
+\end{enumerate}
+The watermark is a base-space signal (token-distribution perturbation)
+that is destroyed by base-space transformations, while the actual
+provenance (fiber data) is unchanged by these transformations.
+\end{proposition}
+
+\begin{remark}[Fiber vs.\ base-space provenance]
+In the Hyperseed framework, provenance is properly fiber data --- it
+travels with the content through transformations. A watermark, by contrast,
+is a base-space signal: a perturbation of the token distribution that is
+destroyed by any transformation that alters the distribution. This is why
+watermarking is structurally the wrong approach to provenance.
+\end{remark}
+
+%% =================================================================
+\section{Adversarial cocycle non-convergence}
+\label{sec:arms-race}
+%% =================================================================
+
+\begin{definition}[Watermark-scrubber dynamics --- claims 8--10]
+\label{def:arms-race}
+Define a sequence of watermarking schemes $W_n$ and scrubbing schemes $S_n$
+with the co-evolutionary dynamics:
+\begin{align}
+  W_{n+1} &= \arg\max_W \Pr[\sigma_W(b) = 1 \mid b \text{ watermarked by } W,\; b' = S_n(b)] \\
+  S_{n+1} &= \arg\min_S \Pr[\sigma_{W_n}(S(b)) = 1]
+\end{align}
+\end{definition}
+
+\begin{proposition}[Non-convergent cocycle --- claim 8]
+\label{prop:non-convergent}
+The sequence $(W_n, S_n)$ does not converge. Each update invalidates the
+other's transition function:
+\[
+  \tau_{W_n \to W_{n+1}} \circ \tau_{S_n \to S_{n+1}} \neq \mathrm{id}
+\]
+The trust cocycle never closes because the adversary has access to the
+same computational substrate as the defender. This is a permanent arms
+race with no equilibrium, only escalating complexity.
+\end{proposition}
+
+\begin{corollary}[Asymmetric cost --- claim 10]
+The attacker (scrubber) can train directly against the detector, making
+attack cost $\leq$ defense cost. In the limit, the defender must either
+escalate indefinitely or accept that watermarking provides only a
+compliance signal for non-adversarial settings.
+\end{corollary}
+
+%% =================================================================
+\section{Ecosystem bifurcation}
+\label{sec:bifurcation}
+%% =================================================================
+
+\begin{definition}[Compliant/underground partition --- claims 5--7]
+\label{def:partition}
+Widespread watermarking induces a partition of the model ecosystem:
+\[
+  \mathcal{M} = \mathcal{M}_{\text{compliant}} \sqcup \mathcal{M}_{\text{underground}}
+\]
+where $\mathcal{M}_{\text{compliant}}$ consists of approved, watermarked
+corporate models and $\mathcal{M}_{\text{underground}}$ consists of
+``clean'' models and watermark-scrubbing services.
+\end{definition}
+
+\begin{proposition}[Self-fulfilling underground --- claim 7]
+\label{prop:self-fulfilling}
+The watermarking regime creates market demand for $\mathcal{M}_{\text{underground}}$
+that would not exist without the regime. The underground is not a pre-existing
+threat being contained but a consequence of the containment attempt:
+\[
+  |\mathcal{M}_{\text{underground}}| = f(\text{stringency of watermark enforcement})
+\]
+with $f$ monotonically increasing.
+\end{proposition}
+
+\begin{proposition}[Power concentration --- claims 16--18]
+\label{prop:power}
+The compliance partition concentrates power because:
+\begin{enumerate}
+\item Compliance infrastructure has fixed costs that scale sublinearly
+  with organization size, favoring incumbents.
+\item Institutional gatekeepers (universities, employers) adopt watermark
+  presence as a proxy for legitimacy, marginalizing users of
+  $\mathcal{M}_{\text{underground}}$ regardless of output quality.
+\item Regulatory capture: incumbents lobby for stricter watermark requirements,
+  raising barriers for new entrants.
+\end{enumerate}
+The resulting dynamics entrench existing socioeconomic power structures.
+\end{proposition}
+
+%% =================================================================
+\section{Content merit vs.\ tool provenance}
+\label{sec:merit}
+%% =================================================================
+
+\begin{definition}[Epistemic evaluation --- claim 11]
+\label{def:evaluation}
+Define the proper evaluation function for intellectual content:
+\[
+  V(b) = \alpha \cdot \text{evidence}(b) + \beta \cdot \text{logic}(b)
+         + \gamma \cdot \text{reproducibility}(b) + \delta \cdot \text{experience}(b)
+\]
+The watermark-based evaluation adds a term:
+\[
+  V_{\text{wm}}(b) = V(b) + \lambda \cdot \sigma_{\text{wm}}(b)
+\]
+with $\lambda \gg \alpha, \beta, \gamma, \delta$ in practice, effectively
+making tool provenance dominate content merit.
+\end{definition}
+
+\begin{remark}[Hyperseed primitive decomposition]
+The concept ``trustworthy text'' should decompose into primitives:
+\texttt{evidence-quality}, \texttt{argument-validity},
+\texttt{reproducibility}, \texttt{author-responsibility}. The watermark
+regime collapses this to a single primitive \texttt{pipeline-compliance},
+discarding the others. This is exactly the dimensional collapse that
+Hyperseed's fiber-bundle framework is designed to detect and prevent.
+\end{remark}
+
+%% =================================================================
+\section{d-calculus perspective}
+\label{sec:d-calc}
+%% =================================================================
+
+\begin{remark}[Lossy transport in the compliance highway]
+In the d-calculus framework, the watermark acts as a ``semantic highway''
+from ``approved pipeline'' to ``trustworthy content.'' This highway is
+lossy: it discards the curvature (genuine epistemic complexity) in the
+provenance concept space. A curvature-aware system would recognize that
+the transport from compliance to trustworthiness crosses a region where
+the connection is not flat --- many compliant texts are worthless, and
+many valuable texts are non-compliant.
+\end{remark}
+
+\begin{remark}[Decentralized provenance as proper fiber transport]
+The article implicitly points toward a better approach (developed in
+the companion OpenWater article): decentralized cryptographic provenance
+that travels \emph{with} the content as fiber data, surviving
+transformations because it is attached to the fiber (signed claims,
+hash chains) rather than embedded in the base space (token distribution).
+This is proper fiber transport in the Hyperseed sense.
+\end{remark}
+
+\end{document}

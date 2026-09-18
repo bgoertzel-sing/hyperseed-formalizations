@@ -1,0 +1,216 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  OpenBGI is Building its Initial Network}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``OpenBGI is Building its Initial Network'' (2026-05-07) within the
+Hyperseed ontology. The article announces a network for deploying
+heterodox AGI in a post-LLM-scaling window. We model the cracking of
+transformer orthodoxy as curvature revelation in the intelligence
+landscape, the multi-paradigm requirement as fiber decomposition with
+synergy constraints, and the network organizational form as a
+base-space topology resistant to institutional capture.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Scaling curves and curvature revelation}
+\label{sec:scaling}
+%% =================================================================
+
+\begin{definition}[Intelligence landscape --- claims 1--5]
+\label{def:landscape}
+Let $\mathcal{L} : \mathbb{R}_+ \to \mathbb{R}_+$ be the function mapping
+compute investment $c$ to capability $\mathcal{L}(c)$. The
+\emph{transformer-scaling hypothesis} assumed:
+\[
+  \mathcal{L}(c) \approx \alpha \cdot c^\beta \quad (\beta \approx 1)
+\]
+i.e., a nearly flat (zero-curvature) landscape where more compute
+yields proportional capability gains.
+\end{definition}
+
+\begin{proposition}[Empirical curvature revelation --- claim 1]
+\label{prop:flattening}
+Observed data shows $\beta$ declining across model generations:
+\[
+  \beta_{n+1} < \beta_n \quad \Rightarrow \quad
+  \frac{d^2 \mathcal{L}}{dc^2} < 0
+\]
+The landscape has \emph{negative curvature} in the scaling direction:
+diminishing returns are an intrinsic geometric property of the
+transformer architecture in capability space, not a temporary
+engineering bottleneck.
+\end{proposition}
+
+\begin{corollary}[Post-scaling window --- claim 6]
+The curvature revelation creates a strategic window: the field
+recognizes that the ``flat landscape'' assumption was wrong, but has
+not yet converged on which alternative direction to explore. This
+is the 12--18 month window in which heterodox approaches can gain
+traction before a new consensus forms.
+\end{corollary}
+
+%% =================================================================
+\section{Multi-paradigm fiber decomposition}
+\label{sec:multi-paradigm}
+%% =================================================================
+
+\begin{definition}[Cognitive architecture bundle --- claims 12--15]
+\label{def:cog-bundle}
+Let $\pi : E \to B$ be a fiber bundle where:
+\begin{itemize}
+\item $B$ = the space of cognitive tasks (perception, reasoning,
+  planning, learning, creativity, \ldots),
+\item $F = F_{\text{neural}} \times F_{\text{symbolic}} \times
+  F_{\text{evolutionary}}$ = the paradigm fiber,
+\item Each task $b \in B$ requires a particular mix of paradigm
+  activations from $F$.
+\end{itemize}
+\end{definition}
+
+\begin{proposition}[Single-paradigm insufficiency --- claim 5]
+\label{prop:single-insufficient}
+The transformer architecture defines a section
+$\sigma_{\text{LLM}} : B \to E$ that projects onto $F_{\text{neural}}$
+alone:
+\[
+  \sigma_{\text{LLM}}(b) = (f_{\text{neural}}(b), 0, 0)
+\]
+This section is well-defined for tasks $b$ where neural pattern
+matching suffices but has zero activation in the symbolic and
+evolutionary fibers, making it degenerate for tasks requiring
+logical reasoning, sparse learning, or open-ended exploration.
+\end{proposition}
+
+\begin{theorem}[Cross-paradigm synergy requirement --- claim 12]
+\label{thm:synergy}
+For the full task space $B$, no single-paradigm section achieves
+non-degenerate coverage. A viable AGI section must activate multiple
+fibers with proper transition functions:
+\[
+  \sigma_{\text{AGI}}(b) = (f_{\text{neural}}(b),\;
+    f_{\text{symbolic}}(b),\; f_{\text{evolutionary}}(b))
+  \quad \text{with all components } > 0
+\]
+and the transition functions $\tau_{ij}$ between paradigm fibers
+must satisfy the cocycle condition (cognitive synergy):
+\[
+  \tau_{ij} \circ \tau_{jk} = \tau_{ik}
+\]
+so that information flows consistently between paradigms.
+\end{theorem}
+
+\begin{remark}[Hyperon as concrete section --- claim 15]
+The Hyperon project (MeTTa, MORK, PeTTa, MM2) is a concrete
+implementation of $\sigma_{\text{AGI}}$: MeTTa provides the symbolic
+fiber, neural networks provide the neural fiber, evolutionary
+algorithms provide the evolutionary fiber, and the MeTTa interpreter
+serves as the transition-function infrastructure that enables
+synergistic interaction.
+\end{remark}
+
+%% =================================================================
+\section{Network topology vs.\ lab topology}
+\label{sec:topology}
+%% =================================================================
+
+\begin{definition}[Organizational base space --- claims 9--11]
+\label{def:org-space}
+Define the organizational base space $B_{\text{org}}$ over which
+AGI development occurs. Two topologies:
+\begin{itemize}
+\item $B_{\text{lab}} \cong \{b_1, \ldots, b_k\}$ (finitely many
+  isolated labs, $k \approx 3$--$5$): discrete, capturable.
+\item $B_{\text{network}}$: a connected graph of diverse participants
+  (researchers, operators, industry, capital) with high connectivity
+  and no bottleneck nodes.
+\end{itemize}
+\end{definition}
+
+\begin{proposition}[Network resilience --- claim 9]
+\label{prop:resilience}
+The network topology $B_{\text{network}}$ is structurally resistant to:
+\begin{enumerate}
+\item \textbf{Entryism}: no single node controls enough of the network
+  to redirect it (cf.\ the EA entryism analysis).
+\item \textbf{Regulatory capture}: compliance requirements cannot be
+  imposed through a single chokepoint.
+\item \textbf{Paradigm lock-in}: diverse participants maintain
+  multiple paradigm fibers simultaneously, preventing collapse to
+  a single approach.
+\end{enumerate}
+\end{proposition}
+
+%% =================================================================
+\section{Singularity dynamics}
+\label{sec:singularity}
+%% =================================================================
+
+\begin{definition}[Acceleration measure --- claims 16--18]
+\label{def:acceleration}
+Let $R(t)$ be the rate of singularity-relevant innovation at time $t$.
+The pre-singularity hypothesis states:
+\[
+  \frac{dR}{dt} > 0 \quad \text{and} \quad
+  \frac{d^2 R}{dt^2} > 0
+\]
+Both the rate and the acceleration of the rate are positive.
+\end{definition}
+
+\begin{proposition}[Selective acceleration --- claim 18]
+\label{prop:selective}
+The acceleration is selective: $R(t)$ increases only for
+singularity-relevant technologies, not for all technologies:
+\[
+  R_{\text{AGI}}(t) \gg R_{\text{socks}}(t) \approx \text{const}
+\]
+This selectivity is consistent with a phase transition concentrated
+in a specific region of technology space, not a general speedup.
+\end{proposition}
+
+%% =================================================================
+\section{d-calculus perspective}
+\label{sec:d-calc}
+%% =================================================================
+
+\begin{remark}[Post-scaling as curvature revelation]
+In the d-calculus framework, the transformer-scaling era was a period
+where the field followed a semantic highway (``just scale more'') that
+appeared flat. The empirical flattening reveals that this highway
+crosses a region of high curvature: the returns diminish because
+the underlying intelligence landscape is not flat in the scaling
+direction. The post-LLM window is the moment when the field
+collectively realizes the highway is curved and begins exploring
+alternative directions.
+\end{remark}
+
+\begin{remark}[Network as distributed fiber transport]
+The OpenBGI network structure implements distributed fiber transport:
+each participant maintains and develops their own paradigm fibers,
+and the network provides the communication infrastructure for
+synergistic interaction. This is cognitive synergy at the
+organizational level, mirroring the cognitive synergy required
+at the architectural level within a single AGI system.
+\end{remark}
+
+\end{document}

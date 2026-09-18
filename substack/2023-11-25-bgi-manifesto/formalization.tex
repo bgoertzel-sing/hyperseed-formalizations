@@ -1,0 +1,84 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  A BGI Manifesto}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``A BGI Manifesto'' (2023-11-25) within the
+Hyperseed ontology. Key mappings: BGI as beneficial fiber, intelligence
+explosion as fiber autocatalysis, open development as inspectable fiber,
+corporate capture as fiber monopoly, and regulatory restriction as fiber
+censorship.
+\end{abstract}
+
+\tableofcontents
+
+\section{Beneficial fiber: the B in BGI}
+
+\begin{theorem}[BGI = beneficial fiber --- claims 8--11, 19--22]
+BGI is AGI with beneficial fiber structure. The ``B'' is a fiber property:
+\[
+  \text{BGI} = \text{AGI}(F_{\text{beneficial}})
+  \quad \text{where} \quad F_{\text{beneficial}} = F(\text{values, empathy, self-awareness})
+\]
+Value alignment is architectural, not bolted-on --- values emerge from
+how the system thinks (fiber structure), not from what it's forbidden
+to do (base constraints).
+\end{theorem}
+
+\section{Fiber autocatalysis: intelligence explosion}
+
+\begin{theorem}[Self-improvement as autocatalysis --- claims 4--7, 23]
+An AGI with human-level competence can study and improve itself. This is
+fiber autocatalysis:
+\[
+  F_t \xrightarrow{\text{self-study}} F_{t+1} \quad \text{where} \quad
+  \text{capability}(F_{t+1}) > \text{capability}(F_t)
+\]
+The Singularity is the autocatalytic regime: each fiber improvement
+enables further improvement, producing exponential capability growth.
+\end{theorem}
+
+\section{Open vs monopoly fiber}
+
+\begin{proposition}[Open development --- claims 12--18, 24--26]
+Open-source development makes the fiber inspectable and community-modifiable.
+Closed development makes it opaque. Regulatory restriction concentrates
+fiber exploration in exempted actors (military, incumbents):
+\[
+  \text{Diversity}(F_{\text{open}}) > \text{Diversity}(F_{\text{closed}})
+  > \text{Diversity}(F_{\text{restricted}})
+\]
+Multi-fiber diversity provides resilience; mono-fiber concentration
+is the actual danger.
+\end{proposition}
+
+\section{Cross-references}
+
+\begin{remark}[Connections]
+\begin{itemize}
+\item \textbf{Why Everyone Dies Gets AGI All Wrong} (2025-10-01): hybrid
+  architecture safety, iterative development.
+\item \textbf{Seeding RSI} (2026-07-28): self-improvement architecture.
+\item \textbf{Evolving Deeply Ethical AGI} (2026-01-06): value alignment
+  through architecture.
+\item \textbf{Seven Flavors of AGI Catastrophe} (2026-06-23): failure
+  modes that BGI approach aims to prevent.
+\end{itemize}
+\end{remark}
+
+\end{document}

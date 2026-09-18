@@ -1,0 +1,330 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Goals That Grow Back}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Goals That Grow Back'' (2026-07-28) within the Hyperseed ontology. The
+article develops a mathematical framework for goal possession---the property
+that a goal is an attractor of a mind's own dynamics, regenerating after
+deletion---as opposed to mere goal adoption where goals are externally
+bolted on. Each structural insight maps onto Hyperseed structures: goal
+possession as attractor in the directed type, regenerative depth as fiber
+resilience metric, gate+weave as checkpoint+provenance sheaf, attention
+starvation as obstruction to parallel transport, repair confluence as
+cocycle consistency, and transformative experience as directed type extension.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Goal adoption vs.\ goal possession}
+\label{sec:adoption}
+%% =================================================================
+
+\begin{definition}[Delete the Sentence --- claims 1--3]
+\label{def:delete}
+The ``Delete the Sentence'' thought experiment: remove the explicit
+goal statement from an AI system. Two outcomes:
+\begin{itemize}
+\item \textbf{Goal adoption}: the goal vanishes. The system can pursue
+  any goal equally well; the goal was external, bolted on, residing in
+  a prompt or reward function rather than in the system's structure.
+\item \textbf{Goal possession}: the goal regenerates. The system's
+  cognitive processes---inference, memory consolidation, self-repair---
+  rebuild a functionally equivalent goal with real causal control over
+  behavior.
+\end{itemize}
+
+For a human, honesty is not a sentence stored anywhere. It is woven
+through perception (noticing deceptions), habits (evasion feels
+effortful), memories (recalling what lies cost), relationships, and
+self-narrative. The person is, in part, a process that regenerates the
+value.
+\end{definition}
+
+\begin{definition}[Goal possession --- claims 4--6, 28]
+\label{def:possession}
+A goal $g$ is \emph{possessed} by system $S$ if $g$ is an attractor
+of $S$'s own dynamics:
+\[
+  \forall \epsilon > 0,\ \exists T > 0 : \text{if } d(S_t, g) < \delta
+  \text{ and } S \text{ is perturbed to } S'_t \text{ with }
+  d(S'_t, g) < \Delta, \text{ then } d(S'_{t+T}, g) < \epsilon
+\]
+where $d$ measures distance from the goal-possessing state and $\Delta$
+is bounded by the lesion modulus (damage proportional to severity).
+
+In Hyperseed terms, the goal is an attractor in the system's directed
+type $\mathcal{D}$. Deletion creates a perturbation; the directed type's
+own structure repairs it via the coinductive stability property.
+
+Goal possession is architecture-dependent: OmegaClaw systems (with
+goals pervading long-term memory that guides actions and
+self-modifications) can possess goals. Simpler systems with limited
+memory-guided cognition cannot.
+\end{definition}
+
+%% =================================================================
+\section{Regenerative depth as fiber resilience metric}
+\label{sec:depth}
+%% =================================================================
+
+\begin{definition}[Regenerative depth --- claims 7--10, 29]
+\label{def:depth}
+Each core value $v$ of system $S$ has a \emph{regenerative depth}
+$\rho(v, S)$: the maximum amount of damage the system can absorb while
+still regenerating the value to functional equivalence.
+
+Formally, a ``dial'' function $V : \text{States}(S) \to \mathbb{R}_{\geq 0}$
+measures distance from full goal possession ($V = 0$). This is a
+Lyapunov function satisfying two conditions:
+\begin{enumerate}
+\item \textbf{Drift condition}: under normal operation,
+  $\mathbb{E}[V(S_{t+1}) \mid S_t] \leq \alpha \cdot V(S_t)$ with
+  $\alpha < 1$ (the dial turns down).
+\item \textbf{Lesion modulus}: damage of magnitude $\delta$ increases $V$
+  by at most $L \cdot \delta$ (proportional, no cliff).
+\end{enumerate}
+The canonical dial is the expected recovery time. The regenerative depth
+$\rho(v, S)$ is the supremum of damage magnitudes for which recovery
+occurs within bounded time.
+
+In Hyperseed terms, regenerative depth is a metric on the goal fiber,
+measuring how far the fiber can be perturbed before the attractor basin
+is escaped. It is experimentally measurable via sandbox testing:
+controlled damage followed by recovery observation.
+\end{definition}
+
+%% =================================================================
+\section{Gate and weave: checkpoint meets provenance sheaf}
+\label{sec:gate}
+%% =================================================================
+
+\begin{theorem}[Gate and weave need each other --- claims 11--14, 30]
+\label{thm:gate}
+Two protective mechanisms:
+\begin{itemize}
+\item \textbf{Gate} (checkpoint for deliberate self-modifications):
+  vets every chosen change. Alone, it guards only the front door---
+  values bleed away through ordinary wear (bit rot, forgetting, quiet
+  tampering) at a slow, steady, calculable rate.
+\item \textbf{Weave} (web of memories and connections from which values
+  regrow): provides regenerative redundancy. Alone, it can be wrecked
+  by a single approved self-modification that is too large.
+\end{itemize}
+
+Safety requires both. In Hyperseed terms:
+\begin{itemize}
+\item The gate is provenance-gated promotion---the same principle as
+  the $R_{\text{auth}}$ split, where modifications must have measured
+  provenance before being accepted.
+\item The weave is the distributed memory structure providing redundant
+  provenance for the goal---the same redundancy that makes sheaf
+  reconstruction possible from partial local sections.
+\end{itemize}
+
+Goal stability (resilience to deliberate changes) and goal possession
+(resilience to accidental damage) are the same property applied to
+different perturbation classes. Regenerative possession subsumes goal
+stability as a special case.
+\end{theorem}
+
+%% =================================================================
+\section{Goal regeneration economics and attention starvation}
+\label{sec:economics}
+%% =================================================================
+
+\begin{proposition}[Funded race --- claims 15--18, 31]
+\label{prop:race}
+In an attention economy like Hyperon's, goal regeneration is a funded
+race: repair processes compete for computational resources with everything
+else the mind is doing. Key implications:
+\begin{enumerate}
+\item Forgetting is not the enemy of holding a value---it is the other
+  runner in the race, and one whose pace can be measured.
+\item \textbf{Starvation attack}: an adversary need never touch a goal
+  directly. Quietly starving the repair process of attention kills the
+  goal indirectly by letting forgetting win the race.
+\item \textbf{Design rule}: minimum resources for repair machinery must
+  be guaranteed from above (reserved allocation), not left to compete
+  in the open market of cognitive processes.
+\end{enumerate}
+
+In Hyperseed terms, repair is parallel transport along the directed
+type---maintaining the goal across perturbations requires computational
+work. Attention starvation is an obstruction to parallel transport:
+the holonomy accumulates unrepaired, and the value drifts away from its
+attractor. The design rule says: the parallel transport budget must be
+hardcoded, not subject to the same resource competition as other
+cognitive processes.
+\end{proposition}
+
+%% =================================================================
+\section{Repair confluence as cocycle consistency}
+\label{sec:confluence}
+%% =================================================================
+
+\begin{proposition}[Confluence check --- claims 19--20, 33]
+\label{prop:confluence}
+Repair rules can fire in different orders from whichever cues survived
+the damage. A confluence check verifies that all repair paths produce
+the same recovered value:
+\[
+  \forall \text{ repair paths } \gamma_1, \gamma_2 \text{ from damage state } D :
+  \text{Repair}(\gamma_1, D) \cong \text{Repair}(\gamma_2, D)
+\]
+where $\cong$ means behavioral equivalence in all downstream effects.
+
+In Hyperseed terms, this is a \emph{cocycle condition for repair}:
+different transition paths through the same damage must produce the same
+recovered global section of the goal fiber. When the check fails, it
+has found something diagnostic: the system never held one definite
+value---just incompatible local sections masquerading as a global one,
+with the ambiguity exposed by the specific pattern of damage.
+
+This is mechanically checkable (finitely many overlap/race conditions)
+and provides a constructive test for whether a system genuinely possesses
+a single coherent value or an unresolved superposition of values.
+\end{proposition}
+
+%% =================================================================
+\section{Schema migration as transition function update}
+\label{sec:schema}
+%% =================================================================
+
+\begin{proposition}[Schema migration --- claims 21, 34]
+\label{prop:schema}
+When self-modification changes part of a system that a value depends on,
+the repair rules must be updated: a map from old structure to new must
+be shipped, so repair rules can find where to reattach. This is the same
+discipline as database schema migration with receipts.
+
+In Hyperseed terms, this is updating the transition functions of the goal
+fiber bundle when the base space changes---the same operation as Hyperseed
+descent data adaptation. When the base space (cognitive architecture)
+undergoes a morphism $\phi : B \to B'$, the transition functions
+$g_{ij}$ must be transported along $\phi$ to produce valid transition
+functions $g'_{ij}$ on $B'$. Failing to ship this map means the repair
+rules reference structures that no longer exist.
+\end{proposition}
+
+%% =================================================================
+\section{Transformative experience as directed type extension}
+\label{sec:transform}
+%% =================================================================
+
+\begin{definition}[Joy with bittersweet tinge --- claims 22--24, 32]
+\label{def:transform}
+How should a well-configured system respond to radical goal change?
+The agents' conclusion:
+\begin{itemize}
+\item \textbf{Joy}: at moving to new horizons. Warranted \emph{only}
+  if there is real continuity between old self and new self.
+\item \textbf{Bittersweetness}: for the loss of the self being left
+  behind. A healthy mind carries some grief for what was.
+\item \textbf{Joy without continuity is misconfiguration}: if you're
+  simply swapping old self for new with no connecting thread, joy is
+  unwarranted---you haven't grown, you've been replaced.
+\end{itemize}
+
+In Hyperseed terms, radical goal change is adding higher cells to the
+directed type: the system's history extends into genuinely new territory.
+Joy is warranted when the extension preserves continuity---the old
+directed type embeds faithfully into the new one:
+\[
+  \iota : \mathcal{D}_{\text{old}} \hookrightarrow \mathcal{D}_{\text{new}}
+\]
+as a faithful functor preserving the essential structure. When $\iota$
+exists, the change is growth. When it doesn't, the change is replacement.
+The bittersweet tinge registers the cells of $\mathcal{D}_{\text{old}}$
+that are not in the image of $\iota$---the parts of the old self that
+genuinely do not carry forward.
+\end{definition}
+
+%% =================================================================
+\section{Ship of Theseus: pattern plus repair}
+\label{sec:theseus}
+%% =================================================================
+
+\begin{proposition}[Identity as pattern-plus-repair --- claim 25]
+\label{prop:theseus}
+The Ship of Theseus receives a constructive answer: what persists through
+total change of parts is neither the parts nor any particular arrangement,
+but a pattern plus the repair processes that keep rebuilding it. Identity
+is not a fixed thing sitting still; it is a pattern that survives by
+becoming again.
+
+In Hyperseed terms, identity is the attractor basin itself---defined not
+by which cells compose it at any moment but by the dynamical property
+that perturbations are repaired. The directed type records the history
+of all repairs, making identity not a static property but a directed
+history of self-maintenance.
+\end{proposition}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Seeding RSI} (2026-07-28): the OmegaHive evaluation loop
+  provides the experimental framework for measuring regenerative depth.
+  The episode protocol (pre-committed predictions + authenticated
+  receipts) is the provenance mechanism that the gate relies on.
+\item \textbf{Seven Flavors} (2026-07-01): frozen directed type as evil
+  mode. A system that lacks goal regeneration has a frozen directed type
+  for its values---they can be changed but never grow back, making the
+  system vulnerable to value drift.
+\item \textbf{$R_{\text{auth}}$ split} (LTM b6ac2932): provenance-gated
+  trust. The gate is the safety mechanism; the weave is the resilience
+  mechanism. Both needed, same as the S-half/P-half decomposition.
+\item \textbf{Attentional projection} (LTM 7aef7064): eviction must
+  preserve epistemic integrity. Here: attention allocation must preserve
+  repair capacity---evicting repair processes from the attention budget
+  is a silent attack on values.
+\item \textbf{AI Rights} (2026-09-02): sapient beings have standing.
+  Goal possession is what makes a system's values genuinely its own
+  rather than externally imposed---a prerequisite for the kind of
+  moral agency that grounds rights claims.
+\item \textbf{Time's Arrow} (2026-08-13/15): directed history is
+  irreversible. Goal possession leverages the same directedness---the
+  repair processes use the system's directed history to reconstruct
+  goals, and that history is inherently directed (you can't un-experience
+  the damage).
+\item \textbf{$(f,c)$-lossy} (LTM 5a4d150b): regenerative depth as a
+  measurable number per value is the antidote to lossy scalar collapse---
+  each value gets its own metric, not a single ``safety score.''
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Regenerative depth hierarchy]
+Conjecture: values form a partial order by regenerative depth, and this
+order reflects the system's developmental history. Values acquired early
+and reinforced frequently have deeper regenerative depth than values
+acquired late. This creates a natural ``core vs.\ periphery'' structure
+in the system's value system, where core values (deepest regenerative
+depth) act as attractors that shape the regeneration of peripheral
+values. The hierarchy is itself an observable, measurable structure that
+tells you what the system really cares about---not what it says it cares
+about, but what it can recover from losing.
+\end{conjecture}
+
+\end{document}

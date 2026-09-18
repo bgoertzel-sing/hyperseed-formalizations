@@ -1,0 +1,61 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  We Should Be Measuring Well-Being}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``We Should Be Measuring Well-Being'' (2022-10-10)
+within the Hyperseed ontology.
+\end{abstract}
+
+\section{GDP as base-space measurement}
+
+\begin{proposition}[GDP = base measurement --- claims 1, 6]
+GDP measures only base-space activity:
+\[
+  \text{GDP} = \int_B \text{activity}(b) \, db \quad \text{(ignores fiber)}
+\]
+It counts resource movement in base space but is blind to fiber dimensions
+--- the qualitative, experiential aspects of life that constitute actual
+well-being. Waste and destruction register as positive activity.
+\end{proposition}
+
+\section{Well-being as fiber measurement}
+
+\begin{proposition}[Well-being = fiber measurement --- claims 2--3, 7]
+Well-being metrics measure fiber richness:
+\[
+  W = \int_B \dim(F_{\text{flourishing}}(b)) \, db
+  \quad \text{(fiber richness over base)}
+\]
+This captures quality and depth of experience, not just base-space throughput.
+Policy shaped by fiber measurement optimizes for genuine flourishing rather
+than mere activity.
+\end{proposition}
+
+\section{Fiber optimization for AGI era}
+
+\begin{proposition}[AGI-era measurement --- claims 4--5, 8]
+As AGI transforms the economy, measurement must shift to fiber:
+\[
+  \lim_{t \to t_{\text{AGI}}} \frac{\text{relevance(GDP)}}{\text{relevance}(W)} \to 0
+\]
+When AGI automates base-space production, base-space metrics become
+meaningless. Only fiber metrics (well-being, consciousness, flourishing)
+remain meaningful guides for civilization.
+\end{proposition}
+\end{document}

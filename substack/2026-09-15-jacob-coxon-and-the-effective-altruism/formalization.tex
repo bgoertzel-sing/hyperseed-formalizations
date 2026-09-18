@@ -1,0 +1,228 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Jacob Coxon and the EA Media-Hacking Playbook}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Jacob Coxon and the Effective-Altruism Media-Hacking Playbook''
+(2026-09-15) within the Hyperseed ontology. The article dissects a high-profile
+AI-lab resignation as an instance of organized EA entryism and media
+manipulation. We model the EA strategy as a provenance-erasing covering map,
+the funding--placement--amplification cycle as holonomy in a trust network,
+and decentralized AI as a base-space topology change that defeats the
+chokepoint-capture strategy.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Provenance-erasing covering map}
+\label{sec:covering-map}
+%% =================================================================
+
+\begin{definition}[Narrative fiber bundle --- claims 1--3]
+\label{def:narrative-bundle}
+Let $\pi : E \to B$ be a fiber bundle where:
+\begin{itemize}
+\item $B$ = the space of public information contexts (media consumers),
+\item $E_b = \pi^{-1}(b)$ = the space of possible narratives available to
+  consumer $b$,
+\item Each narrative $e \in E_b$ carries provenance data: $e = (c, p)$ where
+  $c$ is the content (``AI is dangerous'') and $p$ is the provenance
+  (ideological commitment vs.\ evidence-driven conclusion).
+\end{itemize}
+\end{definition}
+
+\begin{proposition}[EA narrative as provenance-erasing projection --- claim 1]
+\label{prop:covering}
+The media presentation defines a covering map $\tilde{\pi} : E \to \bar{E}$
+that projects out provenance:
+\[
+  \tilde{\pi}(c, p_{\text{EA-ideology}}) = \tilde{\pi}(c, p_{\text{spontaneous}}) = \bar{c}
+\]
+The audience receives $\bar{c}$ and cannot distinguish whether the source is
+a pre-committed EA operative or a genuinely alarmed programmer. This is
+exactly the provenance-opacity pathology identified in Hyperseed's
+fiber-bundle framework.
+\end{proposition}
+
+\begin{remark}[Sincerity is orthogonal --- claim 21]
+The covering map $\tilde{\pi}$ does not depend on whether Coxon's beliefs are
+sincere. Sincerity lives in the fiber; the projection erases it along with
+the strategic context. A sincere belief amplified through an organized
+pipeline with stripped provenance produces the same public effect as a
+cynical fabrication.
+\end{remark}
+
+%% =================================================================
+\section{EA funding loop as holonomy}
+\label{sec:holonomy}
+%% =================================================================
+
+\begin{definition}[EA operational cycle --- claims 5--8, 19]
+\label{def:ea-cycle}
+Define a closed path $\gamma$ in the institutional base space $B$:
+\[
+  \gamma : \text{Funder} \xrightarrow{\text{grant}}
+           \text{Fellowship} \xrightarrow{\text{placement}}
+           \text{Frontier Lab} \xrightarrow{\text{resignation}}
+           \text{Media Event} \xrightarrow{\text{amplification}}
+           \text{Policy Pressure} \xrightarrow{\text{justification}}
+           \text{Funder}
+\]
+\end{definition}
+
+\begin{proposition}[Non-trivial holonomy --- claim 19]
+\label{prop:holonomy}
+Parallel-transporting the concept ``independent expert concern'' around
+$\gamma$ yields ``coordinated campaign output'':
+\[
+  \mathrm{Hol}(\gamma) \cdot [\text{independent concern}]
+  = [\text{coordinated campaign}] \neq [\text{independent concern}]
+\]
+The holonomy is non-trivial: the meaning of the statement changes after
+traversing the institutional loop, even though each local segment appears
+legitimate (funding research is fine, taking a job is fine, resigning on
+principle is fine, reporting news is fine).
+\end{proposition}
+
+\begin{corollary}[Cocycle failure in trust --- claim 20]
+The trust cocycle condition requires that composing local trust assessments
+around a closed loop returns the identity. The EA loop violates this:
+\[
+  \tau_{\text{fund}\to\text{fellow}} \circ \tau_{\text{fellow}\to\text{lab}}
+  \circ \tau_{\text{lab}\to\text{media}} \circ \tau_{\text{media}\to\text{policy}}
+  \circ \tau_{\text{policy}\to\text{fund}} \neq \mathrm{id}
+\]
+Each transition is locally trust-preserving but the composition is not.
+\end{corollary}
+
+%% =================================================================
+\section{Entryism as fiber-section strategy}
+\label{sec:entryism}
+%% =================================================================
+
+\begin{definition}[80,000 Hours placement strategy --- claim 4]
+\label{def:entryism}
+Let $\sigma_{\text{EA}} : B_{\text{labs}} \to E$ be a section of the
+motivational bundle over the space of frontier labs, defined by:
+\[
+  \sigma_{\text{EA}}(b) = (\text{do pretraining work at } b,\;
+                           \text{EA ideology})
+\]
+This section is designed to be locally indistinguishable from the ``normal
+employee'' section $\sigma_{\text{emp}}(b) = (\text{do pretraining work at } b,\;
+\text{career motivation})$ --- the provenance fiber is hidden.
+\end{definition}
+
+\begin{proposition}[Chokepoint topology enables entryism --- claim 16]
+\label{prop:chokepoint}
+The entryism strategy is effective when $|B_{\text{labs}}|$ is small:
+\[
+  |B_{\text{labs}}| \leq k \implies
+  |\{\sigma_{\text{EA}} \text{ placements needed}\}| \leq k
+\]
+With $k \approx 3\text{--}5$ frontier labs, the EA movement needs only a
+handful of placed operatives to cover the entire frontier.
+\end{proposition}
+
+%% =================================================================
+\section{Decentralized AI as base-space topology change}
+\label{sec:decentralization}
+%% =================================================================
+
+\begin{theorem}[Decentralization defeats entryism --- claims 16--18]
+\label{thm:decentralization}
+If the base space changes from $B_{\text{centralized}} \cong \{b_1, \ldots, b_k\}$
+(finitely many capturable labs) to $B_{\text{decentralized}}$ (a connected,
+high-dimensional space with no isolated chokepoints), then:
+\begin{enumerate}
+\item The entryism section $\sigma_{\text{EA}}$ cannot be globally defined
+  over $B_{\text{decentralized}}$ --- there is no ``inside'' to infiltrate.
+\item The covering map $\tilde{\pi}$ loses its provenance-erasing power because
+  there is no single narrative chokepoint: different regions of
+  $B_{\text{decentralized}}$ produce independent assessments that can be
+  compared.
+\item The holonomy of the EA funding loop becomes trivial: the loop
+  $\gamma$ cannot close because the ``frontier lab'' node is replaced by
+  a diffuse manifold with no single point to resign from dramatically.
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}[Structural not individual --- claim 18]
+Theorem~\ref{thm:decentralization} is a statement about topology, not about
+individuals. The solution to coordinated capture is not identifying and
+excluding ideologues (which requires solving the provenance-opacity problem)
+but changing the structure so that capture is geometrically impossible.
+\end{remark}
+
+%% =================================================================
+\section{Doomerism as degenerate fiber}
+\label{sec:doomerism}
+%% =================================================================
+
+\begin{definition}[Unfalsifiable belief as zero-curvature fiber --- claim 13]
+\label{def:unfalsifiable}
+A belief system is \emph{unfalsifiable} in the Hyperseed sense when its fiber
+has zero curvature: transporting it along any path in evidence space returns
+the same belief. Formally, for all paths $\gamma$ in evidence space $B_{\text{ev}}$:
+\[
+  \mathrm{Hol}_{\text{ev}}(\gamma) \cdot [\text{x-risk belief}]
+  = [\text{x-risk belief}]
+\]
+No evidence can change the belief because the connection is flat --- the
+belief is decoupled from the evidence base space entirely.
+\end{definition}
+
+\begin{proposition}[Technical competence orthogonal to epistemic reliability --- claim 14]
+\label{prop:competence}
+Let $F_{\text{tech}}$ be the fiber of technical skill and $F_{\text{epist}}$
+be the fiber of epistemic reliability about existential risk. These fibers
+are independent:
+\[
+  E = F_{\text{tech}} \times F_{\text{epist}} \quad \text{(product, not correlated)}
+\]
+High values in $F_{\text{tech}}$ (IMO silver, Cambridge math) do not constrain
+values in $F_{\text{epist}}$. The media narrative conflates the two by
+projecting onto $F_{\text{tech}}$ and inferring $F_{\text{epist}}$.
+\end{proposition}
+
+%% =================================================================
+\section{d-calculus perspective}
+\label{sec:d-calc}
+%% =================================================================
+
+\begin{remark}[Transport and semantic highways]
+In the d-calculus framework, the EA playbook exploits a \emph{semantic highway}:
+the pre-computed path from ``technical expert'' to ``credible policy witness''
+is a well-worn reduction that media consumers follow automatically. The
+Hyperseed formalization reveals this highway as a provenance-lossy transport
+that should be flagged by any inference system tracking fiber structure.
+\end{remark}
+
+\begin{remark}[Adaptive primitives]
+The primitive decomposition of ``whistleblower'' in Hyperseed should include
+provenance components: \texttt{spontaneous} vs.\ \texttt{pre-committed},
+\texttt{independent} vs.\ \texttt{network-amplified}. The current media
+primitive set lacks these distinctions, which is exactly the vulnerability
+the EA playbook exploits.
+\end{remark}
+
+\end{document}

@@ -1,0 +1,322 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Reverse Engineering the Origin of Life}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Reverse Engineering the Origin of Life'' (2026-04-20) within the
+Hyperseed ontology. The article explores computational modeling of
+origin-of-life transitions as a window into the nature of cognition.
+Key mappings: autocatalytic closure as fiber self-reference, individuation
+as fiber boundary formation, proto-agency as fiber self-maintenance,
+proto-meaning as fiber-weighted influence, context-dependence as
+fiber-relative meaning, and the chemistry-to-cognition transition as
+fiber emergence.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Fiber self-reference}
+\label{sec:self-reference}
+%% =================================================================
+
+\begin{theorem}[Autocatalytic closure --- claims 4--7, 22]
+\label{thm:self-reference}
+Life begins with autocatalytic closure: a set of chemical reactions
+where every reaction is catalyzed by some product of the set, and
+every catalyst can be built from the food set. The RAF (Reflexively
+Autocatalytic Food-generated) formalism captures this precisely.
+
+In Hyperseed terms, autocatalytic closure is \emph{fiber self-reference}:
+the fiber refers to itself --- each element's existence depends on the
+fiber as a whole:
+\[
+  \forall r \in \text{RAF}: \exists c \in \text{RAF} \text{ s.t. } c
+  \text{ catalyzes } r \qquad \text{and} \qquad
+  \forall m \in \text{RAF}: m \text{ is buildable from food via RAF}
+\]
+
+The closure condition is the fiber's self-containment: the set can
+sustain itself without external catalytic input. This is the chemical
+analog of the coinductive consolidation principle --- the system's
+continuation is defined by its own ongoing operation, not by an
+external foundation.
+
+The distinction between minimal and rich closure maps to fiber
+robustness:
+\begin{itemize}
+\item \textbf{Minimal closure} (barely self-sustaining): fragile fiber.
+  Remove one element and the closure breaks. No redundancy, no
+  alternative pathways.
+\item \textbf{Rich closure} (redundant, multiple pathways): robust fiber.
+  Can survive perturbations because alternative pathways maintain
+  closure even when individual elements fail.
+\end{itemize}
+
+Rich closure is more life-like because it has the structural property
+that makes biological systems resilient: multiple ways to maintain the
+same functional fiber. This connects to the diversity-as-safety
+principle: a rich autocatalytic set is safer than a minimal one for
+the same reason a diverse AI ecosystem is safer than a monoculture.
+\end{theorem}
+
+%% =================================================================
+\section{Fiber boundary formation}
+\label{sec:boundary}
+%% =================================================================
+
+\begin{definition}[Individuation --- claims 8--11, 23]
+\label{def:boundary}
+The emergence of membrane-bounded compartments transforms chemistry
+into biology. Before membranes: reactions in solution, no individuals,
+no topology. After membranes: individuals with insides and outsides,
+the first topological distinction.
+
+In Hyperseed terms, membrane formation is \emph{fiber boundary
+formation}: the creation of a boundary that distinguishes what's
+inside the fiber (the individual's organization) from what's outside
+(the environment):
+\[
+  \partial F = \text{membrane} \qquad
+  \text{int}(F) = \text{individual's organization} \qquad
+  \text{ext}(F) = \text{environment}
+\]
+
+The boundary has three crucial properties:
+\begin{enumerate}
+\item \textbf{Topological:} it creates the inside/outside distinction
+  --- the most fundamental boundary in biology. Without it, there
+  are no individuals, no metabolism, no evolution.
+\item \textbf{Selective:} the membrane is selectively permeable ---
+  it admits some molecules and excludes others. This selectivity is
+  the first form of discrimination, the chemical precursor of
+  perception.
+\item \textbf{Self-produced:} in the most interesting cases, the
+  autocatalytic set produces its own membrane components. The
+  individual produces its own boundary --- self-individuating,
+  not externally compartmentalized.
+\end{enumerate}
+
+Self-production of the boundary is especially significant: it means
+the fiber creates its own boundary conditions. The individual is not
+compartmentalized by external forces (externally imposed fiber
+boundary) but by its own activity (self-generated fiber boundary).
+This is the chemical precursor of autonomy: the system defines its
+own limits.
+\end{definition}
+
+%% =================================================================
+\section{Fiber self-maintenance}
+\label{sec:maintenance}
+%% =================================================================
+
+\begin{proposition}[Proto-agency --- claims 12--15, 24]
+\label{prop:maintenance}
+Once there are individuals, there is proto-agency: the individual
+acts (chemically) to maintain its own organization, selectively
+interacts with its environment, and responds to gradients. Not
+conscious agency --- no experience, no deliberation --- but the
+structural precursor of all later agency.
+
+In Hyperseed terms, proto-agency is \emph{fiber self-maintenance}:
+the fiber actively preserves its own structure against degradation.
+More precisely, the fiber acts to ensure that its cocycle conditions
+continue to hold --- that its transition functions continue to compose
+correctly:
+\[
+  \text{Proto-agency: } F \text{ acts to maintain }
+  g_{ij} \circ g_{jk} = g_{ik} \quad \forall i,j,k
+\]
+
+Three components of fiber self-maintenance:
+\begin{enumerate}
+\item \textbf{Self-maintenance:} the individual replenishes its own
+  components, replacing molecules that degrade. The fiber actively
+  maintains its own content.
+\item \textbf{Selective interaction:} the individual admits beneficial
+  molecules and excludes harmful ones. The fiber controls what
+  enters and exits through its boundary.
+\item \textbf{Gradient response:} the individual moves toward
+  favorable conditions. The fiber navigates its base space toward
+  regions where its self-maintenance is easier.
+\end{enumerate}
+
+The key insight: proto-agency is not a property \emph{added} to the
+chemical system --- it \emph{emerges} from the combination of
+autocatalytic closure (fiber self-reference), membrane formation
+(fiber boundary), and thermodynamic pressure (environmental gradients).
+Once a self-referencing fiber has a boundary, self-maintenance is
+not a choice but a thermodynamic necessity: the fiber either maintains
+itself or dissolves.
+\end{proposition}
+
+%% =================================================================
+\section{Fiber-weighted influence and proto-meaning}
+\label{sec:meaning}
+%% =================================================================
+
+\begin{theorem}[Information and meaning --- claims 16--18, 25--26]
+\label{thm:meaning}
+In autocatalytic systems, some molecules carry ``information'' ---
+they influence system behavior disproportionate to their energetic
+contribution. A molecule's significance exceeds its thermodynamic
+content --- it ``means'' something to the system because of its
+functional role.
+
+In Hyperseed terms, this is \emph{fiber-weighted influence}: the
+molecule's significance is its fiber weight --- influence
+disproportionate to base-level (thermodynamic) content:
+\[
+  \text{Fiber weight}(m) = \frac{\text{functional influence of } m
+    \text{ on fiber}}{\text{thermodynamic content of } m} \gg 1
+\]
+
+A catalyst that controls a critical branch point in the autocatalytic
+network has high fiber weight: its removal would collapse the network
+(high functional influence) even though its energy content is
+negligible (low thermodynamic content). This is the chemical origin
+of the fiber/base distinction:
+\begin{itemize}
+\item \textbf{Base level} (thermodynamics): the molecule is just
+  energy and matter. Its significance is its caloric content, its
+  mass, its charge.
+\item \textbf{Fiber level} (autocatalytic organization): the molecule
+  is a control point, a catalyst, a regulatory signal. Its significance
+  is its role in the network's self-maintenance.
+\end{itemize}
+
+Context-dependence of meaning is \emph{fiber-relative meaning}: the
+same molecule has different significance in different autocatalytic
+systems. Its meaning depends on which fiber bundle it's embedded in,
+not on its intrinsic chemistry:
+\[
+  \text{meaning}(m) = f(m, F) \neq f(m, F') \qquad
+  \text{for } F \neq F'
+\]
+
+This is the origin of semantics: meaning is not intrinsic to the
+symbol (molecule) but arises from its role in the system (fiber).
+The same molecule can be critical in one autocatalytic network and
+irrelevant in another --- its ``meaning'' is fiber-relative.
+\end{theorem}
+
+%% =================================================================
+\section{Fiber emergence: chemistry to cognition}
+\label{sec:emergence}
+%% =================================================================
+
+\begin{theorem}[The continuity thesis --- claims 1--3, 27]
+\label{thm:emergence}
+The transition from chemistry to cognition is not a sharp boundary
+but a continuous gradient. Life, agency, meaning, and consciousness
+emerge gradually, each building on the previous:
+\[
+  \text{Chemistry} \xrightarrow{\text{closure}} \text{Self-reference}
+  \xrightarrow{\text{membrane}} \text{Individuation}
+  \xrightarrow{\text{maintenance}} \text{Agency}
+  \xrightarrow{\text{information}} \text{Meaning}
+  \xrightarrow{\cdots} \text{Cognition}
+\]
+
+In Hyperseed terms, this is \emph{fiber emergence}: the gradual
+appearance of fiber structure in what was previously just base-level
+dynamics:
+\begin{enumerate}
+\item \textbf{No fiber:} pure thermochemistry. Reactions happen but
+  there's no self-reference, no boundary, no agency, no meaning.
+  All dynamics are base-level.
+\item \textbf{Fiber self-reference:} autocatalytic closure. The system
+  begins to refer to itself --- a minimal fiber appears.
+\item \textbf{Fiber boundary:} membrane formation. The fiber
+  distinguishes inside from outside --- topology appears.
+\item \textbf{Fiber self-maintenance:} proto-agency. The fiber
+  actively maintains itself --- dynamics become fiber-level, not
+  just base-level.
+\item \textbf{Fiber-weighted influence:} proto-meaning. Some base-level
+  entities acquire fiber-level significance --- the fiber/base
+  distinction becomes operative.
+\item \textbf{Deep fiber:} cognition. Rich internal structure,
+  representation, reasoning, experience --- deep fiber over a
+  biological base.
+\end{enumerate}
+
+Each step adds a new fiber property without removing the previous
+ones. Cognition isn't a special substance added to chemistry ---
+it's what chemistry becomes when enough fiber structure accumulates.
+The origin of life is the first step in this accumulation: the
+moment when base-level dynamics first produce fiber-level organization.
+
+Understanding this transition illuminates what cognition
+\emph{fundamentally is}: not a property of special materials (neurons,
+silicon) but a pattern of fiber organization that can emerge in any
+sufficiently rich substrate. This connects to substrate independence
+(LLM consciousness article): the fiber (cognition) can be instantiated
+over different bases (substrates) because it's defined by its
+organizational structure, not its material.
+\end{theorem}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Let's Get Chemical} (2026-05-05): computational
+  experiments. The same Lane-style protocell models with RAF sets,
+  protected release, and evolutionary dynamics. This article provides
+  the philosophical framing; Let's Get Chemical provides the
+  computational results.
+\item \textbf{In What Sense Might LLMs Be Conscious?} (2026-05-05):
+  substrate independence. The origin-of-life perspective supports
+  substrate independence: if cognition emerges from fiber organization
+  (not material), then any substrate that supports the right fiber
+  organization can support cognition.
+\item \textbf{Grand Unified Physics} (2026-05-15): meta-crystallization.
+  The chemistry-to-cognition transition is a meta-crystallization:
+  lower-level organization (chemistry) giving rise to higher-level
+  structure (biology, cognition).
+\item \textbf{The Last of the Unmodified} (2026-04-21): cognitive
+  architecture. The origin-of-life perspective grounds the
+  fiber-type question: biological cognition is one fiber type that
+  emerged from chemistry. Modification creates new fiber types.
+\item \textbf{The Leaky Transcension Hypothesis} (2026-04-25):
+  fiber deepening. The chemistry-to-cognition transition is the
+  first instance of fiber deepening --- the beginning of the
+  transcension trajectory.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Fiber emergence universality]
+Conjecture: the sequence of fiber emergence (self-reference $\to$
+boundary $\to$ self-maintenance $\to$ meaning) is universal ---
+any system that develops cognition must pass through these stages
+in approximately this order, regardless of substrate.
+
+If this conjecture holds, AGI development recapitulates origin-of-life:
+the system must develop self-reference (reflexive reasoning), boundary
+(self-model), self-maintenance (goal preservation), and meaning
+(semantic grounding) in approximately that order. Attempting to build
+cognition without the earlier stages (e.g., meaning without
+self-reference) produces fragile, superficial cognition --- high
+performance without deep fiber.
+\end{conjecture}
+
+\end{document}

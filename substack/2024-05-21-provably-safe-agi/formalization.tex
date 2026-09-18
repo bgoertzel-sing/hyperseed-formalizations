@@ -1,0 +1,96 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Provably Safe AGI Is Potentially Dangerous}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Provably Safe AGI Is Potentially Dangerous''
+(2024-05-21) within the Hyperseed ontology. Key mappings: the specification
+problem as fiber definition, the model-reality gap as fiber-base gap,
+intractability as fiber complexity, false security as fiber-base confusion,
+and defense in depth as multi-fiber verification.
+\end{abstract}
+
+\tableofcontents
+
+\section{Fiber definition: the specification problem}
+
+\begin{theorem}[Specification = fiber definition --- claims 1--4, 21]
+You can't verify the fiber without first defining it. Specifying ``safe''
+behavior for AGI requires formalizing human values --- complex, contextual,
+contradictory, and evolving:
+\[
+  \text{Verify}(F) \text{ requires } \text{Define}(F)
+  \quad \text{but} \quad \text{Define}(F_{\text{safe}}) = \text{unsolved}
+\]
+Even if specified today, the specification drifts as society evolves.
+\end{theorem}
+
+\section{Fiber-base gap: model vs reality}
+
+\begin{theorem}[Model gap --- claims 9--12, 22, 24]
+Proofs about formal models (fiber) don't guarantee properties of real
+systems (base). The gap is where failures hide:
+\[
+  \text{Prove}(F_{\text{model}} \models \phi) \not\Rightarrow
+  B_{\text{real}} \models \phi
+\]
+The false sense of security comes from confusing fiber verification
+(proof holds in model) with base verification (system is actually safe).
+This is a category error with potentially catastrophic consequences.
+\end{theorem}
+
+\section{Fiber complexity: intractability}
+
+\begin{proposition}[Complexity barrier --- claims 5--8, 23]
+Formal verification becomes intractable when the fiber is too complex.
+Self-modification makes the fiber dynamic:
+\[
+  \text{Verify}(F_t) \quad \text{but} \quad F_{t+1} = \text{modify}(F_t)
+  \implies \text{Verify}(F_{t+1}) \text{ needed again}
+\]
+The modification space is unbounded, making exhaustive verification
+impossible. Any tractable verification uses approximations that
+introduce gaps.
+\end{proposition}
+
+\section{Multi-fiber verification: defense in depth}
+
+\begin{proposition}[Complementary approach --- claims 17--19, 25]
+Multiple independent safety mechanisms provide multi-fiber verification:
+\[
+  \text{Safe} \approx \bigcap_i \text{Verified}_i(F_i)
+\]
+No single mechanism is sufficient; the intersection of partial
+verifications is more reliable than any single verification alone.
+\end{proposition}
+
+\section{Cross-references}
+
+\begin{remark}[Connections]
+\begin{itemize}
+\item \textbf{Seven Flavors of AGI Catastrophe} (2026-06-23): systematic
+  analysis of failure modes that ``provable safety'' claims to prevent.
+\item \textbf{Why Everyone Dies Gets AGI All Wrong} (2025-10-01): defense
+  in depth through hybrid architecture.
+\item \textbf{Evolving Deeply Ethical AGI} (2026-01-06): the specification
+  problem connects to non-dual motivation --- safety can't be specified
+  as a single objective.
+\end{itemize}
+\end{remark}
+
+\end{document}

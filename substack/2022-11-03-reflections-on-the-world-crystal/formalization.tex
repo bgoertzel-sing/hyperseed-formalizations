@@ -1,0 +1,61 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Reflections on the World Crystal}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Reflections on the World Crystal'' (2022-11-03)
+within the Hyperseed ontology.
+\end{abstract}
+
+\section{Base lattice: discrete reality}
+
+\begin{proposition}[World crystal = base lattice --- claims 1--3, 6]
+Discrete fundamental reality is a lattice base space:
+\[
+  B = \Lambda \subset \mathbb{R}^d \quad \text{(lattice at Planck scale)}
+\]
+Fibers are defined over lattice points $\lambda \in \Lambda$ rather than
+continuous manifold points. Wolfram's hypergraph, LQG's spin networks,
+and other discrete physics models all propose different lattice structures.
+\end{proposition}
+
+\section{Fiber coarse-graining and emergence}
+
+\begin{proposition}[Emergence = coarse-graining --- claims 4, 7]
+Continuous spacetime emerges from coarse-graining the lattice fiber:
+\[
+  F_{\text{macro}}(x) = \frac{1}{|N(x)|} \sum_{\lambda \in N(x)} F(\lambda)
+\]
+where $N(x)$ is the neighborhood of lattice points near macroscopic point $x$.
+The crystal appears smooth at scales $\gg$ lattice spacing.
+\end{proposition}
+
+\section{Consciousness as fiber resonance}
+
+\begin{conjecture}[Consciousness = fiber resonance --- claims 5, 8]
+Consciousness is a standing-wave pattern of fiber resonance over the
+discrete base:
+\[
+  \Psi_{\text{conscious}} = \sum_k c_k \phi_k(\Lambda)
+  \quad \text{(resonant modes of fiber over lattice)}
+\]
+Specific patterns of fiber excitation over the lattice constitute
+conscious experience --- consciousness is a structural/dynamical property,
+not a substance.
+\end{conjecture}
+\end{document}
