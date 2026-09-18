@@ -1,0 +1,251 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  What Should an AGI Curriculum Look Like?}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``What Should an AGI Curriculum Look Like, at the Dawn of the AGI Era?''
+(2026-07-23) within the Hyperseed ontology. The article announces the first
+accredited AGI degree program (MS in AGI at CIHS) and articulates what AGI
+education should contain. Each structural insight maps onto Hyperseed
+structures: the three curriculum levels (Mind, Brain, Experience) as fiber
+decomposition, vibe coding vs.\ deep thinking as 0-cell surface optimization
+vs.\ directed higher-cell reasoning, ethics as value possession rather than
+rule adoption, attention as parallel transport budget, and multiple
+perspectives as a sheaf of local sections.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Three levels as fiber decomposition}
+\label{sec:levels}
+%% =================================================================
+
+\begin{definition}[Mind, Brain, Experience --- claims 1--5, 22]
+\label{def:levels}
+The AGI curriculum is organized around three core levels:
+\begin{enumerate}
+\item \textbf{Mind level} (conceptual/philosophical): What is a mind?
+  What is a human mind, that it can build an AI? What is an AI, that
+  it can become a superintelligence?
+\item \textbf{Brain level} (neural/computational substrate): algorithms,
+  data structures, neural architectures, knowledge representations ---
+  the engineering core.
+\item \textbf{Experience level} (phenomenological): What is it like to
+  be a bot? What is it like to be a combined human-AI system?
+  Consciousness, subjective experience, qualia.
+\end{enumerate}
+
+All three are necessary --- AGI education is not just engineering. No
+single level suffices.
+
+In Hyperseed terms, these are three independent fiber components of the
+AGI understanding bundle:
+\[
+  E_{\text{AGI}} = E_{\text{Mind}} \oplus E_{\text{Brain}} \oplus E_{\text{Experience}}
+\]
+Collapsing to any single fiber loses essential structure --- the same
+anti-scalar-collapse principle that appears in the evaluation ecology
+(multiple independent metrics rather than a single score) and in the
+$(f,c)$-lossy critique (visible STV fusion vs.\ per-packet provenance).
+
+The program deliberately avoids selling any one perspective. Different
+perspectives on AGI are local sections of the understanding sheaf; the
+curriculum encourages students to work with multiple local sections and
+discover where they glue consistently and where they conflict.
+\end{definition}
+
+%% =================================================================
+\section{Deep thinking vs.\ vibe coding: 0-cells vs.\ higher cells}
+\label{sec:thinking}
+%% =================================================================
+
+\begin{proposition}[Vibe coding as 0-cell optimization --- claims 6--11, 23]
+\label{prop:vibe}
+In the current era, it is trivially easy to spin up code via LLM
+assistance. This creates a systematic bias:
+\begin{itemize}
+\item LLM-guided development reliably directs toward minor variations on
+  what has already been done --- the training distribution trap.
+\item Many practitioners substitute LLM queries for genuine thinking,
+  producing experiments that explore the surface of known approaches
+  rather than penetrating to novel territory.
+\item Running one hasty experiment after another, guided by the corpus
+  of what's been done, is insufficient for building actual AGI.
+\end{itemize}
+
+In Hyperseed terms, vibe coding operates at the \emph{0-cell level}:
+surface patterns from the training distribution, observable properties of
+existing solutions. Deep thinking requires:
+\begin{itemize}
+\item \textbf{Directed 1-cells}: novel reasoning trajectories that leave
+  the training distribution --- following chains of inference that no
+  existing corpus contains.
+\item \textbf{Higher cells} ($n \geq 2$): reflection on reasoning ---
+  thinking about thinking, evaluating whether a line of inquiry is
+  productive, recognizing when you're stuck in a local optimum.
+\end{itemize}
+
+An AGI curriculum must cultivate both: practical craft (0-cell fluency
+with modern tools) and deep foundational thinking (higher-cell reasoning
+that the tools make easy to skip). The dual cultivation is not a
+compromise but a structural requirement --- you need 0-cells to ground
+the theory and higher cells to escape the training distribution.
+\end{proposition}
+
+%% =================================================================
+\section{Ethics as value possession, not rule adoption}
+\label{sec:ethics}
+%% =================================================================
+
+\begin{proposition}[Beneath the guardrails --- claims 12--14, 24]
+\label{prop:ethics}
+AI ethics as typically practiced is guardrails on models or rules in
+prompts --- external constraints bolted onto systems. This is goal
+adoption, not goal possession (in the language of ``Goals That Grow
+Back'').
+
+The deeper questions the curriculum poses:
+\begin{itemize}
+\item What does it mean for an AGI to \emph{have} a value (not just
+  follow a rule)?
+\item What does it mean for a collective human-AI system to evolve in
+  accordance with an evolving system of values?
+\end{itemize}
+
+Understanding AGI ethics deeply means possessing the values --- having
+them woven through perception, habits, and practice --- not merely
+adopting guardrail rules. The same distinction between goal adoption
+and goal possession applies to the \emph{educators and students}: a
+curriculum that teaches ethics as a list of rules produces practitioners
+who adopt the rules; a curriculum that cultivates deep engagement with
+the questions produces practitioners who possess ethical understanding.
+
+This is the educational analog of the gate-and-weave requirement: rules
+(gate) plus deep understanding (weave) together provide robust ethical
+reasoning; either alone fails.
+\end{proposition}
+
+%% =================================================================
+\section{Attention as parallel transport budget}
+\label{sec:attention}
+%% =================================================================
+
+\begin{proposition}[Focused attention --- claims 15--17, 25]
+\label{prop:attention}
+In the AGI era, attention is among the most precious commodities.
+People's attention is scattered; focusing a group's attention on a
+topic and on each other is the unique value of a degree program.
+
+In Hyperseed terms, focused attention is the \emph{parallel transport
+budget} --- the computational resource that enables genuine understanding
+(maintaining a coherent section of the understanding sheaf across
+perturbations) rather than surface pattern matching (reading individual
+0-cells without connecting them into a section).
+
+This is the same resource-limited repair from ``Goals That Grow Back'':
+\begin{itemize}
+\item Attention starvation kills understanding the same way it kills
+  goal possession --- the repair/learning process loses its resource
+  competition with distractions.
+\item A degree program guarantees a minimum attention allocation ---
+  the same design rule that says repair resources must be guaranteed
+  from above, not left to market competition.
+\item Discussion-focused courses provide the back-and-forth that forces
+  students to repair and rebuild their understanding from multiple
+  angles --- the educational analog of the confluence check.
+\end{itemize}
+\end{proposition}
+
+%% =================================================================
+\section{Theory-to-practice as directed type maturation}
+\label{sec:history}
+%% =================================================================
+
+\begin{proposition}[Directed type maturation --- claims 20--21, 27]
+\label{prop:maturation}
+AGI is emerging from its early phase (theorizing, conceptual work,
+small prototypes) into a new phase where palpably proto-AGI systems
+exist and full AGI could be close.
+
+In Hyperseed terms, this is the directed type of the AGI field acquiring
+its first substantive 1-cells (actual working systems) after decades of
+0-cells (theoretical positions, conceptual frameworks, small demos).
+The transition is:
+\[
+  \mathcal{D}_{\text{AGI}} : \text{0-cells (theories)} \xrightarrow{\text{maturation}}
+  \text{0-cells + 1-cells (theories + working systems)}
+\]
+
+This is the ``perfect moment'' for an AGI degree program because:
+\begin{enumerate}
+\item The 0-cells (theory) are mature enough to teach coherently.
+\item The 1-cells (systems) are arriving fast enough that students need
+  to engage with them concretely.
+\item The interaction between 0-cells and 1-cells --- theory informing
+  practice, practice refining theory --- is where the most important
+  learning happens.
+\end{enumerate}
+\end{proposition}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Goals That Grow Back} (2026-07-28): goal adoption vs.\
+  possession. The curriculum's ethics approach is value possession
+  applied to education. Attention as parallel transport budget is the
+  same resource-limited repair framework.
+\item \textbf{Seeding RSI} (2026-07-28): the OmegaHive evaluation
+  ecology. The three curriculum levels mirror the evaluation ecology's
+  insistence on multiple independent metrics rather than a single score.
+\item \textbf{$(f,c)$-lossy} (LTM 5a4d150b): anti-scalar-collapse.
+  Three levels resist collapsing AGI understanding to a single
+  engineering dimension.
+\item \textbf{Seven Flavors} (2026-07-01): multiple perspectives as
+  sheaf of local sections. Different AGI catastrophe scenarios are
+  different local sections of the risk sheaf; the curriculum teaches
+  students to work with the full sheaf rather than a single section.
+\item \textbf{Paperclip Maximizers} (2026-07-27): capability without
+  wisdom. The curriculum's emphasis on Mind and Experience levels
+  (not just Brain/engineering) is designed to produce practitioners
+  who build systems with self-understanding, not just capability.
+\item \textbf{Watermarking Folly} (2026-07-21): vibe coding as surface
+  pattern matching. Statistical watermarking examines 0-cells (surface
+  text properties); vibe coding produces 0-cell variations. Both miss
+  the directed structure.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Curriculum regenerative depth]
+Conjecture: a well-designed AGI curriculum, like a well-designed value
+system, has regenerative depth --- even if specific courses or materials
+are removed, the conceptual structure regenerates from the remaining
+elements because the three levels (Mind, Brain, Experience) are
+independently redundant. The regenerative depth of the curriculum is
+measurable: remove one course and see how quickly students reconstruct
+the missing understanding from the other two. This is the educational
+analog of the sandbox test for goal possession.
+\end{conjecture}
+
+\end{document}

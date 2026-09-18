@@ -1,0 +1,79 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Can All Human Concepts Be Reduced?}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Can All Human Concepts Be Reduced to
+Semantic Primitives?'' (2022-03-14) within the Hyperseed ontology.
+Key mappings: semantic primitives as base fibers, concept composition
+as fiber product, embodiment grounding as fiber-base attachment.
+\end{abstract}
+
+\section{Semantic primitives as base fibers}
+
+\begin{proposition}[Primitives = base fibers --- claims 1--5, 12]
+Semantic primitives form a generating set for the fiber space of concepts:
+\[
+  \mathcal{P} = \{p_1, \ldots, p_n\} \quad \text{such that} \quad
+  \text{span}(\mathcal{P}) \approx \mathcal{F}_{\text{concepts}}
+\]
+Wierzbicka's NSM ($n \approx 65$), Schank's action primitives, and
+Jackendoff's conceptual categories are different proposed generating sets.
+The appeal is finite manageability; the difficulty is that the span may
+be strict ($\subsetneq$ rather than $=$).
+\end{proposition}
+
+\section{Composition as fiber product}
+
+\begin{proposition}[Composition = fiber product --- claims 6--8, 11, 13]
+Complex concepts are constructed from primitives via categorical fiber
+operations:
+\[
+  C_{\text{complex}} = p_i \times_B p_j \times_B \cdots
+\]
+where $\times_B$ denotes fiber product over the base space. Even if the
+primitive-set doesn't perfectly span all concepts, it provides useful
+structure for AGI knowledge representation --- an approximate basis
+enables structured reasoning.
+\end{proposition}
+
+\section{Grounding as base attachment}
+
+\begin{proposition}[Grounding = base attachment --- claims 9--10, 14]
+Embodied primitives ground fiber in base space:
+\[
+  \pi: F_{\text{embodied}} \to B_{\text{sensorimotor}}
+\]
+Not all fibers can be purely abstract --- some must project to the
+physical/experiential base. Spatial, temporal, and emotional primitives
+are fibers with necessary base attachment.
+\end{proposition}
+
+\section{Cross-references}
+
+\begin{remark}[Connections]
+\begin{itemize}
+\item \textbf{General Theory of General Intelligence} (2021-06-02):
+  the broader framework within which primitive-sets operate.
+\item \textbf{Tensor Logic for Bridging Neural and Symbolic} (2024):
+  tensor logic as a mechanism for fiber composition.
+\item \textbf{Three Viable Paths to True AGI} (2022-08-25): hybrid
+  architectures that might use primitive-sets alongside neural methods.
+\end{itemize}
+\end{remark}
+
+\end{document}

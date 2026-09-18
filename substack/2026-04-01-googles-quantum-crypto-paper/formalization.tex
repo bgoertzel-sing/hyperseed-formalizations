@@ -1,0 +1,245 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Google's Quantum Crypto Paper Tells Us More Than They Intended}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Google's Quantum Crypto Paper Tells Us More Than They Intended''
+(2026-04-01) within the Hyperseed ontology. The article analyzes
+Google Quantum AI's whitepaper on breaking ECC with Shor's algorithm.
+Key mappings: the responsible disclosure paradox as section-fiber leakage,
+threat-capability coupling as dual fiber, search space bounding as
+fiber constraint propagation, post-quantum migration as fiber transition,
+and harvest-now attacks as fiber time asymmetry.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Section-fiber leakage in responsible disclosure}
+\label{sec:leakage}
+%% =================================================================
+
+\begin{theorem}[The disclosure paradox --- claims 1--4, 18--20, 21]
+\label{thm:leakage}
+Google withholds the specific circuit implementation (the ``crown jewel'')
+while publishing the complete architectural framework: kickmix architecture,
+windowed arithmetic, Shor phase estimation with qubit-recycled QFT,
+Montgomery's trick, yoked surface codes, reaction-limited execution,
+and exact resource counts from ZK proof statements.
+
+In Hyperseed terms, this is \emph{section-fiber leakage}: the withheld
+circuit (section) leaks through the published architectural details
+(fiber). The fiber constrains the section so tightly that withholding
+the section is insufficient:
+\[
+  \text{Published fiber} \implies \text{bounded search over sections}
+  \implies \text{section reconstructible}
+\]
+
+The mechanism: the paper specifies enough fiber constraints (gate counts,
+qubit counts, architecture type, optimization strategy, design space
+boundaries) that the unknown section (specific circuit wiring) is
+determined up to a bounded search. Information-theoretically:
+\[
+  H(\text{circuit} \mid \text{published constraints})
+  \ll H(\text{circuit})
+\]
+
+The residual entropy --- what you still need to figure out after reading
+the paper --- is small enough that a competent team of 3--5 researchers
+can search the remaining space in months. This is security through
+obscurity, and it fails for the same reason it always fails: the
+``secret'' lives in a space that's bounded by publicly known constraints.
+
+This is the same pattern as the Leaky Transcension Hypothesis: perfect
+containment is impossible because the fiber projects onto the base.
+Google's paper is a transcended interior (the secret circuit) that leaks
+unavoidably through its boundary (the published constraints). The leakage
+isn't accidental --- it's structural. You can't describe an architecture
+precisely enough to be scientifically credible without constraining its
+implementations enough to be reproducible.
+\end{theorem}
+
+%% =================================================================
+\section{Fiber constraint propagation}
+\label{sec:propagation}
+%% =================================================================
+
+\begin{proposition}[Bounded reverse engineering --- claims 5--8, 23]
+\label{prop:propagation}
+The paper's disclosed constraints propagate to bound the unknown
+components. The design space for elliptic curve point addition on
+a surface-code quantum computer is well-studied: modular arithmetic
+strategy, coordinate system selection, and ancilla management are
+textbook topics. Prior work (Litinski 2023, H\"aner et al.\ 2020,
+Gouzien et al.\ 2023, Chevignard et al.\ 2026) establishes the
+space; Google improved spacetime volume ${\sim}10\times$ within it.
+
+In Hyperseed terms, this is \emph{fiber constraint propagation}:
+known fiber constraints on a system determine its unknown components
+up to a bounded search:
+\begin{enumerate}
+\item \textbf{Architecture type} (kickmix, windowed) constrains the
+  class of circuits.
+\item \textbf{Resource counts} (gate counts, qubit counts) constrain
+  the scale.
+\item \textbf{Prior work} constrains the design space (known
+  optimizations, known tradeoffs).
+\item \textbf{Performance claims} constrain the quality (must achieve
+  the stated spacetime volume).
+\end{enumerate}
+
+Each constraint eliminates a region of the search space. Together,
+they leave a bounded residual --- the specific circuit wiring ---
+that is a constrained optimization problem, not an open research
+question.
+
+This is a general principle: enough fiber constraints on any system
+determine its unknown components. The more fiber you publish, the
+less section remains hidden. Google published enough fiber to make
+the section reproducible.
+\end{proposition}
+
+%% =================================================================
+\section{Dual fiber: threat and capability}
+\label{sec:dual}
+%% =================================================================
+
+\begin{theorem}[Threat-capability coupling --- claims 12--14, 22]
+\label{thm:dual}
+The qubit counts for cryptographic attacks (${\sim}500$K physical)
+are roughly the same as for quantum-enhanced AI. The threat and the
+capability arrive on the same timescale, on the same hardware, driven
+by the same engineering progress.
+
+In Hyperseed terms, this is \emph{dual fiber}: the same physical fiber
+(qubit count, error correction architecture, gate fidelity) supports
+both threat (breaking cryptography) and capability (quantum-enhanced
+AI). They are inseparable aspects of the same underlying fiber:
+\[
+  F_{\text{quantum}} = F_{\text{threat}} \cup F_{\text{capability}}
+  \qquad \text{with} \qquad
+  F_{\text{threat}} \cap F_{\text{capability}} \neq \emptyset
+\]
+
+The intersection is substantial: the same logical qubits, the same
+error correction, the same gate operations. You can't build quantum
+hardware capable of one without being capable of the other. The dual
+use is not a policy choice but a physical constraint: the fiber is
+inherently dual.
+
+This means that any attempt to prevent the threat (restrict quantum
+cryptanalysis) necessarily restricts the capability (quantum AI).
+And any progress on the capability side necessarily advances the
+threat side. The policy implications are that threat-only analysis
+misses half the picture --- arguably the more important half.
+\end{theorem}
+
+%% =================================================================
+\section{Fiber transition: post-quantum migration}
+\label{sec:transition}
+%% =================================================================
+
+\begin{definition}[Cryptographic fiber transition --- claims 15--17, 24--25]
+\label{def:transition}
+Every blockchain using standard ECC is on a countdown. Migration to
+post-quantum cryptography is urgent --- not a future concern but a
+current engineering priority.
+
+In Hyperseed terms, this is a \emph{fiber transition}: replacing the
+cryptographic fiber of the entire blockchain ecosystem:
+\[
+  F_{\text{ECC}} \xrightarrow{\text{migration}} F_{\text{PQ}}
+  \qquad \text{before} \qquad
+  F_{\text{quantum}} \text{ matures}
+\]
+
+It's a race between fiber transitions: the defensive transition
+(ECC to post-quantum) must complete before the offensive transition
+(quantum computers reaching cryptanalytic capability) arrives.
+
+\textbf{Harvest-now attacks} introduce a \emph{fiber time asymmetry}:
+data encrypted under the ECC fiber today becomes vulnerable when the
+quantum fiber arrives later. The commitment (encryption) is irreversible
+--- the ciphertext is already public on the blockchain. But the security
+guarantee expires when the decryption fiber (quantum computation) becomes
+available:
+\[
+  \text{Security}(t) = \begin{cases}
+    \text{high} & \text{if } F_{\text{quantum}}(t) < \text{threshold} \\
+    \text{zero} & \text{if } F_{\text{quantum}}(t) \geq \text{threshold}
+  \end{cases}
+\]
+
+The discontinuity is what makes it urgent: security doesn't degrade
+gradually --- it collapses to zero once the quantum fiber crosses the
+threshold. And the threshold crossing is approaching faster than most
+blockchain projects are migrating.
+\end{definition}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{The Leaky Transcension Hypothesis} (2026-04-25):
+  section-fiber leakage. The same pattern --- perfect containment
+  is impossible because fiber constrains section --- applied to
+  information disclosure rather than civilizational transcension.
+\item \textbf{DeAI After Mythos} (2026-04-15): security regime change.
+  Mythos changes the economics of vulnerability discovery; quantum
+  changes the economics of cryptographic breaking. Both are
+  base-level security collapses.
+\item \textbf{The OpenAI/Microsoft Shakeup} (2026-05-01): structural
+  constraints. The disclosure paradox parallels the governance
+  paradox: you can't structurally depend on secrecy any more than
+  you can structurally depend on good intentions.
+\item \textbf{Toward a Truly Decentralized Digital} (2026-06-25):
+  blockchain security. Post-quantum migration is essential for
+  the decentralized digital identity infrastructure.
+\item \textbf{Bootleggers \& Baptists} (2026-04-28): dual use
+  regulation. The dual-fiber nature of quantum computing means
+  that regulation targeting the threat side necessarily affects
+  the capability side.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Fiber disclosure threshold]
+Conjecture: for any technical system, there exists a disclosure threshold
+--- a minimum amount of fiber that must be published for scientific
+credibility --- above which the remaining section is reconstructible
+by competent researchers. Google's paper crosses this threshold.
+
+If this conjecture holds, ``responsible disclosure'' of technical
+achievements faces a fundamental tension: scientific credibility
+requires publishing enough fiber to be verifiable, but verifiable
+fiber constrains the section enough to be reproducible. The only
+way to truly withhold a capability is to not publish at all ---
+and even then, independent discovery is possible.
+
+This suggests that for dual-use quantum advances, the choice is not
+between disclosure and secrecy but between acknowledged disclosure
+(with coordinated response) and delayed independent discovery (without
+coordination). Acknowledged disclosure is generally safer.
+\end{conjecture}
+
+\end{document}
