@@ -1,0 +1,293 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Jacob Coxon and the EA Media-Hacking Playbook}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Jacob Coxon and the Effective-Altruism Media-Hacking Playbook''
+(2026-09-13) within the Hyperseed ontology. The article's central critique
+--- that Effective Altruism reduces ethics to RL reward maximization and
+generates self-confirming doom narratives --- maps onto Hyperseed's analysis
+of scalar collapse (the $(f,c)$-lossy problem), trivial holonomy in
+ethical reasoning, and provenance opacity. The network-topology analysis
+connects to cocycle failures in governance descent data.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{EA ethics as RL formalism}
+\label{sec:ea-rl}
+%% =================================================================
+
+\begin{definition}[Scalar ethical framework --- claims 10--11]
+\label{def:scalar-ethics}
+A \emph{scalar ethical framework} is a tuple $(S, u, \pi)$ where:
+\begin{itemize}
+\item $S$ is a state space of world-configurations,
+\item $u : S \to \mathbb{R}$ is a scalar utility (reward) function,
+\item $\pi : S \to \Delta(\text{Actions})$ is a policy maximizing
+  $\mathbb{E}\left[\sum_{t=0}^{T} \gamma^t u(s_t)\right]$.
+\end{itemize}
+This is the reinforcement learning formalism applied to ethics.
+Effective Altruism instantiates it with $u = $ ``expected quantity of good''
+and $\gamma \to 1$ (longtermism).
+\end{definition}
+
+\begin{proposition}[Horizon-dependent validity --- claims 11--12]
+\label{prop:horizon}
+For bounded horizon $T < T_{\text{crit}}$ (e.g., malaria-net interventions),
+the estimation error $|\hat{u} - u|$ is bounded:
+\[
+  \text{Var}\left[\sum_{t=0}^{T} \gamma^t u(s_t)\right] = O(T).
+\]
+For $T \to \infty$ (longtermism), the variance diverges and tiny
+probabilities of astronomical outcomes dominate:
+\[
+  \lim_{T \to \infty} \frac{\max_{\text{tail}} p_{\text{tail}} \cdot V_{\text{tail}}}
+  {\sum_{t=0}^{T_{\text{crit}}} \gamma^t \mathbb{E}[u(s_t)]} = \infty.
+\]
+This is structurally equivalent to Pascal's mugging (claim~13).
+\end{proposition}
+
+\begin{definition}[Plural-revisable ethics --- claim 16]
+\label{def:plural-ethics}
+A \emph{plural-revisable ethical framework} is a collection
+$\{(S_i, V_i, R_i)\}_{i \in I}$ where:
+\begin{itemize}
+\item $V_i$ is a \emph{vector-valued} evaluation (not scalar),
+\item $R_i$ is a revision operator: $R_i : V_i \times \text{Experience} \to V_{i'}$,
+\item The index set $I$ itself evolves: agents can add, merge, or retire
+  value dimensions through lived experience.
+\end{itemize}
+This cannot be reduced to a scalar framework without information loss
+(the $(f,c)$-lossy theorem, claim~27).
+\end{definition}
+
+%% =================================================================
+\section{The self-confirming doom loop}
+\label{sec:doom-loop}
+%% =================================================================
+
+\begin{definition}[RL agency model --- claims 14--15]
+\label{def:rl-agency}
+The \emph{RL agency model} $\mathcal{M}_{\text{RL}}$ assumes every agent
+$A$ is characterized by:
+\[
+  A = \arg\max_{\pi} \mathbb{E}\left[\sum_t \gamma^t r(s_t, a_t)\right]
+\]
+for some reward function $r$. Under $\mathcal{M}_{\text{RL}}$, a
+``superintelligence'' is an agent with $\pi^*$ that dominates all
+human policies, and misalignment occurs when $r \neq r_{\text{human}}$.
+\end{definition}
+
+\begin{theorem}[Self-confirmation --- claims 14--15]
+\label{thm:self-confirm}
+$\mathcal{M}_{\text{RL}}$ simultaneously generates:
+\begin{enumerate}
+\item The EA ethical program (maximize $\mathbb{E}[u]$ for humanity), and
+\item The EA doom scenario (a superintelligent $\pi^*$ maximizing
+  $r \neq r_{\text{human}}$ destroys everything).
+\end{enumerate}
+The doom scenario is \emph{unfalsifiable within $\mathcal{M}_{\text{RL}}$}:
+any evidence of AI safety can be dismissed as ``not yet powerful enough,''
+and any evidence of danger confirms the model. The loop is self-confirming
+because the model that generates the fear is the same model that defines
+what counts as evidence.
+\end{theorem}
+
+\begin{corollary}[Trivial ethical holonomy --- claim 32]
+Under $\mathcal{M}_{\text{RL}}$, all ethical reasoning paths return to
+the same scalar objective:
+\[
+  \text{Hol}(\mathcal{M}_{\text{RL}}, \text{ethical-space}) = \{e\}
+  \quad \text{(trivial)}.
+\]
+Genuine ethical development --- changing which values matter, not just
+optimizing a fixed reward --- requires nontrivial holonomy, i.e., a
+framework where parallel transport through experience can change the
+fiber element (the value system itself).
+\end{corollary}
+
+%% =================================================================
+\section{Scalar collapse and the $(f,c)$-lossy theorem}
+\label{sec:scalar-collapse}
+%% =================================================================
+
+\begin{theorem}[Scalar collapse = $(f,c)$-lossy --- claim 27]
+\label{thm:scalar-collapse}
+Let $\mathcal{E} = (f, c, \text{prov})$ be a Hyperseed epistemic item
+with frequency $f$, confidence $c$, and provenance metadata
+$\text{prov} \in \mathcal{P}$. The EA framework projects:
+\[
+  \text{proj}_{\text{EA}} : \mathcal{E} \mapsto f \cdot c \in \mathbb{R}
+\]
+discarding provenance entirely. This projection is lossy: distinct
+epistemic items with identical $f \cdot c$ but different provenance
+(e.g., ``independent replication'' vs.\ ``echo-chamber amplification'')
+become indistinguishable.
+\end{theorem}
+
+\begin{remark}
+The article's forensic network analysis is precisely the recovery of
+discarded provenance: showing that what appears to be independent
+corroboration ($n$ distinct sources confirming danger) is actually
+one provenance chain ($n$ nodes in a single funded network).
+\end{remark}
+
+%% =================================================================
+\section{Provenance opacity and the $E_\pi$ stratum}
+\label{sec:provenance}
+%% =================================================================
+
+\begin{definition}[Media provenance graph --- claims 5--9, 18--22]
+\label{def:prov-graph}
+A \emph{media provenance graph} $G = (N, E, \text{fund}, \text{time})$ where:
+\begin{itemize}
+\item $N$ = actors (individuals, organizations),
+\item $E \subseteq N \times N$ = influence edges (funding, employment,
+  advisory, amplification),
+\item $\text{fund} : E \to \mathbb{R}_{\geq 0}$ = funding amounts,
+\item $\text{time} : E \to \mathbb{R}$ = temporal ordering.
+\end{itemize}
+\end{definition}
+
+\begin{proposition}[Independence illusion --- claim 21]
+\label{prop:independence}
+Let $\{n_1, \ldots, n_k\} \subset N$ be the nodes publicly raising
+an alarm $A$. The alarm appears to be independently corroborated iff
+$\{n_i\}$ are perceived as disconnected in $G$. The article demonstrates
+that for the Coxon alarm, all $n_i$ lie in a single connected component
+of $G$ with diameter $\leq 2$ (every pair connected through at most one
+intermediary: Open Phil, SFF, or Anthropic itself).
+\end{proposition}
+
+\begin{definition}[$E_\pi$ transparency --- claim 29]
+\label{def:epi-transparency}
+The Hyperseed $E_\pi$ stratum attaches to every epistemic item $x$ a
+provenance record $\pi(x) \in \mathcal{P}$ that is:
+\begin{enumerate}
+\item \textbf{Unforgeable}: the record is cryptographically or
+  structurally committed at creation time.
+\item \textbf{Queryable}: any downstream consumer can inspect the
+  full provenance chain.
+\item \textbf{Compositional}: when items are combined (fused, cited,
+  amplified), their provenance records compose.
+\end{enumerate}
+Under $E_\pi$ transparency, the independence illusion of
+Proposition~\ref{prop:independence} cannot arise: the shared funding
+and coordination links are visible in $\pi(A)$.
+\end{definition}
+
+%% =================================================================
+\section{Auditor capture as cocycle failure}
+\label{sec:auditor-capture}
+%% =================================================================
+
+\begin{definition}[Governance cocycle --- claim 31]
+\label{def:gov-cocycle}
+A \emph{governance system} over a base space $B$ of regulated entities
+requires:
+\begin{itemize}
+\item \textbf{Alarm function} $\alpha : B \to \{0,1\}$ (raises concern),
+\item \textbf{Audit function} $\beta : B \to \text{Reports}$ (evaluates concern),
+\item \textbf{Independence condition}: $\alpha$ and $\beta$ must be
+  supplied by distinct, non-colluding groups.
+\end{itemize}
+The cocycle condition for triple overlaps requires:
+\[
+  g_{\alpha\beta} \circ g_{\beta\gamma} = g_{\alpha\gamma}
+\]
+where $g_{xy}$ are transition functions between oversight perspectives.
+\end{definition}
+
+\begin{theorem}[Auditor capture = cocycle collapse --- claim 31]
+\label{thm:auditor-capture}
+When the alarm-raising group and the auditing group share funding,
+personnel, and ideology (i.e., $\alpha$ and $\beta$ factor through
+a single group $\Gamma$):
+\[
+  g_{\alpha\beta} = g_{\alpha\Gamma} \circ g_{\Gamma\beta}
+  \quad \text{for all overlaps},
+\]
+the cocycle degenerates: all transition functions are determined by
+$\Gamma$'s perspective, and the governance system loses independent
+triangulation. This is the structural failure the article identifies
+in the proposal for ``independent evaluators'' drawn from the same
+EA network.
+\end{theorem}
+
+%% =================================================================
+\section{Open-endedness and directed types}
+\label{sec:open-ended}
+%% =================================================================
+
+\begin{proposition}[Open-endedness incompatibility --- claim 28]
+\label{prop:open-ended}
+Let $\mathcal{D}$ be a directed $(\infty,1)$-type (Hyperseed directed
+type). No fixed utility function $u : |\mathcal{D}| \to \mathbb{R}$
+can capture the full structure of $\mathcal{D}$, because:
+\begin{enumerate}
+\item $\mathcal{D}$ admits genuinely new cells at every dimension
+  (new values, new meta-values, new revision operators),
+\item $u$ has fixed codomain $\mathbb{R}$ and cannot represent
+  dimensional growth.
+\end{enumerate}
+Therefore EA's scalar framework is structurally incapable of reasoning
+about open-ended systems without distortion.
+\end{proposition}
+
+\begin{remark}[Self-revising ethics as identity preservation --- claim 30]
+The article's observation that ``real ethics is plural and grows and gets
+argued over and revised by beings who are themselves changing'' is the
+ethical-framework instantiation of identity-preserving self-modification:
+\[
+  \forall \phi \in \Phi_{\text{coherence}}: \;
+  \text{satisfies}(\mathcal{E}_t, \phi) \;\Longrightarrow\;
+  \text{satisfies}(\mathcal{E}_{t+1}, \phi)
+\]
+where $\mathcal{E}_t$ is the ethical framework at time $t$ and
+$\Phi_{\text{coherence}}$ includes consistency, responsiveness to
+evidence, and preservation of core commitments --- but \emph{not}
+preservation of the specific value function.
+\end{remark}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Fields Medalists article} (2026-09-12): epistemic firewall
+  as closing primitive; fiber/holonomy distinction for proving vs.\
+  conjecturing. Here extended to ethical reasoning.
+\item \textbf{Time's Arrow Part~1}: identity-preserving self-modification;
+  here applied to ethical frameworks rather than code.
+\item \textbf{$(f,c)$-lossy critique} (LTM 5a4d150b): the foundational
+  argument for why scalar collapse loses essential information.
+\item \textbf{Provenance = path data} (LTM 6b1993f2): provenance as
+  the homotopy-theoretic data that distinguishes independent evidence
+  from echo-chamber amplification.
+\item \textbf{Governance seam} (note 0010): cocycle conditions for
+  oversight coherence.
+\end{itemize}
+\end{remark}
+
+\end{document}

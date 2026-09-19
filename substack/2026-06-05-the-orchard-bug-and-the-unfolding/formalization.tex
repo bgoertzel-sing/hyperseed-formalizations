@@ -1,0 +1,299 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  The Orchard Bug and the Unfolding Software-Verification Reckoning}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``The Orchard Bug and the Unfolding Software-Verification Reckoning''
+(2026-06-05) within the Hyperseed ontology. The article uses the Zcash
+Orchard pool bug as a case study for the coming software-verification
+reckoning: AI tools are making bug discovery cheap, forcing the industry
+toward formal verification. Each structural insight maps onto Hyperseed
+structures: composition failure as cocycle defect, correct-by-construction
+as fiber-base identity, AI-accelerated discovery as base space equalization
+of vulnerability, formal verification as fiber inspection (proof obligation
+= cocycle condition), and the industry's speed preference as provenance debt.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Composition failure as cocycle defect}
+\label{sec:cocycle}
+%% =================================================================
+
+\begin{definition}[The Orchard bug --- claims 1--3, 20]
+\label{def:orchard}
+The Orchard pool bug was an under-constrained element in a zero-knowledge
+circuit. The key structural feature: individual modules tested fine; the
+composition failed because an invariant that held within each module was
+not enforced at the interface between them. The bug hid for approximately
+four years.
+
+In Hyperseed terms, this is a \emph{cocycle defect}: the transition
+functions between modules (the constraints that should hold at module
+boundaries) don't compose correctly:
+\[
+  g_{ij} \circ g_{jk} \neq g_{ik}
+\]
+
+The invariant holds locally in each module (each $g_{ij}$ individually
+satisfies its local constraint), but the cocycle condition fails globally
+--- the composition of boundary constraints doesn't close. The bug
+exists precisely in the gap between local correctness and global
+consistency.
+
+This is not a random implementation error but a \emph{structural failure}
+--- the kind of failure that testing (which checks individual paths)
+cannot reliably catch, because the failure only manifests when modules
+are composed in ways that testing may not exercise. The bug is invisible
+to any analysis that examines modules individually; it lives in the
+\emph{transition functions between them}.
+
+The four-year hiding period illustrates a general principle: cocycle
+defects are the hardest bugs to find because they require understanding
+the global composition structure, not just the local module behavior.
+Human auditors tend to verify modules individually (checking local
+constraints) rather than verifying the cocycle condition (checking that
+constraints compose correctly across all interfaces).
+\end{definition}
+
+%% =================================================================
+\section{AI-accelerated discovery as base space equalization}
+\label{sec:ai-discovery}
+%% =================================================================
+
+\begin{proposition}[Economics flip --- claims 4--6, 22]
+\label{prop:economics}
+AI tools --- code assistants, fuzzing agents, automated auditors ---
+are dramatically lowering the cost of finding exploitable bugs. The
+article argues this flips the economics: previously, many bugs existed
+but finding them cost more than the expected payoff. AI drops the
+discovery cost while the deployed codebase stays the same.
+
+In Hyperseed terms, this is \emph{base space equalization of
+vulnerability}: AI tools equalize the information base space ---
+bugs that were hidden (asymmetric information between defenders and
+attackers) become visible (symmetric information):
+\[
+  \text{AI discovery}: I_{\text{defender}} \approx I_{\text{attacker}}
+  \to I_{\text{symmetric}}
+\]
+
+This is the same base-space-equalization dynamic as capability
+diffusion in the AI-models context (where model capability equalizes
+across providers over months), but applied to the vulnerability
+landscape (where hidden bugs become discoverable at scale).
+
+The article emphasizes that crypto is just the canary: crypto codebases
+are ``newer, smaller, open-source, and written by people who are at
+least nominally paranoid'' --- probably in better shape than legacy
+banking systems that ``nobody alive fully understands anymore.'' The
+vulnerability equalization is coming for \emph{all} software.
+
+The structural consequence: the software industry's accumulated
+\emph{provenance debt} (code whose correctness provenance is ``we
+tested it'' rather than ``we proved it'') is being called in by
+AI-accelerated discovery. The debt was sustainable when discovery
+was expensive; it becomes unsustainable when discovery is cheap.
+\end{proposition}
+
+%% =================================================================
+\section{Formal verification as fiber inspection}
+\label{sec:verification}
+%% =================================================================
+
+\begin{theorem}[Proof obligation = cocycle condition --- claims 7--12, 23]
+\label{thm:verification}
+The article argues that formal verification --- proving with mathematics
+that software does what it's designed to do --- is the cure, and that
+it's well understood, not exotic, and not waiting on future research.
+
+In Hyperseed terms, formal verification is \emph{fiber inspection}:
+verifying that the transition functions (module boundary constraints)
+compose correctly across all interfaces. The proof obligation IS the
+cocycle condition:
+\[
+  \text{Proof obligation}: \forall i,j,k: \;
+  g_{ij} \circ g_{jk} = g_{ik}
+\]
+
+If the proof obligation discharges, the cocycle closes --- the
+composition of constraints is globally consistent. If it fails,
+there's a cocycle defect --- the Orchard bug scenario.
+
+The article identifies three levels of verification practice:
+\begin{enumerate}
+\item \textbf{Test-and-hope (current norm).} Check individual paths
+  (local constraints) without verifying global composition. The
+  cocycle condition is \emph{assumed} rather than \emph{verified}.
+\item \textbf{Write-then-verify.} Build the implementation, then
+  prove it correct. The cocycle condition is checked after
+  construction --- a gap exists during development that might
+  persist if the proof is never completed.
+\item \textbf{Correct by construction.} Derive the implementation
+  from the specification. The cocycle condition is satisfied by
+  construction --- there is no gap.
+\end{enumerate}
+
+The industry has consistently chosen level 1 because levels 2 and 3
+cost more effort. AI is forcing the transition to levels 2 and 3 by
+making the cost of \emph{not} verifying (bug discovery and exploitation)
+higher than the cost of verifying.
+
+The Cardano precedent (formally verifying Ouroboros consensus) shows
+that level 2 is practical for real systems. ASI:Chain's approach shows
+that level 3 is achievable for critical subsystems.
+\end{theorem}
+
+%% =================================================================
+\section{Correct by construction as fiber-base identity}
+\label{sec:correct}
+%% =================================================================
+
+\begin{definition}[Implementation = specification --- claims 13--16, 21, 24]
+\label{def:correct}
+The article describes ASI:Chain's approach: for key parts of the system,
+implementation is derived directly from mathematical specification.
+``The implementation and its proof of correctness are two views of the
+same underlying mathematical object.''
+
+In Hyperseed terms, this is \emph{fiber-base identity}: the fiber
+(intended behavior, specification) and the base (actual behavior,
+implementation) are the same mathematical object:
+\[
+  F_{\text{spec}} \cong B_{\text{impl}}
+\]
+
+There is no gap for a cocycle defect to hide in because there is no
+separate composition step --- the fiber IS the base. The derivation
+process ensures that every property of the specification is
+automatically a property of the implementation, and vice versa.
+
+This maps onto the broader Hyperseed distinction between section-level
+and fiber-level approaches:
+\begin{itemize}
+\item \textbf{Verify-after-the-fact = section-level.} You build a
+  section (implementation) and then check whether it's consistent
+  with the fiber (specification). The section exists independently
+  of the fiber, and the verification is a separate step that checks
+  their compatibility.
+\item \textbf{Correct-by-construction = fiber-level.} You derive the
+  section from the fiber, guaranteeing consistency by construction.
+  The section is not an independent artifact but a projection of
+  the fiber into the implementation space.
+\end{itemize}
+
+The concrete example: a variant of the Cordial Miners protocol ---
+reputation-based, ledger-free, suited to mesh networks and weak
+heterogeneous hardware --- derived correct-by-construction from its
+mathematical specification using MeTTa and Rholang (via the
+F1R3FLY.io collaboration). The mathematical foundations of these
+languages make the derivation tractable.
+\end{definition}
+
+%% =================================================================
+\section{AI-assisted verification}
+\label{sec:ai-verify}
+%% =================================================================
+
+\begin{proposition}[Offense-defense symmetry --- claims 17--19]
+\label{prop:ai-verify}
+The article notes an offense-defense symmetry in AI's relationship
+to software correctness: the same AI capabilities that find bugs can
+help prove their absence.
+
+Neural-symbolic systems (Hyperon) are particularly well-suited for
+AI-assisted formal verification because they combine:
+\begin{itemize}
+\item \textbf{Neural pattern recognition:} suggesting proof strategies,
+  identifying likely invariants, recognizing structural similarities
+  to previously verified code.
+\item \textbf{Symbolic proof construction:} constructing formal proofs,
+  checking proof obligations, verifying that the cocycle condition
+  holds across all interfaces.
+\end{itemize}
+
+This is the same generate-and-verify architecture that appears in the
+jailbreak analysis and the biosecurity screening system, applied to
+software verification: neural generation of candidate proofs, symbolic
+verification of their correctness.
+
+The practical consequence: formal verification, previously expensive
+enough to be reserved for avionics and nuclear systems, becomes
+tractable for ordinary software as AI reduces the human effort
+required. The cost barrier that kept the industry at level 1
+(test-and-hope) is being lowered by the same technology that's
+raising the cost of staying there.
+\end{proposition}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Un-Jailbreakable AI} (2026-07-10): generate-and-verify.
+  AI-assisted formal verification uses the same architecture:
+  neural generation of candidates, symbolic verification of
+  correctness.
+\item \textbf{Avoiding AGI Catastrophe Part 2} (2026-06-10): MPC and
+  correct-by-construction. The ASI:Chain infrastructure described
+  here is the same infrastructure that the MPC-based cryptographic
+  laterality runs on.
+\item \textbf{Decentralized Digital} (2026-08-06): ASI:Chain
+  infrastructure. The correct-by-construction consensus mechanism
+  is part of the broader ASI:Chain layer-1 development.
+\item \textbf{Seeding RSI} (2026-07-28): MeTTa as implementation
+  language. MeTTa's mathematical foundations are what make the
+  correct-by-construction derivation tractable.
+\item \textbf{How Decentralized AI Can Help Avert Bioterrorism}
+  (2026-06-11): neural-symbolic screening. The AI-assisted
+  verification described here uses the same neural-symbolic
+  architecture applied to DNA sequence screening there.
+\item \textbf{The Anthropic Fable Farce} (2026-07-08): capability
+  diffusion. AI-accelerated bug discovery is capability diffusion
+  applied to the vulnerability landscape --- the same base-space
+  equalization dynamic.
+\item \textbf{Non-invertible 2-cells} (LTM 85c02e32): cocycle defects.
+  The Orchard bug is a concrete instance of the non-invertible
+  witness infecting higher levels --- the local module correctness
+  (1-cell) doesn't guarantee global composition correctness (2-cell).
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Verification reckoning timeline]
+Conjecture: the software-verification reckoning will follow the
+base-space-equalization timeline observed in AI capability
+diffusion --- months, not years. The convergence will be driven
+by AI-accelerated bug discovery making the cost of unverified
+code exceed the cost of verification:
+\[
+  t_{\text{reckoning}} \approx t_0 + \Delta t \cdot
+  \log\left(\frac{C_{\text{verify}}}{C_{\text{exploit}}}\right)
+\]
+where $C_{\text{verify}}$ is the cost of formal verification (decreasing
+as AI improves) and $C_{\text{exploit}}$ is the expected cost of
+exploitation (increasing as AI makes discovery cheaper). The reckoning
+arrives when $C_{\text{verify}} < C_{\text{exploit}}$, at which point
+the economic incentive flips from ``ship fast'' to ``ship proven.''
+\end{conjecture}
+
+\end{document}

@@ -1,0 +1,330 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Seeding RSI Toward ASI}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Seeding RSI Toward ASI'' (2026-07-28) within the Hyperseed ontology. The
+article proposes OmegaHive: an incremental, instrumented, guided loop for
+building AGI through systematic mechanism integration and evaluation. Each
+design principle maps onto Hyperseed structures: the OmegaHive loop as
+directed type construction, the evaluation ecology as sheaf of assessment
+sections, Module Space as fiber decomposition, parallel forks as parallel
+transport in architecture space, the episode protocol as provenance in the
+cognitive bundle, and education through evaluation as coinductive knowledge
+accumulation.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{The gap: why blind composition fails}
+\label{sec:gap}
+%% =================================================================
+
+\begin{proposition}[Intractable blind composition --- claims 1--3]
+\label{prop:gap}
+The attempt to build AGI by mashing research papers together into a
+single codebase fails because:
+\begin{enumerate}
+\item The gap between ``works in small test'' and ``works at scale''
+  is not hyperparameter tuning --- it requires algorithmic adjustment,
+  knowledge-representation rethinking, and inter-component communication
+  redesign.
+\item Doing this for dozens of components simultaneously is an
+  intractable global optimization problem: the interaction space
+  grows combinatorially while the evaluation signal is sparse.
+\end{enumerate}
+The solution is to decompose the global optimization into a sequence
+of local integrations, each evaluated independently before the next
+begins.
+\end{proposition}
+
+%% =================================================================
+\section{The OmegaHive loop as directed type construction}
+\label{sec:loop}
+%% =================================================================
+
+\begin{definition}[The loop --- claims 4--7, 29]
+\label{def:loop}
+The OmegaHive loop is:
+\[
+  \text{baseline} \xrightarrow{\text{integrate}} \text{candidate}
+  \xrightarrow{\text{evaluate}} \text{measured}
+  \xrightarrow{\text{tune}} \text{optimized}
+  \xrightarrow{\text{decide}} \text{promote} \mid \text{park} \mid \text{reject}
+\]
+then repeat with a new mechanism. Each cycle adds a 1-cell to the
+directed type $\mathcal{D}$ of the system's architectural history:
+\[
+  \mathcal{D}_n = \mathcal{D}_{n-1} \cup_{\partial} \{e_n\}
+\]
+where $e_n$ is the $n$-th integration episode. The directed history is
+not reversible --- you cannot cleanly un-integrate a mechanism that has
+changed downstream predictions and learning trajectories. This makes
+$\mathcal{D}$ a genuinely directed type (not an $\infty$-groupoid).
+
+The substrate is OmegaClaw: agentic loops wrapping LLMs with Hyperon
+AtomSpace knowledge graphs, providing episodic memory, long-term memory,
+reasoning, and a symbolic sense of self.
+\end{definition}
+
+%% =================================================================
+\section{Parallel forks as parallel transport}
+\label{sec:forks}
+%% =================================================================
+
+\begin{definition}[Architectural parallel transport --- claims 8--10, 32]
+\label{def:forks}
+Parallel forks are a feature: different teams start from the same
+baseline and integrate mechanisms in different orders, exploring an
+architectural search space. In Hyperseed terms, this is parallel
+transport in architecture space:
+\begin{itemize}
+\item Each fork transports the same initial state $s_0$ along a
+  different path $\gamma_k$ through architecture space $\mathcal{A}$,
+\item The endpoint $s_k = \text{PT}(\gamma_k, s_0)$ depends on the
+  path (integration order, tuning strategy, synergy discoveries),
+\item Comparing outcomes across forks reveals \emph{holonomy} ---
+  path-dependent differences in final capability:
+  \[
+    \text{Hol}(\gamma_i, \gamma_j) = s_i - s_j
+  \]
+  measured by the evaluation ecology.
+\end{itemize}
+Cross-fork sharing propagates successful mechanisms: when fork $k$
+discovers a synergy, other forks can merge it in and test whether the
+synergy transfers to their integration context.
+\end{definition}
+
+%% =================================================================
+\section{Module Space as fiber decomposition}
+\label{sec:modules}
+%% =================================================================
+
+\begin{definition}[Specialist modules --- claims 11--13, 31]
+\label{def:modules}
+The hive's cognitive capability decomposes into independent fiber
+components:
+\[
+  E_{\text{cog}} = E_{\text{core}} \oplus \bigoplus_{k} M_k
+\]
+where $E_{\text{core}}$ is the integrated hive and each $M_k$ is a
+specialist module (planner, theorem prover, causal learner, policy
+checker, robotics controller). Each module:
+\begin{itemize}
+\item Sits beside the incumbent and runs in shadow mode before earning
+  authority,
+\item Is invoked by the broader system but not internalized,
+\item Earns its place by changing downstream predictions, decisions,
+  learning, transfer, or verified outcomes --- and by no other route.
+\end{itemize}
+This is the same unbundling principle as role-specific device
+certification (Proof of Humanity) and AI rights decomposition ---
+independent fibers evaluated on their specific contributions.
+\end{definition}
+
+\begin{proposition}[Provenance-gated promotion --- claim 36]
+\label{prop:provenance}
+A mechanism is promoted only when it has provenance: measured improvement
+on the evaluation ecology. Elegance, fashion, and internal activity
+without downstream impact are rejected. This is the same
+provenance-decidable trust principle as the $R_{\text{auth}}$ split:
+the S-half (measurable contribution) earns trust; the P-half
+(unmeasured appeal) does not.
+\end{proposition}
+
+%% =================================================================
+\section{Evaluation ecology as sheaf of assessment sections}
+\label{sec:eval}
+%% =================================================================
+
+\begin{definition}[Evaluation ecology --- claims 14--17, 30]
+\label{def:eval}
+The ProtoAGI test suite is an evaluation ecology, not a leaderboard.
+It produces a multi-dimensional capability profile:
+\[
+  \text{Profile}(H) = (b, l, t, c, m, g, \kappa, \lambda) \in
+  \mathbb{R}^{\dim(\text{capability fiber})}
+\]
+where $b$ = breadth, $l$ = learning, $t$ = transfer, $c$ = calibration,
+$m$ = multi-agent performance, $g$ = governability, $\kappa$ = cost,
+$\lambda$ = latency. No single score --- the weakest capability families
+count for at least as much as the average.
+
+This is a sheaf of assessment sections: each of the ten environments
+provides a local section of the capability fiber, and no global section
+collapses to a scalar. Same anti-scalar-collapse stance as:
+\begin{itemize}
+\item Trust policy in OpenWater (per-observer fiber evaluation),
+\item Rejection of single personhood score (AI Rights),
+\item $(f,c)$-lossy critique (visible STV fusion vs.\ per-packet provenance).
+\end{itemize}
+\end{definition}
+
+%% =================================================================
+\section{Episode protocol as cognitive provenance}
+\label{sec:episodes}
+%% =================================================================
+
+\begin{definition}[Episode protocol --- claims 20--21, 33]
+\label{def:episodes}
+Before a consequential action, the hive commits a prediction:
+\[
+  \text{pred}(a) = (\hat{o}, \hat{c}, \hat{\lambda}, \hat{I},
+  \hat{r}, \hat{\Delta s})
+\]
+covering expected outcomes $\hat{o}$, cost $\hat{c}$, latency
+$\hat{\lambda}$, information gain $\hat{I}$, risk $\hat{r}$, and
+anticipated state change $\hat{\Delta s}$. The environment returns an
+authenticated receipt with actual values.
+
+This is $E_\pi$ applied to the system's own cognitive history:
+provenance data for every consequential decision, making world-model
+quality, self-knowledge, planning accuracy, and resource prediction
+measurable rather than retrospective. The same provenance sheaf
+architecture as OpenWater, applied to self-knowledge rather than media.
+\end{definition}
+
+%% =================================================================
+\section{Trial types and factorial design}
+\label{sec:trials}
+%% =================================================================
+
+\begin{proposition}[Frozen vs.\ developmental --- claims 22--24]
+\label{prop:trials}
+The evaluation suite distinguishes:
+\begin{enumerate}
+\item \textbf{Frozen-state trials}: does the candidate make better
+  decisions immediately? Static capability assessment at a fixed
+  point in the directed type.
+\item \textbf{Developmental trials}: start variants from the same
+  snapshot, expose to the same sequence of experiences, measure
+  learning rate, forgetting, transfer, and reusable knowledge. Dynamic
+  capability assessment along a path in the directed type.
+\item \textbf{Factorial comparisons}: when several mechanisms ($X, Y, Z$)
+  are under study, test all $2^k$ combinations to separate individual
+  value from synergy and interference. This is the experimental design
+  that resolves holonomy questions: does the benefit of $X$ depend on
+  the presence of $Y$?
+\end{enumerate}
+\end{proposition}
+
+%% =================================================================
+\section{Testing the tests: calibrating the fiber metric}
+\label{sec:calibration}
+%% =================================================================
+
+\begin{proposition}[Narrow baselines --- claims 25--26, 34]
+\label{prop:baselines}
+For each test in each environment, train narrow AI systems (ML model,
+Bayesian reasoner, evolutionary algorithm) as baselines. The narrow
+system establishes a ceiling for what can be solved without general
+intelligence, calibrating:
+\begin{itemize}
+\item Each test's difficulty (how hard is it even with a specialist?),
+\item Each test's discriminative power (does performance correlate with
+  general intelligence or with a specific narrow hack?).
+\end{itemize}
+In Hyperseed terms, this calibrates the fiber metric: establishing the
+coordinates of the capability fiber before measuring general intelligence
+along them. Without this calibration, the fiber metric is undefined and
+comparisons between mechanisms are meaningless.
+\end{proposition}
+
+%% =================================================================
+\section{Education through evaluation: coinductive accumulation}
+\label{sec:education}
+%% =================================================================
+
+\begin{definition}[Suite as school --- claims 27--28, 35]
+\label{def:school}
+Once an episode has been scored and sealed, much of its trace is released
+back into the curriculum: successful procedures, failed plans, proof
+lemmas, fault diagnoses, calibration records, maps, reusable memories.
+The suite acts partly as an exam and partly as a school.
+
+Three tiers of challenge:
+\begin{enumerate}
+\item \textbf{Curriculum}: public, can be studied and learned from,
+\item \textbf{Promotion}: fresh hidden structural instances,
+\item \textbf{Sentinel}: reserved until after candidate code is frozen.
+\end{enumerate}
+
+This creates a coinductive knowledge accumulation loop: evaluation
+produces knowledge that improves the system that produces better
+evaluations. The directed type grows through its own assessment history,
+creating a self-referential but grounded growth process.
+\end{definition}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{How Omega Lost Its Claw} (2026-09-11): distributed AGI
+  development as distributed fiber bundle. OmegaHive is the specific
+  development methodology; Omega's architecture is the deployment target.
+\item \textbf{Seven Flavors} (2026-07-01): cognitive architecture
+  determines pathology probability. OmegaHive is the engineering
+  methodology for building the right architecture incrementally.
+\item \textbf{Provenance Layer} (2026-08-25): provenance sheaf for media.
+  The episode protocol applies the same sheaf to the system's own
+  cognitive history.
+\item \textbf{Proof of Humanity} (2026-08-26): role-specific certification
+  as fiber decomposition. Module Space applies the same unbundling to
+  cognitive mechanisms.
+\item \textbf{AI Rights} (2026-09-02): evaluation ecology as sheaf of
+  assessment sections. The same anti-scalar-collapse principle applied
+  to AGI evaluation rather than personhood evaluation.
+\item \textbf{Zuck's Future} (2026-08-10): cognitive architecture matters
+  more than compute. OmegaHive is the engineering answer to the question
+  ``how do you actually build the right architecture?''
+\item \textbf{$(f,c)$-lossy critique} (LTM 5a4d150b): anti-scalar-collapse.
+  The evaluation ecology's refusal to produce a single score is the same
+  principle.
+\item \textbf{$R_{\text{auth}}$ split} (LTM b6ac2932): provenance-decidable
+  trust. Mechanism promotion is provenance-gated by the same logic.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Integration order holonomy]
+Conjecture: different integration orders produce measurably different
+capability profiles even when the same set of mechanisms is eventually
+integrated. The holonomy is nonzero because early mechanisms shape the
+learning trajectory of later mechanisms --- a reasoning engine integrated
+before an attention mechanism encounters different training dynamics than
+one integrated after. This holonomy is reduced but not eliminated by
+post-integration tuning, because the directed type records the
+integration history and that history affects the system's priors.
+\end{conjecture}
+
+\begin{conjecture}[Coinductive convergence]
+Does the evaluation-education coinductive loop converge? Conjecture:
+it converges to a fixed-point capability profile only if the challenge
+generators are themselves upgraded as the system improves --- otherwise
+the system saturates the fixed difficulty and the learning gradient
+vanishes. The coinductive loop is healthy only when the evaluation
+ecology co-evolves with the evaluated system, maintaining a productive
+zone of proximal development.
+\end{conjecture}
+
+\end{document}
