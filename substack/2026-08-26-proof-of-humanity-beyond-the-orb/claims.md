@@ -221,3 +221,27 @@ Eurykosmotron, 2026-08-26.
     compromised device replaces one local section while preserving the global
     section — the sheaf is repaired locally without global disruption.
     *(inferred)*
+
+### d-calculus claims (Hyperseed v2, deepened 2026-09-29)
+
+44. **Composite proof = gluing of local evidence sections** under a cocycle
+    condition on overlaps. Assurance grows with the number of independent
+    glued sections. *(hyperseed-interpretation)*
+
+45. **Orb monoculture = single-chart atlas.** All curvature sits at one
+    point, so one compromise is global. *(hyperseed-interpretation)*
+
+46. **Role-specific certification = fiber decomposition.** Lab certification
+    is a local trivialization of one role-fiber. *(hyperseed-interpretation)*
+
+47. **Domain nullifiers = blocked parallel transport** between domain fibers.
+    *(hyperseed-interpretation)*
+
+48. **One-person-one-account = trivial person-count holonomy.** Sybil minting
+    is nontrivial holonomy. *(hyperseed-interpretation)*
+
+49. **Liveness = directed freshness.** A replay reuses an old 1-cell.
+    *(hyperseed-interpretation)*
+
+50. **Protocol not coin = decoupled product bundle** (identity x payment).
+    *(hyperseed-interpretation)*

@@ -120,3 +120,17 @@
 ;; ---- E_π applied to identity (claim 39) ----
 (--> proof-of-humanity E-pi-restricted-to-identity-fiber)
 (--> E-pi-restricted-to-identity-fiber ([] (same-provenance-bundle as-epistemic-history)))
+
+;; ---- d-calculus claims (44-50), Hyperseed v2, deepened 2026-09-29 ----
+(--> composite-proof-of-humanity gluing-local-evidence-sections)
+(--> gluing-local-evidence-sections ([] (cocycle-on-overlaps same-person assurance-grows-with-independent-sections)))
+(--> orb-monoculture single-chart-atlas)
+(--> single-chart-atlas ([] (curvature-at-one-point one-compromise-global)))
+(--> role-specific-certification fiber-decomposition)
+(--> lab-certification local-trivialization-of-role-fiber)
+(--> domain-nullifiers blocked-parallel-transport)
+(--> one-person-one-account trivial-person-count-holonomy)
+(--> sybil-minting nontrivial-person-count-holonomy)
+(--> liveness directed-freshness)
+(--> replay-attack reuse-old-1-cell)
+(--> protocol-not-coin decoupled-product-bundle)

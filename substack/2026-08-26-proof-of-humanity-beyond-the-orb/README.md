@@ -5,7 +5,7 @@
 - Publication: Eurykosmotron / Substack
 - Published: 2026-08-26
 - Retrieved: 2026-09-17
-- Status: initial Hyperseed formalization draft
+- Status: deepened Hyperseed formalization (v2, 2026-09-29)
 
 ## Summary
 
@@ -71,6 +71,44 @@ Orb-based approach. Key threads:
 - **Anti-monoculture = anti-trivial-cocycle:** Single-vendor monoculture
   means all transition functions are identity (trivial cocycle); the open
   protocol ensures nontrivial, independently verified transition functions.
+
+## d-calculus connection (Hyperseed v2, deepened 2026-09-29)
+
+These are interpretive readings. The article itself does not use d-calculus.
+
+- **Composite proof = gluing of local evidence sections.** Each device or
+  certifier gives a local section ("a live human was at this sensor"). Proof
+  of humanity is the glued global section. Gluing needs the cocycle
+  condition on overlaps: independent strands must agree that they saw the
+  same person. The assurance level grows with the number of independent
+  sections glued.
+
+- **Orb monoculture = single-chart atlas.** With one vendor and one device,
+  all the curvature sits at one point. Compromise that chart and the whole
+  atlas fails. Many vendors give an atlas where no one chart is needed.
+
+- **Role-specific certification = fiber decomposition.** Iris capture,
+  presentation-attack detection, liveness, secure display, anti-relay and
+  authorization are separate fibers. An independent lab certifying a role is
+  a local trivialization of that fiber alone.
+
+- **Domain nullifiers = blocked parallel transport.** Unlinkability means
+  there is deliberately no transport map carrying a pseudonym from one
+  domain's fiber to another's. Linkability would be a nontrivial connection
+  between domains.
+
+- **Sybil minting = holonomy in person-count.** One-person-one-account says
+  that the count of persons has trivial holonomy around every enrollment
+  loop. A Sybil attack is a loop that comes back with more persons than went
+  in.
+
+- **Anti-relay / liveness = directed freshness.** A presence claim has to be
+  a new forward 1-cell with bounded dt. A replay tries to reuse an old
+  1-cell. The directed record rules it out.
+
+- **Protocol, not coin = decoupled bundles.** The identity bundle and the
+  payment bundle form a product with no forced connection. Either can change
+  without dragging the other along.
 
 ## Files
 

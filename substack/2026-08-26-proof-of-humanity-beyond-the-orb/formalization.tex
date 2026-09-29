@@ -332,4 +332,49 @@ directed history that inherits initial conditions from the human tier
 but can diverge.
 \end{conjecture}
 
+
+%======================================================================
+\section{d-calculus formulation (Hyperseed v2)}
+\emph{Interpretive readings added 2026-09-29; the article itself does not use d-calculus.}
+
+\begin{proposition}[Composite proof as gluing --- claim 44]
+Let $\{U_i\}$ be independent evidence sources with local sections $s_i$.
+A proof of humanity is a global section $s$ with $s|_{U_i}=s_i$, which exists
+iff $s_i|_{U_i\cap U_j}=s_j|_{U_i\cap U_j}$ (same person on overlaps).
+Assurance is monotone in the number of independent glued sections.
+\end{proposition}
+
+\begin{proposition}[Monoculture --- claim 45]
+A single-vendor design is a one-chart atlas; compromising that chart
+invalidates every global section. A multi-vendor atlas has no indispensable chart.
+\end{proposition}
+
+\begin{proposition}[Role fibers --- claim 46]
+The trust bundle decomposes as $E=\bigoplus_{\rho} E_\rho$ over roles $\rho$
+(capture, PAD, liveness, display, anti-relay, authorization). Independent
+certification trivializes a single $E_\rho$.
+\end{proposition}
+
+\begin{proposition}[Domain nullifiers --- claim 47]
+For domains $D_a\neq D_b$ there is no transport map
+$\tau_{ab}:E_{D_a}\to E_{D_b}$ on pseudonyms; unlinkability is the absence of
+a connection between domain fibers.
+\end{proposition}
+
+\begin{proposition}[Sybil resistance --- claim 48]
+Let $N$ be the person-count. One-person-one-account is
+$\operatorname{Hol}_\gamma(N)=0$ for every enrollment loop $\gamma$;
+a Sybil attack is a loop with $\operatorname{Hol}_\gamma(N)>0$.
+\end{proposition}
+
+\begin{proposition}[Liveness --- claim 49]
+A valid presence claim is a fresh forward 1-cell $c$ with $dt(c)\le\delta$.
+Replay reuses an existing 1-cell and is rejected by the directed record.
+\end{proposition}
+
+\begin{proposition}[Protocol not coin --- claim 50]
+The identity and payment bundles form a product $E_{\mathrm{id}}\times E_{\mathrm{pay}}$
+with no forced connection between factors.
+\end{proposition}
+
 \end{document}
