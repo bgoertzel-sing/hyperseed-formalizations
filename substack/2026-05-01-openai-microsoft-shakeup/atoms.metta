@@ -1,57 +1,32 @@
 ;; =============================================================
 ;; Seed atoms — The OpenAI/Microsoft Shakeup and the Governance Question
 ;; Source: Ben Goertzel, Eurykosmotron, 2026-05-01
+;; Deepened: 2026-09-19 (Hyperseed v2 / d-calculus)
 ;; =============================================================
 
-;; ---- Type declarations ----
-(: GovernanceFailure Type)
-(: StructuralProperty Type)
+;; ---- Core article claims ----
 
-;; ---- Predictable unwinding (claims 1-5) ----
-(--> openai-trajectory ([] (nonprofit-origin capped-profit microsoft-coupling predictable-unwinding)))
-(--> capped-profit ([] (compromise mission-vs-capital cap-so-high ordinary-upside)))
-(--> microsoft-coupling ([] (compute distribution capital market-access tight-intertwined)))
-(--> current-restructuring ([] (diversify-cloud cap-revenue-share loosen-exclusivity conventional-posture)))
+(--> predictable-unwinding ([] (nonprofit capped-profit microsoft-coupling restructuring)))
+(--> capital-gravity ([] (business-logic-convergence founding-intent-overridden)))
+(--> agi-not-enterprise ([] (transformative-capability infrastructure-of-cognition)))
+(--> alternative-governance ([] (decentralized multi-stakeholder structurally-independent)))
+(--> structural-independence ([] (immune-to-capture no-single-interest)))
 
-;; ---- Gravitational pull of capital (claims 6-9) ----
-(--> mission-subordination ([] (converges-to-business-logic regardless-of-intent)))
-(--> nonprofit-lacked-capability ([] (couldnt-function-without-for-profit)))
-(--> technology-not-open ([] (ceased-meaningfully-open never-dedicated-open-source)))
-(--> capital-gravity ([] (capital compute cloud-distribution enterprise-revenue gravitational-pull)))
+;; ---- Hyperseed ontology interpretations ----
 
-;; ---- AGI is not enterprise software (claims 10-12) ----
-(--> agi-different-stakes ([] (access-to-cognitive-capability controls-infrastructure safety-under-pressure)))
-(--> benefits-distribution ([] (diffuse-vs-concentrate determined-by-governance not-mission-statements)))
-(--> business-box-doesnt-fit ([] (path-to-superintelligence not-normal-business)))
+(--> capital-fiber-capture ([] (mission-to-capital convergence-pull)))
+(--> section-fiber-convergence ([] (stated-to-actual predictable-from-structure)))
+(--> fiber-level-governance ([] (structural not-just-stated)))
 
-;; ---- Alternative governance (claims 13-17) ----
-(--> multi-stakeholder-governance ([] (structural-independence multiple-sources no-single-capture)))
-(--> constitutional-structure ([] (not-just-bylaws genuine-constraints resist-capital-gravity)))
-(--> decentralized-infrastructure ([] (compute storage coordination no-single-hyperscaler)))
-(--> multiple-funding ([] (independent-sources none-dominant)))
-(--> transparent-governance ([] (publicly-auditable clear-accountability)))
+;; ---- d-calculus claims ----
 
-;; ---- Structural independence (claims 18-20) ----
-(--> structural-independence ([] (key-requirement cant-be-captured gradual-resistance)))
-(--> not-just-intent ([] (good-intentions-insufficient structure-must-enforce)))
-(--> path-dependence ([] (once-established increasingly-difficult capabilities-adapt)))
+(--> capital-gravity-curvature ([] (capital-mission-pull high-venture-backed)))
+(--> convergence-rate ([] (intent-overridden-by-structure fast-openai)))
+(--> governance-holonomy ([] (drift-per-cycle increasing-from-mission)))
+(--> structural-independence-curvature ([] (coupling-to-interest near-zero-needed)))
+(--> governance-gradient ([] (decentralization multi-stakeholder fork-ability)))
 
-;; ---- Hyperseed inferences (claims 21-26) ----
-;; Fiber capture
-(--> capital-dependence fiber-capture)
-(--> fiber-capture ([] (mission-fiber-to-capital-fiber gradual compound-shifts vestigial-mission)))
-;; Section-to-fiber convergence
-(--> predictable-unwinding section-to-fiber-convergence)
-(--> section-to-fiber-convergence ([] (stated-mission-converges-to-structural-dynamics restructuring-is-convergence-visible)))
-;; Fiber-level governance
-(--> agi-governance fiber-level-governance)
-(--> fiber-level-governance ([] (structural-constraints incentive-architecture independence-guarantees not-section-level)))
-;; Fiber autonomy
-(--> structural-independence fiber-autonomy)
-(--> fiber-autonomy ([] (governance-fiber-independent resists-capture checks-and-balances)))
-;; Fiber hardening
-(--> path-dependence fiber-hardening)
-(--> fiber-hardening ([] (crystallizes-around-fiber breaking-requires-effort early-decisions-matter)))
-;; Sections not fibers
-(--> mission-statements sections-not-fibers)
-(--> sections-not-fibers ([] (express-perspective-at-moment dont-constrain-fiber only-structural-constraints-ensure-alignment)))
+;; ---- Cross-references ----
+(--> openai-shakeup ([] (related-to bgi-manifesto corporate-capture)))
+(--> openai-shakeup ([] (related-to bootleggers-baptists governance-failure)))
+(--> openai-shakeup ([] (related-to three-things path-determination)))

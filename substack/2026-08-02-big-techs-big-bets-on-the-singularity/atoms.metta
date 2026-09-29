@@ -1,104 +1,58 @@
 ;; =============================================================
 ;; Seed atoms — Big Tech's Big Bets on the Singularity
 ;; Source: Ben Goertzel, Eurykosmotron, 2026-08-02
+;; Deepened: 2026-09-25 (Hyperseed v2 / d-calculus)
 ;; =============================================================
 
 ;; ---- Type declarations ----
-(: FinancingStructure Type)
-(: ScenarioOutcome Type)
-(: RiskType Type)
-(: BetSizing Type)
+(: ScenarioType Type)
+(: KellyMode Type)
 
-;; ---- Financing structures ----
-(: circular-financing FinancingStructure)
-(: bridge-financing FinancingStructure)
-(: check-kiting FinancingStructure)
+;; ---- Core article claims (1-10) ----
+(--> circular-financing ([] (real overdetermined nash-equilibrium not-stupidity)))
+(--> geopolitical-prisoners-dilemma ([] (us-china winner-take-most both-all-in nash)))
+(--> contest-theory ([] (near-total-prize-dissipation)))
+(: fast-no-deagi ScenarioType)
+(: moderate-no-deagi ScenarioType)
+(: pessimist-no-deagi ScenarioType)
+(: fast-deagi ScenarioType)
+(: moderate-deagi ScenarioType)
+(: pessimist-deagi ScenarioType)
+(--> fast-no-deagi ([] (hlagi-2029 bet-pays-off expropriation 2027-2028-squeeze)))
+(--> moderate-no-deagi ([] (hlagi-2035 refunding-gate-falls infrastructure-crash)))
+(--> pessimist-no-deagi ([] (plateau permanent-shortfall crash-blame-politics)))
+(--> fast-deagi ([] (unownable-prize defuses-preemption)))
+(--> moderate-deagi ([] (crash-feeds-network fire-sale-hardware capacity-jump)))
+(--> pessimist-deagi ([] (minimum-cost no-debt-service fractional-kelly survives)))
+(--> financial-crisis ([] (uninformative modal-across-timelines leverage-not-terminus)))
+(: full-kelly KellyMode)
+(: fractional-kelly KellyMode)
+(--> full-kelly ([] (states concentrated high-growth nonzero-ruin)))
+(--> fractional-kelly ([] (decentralized distributed modest-stakes no-ruin)))
 
-;; ---- Bet sizing ----
-(: full-kelly BetSizing)
-(: fractional-kelly BetSizing)
+;; ---- Hyperseed interpretations (11-17) ----
+(--> prisoners-dilemma cocycle-lock-in)
+(--> cocycle-lock-in ([] (defection-only-stable nash-frozen-directed-type)))
+(--> cocycle-lock-in ([] (same-structure-as benevolent-throttling opposite-direction)))
+(--> financial-crash base-space-perturbation-orthogonal-to-fiber)
+(--> base-space-perturbation-orthogonal-to-fiber ([] (economic-base technology-fiber weakly-coupled)))
+(--> full-kelly concentrated-fiber)
+(--> concentrated-fiber ([] (high-growth nonzero-ruin single-collapse)))
+(--> fractional-kelly distributed-fiber)
+(--> distributed-fiber ([] (lower-growth zero-ruin no-single-collapse)))
+(--> fire-sale-absorption ([] (distressed-hardware network-absorbs crash-feeds-fiber)))
+(--> scenario-matrix fiber-bundle-technology-economics)
+(--> fiber-bundle-technology-economics ([] (3x2-matrix crash-constant zero-bits)))
 
-;; ---- Circular financing (claims 1-3) ----
-(--> ai-industry circular-financing)
-(--> circular-financing ([] (nvidia hyperscalers cloud-startups circular)))
-(--> (× bridge-financing check-kiting) ([] (structurally-identical determined-in-retrospect)))
-(--> circular-financing ([] (ponzi-esque dynamics real-structure)))
+;; ---- d-calculus claims (18-22) ----
+(--> escalation-holonomy ([] (excess-investment-per-cycle prize-dissipation high-total)))
+(--> base-fiber-coupling-curvature ([] (financial-technological-informativeness low-uninformative)))
+(--> kelly-fraction-curvature ([] (bet-ruin-sensitivity high-full low-fractional)))
+(--> fire-sale-absorption-holonomy ([] (capacity-gain-per-crash positive-feeds-network)))
+(--> prize-dissipation-curvature ([] (marginal-return approaches-zero total-dissipation)))
 
-;; ---- Geopolitical prisoner's dilemma (claims 4-10, 35) ----
-(--> aggregation-problem ([] (individually-rational collectively-over-kelly)))
-(--> aggregation-problem ([] (no-actor manages-network-exposure)))
-(--> us-china-race ([] (prisoner's-dilemma over-bet-sizing)))
-(--> us-china-race ([] (winner-take-most perceived)))
-(--> us-china-race ([] (both-all-in is-nash-equilibrium)))
-(--> us-china-race ([] (both-sizing-down better-but-unstable)))
-(--> contest-theory ([] (equilibrium-expenditure dissipates-prize)))
-(--> export-controls ([] (inadvertent industrial-policy for-rival)))
-(--> china-chip-self-sufficiency ([] (20pct-2023 40pct-2026 85pct-2030)))
-(--> (× american-failure chinese-failure) ([] (cardiac metabolic two-diseases)))
-(--> taiwan-tsmc ([] (covariance-term connecting-both-risks)))
-;; Cocycle lock-in
-(--> prisoner's-dilemma cocycle-lock-in)
-(--> cocycle-lock-in ([] (defection only-stable-transition-function)))
-
-;; ---- Financial crisis modal (claims 11-13, 32, 39) ----
-(--> financial-crisis-2027-2030 ([] (modal across-all-timelines)))
-(--> financial-crisis ([] (uninformative about-technology)))
-(--> financial-crisis ([] (leverage adjudicates-timing not-terminus)))
-(--> (× kurzweilian-world marcus-world) ([] (observationally-similar next-24-months)))
-;; Base-fiber orthogonality
-(--> financial-crisis-uninformativeness base-fiber-orthogonality)
-(--> base-fiber-orthogonality ([] (crash-in-economic-base orthogonal-to-technology-fiber)))
-
-;; ---- Scenario 1: HLAGI-2029 (claims 14-18) ----
-(--> hlagi-2029 ([] (bet-pays-off retroactively)))
-(--> hlagi-2029 ([] (addressable-market fraction-of-50T-wage-bill)))
-(--> intelligence-commoditization ([] (consumer-surplus with-poor-returns)))
-(--> hlagi-2029 ([] (demand-crisis inside-supply-miracle)))
-(--> hlagi-2029 ([] (geopolitical-terminal-instability)))
-(--> hlagi-2029 ([] (expropriation-by-victory possible)))
-
-;; ---- Scenario 2: HLAGI-2035 (claims 19-21) ----
-(--> hlagi-2035 ([] (refunding-gate falls-before-payoff)))
-(--> hlagi-2035 ([] (classic-infrastructure-crash dot-com-pattern)))
-(--> hlagi-2035 ([] (too-strategic-to-fail converts-private-to-public-debt)))
-
-;; ---- Scenario 3: Plateau (claims 22-23) ----
-(--> plateau ([] (permanent-shortfall revenue-never-crosses)))
-(--> plateau ([] (blame-politics diversionary-nationalism)))
-
-;; ---- Scenario 1 + deAGI (claims 24-25) ----
-(--> deagi-fast ([] (unownable-prize defuses-preemption)))
-(--> deagi-fast ([] (cant-strike protocol-like-datacenter)))
-(--> deagi-fast ([] (joint-hostility via-chokepoints)))
-
-;; ---- Scenario 2 + deAGI (claims 26-29, 38) ----
-(--> deagi-moderate ([] (crash-feeds-network)))
-(--> deagi-moderate ([] (fire-sale-hardware jumps-network-capacity)))
-(--> deagi-moderate ([] (too-strategic-to-fail weakens)))
-(--> deagi-moderate ([] (third-market-default neutral-preference)))
-(--> deagi-moderate ([] (macro-dividend treasury-uncrowding)))
-;; Crisis absorption
-(--> fire-sale-hardware crisis-absorption-via-fiber-elasticity)
-(--> crisis-absorption-via-fiber-elasticity ([] (fiber-stretches when-base-contracts)))
-
-;; ---- Scenario 3 + deAGI (claims 30-31, 37) ----
-(--> deagi-pessimist ([] minimum-cost-producer))
-(--> deagi-pessimist ([] (no-debt-service no-hardware-treadmill elastic-capacity)))
-(--> decentralized-architecture fractional-kelly)
-(--> fractional-kelly ([] (modest-continuous-stakes no-ruin-branch)))
-(--> fractional-kelly ([] (wins-by not-betting-existence)))
-;; Fractional-Kelly fiber
-(--> decentralized-architecture fractional-kelly-fiber)
-(--> fractional-kelly-fiber ([] (distributed-risk no-concentrated-node)))
-
-;; ---- Peace as systemic risk (claims 33-34, 41) ----
-(--> coordination ([] (only-cooperative-exit)))
-(--> levered-structure ([] (priced-against coordination)))
-(--> peace ([] systemic-risk-in-current-architecture))
-(--> peace ([] (removes-race-logic triggers-crash)))
-;; Financial stability requires adversarial cocycle
-(--> financial-structure ([] (stable-only-under adversarial-cocycle)))
-
-;; ---- Commoditization paradox (claim 40) ----
-(--> commoditization-paradox ([] (consumer-surplus-enormous producer-surplus-zero)))
-(--> commoditization-paradox ([] (global-section-exists but-no-financial-projection)))
+;; ---- Cross-references ----
+(--> big-techs-big-bets ([] (related-to geopolitics-great-ai-bet prisoners-dilemma)))
+(--> big-techs-big-bets ([] (related-to fable-farce concentration-decentralization)))
+(--> big-techs-big-bets ([] (related-to avoiding-catastrophe architecture-hinge)))
+(--> big-techs-big-bets ([] (related-to seven-flavors humanity-stupid all-in-bet)))

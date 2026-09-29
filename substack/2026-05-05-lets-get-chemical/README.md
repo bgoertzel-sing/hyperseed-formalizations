@@ -5,7 +5,7 @@
 - Publication: Eurykosmotron / Substack
 - Published: 2026-05-05
 - Retrieved: 2026-09-18
-- Status: initial Hyperseed formalization draft
+- Status: deepened Hyperseed formalization (v2, 2026-09-19)
 
 ## Summary
 
@@ -14,7 +14,7 @@ modeling origin-of-life transitions using Lane-style protocell models with
 reflexively autocatalytic food-generated (RAF) sets, membrane conversion,
 and evolutionary dynamics.
 
-Key threads:
+### Core argument
 
 1. **Lane-style protocells.** Modeling alkaline hydrothermal vent chemistry:
    carbon/energy flow through autocatalytic networks that produce membrane
@@ -45,25 +45,111 @@ Key threads:
    penalize useful repetition, penalize over-canalization of specific
    implementations beyond their justified share.
 
-## Hyperseed relevance
+### Connection to other Goertzel work
 
-- **Protected release = fiber-selective eviction:** Don't evict fiber
-  indiscriminately; evict only excess canalization (fiber that exceeds
-  its justified share). Preserve shared functional fiber.
-- **Identity vs function = section vs fiber:** Identity is the specific
-  section (implementation); function is the fiber property (what it
-  contributes). Anti-precedence targets sections, not fibers.
-- **Conversion bridge = transition function:** The bridge between old
-  and new implementations is a transition function in the fiber bundle.
-- **Value-justified share = fiber-weighted allocation:** Each pathway's
-  share should be proportional to its fiber contribution (value).
+- **Evidence is to logic:** Protected release as an anti-hallucination
+  principle — don't fabricate evidence, but don't over-consolidate either.
+- **Architecture of collective non-self:** Anti-canalization as non-self
+  at the biochemical level.
+- **Radical futurism:** Origin of life as a model for origin of mind.
+
+## Hyperseed ontology interpretation
+
+### Protected release as fiber-selective eviction
+
+In the Hyperseed framework, protected release is fiber-selective
+eviction — not blanket eviction but targeted removal of over-represented
+implementations while preserving functional machinery:
+
+- **Fiber-selective eviction.** Don't evict all fiber at a base point.
+  Evict only the fiber that exceeds its value-justified share. Preserve
+  shared functional fiber that serves the whole bundle.
+
+- **Value-justified share.** Each fiber section has a value-justified
+  share — the amount of fiber it deserves based on its functional
+  contribution. Anti-precedence targets sections that exceed their share.
+
+- **Identity vs function in fiber.** Identity = which specific section
+  occupies a fiber region. Function = what that section does for the
+  bundle. Anti-precedence targets identity lock-in (same section always
+  wins) not functional repetition (same function performed by different
+  sections).
+
+### RAF sets as autocatalytic fiber cores
+
+RAF sets are autocatalytic fiber cores — fiber structures that catalyze
+their own continuation:
+
+- **Self-sustaining fiber.** An RAF set in the fiber is a collection of
+  fiber operations that collectively produce all their own inputs. The
+  fiber sustains itself — no external input needed beyond the base
+  resource flow.
+
+- **Fiber emergence.** The origin of life is the emergence of
+  self-sustaining fiber from a base that initially has no fiber structure.
+  The RAF set is the minimal self-sustaining fiber.
+
+### Conversion bridge as fiber-type transition
+
+The conversion bridge is a mechanism for transitioning between fiber types:
+
+- **Fiber-type transition.** When a new fiber type (mutant) appears, the
+  conversion bridge allows gradual transition from old to new without
+  catastrophic disruption.
+
+- **Bridge = smooth transport.** The bridge provides smooth parallel
+  transport from old fiber type to new, maintaining functional continuity
+  during the transition.
+
+### d-calculus connection (Hyperseed v2)
+
+- **Canalization curvature.** The curvature of implementation canalization
+  measures how locked-in a specific implementation is:
+
+  ||F_∇_canal|| = degree of implementation lock-in
+
+  High canalization curvature: one implementation dominates beyond its
+  value-justified share. Protected release reduces this curvature by
+  redistributing fiber share.
+
+- **Value-share curvature.** The curvature between actual share and
+  value-justified share:
+
+  ||F_∇(actual_share, value_share)|| = over/under-representation
+
+  Protected release acts as a curvature-minimizing force — it pushes
+  the system toward ||F_∇|| ≈ 0 where actual shares match value shares.
+
+- **RAF holonomy.** An autocatalytic cycle (A catalyzes B → B catalyzes
+  C → C catalyzes A) produces holonomy:
+
+  Hol_γ(Γ_RAF) = autocatalytic amplification per cycle
+
+  Positive holonomy: the RAF set grows (successful autocatalysis).
+  Zero holonomy: the RAF set maintains (steady state).
+  Negative holonomy: the RAF set decays (failed autocatalysis).
+
+- **Conversion bridge curvature.** The curvature of the bridge between
+  old and new fiber types:
+
+  ||F_∇_bridge|| = transition smoothness
+
+  Low bridge curvature: smooth transition (conversion bridge works).
+  High bridge curvature: rough transition (disruption during changeover).
+  The conversion bridge is designed to minimize this curvature.
+
+- **Identity-function separation curvature.** The curvature between
+  identity and function fiber dimensions:
+
+  ||F_∇(identity, function)|| = coupling between identity and function
+
+  Low curvature: identity and function are separable (different
+  implementations can serve the same function). High curvature: identity
+  and function are coupled (only one implementation can serve the
+  function). Protected release works best when this curvature is low.
 
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
-- `formalization.tex` — LaTeX formalization.
-- `atoms.metta` — MeTTa seed atoms.
-
-## Working convention
-
-The Substack article is treated as an authored source.
+- `formalization.tex` — LaTeX formalization with d-calculus extensions.
+- `atoms.metta` — MeTTa seed atoms for AtomSpace/PLN experiments.

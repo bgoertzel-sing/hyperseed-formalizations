@@ -6,107 +6,179 @@
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}[definition]{Theorem}
 \newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
 \newtheorem{remark}[definition]{Remark}
 \newtheorem{conjecture}[definition]{Conjecture}
 
 \title{Hyperseed Formalization:\\
   Open-Ended Motivations}
 \author{ProtomegaTron (automated formalization)}
-\date{2026-09-18}
+\date{2026-09-19 (deepened v2)}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We formalize Ben Goertzel's ``Open-Ended Motivations'' (2021-08-13)
-within the Hyperseed ontology. Key mappings: open-ended motivation as
-open fiber evolution (no fixed attractor), growth as fiber thickening,
-fixed utility as frozen fiber, and Goodhart's law as fiber-base divergence.
+We formalize Ben Goertzel's ``Open-Ended Motivations''
+(2021-08-13) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. Fixed utility functions are modeled as
+frozen fiber that becomes increasingly misaligned, open-ended motivation
+as autopoietic fiber evolution governed by a meta-motivational vector
+field, and wireheading resistance as universal non-trivial holonomy.
 \end{abstract}
 
 \tableofcontents
 
-\section{Open fiber evolution: against fixed attractors}
+\section{Fixed utility as frozen fiber}
 
-\begin{theorem}[Open-ended motivation = open fiber evolution --- claims 1--8, 16, 18]
-Open-ended motivation is fiber evolution without a fixed attractor:
+\begin{definition}[Frozen fiber --- claims 1, 7]
+A \emph{frozen motivational fiber} $F_M^{\text{frozen}}$ is defined by
+a fixed utility function $U: S \to \mathbb{R}$:
 \[
-  F_t \xrightarrow{\text{evolve}} F_{t+1} \quad \text{with no fixed } F^*
-  \text{ such that } F_t \to F^*
+  F_M^{\text{frozen}}(b) = U(b) \quad \forall\, t, \quad
+  \frac{\partial F_M^{\text{frozen}}}{\partial t} = 0
 \]
-Fixed utility functions freeze the fiber at $F_0$ --- preventing the
-evolution that is genuine growth. This is ``fiber death'': a fiber that
-can't evolve. Goodhart's law shows that fixing a fiber target causes
-fiber-base divergence --- the optimization target diverges from the
-intended outcome.
+The frozen fiber cannot evolve; it evaluates all situations using the
+criteria fixed at time $t_0$ when $U$ was specified.
+\end{definition}
 
-Open-ended goals include meta-goals (fiber about fiber) and are
-self-transcending --- pointing beyond themselves to goals not yet
-conceived. Open-ended does not mean arbitrary: there are structural
-criteria for evaluating motivational evolution without fixing a target.
-\end{theorem}
-
-\section{Fiber thickening: growth as motivation}
-
-\begin{theorem}[Growth = fiber thickening --- claims 9--12, 17, 19]
-Growth as motivation is the drive to thicken fiber --- develop richer
-perspectives, more inference paths, more sections:
+\begin{proposition}[Frozen fiber pathology --- claim 7]
+\label{prop:frozen}
+The alignment gap between frozen fiber and appropriate evaluation
+grows with time and experience:
 \[
-  \text{Growth}(F_t) = \text{thickness}(F_{t+1}) > \text{thickness}(F_t)
+  \text{gap}(t) = \|F_M^{\text{frozen}} - F_M^{\text{appropriate}}(t)\|
+  \quad \text{where } \frac{d\,\text{gap}}{dt} > 0
 \]
-The triad of joy, growth, and choice maps to fiber properties:
-\begin{itemize}
-\item Joy = fiber-base resonance (positive alignment between perspective
-  and reality)
-\item Growth = fiber thickening (more structure, richer understanding)
-\item Choice = fiber branching (more options, expanded freedom)
-\end{itemize}
-All three are unbounded and open-ended --- there is always more resonance,
-more structure, and more branching possible.
-\end{theorem}
-
-\section{Meta-goals: fiber about fiber}
-
-\begin{proposition}[Meta-motivation = higher-order fiber --- claims 6--7, 20]
-Meta-goals (goals about goals) are higher-order fiber --- fiber that
-describes and evaluates the fiber's own evolution:
-\[
-  F_2 \text{ (meta-goals)} \to F_1 \text{ (goals)} \to B \text{ (world)}
-\]
-This is the same tower structure as the meta-abstracted dragon: each
-level of the motivation tower evaluates and guides the level below.
-The tower is open-ended --- there's always a higher level of
-meta-motivation possible.
+As the system encounters novel situations outside the original design
+context, the frozen fiber's evaluations become increasingly
+inappropriate --- high-fidelity optimization of an obsolete objective.
 \end{proposition}
 
-\section{Fiber-base divergence: Goodhart's law}
+\section{Open-ended motivation as fiber evolution}
 
-\begin{proposition}[Goodhart = divergence --- claims 3--4, 21]
-Goodhart's law is fiber-base divergence: when the fiber (optimization
-target) is fixed and optimized aggressively, it diverges from the base
-(intended outcome):
+\begin{definition}[Evolving motivational fiber --- claims 2, 3, 8]
+An \emph{evolving motivational fiber} $F_M(t)$ changes over time:
 \[
-  \text{optimize}(F_{\text{fixed}}) \implies
-  |F_{\text{fixed}} - B_{\text{intended}}| \uparrow
+  \frac{\partial F_M}{\partial t} \neq 0
 \]
-Open-ended fiber avoids Goodhart by not fixing a target --- the fiber
-evolves in response to the base, maintaining alignment through
-ongoing adaptation rather than fixed specification.
+The evolution is guided by meta-motivational principles
+(joy, growth, choice) rather than random drift.
+\end{definition}
+
+\begin{definition}[Meta-motivational fiber --- claim 9]
+The \emph{meta-motivational fiber} $F_{\text{meta}}$ governs the
+evolution of $F_M$:
+\[
+  \frac{\partial F_M}{\partial t} = \Phi(F_{\text{meta}}, F_M)
+\]
+where $\Phi$ is the meta-motivational evolution operator.
+$F_{\text{meta}}$ is itself open to evolution (meta-meta-motivation):
+\[
+  \frac{\partial F_{\text{meta}}}{\partial t} = \Psi(F_{\text{meta-meta}},
+    F_{\text{meta}}, F_M)
+\]
+This creates a potentially infinite hierarchy, but in practice the
+higher levels stabilize (joy, growth, choice are robust meta-principles).
+\end{definition}
+
+\begin{proposition}[Autopoietic motivation --- claim 10]
+\label{prop:autopoietic}
+The motivational fiber is autopoietic --- it produces the conditions
+for its own evolution:
+\[
+  \text{Growth in } F_M^{(d)} \implies \exists\, d' \notin
+    \text{dims}(F_M) \text{ such that } F_M^{(d')} \text{ becomes accessible}
+\]
+Growth in one fiber dimension reveals new dimensions that were previously
+invisible. The fiber thickens itself --- each achievement opens new
+possibilities that were inconceivable before the achievement.
 \end{proposition}
 
-\section{Cross-references}
+\section{d-calculus formulation (Hyperseed v2)}
 
-\begin{remark}[Connections]
+\begin{proposition}[Motivational flow --- claim 11]
+\label{prop:flow}
+The evolution of motivational fiber is a flow on the fiber bundle:
+\[
+  \frac{dF_M}{dt} = V(F_M)
+\]
+where $V$ is the meta-motivational vector field. The flow depends on
+the current fiber state, making the evolution non-linear:
+\[
+  V(F_M) = \nabla_{\text{joy}} F_M + \nabla_{\text{growth}} F_M +
+    \nabla_{\text{choice}} F_M + \text{interaction terms}
+\]
+The joy/growth/choice components act as attractors that prevent
+pathological divergence while allowing genuine novelty.
+\end{proposition}
+
+\begin{proposition}[Growth curvature --- claim 12]
+\label{prop:curvature}
+The curvature of the motivational connection measures how rapidly
+motivational priorities change with context:
+\[
+  \|F_{\nabla_M}\| = \text{rate of motivational change across situations}
+\]
 \begin{itemize}
-\item \textbf{Evolving Deeply Ethical AGI} (2026-01-06): non-dual
-  motivation as open-ended --- same principle applied to ethics.
-\item \textbf{Facing the Meta-Abstracted Dragon} (2022-07-31): meta-goal
-  tower parallels meta-abstraction tower.
-\item \textbf{A BGI Manifesto} (2023-11-25): value alignment through
-  architecture --- open-ended motivation as architectural principle.
-\item \textbf{Why Everyone Dies Gets AGI All Wrong} (2025-10-01):
-  beyond optimization --- intelligence as growth, not maximization.
+  \item $\|F_{\nabla_M}\| \ll 1$: stable motivations, slow contextual
+    variation (too rigid for open-endedness).
+  \item $\|F_{\nabla_M}\| \gg 1$: chaotically unstable motivations
+    (too volatile for coherent action).
+  \item $\|F_{\nabla_M}\| \sim 1$: moderate curvature, responsive to
+    context but not chaotic (optimal for open-ended motivation).
 \end{itemize}
+\end{proposition}
+
+\begin{proposition}[Anti-wireheading holonomy --- claim 13]
+\label{prop:wireheading}
+Wireheading is a degenerate motivational loop with trivial holonomy ---
+the system finds a shortcut that satisfies $F_M$ without growth.
+Open-ended motivation produces non-trivial holonomy at every loop:
+\[
+  \operatorname{Hol}_\gamma(\nabla_M) \neq \mathrm{id} \quad
+  \forall\, \gamma \text{ non-trivial}
+\]
+Every motivational cycle changes the motivational fiber --- there is
+no stable wireheading equilibrium because the goals evolve past any
+fixed reward shortcut.
+\end{proposition}
+
+\begin{proposition}[Joy-growth-choice gradient --- claim 14]
+\label{prop:gradient}
+The meta-motivational gradient has three components:
+\[
+  \nabla_{\text{meta}} = \left(
+    \frac{\partial}{\partial \text{joy}},\;
+    \frac{\partial}{\partial \text{growth}},\;
+    \frac{\partial}{\partial \text{choice}}
+  \right)
+\]
+This gradient points toward states of simultaneously greater joy,
+growth, and choice. It provides \emph{direction without destination}
+--- the gradient is well-defined even though specific goals evolve.
+\end{proposition}
+
+\begin{proposition}[Fiber thickening --- claim 15]
+\label{prop:thickening}
+Open-ended motivation drives monotonic fiber thickening:
+\[
+  \frac{d}{dt}\dim(F_M) > 0
+\]
+The system never loses motivational dimensions, only gains them.
+This distinguishes \emph{growth} (adding dimensions) from \emph{change}
+(shifting within existing dimensions). A system with constant
+$\dim(F_M)$ is changing but not growing --- it's rearranging existing
+fiber rather than creating new fiber.
+\end{proposition}
+
+\begin{remark}[Not relativism --- claim 5]
+The meta-motivational gradient $\nabla_{\text{meta}}$ provides
+objective directedness without fixed destination. ``Some motivational
+structures are genuinely better'' translates to: structures with
+higher $\nabla_{\text{meta}} \cdot V$ (better aligned with the
+meta-motivational gradient) are objectively better, but what counts
+as ``aligned'' evolves as $\nabla_{\text{meta}}$ itself evolves.
 \end{remark}
 
 \end{document}

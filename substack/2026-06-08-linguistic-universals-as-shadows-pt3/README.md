@@ -5,7 +5,7 @@
 - Publication: Eurykosmotron / Substack
 - Published: 2026-06-08
 - Retrieved: 2026-09-17
-- Status: initial Hyperseed formalization draft
+- Status: deepened Hyperseed formalization (v2, 2026-09-22)
 
 ## Summary
 
@@ -15,7 +15,7 @@ of the mathematical framework developed in Parts 1-2: what a fully
 language-capable AGI would have to instantiate internally, and how to turn
 the framework into a concrete Transformer training recipe.
 
-Key threads:
+### Core argument
 
 1. **Causally factorized cognitive substrate.** The system's internal
    state must decompose into pieces capturing genuinely separate aspects
@@ -52,26 +52,156 @@ Key threads:
    closure loss, mediator loss, low-frustration externalization loss,
    stability schedule, support-router constraint.
 
-## Hyperseed relevance
+### Connection to other Goertzel work
 
-- **Causal factorization = fiber decomposition:** The cognitive substrate
-  decomposes into fibers over different domains; updates are local to
-  relevant fibers.
-- **Small commutators = approximate commutativity of fiber updates:**
-  The fiber structure ensures that updates to independent fibers commute.
-- **Semantic frames = transition functions:** Frames are the transition
-  functions bridging cognitive fiber and linguistic fiber.
-- **Graded stability = fiber depth:** Core universals live in deep
-  (protected) fiber layers; context-local patterns in shallow (plastic) ones.
-- **Naturality loss = cocycle condition:** The requirement that diagrams
-  commute is the cocycle condition on the cognition-to-language bundle.
+- **Parts 1-2:** Empirical foundation and categorical formalism that
+  this article turns into architecture.
+- **Grand unified physics:** Same Occamistic/weakness principle;
+  cognitive structure mirrors physical structure.
+- **General theory of general intelligence:** Causal factorization as
+  a concrete realization of GTGI's compositional requirements.
+
+## Hyperseed ontology interpretation
+
+### Causal factorization as fiber decomposition
+
+The cognitive substrate decomposes into fibers over different domains:
+
+- **Fiber decomposition.** Each domain, modality, skill, or conceptual
+  neighborhood is a separate fiber. Updates are local to the relevant
+  fiber. The full cognitive state is the direct sum of domain fibers.
+
+- **Non-commutativity as fiber defect.** When updates to unrelated
+  domains interfere (catastrophic forgetting), this is a fiber defect —
+  the decomposition is not genuine. The commutator [U_A, U_B] measures
+  the defect; a well-factorized architecture has small commutators for
+  independent domains.
+
+### Semantic frames as transition functions
+
+Frames bridge cognitive fiber and linguistic fiber:
+
+- **Transition functions.** Semantic frames are the transition functions
+  of the cognition-to-language bundle. They map between local
+  trivializations on the cognitive side and local trivializations on
+  the linguistic side.
+
+- **Without frames, bundle is ill-defined.** The frame layer is what
+  makes the bundle well-defined. Without it, the cognition-to-language
+  map is too rigid — a naked map between incompatible coordinate systems.
+
+### Graded stability as fiber depth
+
+Core universals and context-local patterns occupy different fiber layers:
+
+- **Deep fiber = protected.** Core conceptual primitives (person, number,
+  case hierarchies) live in deep fiber layers with slow learning rates
+  and strong protection.
+
+- **Shallow fiber = plastic.** Context-local residue lives in shallow
+  fiber layers with fast learning rates and high plasticity.
+
+- **Three layers.** Hierarchies = cognitive bedrock (deep fiber).
+  Word-order regularities = consolidated externalization preferences
+  (middle fiber). Context-bound universals = outermost shell (shallow
+  fiber).
+
+### Training losses as fiber conditions
+
+Each training loss has a clean fiber interpretation:
+
+- **Naturality loss = cocycle condition.** Transition functions compose
+  consistently: update-then-readout ≈ readout-then-linguistic-update.
+
+- **Closure loss = hierarchical cocycle.** Fiber structure at each level
+  is consistent with all levels below.
+
+- **Mediator loss = anti-scalar-collapse.** Cross-module coupling is
+  explicit and inspectable, not diffuse and dense.
+
+- **Low-frustration loss = sparse signed-energy compatibility.** Local
+  pulls from different modules are compatible with a consistent
+  linearization.
+
+- **Stability schedule = fiber depth enforcement.** Learning rates
+  enforce the deep/shallow fiber distinction.
+
+### Linguistic typology as distributed fiber inspection
+
+Languages are inspecting the same cognitive fiber from different angles:
+
+- **Many inspectors.** Each language externalizes a different cross-section
+  of the cognitive fiber. Typological comparison across languages is
+  distributed fiber inspection — many observers sampling the same
+  underlying structure from different vantage points.
+
+- **Cross-cultural averaging = fiber extraction.** Typological universals
+  (features stable across unrelated languages) are the fiber invariants —
+  the features of cognitive structure that survive all externalization
+  maps.
+
+### d-calculus connection (Hyperseed v2)
+
+- **Commutator curvature.** The curvature of the cognitive fiber bundle
+  measures the degree of non-commutativity between domain updates:
+
+  ||F_∇_commutator|| = interference between unrelated domains
+
+  Zero curvature: perfect factorization (no interference). Nonzero
+  curvature: imperfect factorization (catastrophic forgetting).
+  The training objective minimizes this curvature.
+
+- **Naturality holonomy.** A loop through the cognition-to-language
+  bundle (encode → frame → externalize → parse → decode) produces
+  holonomy:
+
+  Hol_γ(Γ_naturality) = round-trip information loss
+
+  Trivial holonomy: perfect naturality (the diagram commutes exactly).
+  Non-trivial holonomy: information loss in the round trip (the
+  diagram doesn't quite commute).
+
+- **Stability depth curvature.** The curvature between deep and shallow
+  fiber layers:
+
+  ||F_∇(deep, shallow)|| = protection boundary sharpness
+
+  High curvature: sharp boundary between protected bedrock and plastic
+  surface (good architecture). Low curvature: blurry boundary (unstable
+  architecture, bedrock drifts).
+
+- **Frame bridge curvature.** The curvature of the frame transition
+  functions:
+
+  ||F_∇_frame|| = frame translation fidelity
+
+  Low curvature: frames faithfully bridge cognitive and linguistic fiber
+  (clean translation). High curvature: frames distort the translation
+  (lossy bridge).
+
+- **Typological inspection gradient.** The gradient of typological
+  stability across languages:
+
+  ∇_typology = ∇(universality_coefficient across language families)
+
+  Steep gradient: feature is universal (present in all families).
+  Flat gradient: feature is local (present in one family). The
+  gradient direction points toward cognitive bedrock.
+
+- **Training convergence gradient.** The gradient of training loss
+  toward the categorical target:
+
+  ∇_training = ∇(naturality_loss + closure_loss + mediator_loss +
+                  frustration_loss + stability_schedule)
+
+  Each term contributes a fiber-geometric force: naturality enforces
+  cocycle condition, closure enforces hierarchical consistency, mediator
+  enforces anti-scalar-collapse, frustration enforces sparse compatibility,
+  stability enforces depth structure. The total gradient moves the
+  architecture toward the categorically prescribed fiber structure.
 
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
-- `formalization.tex` — LaTeX formalization.
-- `atoms.metta` — MeTTa seed atoms.
-
-## Working convention
-
-The Substack article is treated as an authored source.
+- `formalization.tex` — LaTeX formalization with d-calculus extensions.
+- `atoms.metta` — MeTTa seed atoms for AtomSpace/PLN experiments.

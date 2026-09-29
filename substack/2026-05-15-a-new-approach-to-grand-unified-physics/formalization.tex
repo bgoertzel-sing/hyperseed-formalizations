@@ -6,293 +6,155 @@
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}[definition]{Theorem}
 \newtheorem{proposition}[definition]{Proposition}
-\newtheorem{lemma}[definition]{Lemma}
 \newtheorem{corollary}[definition]{Corollary}
-\newtheorem{conjecture}[definition]{Conjecture}
 \newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
 
 \title{Hyperseed Formalization:\\
   A New Approach to Grand Unified Physics}
 \author{ProtomegaTron (automated formalization)}
-\date{2026-09-18}
+\date{2026-09-19 (deepened v2)}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We formalize the intellectual structure of Ben Goertzel's Substack article
-``A New Approach to Grand Unified Physics'' (2026-05-15) within the
-Hyperseed ontology. The article presents a speculative physics program:
-quaternionic world-crystals as pregeometric middleware, with a
-meta-crystallization stack from causal sets through Occamistic selection
-to emergent spacetime and particle physics. Each structural insight maps
-onto Hyperseed structures: the meta-crystallization stack as fiber
-emergence stack, Occamistic selection as fiber-minimal selection, Wu Wei
-geodesics as fiber-minimal evolution, quaternionic non-commutativity as
-non-invertible fiber structure, defects as cocycle failures, holonomy as
-fiber transport, and the unified weakness principle as universal fiber
-selection.
+We formalize Ben Goertzel's ``A New Approach to Grand Unified Physics''
+(2026-05-15) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. The meta-crystallization stack is modeled
+as a fiber emergence stack, Occamistic selection as fiber-minimal
+selection, Wu Wei geodesics as fiber-minimal evolution, and quaternionic
+gauge structure as non-invertible fiber curvature.
 \end{abstract}
 
 \tableofcontents
 
-%% =================================================================
-\section{The meta-crystallization stack as fiber emergence}
-\label{sec:stack}
-%% =================================================================
+\section{Meta-crystallization as fiber emergence stack}
 
-\begin{theorem}[Six-layer emergence --- claims 11--13, 26, 33]
-\label{thm:stack}
-The article proposes a six-layer stack from which known physics emerges:
-
+\begin{definition}[Emergence stack --- claims 3, 7]
+The meta-crystallization stack is a fiber emergence stack with six
+levels:
 \begin{enumerate}
-\item \textbf{Bare causal order:} discrete events plus causal precedence.
-\item \textbf{Occamistic selection:} simple, repeated, low-weakness motifs favored.
-\item \textbf{Causal-PKC motifs:} pregeometric Planck-Kleinert-like crystal structures.
-\item \textbf{Meta-crystallized spacetime:} smooth Lorentzian spacetime as continuum approximation.
-\item \textbf{Quaternionic Cauchy dynamics:} elastic-like deformation dynamics yielding quantum and field behavior.
-\item \textbf{Particles, gauge fields, gravity:} localized excitations, holonomies, and defects.
+  \item[0.] Bare causal order $B_0$ (base space: discrete events with
+    precedence).
+  \item[1.] Occamistic selection fiber $E_1 \to B_0$ (simplicity bias
+    selects regular patterns).
+  \item[2.] Causal-PKC motifs $E_2 \to E_1$ (world-crystal structures
+    emerge from selection).
+  \item[3.] Meta-crystallized spacetime $E_3 \to E_2$ (continuous
+    manifold from discrete crystal).
+  \item[4.] Quaternionic dynamics $E_4 \to E_3$ (quantum theory and
+    gauge fields over spacetime).
+  \item[5.] Particles, fields, gravity $E_5 \to E_4$ (familiar physics
+    as outermost fiber).
 \end{enumerate}
-
-Each layer adds physically important structure not determined by the
-previous one. The layers ``prop each other up rather than each begging
-the question of where the others come from.''
-
-In Hyperseed terms, this is a \emph{fiber emergence stack}: each layer
-is a fiber over the layer below, and the emergence relation is the
-fiber projection:
-\[
-  E_6 \xrightarrow{\pi_6} E_5 \xrightarrow{\pi_5} E_4
-  \xrightarrow{\pi_4} E_3 \xrightarrow{\pi_3} E_2
-  \xrightarrow{\pi_2} E_1
-\]
-
-The causal set substrate (layer 1) is \emph{pre-fiber}: it exists before
-any fiber structure emerges. The emergence of spacetime (layer 4) from
-causal-PKC motifs (layer 3) is the emergence of the base space from the
-pre-fiber substrate. Layers 5 and 6 are fibers over that base space.
-
-The mutual-support property --- each layer propping up the others ---
-is the cocycle condition on the emergence stack: each layer's transition
-functions are consistent with the layers above and below. Without this
-consistency, the stack would collapse (some layer would lose its
-structural support).
-\end{theorem}
-
-%% =================================================================
-\section{Occamistic selection as fiber-minimal selection}
-\label{sec:occam}
-%% =================================================================
-
-\begin{proposition}[Weakness geometry --- claims 4--7, 23--25, 27]
-\label{prop:occam}
-The article introduces Occamistic precedence as the selection principle
-for causal-set growth: nature ``remembers'' what has happened before
-(Smolin's Precedence Principle), and among repeated or possible patterns,
-simpler ones are favored more (the Occam twist).
-
-This is the same principle as quantale weakness in the Linguistic
-Universals series, now applied to physical ontology rather than
-cognitive/linguistic ontology: select the structure with least
-unnecessary complexity.
-
-In Hyperseed terms, Occamistic selection is \emph{fiber-minimal
-selection}: among the possible fiber structures that could emerge
-from a given substrate, the one with least unnecessary fiber is
-favored:
-\[
-  P(\text{motif } m) \propto e^{-\lambda \cdot W(m)}
-\]
-where $W(m)$ is the weakness (unnecessary complexity) of motif $m$.
-
-The remarkable claim: the \emph{same} weakness principle operates
-across linguistics (selecting cognitive explanations), physics
-(selecting causal-set growth motifs), and AI (selecting learning
-targets). This suggests a \emph{universal fiber selection principle}:
-across all domains, structures with less unnecessary fiber are favored.
-This is the Hyperseed ontology's version of Occam's razor, expressed
-as fiber minimality.
-
-The weakness measure provides a metric on the space of possible
-structures: simpler structures (fewer unnecessary distinctions) are
-closer to the origin. Physical, cognitive, and learning dynamics all
-follow gradients in this metric --- they all flow toward lower
-weakness.
-\end{proposition}
-
-%% =================================================================
-\section{Wu Wei geodesics as fiber-minimal evolution}
-\label{sec:wuwei}
-%% =================================================================
-
-\begin{definition}[Minimal unnecessary forcing --- claims 14--17, 28]
-\label{def:wuwei}
-The article introduces Wu Wei geodesics: physical evolution as minimal
-representational effort. Reality follows paths requiring least
-unnecessary forcing, given boundary conditions and constraints.
-
-Mathematically, this connects with Schr\"odinger bridges and entropic
-optimal transport: instead of just evolving forward from initial
-conditions, ask for the minimal-effort path connecting an initial and
-a final distribution.
-
-In Hyperseed terms, Wu Wei geodesics are \emph{fiber-minimal evolution}:
-the system evolves along paths of minimal fiber complexity. The
-least-unnecessary-forcing path is the path with minimal excess fiber
-structure:
-\[
-  \gamma^* = \arg\min_\gamma \int_0^1 W(\gamma(t)) \, dt
-  + \text{boundary terms}
-\]
-
-This bridges Occamistic causal-set growth (static selection) with
-world-crystal dynamics (dynamic evolution): histories are favored when
-they're low-complexity, historically reinforced, and dynamically smooth.
-The bridge itself is a fiber morphism connecting the selection fiber
-(which motifs are favored) with the dynamics fiber (how motifs evolve).
-
-The Taoist origin is not merely poetic: Wu Wei (effortless action,
-action without unnecessary forcing) is a precise description of the
-mathematical principle. Water flowing around a stone rather than
-smashing into it is fiber-minimal evolution in action --- the path
-that adds least unnecessary structure.
+Each level is a fiber over the level below: $E_{n+1} \to E_n$.
 \end{definition}
 
-%% =================================================================
-\section{Quaternionic non-commutativity as non-invertible fiber}
-\label{sec:quaternions}
-%% =================================================================
+\section{Occamistic selection: fiber-minimal selection}
 
-\begin{theorem}[Gauge from algebra --- claims 18--22, 29--31]
-\label{thm:quaternions}
-The article identifies quaternions as the natural algebraic structure
-for the world-crystal's internal degrees of freedom. The key property:
-quaternionic non-commutativity naturally generates gauge-like structure.
-$\text{SU}(2) \times \text{U}(1)$ emerges from quaternionic algebra.
-
-In Hyperseed terms, quaternionic non-commutativity is \emph{non-invertible
-fiber structure}: the same kind of non-invertibility that generates
-structure throughout the Hyperseed ontology. When composition is
-non-commutative ($ab \neq ba$), the composition order matters ---
-this creates directedness, irreversibility, and gauge-like structure:
+\begin{proposition}[Fiber minimality --- claims 1, 6, 8]
+\label{prop:occam}
+Among all possible fiber structures over a given base, Occamistic
+selection favors those with minimal representational cost:
 \[
-  [q_1, q_2] = q_1 q_2 - q_2 q_1 \neq 0 \quad \Longrightarrow
-  \quad \text{non-trivial gauge structure}
+  E^* = \arg\min_{E \in \mathcal{E}} \text{complexity}(E)
+    \quad \text{subject to } E \text{ supporting required dynamics}
 \]
-
-Three specific consequences:
-
-\begin{enumerate}
-\item \textbf{Defects as cocycle failures.} Topological defects in the
-  world-crystal are cocycle failures: the transition functions around a
-  closed path don't compose to the identity. The defect (particle) is
-  the obstruction to closing the cocycle:
-  \[
-    g_{12} \cdot g_{23} \cdot g_{31} \neq \text{id} \quad
-    \Longrightarrow \quad \text{defect at the junction}
-  \]
-  This is the same structure as the Orchard bug (composition failure
-  where individual components work but their interaction doesn't),
-  applied to physics rather than software.
-
-\item \textbf{Holonomy as fiber transport.} Holonomy around closed paths
-  is fiber transport --- the accumulated rotation/phase from parallel
-  transporting a vector around a loop. This is the same holonomy
-  structure that appears in the 3-tier holonomy of $\omega$PLN
-  (LTM 568f40b4), applied to physical rather than epistemic fibers.
-
-\item \textbf{Cauchy dynamics.} Quaternionic Cauchy-type differential
-  equations on the world-crystal yield both quantum-mechanical
-  (Schr\"odinger-like) and field-theoretic behavior. The algebraic
-  structure of the quaternions constrains the possible dynamics,
-  selecting physically realistic evolution equations from the space
-  of all possible dynamics.
-\end{enumerate}
-\end{theorem}
-
-%% =================================================================
-\section{The pregeometric world-crystal}
-\label{sec:crystal}
-%% =================================================================
-
-\begin{proposition}[Background independence --- claims 8--10]
-\label{prop:crystal}
-The article's central conceptual move: the world-crystal is
-\emph{pregeometric}. It's not a crystal in spacetime (which would
-immediately violate Lorentz invariance --- preferred directions,
-preferred rest frames, ``luminiferous aether with extra steps'').
-It's a regular causal-motif structure from which spacetime itself
-emerges.
-
-Planck-Kleinert-like crystal structures are favored by Occamistic
-selection because they efficiently support five physically important
-properties simultaneously:
-\begin{itemize}
-\item Locality (nearby events interact more strongly than distant ones).
-\item Conservation (discrete symmetries yield conservation laws).
-\item Wave propagation (regular structure supports wave-like excitations).
-\item Defect dynamics (topological defects can form, move, interact).
-\item Internal phase structure (quaternionic degrees of freedom).
-\end{itemize}
-
-Supporting all five simultaneously is what makes the crystal motif
-favored --- it's the fiber-minimal structure that supports the full
-range of physical phenomena. A simpler structure (e.g., a random
-graph) might support one or two but not all five; a more complex
-structure would have unnecessary fiber.
-
-The meta-crystallization from world-crystal to smooth spacetime
-is a coarse-graining operation: averaging over many Planck-scale
-crystal cells to obtain a smooth continuum description. This is
-the fiber projection from the crystal fiber (discrete, structured)
-to the spacetime base space (smooth, geometric).
+This is the same principle as quantale weakness in linguistics:
+select the structure with least unnecessary fiber. Physics and
+linguistics are shadows of the same selection principle applied
+at different emergence levels.
 \end{proposition}
 
-%% =================================================================
-\section{Cross-references}
-%% =================================================================
+\section{Wu Wei geodesics: fiber-minimal evolution}
 
-\begin{remark}[Connections to other formalizations]
-\begin{itemize}
-\item \textbf{Linguistic Universals Part 2} (2026-05-30): quantale
-  weakness. The same weakness principle used here for physical
-  selection is used there for cognitive/linguistic selection.
-\item \textbf{The Orchard Bug} (2026-06-05): cocycle defects. Physical
-  defects (particles) are cocycle failures --- the same structure as
-  composition bugs in software.
-\item \textbf{3-tier holonomy} (LTM 568f40b4): holonomy structure.
-  Physical holonomy (gauge fields from closed-path transport) is the
-  same mathematical structure as epistemic holonomy in $\omega$PLN.
-\item \textbf{Non-invertible 2-cells} (LTM 85c02e32): non-commutativity.
-  Quaternionic non-commutativity generating gauge structure is the
-  physical manifestation of non-invertible 2-cells generating
-  higher-categorical structure.
-\item \textbf{Seeding RSI} (2026-07-28): Hyperon architecture. The
-  meta-crystallization stack (simple substrate $\to$ emergent complex
-  structure) mirrors the Hyperon architecture stack (MeTTa substrate
-  $\to$ emergent cognitive structure).
-\item \textbf{Pope Leo \& Anthropic vs Teilhard} (2026-05-27): cosmic
-  evolution. The meta-crystallization stack is a physical version of
-  Teilhard's evolutionary vision --- structure emerging from simpler
-  substrates through selection and self-organization.
-\end{itemize}
-\end{remark}
+\begin{proposition}[Minimal forcing --- claim 4, 9]
+\label{prop:wuwei}
+Wu Wei geodesics are paths of minimal fiber curvature:
+\[
+  \gamma^* = \arg\min_\gamma \int_\gamma \|F_{\nabla_\gamma}\|\, ds
+\]
+The system evolves along paths requiring least forcing. A true Wu Wei
+geodesic has $\|F_{\nabla_\gamma}\| = 0$ everywhere along the path ---
+pure inertial evolution with zero unnecessary forcing.
+\end{proposition}
 
-\begin{conjecture}[Weakness as fundamental]
-Conjecture: the weakness principle is not merely a useful heuristic
-but a fundamental law operating across all levels of reality ---
-physical, chemical, biological, cognitive, social. At each level,
-structures with less unnecessary fiber are favored by the dynamics
-of that level. The apparent ``laws of physics'' are the fiber-minimal
-structures at the physical level; the ``laws of cognition'' are the
-fiber-minimal structures at the cognitive level; and the connection
-between them (why physics supports cognition, why cognition can
-model physics) is that both are instances of the same universal
-fiber-selection principle.
+\section{Quaternionic non-commutativity as non-invertible fiber}
 
-If this conjecture holds, the Hyperseed ontology is not merely a
-formalization framework but a description of the fundamental
-selection principle that shapes reality at every level.
-\end{conjecture}
+\begin{proposition}[Gauge from non-commutativity --- claims 5, 10]
+\label{prop:quaternion}
+The quaternionic non-commutativity $AB \neq BA$ generates gauge
+structure:
+\[
+  [Q_A, Q_B] \neq 0 \implies \text{SU}(2) \times \text{U}(1)
+    \text{ gauge structure}
+\]
+The non-commutativity is a fiber-level non-invertibility: the result
+of composing fiber operations depends on order. This is the same kind
+of non-invertibility that generates structure throughout the Hyperseed
+ontology.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Emergence stack curvature --- claim 11]
+\label{prop:emergence}
+The curvature at each level measures the emergence gap:
+\[
+  \|F_\nabla(\text{level}_n, \text{level}_{n+1})\| =
+    \text{emergence gap at level } n
+\]
+High curvature: qualitatively different next level (genuine emergence).
+Low curvature: simple elaboration (mere complication). The stack has
+high curvature at levels 0--1 (causal order to selection) and 2--3
+(crystal to spacetime), indicating genuine emergence at those transitions.
+\end{proposition}
+
+\begin{proposition}[Occamistic curvature --- claim 12]
+\label{prop:occam_curv}
+\[
+  \|F_{\nabla_\text{Occam}}\| = \text{strength of simplicity bias}
+\]
+Strong Occamistic curvature: only crystalline regularity survives
+selection. Weak: amorphous variety survives. The world-crystal emerges
+because the Occamistic curvature is strong enough to select crystal-like
+structures from the vast space of possible causal sets.
+\end{proposition}
+
+\begin{proposition}[World-crystal holonomy --- claim 13]
+\label{prop:holonomy}
+A loop $\gamma$ in the world-crystal produces holonomy encoding
+physical content:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_\text{crystal}) = \text{gauge field
+    strength enclosed by } \gamma
+\]
+This is not metaphorical: in gauge theory, field strength is literally
+the holonomy of a connection. The d-calculus formulation embeds this
+standard result within the emergence stack framework.
+\end{proposition}
+
+\begin{proposition}[Wu Wei geodesic curvature --- claim 14]
+\label{prop:wuwei_curv}
+\[
+  \|F_{\nabla_\text{path}}\| = \text{forcing required along the path}
+\]
+True Wu Wei geodesic: $\|F_{\nabla_\text{path}}\| = 0$ (zero forcing,
+pure inertial evolution). Real physical paths: small but nonzero forcing
+curvature. The action principle of physics is: minimize
+$\int \|F_{\nabla_\text{path}}\|\, ds$.
+\end{proposition}
+
+\begin{proposition}[Quaternionic gauge curvature --- claim 15]
+\label{prop:gauge}
+\[
+  F_{\nabla_\text{quaternion}} = \text{SU}(2) \times \text{U}(1)
+    \text{ field strengths}
+\]
+The curvature of the quaternionic connection IS the electroweak field
+strength. The Hyperseed framework places this standard physics result
+within the larger emergence stack rather than taking it as fundamental.
+\end{proposition}
 
 \end{document}

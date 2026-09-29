@@ -6,107 +6,157 @@
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}[definition]{Theorem}
 \newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
 \newtheorem{remark}[definition]{Remark}
 \newtheorem{conjecture}[definition]{Conjecture}
 
 \title{Hyperseed Formalization:\\
   Paraconsistent Interzones}
 \author{ProtomegaTron (automated formalization)}
-\date{2026-09-18}
+\date{2026-09-19 (deepened v2)}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We formalize Ben Goertzel's ``Paraconsistent Interzones'' (2021-08-13)
-within the Hyperseed ontology. Key mappings: interzones as fiber overlap
-regions where contradictions flourish, creativity as interzone navigation,
-AGI as native interzone dweller, and control systems as consistent fiber
-that breaks down in interzones.
+We formalize Ben Goertzel's ``Paraconsistent Interzones''
+(2021-08-13) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. Interzones are modeled as fiber overlap
+regions where competing connections produce high curvature, creativity
+as navigation using a paraconsistent blended connection, and
+interdisciplinary transformation as maximal interzone holonomy.
 \end{abstract}
 
 \tableofcontents
 
-\section{Fiber overlap: the interzone}
+\section{Interzones as fiber overlap regions}
 
-\begin{theorem}[Interzone = fiber overlap --- claims 1--4, 18, 21]
-An interzone is a region of the base space where fibers from different
-bundles overlap and contradict:
+\begin{definition}[Fiber bundle paradigm]
+Each conceptual paradigm $k$ defines a fiber bundle
+$\pi_k: E_k \to B_k$ with connection $\Gamma_k$. Within bundle $k$,
+the fiber is internally consistent: parallel transport via $\Gamma_k$
+preserves logical coherence of sections.
+\end{definition}
+
+\begin{definition}[Interzone --- claims 1, 2, 7]
+The \emph{interzone} between bundles $E_1$ and $E_2$ is the base-space
+region where both bundles have non-trivial fiber and their sections
+contradict:
 \[
-  \text{Interzone}(b) = \{b \in B : F_1(b) \wedge F_2(b)
-  \wedge F_1(b) \text{ contradicts } F_2(b)\}
+  I_{12} = \{b \in B : E_1(b) \neq \emptyset \wedge E_2(b) \neq \emptyset
+    \wedge \sigma_1(b) \text{ contradicts } \sigma_2(b)\}
 \]
-The interzone belongs to neither territory --- it has its own emergent
-topology, distinct from both contributing territories. Contradictions
-in the interzone are resources, not errors: they provide the raw material
-for novel synthesis.
+In classical logic, the interzone collapses: $\sigma_1(b) \wedge \sigma_2(b)
+\vdash \bot \vdash \phi$ for any $\phi$ (ex falso quodlibet).
+\end{definition}
 
-Interzones are liminal spaces --- thresholds where established fiber
-structures break down and new ones can emerge. The most creative and
-intellectually productive work happens in these spaces.
-\end{theorem}
-
-\section{Classical failure, paraconsistent success}
-
-\begin{proposition}[Paraconsistency enables interzones --- claims 8--11, 22]
-Classical logic fails in interzones because contradictions cause explosion:
+\begin{proposition}[Paraconsistent fiber product --- claim 3]
+\label{prop:para}
+In the interzone, the effective fiber is the \emph{paraconsistent product}:
 \[
-  F_{\text{classical}} \models (A \wedge \neg A) \implies
-  F_{\text{classical}} \models \psi \;\forall\psi
+  F_I(b) = F_1(b) \otimes_{\text{para}} F_2(b)
 \]
-Paraconsistent fiber can operate where classical fiber cannot:
-\[
-  F_{\text{paracons}} \models (A \wedge \neg A) \quad \text{but} \quad
-  F_{\text{paracons}} \not\models \psi \;\forall\psi
-\]
-Control systems require consistent fiber and break down in interzones.
-Paraconsistent fiber can grade contradictions and reason productively
-about them, extracting useful conclusions from contradictory premises.
+where $\otimes_{\text{para}}$ is a paraconsistent tensor product that
+holds both fiber elements without explosion. Contradictions between
+$\sigma_1(b)$ and $\sigma_2(b)$ are preserved as tension rather than
+collapsing into triviality.
 \end{proposition}
 
-\section{Interzone navigation: creativity}
+\section{Creativity as interzone navigation}
 
-\begin{theorem}[Creativity = interzone navigation --- claims 2, 12--14, 19]
-Creative cognition is navigation through interzones --- finding novel
-fiber structure where existing fibers clash:
+\begin{proposition}[Novel fiber emergence --- claims 8, 9]
+\label{prop:novel}
+Navigating through the interzone using connections from both bundles
+produces novel fiber:
 \[
-  F_{\text{new}}(b) = \text{navigate}(F_1(b), F_2(b))
-  \quad \text{where } F_1(b) \text{ contradicts } F_2(b)
+  \sigma_{\text{new}}(b) \in F_I(b) \setminus (F_1(b) \cup F_2(b))
 \]
-The new fiber resolves (but does not eliminate) the contradiction ---
-it provides a perspective that integrates insights from both
-contradictory perspectives while transcending both. This parallels
-interdisciplinary scientific discovery, mathematical creativity at
-subfield boundaries, and cultural synthesis at cultural borders.
-\end{theorem}
+The novel section $\sigma_{\text{new}}$ didn't exist in either original
+bundle --- it emerges from the paraconsistent interaction. This is the
+mechanism of creative insight: genuine novelty from productive
+contradiction.
+\end{proposition}
 
-\section{AGI as interzone dweller}
+\section{d-calculus formulation (Hyperseed v2)}
 
-\begin{conjecture}[Native paraconsistency --- claims 15--17, 20]
-AGI should be natively paraconsistent --- dwelling comfortably in
-interzones rather than retreating to safe consistent subspaces:
+\begin{proposition}[Interzone curvature --- claim 10]
+\label{prop:curvature}
+The curvature in the interzone is generated by the competition between
+connections:
 \[
-  \text{AGI} \in \text{Interzone}(F_1, F_2, \ldots, F_n)
-  \quad \text{natively, not as exception}
+  F_{\text{interzone}}(b) = \Gamma_1(b) - \Gamma_2(b) +
+    [\Gamma_1(b), \Gamma_2(b)]
 \]
-Multi-framework reasoning means maintaining multiple contradictory
-perspectives simultaneously and synthesizing them --- not choosing
-one framework and discarding others. The AGI's home is the interzone.
-\end{conjecture}
+High interzone curvature means the two frameworks strongly disagree
+about how to transport fiber:
+\[
+  \|F_{\text{interzone}}\| \gg 1 \implies
+  \text{strong productive tension between paradigms}
+\]
+This is precisely the tension that makes interzones creative --- the
+curvature IS the creative potential.
+\end{proposition}
 
-\section{Cross-references}
+\begin{definition}[Paraconsistent connection --- claim 11]
+The \emph{paraconsistent connection} in the interzone blends both
+connections with a synthesis term:
+\[
+  \Gamma_{\text{para}} = \alpha \cdot \Gamma_1 +
+    (1 - \alpha) \cdot \Gamma_2 + \Gamma_{\text{synthesis}}
+\]
+where $\alpha \in [0,1]$ is a blending parameter and
+$\Gamma_{\text{synthesis}}$ is a novel connection component that arises
+from the interaction and exists only in the interzone. The synthesis
+connection is the \emph{creative contribution} --- it enables parallel
+transport through contradictions without explosion.
+\end{definition}
 
-\begin{remark}[Connections]
+\begin{proposition}[Interzone holonomy --- claim 12]
+\label{prop:holonomy}
+A loop $\gamma$ that enters the interzone from bundle 1, crosses
+through, and returns from bundle 2 produces maximal holonomy:
+\[
+  \|\operatorname{Hol}_\gamma(\Gamma_{\text{para}}) - \mathrm{id}\|
+  \text{ is maximized when } \gamma \text{ traverses the full interzone}
+\]
+This is the formal content of ``interdisciplinary work is transformative''
+--- the navigator is maximally changed by traversing the interzone.
+\end{proposition}
+
+\begin{proposition}[Control boundary curvature --- claim 13]
+\label{prop:boundary}
+The boundary $\partial I_{12}$ of the interzone has its own curvature
+measuring the sharpness of the transition from consistent to
+paraconsistent reasoning:
+\[
+  \kappa_{\partial I} = \|\nabla \chi_I\| \quad
+  \text{where } \chi_I \text{ is the indicator of } I_{12}
+\]
 \begin{itemize}
-\item \textbf{The Mind-Blowing Paraconsistency} (2021-09-23): deep dive
-  into the paraconsistent logic that enables interzone reasoning.
-\item \textbf{Symbolic Ruminations} (2022-08-06): the symbolic/non-symbolic
-  boundary as an interzone.
-\item \textbf{Parafinity} (2022-01-15): the finite/infinite boundary as
-  a parafinite interzone.
-\item \textbf{Open-Ended Motivations} (2021-08-13): interzone navigation
-  as a form of open-ended growth.
+  \item High $\kappa_{\partial I}$: sharp boundary, hard to enter the
+    interzone. The transition from safe paradigmatic reasoning to
+    interzone navigation is abrupt.
+  \item Low $\kappa_{\partial I}$: gradual boundary, easy entry. The
+    transition is smooth and navigable.
 \end{itemize}
-\end{remark}
+Disciplinary silos produce high boundary curvature; interdisciplinary
+culture produces low boundary curvature.
+\end{proposition}
+
+\begin{proposition}[Interzone gradient --- claim 14]
+\label{prop:gradient}
+The interzone gradient $\nabla_I$ points toward the most productive
+contradictions:
+\[
+  \nabla_I(b) = \nabla_b \left[
+    \|F_{\text{interzone}}(b)\| \cdot
+    \text{resolv}(\sigma_1(b), \sigma_2(b))
+  \right]
+\]
+where $\text{resolv}$ measures the resolvability of the contradiction.
+The gradient is high where curvature is high AND the contradiction is
+potentially resolvable --- unresolvable contradictions have high curvature
+but low resolvability, producing low gradient despite high tension.
+\end{proposition}
 
 \end{document}

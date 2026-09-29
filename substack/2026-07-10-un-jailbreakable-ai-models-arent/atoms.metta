@@ -1,72 +1,70 @@
 ;; =============================================================
 ;; Seed atoms — Un-Jailbreakable AI Models Aren't a Thing
 ;; Source: Ben Goertzel, Eurykosmotron, 2026-07-10
+;; Deepened: 2026-09-23 (Hyperseed v2 / d-calculus)
 ;; =============================================================
 
 ;; ---- Type declarations ----
 (: AttackType Type)
-(: VerificationMode Type)
-(: DecisionNode Type)
+(: VerificationLayer Type)
 
-;; ---- Two kinds of attack (claims 1-4) ----
-(--> authority-attack ([] (prompt-injection overriding-instructions)))
-(--> capability-elicitation-attack ([] (model-follows-instructions produces-dangerous-artifact)))
-(--> capability-elicitation-attack ([] (violation in-deployment-trace not-single-prompt)))
-(--> campaign-level-threat ([] (probability Qp near-certainty-over-iterations)))
-(--> security-claims ([] (must-be campaign-level not-per-prompt)))
+;; ---- Two kinds of attack (claims 1-3) ----
+(: authority-attack AttackType)
+(: capability-elicitation-attack AttackType)
+(--> authority-attack ([] (prompt-injection override-instructions)))
+(--> capability-elicitation-attack ([] (correct-following dangerous-artifacts fable-concern)))
+(--> attack-defense ([] (authority-needs better-instruction-following)))
+(--> attack-defense ([] (capability-needs output-verification)))
 
-;; ---- Generate-and-verify architecture (claims 5-9, 27, 32) ----
-(--> generate-and-verify ([] (neural-generates symbolic-judges)))
-(--> formalizer-ensemble ([] (multiple-independent-formalizers different-formal-lenses)))
-(--> judgment-layer ([] (fuses deductive-facts-about-artifact with probabilistic-evidence-about-context)))
-(--> graduated-release ([] (not-flat-yes-no release-fix-withhold-exploit)))
-(--> re-verification ([] (second-pass on-actual-released-artifact)))
-;; Fiber-base verification
+;; ---- Campaign-level security (claims 4-6) ----
+(--> single-prompt-probability ([] (small-leak-p per-attempt)))
+(--> campaign-probability ([] (near-certainty Q-times-p many-attempts)))
+(--> per-prompt-evaluation ([] (inadequate must-evaluate-campaign-level)))
+
+;; ---- Generate-and-verify (claims 7-10) ----
+(--> neural-generation ([] (llm-candidates broad-exploration base-space)))
+(--> symbolic-verification VerificationLayer)
+(--> symbolic-verification ([] (code-analysis formal-methods pln-uncertain-reasoning)))
+(--> judgment-fusion ([] (deductive-what-artifact-does probabilistic-who-asks-why)))
+(--> generate-verify-necessity ([] (neither-alone-suffices both-layers-required)))
+
+;; ---- Why neural-symbolic (claims 11-13) ----
+(--> transformer-weakness ([] (not-inspectable huge-parameters harder-audit easier-hack)))
+(--> pln-strength-confidence ([] (distinguishes strong-evidence-safe nobody-checked-safe)))
+(--> calibrated-uncertainty ([] (knows-how-much-it-knows not-just-what-it-thinks)))
+
+;; ---- Why openness (claims 14-16) ----
+(--> open-weights ([] (enable-probing inspect-activations)))
+(--> diverse-verifier-ensembles ([] (many-parties different-perspectives closed-cant-generate)))
+(--> verification-robustness ([] (requires diversity independence structural-properties)))
+
+;; ---- Decision spine (claims 17-18) ----
+(--> decision-spine ([] (structured-tree open-vs-closed per-capability)))
+(--> current-conditions ([] (most-cases-route-to open-and-gated)))
+
+;; ---- Cryptographic laterality (claims 19-20) ----
+(--> mpc-secret-sharing ([] (splay-inference-across-networks)))
+(--> full-state-theft ([] (requires-whole-network no-single-node)))
+
+;; ---- Hyperseed interpretations (claims 21-24) ----
 (--> generate-and-verify fiber-base-verification)
-(--> fiber-base-verification ([] (neural-in-base-space symbolic-in-fiber-space)))
-;; Section trimming
-(--> graduated-release section-trimming)
-(--> section-trimming ([] (full-section-exists safe-sub-section-released)))
+(--> fiber-base-verification ([] (neural-explores-base symbolic-inspects-fiber)))
+(--> pln-fc anti-scalar-collapse-security)
+(--> anti-scalar-collapse-security ([] (two-number-resists binary-safe-dangerous)))
+(--> diverse-verifiers distributed-fiber-inspection-security)
+(--> distributed-fiber-inspection-security ([] (many-inspectors structural-independence)))
+(--> campaign-level directed-type-analysis)
+(--> directed-type-analysis ([] (single-prompt-0-cell campaign-1-cell security-at-1-cell)))
 
-;; ---- Why neural-symbolic (claims 10-13, 28) ----
-(--> transformer-models ([] (not-transparently-inspectable not-calibrated more-hackable)))
-(--> pln-two-numbers ([] (strength-and-confidence distinguishes safe-strong-evidence from safe-nobody-checked)))
-(--> pln-two-numbers ([] (fail-closed-honestly)))
-(--> ecan ([] (attention-allocation focuses-verification-on-highest-risk)))
-(--> verification-principle ([] (architecture-neutral verification-wants-to-be-symbolic)))
-;; Anti-(f,c)-lossy
-(--> pln-two-numbers anti-fc-lossy)
-(--> anti-fc-lossy ([] (anti-scalar-collapse applied-to-security-judgments)))
+;; ---- d-calculus claims (claims 25-29) ----
+(--> verification-depth-curvature ([] (info-gain-per-layer high-worth-investing)))
+(--> campaign-holonomy ([] (attacker-info-per-cycle minimize-attacker maximize-defender)))
+(--> verifier-independence-curvature ([] (independence-measure high-true-diversity low-correlated)))
+(--> generate-verify-gap-curvature ([] (coverage-gap minimize-no-escape)))
+(--> confidence-depth-gradient ([] (dc-ddepth pln-makes-measurable)))
 
-;; ---- Why openness helps (claims 14-17, 29) ----
-(--> open-weights ([] (verifiers-probe-activations read-representations)))
-(--> open-ecosystem ([] (diverse-independent-verifier-ensembles)))
-(--> verification-robustness ([] (from-ensemble-independence not-single-verifier-cleverness)))
-(--> attacker-has-weights ([] (but sandbox-checks cant-be-talked-around)))
-;; Anti-scalar-collapse in verification
-(--> diverse-verifier-ensemble anti-scalar-collapse-verification)
-(--> anti-scalar-collapse-verification ([] (multiple-independent-verifiers resist-scalar-collapse)))
-
-;; ---- Decision spine (claims 18-22, 31) ----
-(--> decision-spine-containable ([] (scarce-knowledge vs re-derivable)))
-(--> decision-spine-armed-anyway ([] (adversary-gets-capability-regardless)))
-(--> decision-spine-defense-balance ([] (defense-symmetric diffuse-vs-catastrophic)))
-(--> decision-spine-gate-reliable ([] (jailbreak-robust and politically-stable)))
-(--> decision-spine-conclusion ([] (today-routes-to open-and-gated-leaves)))
-;; Fiber routing
-(--> decision-spine fiber-routing)
-(--> fiber-routing ([] (each-question corresponds-to fiber-property)))
-
-;; ---- Cryptographic laterality (claims 23-24) ----
-(--> cryptographic-laterality ([] (mpc-secret-sharing splay-across-network)))
-(--> cryptographic-laterality ([] (aspiration not-present)))
-(--> generate-and-verify ([] (works-now)))
-
-;; ---- Campaign as directed type (claim 30) ----
-(--> campaign-security directed-type-analysis)
-(--> directed-type-analysis ([] (directed-sequences not-0-cell-events)))
-(--> directed-type-analysis ([] (each-step conditions-next)))
-
-;; ---- Collaboration (claims 25-26) ----
-(--> security-framework ([] (portable wraps-proprietary-and-open)))
-(--> security-framework ([] (cross-architecture-applicable)))
+;; ---- Cross-references ----
+(--> un-jailbreakable ([] (related-to avoiding-catastrophe-pt2 cryptographic-laterality)))
+(--> un-jailbreakable ([] (related-to fable-farce same-episode technical-impossibility)))
+(--> un-jailbreakable ([] (related-to bioterrorism generate-and-verify-screening)))
+(--> un-jailbreakable ([] (related-to seven-flavors deployment-cascade)))

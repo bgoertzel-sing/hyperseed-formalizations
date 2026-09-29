@@ -5,7 +5,7 @@
 - Publication: Eurykosmotron / Substack
 - Published: 2026-05-07
 - Retrieved: 2026-09-18
-- Status: initial Hyperseed formalization draft
+- Status: deepened Hyperseed formalization (v2, 2026-09-19)
 
 ## Summary
 
@@ -14,7 +14,7 @@ initiative to build AGI outside of any single company, government, or
 institution. Describes the initial network structure: nodes, protocols,
 governance, and technical stack.
 
-Key threads:
+### Core argument
 
 1. **Decentralized AGI development.** Neither Big Tech nor government
    should own or control AGI development. A decentralized network of
@@ -36,24 +36,118 @@ Key threads:
    "open" in marketing but structurally open — anyone can fork, extend,
    or replace components.
 
-## Hyperseed relevance
+### Connection to other Goertzel work
 
-- **Decentralized network = distributed fiber bundle:** Each node
-  contributes its own fiber; the network is the bundle.
-- **Open protocols = shared transition functions:** The protocols are
-  the transition functions that allow fibers from different nodes to
-  compose.
-- **Reputation-weighted governance = fiber-weighted governance:** Weight
-  proportional to fiber contribution, not capital.
-- **Fork/extend/replace = fiber modularity:** Structural openness means
-  any fiber can be replaced without breaking the bundle.
+- **BGI manifesto:** OpenBGI is the organizational realization of the
+  manifesto's vision.
+- **Three things:** Implements path diversity + decentralized development.
+- **Architecture of collective non-self:** OpenBGI's fork-ability and
+  transparency produce collective non-self.
+- **OpenAI shakeup:** OpenBGI is the structural alternative to captured
+  governance.
+
+## Hyperseed ontology interpretation
+
+### Decentralized network as distributed fiber bundle
+
+In the Hyperseed framework, OpenBGI is a distributed fiber bundle —
+each node contributes its own fiber, and the network is the bundle:
+
+- **Node fiber.** Each participating node (researcher, lab, organization)
+  contributes fiber — cognitive capability, data, compute, expertise.
+  The fiber varies across nodes.
+
+- **Bundle structure.** The bundle is the collection of all node fibers
+  connected by shared protocols. No single node's fiber dominates;
+  the bundle's capability exceeds any individual node.
+
+- **Distributed base.** The base space is distributed across geographic,
+  organizational, and jurisdictional boundaries. No single jurisdiction
+  or organization controls the base.
+
+### Open protocols as shared transition functions
+
+The open protocols are the transition functions that enable fiber
+composition across nodes:
+
+- **Transition functions.** When fiber from node A needs to compose with
+  fiber from node B, the open protocol provides the transition function
+  that mediates the composition.
+
+- **Interoperability.** Open protocols ensure that any node's fiber can
+  compose with any other node's fiber — the transition functions are
+  universal, not bilateral.
+
+- **Fork-ability.** Because the protocols are open, any subset of nodes
+  can fork the network — taking the protocols and building a different
+  bundle. This is structural non-self.
+
+### Reputation-weighted governance as fiber-weighted governance
+
+Governance weight proportional to fiber contribution:
+
+- **Contribution-based weight.** Governance weight ∝ fiber contribution
+  (code, data, research, compute). Not capital contribution or token
+  holdings.
+
+- **Merit fiber.** The governance connection Γ_gov transports merit-based
+  fiber — decisions weighted by demonstrated capability, not financial
+  stake.
+
+- **Anti-capture.** Reputation weighting resists capital gravity (the
+  OpenAI failure mode) because governance power comes from contribution,
+  not investment.
+
+### d-calculus connection (Hyperseed v2)
+
+- **Network diversity curvature.** The curvature between different nodes'
+  fiber measures network diversity:
+
+  ||F_∇(node_A, node_B)|| = structural difference between nodes
+
+  High inter-node curvature: diverse network (different approaches,
+  capabilities, perspectives). Low curvature: homogeneous network
+  (similar nodes, limited diversity benefit).
+
+- **Protocol universality curvature.** The curvature of the protocol
+  layer measures how well protocols mediate cross-node composition:
+
+  ||F_∇_protocol|| = friction in cross-node fiber composition
+
+  Low protocol curvature: smooth interoperability (well-designed
+  protocols). High protocol curvature: friction (protocols don't
+  adequately mediate different fiber types).
+
+- **Governance holonomy.** A governance cycle (propose → deliberate →
+  decide → implement → evaluate → propose) produces holonomy:
+
+  Hol_γ(Γ_gov) = governance evolution per cycle
+
+  Healthy holonomy: governance adapts to network growth and changing
+  needs. Pathological holonomy: governance drifts toward capture
+  (OpenAI pattern).
+
+- **Anchor independence curvature.** The curvature between OpenBGI and
+  its anchor organization (SingularityNET):
+
+  ||F_∇(OpenBGI, SingularityNET)|| → 0 over time
+
+  The design goal: as OpenBGI matures, the coupling to SingularityNET
+  decreases. The network becomes structurally independent of its
+  founding anchor — the opposite of the OpenAI pattern where coupling
+  to Microsoft increased.
+
+- **Fork-ability gradient.** The gradient of fork-ability across the
+  network:
+
+  ∇_fork = ∇(protocol_openness × data_openness × code_openness)
+
+  OpenBGI maximizes this gradient — every component is forkable.
+  The fork-ability gradient is the structural foundation of non-self
+  at the organizational level.
 
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
-- `formalization.tex` — LaTeX formalization.
-- `atoms.metta` — MeTTa seed atoms.
-
-## Working convention
-
-The Substack article is treated as an authored source.
+- `formalization.tex` — LaTeX formalization with d-calculus extensions.
+- `atoms.metta` — MeTTa seed atoms for AtomSpace/PLN experiments.

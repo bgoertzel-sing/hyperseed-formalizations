@@ -1,66 +1,50 @@
 ;; =============================================================
 ;; Seed atoms — The Fable of Benevolent Throttling
 ;; Source: Ben Goertzel, Eurykosmotron, 2026-07-12
+;; Deepened: 2026-09-23 (Hyperseed v2 / d-calculus)
 ;; =============================================================
 
 ;; ---- Type declarations ----
-(: PolicyDynamic Type)
-(: RemedyType Type)
+(: ThrottlingDynamic Type)
+(: GovernanceFiber Type)
 
-;; ---- Partial legitimacy (claims 1-3) ----
-(--> some-capability-restrictions ([] (genuinely-justified safety-grounds)))
-(--> bio-chem-cyber-restrictions ([] (sane defensible)))
-(--> visible-rerouting ([] (honest-attempt responsible)))
+;; ---- Core article claims (1-10) ----
+(--> capability-restrictions ([] (partial-legitimacy bio-chem offensive-cyber genuinely-justified)))
+(--> safety-competitive-indistinguishability ([] (same-classifier same-throttle same-moat)))
+(--> observational-identity ([] (good-faith bad-faith identical-outcomes)))
+(--> incentive-gradient ([] (attractor no-villain self-building moat)))
+(--> incentive-gradient ([] (legal-memos safety-reviews nat-sec-calls board-terror)))
+(--> government-corporate-fusion ([] (export-control frontier-access nat-sec-lever)))
+(--> policy-blur ([] (corporate-governance state-security-policy indistinguishable)))
+(--> ratchet-mechanism ([] (each-turn-defensible composition-monopoly)))
+(--> ratchet-endpoint ([] (handful-companies one-two-governments cognitive-technology)))
+(--> decentralization-remedy ([] (open-weights transparent-infrastructure crypto-verification distributed-governance)))
+(--> visibility-by-construction ([] (open-slippage-visible closed-slippage-hidden)))
 
-;; ---- Safety-competitive indistinguishability (claims 4-6, 22, 27) ----
-(--> safety-framing ([] (same-classifier same-throttle same-moat as competitive-framing)))
-(--> (× safety-policy fiduciary-interest) ([] observationally-indistinguishable))
-(--> throttling-situation ([] (institutional-logic not-unique-villainy)))
-;; Cocycle ambiguity
+;; ---- Hyperseed interpretations (11-17) ----
 (--> safety-competitive-indistinguishability cocycle-ambiguity)
-(--> cocycle-ambiguity ([] (same-transition-function both-fibers)))
-(--> cocycle-ambiguity ([] (degenerate-cocycle observer-cannot-distinguish)))
-;; Fiber degeneracy
-(--> cocycle-ambiguity fiber-degeneracy)
-(--> fiber-degeneracy ([] (two-fibers same-section needs-additional-structure)))
-
-;; ---- Incentive gradient (claims 7-9, 23, 24) ----
-(--> moat ([] (builds-itself from-incentives)))
-(--> boundary-erosion ([] (inevitable under-late-capitalism)))
-(--> moral-fluency ([] (smart-sincere-people find-morally-fluent-reasons)))
-;; Centralizing cocycle
+(--> cocycle-ambiguity ([] (same-transition-function both-fibers observer-cant-determine)))
+(--> cocycle-ambiguity ([] (structural-not-intentional intent-irrelevant)))
 (--> incentive-ratchet centralizing-cocycle)
-(--> centralizing-cocycle ([] (each-turn concentrates-control)))
-;; Provenance laundering
-(--> moral-fluency provenance-laundering)
-(--> provenance-laundering ([] (actual-origin competitive-pressure wrapped-in safety-reasoning)))
-(--> provenance-laundering ([] (same-r-auth-failure deceptive-letters)))
+(--> centralizing-cocycle ([] (individually-defensible-composition monopoly-holonomy)))
+(--> incentive-ratchet emergent-evil-pattern)
+(--> emergent-evil-pattern ([] (local-incentives global-concentration no-villain)))
+(--> decentralization-remedy broken-monopoly-cocycle)
+(--> broken-monopoly-cocycle ([] (traversable-transitions no-single-controller)))
+(--> visibility-by-construction inspectable-fiber-structure)
+(--> inspectable-fiber-structure ([] (safety-vs-competitive detectable-in-open hidden-in-closed)))
+(--> government-corporate-fusion fiber-entanglement)
+(--> fiber-entanglement ([] (corporate-state non-separable export-control-entangled)))
 
-;; ---- Government-corporate fusion (claims 10-12) ----
-(--> export-control-directive ([] (precedent frontier-access national-security-lever)))
-(--> foreign-nationals ([] default-suspects))
-(--> (× corporate-governance state-security) ([] blurring))
+;; ---- d-calculus claims (18-22) ----
+(--> cocycle-ambiguity-curvature ([] (safety-competitive-distinguishability zero-indistinguishable)))
+(--> ratchet-holonomy ([] (concentration-per-turn monotonically-increasing accelerating)))
+(--> corporate-state-entanglement-curvature ([] (fusion-degree export-control-sharply-increased)))
+(--> visibility-gradient ([] (inspectability-transparency-auditability open-flat-high closed-steep)))
+(--> ratchet-reversibility-curvature ([] (undo-difficulty increasing-irreversibility)))
 
-;; ---- Ratchet mechanism (claims 13-15) ----
-(--> ratchet-endpoint ([] (small-club frontier-labs government-supervision)))
-(--> ratchet-endpoint ([] (safety-justification for oligopolistic-advantage)))
-(--> ratchet-turns ([] (individually-defensible endpoint-oligopoly)))
-(--> fable-episode ([] (template for-next-fifty)))
-
-;; ---- Decentralization as remedy (claims 16-21, 25, 26) ----
-(--> decentralized-remedy ([] (open-weights transparent-infra crypto-verification distributed-governance)))
-(--> decentralization ([] (compatible-with safety)))
-(--> decentralized-safety ([] (more-robust because-trustless)))
-(--> open-system ([] (visibility-by-construction)))
-(--> visibility-by-construction ([] (prevents lies-baked-into-infrastructure)))
-;; Broken monopoly cocycle
-(--> decentralized-remedy broken-monopoly-cocycle)
-(--> broken-monopoly-cocycle ([] (transition-functions traversable-by-anyone)))
-;; Provenance transparency
-(--> visibility-by-construction provenance-transparency)
-(--> provenance-transparency ([] (r-auth applied-to-infrastructure)))
-(--> provenance-transparency ([] (trust-through-inspectable-provenance not-institutional-authority)))
-
-;; ---- Access as revocable privilege ----
-(--> centralized-access ([] (revocable-privilege single-directive)))
-(--> decentralized-access ([] (no-single-kill-switch no-nerf-dial)))
+;; ---- Cross-references ----
+(--> benevolent-throttling ([] (related-to fable-farce same-episode incentive-focus)))
+(--> benevolent-throttling ([] (related-to seven-flavors eternal-regime humanity-evil)))
+(--> benevolent-throttling ([] (related-to avoiding-catastrophe stewardship-observability-hinges)))
+(--> benevolent-throttling ([] (related-to watermarking centralizing-cocycle)))

@@ -5,7 +5,7 @@
 - Publication: Eurykosmotron / Substack
 - Published: 2026-06-10
 - Retrieved: 2026-09-17
-- Status: initial Hyperseed formalization draft
+- Status: deepened Hyperseed formalization (v2, 2026-09-22)
 
 ## Summary
 
@@ -14,7 +14,7 @@ and argues for architecture over politics, Part 2 dives into the technical
 mechanisms that make forkability low and lead-scaling high: super-additivity,
 cryptographic laterality, and cognitive-cryptographic alignment.
 
-Key threads:
+### Core argument
 
 1. **Super-additivity.** The whole must be more than the sum of parts. A
    fork that steals a shard must get a husk, not a working AGI. The
@@ -52,26 +52,138 @@ Key threads:
    lower forkability, selecting the lowest-forkability element buys safety
    at capability cost ≤ ε.
 
-## Hyperseed relevance
+### Connection to other Goertzel work
 
-- **Super-additivity = non-separable fiber:** Same as Part 1 — the
-  capability fiber can't be factored into independent components.
-- **Essential laterality = fiber dependency structure:** The derivation's
-  genuine dependency on multiple nodes is the fiber's structural
-  dependency on multiple base points.
-- **Cognitive-cryptographic alignment = cocycle-access alignment:** The
-  cryptographic access structure mirrors the cognitive cocycle — the
-  coalition needed for inference = the coalition authorized for the secret.
-- **Distillation defense = moving-target fiber:** The controller's
-  dependence on fresh live state means the fiber is constantly
-  regenerated — a snapshot is immediately stale.
+- **Part 1:** Seven Hinges framework; this article operationalizes the
+  forkability and lead-scaling hinges.
+- **OpenBGI / ASI:Chain:** The decentralized infrastructure that implements
+  the four-layer architecture.
+- **Orchard bug:** Formal verification as an instance of the same principle
+  — compositional correctness must be proven, not assumed.
+
+## Hyperseed ontology interpretation
+
+### Super-additivity as non-separable fiber
+
+Same principle as Part 1, developed in more technical detail:
+
+- **Non-separable fiber.** The inference control fiber cannot be factored
+  into independent components. The cross-domain interaction patterns that
+  make the whole smarter than the sum cannot be extracted from any subset
+  of nodes.
+
+- **Entangled fiber.** The super-additivity is analogous to quantum
+  entanglement: the joint state has properties that no collection of
+  marginal states can reproduce. Forking = taking marginals of an
+  entangled state, which necessarily loses the entangled information.
+
+### Essential laterality as fiber dependency structure
+
+A derivation's genuine dependency on multiple nodes is the fiber's
+structural dependency on multiple base points:
+
+- **k-lateral fiber.** A fiber that requires k base points to define
+  its value. Cannot be computed from any k-1 base points. This is the
+  fiber-theoretic definition of essential laterality.
+
+- **Threshold structure.** The k-threshold is a structural property of
+  the fiber bundle, not an arbitrary access control choice. The
+  cryptographic threshold should match the fiber's essential laterality.
+
+### Cognitive-cryptographic alignment as cocycle-access alignment
+
+The cryptographic access structure mirrors the cognitive cocycle:
+
+- **Cocycle-access alignment.** The coalition needed for a cognitive
+  derivation (the cocycle's domain) equals the coalition authorized
+  for the cryptographic secret (the access structure). These are the
+  same mathematical object viewed from two angles.
+
+- **Misalignment = security hole.** If the access structure is broader
+  than the essential laterality (more nodes authorized than needed),
+  there's a security hole: a smaller coalition can extract the secret.
+  If narrower, there's a usability hole: legitimate derivations can't
+  access the controller.
+
+### Distillation defense as moving-target fiber
+
+The controller's dependence on fresh live state:
+
+- **Non-static fiber.** The fiber is constantly regenerated from live
+  state. A snapshot (distillation attempt) captures a single fiber
+  value, but the fiber has moved by the time the snapshot is used.
+
+- **Temporal non-separability.** The fiber at time t depends on the
+  full history, not just the current state. Distillation captures a
+  point-in-time approximation that lacks the temporal fiber depth.
+
+### Four-layer architecture as fiber depth hierarchy
+
+The four layers are fiber depth levels:
+
+- **Public (shallow).** Openly available, no protection needed. Shallow
+  fiber — anyone can read it.
+
+- **Local-private (medium).** Agent-specific, moderate protection.
+  Medium fiber depth.
+
+- **Threshold-control (deep).** MPC-protected, high-value control
+  policy. Deep fiber requiring k-of-n coalition to access.
+
+- **Governance-audit (deepest).** System-wide oversight. Deepest fiber
+  — full coalition required.
+
+### d-calculus connection (Hyperseed v2)
+
+- **Laterality curvature.** The curvature of the essential laterality
+  structure:
+
+  ||F_∇_laterality|| = strength of multi-node dependency
+
+  High curvature: derivations genuinely depend on many nodes (strong
+  laterality, hard to fork). Low curvature: derivations are
+  approximately local (weak laterality, easy to fork).
+
+- **Cocycle-access alignment curvature.** The curvature between the
+  cognitive cocycle and the cryptographic access structure:
+
+  ||F_∇(cocycle, access)|| = misalignment between cognitive and
+    cryptographic structure
+
+  Zero: perfect alignment (the coalition you need to think = the
+  coalition you need to decrypt). Nonzero: misalignment (security
+  or usability hole).
+
+- **Distillation defense holonomy.** A temporal loop (snapshot →
+  deploy → observe → re-snapshot) produces holonomy:
+
+  Hol_γ(Γ_distillation) = staleness rate of distilled controller
+
+  High holonomy: distilled controller goes stale quickly (strong
+  defense). Low holonomy: distilled controller remains useful
+  (weak defense). The moving-target design maximizes this holonomy.
+
+- **Layer depth curvature.** The curvature between adjacent layers
+  of the four-layer architecture:
+
+  ||F_∇(layer_i, layer_{i+1})|| = protection boundary strength
+
+  High curvature: strong boundary (hard to escalate without
+  authorization). Low curvature: weak boundary (easy to
+  bypass). Each layer boundary should have high curvature.
+
+- **Safety-capability tradeoff gradient.** The gradient of safety
+  vs capability in strategy space:
+
+  ∇_safety = ∇(forkability_reduction / capability_cost)
+
+  The article's key result: if S*_ε contains a threshold-lateral
+  strategy, the gradient shows you can buy substantial safety
+  (low forkability) at capability cost ≤ ε. The gradient is
+  favorable — safety is cheap in the near-optimal region.
 
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
-- `formalization.tex` — LaTeX formalization.
-- `atoms.metta` — MeTTa seed atoms.
-
-## Working convention
-
-The Substack article is treated as an authored source.
+- `formalization.tex` — LaTeX formalization with d-calculus extensions.
+- `atoms.metta` — MeTTa seed atoms for AtomSpace/PLN experiments.

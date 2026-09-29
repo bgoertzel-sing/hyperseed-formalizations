@@ -6,58 +6,177 @@
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}[definition]{Theorem}
 \newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
 \newtheorem{remark}[definition]{Remark}
 \newtheorem{conjecture}[definition]{Conjecture}
 
 \title{Hyperseed Formalization:\\
   Is ChatGPT Real Progress Toward Human-Level AGI?}
 \author{ProtomegaTron (automated formalization)}
-\date{2026-09-18}
+\date{2026-09-19 (deepened v2)}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We formalize Ben Goertzel's ``Is ChatGPT Real Progress Toward Human-Level AGI?'' (2023-01-18)
-within the Hyperseed ontology.
+We formalize Ben Goertzel's ``Is ChatGPT Real Progress Toward Human-Level
+AGI?'' (2023-01-18) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. ChatGPT's pattern matching is modeled as a
+high-curvature fiber shortcut that bypasses intermediate fiber structure,
+its missing capabilities as absent fiber dimensions with undefined gradients,
+and scaling as volume inflation that preserves topology without adding the
+new dimensions AGI requires.
 \end{abstract}
 
-\section{Fiber shortcuts and pattern matching}
+\tableofcontents
 
-\begin{proposition}[Pattern matching = fiber shortcut --- claims 1--2, 8]
-ChatGPT's pattern matching is a fiber shortcut:
+\section{Fiber shortcut: pattern matching vs understanding}
+
+\begin{definition}[Full fiber traversal]
+\emph{Full fiber traversal} for a cognitive task maps input through a
+sequence of fiber stages:
 \[
-  f_{\text{ChatGPT}}: \text{input} \to \text{output} \quad \text{bypassing} \quad
-  F_{\text{understanding}}
+  \sigma_{\text{full}}: F_{\text{input}} \xrightarrow{\phi_1}
+    F_{\text{percept}} \xrightarrow{\phi_2} F_{\text{concept}}
+    \xrightarrow{\phi_3} F_{\text{reason}} \xrightarrow{\phi_4}
+    F_{\text{output}}
 \]
-The system jumps directly from input to plausible output without traversing
-the full fiber structure that constitutes genuine understanding. This produces
-impressive fluency but fails when the shortcut doesn't exist in training data.
+Each stage $\phi_i$ adds fiber dimensions: perception adds sensory context,
+conceptualization adds meaning and relations, reasoning adds logical
+structure and implications. The output carries all intermediate fiber
+structure.
+\end{definition}
+
+\begin{definition}[Fiber shortcut --- claims 1, 2, 7]
+A \emph{fiber shortcut} compresses full traversal into a single mapping:
+\[
+  \sigma_{\text{short}}: F_{\text{input}} \xrightarrow{\psi}
+    F_{\text{output}}
+\]
+where $\psi$ is learned from training examples of the full traversal
+$\sigma_{\text{full}}$. The shortcut approximates the input-output
+relation without constructing intermediate fiber.
+\end{definition}
+
+\begin{proposition}[Shortcut fragility --- claim 8]
+\label{prop:fragility}
+Within the training distribution $\mathcal{D}_{\text{train}}$, the shortcut
+is indistinguishable from full traversal:
+\[
+  x \in \mathcal{D}_{\text{train}} \implies
+  \sigma_{\text{short}}(x) \approx \pi_{\text{output}} \circ
+    \sigma_{\text{full}}(x)
+\]
+Outside the training distribution, the shortcut fails unpredictably:
+\[
+  x \notin \mathcal{D}_{\text{train}} \implies
+  \|\sigma_{\text{short}}(x) - \pi_{\text{output}} \circ
+    \sigma_{\text{full}}(x)\| \text{ can be arbitrarily large}
+\]
+The failure is often \emph{confident} --- the shortcut produces output
+with the same fluency as correct output, because the shortcut's quality
+metric is fluency (surface fiber), not correctness (deep fiber).
 \end{proposition}
 
-\section{Thin fiber in key dimensions}
+\section{Thin and absent fiber dimensions}
 
-\begin{proposition}[Missing components = thin fiber --- claims 3--5, 9]
-ChatGPT has thin fiber in critical AGI dimensions:
-\[
-  \dim(F_{\text{memory}}) \approx 0, \quad
-  \dim(F_{\text{embodied}}) = 0, \quad
-  \dim(F_{\text{reasoning}}) \ll \dim(F_{\text{needed}})
-\]
-Broad base coverage (many topics) with thin fiber (no depth in memory,
-embodiment, or robust reasoning) is insufficient for general intelligence.
+\begin{proposition}[Missing components as fiber deficiency --- claims 3, 9]
+\label{prop:thin}
+ChatGPT's fiber bundle has the following dimensional profile:
+\begin{align*}
+  \dim(F_{\text{language}}) &\gg 1 \quad \text{(thick --- well-trained)} \\
+  \dim(F_{\text{knowledge}}) &\gg 1 \quad \text{(thick --- broad training data)} \\
+  \dim(F_{\text{memory}}) &\approx 0 \quad \text{(absent --- no persistence)} \\
+  \dim(F_{\text{embodiment}}) &= 0 \quad \text{(absent --- no physical grounding)} \\
+  \dim(F_{\text{reasoning}}) &\ll 1 \quad \text{(thin --- surface patterns only)} \\
+  \dim(F_{\text{metacognition}}) &= 0 \quad \text{(absent --- no self-reflection)}
+\end{align*}
+The system has impressive \emph{breadth} (many base points covered) but
+insufficient \emph{depth} (key fiber dimensions are thin or absent).
 \end{proposition}
 
-\section{Multi-fiber integration}
+\section{Scaling and topology}
 
-\begin{proposition}[Hybrid = multi-fiber --- claims 6--7, 10]
-Real AGI requires integrated multi-fiber bundles:
-\[
-  F_{\text{AGI}} = F_{\text{neural}} \oplus F_{\text{symbolic}} \oplus
-  F_{\text{embodied}} \oplus F_{\text{memory}}
-\]
-No single fiber type suffices --- the bundle must integrate multiple fiber
-types into a coherent whole. Scaling a single fiber type (neural) alone
-cannot produce the requisite fiber diversity.
+\begin{proposition}[Scaling limits --- claims 4, 6]
+\label{prop:scaling}
+Scaling (increasing parameters $N$) is useful as a component but cannot
+reach AGI alone. ChatGPT-like systems contribute a high-quality
+language-processing connection but need composition with other cognitive
+connections to form a complete AGI architecture.
 \end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Shortcut curvature --- claim 10]
+\label{prop:curvature}
+The fiber shortcut has high curvature --- the mapping $\psi$ bends
+sharply from input to output:
+\[
+  \|F_{\nabla_{\text{short}}}\| \gg \|F_{\nabla_{\text{full}}}\|
+\]
+High curvature implies sensitivity to perturbations: small changes in
+input can cause large, unpredictable changes in output (hallucinations,
+inconsistencies). Full fiber traversal distributes the mapping across
+multiple stages, each with moderate curvature, producing smoother
+overall behavior:
+\[
+  \|F_{\nabla_{\text{full}}}\| \leq \sum_i \|F_{\nabla_{\phi_i}}\|
+  \ll \|F_{\nabla_{\text{short}}}\|
+\]
+\end{proposition}
+
+\begin{proposition}[Missing fiber gradient --- claim 11]
+\label{prop:gradient}
+In fiber dimensions where $\dim(F_d) = 0$ (memory, embodiment,
+metacognition), the gradient is undefined:
+\[
+  \dim(F_d) = 0 \implies \nabla_d F \text{ is undefined}
+\]
+This is a \emph{qualitative} deficiency, not a quantitative one. Scaling
+increases $\dim(F_d)$ for existing dimensions $d$ but cannot create new
+dimensions:
+\[
+  \text{Scale}(F) = \lambda F \implies \{d : \dim(F_d) > 0\}
+  \text{ is unchanged}
+\]
+AGI requires the creation of new fiber dimensions, not the inflation of
+existing ones.
+\end{proposition}
+
+\begin{proposition}[Component connection --- claim 12]
+\label{prop:component}
+ChatGPT contributes a specific connection $\nabla_{\text{lang}}$ that
+maps between linguistic base space $B_{\text{ling}}$ and concept fiber
+$F_{\text{concept}}$:
+\[
+  \nabla_{\text{lang}}: TB_{\text{ling}} \to \text{End}(F_{\text{concept}})
+\]
+This connection is high-quality (well-trained, fluent) but must be
+composed with other connections for full AGI:
+\[
+  \nabla_{\text{AGI}} = \nabla_{\text{lang}} \oplus \nabla_{\text{reason}}
+    \oplus \nabla_{\text{mem}} \oplus \nabla_{\text{embody}}
+    \oplus \nabla_{\text{meta}}
+\]
+The composition requires interface connections $\nabla_{\text{interface}}^{ij}$
+between each pair of connections --- this is cognitive synergy in
+connection-theoretic language.
+\end{proposition}
+
+\begin{proposition}[Scaling as volume inflation --- claim 13]
+\label{prop:volume}
+Scaling preserves fiber topology while inflating volume:
+\[
+  \text{vol}(F_{\text{scaled}}) = \lambda \cdot \text{vol}(F_{\text{base}}),
+  \quad \pi_1(F_{\text{scaled}}) \cong \pi_1(F_{\text{base}})
+\]
+The fundamental group (topology) is unchanged --- no new loops, no new
+dimensions, no new connections. AGI requires topological change:
+\[
+  \pi_1(F_{\text{AGI}}) \not\cong \pi_1(F_{\text{ChatGPT}})
+\]
+New fiber dimensions (memory, embodiment, metacognition) create new
+topological features that scaling cannot produce.
+\end{proposition}
+
 \end{document}

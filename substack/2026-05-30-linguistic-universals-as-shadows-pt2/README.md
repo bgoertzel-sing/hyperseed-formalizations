@@ -5,7 +5,7 @@
 - Publication: Eurykosmotron / Substack
 - Published: 2026-05-30
 - Retrieved: 2026-09-17
-- Status: initial Hyperseed formalization draft
+- Status: deepened Hyperseed formalization (v2, 2026-09-21)
 
 ## Summary
 
@@ -15,7 +15,7 @@ Introduces quantale weakness as a generalized Occam principle, and shows
 how the five linguistic-cognitive correspondences sharpen into transport
 theorems.
 
-Key threads:
+### Core argument
 
 1. **The categorical picture.** Cognition pushes forward into language
    (externalization map), and language pulls back to cognition (inverse
@@ -38,9 +38,10 @@ Key threads:
    cognitive side pushes forward to closure system on linguistic side.
    Fixed points correspond.
 
-5. **Word-order universals = sparse-energy pushforward.** Sparse signed-energy
-   controller on cognitive side produces sparse signed-energy network at
-   linguistic level after marginalizing over non-externalizing variables.
+5. **Word-order universals = sparse-energy pushforward.** Sparse signed-
+   energy controller on cognitive side produces sparse signed-energy
+   network at linguistic level after marginalizing over non-externalizing
+   variables.
 
 6. **Graded universalhood = stability-rate transport.** Linguistic stability
    coefficient is the image of underlying cognitive stability coefficient.
@@ -48,26 +49,139 @@ Key threads:
 7. **Context-indexed universals = glued-closure transport.** Local closure
    operators glue into a global structure via transition maps.
 
-## Hyperseed relevance
+### Connection to other Goertzel work
 
-- **Quantale weakness = fiber-minimal explanation:** The Occam principle
-  selects the explanation that introduces the least fiber structure
-  beyond what the data requires.
-- **Transport theorems = fiber morphisms:** Each correspondence is a
-  fiber morphism from cognitive bundle to linguistic bundle.
-- **Double-counting = scalar collapse:** Correlation-only explanations
-  double-count dependencies = collapse fiber structure into redundant
-  scalar summaries.
-- **TUG trace quotient = fiber quotient:** The trace quotient identifies
-  derivations that produce the same observable output = identifies
-  sections that project to the same base point.
+- **Grand unified physics:** Same Occamistic/weakness principle applied
+  at the physics level.
+- **Part 1:** Builds on empirical findings; this part provides the
+  formal categorical backbone.
+- **Part 3:** Will apply the formalism to specific language families
+  and cognitive architectures.
+
+## Hyperseed ontology interpretation
+
+### Quantale weakness as fiber-minimal explanation
+
+The Occam principle selects the explanation that introduces the least
+fiber structure beyond what the data requires:
+
+- **Fiber-minimal explanation.** Among all explanations compatible with
+  the data, quantale weakness selects the one with least fiber —
+  fewest unnecessary distinctions, minimal representational cost.
+
+- **Five axes as fiber dimensions.** The five comparison axes
+  (indistinction, fit, cost, confusion, double-counting) are
+  five dimensions of explanatory fiber. Weakness minimizes across
+  all five simultaneously.
+
+- **Causal superiority theorem.** Causal explanations have less
+  unnecessary fiber than correlation-only explanations because
+  causal structure provides genuine fiber (mechanistic connection)
+  while correlation-only provides redundant fiber (double-counting
+  shared dependencies).
+
+### Transport theorems as fiber morphisms
+
+Each correspondence is a fiber morphism from cognitive bundle to
+linguistic bundle:
+
+- **Pushforward.** The externalization map pushes cognitive fiber
+  forward to linguistic fiber: $f_*: E_{cog} \to E_{ling}$.
+
+- **Pullback.** Inverse inference pulls linguistic data back to
+  cognitive structure: $f^*: E_{ling} \to E_{cog}$.
+
+- **Structure preservation.** Each transport theorem says: specific
+  fiber structure on the cognitive side is preserved by the
+  pushforward to the linguistic side.
+
+### Double-counting as scalar collapse
+
+Correlation-only explanations double-count dependencies:
+
+- **Scalar collapse.** Double-counting collapses fiber structure into
+  redundant scalar summaries — counting the same dependency twice
+  because the fiber structure (which would reveal the shared source)
+  has been collapsed.
+
+- **Quantale weakness prevents collapse.** By penalizing double-counting
+  explicitly, quantale weakness prevents the scalar collapse that
+  makes correlation-only explanations appear as good as causal ones.
+
+### TUG trace quotient as fiber quotient
+
+The trace quotient identifies derivations with the same observable output:
+
+- **Fiber quotient.** Sections that project to the same base point
+  (same observable output) are identified in the quotient. The
+  quotient fiber retains only the observable distinctions.
+
+- **Factorization in quotient.** The factorization correspondence says:
+  if cognitive fiber factors (commuting modules), then the quotient
+  linguistic fiber factors too — the factorization survives the
+  pushforward and quotient.
+
+### d-calculus connection (Hyperseed v2)
+
+- **Weakness curvature.** The curvature of the weakness functional
+  measures how strongly unnecessary distinctions are penalized:
+
+  ||F_∇_weakness|| = strength of the Occam bias
+
+  High weakness curvature: strong Occam bias (very few structures
+  survive selection). Low weakness curvature: weak Occam bias
+  (many structures survive). The five axes produce a 5-dimensional
+  weakness curvature tensor.
+
+- **Transport curvature.** The curvature of the pushforward map from
+  cognitive to linguistic fiber:
+
+  ||F_∇_transport|| = distortion introduced by externalization
+
+  Low transport curvature: linguistic structure faithfully reflects
+  cognitive structure (the shadow is sharp). High transport curvature:
+  linguistic structure distorts cognitive structure (the shadow is
+  blurred).
+
+- **Factorization holonomy.** A loop through factored cognitive modules
+  produces holonomy in the linguistic image:
+
+  Hol_γ(Γ_factor) = factorization leakage in the linguistic image
+
+  Trivial holonomy: factorization perfectly preserved in language.
+  Non-trivial holonomy: factorization leaks — some cross-module
+  coupling appears in language that doesn't exist in cognition.
+
+- **Closure transport curvature.** The curvature of the closure
+  pushforward from cognitive to linguistic:
+
+  ||F_∇(cl_cog, cl_ling)|| = closure transport fidelity
+
+  Low curvature: cognitive closure maps faithfully to linguistic
+  closure. High curvature: the closure is distorted in transport —
+  cognitive hierarchies don't cleanly become linguistic hierarchies.
+
+- **Stability transport gradient.** The gradient of stability
+  coefficients from cognitive to linguistic level:
+
+  ∇_stability = ∇(cognitive_stability → linguistic_stability)
+
+  The graded universalhood correspondence says this gradient is
+  monotone: more cognitively stable features produce more
+  linguistically stable patterns.
+
+- **Double-counting curvature.** The curvature of the correlation-only
+  vs causal distinction:
+
+  ||F_∇(causal, correlation)|| = double-counting penalty
+
+  The theorem that causal > correlation is the statement that
+  ||F_∇(causal, correlation)|| > 0 — causal and correlation-only
+  explanations occupy genuinely different fiber positions, with
+  causal having lower total weakness.
 
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
-- `formalization.tex` — LaTeX formalization.
-- `atoms.metta` — MeTTa seed atoms.
-
-## Working convention
-
-The Substack article is treated as an authored source.
+- `formalization.tex` — LaTeX formalization with d-calculus extensions.
+- `atoms.metta` — MeTTa seed atoms for AtomSpace/PLN experiments.

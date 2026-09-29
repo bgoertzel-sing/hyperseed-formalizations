@@ -6,55 +6,160 @@
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}[definition]{Theorem}
 \newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
 \newtheorem{remark}[definition]{Remark}
 \newtheorem{conjecture}[definition]{Conjecture}
 
 \title{Hyperseed Formalization:\\
   Someone Should Start a Serious Singularitarian Political Party}
 \author{ProtomegaTron (automated formalization)}
-\date{2026-09-18}
+\date{2026-09-19 (deepened v2)}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We formalize Ben Goertzel's ``Someone Should Start a Serious Singularitarian Political Party'' (2022-10-19)
-within the Hyperseed ontology.
+We formalize Ben Goertzel's ``Someone Should Start a Serious Singularitarian
+Political Party'' (2022-10-19) within the Hyperseed ontology, incorporating
+d-calculus extensions from Hyperseed v2. Political organization is modeled
+as fiber coordination (bundling scattered individual fibers into collective
+capability), with singularitarianism as an orthogonal fiber dimension in
+political space and the pre-AGI period as a closing fiber window.
 \end{abstract}
 
-\section{Fiber coordination: political organization}
+\tableofcontents
 
-\begin{proposition}[Political organization = fiber coordination --- claims 1, 4, 6]
-Political organization is coordinating distributed individual fibers into
-a coherent bundle:
+\section{Political fiber coordination}
+
+\begin{definition}[Political fiber]
+Let $B_{\text{pol}}$ be the \emph{political base space} --- the space of
+policy positions, governance structures, and collective decisions. Each
+agent $a$ has a \emph{political fiber} $F_a \subset F_{B_{\text{pol}}}$
+representing their influence capacity at each policy point.
+\end{definition}
+
+\begin{proposition}[Organization = fiber bundling --- claims 1, 4, 8]
+\label{prop:coordination}
+Political organization bundles scattered individual fibers into a
+coherent collective fiber:
 \[
-  F_{\text{movement}} = \text{bundle}(F_1, F_2, \ldots, F_n)
-  \quad \text{where } F_i \text{ are individual singularitarians}
+  F_{\text{party}} = \text{bundle}(F_1, F_2, \ldots, F_n)
 \]
-Scattered voices are thin, uncoordinated fiber; organized movement is
-thick, coherent fiber capable of collective base-space (political) action.
+where each $F_i$ is thin (individual advocacy has negligible political
+fiber) but the bundle $F_{\text{party}}$ is thick:
+\[
+  \dim(F_{\text{party}}) \gg \max_i \dim(F_i)
+\]
+The bundle produces emergent political capability --- influence at policy
+base points where no individual had fiber. Democratic engagement ensures
+the bundling is coherent (compatible sections) rather than imposed
+(single section dictated).
 \end{proposition}
 
-\section{Orthogonal fiber: beyond left-right}
+\section{Orthogonal political fiber}
 
-\begin{proposition}[Beyond left-right = orthogonal fiber --- claims 3, 7]
-Singularitarianism is an orthogonal fiber direction:
+\begin{proposition}[New political dimension --- claims 2, 3, 9]
+\label{prop:orthogonal}
+Singularitarianism opens a genuinely new fiber dimension in political
+space, orthogonal to the traditional left-right axis:
 \[
-  F_{\text{singularitarian}} \perp F_{\text{left-right}}
+  F_{\text{sing}} \perp F_{\text{L-R}}
 \]
-It adds a new dimension to the political fiber space rather than occupying
-a position on the traditional left-right axis. Policy positions (fund AGI,
-life extension, space) don't align with traditional categories.
+Policy positions (fund AGI, life extension, cognitive liberty, open science)
+don't project onto the left-right axis because they concern a dimension ---
+the future of intelligence and consciousness --- that the traditional
+spectrum does not address. The singularitarian fiber is \emph{perpendicular},
+not a position on the existing spectrum.
 \end{proposition}
 
-\section{Fiber window: urgency}
+\section{Fiber window: pre-transition plasticity}
 
-\begin{proposition}[Urgency = fiber window --- claims 5, 8]
-The window for beneficial fiber influence is time-limited:
+\begin{proposition}[Closing fiber window --- claims 5, 10]
+\label{prop:window}
+The political fiber bundle has time-dependent plasticity:
 \[
-  t < t_{\text{AGI}} \implies \text{organize fiber now}
+  t < t_{\text{AGI}} \implies F_{\text{pol}}(t) \text{ is plastic (shapeable)}
 \]
-After the AGI phase transition, the fiber structure may be determined.
-Pre-transition fiber coordination is essential for beneficial outcomes.
+\[
+  t \geq t_{\text{AGI}} \implies F_{\text{pol}}(t) \text{ may be locked}
+\]
+Before the AGI phase transition, organized political action can shape the
+fiber structure --- which policies, governance structures, and value systems
+are in place when AGI arrives. After the transition, the fiber may be
+determined by the AGI itself or by whoever controls it. Pre-transition
+fiber coordination is therefore essential for beneficial outcomes.
 \end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Coalition curvature --- claims 7, 11]
+\label{prop:coalition}
+Building coalitions across political traditions involves navigating
+curvature in political fiber space. The curvature $F_\nabla^{ij}$
+between singularitarian fiber $i$ and existing political fiber $j$
+determines the ``coalition cost'':
+\[
+  \|F_\nabla^{ij}\| \ll 1 \implies \text{easy coalition (compatible fibers)}
+\]
+\[
+  \|F_\nabla^{ij}\| \gg 1 \implies \text{difficult coalition (incompatible fibers)}
+\]
+Difficult coalitions (high curvature) require more compromise but may
+produce more powerful political fiber if achieved --- the curvature
+itself encodes the potential energy of the coalition.
+\end{proposition}
+
+\begin{proposition}[Democratic holonomy --- claim 12]
+\label{prop:holonomy}
+Democratic governance cycles
+\[
+  \gamma: \text{propose} \to \text{debate} \to \text{vote}
+    \to \text{implement} \to \text{evaluate} \to \text{propose}
+\]
+produce holonomy in the political fiber bundle:
+\[
+  \operatorname{Hol}_\gamma(\nabla) \neq \mathrm{id}
+  \implies \text{genuine political evolution}
+\]
+\[
+  \operatorname{Hol}_\gamma(\nabla) = \mathrm{id}
+  \implies \text{mere cycling (no net change)}
+\]
+A well-functioning singularitarian party produces non-trivial holonomy ---
+each governance cycle genuinely evolves the party's positions and
+capabilities rather than cycling through the same debates.
+\end{proposition}
+
+\begin{proposition}[Urgency as curvature acceleration --- claim 13]
+\label{prop:urgency}
+The narrowing fiber window corresponds to increasing curvature in the
+time direction:
+\[
+  \frac{\partial^2}{\partial t^2} \|F_\nabla\| > 0
+  \quad \text{as } t \to t_{\text{AGI}}
+\]
+The political landscape curves more sharply as AGI approaches --- the
+rate of change of the political fiber accelerates. This makes organized
+action simultaneously more difficult (higher curvature = harder to
+navigate) and more important (the fiber is being shaped faster).
+\end{proposition}
+
+\begin{proposition}[Global fiber coverage --- claims 6, 14]
+\label{prop:global}
+A global movement has fiber coverage over the full geopolitical base
+space $B_{\text{geo}}$:
+\[
+  \{b \in B_{\text{geo}} : \dim(F_{\text{party}}(b)) > 0\}
+  = B_{\text{geo}}
+\]
+rather than a national subregion. This ensures:
+\begin{enumerate}
+  \item No geographic gap in political fiber (AGI affects everyone).
+  \item Robustness to national-level perturbations (single-country
+    policy changes don't collapse the movement).
+  \item Coordination across jurisdictions (consistent global fiber
+    structure through section compatibility).
+\end{enumerate}
+\end{proposition}
+
 \end{document}

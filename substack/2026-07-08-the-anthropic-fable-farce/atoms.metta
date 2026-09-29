@@ -1,6 +1,7 @@
 ;; =============================================================
 ;; Seed atoms — The Anthropic Fable Farce
 ;; Source: Ben Goertzel, Eurykosmotron, 2026-07-08
+;; Deepened: 2026-09-23 (Hyperseed v2 / d-calculus)
 ;; =============================================================
 
 ;; ---- Type declarations ----
@@ -8,7 +9,7 @@
 (: ProvenanceMode Type)
 
 ;; ---- 48-hour farce (claims 1-3) ----
-(--> fable-episode ([] (shipped-wednesday pulled-friday)))
+(--> fable-episode ([] (shipped-wednesday pulled-friday export-control)))
 (--> fable-episode ([] (controlled-demonstration centralized-control-fails)))
 (--> export-control-endpoint ([] (kyc-for-frontier-ai upload-passport)))
 
@@ -17,51 +18,55 @@
 (--> government-retaliation ([] (stop-using-claude supply-chain-risk export-control)))
 (--> principled-refusal ([] (vulnerable-to state-coercion market-access-control)))
 
-;; ---- Marketing and danger theatre (claims 7-9) ----
+;; ---- Marketing theatre (claims 7-9) ----
 (--> danger-then-release ([] (familiar-pattern gpt2-2019 mythos-fable)))
 (--> fable-model ([] (throttled-mythos sensitive-fallback-to-weaker)))
 (--> anthropic-own-goal ([] (argued-danger government-agreed export-controlled)))
 
-;; ---- KYC won't work (claims 10-13, 23) ----
-(--> kyc ([] (leaky-barrier criminals-buy-accounts)))
+;; ---- KYC won't work (claims 10-13) ----
+(--> kyc ([] (leaky-barrier criminals-buy-accounts decades-precedent)))
 (--> liveness-checks ([] (defeated-by deepfakes)))
-(--> kyc-data ([] (honeypot passports-biometrics feeds-forgery-economy)))
+(--> kyc-data ([] (honeypot passports-biometrics feeds-forgery)))
 (--> kyc ([] (stops-random-users not-real-threats)))
-;; Provenance theatre
-(--> kyc provenance-theatre)
-(--> provenance-theatre ([] (provenance-cues dont-match actual-identity)))
-(--> provenance-theatre ([] (same-pattern deceptive-letters broken-provenance)))
 
-;; ---- Capability leaks (claims 14-16, 24) ----
-(--> capability-diffusion ([] (smaller-models-catch-up months-later)))
-(--> chinese-open-models ([] (best-open-models from-china)))
-(--> export-control-result ([] (market-share-drifts us-to-china)))
-;; Base space equalization
-(--> capability-diffusion base-space-equalization)
-(--> base-space-equalization ([] (containment-through-monopoly structurally-unsustainable)))
+;; ---- Capability diffusion (claims 14-16) ----
+(--> capability-diffusion ([] (smaller-models-catch-up months-not-years)))
+(--> chinese-open-models ([] (best-open from-china mythos-parity-soon)))
+(--> export-control-result ([] (market-share-us-to-china not-denied-adversary)))
 
-;; ---- Arms-race thinking (claims 17-19, 25) ----
+;; ---- Arms-race thinking (claims 17-19) ----
 (--> arms-race-frame ([] (wrong-frame keep-edge-from-rivals)))
 (--> positive-sum-frame ([] (safe-by-construction open-verifiable distributed)))
-(--> security-arms-race ([] (tamed-by correct-by-construction-software)))
-;; Zero-sum fiber collapse
-(--> arms-race-frame zero-sum-fiber-collapse)
-(--> zero-sum-fiber-collapse ([] (collapses multi-fiber-structure to single-competitive-dimension)))
-(--> zero-sum-fiber-collapse ([] (scalar-collapse applied-to-geopolitics)))
+(--> correct-by-construction ([] (tames-security-race not-staying-ahead)))
 
-;; ---- Open/decentralized safety (claims 20-21, 27) ----
-(--> open-decentralized-safety ([] (only-kind survives-contact-with-real-world)))
-(--> structural-safety ([] (built-into-architecture not-dependent-on-institution)))
-(--> institutional-safety ([] (vulnerable-to coercion capture incentive-drift)))
-;; Fiber vs section
+;; ---- Open/decentralized safety (claims 20-21) ----
+(--> open-decentralized-safety ([] (survives-contact governments-fold capability-diffuses)))
+(--> structural-safety ([] (built-into-architecture not-institutional-goodwill)))
+
+;; ---- Hyperseed interpretations (claims 22-27) ----
+(--> state-coercion external-cocycle-override)
+(--> external-cocycle-override ([] (government-rewrites-company-cocycle centralized-junction-vulnerable)))
+(--> decentralization ([] (eliminates-single-junction infeasible-to-override-all-nodes)))
+(--> kyc provenance-theatre)
+(--> provenance-theatre ([] (cues-dont-match-reality same-as-deceptive-letters)))
+(--> kyc-data provenance-attack-surface)
+(--> capability-diffusion base-space-equalization)
+(--> base-space-equalization ([] (monopoly-containment structurally-unsustainable)))
+(--> arms-race-frame zero-sum-fiber-collapse)
+(--> zero-sum-fiber-collapse ([] (multi-fiber-to-single-dimension scalar-collapse-geopolitics)))
 (--> structural-safety fiber-level-safety)
 (--> fiber-level-safety ([] (preserved-under any-base-transformation)))
 (--> institutional-safety section-level-safety)
-(--> section-level-safety ([] (overridden-by changing-base-point)))
+(--> section-level-safety ([] (overridden-by-changing-base-point)))
 
-;; ---- Cocycle structures (claims 22, 26) ----
-(--> government-directive external-cocycle-override)
-(--> external-cocycle-override ([] (transition-functions rewritten by-external-authority)))
-(--> external-cocycle-override ([] (centralized-control-points structurally-vulnerable)))
-(--> anthropic-own-goal cocycle-contradiction)
-(--> cocycle-contradiction ([] (danger-framing composed-with export-control contradicts-intended-trajectory)))
+;; ---- d-calculus claims (claims 28-32) ----
+(--> cocycle-override-curvature ([] (vulnerability-to-rewriting high-centralized low-decentralized)))
+(--> provenance-theatre-curvature ([] (cue-reality-divergence high-kyc-fails)))
+(--> capability-equalization-holonomy ([] (gap-decay-per-cycle decreasing-containment-failing)))
+(--> safety-survivability-curvature ([] (fragility high-institutional low-structural)))
+(--> zero-sum-collapse-curvature ([] (info-loss-from-framing high-structural-info-lost)))
+
+;; ---- Cross-references ----
+(--> anthropic-fable-farce ([] (related-to avoiding-catastrophe chokepoint-stewardship)))
+(--> anthropic-fable-farce ([] (related-to seven-flavors arms-race-humanity-stupid-evil)))
+(--> anthropic-fable-farce ([] (related-to tag-youre-not-it platform-lock-in)))

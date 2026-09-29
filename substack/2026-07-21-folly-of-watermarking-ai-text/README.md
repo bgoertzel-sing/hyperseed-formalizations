@@ -5,14 +5,16 @@
 - Publication: Eurykosmotron / Substack
 - Published: 2026-07-21
 - Retrieved: 2026-09-17
-- Status: initial Hyperseed formalization draft
+- Status: deepened Hyperseed formalization (v2, 2026-09-25)
 
 ## Summary
 
 A detailed technical and political analysis of statistical text watermarking
 (SynthID-style), arguing that it cannot achieve what its proponents claim and
 will instead produce a surveillance/control infrastructure that concentrates
-power over text production. Key threads:
+power over text production.
+
+### Core argument
 
 1. **What statistical watermarking actually does.** SynthID-Text loads the
    sampling dice during generation — biasing word choices toward detectable
@@ -51,29 +53,150 @@ power over text production. Key threads:
    about truth or quality but about institutional control over text
    production.
 
-## Hyperseed relevance
+### Connection to other Goertzel work
 
-- **Watermark as observable property, not directed history:** Statistical
-  watermarks examine 0-cells (current text properties) — the same
-  detection-vs-provenance distinction from the Provenance Layer article.
-- **Arms race as co-evolutionary cocycle:** Each escalation step is a
-  transition function in a cocycle that trends toward centralization —
-  the same frozen-directed-type pathology.
-- **Split ecosystem as fiber bundle fracture:** The compliance perimeter
-  splits the text production fiber into two disconnected components,
-  creating a class structure in text production.
-- **Cryptographic provenance vs. statistical watermarking = directed
-  history vs. observable property:** The same fundamental distinction
-  that separates detection from provenance, applied to text.
-- **Absence ≠ evidence:** The absence-as-guilt fallacy (unsigned =
-  suspect) is the same design refusal as OpenWater's "no absence-as-guilt."
+- **Fable Farce / Benevolent Throttling:** Same centralizing ratchet — each
+  individually defensible step concentrates control.
+- **Decentralized Provenance:** OpenWater as the correct alternative.
+- **Sanders ban:** Absence-as-guilt fallacy in both contexts.
+- **Seven Flavors:** Arms race as cross-cutting attractor.
+
+## Hyperseed ontology interpretation
+
+### Watermark as observable property, not directed history
+
+The fundamental distinction between detection and provenance:
+
+- **0-cell vs 1-cell.** A statistical watermark examines 0-cell properties
+  of the current text — statistical patterns in word choice at this moment.
+  Provenance is a 1-cell property — the directed path through which the
+  text came to exist (authorship, reasoning, editing, sources).
+
+- **Watermark doesn't capture the 1-cell.** The watermark captures which
+  sampler produced the tokens, not the causal history of the ideas. Two
+  texts with identical content but different generation paths (one watermarked,
+  one paraphrased) are indistinguishable in the directed history — the
+  watermark only marks one path, not the content.
+
+- **Same detection-vs-provenance distinction.** This is the same fundamental
+  distinction identified across the Substack corpus: observable properties
+  (0-cells) vs directed history (1-cells). Detection operates on 0-cells;
+  genuine provenance tracks 1-cells.
+
+### Arms race as centralizing cocycle
+
+Same structure as Benevolent Throttling:
+
+- **Each escalation step = transition function.** Better watermarks →
+  better scrubbers → more intrusive watermarking → detector secrecy →
+  trusted-computing lockdown. Each step is a transition function in a
+  cocycle that trends toward centralization.
+
+- **Individually defensible, collectively centralizing.** Each step has a
+  reasonable justification (better detection, prevent misuse, protect
+  integrity). The composition is monopoly over text production.
+
+- **Centralizing cocycle.** g₁ ∘ g₂ ∘ ... ∘ gₙ → text production monopoly.
+  Same structure as the Fable Farce ratchet, applied to text rather than
+  model access.
+
+### Split ecosystem as fiber bundle fracture
+
+The compliance perimeter fractures the bundle:
+
+- **Two disconnected fibers.** Inside the compliance perimeter: certified
+  models, signed runtimes, watermarked outputs — a controlled fiber with
+  full institutional oversight. Outside: open models, modified derivatives,
+  locally run systems — an uncontrolled fiber invisible to institutional
+  detection.
+
+- **Class structure in text production.** The fracture creates a class
+  structure: "approved" text (from the controlled fiber) and "suspect"
+  text (from the uncontrolled fiber). This is a structural property of
+  the split, not a quality property of the text.
+
+- **Absence-as-guilt = detection without provenance.** Treating absence
+  of watermark as evidence of suspicion is the same error as treating
+  absence of KYC as evidence of criminal intent. Absence is an observable
+  property (0-cell), not evidence about directed history (1-cell).
+
+### Cryptographic provenance as genuine 1-cell tracking
+
+Cryptographic signing captures the directed path:
+
+- **Signature = directed history.** A cryptographic signature records that
+  a specific entity endorsed this content at a specific time. This is
+  genuine 1-cell data — a point on the directed path of the content's
+  creation and endorsement.
+
+- **Positive evidence only.** The signature gives positive evidence about
+  the signed path. Absence of signature gives no evidence about the
+  unsigned path — the content may be human, may be AI, may be mixed.
+  The asymmetry is structural: signatures prove, absence proves nothing.
+
+- **OpenWater = decentralized 1-cell infrastructure.** A decentralized
+  ecosystem for cryptographic provenance provides genuine 1-cell tracking
+  without centralized control. No compliance perimeter, no class structure,
+  no absence-as-guilt.
+
+### d-calculus connection (Hyperseed v2)
+
+- **Watermark-provenance curvature.** The curvature between watermark
+  detection and actual provenance:
+
+  ||F_∇(watermark, provenance)|| = provenance information loss from
+    using watermarks instead of signatures
+
+  High curvature: watermarks capture almost none of the actual provenance
+  (the real situation — a watermark tells you about the sampler, not the
+  ideas). Low curvature: watermarks track provenance well (hypothetical
+  — would require the watermark to encode the full causal history).
+
+- **Arms race holonomy.** A loop through the watermark arms race cycle
+  (better watermark → better scrubber → more intrusive watermark →
+  detection feedback → escalation) produces holonomy:
+
+  Hol_γ(Γ_watermark_race) = control concentration per escalation cycle
+
+  Increasing holonomy: each cycle concentrates more control (the article's
+  prediction — each step requires more centralized infrastructure).
+  The d-calculus holonomy tracks the centralizing tendency of the arms race.
+
+- **Ecosystem fracture curvature.** The curvature at the compliance
+  perimeter boundary:
+
+  ||F_∇(compliant, non-compliant)|| = sharpness of the split
+
+  High curvature: sharp boundary (you're either in the certified
+  ecosystem or outside it, no middle ground). Low curvature: gradual
+  boundary (spectrum of compliance levels, no sharp divide). The
+  watermarking approach produces high boundary curvature; cryptographic
+  provenance produces low boundary curvature (anyone can sign, no
+  certification required).
+
+- **Absence-as-guilt curvature.** The curvature between absence of marker
+  and actual suspicion:
+
+  ||F_∇(absence, guilt)|| = false inference severity
+
+  High curvature: absence of marker strongly predicts guilt in the
+  system's judgment (the watermarking regime). Zero curvature: absence
+  of marker is informationless (the correct Bayesian stance — absence
+  proves nothing). The design goal is zero curvature here.
+
+- **Removal pathway holonomy.** A loop through each removal pathway
+  (paraphrase, sampler swap, retraining, reasoning-path modification,
+  detector feedback) produces holonomy:
+
+  Hol_γ(Γ_removal_i) = watermark degradation per removal attempt
+
+  High holonomy: watermark degrades rapidly (easy removal — paraphrase,
+  sampler swap). Low holonomy: watermark persists (hard removal —
+  reasoning-path). The d-calculus provides a unified metric for comparing
+  removal pathway effectiveness.
 
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
-- `formalization.tex` — LaTeX formalization.
-- `atoms.metta` — MeTTa seed atoms.
-
-## Working convention
-
-The Substack article is treated as an authored source.
+- `formalization.tex` — LaTeX formalization with d-calculus extensions.
+- `atoms.metta` — MeTTa seed atoms for AtomSpace/PLN experiments.

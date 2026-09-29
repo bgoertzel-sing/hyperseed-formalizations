@@ -1,78 +1,70 @@
 ;; =============================================================
 ;; Seed atoms — Avoiding AGI Catastrophe, Part 2
 ;; Source: Ben Goertzel, Eurykosmotron, 2026-06-10
+;; Deepened: 2026-09-22 (Hyperseed v2 / d-calculus)
 ;; =============================================================
 
 ;; ---- Type declarations ----
-(: LateralityProperty Type)
 (: ArchitectureLayer Type)
-(: SecurityMechanism Type)
+(: SecurityProperty Type)
 
-;; ---- Super-additivity (claims 1-5, 30) ----
-(--> super-additivity ([] (whole greater-than sum-of-parts)))
-(--> super-additivity ([] (stealable-part is-husk not-working-agi)))
-(--> inference-control-heuristics ([] (cross-domain meta-patterns fractal-hierarchy)))
-(--> metta-dual-role ([] (agi-language-of-thought and smart-contract-language)))
-(--> fork-snapshot ([] (immediately-stale cut-off-from-learning)))
-;; Non-separable fiber
-(--> super-additivity non-separable-fiber)
-(--> non-separable-fiber ([] (2-cells between-domain-1-cells not-recoverable-from-1-cells)))
+;; ---- Super-additivity (claims 1-3) ----
+(--> super-additivity ([] (whole-greater-sum fork-gets-husk)))
+(--> super-additivity ([] (source inference-control-heuristics cross-domain-patterns)))
+(--> super-additivity ([] (not-automatic must-be-engineered)))
 
-;; ---- Essential laterality (claims 6-8, 31) ----
-(--> shard-entropy ([] (necessary but-not-sufficient)))
-(--> essential-laterality ([] (removing fewer-than-k-nodes drops-probability below-threshold)))
-(--> essential-laterality ([] (genuine-dependency reasoning-fails without-right-pieces)))
-;; Fiber dependency structure
-(--> essential-laterality fiber-dependency-structure)
-(--> fiber-dependency-structure ([] (non-trivial-bundle local-sections dont-extend-globally)))
+;; ---- Essential laterality (claims 4-6) ----
+(--> essential-laterality ([] (derivation k-nodes removal-drops-below-threshold)))
+(--> essential-laterality ([] (genuine-not-nominal truly-depending)))
+(--> essential-laterality ([] (structural-property not-access-control)))
 
-;; ---- Cryptographic laterality (claims 9-12) ----
-(--> secret-shared-policy ([] (control-policy-theta and trace-corpus-D* as-secret-shares)))
-(--> no-plaintext-resting-place ([] (no-single-machine-state has-whole-controller)))
-(--> extraction-forced ([] (harder-channel corrupt-coalition break-crypto exploit-leakage distill)))
-(--> mpc-output ([] (narrow route-subquery merge-conclusions downweight escalate refuse)))
-(--> mpc-output ([] (never-reveals full-policy or sensitive-trace)))
+;; ---- Cryptographic laterality (claims 7-9) ----
+(--> mpc-laterality ([] (secret-shared-controller theta-and-corpus)))
+(--> mpc-laterality ([] (threshold-evaluation bounded-outputs)))
+(--> mpc-laterality ([] (no-portable-plaintext no-single-machine)))
 
-;; ---- Cognitive-cryptographic alignment (claims 13-16, 32) ----
-(--> access-structure ([] (derived-from tasks-essential-laterality)))
-(--> cognitive-cryptographic-alignment ([] (think-the-thought equals activate-controller)))
-(--> task-quorum ([] (proportional-to-provenance-domains biological chemical security ethical)))
-(--> quorum ([] (mirrors genuine-cognitive-dependency not-random-committee)))
-;; Cocycle-access alignment
-(--> cognitive-cryptographic-alignment cocycle-access-alignment)
-(--> cocycle-access-alignment ([] (security-boundary matches cognitive-boundary)))
+;; ---- Cognitive-cryptographic alignment (claims 10-12) ----
+(--> cog-crypto-alignment ([] (coalition-to-think equals coalition-to-activate)))
+(--> cog-crypto-alignment ([] (derived-from essential-laterality)))
+(--> cog-crypto-alignment ([] (misalignment broader-security-hole narrower-usability-hole)))
 
-;; ---- Distillation defense (claims 17-20, 33) ----
-(--> mpc-limitation ([] (stops-copy not-imitation)))
-(--> distillation-loss ([] (moat-strength depends-on loss-staying-large for-realistic-budgets)))
-(--> moving-target ([] (fresh high-dimensional hard-to-compress live-state)))
-(--> moving-target ([] (provenance-graphs reputation node-availability contradictions attention-flows)))
-(--> query-constraints ([] (bounded-outputs auditing rate-limits anomaly-detection canary-tasks)))
-;; Regenerated fiber
-(--> moving-target regenerated-fiber)
-(--> regenerated-fiber ([] (constantly-regenerated snapshot-immediately-stale)))
-(--> regenerated-fiber ([] (directed-temporal past-sections dont-determine-future)))
+;; ---- Distillation defense (claims 13-16) ----
+(--> distillation-attack ([] (behavioral-imitation mpc-doesnt-stop)))
+(--> moving-target-defense ([] (fresh-live-state high-dimensional)))
+(--> live-state ([] (provenance-graphs reputation node-availability contradictions attention)))
+(--> snapshot-staleness ([] (by-time-imitate target-has-moved)))
 
-;; ---- Four-layer architecture (claims 21-26, 34) ----
+;; ---- Four-layer architecture (claims 17-21) ----
 (--> public-layer ArchitectureLayer)
 (--> local-private-layer ArchitectureLayer)
 (--> threshold-control-layer ArchitectureLayer)
 (--> governance-audit-layer ArchitectureLayer)
+(--> public-layer ([] (open-knowledge no-protection shallow)))
+(--> local-private-layer ([] (agent-specific moderate-protection medium)))
+(--> threshold-control-layer ([] (mpc-protected high-value deep)))
+(--> governance-audit-layer ([] (system-wide-oversight full-coalition deepest)))
+(--> layer-escalation ([] (stakes-rise cognition-escalates-up)))
 
-(--> public-layer ([] (public-atomspace public-rules local-reasoning)))
-(--> local-private-layer ([] (node-local-data traces reputational-judgments)))
-(--> threshold-control-layer ([] (secret-shared-features routing-policies mpc-protected)))
-(--> governance-audit-layer ([] (commitments selective-disclosure quorum-records human-review)))
-(--> escalation-ladder ([] (local-inference to small-committee to threshold-protected to broad-quorum)))
-(--> mpc-scope ([] (only-thin-control-layer not-everything)))
-;; Graded fiber depth
-(--> four-layers graded-fiber-depth)
-(--> graded-fiber-depth ([] (0-depth-public 1-depth-local 2-depth-control 3-depth-governance)))
+;; ---- Safety from strategy choice (claims 22-24) ----
+(--> near-optimal-set ([] (multiple-strategies within-epsilon)))
+(--> lowest-forkability-selection ([] (threshold-lateral-strategy chosen)))
+(--> safety-capability-tradeoff ([] (safety-at-low-cost epsilon-capability)))
 
-;; ---- Safety from strategy choice (claims 27-29, 35) ----
-(--> near-optimal-set ([] (strategies within-epsilon of-best-capability)))
-(--> lowest-forkability-selection ([] (among-near-optimal choose-lowest-forkability)))
-(--> safety-from-slack ([] (paid-from-strategy-landscape-slack not-making-system-dumber)))
-;; Anti-monoculture
-(--> safety-from-strategy-choice anti-monoculture)
-(--> anti-monoculture ([] (no-single-best-strategy slack-spent-on-structural-safety)))
+;; ---- Hyperseed interpretations (claims 25-29) ----
+(--> super-additivity non-separable-fiber)
+(--> essential-laterality k-lateral-fiber)
+(--> cog-crypto-alignment cocycle-access-alignment)
+(--> moving-target-defense moving-target-fiber)
+(--> four-layer-architecture fiber-depth-hierarchy)
+
+;; ---- d-calculus claims (claims 30-34) ----
+(--> laterality-curvature ([] (multi-node-dependency high-hard-to-fork)))
+(--> cocycle-access-curvature ([] (misalignment-measure zero-perfect)))
+(--> distillation-holonomy ([] (staleness-rate high-strong-defense)))
+(--> layer-depth-curvature ([] (protection-boundary-strength high-hard-to-bypass)))
+(--> safety-capability-gradient ([] (forkability-reduction-per-capability-cost favorable)))
+
+;; ---- Cross-references ----
+(--> avoiding-catastrophe-pt2 ([] (related-to avoiding-catastrophe-pt1 seven-hinges)))
+(--> avoiding-catastrophe-pt2 ([] (related-to openbgi asi-chain four-layer)))
+(--> avoiding-catastrophe-pt2 ([] (related-to orchard-bug compositional-correctness)))

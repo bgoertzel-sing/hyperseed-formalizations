@@ -5,7 +5,7 @@
 - Publication: Eurykosmotron / Substack
 - Published: 2026-07-08
 - Retrieved: 2026-09-17
-- Status: initial Hyperseed formalization draft
+- Status: deepened Hyperseed formalization (v2, 2026-09-23)
 
 ## Summary
 
@@ -15,7 +15,7 @@ directive barring foreign nationals. Argues this is a controlled demonstration
 of why advanced AI can't be effectively locked down and why open/decentralized
 is the only safety that survives contact with the real world.
 
-Key threads:
+### Core argument
 
 1. **Controlled experiment.** The Fable episode is a natural experiment
    demonstrating that centralized AI control doesn't work: one directive
@@ -45,28 +45,142 @@ Key threads:
    transparent infrastructure, neural-symbolic verification, distributed
    governance.
 
-## Hyperseed relevance
+### Connection to other Goertzel work
 
-- **State coercion = external cocycle override:** A government directive
-  overriding Anthropic's own policies is an external cocycle override —
-  the transition functions of the bundle are rewritten by an external
-  authority, demonstrating that centralized control points are vulnerable.
-- **KYC failure = provenance theatre:** KYC produces provenance cues
-  (verified identity) that don't match actual identity — the same
-  broken provenance pattern as deceptive open letters.
-- **Capability diffusion = base space equalization:** The base space
-  (model capability) equalizes across providers over time, making
-  containment through capability monopoly structurally unsustainable.
-- **Arms-race frame = zero-sum fiber collapse:** Treating AI as a
-  zero-sum race collapses the multi-fiber structure (many independent
-  development paths) to a single competitive dimension.
+- **Avoiding AGI Catastrophe Pts 1-2:** Seven Hinges framework; this is
+  a concrete case study of the chokepoint and stewardship hinges.
+- **Seven Flavors:** Arms race as cross-cutting attractor; the Fable
+  episode activates humanity-stupid and humanity-evil flavors.
+- **Tag, You're Not It:** Platform-bound vs agent-first; centralized
+  model access is the ultimate platform lock-in.
+
+## Hyperseed ontology interpretation
+
+### State coercion as external cocycle override
+
+A government directive overriding Anthropic's own policies is an external
+cocycle override:
+
+- **External override.** The transition functions of the bundle are
+  rewritten by an external authority. The company's internal cocycle
+  (policies, red lines, deployment decisions) is overridden by a
+  government cocycle (export controls, market access conditions).
+
+- **Vulnerability of centralized control points.** Any centralized
+  control point is a cocycle junction that can be overridden by a
+  sufficiently powerful external authority. The vulnerability is
+  structural, not accidental — centralization creates the junction
+  that coercion exploits.
+
+- **Decentralization eliminates the junction.** Distributed systems
+  have no single cocycle junction that an external authority can
+  override. The override would need to reach every node independently,
+  which is structurally infeasible.
+
+### KYC failure as provenance theatre
+
+KYC produces provenance cues that don't match actual identity:
+
+- **Broken provenance.** The provenance pathway (KYC verification →
+  "verified identity") is broken: verified identities can be bought,
+  forged, or deepfaked. The provenance cue exists but doesn't carry
+  the information it claims to.
+
+- **Same pattern as deceptive open letters.** A prestigious signature
+  on an open letter provides a provenance cue (expert endorsement) that
+  may not reflect genuine expert judgment. KYC provides an identity cue
+  that may not reflect genuine identity. Both are provenance theatre.
+
+- **Honeypot = provenance attack surface.** Collecting and storing
+  identity data creates an attack surface: breach the honeypot, and
+  you can manufacture provenance cues (forged identities) at scale.
+
+### Capability diffusion as base space equalization
+
+The base space (model capability) equalizes over time:
+
+- **Base space equalization.** The base space of the capability bundle
+  equalizes across providers: what the frontier model does today, a
+  smaller model does in months. Containment through capability monopoly
+  is structurally unsustainable because the base space won't stay
+  differentiated.
+
+- **Arms-race frame = zero-sum fiber collapse.** Treating AI development
+  as a zero-sum race collapses the multi-fiber structure (many independent
+  development paths with different strengths) to a single competitive
+  dimension (who has the biggest model). This is scalar collapse applied
+  to geopolitics.
+
+### Structural vs institutional safety as fiber vs section
+
+Two levels of safety with different survivability:
+
+- **Fiber-level safety (structural).** Built into the system's
+  architecture. Preserved under any base transformation (change of
+  government, change of company leadership, change of geopolitical
+  environment). The safety property lives in the fiber, not the base.
+
+- **Section-level safety (institutional).** Dependent on a specific
+  company or government maintaining good behavior. Overridden by
+  changing the base point (new administration, corporate acquisition,
+  market pressure). The Fable episode demonstrates section-level
+  safety failing.
+
+### d-calculus connection (Hyperseed v2)
+
+- **Cocycle override curvature.** The curvature at a centralized
+  control junction:
+
+  ||F_∇_override|| = vulnerability to external cocycle rewriting
+
+  High curvature: small external pressure can rewrite the cocycle
+  (single company, single government directive). Low curvature:
+  external pressure must be enormous and distributed to rewrite
+  (decentralized network, many independent nodes). Centralization
+  maximizes this curvature; decentralization minimizes it.
+
+- **Provenance theatre curvature.** The curvature between provenance
+  cue and actual identity:
+
+  ||F_∇(cue, reality)|| = provenance falsifiability
+
+  High curvature: provenance cues diverge wildly from reality (KYC
+  that doesn't verify, signatures that don't reflect judgment). Low
+  curvature: provenance cues track reality (genuine verification with
+  low false positive/negative rates).
+
+- **Capability equalization holonomy.** A temporal loop through the
+  capability diffusion cycle (frontier release → open replication →
+  parity → new frontier) produces holonomy:
+
+  Hol_γ(Γ_capability) = capability gap decay per cycle
+
+  Decreasing holonomy: capability gap shrinks with each cycle (the
+  actual situation — containment is losing). The d-calculus holonomy
+  quantifies the futility of capability-based containment.
+
+- **Safety survivability curvature.** The curvature between safety
+  properties and environmental perturbations:
+
+  ||F_∇(safety, perturbation)|| = safety fragility
+
+  High curvature: safety breaks under small perturbations (institutional
+  safety — one directive kills it). Low curvature: safety survives
+  large perturbations (structural safety — built into architecture).
+
+- **Zero-sum collapse curvature.** The curvature between multi-fiber
+  and single-fiber views of AI development:
+
+  ||F_∇(multi, single)|| = information loss from zero-sum framing
+
+  High curvature: the zero-sum frame loses enormous structural
+  information (many independent development paths, diverse safety
+  approaches, different architectural philosophies — all collapsed
+  to "who's ahead"). The d-calculus measures the cost of this
+  frame choice.
 
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
-- `formalization.tex` — LaTeX formalization.
-- `atoms.metta` — MeTTa seed atoms.
-
-## Working convention
-
-The Substack article is treated as an authored source.
+- `formalization.tex` — LaTeX formalization with d-calculus extensions.
+- `atoms.metta` — MeTTa seed atoms for AtomSpace/PLN experiments.

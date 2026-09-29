@@ -1,57 +1,35 @@
 ;; =============================================================
 ;; Seed atoms — Bernie's Proposal to Nationalize AGI
 ;; Source: Ben Goertzel, Eurykosmotron, 2026-06-02
+;; Deepened: 2026-09-22 (Hyperseed v2 / d-calculus)
 ;; =============================================================
 
-;; ---- Type declarations ----
-(: GovernanceMode Type)
-(: FailureMode Type)
-(: OwnershipType Type)
+;; ---- Core article claims ----
 
-;; ---- Sanders is right about the problem (claims 1-3) ----
-(--> corporate-concentration ([] (dangerous unprecedented-power)))
-(--> corporate-concentration ([] (power-over economy labor-markets human-agency)))
-(--> corporate-concentration ([] (democratic-deficit accountable-to-shareholders not-citizens)))
+(--> problem-is-real ([] (corporate-concentration genuinely-dangerous)))
+(--> nationalization-wrong ([] (replaces-corporate-with-state same-centralization)))
+(--> government-competence-gap ([] (bureaucratic slow political capture-susceptible)))
+(--> international-problem ([] (us-centric other-nations-wont-accept)))
+(--> decentralization-alternative ([] (globally-distributed no-single-control)))
+(--> asi-alliance-model ([] (distributed-governance open-protocols no-owner)))
 
-;; ---- Nationalization wrong solution (claims 4-6) ----
-(--> nationalization ([] (same-structure different-actor)))
-(--> corporate-ownership ([] (profit-over-safety monopoly-extraction shareholder-capture)))
-(--> government-ownership ([] (bureaucratic-ossification political-weaponization regulatory-capture)))
-(--> government-tech-programs ([] (mixed-record project-based-success not-ongoing-management)))
+;; ---- Hyperseed ontology interpretations ----
 
-;; ---- Government competence gap (claims 7-9) ----
-(--> speed-mismatch ([] (government-years ai-months structural-not-fixable)))
-(--> political-susceptibility ([] (content-restrictions capability-limits access-restrictions)))
-(--> regulatory-capture ([] (lobbying revolving-doors advisory-boards fox-guards-henhouse)))
+(--> trivial-fiber-centralization ([] (single-section collapses section-swap-not-fiber-change)))
+(--> non-trivial-fiber-decentralization ([] (no-single-section fiber-dimension-governance-diversity)))
+(--> transition-functions-protocols ([] (open-protocols glue-bundle local-contributions)))
+(--> fiber-corruption-capture ([] (base-point-pressure non-legitimate-channels corrupted-transport)))
+(--> non-trivializable-sovereignty ([] (competing-claims topological-obstruction)))
 
-;; ---- International problem (claims 10-12) ----
-(--> nationalize-agi ([] (us-centric other-nations-wont-accept)))
-(--> nationalization-reframe ([] (which-company to which-country lateral-move-not-solution)))
-(--> international-trust-deficit ([] (no-single-nation-trusted adversarial-dynamic)))
+;; ---- d-calculus claims ----
 
-;; ---- Decentralization alternative (claims 13-17) ----
-(--> third-option ([] (neither-corporate nor-governmental no-single-owner)))
-(--> open-protocols ([] (anyone-can-participate audit build-on like-internet)))
-(--> no-single-control-point ([] (cant-unilaterally shutdown redirect weaponize)))
-(--> transparent-governance ([] (visible auditable participatory)))
-(--> asi-alliance ([] (decentralized-infrastructure distributed-governance open-protocols)))
+(--> centralization-curvature ([] (zero-pathological no-governance-structure)))
+(--> decentralization-curvature ([] (positive genuine-governance-structure)))
+(--> capture-holonomy ([] (regulatory-drift-per-cycle large-captured small-well-governed)))
+(--> sovereignty-obstruction-class ([] (nonzero internationalization-impossible trivially)))
+(--> governance-gradient ([] (fiber-dimension transparency participation capture-resistance)))
 
-;; ---- Hyperseed inferences (claims 18-23) ----
-;; Section swap not fiber change
-(--> corporate-vs-government section-swap)
-(--> section-swap ([] (same-fiber-centralized-control different-base-point)))
-;; Fiber-level solution
-(--> decentralization fiber-level-solution)
-(--> fiber-level-solution ([] (changes-fiber-structure from-centralized to-distributed)))
-;; Regulatory capture as fiber corruption
-(--> regulatory-capture fiber-corruption)
-(--> fiber-corruption ([] (base-point-pressure deforms-fiber opposite-of-desired)))
-;; Non-trivializable bundle
-(--> international-coordination non-trivializable-bundle)
-(--> non-trivializable-bundle ([] (national-trust-transitions dont-form-consistent-cocycle)))
-;; Scalar collapse
-(--> private-vs-public-binary scalar-collapse-governance)
-(--> scalar-collapse-governance ([] (collapses multi-dimensional-governance-space into-single-binary)))
-;; Temporal fiber incompatibility
-(--> speed-mismatch temporal-fiber-incompatibility)
-(--> temporal-fiber-incompatibility ([] (government-year-scale ai-month-scale cant-align)))
+;; ---- Cross-references ----
+(--> bernies-nationalize ([] (related-to openbgi decentralized-infrastructure)))
+(--> bernies-nationalize ([] (related-to radical-futurism political-emergence)))
+(--> bernies-nationalize ([] (related-to collective-non-self governance-as-collective-model)))

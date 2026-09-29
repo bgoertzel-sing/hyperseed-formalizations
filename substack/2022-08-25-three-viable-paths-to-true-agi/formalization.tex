@@ -6,63 +6,174 @@
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}[definition]{Theorem}
 \newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
 \newtheorem{remark}[definition]{Remark}
 \newtheorem{conjecture}[definition]{Conjecture}
 
 \title{Hyperseed Formalization:\\
   Three Viable Paths to True AGI}
 \author{ProtomegaTron (automated formalization)}
-\date{2026-09-18}
+\date{2026-09-19 (deepened v2)}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We formalize Ben Goertzel's ``Three Viable Paths to True AGI'' (2022-08-25)
-within the Hyperseed ontology.
+We formalize Ben Goertzel's ``Three Viable Paths to True AGI''
+(2022-08-25) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. The three paths --- hybrid neural-symbolic,
+brain emulation, and evolutionary/developmental --- are modeled as three
+distinct fiber bundle construction methods, each producing characteristic
+curvature, growth dynamics, and holonomy signatures. LLM scaling is shown
+to increase fiber volume without changing curvature, explaining why it
+cannot reach AGI.
 \end{abstract}
+
+\tableofcontents
 
 \section{Three fiber construction methods}
 
-\begin{proposition}[Three paths = three fiber methods --- claims 1--3, 6]
-Each path to AGI is a different method for constructing the fiber bundle:
+\begin{definition}[Designed fiber bundle (hybrid) --- claims 1, 8]
+A \emph{designed fiber bundle} $E_{\text{des}}$ is constructed by explicit
+composition of fiber types:
 \[
-  F_{\text{AGI}} = \begin{cases}
-    F_{\text{hybrid}} & \text{(neural-symbolic composition)} \\
-    F_{\text{emulation}} & \text{(biological fiber copying)} \\
-    F_{\text{evolved}} & \text{(evolutionary fiber growth)}
-  \end{cases}
+  E_{\text{des}} = E^{\text{neural}} \oplus E^{\text{sym}} \oplus
+    E^{\text{mem}} \oplus E^{\text{act}} \oplus \cdots
 \]
-All three aim at producing sufficiently rich fiber to constitute general
-intelligence, but through different construction processes.
-\end{proposition}
+Each summand is a specialized fiber type (perception, reasoning, memory,
+action). The composition is guided by architectural design, with
+integration morphisms $\phi_{ij}: E^i \otimes E^j \to E^{\text{synergy}}$
+producing emergent fiber from component interactions (cognitive synergy).
+\end{definition}
 
-\section{Composed, copied, and evolved fiber}
+\begin{definition}[Copied fiber bundle (emulation) --- claims 2, 9]
+A \emph{copied fiber bundle} $E_{\text{copy}}$ is produced by scanning a
+biological fiber bundle $E_{\text{bio}}$ and reproducing it in
+computational substrate:
+\[
+  E_{\text{copy}} = \text{Scan}(E_{\text{bio}}) \circ \text{Simulate}
+\]
+The scanning map $\text{Scan}: E_{\text{bio}} \to E_{\text{data}}$
+captures fiber structure at resolution $\delta$, and the simulation map
+$\text{Simulate}: E_{\text{data}} \to E_{\text{comp}}$ instantiates it
+computationally. The challenge is fidelity: essential fiber must be
+captured at resolution $\delta$.
+\end{definition}
 
-\begin{proposition}[Fiber construction details --- claims 1--3, 7--9]
-The three construction methods differ in their fiber operations:
+\begin{definition}[Evolved fiber bundle (evolutionary) --- claims 3, 10]
+An \emph{evolved fiber bundle} $E_{\text{evo}}$ emerges through
+evolutionary selection:
+\[
+  E_{\text{evo}}^{(n+1)} = \text{Select}\left(
+    \text{Vary}(E_{\text{evo}}^{(n)}), \text{fitness}\right)
+\]
+Starting from simple initial fiber $E^{(0)}$, variation operators
+(mutation, crossover) produce diverse fiber architectures, and selection
+retains those with highest fitness (cognitive capability). The evolved
+fiber may be functionally intelligent but structurally novel and
+potentially incomprehensible.
+\end{definition}
+
+\section{Complementarity as fiber cross-pollination}
+
+\begin{proposition}[Cross-pollination --- claims 4, 11]
+\label{prop:cross}
+The three construction methods cross-pollinate:
 \begin{itemize}
-\item \textbf{Hybrid:} $F_{\text{hybrid}} = F_{\text{neural}} \oplus_{\text{cat}} F_{\text{symbolic}}$
-  --- categorical composition of different fiber types.
-\item \textbf{Emulation:} $F_{\text{emulation}} = \phi(F_{\text{brain}})$
-  --- structure-preserving map from biological to computational fiber.
-\item \textbf{Evolution:} $F_{\text{evolved}} = \lim_{n \to \infty} S^n(F_0)$
-  --- iterated selection operator applied to initial fiber population.
+  \item \textbf{Emulation $\to$ Hybrid:} The copied bundle $E_{\text{copy}}$
+    provides a ``reference fiber'' --- a known-working architecture that
+    informs the design of $E_{\text{des}}$.
+  \item \textbf{Evolution $\to$ Hybrid:} Evolved bundles $E_{\text{evo}}$
+    discover novel fiber compositions that can be analyzed and incorporated
+    into designed bundles.
+  \item \textbf{Hybrid $\to$ Evolution:} Designed bundles provide
+    interpretable fitness landscapes for evolutionary search --- fitness
+    can be evaluated on specific cognitive tasks.
 \end{itemize}
 \end{proposition}
 
-\section{Complementarity and risk}
+\section{Risk as fiber construction failure modes}
 
-\begin{proposition}[Complementary approaches --- claims 4--5]
-The three paths are complementary --- insights transfer between fiber
-construction methods:
-\[
-  F_{\text{hybrid}} \xleftarrow{\text{inform}} F_{\text{emulation}}
-  \xleftarrow{\text{inform}} F_{\text{evolved}}
-\]
-Different risk profiles correspond to different failure modes in fiber
-construction: design errors (wrong fiber composition), unknown requirements
-(incomplete biological fiber map), and unpredictability (uncontrolled
-fiber evolution).
+\begin{proposition}[Path-specific risks --- claim 5]
+\label{prop:risks}
+Each construction method has characteristic failure modes:
+\begin{itemize}
+  \item \textbf{Designed:} Interface curvature between fiber types may be
+    too high --- the components don't integrate smoothly. Cognitive synergy
+    morphisms $\phi_{ij}$ may be incomplete.
+  \item \textbf{Copied:} Scan resolution $\delta$ may be insufficient ---
+    essential fiber is lost in scanning, producing a structurally incomplete
+    copy. ``Zombie risk'': functional fiber without consciousness fiber.
+  \item \textbf{Evolved:} Selection pressure may produce fiber that is
+    functionally effective but uninterpretable, misaligned, or fragile to
+    distribution shift.
+\end{itemize}
 \end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Construction curvature --- claim 12]
+\label{prop:curvature}
+Each construction method produces characteristic curvature $F_\nabla$:
+\begin{itemize}
+  \item \textbf{Designed:} Curvature concentrated at interface boundaries
+    $\partial E^i \cap \partial E^j$ between fiber types. The design
+    challenge is minimizing $\|F_\nabla|_{\partial E^i \cap \partial E^j}\|$.
+  \item \textbf{Copied:} Curvature reproduces biological curvature, which
+    evolution has smoothed over millions of years. The scanning challenge is
+    reproducing $F_{\nabla_{\text{bio}}}$ faithfully at resolution $\delta$.
+  \item \textbf{Evolved:} Curvature is unpredictable --- evolution optimizes
+    fitness, not curvature aesthetics. May have high $\|F_\nabla\|$ that is
+    nonetheless functionally effective.
+\end{itemize}
+\end{proposition}
+
+\begin{proposition}[Fiber growth dynamics --- claim 13]
+\label{prop:growth}
+Each method has characteristic growth dynamics $\dot{F} = \partial F / \partial t$:
+\begin{itemize}
+  \item Designed: $\dot{F}_{\text{des}}$ is modular and controllable ---
+    new fiber types added deliberately. Growth rate adjustable.
+  \item Copied: $\dot{F}_{\text{copy}}$ replicates biological plasticity ---
+    synaptic modification, neural growth. Rate matches biology unless
+    accelerated computationally.
+  \item Evolved: $\dot{F}_{\text{evo}}$ is generational --- each generation
+    $n$ produces a new architecture. Slow per generation ($\sim$ hours to
+    days), but massively parallelizable across populations.
+\end{itemize}
+\end{proposition}
+
+\begin{proposition}[Holonomy signatures --- claim 14]
+\label{prop:holonomy}
+Each construction method produces characteristic holonomy patterns ---
+``fingerprints'' of construction history:
+\begin{itemize}
+  \item Designed: $\operatorname{Hol}_\gamma(\nabla_{\text{des}})$ reflects
+    architectural choices --- which components interact, through which
+    interfaces.
+  \item Copied: $\operatorname{Hol}_\gamma(\nabla_{\text{copy}})$ mirrors
+    biological developmental holonomy --- the history of the copied brain.
+  \item Evolved: $\operatorname{Hol}_\gamma(\nabla_{\text{evo}})$ encodes
+    evolutionary history --- the selection pressures that shaped the fiber.
+\end{itemize}
+These holonomy signatures can, in principle, identify the construction
+method of an AGI by examining its fiber bundle's holonomy group.
+\end{proposition}
+
+\begin{proposition}[Scaling curvature divergence --- claims 6, 15]
+\label{prop:scaling}
+Scaling (increasing parameters) increases fiber volume without changing
+curvature:
+\[
+  \text{vol}(F_{\text{scaled}}) = \lambda \cdot \text{vol}(F_{\text{base}}),
+  \quad F_{\nabla_{\text{scaled}}} = F_{\nabla_{\text{base}}}
+\]
+AGI requires specific curvature patterns --- cognitive synergy curvature,
+self-modification holonomy, autopoietic connection evolution --- that are
+\emph{architectural}, not \emph{volumetric}. Scaling a fixed architecture
+is like inflating a balloon: it gets larger but doesn't change shape.
+AGI requires a different shape (curvature pattern), not a larger version
+of the same shape.
+\end{proposition}
+
 \end{document}

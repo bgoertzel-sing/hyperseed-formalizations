@@ -1,28 +1,62 @@
 ;; =============================================================
 ;; Seed atoms — Exploring the Reality of Psi
 ;; Source: Ben Goertzel, Eurykosmotron, 2021-05-30
+;; Deepened: 2026-09-19 (Hyperseed v2 / d-calculus)
 ;; =============================================================
 
-;; ---- Personal experience (claims 1-2) ----
-(--> witnessed-psi ([] (direct-observation robust not-second-hand)))
-(--> not-easily-dismissed ([] (insufficient-conventional resist-explanation)))
+;; ---- Core article claims ----
 
-;; ---- Statistical evidence (claims 3-5) ----
-(--> psi-meta-analyses ([] (small-effect significant consistent precognition)))
-(--> replication-issues ([] (individual-hard aggregate-consistent)))
-(--> rigorous-methodology ([] (double-blind pre-registered automated)))
+;; Claim 1: Personal experience
+(--> psi-personal-experience ([] (first-hand trained-observer resists-conventional)))
 
-;; ---- Physics speculation (claims 6-8) ----
-(--> non-local-correlations ([] (quantum-like not-local-spacetime)))
-(--> beyond-standard-model ([] (incomplete relevant-processes)))
-(--> psi-information-transfer ([] (unrecognized-channels)))
+;; Claim 2: Statistical evidence
+(--> psi-statistics ([] (meta-analysis small-consistent statistically-significant)))
+(--> psi-effect-size ([] (small robust consistent-across-studies)))
 
-;; ---- Consciousness (claims 9-10) ----
-(--> psi-consciousness-link ([] (deep poorly-captured both)))
-(--> observer-effects ([] (quantum consciousness-interacting beyond-classical)))
+;; Claim 3: Physics speculation
+(--> psi-physics ([] (non-local-correlations retrocausal beyond-standard-model)))
 
-;; ---- Hyperseed inferences (claims 11-14) ----
-(--> psi-nonlocal-fiber ([] (violate-locality distant-correlation no-transport)))
-(--> consciousness-fiber-self-reference ([] (self-referential aware-of-structure)))
-(--> expanded-base-space ([] (beyond-4D additional-dimensions non-local)))
-(--> agi-psi-investigation ([] (large-datasets thick-fiber thin-evidence)))
+;; Claim 4: Consciousness connection
+(--> psi-consciousness ([] (deeply-connected both-unexplained related-hard-problems)))
+
+;; Claim 5: Future science
+(--> psi-future-science ([] (agi-enabled new-frameworks cross-disciplinary)))
+
+;; Claim 6: Scientific taboo
+(--> psi-taboo ([] (stigmatized sociological-not-epistemic)))
+
+;; ---- Hyperseed ontology interpretations ----
+
+;; Claim 7: Non-local fiber correlation
+(--> psi-fiber-correlation ([] (non-local distant-base-points no-local-path)))
+(--> normal-fiber-correlation ([] (local adjacent-base-points connection-mediated)))
+
+;; Claim 8: Two interpretations
+(--> psi-genuine-nonlocality ([] (fiber-without-base-support true-psi)))
+(--> psi-hidden-connection ([] (invisible-base-dimensions hidden-paths)))
+
+;; Claim 9: Consciousness as psi enabler
+(--> conscious-psi-enabler ([] (self-referential-fiber locality-bypass)))
+(--> psi-strength-consciousness ([] (proportional meditation-enhanced focused-attention)))
+
+;; Claim 10: Non-local connection (d-calculus)
+(--> psi-nonlocal-connection ([] (Gamma-psi distant-mediation locality-violated)))
+
+;; Claim 11: Non-local curvature (d-calculus)
+(--> psi-nonlocal-curvature ([] (F-psi correlation-strength arbitrary-distance)))
+
+;; Claim 12: Retrocausal holonomy (d-calculus)
+(--> retrocausal-holonomy ([] (temporal-loop future-to-present nontrivial)))
+(==> (--> $gamma ([] retrocausal-temporal-loop))
+     (--> (Hol $gamma Gamma-psi) ([] nontrivial)))
+
+;; Claim 13: Statistical curvature (d-calculus)
+(--> psi-statistical-curvature ([] (small-epsilon nonzero-consistent weak-persistent-field)))
+
+;; Claim 14: Taboo as connection suppression (d-calculus)
+(--> psi-taboo-suppression ([] (Gamma-trust-suppressed psi-mainstream-blocked)))
+
+;; ---- Cross-references ----
+(--> psi-reality ([] (related-to world-crystal information-leakage)))
+(--> psi-reality ([] (related-to consciousness-explosion enhanced-psi)))
+(--> psi-reality ([] (related-to paraconsistency violates-classical-assumptions)))

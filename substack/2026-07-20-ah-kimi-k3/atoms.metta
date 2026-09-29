@@ -1,66 +1,43 @@
 ;; =============================================================
 ;; Seed atoms — Ah, Kimi K3 — What a Beautiful Moment
 ;; Source: Ben Goertzel, Eurykosmotron, 2026-07-20
+;; Deepened: 2026-09-23 (Hyperseed v2 / d-calculus)
 ;; =============================================================
 
 ;; ---- Type declarations ----
-(: MarketPhase Type)
-(: ScarceProperty Type)
+(: CommodityTransition Type)
+(: ArchitecturalLayer Type)
 
-;; ---- LLM commodity transition (claims 1-5) ----
-(--> kimi-k3 ([] (2.8T-MoE 1M-context open-weights frontier-class)))
-(--> (× kimi-k3 deepseek-r2 qwen-3-5) ([] (three-frontier-open-weight simultaneously)))
-(--> llm-market commodity-transition)
-(--> commodity-transition ([] (multiple-independent-producers achieve-parity)))
-(--> open-weights ([] commoditization-accelerator))
-(--> chinese-ecosystem ([] (demonstrated capability-parity)))
-(--> export-controls ([] (lagging-reality futile)))
+;; ---- Core article claims (1-5) ----
+(--> commodity-transition ([] (three-frontier-open-weight simultaneous abundant interchangeable)))
+(--> kimi-k3 ([] (2.8T-parameter open-weight moonshot-ai frontier)))
+(--> deepseek-r2 ([] (frontier open-weight)))
+(--> qwen-3-5 ([] (frontier open-weight)))
+(--> value-migrates-upward ([] (scarce-resource mind-around-models)))
+(--> scarce-properties ([] (persistent-memory reasoning-shows-work explicit-goals authority-granted self-improvement-brakes)))
+(--> hyperon-validation ([] (designed-for commodity-world wrapping-interchangeable-llms)))
+(--> single-network-insufficiency ([] (no-single-container human-level engines-inside-broader)))
+(--> export-control-futility ([] (lag-reality chinese-parity chips-not-bottleneck)))
 
-;; ---- Value migrates upward (claims 6-8) ----
-(--> frontier-llm ([] (no-longer-scarce abundant open interchangeable)))
-(--> durable-value ([] (migrates-to layer-above-models)))
-(--> wrapping-layer ([] (remembers coordinates governs evaluates embeds)))
-(--> wrapping-layer ([] (is hyperon-architecture)))
-(--> (× wrapping model) ([] (wrapping matters-more-than wrapped)))
-(--> omegaclaw ([] model-agnostic-by-design))
-
-;; ---- Scarce properties (claims 9-13) ----
-(: persistent-memory ScarceProperty)
-(: reasoning-shows-work ScarceProperty)
-(: explicit-goals-values ScarceProperty)
-(: authority-granted-not-assumed ScarceProperty)
-(: self-improvement-with-brakes ScarceProperty)
-(--> (× persistent-memory reasoning-shows-work explicit-goals-values authority-granted-not-assumed self-improvement-with-brakes) ([] scarce-properties-of-mind))
-(--> scarce-properties-of-mind ([] (architectural not-model-features)))
-
-;; ---- Design validation (claims 14-15) ----
-(--> single-large-network ([] (not-right-container for-whole-mind)))
-(--> large-neural-models ([] (spectacular-engines inside-broader-system not-system-itself)))
-(--> cognitive-architecture ([] (explicit shared-structures many-processes-operate-over)))
-
-;; ---- Base space interchangeability (claim 16) ----
-(--> llm-commodity base-space-interchangeability)
-(--> base-space-interchangeability ([] (fiber-differentiates not-base)))
-
-;; ---- Scarce properties as fiber components (claim 17) ----
-(--> scarce-properties-of-mind fiber-components)
-(--> fiber-components ([] (independently-necessary anti-scalar-collapse)))
-
-;; ---- Open weights break monopoly cocycle (claim 18) ----
-(--> open-weights broken-monopoly-cocycle)
-(--> broken-monopoly-cocycle ([] (centralizing-cocycle broken)))
-(--> broken-monopoly-cocycle ([] (transition-functions become-traversable)))
-(--> broken-monopoly-cocycle ([] (reverse-of watermarking-fiber-bundle-fracture)))
-
-;; ---- Architecture as sheaf (claim 19) ----
+;; ---- Hyperseed interpretations (6-10) ----
+(--> llm-commoditization base-space-interchangeability)
+(--> base-space-interchangeability ([] (flat-base differentiation-in-fiber)))
+(--> scarce-properties independent-fiber-components)
+(--> independent-fiber-components ([] (memory reasoning goals authority self-improvement anti-scalar-collapse)))
 (--> cognitive-architecture sheaf-over-model-sections)
-(--> sheaf-over-model-sections ([] (llms-are local-sections)))
-(--> sheaf-over-model-sections ([] (composition-transport-evaluation is-sheaf-structure)))
+(--> sheaf-over-model-sections ([] (llms-local-sections architecture-composes transition-functions)))
+(--> sheaf-over-model-sections ([] (no-single-section-suffices multiple-composed)))
+(--> authority-granted r-auth)
+(--> r-auth ([] (provenance-gated-trust s-half-reducible p-half-irreducible)))
 
-;; ---- Export controls as failed containment (claim 20) ----
-(--> export-controls failed-containment)
-(--> failed-containment ([] (same-dynamic-as container-escape)))
+;; ---- d-calculus claims (11-15) ----
+(--> base-flatness-curvature ([] (provider-differentiation low-commodity k3-moment)))
+(--> fiber-richness-curvature ([] (architecture-value-added high-omegaclaw only-differentiation)))
+(--> export-control-futility-holonomy ([] (gap-per-cycle decreasing k3-proves-parity)))
+(--> sheaf-composition-curvature ([] (local-global-gap low-architecture-succeeds)))
+(--> authority-provenance-curvature ([] (granted-deserved-calibration low-well-calibrated)))
 
-;; ---- Authority as R_auth (claim 21) ----
-(--> authority-granted-not-assumed r-auth-in-fiber)
-(--> r-auth-in-fiber ([] (trust-through-provenance not-inherited-from-brand)))
+;; ---- Cross-references ----
+(--> ah-kimi-k3 ([] (related-to tag-youre-not-it omegaclaw-architecture)))
+(--> ah-kimi-k3 ([] (related-to fable-farce capability-diffusion export-controls)))
+(--> ah-kimi-k3 ([] (related-to avoiding-catastrophe architecture-hinge)))

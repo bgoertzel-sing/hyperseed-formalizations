@@ -1,58 +1,53 @@
 ;; =============================================================
 ;; Seed atoms — Why I Didn't Sign "We Must Act Now"
 ;; Source: Ben Goertzel, Eurykosmotron, 2026-07-15
+;; Deepened: 2026-09-23 (Hyperseed v2 / d-calculus)
 ;; =============================================================
 
 ;; ---- Type declarations ----
-(: GovernanceMode Type)
-(: LetterGenre Type)
+(: DeceptiveLetterGenre Type)
+(: SteeringMode Type)
 
-;; ---- Surface vs. hidden agenda (claims 1-4) ----
-(--> we-must-act-now ([] (surface-premises true)))
-(--> we-must-act-now ([] (hidden-agenda acemoglu-school)))
-(--> complement-humans-framing ([] (tell encodes anti-agi-steering)))
-(--> tools-only-ai ([] (fine but-not-to-exclusion-of autonomous-agi)))
-(--> expert-steering ([] hubris))
+;; ---- Core article claims (1-9) ----
+(--> we-must-act-now-letter ([] (blandly-agreeable surface ai-powerful economy-changes)))
+(--> we-must-act-now-letter ([] (sharper-agenda complement-humans acemoglu-school tools-only)))
+(--> prediction-impossibility ([] (which-jobs when what-impact undecidable)))
+(--> steam-engine-analogy ([] (1760-nobody-predicted employment-impact same-for-agi)))
+(--> expert-committees ([] (cant-solve undecidable-basis structurally-wrong)))
+(--> deceptive-letter-genre DeceptiveLetterGenre)
+(--> frank-statement-1954 DeceptiveLetterGenre)
+(--> oregon-petition-1998 DeceptiveLetterGenre)
+(--> pause-giant-ai-2023 DeceptiveLetterGenre)
+(--> deceptive-letter-genre ([] (bland-surface sharp-agenda-beneath)))
+(--> decentralized-alternative ([] (participatory self-organizing bottom-up)))
+(--> bottom-up-complementarity ([] (billions-interactions not-top-down-engineering)))
+(--> complementarity-relationship ([] (worked-out-in-practice not-policy-brief)))
 
-;; ---- Prediction impossibility (claims 5-8) ----
-(--> agi-impact-prediction ([] impossible))
-(--> steam-engine-analogy ([] (1760s could-not-predict employment-impact)))
-(--> intermediate-cases ([] (enormous-space eludes-foresight)))
-(--> agi-transition ([] (worked-out-as-we-go tap-dancing)))
-
-;; ---- Deceptive letter genre (claims 9-12, 24) ----
-(--> tobacco-frank-statement ([] (1954 caring-surface manufactured-doubt)))
-(--> oregon-petition ([] (1998 mimicked-NAS deceived-signers)))
-(--> pause-giant-ai ([] (2023 signers-never-paused consolidated-incumbent-advantage)))
-(--> deceptive-letter-genre ([] (blandly-agreeable-surface sharper-agenda-beneath)))
-;; Broken provenance
-(--> deceptive-letter-genre broken-provenance)
-(--> broken-provenance ([] (stated-origin doesnt-match actual-origin)))
-(--> broken-provenance ([] (r-auth-split designed-to-detect)))
-
-;; ---- Decentralized alternative (claims 13-16, 21) ----
-(--> ai-development ([] (should-be decentralized participatory self-organizing)))
-(--> ai-development ([] (many-architectures many-value-systems many-cultures)))
-(--> ai-development ([] (global-brain guides not-expert-panel)))
-(--> complementarity ([] (emerges from-bottom-up-ferment)))
-;; Parallel transport across many fibers
-(--> decentralized-development parallel-transport-across-many-fibers)
-(--> parallel-transport-across-many-fibers ([] anti-scalar-collapse-in-governance))
-
-;; ---- Complementarity as relationship (claims 17-19, 23) ----
-(--> human-ai-complementarity ([] (relationship not-specification)))
-(--> human-ai-complementarity ([] (worked-out-in-doing billions-of-interactions)))
-(--> human-ai-complementarity ([] (unanticipatable forking remixing)))
-;; Emergent sheaf
-(--> human-ai-complementarity emergent-sheaf)
-(--> emergent-sheaf ([] (global-section from-local-interactions not-top-down)))
-
-;; ---- Centralized steering = frozen directed type (claim 20) ----
+;; ---- Hyperseed interpretations (10-15) ----
+(--> letter-structure ([] (0-cell-agreement 1-cell-disagreement agenda-smuggling)))
+(--> 0-cell-consensus ([] (shared-starting-points surface-truisms)))
+(--> 1-cell-agenda ([] (specific-policy acemoglu-steering direction)))
 (--> centralized-steering frozen-directed-type)
-(--> frozen-directed-type ([] (small-group decides-trajectory prevents-multi-path)))
-(--> frozen-directed-type ([] (same-as evil-mode seven-flavors)))
+(--> frozen-directed-type ([] (committee-freezes-trajectory same-as eternal-regime)))
+(--> prediction-impossibility undecidable-path-selection)
+(--> undecidable-path-selection ([] (committee-selects-on-undecidable structurally-wrong)))
+(--> decentralized-development parallel-transport-many-fibers)
+(--> parallel-transport-many-fibers ([] (different-architectures-values-cultures independent-transport)))
+(--> parallel-transport-many-fibers anti-scalar-collapse-governance)
+(--> deceptive-letters provenance-manipulation)
+(--> provenance-manipulation ([] (prestigious-signatures broken-cues same-as-kyc-theatre)))
+(--> complementarity emergent-sheaf)
+(--> emergent-sheaf ([] (global-section-from-local local-data-doesnt-exist-yet)))
 
-;; ---- 0-cell vs 1-cell agreement (claim 22) ----
-(--> deceptive-letter-genre 0-cell-agreement-1-cell-disagreement)
-(--> 0-cell-agreement-1-cell-disagreement ([] (surface-agreement directed-disagreement)))
-(--> 0-cell-agreement-1-cell-disagreement ([] (same-as watermarking-surface-vs-structure)))
+;; ---- d-calculus claims (16-20) ----
+(--> surface-depth-curvature ([] (0cell-1cell agenda-smuggling-severity high-diverges)))
+(--> development-trajectory-holonomy ([] (diversity-loss-per-cycle decentralized-targets-zero)))
+(--> prediction-uncertainty-curvature ([] (degradation-rate high-committee-cant-work)))
+(--> complementarity-emergence-curvature ([] (specification-gap high-must-emerge)))
+(--> provenance-manipulation-gradient ([] (signature-authenticity claim-endorsement transparency steep-exploited)))
+
+;; ---- Cross-references ----
+(--> why-i-didnt-sign ([] (related-to fable-farce benevolent-throttling ratchet)))
+(--> why-i-didnt-sign ([] (related-to seven-flavors eternal-regime humanity-evil)))
+(--> why-i-didnt-sign ([] (related-to avoiding-catastrophe stewardship-hinge)))
+(--> why-i-didnt-sign ([] (related-to sanders-ban legislative-intent-vs-effect)))

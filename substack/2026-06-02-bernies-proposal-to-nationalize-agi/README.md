@@ -5,7 +5,7 @@
 - Publication: Eurykosmotron / Substack
 - Published: 2026-06-02
 - Retrieved: 2026-09-17
-- Status: initial Hyperseed formalization draft
+- Status: deepened Hyperseed formalization (v2, 2026-09-22)
 
 ## Summary
 
@@ -17,7 +17,7 @@ centralization with another. The alternative: decentralized, globally
 distributed AI infrastructure that no single entity — corporate or
 governmental — controls.
 
-Key threads:
+### Core argument
 
 1. **Sanders is right about the problem.** Letting a handful of
    corporations own the most transformative technology in human history
@@ -48,27 +48,146 @@ Key threads:
    approach: decentralized AI infrastructure with distributed governance,
    open protocols, and no single owner.
 
-## Hyperseed relevance
+### Connection to other Goertzel work
 
-- **Corporate vs government = section swap, not fiber change:** Both are
-  section-level interventions (different base points) with the same fiber
-  structure (centralized control). The problem is in the fiber, not the
-  section.
-- **Decentralization = fiber-level solution:** Changing the fiber
-  structure (distributed control) rather than the section (who controls).
-- **Regulatory capture = fiber corruption through base-point pressure:**
-  The base point (political power) corrupts the fiber (regulatory
-  intent) through lobbying, revolving doors, and institutional capture.
-- **International coordination = non-trivializable bundle:** The bundle
-  of national interests can't be trivialized into a single section
-  (one nation's ownership).
+- **OpenBGI:** Decentralized infrastructure as the practical alternative
+  to both corporate and government ownership.
+- **Radical futurism:** AGI governance as the political expression of the
+  broader emergence question.
+- **Collective non-self:** Governance structures as collective self-models
+  that can be centralized or distributed.
+
+## Hyperseed ontology interpretation
+
+### Centralization as trivial fiber
+
+Both corporate and government ownership produce trivial fiber — a single
+section dominates the entire bundle:
+
+- **Trivial fiber.** When one entity controls AGI, the governance fiber
+  collapses to a single point at every base point (every decision, every
+  deployment, every user). The fiber has no internal structure — all
+  control flows through one section.
+
+- **Section swap, not fiber change.** Nationalization replaces the
+  corporate section with the government section but leaves the fiber
+  structure unchanged. Both are trivial bundles (single controller).
+  The problem is in the fiber topology (trivial = centralized), not
+  in which section is selected (which entity controls).
+
+- **Same pathology, different symptoms.** Corporate trivial fiber:
+  profit maximization, short time horizons, competitive secrecy.
+  Government trivial fiber: bureaucratic inertia, political capture,
+  sovereignty conflicts. Both are symptoms of trivial fiber, not of
+  the specific section.
+
+### Decentralization as non-trivial fiber
+
+Distributed governance creates genuine fiber structure:
+
+- **Non-trivial bundle.** No single section covers the whole base space.
+  Different participants contribute different sections (different
+  perspectives, capabilities, governance inputs). The bundle is globally
+  non-trivial even if locally trivializable.
+
+- **Fiber richness = governance richness.** The fiber dimension at each
+  base point measures the diversity of governance inputs. High-dimensional
+  fiber: many independent contributors, rich governance. Low-dimensional:
+  few contributors, impoverished governance.
+
+- **Transition functions = coordination protocols.** The transition
+  functions between local trivializations encode how different governance
+  participants coordinate. The ASI Alliance's open protocols ARE these
+  transition functions — they define how the bundle is glued together
+  from local contributions.
+
+### Regulatory capture as fiber corruption
+
+Political power corrupts governance fiber through base-point pressure:
+
+- **Base-to-fiber corruption.** Regulatory capture is a pathological
+  connection on the governance bundle: changes in the base point
+  (political power shifts) produce changes in the fiber (regulatory
+  intent) through non-legitimate channels (lobbying, revolving doors).
+
+- **Corrupted parallel transport.** The connection (intended to
+  transport regulatory intent consistently across contexts) is
+  corrupted by base-point pressure. The transported intent arrives
+  different from what was sent — industry-friendly regulation emerges
+  from consumer-protection intent.
+
+### International coordination as non-trivializable bundle
+
+The bundle of national interests cannot be trivialized:
+
+- **Topological obstruction.** No single nation's ownership can serve
+  as a global section — the bundle of national interests has non-trivial
+  topology (competing sovereignty claims, different value systems,
+  different development stages). Nationalization tries to trivialize
+  a non-trivializable bundle.
+
+- **Characteristic class ≠ 0.** The non-trivializability is measured
+  by a characteristic class: the degree to which national interests
+  are incompatible with a single global section. This class is clearly
+  nonzero — no nation accepts another's ownership of AGI.
+
+### d-calculus connection (Hyperseed v2)
+
+- **Centralization curvature.** The curvature of the governance bundle
+  under centralized control:
+
+  ||F_∇_centralized|| = 0 (trivial bundle has zero curvature)
+
+  Zero curvature seems good but is actually pathological: it means
+  the governance has no internal structure, no checks and balances,
+  no diversity of perspective. All transport is trivial because
+  there's only one section.
+
+- **Decentralization curvature.** The curvature of the distributed
+  governance bundle:
+
+  ||F_∇_decentralized|| > 0 (non-trivial curvature)
+
+  Positive curvature indicates genuine governance structure: different
+  sections, non-trivial transition functions, real coordination
+  challenges. The curvature measures the governance richness — how
+  much real deliberation is needed, how many perspectives must be
+  reconciled.
+
+- **Capture holonomy.** A regulatory loop (propose → legislate →
+  implement → evaluate → propose) produces holonomy:
+
+  Hol_γ(Γ_regulation) = regulatory drift per cycle
+
+  In captured systems: large holonomy (regulation drifts far from
+  intent each cycle). In well-governed systems: small holonomy
+  (regulation stays close to intent). Zero holonomy: perfect
+  implementation, no drift — an unrealistic ideal.
+
+- **Sovereignty obstruction class.** The characteristic class of the
+  international governance bundle:
+
+  c_1(E_sovereignty) ≠ 0
+
+  This nonzero class is the d-calculus formulation of why
+  nationalization can't work internationally: the sovereignty
+  fiber bundle has a topological obstruction to global
+  trivialization. Decentralization works because it doesn't
+  require trivialization — it works with the non-trivial topology
+  rather than against it.
+
+- **Governance gradient.** The gradient from centralized to
+  decentralized governance:
+
+  ∇_governance = ∇(fiber_dimension × transition_transparency ×
+                   participation_breadth × capture_resistance)
+
+  The article argues for moving along this gradient toward higher
+  values. The ASI Alliance model sits near the high end; corporate
+  and government ownership sit near the low end.
 
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
-- `formalization.tex` — LaTeX formalization.
-- `atoms.metta` — MeTTa seed atoms.
-
-## Working convention
-
-The Substack article is treated as an authored source.
+- `formalization.tex` — LaTeX formalization with d-calculus extensions.
+- `atoms.metta` — MeTTa seed atoms for AtomSpace/PLN experiments.

@@ -1,36 +1,29 @@
 ;; =============================================================
 ;; Seed atoms — Goertzel vs Epstein
 ;; Source: Ben Goertzel, Eurykosmotron, 2026-02-20
+;; Deepened: 2026-09-19 (Hyperseed v2 / d-calculus)
 ;; =============================================================
 
-;; ---- Funding context (claims 1-6) ----
-(--> agi-funding-hard ([] (obscure nobody-believed very-difficult decades)))
-(--> hundreds-of-sources ([] (literally-hundreds epstein-one-of-many)))
-(--> modest-total ([] (360k seventeen-years small-amounts intermittent)))
-(--> largest-single ([] (100k unm fellowship 2001)))
-(--> post-conviction ([] (100k-after-2008 rest-before sentencing)))
-(--> useful-not-major ([] (very-useful far-from-major-patronage)))
+;; ---- Core article claims ----
 
-;; ---- Nature of relationship (claims 7-10) ----
-(--> purely-professional ([] (funder-fundee no-social no-personal)))
-(--> no-island-no-plane ([] (never-visited never-flew offices-only)))
-(--> no-knowledge-crimes ([] (no-involvement no-criminal no-immoral)))
-(--> epstein-interested-agi ([] (genuinely-interested cutting-edge few-took-seriously)))
+(--> funding-context ([] (difficult-agi-funding hundreds-of-sources modest-amount)))
+(--> no-personal-involvement ([] (funder-fundee-only no-social no-criminal-knowledge)))
+(--> due-diligence-failure ([] (inadequate-verification naive-acceptance)))
+(--> moral-reckoning ([] (regret transparency stands-with-victims)))
+(--> provenance-transparency ([] (detailed-accounting choosing-openness)))
 
-;; ---- Due diligence failure (claims 11-13) ----
-(--> failed-due-diligence ([] (inadequate naively-accepted should-have-investigated)))
-(--> should-have-known ([] (background subsequent-reports paid-attention)))
-(--> hindsight-regret ([] (would-not-have in-hindsight deeply-regret)))
+;; ---- Hyperseed ontology interpretations ----
 
-;; ---- Moral stance (claims 14-17) ----
-(--> values-contrast ([] (criminal-conduct utterly-contrasts just-beneficial)))
-(--> support-victims ([] (condolences release-files full-prosecution)))
-(--> transparency-chosen ([] (publicly-transparently rather-than-silent)))
-(--> not-unique ([] (many-scientists targeted cutting-edge-strategy)))
+(--> provenance-fiber-history ([] (creation-path indelible base-points-traversed)))
+(--> due-diligence-base-verification ([] (verify-before-connect unverified-tainted)))
+(--> fiber-base-separation ([] (quality-independent provenance-matters-for-trust)))
 
-;; ---- Hyperseed inferences (claims 21-25) ----
-(--> provenance-documentation ([] (evidence-trail funding-history fiber-over-base)))
-(--> provenance-cant-clean ([] (not-deletable honest-documentation integrity)))
-(--> due-diligence-base-verification ([] (verify-before-building epistemic-integrity hallucination-bound)))
-(--> transparency-provenance-exposure ([] (visible-trail anti-hallucination honest-inference)))
-(--> funding-as-base-resource ([] (base-resource moral-quality-not-corruption provenance-remains)))
+;; ---- d-calculus claims ----
+
+(--> provenance-curvature ([] (funding-influence-measure near-zero-here)))
+(--> trust-connection-suppression ([] (tainted-provenance transparency-restores)))
+(--> provenance-holonomy ([] (reckoning-loop moral-growth avoidance-prevents)))
+
+;; ---- Cross-references ----
+(--> goertzel-vs-epstein ([] (related-to bgi-manifesto transparency-principle)))
+(--> goertzel-vs-epstein ([] (related-to what-is-science social-epistemology-provenance)))

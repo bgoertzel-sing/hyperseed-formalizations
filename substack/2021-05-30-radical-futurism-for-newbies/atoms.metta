@@ -1,39 +1,48 @@
 ;; =============================================================
 ;; Seed atoms — Radical Futurism for Newbies
 ;; Source: Ben Goertzel, Eurykosmotron, 2021-05-30
+;; Deepened: 2026-09-19 (Hyperseed v2 / d-calculus)
 ;; =============================================================
 
-;; ---- Singularity (claims 1-4) ----
-(--> accelerating-progress ([] (each-decade more-change trajectory)))
-(--> singularity-concept ([] (beyond-prediction phase-transition capability)))
-(--> plausibly-near ([] (decades not-centuries trajectory)))
-(--> not-inevitable ([] (delayed-possible catastrophe regulation dead-ends)))
+;; ---- Core article claims ----
 
-;; ---- AGI key (claims 5-8) ----
-(--> agi-meta-technology ([] (accelerates-all improves-development key)))
-(--> multiple-approaches ([] (neural symbolic hybrid emulation viable)))
-(--> singularitynet ([] (decentralized open accessible not-one-entity)))
-(--> opencog-hyperon ([] (hybrid-architecture multiple-paradigms combining)))
+(--> singularity ([] (accelerating near prediction-impossible)))
+(--> agi-key-technology ([] (accelerates-everything meta-technology)))
+(--> life-extension ([] (radical indefinite realistic)))
+(--> mind-uploading ([] (substrate-transfer consciousness-identity)))
+(--> post-scarcity ([] (abundance advanced-technology)))
+(--> existential-risk ([] (wonderful-or-catastrophic same-technologies)))
+(--> choice-matters ([] (development-deployment determines-outcome)))
 
-;; ---- Life extension (claims 9-11) ----
-(--> radical-life-extension ([] (centuries millennia realistic biology genetics)))
-(--> agi-accelerates-longevity ([] (biological-problems beyond-current dramatically)))
-(--> healthspan-not-just-lifespan ([] (living-healthier not-just-longer)))
+;; ---- Hyperseed ontology interpretations ----
 
-;; ---- Mind uploading (claims 12-14) ----
-(--> substrate-independence ([] (computational not-just-biological consciousness)))
-(--> identity-questions ([] (is-upload-you continuity profound)))
-(--> gradual-transition ([] (brain-computer-interface smoother gradual-replacement)))
+(--> singularity-phase-transition ([] (autocatalytic-fiber linear-fails)))
+(--> pre-singularity-fiber ([] (incremental predictable slow-varying)))
+(--> post-singularity-fiber ([] (qualitatively-different incomprehensible)))
 
-;; ---- Risk and choice (claims 15-18) ----
-(--> post-scarcity-possible ([] (nanotech agi fusion abundance everyone)))
-(--> existential-risk ([] (wonderful-or-catastrophic highest-stakes)))
-(--> choice-matters ([] (how-we-develop determines-outcome beneficial)))
-(--> decentralization-helps ([] (reduces-capture narrow-interests)))
+(--> agi-fiber-catalyst ([] (cross-domain all-fibers-accelerated)))
+(--> recursive-catalysis ([] (self-improving exponential intelligence-explosion)))
+(==> (--> $agi ([] self-improving))
+     (--> (catalysis-rate $agi) ([] increasing)))
 
-;; ---- Hyperseed inferences (claims 19-23) ----
-(--> singularity-fiber-phase-transition ([] (autocatalytic predictions-break explosive-growth)))
-(--> agi-fiber-catalyst ([] (thickens-all-fibers meta-technology not-one-more)))
-(--> uploading-fiber-substrate-independence ([] (different-bases structure-independent fundamental)))
-(--> post-scarcity-base-abundance ([] (material-resources enables-fiber-growth unprecedented)))
-(--> existential-risk-fiber-catastrophe ([] (destruction millennia-built civilization consciousness)))
+(--> uploading-substrate-independence ([] (fiber-on-different-base preserved-structure)))
+(--> transfer-fidelity ([] (perfect-isomorphism vs lossy-distortion)))
+
+;; ---- d-calculus claims ----
+
+(--> phase-transition-curvature ([] (F-diverges prediction-impossible)))
+(==> (--> $t ([] approaching-singularity))
+     (--> (F-nabla-tech $t) ([] divergent)))
+
+(--> catalytic-gradient ([] (positive-all-components omni-directional)))
+(--> recursive-holonomy ([] (growing-per-cycle runaway-acceleration)))
+(--> substrate-transfer-curvature ([] (zero-perfect nonzero-lossy identity-question)))
+
+(--> existential-curvature-catastrophe ([] (divergent-curvature collapsing-dimension)))
+(--> good-singularity ([] (divergent-curvature thickening-fiber)))
+(--> bad-singularity ([] (divergent-curvature collapsing-fiber)))
+
+;; ---- Cross-references ----
+(--> radical-futurism ([] (related-to three-paths portfolio-diversification)))
+(--> radical-futurism ([] (related-to beneficial-agi steering-choice)))
+(--> radical-futurism ([] (related-to consciousness-explosion expanding-forms)))

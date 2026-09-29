@@ -8,155 +8,93 @@ Eurykosmotron, 2026-07-12.
 - **source-paraphrase**: directly stated or closely implied in the article.
 - **inferred**: not stated verbatim but follows from the article's logic.
 - **hypothesis**: proposed by the article as a conjecture or design hypothesis.
+- **hyperseed-interpretation**: formalized within the Hyperseed ontology.
 
 ---
 
-## Partial legitimacy of safety concerns
+### Core claims from the article
 
-1. **Some restrictions justified.** If a model can walk a moderately clueful
-   malicious actor through synthesizing a dangerous pathogen or assembling a
-   serious offensive cyber campaign, some form of restriction in a mass-deployed
-   consumer product is just sane. *(source-paraphrase)*
+1. **Partial legitimacy.** Some capability restrictions genuinely justified
+   on safety grounds (bio/chem, offensive cyber). *(source-paraphrase)*
 
-2. **Not everything must be open.** We do not need to turn every consumer
-   chatbot into a pocket tutor for bioterrorism to prove devotion to openness.
+2. **Safety-competitive indistinguishability.** Same classifier, same
+   throttle, same moat whether motivated by safety or competition.
    *(source-paraphrase)*
 
-3. **Visible rerouting defensible.** The visible rerouting Fable does for
-   bio/chem and offensive-cyber queries — where flagged requests get handled
-   by a weaker model and the user is told — has the feel of an honest,
-   defensible attempt to be responsible. *(source-paraphrase)*
+3. **Observational identity.** Good faith and bad faith produce identical
+   outcomes — outside observer cannot distinguish. *(source-paraphrase)*
 
-## Safety-competitive indistinguishability
+4. **Incentive gradient as attractor.** No villain needed; moat builds
+   itself from incentives, legal memos, safety reviews, national-security
+   calls, board-level fear. *(source-paraphrase)*
 
-4. **Dual-use classifier.** "Preventing recursive AI development acceleration
-   by bad actors" and "preventing customers from building rival products"
-   produce exactly the same classifier, exactly the same throttle, exactly the
-   same moat. *(source-paraphrase)*
+5. **Government-corporate fusion.** Export-control directive established
+   frontier model access as national-security lever. *(source-paraphrase)*
 
-5. **Observational indistinguishability.** When a company's stated safety
-   policy coincides precisely with its fiduciary interest in maintaining market
-   dominance, good faith and bad faith are utterly indistinguishable to the
-   outside observer. *(source-paraphrase)*
+6. **Policy blur.** Corporate platform governance and state security
+   policy blur into each other. *(source-paraphrase)*
 
-6. **Not unique villainy.** This is not about Anthropic being uniquely
-   villainous — it's about the economic and institutional logic of the
-   situation, which would repurpose the sincerity of almost any group placed
-   in the same position. *(source-paraphrase)*
+7. **Ratchet mechanism.** Each turn individually defensible; composition
+   is monopoly. *(source-paraphrase)*
 
-## Incentive gradient as attractor
+8. **Ratchet endpoint.** Most powerful cognitive technology administered
+   by handful of companies and one or two governments. *(source-paraphrase)*
 
-7. **Moat builds itself.** Nobody has to twirl a mustache. The moat builds
-   itself out of incentives, legal memos, safety reviews, red-team findings,
-   partnership pressures, national-security phone calls, and board-level
-   terror at losing the lead. *(source-paraphrase)*
+9. **Decentralization as structural remedy.** Open weights, transparent
+   infrastructure, cryptographic verification, distributed governance.
+   *(source-paraphrase)*
 
-8. **Boundary erosion inevitable.** Under late-stage capitalism, the notion
-   that a frontier lab will maintain a crisp boundary between "restrictions
-   justified by catastrophic risk" and "restrictions that protect our lead"
-   is phenomenally absurdist. Every erosion is rewarded; every act of
-   restraint is punished. *(source-paraphrase)*
+10. **Visibility by construction.** In open systems, slippage from safety
+    to moat is visible. In closed systems, hidden. *(source-paraphrase)*
 
-9. **Moral fluency under pressure.** Put smart, sincere people inside a
-   trillion-dollar pressure cooker and they will discover morally fluent
-   reasons to do what the pressure cooker rewards. *(source-paraphrase)*
+### Hyperseed-ontology claims
 
-## Government-corporate fusion
+11. **Safety-competitive indistinguishability = cocycle ambiguity.**
+    Same transition function from both fibers; observer can't determine
+    which generated it. *(hyperseed-interpretation)*
 
-10. **Export control precedent.** The export-control directive established
-    the precedent that Washington considers frontier model access a national-
-    security lever to be pulled at will. *(source-paraphrase)*
+12. **Structural not intentional.** Even genuine safety intent produces
+    same cocycle as competitive throttling. Intent irrelevant.
+    *(hyperseed-interpretation)*
 
-11. **Foreign nationals as suspects.** Foreign nationals, including researchers
-    physically working in the US, are the default suspects in this framework.
-    *(source-paraphrase)*
+13. **Incentive ratchet = centralizing cocycle.** Composition of
+    individually-defensible restrictions = monopoly. Holonomy is
+    centralizing. *(hyperseed-interpretation)*
 
-12. **Blur of governance.** Once the precedent is normalized, the distinction
-    between corporate platform governance and state security policy blurs
-    quickly. *(source-paraphrase)*
+14. **No villain = emergent-evil pattern.** Local incentives, global
+    concentration. Same as Seven Flavors emergent evil.
+    *(hyperseed-interpretation)*
 
-## Ratchet mechanism
+15. **Decentralization = broken monopoly cocycle.** Open weights make
+    transition functions traversable by anyone. *(hyperseed-interpretation)*
 
-13. **Small club attractor.** The attractor is a small club of US frontier
-    labs, operating under informal-but-binding government supervision,
-    mutually enforcing a capability hierarchy where "safety" is the public
-    justification for oligopolistic and geopolitical advantage.
-    *(source-paraphrase)*
+16. **Visible slippage = inspectable fiber.** Open system: safety vs
+    competitive difference detectable. Closed: hidden.
+    *(hyperseed-interpretation)*
 
-14. **Individually defensible turns.** Each turn of the ratchet is individually
-    defensible. The endpoint is the most powerful cognitive technology in
-    history administered by a handful of companies and one or two governments.
-    *(source-paraphrase)*
+17. **Government-corporate fusion = fiber entanglement.** Corporate
+    governance and state security fibers become non-separable.
+    *(hyperseed-interpretation)*
 
-15. **Template for fifty more.** This is not the last such episode. It is the
-    template for the next fifty. The government-corporate AI oligopoly
-    assembles itself one individually reasonable-sounding safety measure at a
-    time. *(source-paraphrase)*
+### d-calculus claims (Hyperseed v2)
 
-## Decentralization as structural remedy
+18. **Cocycle ambiguity curvature (d-calculus).**
+    ||F_∇(safety, competitive)|| = distinguishability. Zero =
+    perfectly indistinguishable. *(hyperseed-interpretation)*
 
-16. **Only reliable remedies.** Open weights, transparent serving
-    infrastructure, cryptographically verifiable inference, governance
-    distributed across jurisdictions — the only reliable and realistic
-    remedies. *(source-paraphrase)*
+19. **Ratchet holonomy (d-calculus).** Hol_γ(Γ_ratchet) = concentration
+    gain per turn. Monotonically increasing = accelerating monopoly.
+    *(hyperseed-interpretation)*
 
-17. **Decentralization and safety compatible.** Decentralization and safety
-    are not the opposites the oligopoly narrative requires. Dangerous
-    capabilities can be managed via transparent, community-governed screening
-    rather than opaque corporate fiat. *(source-paraphrase)*
+20. **Corporate-state entanglement curvature (d-calculus).**
+    ||F_∇(corporate, state)|| = degree of fusion. Export control
+    sharply increased this. *(hyperseed-interpretation)*
 
-18. **More robust because trustless.** Decentralized safety mechanisms will
-    ultimately prove MORE robust, precisely because they don't require trusting
-    any single conflicted party. *(source-paraphrase)*
+21. **Visibility gradient (d-calculus).** ∇_visibility =
+    inspectability × transparency × auditability. Open = flat high.
+    Closed = steep. *(hyperseed-interpretation)*
 
-19. **Visibility by construction.** In an open system, the slippage from safety
-    to moat is visible by construction. Visibility prevents lies from getting
-    secretly baked into infrastructure. *(source-paraphrase)*
-
-20. **Access as revocable privilege lesson.** Every non-US developer now
-    understands that a single directive from a government they didn't elect
-    can switch off their stack overnight. *(source-paraphrase)*
-
-21. **Building like hell.** The incumbents have just handed the decentralized
-    AGI world the most powerful recruiting pitch it has ever had. Build like
-    hell to maximize odds of quasi-utopic Singularity branches.
-    *(source-paraphrase)*
-
-## Hyperseed-connected inferences
-
-22. **Safety/competitive indistinguishability = cocycle ambiguity.** The same
-    transition function serves both safety and competitive purposes — a
-    degenerate cocycle where the observer cannot distinguish which fiber
-    (safety vs. competition) is being transported along. The cocycle condition
-    is satisfied by both interpretations simultaneously. *(inferred)*
-
-23. **Incentive ratchet = centralizing cocycle.** Each turn of the ratchet
-    concentrates control into fewer hands — same structure as the watermarking
-    centralizing cocycle. The ratchet is the cocycle's dynamics: each
-    transition function moves the system toward more centralized control.
-    *(inferred)*
-
-24. **Moral fluency = provenance laundering.** Smart people finding morally
-    fluent reasons for self-serving behavior is provenance laundering: the
-    actual origin (competitive pressure) is wrapped in a provenance chain
-    (safety reasoning) that makes it look like a different kind of decision.
-    Same R_auth failure mode as deceptive open letters. *(inferred)*
-
-25. **Decentralization = broken monopoly cocycle.** Open weights and
-    distributed governance break the centralizing cocycle by making
-    transition functions traversable by anyone — same structure as the
-    Kimi K3 analysis. *(inferred)*
-
-26. **Visibility by construction = provenance transparency.** In open systems,
-    the fiber structure is inspectable — every restriction can be traced to
-    its actual origin (safety or competition). This is the R_auth principle
-    applied to infrastructure: trust earned through inspectable provenance,
-    not inherited from institutional authority. *(inferred)*
-
-27. **Observational indistinguishability as fiber degeneracy.** When the
-    safety fiber and the competitive fiber produce identical observables
-    (same classifier, same throttle), the bundle has a fiber degeneracy:
-    two conceptually distinct fibers map to the same section. Resolving the
-    degeneracy requires additional structure — inspectable provenance, open
-    code, distributed governance — that lifts the degeneracy by providing
-    observable differences between the two fibers. *(inferred)*
+22. **Ratchet reversibility curvature (d-calculus).**
+    ||F_∇_reversibility(turn_i)|| = difficulty of undoing restriction.
+    Ratchet produces increasing irreversibility.
+    *(hyperseed-interpretation)*

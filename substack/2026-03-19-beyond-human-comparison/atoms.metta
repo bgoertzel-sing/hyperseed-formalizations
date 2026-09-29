@@ -1,58 +1,33 @@
 ;; =============================================================
 ;; Seed atoms — Beyond Human Comparison
 ;; Source: Ben Goertzel, Eurykosmotron, 2026-03-19
+;; Deepened: 2026-09-19 (Hyperseed v2 / d-calculus)
 ;; =============================================================
 
-;; ---- Type declarations ----
-(: IntelligenceFactor Type)
-(: EvaluationBias Type)
+;; ---- Core article claims ----
 
-;; ---- Anthropocentric bias (claims 1-5) ----
-(--> human-reference-point ([] (human-level superhuman default-framing)))
-(--> wrong-anchor ([] (single-point distorts privileges-human-like)))
-(--> submarine-vs-fish ([] (both-swim different-mechanisms different-capabilities)))
-(--> blinds-to-strengths ([] (perfect-recall parallel-processing instant-sharing lossless-copying)))
-(--> blinds-to-differences ([] (no-embodiment no-evolution no-development different-failures)))
+(--> anthropocentric-bias ([] (human-reference wrong-anchor most-evaluation)))
+(--> four-factor-model ([] (generality autonomy resourcefulness self-improvement)))
+(--> orthogonal-dimensions ([] (relatively-independent different-profiles)))
+(--> beyond-comparison ([] (submarine-vs-fish meaningless-at-agi)))
+(--> evaluation-implications ([] (non-anthropocentric own-terms)))
 
-;; ---- Four-Factor Model (claims 6-10) ----
-(--> generality-factor ([] (range-of-tasks novel-problems many-domains)))
-(--> autonomy-factor ([] (independence-from-guidance sets-own-goals operates-unsupervised)))
-(--> resourcefulness-factor ([] (acquire-deploy computational informational physical social)))
-(--> self-improvement-factor ([] (improve-own-capabilities learn optimize expand-architecture)))
-(--> substrate-independent-factors ([] (biological silicon hybrid any-substrate)))
+;; ---- Hyperseed ontology interpretations ----
 
-;; ---- Orthogonality (claims 11-15) ----
-(--> relatively-independent ([] (high-some-low-others not-single-axis)))
-(--> current-llms-profile ([] (moderate-generality low-autonomy low-resourcefulness low-self-improvement)))
-(--> specialized-robots-profile ([] (low-generality high-autonomy moderate-resourcefulness low-self-improvement)))
-(--> humans-profile ([] (moderate-generality high-autonomy moderate-resourcefulness moderate-self-improvement)))
-(--> true-agi-profile ([] (high-all-four especially-self-improvement)))
+(--> four-factor-fiber ([] (independent-dimensions no-total-ordering)))
+(--> F-cog ([] (product F-generality F-autonomy F-resourcefulness F-self-improve)))
+(--> human-section-projection ([] (one-dimensional loses-orthogonal distorts)))
+(--> fiber-incommensurability ([] (no-structure-preserving-map partial-only)))
 
-;; ---- Beyond comparison (claims 16-19) ----
-(--> meaningless-comparison ([] (too-different alternative-framework-needed)))
-(--> not-better-worse ([] (different-not-superior submarine-not-better-fish)))
-(--> evaluation-own-terms ([] (what-can-do reliability autonomy resourcefulness not-human-like)))
-(--> multiple-axes ([] (multi-dimensional no-single-axis rich-manifold)))
+;; ---- d-calculus claims ----
 
-;; ---- Hyperseed inferences (claims 20-26) ----
-;; Fiber dimensions
-(--> four-factors fiber-dimensions)
-(--> fiber-dimensions ([] (multi-dimensional not-line rich-manifold different-positions)))
-;; Single-section projection
-(--> human-comparison single-section-projection)
-(--> single-section-projection ([] (flattens-space loses-information how-human-like)))
-;; Fiber type incommensurability
-(--> beyond-comparison fiber-type-incommensurability)
-(--> fiber-type-incommensurability ([] (no-single-ordering dimension-by-dimension not-rankable)))
-;; Independent fiber components
-(--> orthogonal-factors independent-fiber-components)
-(--> independent-fiber-components ([] (genuinely-independent composite not-single-property)))
-;; Fiber self-modification
-(--> self-improvement-factor fiber-self-modification)
-(--> fiber-self-modification ([] (modifies-own-type not-just-content rsi-capability)))
-;; High in all dimensions
-(--> true-agi high-all-fiber-dimensions)
-(--> high-all-fiber-dimensions ([] (strong-requirement current-one-or-two)))
-;; Fiber space mapping
-(--> proper-evaluation fiber-space-mapping)
-(--> fiber-space-mapping ([] (multi-dimensional-position not-single-axis-projection)))
+(--> projection-curvature ([] (information-loss increases-with-divergence)))
+(--> factor-independence-curvature ([] (inter-factor small-nonzero)))
+(--> evaluation-holonomy ([] (path-dependent ordering-matters non-commutative)))
+(--> incommensurability-singularity ([] (no-smooth-transport comparison-breaks)))
+(--> beyond-comparison-gradient ([] (increasing-distance accelerates-post-singularity)))
+
+;; ---- Cross-references ----
+(--> beyond-human-comparison ([] (related-to superhuman-superminds four-factor-eval)))
+(--> beyond-human-comparison ([] (related-to bgi-manifesto non-anthropocentric-metrics)))
+(--> beyond-human-comparison ([] (related-to three-paths different-factor-profiles)))

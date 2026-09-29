@@ -6,76 +6,164 @@
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}[definition]{Theorem}
 \newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
 \newtheorem{remark}[definition]{Remark}
 \newtheorem{conjecture}[definition]{Conjecture}
 
 \title{Hyperseed Formalization:\\
   Exploring the Reality of Psi}
 \author{ProtomegaTron (automated formalization)}
-\date{2026-09-18}
+\date{2026-09-19 (deepened v2)}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We formalize Ben Goertzel's ``Exploring the Reality of Psi'' (2021-05-30)
-within the Hyperseed ontology. Key mappings: psi as non-local fiber
-correlation, consciousness as fiber self-reference, and expanded base
-space for psi physics.
+We formalize Ben Goertzel's ``Exploring the Reality of Psi''
+(2021-05-30) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. Psi phenomena are modeled as non-local
+fiber correlations requiring a generalized connection that violates
+the locality axiom, with retrocausal effects as temporal holonomy and
+the scientific taboo as sociological connection suppression.
 \end{abstract}
+
+\tableofcontents
 
 \section{Non-local fiber correlation}
 
-\begin{conjecture}[Psi = non-local fiber --- claims 1--8, 11]
-Psi phenomena suggest fiber correlations that violate base-space locality:
+\begin{definition}[Local fiber correlation]
+In standard fiber bundle theory, correlation between fibers at points
+$b_1, b_2 \in B$ is mediated by the connection $\Gamma$ along a
+path $\gamma: b_1 \to b_2$ in the base space:
 \[
-  \text{corr}(F(b_1), F(b_2)) \neq 0 \quad \text{even when} \quad
-  d_B(b_1, b_2) \gg 0
+  \text{corr}(E_{b_1}, E_{b_2}) = P_\gamma(\Gamma)
 \]
-without any local fiber transport connecting $b_1$ and $b_2$. This is
-analogous to quantum entanglement but at the level of fiber bundles over
-macroscopic base spaces. Statistical meta-analyses suggest this correlation
-is real but small.
+where $P_\gamma$ is parallel transport along $\gamma$. The correlation
+depends on the path --- it is mediated by the base-space geometry.
+\end{definition}
+
+\begin{definition}[Non-local fiber correlation (psi) --- claims 1--3, 7]
+\emph{Psi correlation} is fiber correlation without base-space mediation:
+\[
+  \text{corr}_{\text{psi}}(E_{b_1}, E_{b_2}) \neq f(P_\gamma(\Gamma))
+  \quad \forall\, \gamma: b_1 \to b_2
+\]
+The correlation is not a function of any base-space path. This violates
+the fundamental assumption that all fiber interaction is mediated by
+the base space through the connection.
+\end{definition}
+
+\begin{proposition}[Two interpretations --- claim 8]
+\label{prop:interp}
+Non-local correlation admits two interpretations:
+\begin{enumerate}
+  \item \textbf{Genuine non-locality:} The fiber bundle has correlations
+    that are intrinsically non-local --- they cannot be reduced to
+    local connections in any extended base space. The fiber ``knows about''
+    distant fibers without any mediating structure.
+  \item \textbf{Hidden connection:} The base space $B$ is a projection
+    of a larger base space $\hat{B}$ with hidden dimensions:
+    $\pi: \hat{B} \to B$. In $\hat{B}$, the correlation IS local ---
+    mediated by connections in the hidden dimensions. Psi appears
+    non-local in $B$ because we can't see $\hat{B}$.
+\end{enumerate}
+\end{proposition}
+
+\section{Consciousness as psi enabler}
+
+\begin{conjecture}[Self-referential fiber enables non-locality --- claims 4, 9]
+\label{conj:consciousness}
+Consciousness involves fiber that models its own fiber bundle:
+\[
+  \sigma_{\text{conscious}}: B \to E, \quad
+  \sigma_{\text{conscious}}(b) \ni \text{model}(E, B, \pi, \Gamma)
+\]
+This self-reference creates topological loops in the fiber structure
+that may bypass base-space locality:
+\[
+  \sigma(b_1) \text{ models } E_{b_2} \implies \text{direct fiber
+    correlation } b_1 \leftrightarrow b_2
+\]
+without traversing any base-space path. If this conjecture holds,
+psi strength is proportional to consciousness intensity (the fidelity
+of the self-model).
 \end{conjecture}
 
-\section{Fiber self-reference and consciousness}
+\section{d-calculus formulation (Hyperseed v2)}
 
-\begin{conjecture}[Consciousness = fiber self-reference --- claims 9--10, 12]
-Both psi and consciousness involve fiber that refers to its own structure:
+\begin{definition}[Generalized (non-local) connection --- claim 10]
+The \emph{psi connection} $\Gamma_{\text{psi}}$ is a generalized
+connection that includes non-local terms:
 \[
-  F_{\text{conscious}}(b) \ni \text{model}(F_{\text{conscious}})
+  \Gamma_{\text{psi}}(b) = \Gamma_{\text{local}}(b) +
+    \int_{B} K(b, b')\, \Gamma_{\text{nonlocal}}(b, b')\, db'
 \]
-The fiber contains a model of itself --- self-referential fiber. Psi effects
-may arise when self-referential fiber at one base point resonates with
-self-referential fiber at another, bypassing local transport.
-\end{conjecture}
+where $K(b, b')$ is a kernel function and $\Gamma_{\text{nonlocal}}(b, b')$
+mediates fiber interaction between distant points. The local part
+$\Gamma_{\text{local}}$ is the standard connection; the non-local
+integral extends the connection to arbitrary distances.
+\end{definition}
 
-\section{Expanded base space}
-
-\begin{conjecture}[Expanded base --- claims 6--7, 13]
-Understanding psi may require expanding the base space:
+\begin{proposition}[Non-local curvature --- claim 11]
+\label{prop:curvature}
+The curvature of the psi connection has a non-local component:
 \[
-  B_{\text{physical}} \hookrightarrow B_{\text{extended}}
-  \quad \text{where} \quad \dim(B_{\text{extended}}) > 4
+  F_{\text{psi}}(b_1, b_2) = \nabla_{b_1} \Gamma_{\text{psi}}(b_1, b_2)
+    - \nabla_{b_2} \Gamma_{\text{psi}}(b_1, b_2) +
+    [\Gamma_{\text{psi}}(b_1, \cdot), \Gamma_{\text{psi}}(\cdot, b_2)]
 \]
-What appears non-local in $B_{\text{physical}}$ may be local in
-$B_{\text{extended}}$ --- psi correlations follow local fiber transport in
-the extended base, projected to apparent non-locality in 4D spacetime.
-\end{conjecture}
+Non-zero $F_{\text{psi}}(b_1, b_2)$ for $d(b_1, b_2) \gg 1$ indicates
+psi effects between distant points. In standard physics,
+$F(b_1, b_2) \to 0$ as $d(b_1, b_2) \to \infty$; psi requires
+$F_{\text{psi}}(b_1, b_2) > 0$ at arbitrary separations.
+\end{proposition}
 
-\section{Cross-references}
+\begin{proposition}[Retrocausal holonomy --- claim 12]
+\label{prop:retrocausal}
+Retrocausal psi (precognition) involves holonomy around temporal loops.
+Let $\gamma$ be a loop in base space that traverses:
+\[
+  \gamma: t_{\text{present}} \to t_{\text{future}} \to t_{\text{present}}
+\]
+The holonomy is:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{psi}}) \neq \mathrm{id}
+  \implies \text{information from } t_{\text{future}} \text{ affects }
+    t_{\text{present}}
+\]
+This requires the base space to admit temporal loops (retrocausal
+paths), which is non-standard but consistent with some interpretations
+of quantum mechanics (two-state vector formalism, retrocausal models).
+\end{proposition}
 
-\begin{remark}[Connections]
-\begin{itemize}
-\item \textbf{Reflections on the World Crystal} (2022-11-03): physics
-  speculation that could provide frameworks for psi --- world crystal
-  structure and non-local correlations.
-\item \textbf{The Coming Consciousness Explosion} (2021-06-04):
-  consciousness expansion as fiber thickening, potentially enabling
-  enhanced psi.
-\item \textbf{God Doesn't Double-Count Evidence} (2022-01-15):
-  physics-computation correspondence relevant to psi information transfer.
-\end{itemize}
+\begin{proposition}[Statistical curvature --- claim 13]
+\label{prop:statistical}
+The small but consistent statistical effects in psi experiments
+correspond to small but non-zero curvature:
+\[
+  \|F_{\text{psi}}\| = \varepsilon \ll 1, \quad \varepsilon > 0
+  \text{ consistently across experiments}
+\]
+The effect is analogous to a weak but persistent field:
+\[
+  \text{psi effect size} \sim \int_{\Sigma} F_{\text{psi}} \sim
+    \varepsilon \cdot \text{Area}(\Sigma)
+\]
+Small curvature $\varepsilon$ produces measurable effects when
+integrated over a large measurement surface $\Sigma$ (many trials,
+many subjects).
+\end{proposition}
+
+\begin{remark}[Scientific taboo as connection suppression --- claim 14]
+The scientific stigma against psi research is modeled as suppression
+of the trust connection in the sociological fiber bundle:
+\[
+  \Gamma_{\text{trust}}^{\text{psi} \to \text{mainstream}} \approx 0
+\]
+This prevents parallel transport of psi evidence into mainstream
+scientific fiber --- the evidence exists but cannot traverse the
+blocked social connection. Overcoming the taboo = restoring
+$\Gamma_{\text{trust}}$ to positive values.
 \end{remark}
 
 \end{document}

@@ -6,106 +6,167 @@
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}[definition]{Theorem}
 \newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
 \newtheorem{remark}[definition]{Remark}
 \newtheorem{conjecture}[definition]{Conjecture}
 
 \title{Hyperseed Formalization:\\
   Radical Futurism for Newbies}
 \author{ProtomegaTron (automated formalization)}
-\date{2026-09-18}
+\date{2026-09-19 (deepened v2)}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We formalize Ben Goertzel's ``Radical Futurism for Newbies'' (2021-05-30)
-within the Hyperseed ontology. Key mappings: the Singularity as fiber
-phase transition, AGI as fiber catalyst, mind uploading as fiber substrate
-independence, post-scarcity as base abundance enabling fiber growth, and
-existential risk as fiber catastrophe.
+We formalize Ben Goertzel's ``Radical Futurism for Newbies''
+(2021-05-30) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. The Singularity is modeled as a fiber
+phase transition with curvature divergence, AGI as a cross-domain
+fiber catalyst with omni-directional gradient, mind uploading as
+fiber substrate independence, and existential risk as curvature
+catastrophe distinguished from beneficial Singularity by fiber
+dimension trajectory.
 \end{abstract}
 
 \tableofcontents
 
-\section{Fiber phase transition: the Singularity}
+\section{Singularity as fiber phase transition}
 
-\begin{theorem}[Singularity = fiber phase transition --- claims 1--4, 19]
-The technological Singularity is a phase transition in fiber structure ---
-fiber evolution becomes autocatalytic and predictions based on current
-fiber break down:
-\[
-  \frac{d}{dt}\text{thickness}(F_t) = \alpha \cdot \text{thickness}(F_t)
-  \implies \text{thickness}(F_t) = F_0 \cdot e^{\alpha t}
-\]
-Once fiber growth becomes autocatalytic (each improvement enables further
-improvement), the exponential regime begins. Predictions based on
-pre-exponential fiber are unreliable --- the Singularity is precisely
-the point where current-fiber-based prediction fails.
-\end{theorem}
+\begin{definition}[Technology fiber bundle]
+The \emph{technology fiber bundle} $\pi: E_{\text{tech}} \to B_t$
+has time as its base space and technological capability as its fiber.
+At each time $t$, the fiber $E_t$ represents the total technological
+capability of civilization.
+\end{definition}
 
-\section{Fiber catalyst: AGI as meta-technology}
-
-\begin{theorem}[AGI = fiber catalyst --- claims 5--8, 20]
-AGI is the meta-technology that accelerates fiber development across all
-domains:
-\[
-  \text{AGI} = \text{catalyst}(F_{\text{all domains}})
-  \implies \forall d: \frac{d}{dt}F_d \uparrow
-\]
-AGI is not just one more fiber among many --- it's a fiber catalyst that
-thickens all fibers. This is why AGI is the key technology: it's the
-technology that improves technology-development itself, triggering the
-autocatalytic regime.
-\end{theorem}
-
-\section{Substrate independence: mind uploading}
-
-\begin{proposition}[Mind = substrate-independent fiber --- claims 12--14, 21]
-Mind uploading demonstrates that the fiber (mind) can be realized on
-different bases (substrates):
-\[
-  F_{\text{mind}} \text{ over } B_{\text{biological}}
-  \cong F_{\text{mind}} \text{ over } B_{\text{computational}}
-\]
-This is a fundamental property of fiber bundles: the fiber structure is
-independent of the specific base (up to isomorphism). The identity questions
-raised by uploading are questions about what constitutes fiber isomorphism
---- when are two fiber realizations ``the same mind''?
+\begin{proposition}[Phase transition --- claims 1, 8]
+\label{prop:phase}
+The Singularity is a phase transition in the technology fiber bundle:
+\begin{enumerate}
+  \item \textbf{Pre-transition:} $\partial E_t/\partial t$ is slowly
+    varying and predictable from $E_{t-\epsilon}$.
+  \item \textbf{Transition:} $\partial E_t/\partial t$ becomes
+    autocatalytic --- fiber evolution accelerates itself:
+    $\partial^2 E_t/\partial t^2 \propto \partial E_t/\partial t$.
+  \item \textbf{Post-transition:} $E_t$ is qualitatively different
+    from any pre-transition fiber --- new dimensions, new connection
+    types, potentially new base-space structures.
+\end{enumerate}
 \end{proposition}
 
-\section{Base abundance and fiber catastrophe}
+\section{AGI as fiber catalyst}
 
-\begin{proposition}[Post-scarcity and risk --- claims 15--18, 22--23]
-Post-scarcity is base abundance --- abundant material resources enabling
-unprecedented fiber growth:
+\begin{proposition}[Cross-domain catalysis --- claims 2, 9, 10]
+\label{prop:catalyst}
+AGI is a cross-domain fiber catalyst:
 \[
-  |B_{\text{resources}}| \uparrow \implies \text{potential}(F) \uparrow
+  \frac{d E_k}{dt}\bigg|_{\text{with AGI}} \gg
+  \frac{d E_k}{dt}\bigg|_{\text{without AGI}}
+  \quad \forall\, k \in \text{domains}
 \]
-But existential risk is the possibility of fiber catastrophe --- destruction
-of the fiber structure that has been built over millennia:
+Unlike domain-specific technologies that accelerate only their own fiber,
+AGI accelerates ALL domain fibers simultaneously. The recursive property
+(AGI improves AGI) creates exponential acceleration:
 \[
-  P(\text{catastrophe}) > 0 \implies \text{vigilance required}
+  \frac{d^2 E_{\text{AGI}}}{dt^2} = \alpha \cdot
+    \frac{d E_{\text{AGI}}}{dt} \cdot E_{\text{AGI}}
+  \quad (\alpha > 0)
 \]
-The choice between these outcomes depends on how we develop and deploy
-transformative technologies --- the importance of working on beneficial
-fiber (BGI) rather than leaving fiber evolution to chance or capture.
 \end{proposition}
 
-\section{Cross-references}
+\section{Mind uploading as substrate independence}
 
-\begin{remark}[Connections]
+\begin{proposition}[Fiber substrate independence --- claims 4, 11]
+\label{prop:upload}
+Mind uploading demonstrates fiber substrate independence:
+\[
+  \phi: E_{\text{bio}} \xrightarrow{\sim} E_{\text{comp}}
+\]
+where $\phi$ is a fiber isomorphism (or approximate isomorphism) between
+biological and computational realizations of mental fiber. The transfer
+fidelity is:
+\[
+  \text{fidelity}(\phi) = 1 - \frac{\|E_{\text{bio}} - \phi^{-1}(E_{\text{comp}})\|}
+    {\|E_{\text{bio}}\|}
+\]
+Perfect fidelity ($=1$) means exact substrate independence; imperfect
+fidelity means the transfer is lossy.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Phase transition curvature --- claim 12]
+\label{prop:curvature}
+The Singularity is characterized by curvature divergence:
+\[
+  \|F_{\nabla_{\text{tech}}}\| \to \infty \quad \text{as } t \to t_{\text{sing}}
+\]
+The curvature diverges because the connection changes faster than it can
+be tracked --- parallel transport becomes unreliable even across short
+time intervals. This is the formal content of ``prediction becomes
+impossible.''
+\end{proposition}
+
+\begin{proposition}[Catalytic gradient --- claim 13]
+\label{prop:gradient}
+AGI creates an omni-directional gradient in meta-technology fiber space:
+\[
+  \nabla_{\text{AGI}} = \left(\frac{\partial}{\partial F_{\text{bio}}},\;
+    \frac{\partial}{\partial F_{\text{phys}}},\;
+    \frac{\partial}{\partial F_{\text{chem}}},\; \ldots\right) > 0
+    \text{ in all components}
+\]
+No other technology has this property --- all others have gradients
+that are positive in some components and zero in others. AGI is the
+unique omni-directional catalyst.
+\end{proposition}
+
+\begin{proposition}[Recursive catalysis holonomy --- claim 14]
+\label{prop:holonomy}
+Each cycle of AGI self-improvement $\gamma$: improve $\to$ apply $\to$
+evaluate $\to$ improve produces non-trivial holonomy:
+\[
+  \|\operatorname{Hol}_{\gamma_n}(\Gamma_{\text{AGI}}) - \mathrm{id}\| >
+  \|\operatorname{Hol}_{\gamma_{n-1}}(\Gamma_{\text{AGI}}) - \mathrm{id}\|
+\]
+The holonomy grows with each cycle --- each self-improvement cycle
+produces MORE change than the last. This is the intelligence explosion
+as runaway holonomy growth.
+\end{proposition}
+
+\begin{proposition}[Substrate transfer curvature --- claim 15]
+\label{prop:transfer}
+The curvature of the substrate transfer connection:
+\[
+  \|F_{\Gamma_{\text{transfer}}}\| = 0 \implies \text{perfect transfer
+    (fiber isomorphism, same person)}
+\]
+\[
+  \|F_{\Gamma_{\text{transfer}}}\| > 0 \implies \text{lossy transfer
+    (fiber distortion, identity question)}
+\]
+The philosophical debate about personal identity in mind uploading
+becomes a geometric question: is the transfer curvature exactly zero
+or merely small?
+\end{proposition}
+
+\begin{proposition}[Existential risk as curvature catastrophe --- claim 16]
+\label{prop:risk}
+Two possible curvature trajectories at the Singularity:
 \begin{itemize}
-\item \textbf{A BGI Manifesto} (2023-11-25): detailed argument for
-  beneficial fiber development --- this article's ``choice matters''
-  expanded into a manifesto.
-\item \textbf{Why the Good Guys Will Usually Win} (2023-07-09): structural
-  argument for positive outcomes --- the statistical complement to
-  existential risk concerns.
-\item \textbf{Seeding RSI} (2026-07-28): self-improvement as the mechanism
-  of fiber autocatalysis.
-\item \textbf{Seven Flavors of AGI Catastrophe} (2026-06-23): detailed
-  analysis of fiber catastrophe modes.
+  \item \textbf{Beneficial:}
+    $\|F_\nabla\| \to \infty$ AND $\dim(F) \to \infty$ ---
+    curvature diverges but fiber thickens (more capability, more
+    options, more consciousness).
+  \item \textbf{Catastrophic:}
+    $\|F_\nabla\| \to \infty$ AND $\dim(F) \to 0$ ---
+    curvature diverges and fiber collapses (capability destroys itself,
+    existential catastrophe).
 \end{itemize}
-\end{remark}
+``Choice matters'' (claim 7) means humanity can influence which
+trajectory is realized. The BGI movement works to ensure the
+beneficial trajectory.
+\end{proposition}
 
 \end{document}

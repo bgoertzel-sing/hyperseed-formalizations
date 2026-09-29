@@ -6,110 +6,186 @@
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}[definition]{Theorem}
 \newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
 \newtheorem{remark}[definition]{Remark}
 \newtheorem{conjecture}[definition]{Conjecture}
 
 \title{Hyperseed Formalization:\\
   The Mind-Blowing/Growing Paraconsistency}
 \author{ProtomegaTron (automated formalization)}
-\date{2026-09-18}
+\date{2026-09-19 (deepened v2)}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
 We formalize Ben Goertzel's ``The Mind-Blowing/Growing Paraconsistency''
-(2021-09-23) within the Hyperseed ontology. Key mappings: paraconsistent
-fiber (holding contradictory perspectives without collapse), beauty as
-fiber-base resonance, creativity as fiber tension, and PLN as naturally
-paraconsistent inference.
+(2021-09-23) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. Paraconsistency is modeled as a structural
+property of the fiber bundle where contradictory sections coexist as
+genuine states adding fiber dimensions. Beauty is fiber resonance across
+contradictory perspectives, creativity is fiber tension between
+contradictions, and mind-growth is the non-trivial holonomy of
+paraconsistent loops.
 \end{abstract}
 
 \tableofcontents
 
-\section{Paraconsistent fiber: holding contradictions}
+\section{Paraconsistent fiber structure}
 
-\begin{theorem}[Fiber must be paraconsistent --- claims 5--8, 16--19, 23]
-The fiber bundle's fiber should be paraconsistent --- able to hold
-contradictory perspectives without collapsing into triviality:
+\begin{definition}[Classical fiber bundle]
+A \emph{classical fiber bundle} enforces consistency at each base point:
 \[
-  F_{\text{paracons}} \models (\phi \wedge \neg\phi)
-  \quad \text{without} \quad F_{\text{paracons}} \models \psi \;\forall\psi
+  \sigma_1(b) \wedge \sigma_2(b) \wedge (\sigma_1 \text{ contradicts }
+    \sigma_2) \implies F(b) = \text{trivial}
 \]
-Classical fiber would explode from contradiction (ex contradictione quodlibet).
-Paraconsistent fiber holds tension productively. This is essential for:
-\begin{itemize}
-\item Real-world reasoning (incomplete, conflicting, evolving information)
-\item Commonsense reasoning (contradictory rules coexisting)
-\item Value reasoning (genuinely conflicting values)
-\item Multi-perspective reasoning (different perspectives yielding
-  contradictory conclusions about the same base)
-\end{itemize}
-\end{theorem}
+Contradictory sections produce trivial (everything-true) fiber, making
+the fiber meaningless at contradiction points.
+\end{definition}
 
-\section{Beauty: fiber-base resonance}
-
-\begin{proposition}[Beauty = resonance --- claims 1--4, 24]
-Beauty is resonance between fiber and base --- when the fiber's structure
-fits the base in a way that transcends any single consistent perspective:
+\begin{definition}[Paraconsistent fiber bundle --- claims 2, 3, 7]
+A \emph{paraconsistent fiber bundle} allows contradictory sections to
+coexist as genuine fiber states:
 \[
-  \text{Beauty}(b) = \text{resonance}(F(b), b)
-  \quad \text{requiring paraconsistent } F
+  \sigma_1(b) \wedge \sigma_2(b) \wedge (\sigma_1 \text{ contradicts }
+    \sigma_2) \implies F_{\text{para}}(b) \neq \text{trivial}
 \]
-Beauty is paradoxical (objective/subjective, evolutionary/transcendent)
-precisely because it lives in the paraconsistent zone --- any single
-consistent perspective captures only part of it. Full appreciation of
-beauty requires paraconsistent fiber that can hold all aspects
-simultaneously.
+The fiber $F_{\text{para}}(b)$ has structure that includes contradiction
+as a genuine dimension, not a collapse to triviality.
+\end{definition}
+
+\begin{proposition}[Contradiction adds dimensions --- claim 8]
+\label{prop:dim}
+Each independent contradiction at base point $b$ adds a fiber dimension:
+\[
+  \dim(F_{\text{para}}(b)) = \dim(F_{\text{classical}}(b)) +
+    |\{\text{independent contradictions at } b\}|
+\]
+Paraconsistent fiber is \emph{thicker} than classical fiber --- it has
+more dimensions because contradictions contribute genuine structure
+rather than collapsing it.
 \end{proposition}
 
-\section{Creativity: fiber tension}
+\section{Beauty as fiber resonance}
 
-\begin{theorem}[Creativity from contradiction --- claims 20--22, 25]
-Novel fiber structure emerges from tension between contradictory fiber
-sections:
+\begin{definition}[Multi-perspective resonance --- claims 1, 9]
+\emph{Beauty} is simultaneous resonance between fiber and base from
+multiple, potentially contradictory perspectives:
 \[
-  F_{\text{new}} = \text{resolve}(F_{\phi}, F_{\neg\phi})
-  \quad \text{where} \quad F_{\text{new}} \neq F_{\phi}, F_{\neg\phi}
+  \text{Beauty}(b) = \left\|\sum_k \alpha_k \cdot
+    \text{resonance}(\sigma_k(b), B)\right\|
 \]
-This is Koestler's bisociation formalized: holding two incompatible
-fiber sections simultaneously until a new section emerges that
-transcends both. Creativity is the fiber's response to its own internal
-contradictions --- not just tolerating them but actively exploiting the
-tension as fuel for novel structure.
-\end{theorem}
+where the $\sigma_k$ may include contradictory sections. Classical
+aesthetics restricts to consistent $\sigma_k$; paraconsistent aesthetics
+allows the full sum, producing richer resonance.
+\end{definition}
 
-\section{Mind and reality: paraconsistency all the way down}
+\section{Creativity as fiber tension}
 
-\begin{conjecture}[Ontological paraconsistency --- claims 9--15, 26]
-If reality is paraconsistent at fundamental levels (quantum mechanics,
-consciousness), then the base space itself is paraconsistent:
+\begin{proposition}[Creative tension --- claims 6, 10]
+\label{prop:creative}
+When contradictory sections $\sigma_1$ and $\sigma_2$ coexist at $b$,
+the tension between them generates a synthesis force:
 \[
-  B_{\text{reality}} \text{ is paraconsistent}
-  \implies F \text{ must be paraconsistent to faithfully represent } B
+  \vec{T}_{\text{creative}}(b) = \sigma_1(b) - \sigma_2(b) +
+    [\sigma_1(b), \sigma_2(b)]
 \]
-Human cognition naturally operates paraconsistently --- we hold contradictory
-beliefs productively, experience contradictory emotions simultaneously,
-and use contradiction as a driver of exploration and deeper understanding.
-This is not a bug but a feature: paraconsistent cognition is more
-flexible and creative than classically consistent cognition.
-\end{conjecture}
+The synthesis force drives the creation of new fiber $\sigma_{\text{new}}$
+that resolves, transcends, or productively encompasses the contradiction.
+In classical fiber, this force is zero (contradictions are eliminated);
+in paraconsistent fiber, it is the engine of creativity.
+\end{proposition}
 
-\section{Cross-references}
+\section{d-calculus formulation (Hyperseed v2)}
 
-\begin{remark}[Connections]
+\begin{proposition}[Paraconsistent curvature --- claim 11]
+\label{prop:curvature}
+The curvature of a paraconsistent connection decomposes into classical
+and contradiction components:
+\[
+  F_{\text{para}} = F_{\text{classical}} + F_{\text{contradiction}}
+\]
+where $F_{\text{contradiction}}$ arises from the coexistence of
+contradictory sections:
+\[
+  F_{\text{contradiction}}(X, Y) = \nabla_X \sigma_{\text{contra}}(Y) -
+    \nabla_Y \sigma_{\text{contra}}(X) +
+    [\sigma_{\text{contra}}(X), \sigma_{\text{contra}}(Y)]
+\]
+The contradiction curvature is not pathological --- it contributes
+genuine geometric structure that measures the ``intensity'' of
+contradiction at each point.
+\end{proposition}
+
+\begin{proposition}[Beauty curvature --- claim 12]
+\label{prop:beauty}
+The curvature of aesthetic fiber measures the intensity and quality of
+beauty:
+\[
+  \|F_{\text{beauty}}\| = \text{intensity of aesthetic experience}
+\]
+Beauty corresponds not to high curvature per se but to specific
+\emph{curvature resonance patterns} --- patterns where multiple
+contradictory perspectives produce harmonious curvature interference:
+\[
+  F_{\text{beauty}} = \sum_k \alpha_k F_k \quad \text{where }
+  \{F_k\} \text{ interfere constructively}
+\]
+These resonance patterns are inherently paraconsistent --- they require
+contradictory curvature contributions to produce the characteristic
+beauty pattern.
+\end{proposition}
+
+\begin{proposition}[Creative gradient --- claim 13]
+\label{prop:gradient}
+The creative gradient in paraconsistent fiber space:
+\[
+  \nabla_{\text{create}} \propto \|\sigma_1 - \sigma_2\| \cdot
+    \text{resolv}(\sigma_1, \sigma_2)
+\]
+Maximal creative gradient requires both:
 \begin{itemize}
-\item \textbf{Paraconsistent Interzones} (2021-08-13): paraconsistent
-  interzones as spaces where contradictions flourish productively.
-\item \textbf{Symbolic Ruminations} (2022-08-06): symbolic/non-symbolic
-  paradox requires paraconsistent fiber.
-\item \textbf{Parafinity} (2022-01-15): paraconsistency meets parafinity
-  at the boundary of classical distinctions.
-\item \textbf{Evolving Deeply Ethical AGI} (2026-01-06): paraconsistent
-  fiber algebra for value reasoning.
-\item \textbf{Evidence Is to Logic What Energy Is to Physics} (2026-03-10):
-  evidence conservation as paraconsistent-compatible framework.
+  \item Large contradiction: $\|\sigma_1 - \sigma_2\| \gg 1$ (the
+    sections are far apart in fiber space).
+  \item High resolvability: $\text{resolv}(\sigma_1, \sigma_2) > 0$
+    (synthesis is possible, not just juxtaposition).
 \end{itemize}
-\end{remark}
+Unresolvable contradictions have zero creative gradient despite
+large tension --- they produce noise, not insight.
+\end{proposition}
+
+\begin{proposition}[Mind-growth holonomy --- claim 14]
+\label{prop:holonomy}
+The ``mind-blowing/growing'' quality of paraconsistency is holonomy:
+traversing a paraconsistent loop $\gamma$ changes the mind's fiber:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{para}}) \neq \mathrm{id}
+  \implies \text{mind grows through paraconsistent experience}
+\]
+Each encounter with productive contradiction produces non-trivial
+holonomy --- the mind's fiber structure is richer after the loop.
+This is ``mind-growing'' formalized: the holonomy element measures
+exactly how much the mind's fiber changed through the experience.
+
+``Mind-blowing'' is the subjective experience of large holonomy:
+$\|\operatorname{Hol}_\gamma - \mathrm{id}\| \gg 1$ --- the mind
+is dramatically changed by the paraconsistent encounter.
+\end{proposition}
+
+\begin{conjecture}[Quantum paraconsistency --- claim 15]
+\label{conj:quantum}
+If reality is fundamentally paraconsistent (quantum superposition as
+genuine contradiction), then the d-calculus base space itself is
+paraconsistent:
+\[
+  B_{\text{quantum}} = \{b \in B : b \text{ admits paraconsistent
+    fiber states}\}
+\]
+The quantum fiber bundle has base points where contradictory physical
+states genuinely coexist --- not as epistemic uncertainty (we don't
+know which state) but as ontological paraconsistency (both states
+are real simultaneously). This interpretation connects paraconsistent
+logic directly to quantum foundations.
+\end{conjecture}
 
 \end{document}

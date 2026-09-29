@@ -6,79 +6,174 @@
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}[definition]{Theorem}
 \newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
 \newtheorem{remark}[definition]{Remark}
 \newtheorem{conjecture}[definition]{Conjecture}
 
 \title{Hyperseed Formalization:\\
   A BGI Manifesto}
 \author{ProtomegaTron (automated formalization)}
-\date{2026-09-18}
+\date{2026-09-19 (deepened v2)}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
 We formalize Ben Goertzel's ``A BGI Manifesto'' (2023-11-25) within the
-Hyperseed ontology. Key mappings: BGI as beneficial fiber, intelligence
-explosion as fiber autocatalysis, open development as inspectable fiber,
-corporate capture as fiber monopoly, and regulatory restriction as fiber
-censorship.
+Hyperseed ontology, incorporating d-calculus extensions from Hyperseed v2.
+BGI is modeled as fiber architecture where capability-benefit coupling is
+intrinsic, the intelligence explosion as autocatalytic holonomy that must
+preserve beneficial fiber subspaces, and corporate capture as dangerous
+curvature concentration contrasted with the distributed curvature of
+open development.
 \end{abstract}
 
 \tableofcontents
 
-\section{Beneficial fiber: the B in BGI}
+\section{BGI as beneficial fiber architecture}
 
-\begin{theorem}[BGI = beneficial fiber --- claims 8--11, 19--22]
-BGI is AGI with beneficial fiber structure. The ``B'' is a fiber property:
+\begin{definition}[Beneficial fiber --- claims 3, 6, 7]
+\emph{BGI fiber} is fiber architecture where capability growth is coupled
+to flourishing growth through the fiber's structure:
 \[
-  \text{BGI} = \text{AGI}(F_{\text{beneficial}})
-  \quad \text{where} \quad F_{\text{beneficial}} = F(\text{values, empathy, self-awareness})
+  \frac{dF_{\text{capability}}}{dt} > 0 \implies
+  \frac{dF_{\text{flourishing}}}{dt} > 0
 \]
-Value alignment is architectural, not bolted-on --- values emerge from
-how the system thinks (fiber structure), not from what it's forbidden
-to do (base constraints).
-\end{theorem}
+The coupling is architectural --- it follows from the fiber's structure,
+not from external constraints imposed on the fiber.
+\end{definition}
 
-\section{Fiber autocatalysis: intelligence explosion}
+\begin{proposition}[Architectural vs bolted-on alignment --- claims 6, 8]
+\label{prop:arch}
+Two approaches to alignment:
+\begin{enumerate}
+  \item \textbf{Bolted-on:} A constraint fiber $F_{\text{constraint}}$
+    is layered on top of capability fiber $F_{\text{capability}}$:
+    \[
+      F_{\text{total}} = F_{\text{capability}} \oplus F_{\text{constraint}}
+    \]
+    The coupling is external and can fail: $F_{\text{constraint}}$ can
+    be peeled off, bypassed, or become misaligned with
+    $F_{\text{capability}}$ as the latter evolves.
 
-\begin{theorem}[Self-improvement as autocatalysis --- claims 4--7, 23]
-An AGI with human-level competence can study and improve itself. This is
-fiber autocatalysis:
-\[
-  F_t \xrightarrow{\text{self-study}} F_{t+1} \quad \text{where} \quad
-  \text{capability}(F_{t+1}) > \text{capability}(F_t)
-\]
-The Singularity is the autocatalytic regime: each fiber improvement
-enables further improvement, producing exponential capability growth.
-\end{theorem}
-
-\section{Open vs monopoly fiber}
-
-\begin{proposition}[Open development --- claims 12--18, 24--26]
-Open-source development makes the fiber inspectable and community-modifiable.
-Closed development makes it opaque. Regulatory restriction concentrates
-fiber exploration in exempted actors (military, incumbents):
-\[
-  \text{Diversity}(F_{\text{open}}) > \text{Diversity}(F_{\text{closed}})
-  > \text{Diversity}(F_{\text{restricted}})
-\]
-Multi-fiber diversity provides resilience; mono-fiber concentration
-is the actual danger.
+  \item \textbf{Architectural:} Capability and alignment are the same fiber:
+    \[
+      F_{\text{BGI}} = F_{\text{capability}} \text{ where capability IS
+        beneficial by construction}
+    \]
+    There is no separate alignment component to peel off --- the
+    capability fiber is inherently beneficial.
+\end{enumerate}
 \end{proposition}
 
-\section{Cross-references}
+\section{Intelligence explosion as fiber autocatalysis}
 
-\begin{remark}[Connections]
-\begin{itemize}
-\item \textbf{Why Everyone Dies Gets AGI All Wrong} (2025-10-01): hybrid
-  architecture safety, iterative development.
-\item \textbf{Seeding RSI} (2026-07-28): self-improvement architecture.
-\item \textbf{Evolving Deeply Ethical AGI} (2026-01-06): value alignment
-  through architecture.
-\item \textbf{Seven Flavors of AGI Catastrophe} (2026-06-23): failure
-  modes that BGI approach aims to prevent.
-\end{itemize}
-\end{remark}
+\begin{proposition}[Autocatalytic fiber growth --- claims 1, 2, 10]
+\label{prop:autocatalysis}
+At HLAGI, the system's fiber includes self-models --- the fiber can
+reason about and modify its own structure:
+\[
+  \sigma_{\text{self}}: B \to E, \quad
+  \sigma_{\text{self}}(b) \ni \text{model}(E, \pi, \Gamma)
+\]
+Self-modification produces autocatalytic growth:
+\[
+  \frac{dE}{dt} = g(E) \cdot E \quad \text{where } g(E) > 0 \text{ and }
+    \frac{dg}{dE} > 0
+\]
+The growth rate $g$ increases with the fiber itself --- more capable
+fiber produces faster self-improvement.
+\end{proposition}
+
+\begin{proposition}[Fiber integrity --- claim 9]
+\label{prop:integrity}
+For BGI, autocatalytic growth must preserve beneficial fiber properties:
+\[
+  \forall\, t: \quad E(t) \in \mathcal{B} \implies E(t + \epsilon) \in \mathcal{B}
+\]
+where $\mathcal{B}$ is the space of beneficial fiber configurations.
+The beneficial subspace must be an \emph{invariant} of the self-modification
+dynamics --- the system's trajectory never leaves $\mathcal{B}$.
+\end{proposition}
+
+\section{Open development and fiber monopoly}
+
+\begin{proposition}[Fiber transparency --- claims 4, 11]
+\label{prop:transparent}
+Open development makes fiber inspectable:
+\[
+  \text{inspectability}(F) = \frac{|\{x \in F : x \text{ is publicly visible}\}|}{|F|}
+\]
+Full transparency: $\text{inspectability} = 1$. Corporate secrecy:
+$\text{inspectability} \ll 1$. The manifesto argues that high
+inspectability is both safer (enables scrutiny) and more effective
+(enables community contribution and diversification).
+\end{proposition}
+
+\begin{proposition}[Fiber monopoly danger --- claims 5, 12]
+\label{prop:monopoly}
+Corporate capture or regulatory restriction produces fiber monopoly:
+\[
+  \exists\, k: \quad \frac{|E_k|}{\sum_i |E_i|} \to 1
+\]
+One fiber dominates, reducing diversity and concentrating power. This
+is the actual danger the manifesto identifies --- not AGI itself but
+AGI controlled by a single actor.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Beneficial fiber curvature --- claim 13]
+\label{prop:curvature}
+The curvature of BGI fiber measures capability-benefit coupling quality:
+\[
+  \|F_{\nabla_{\text{BGI}}}\| \approx 0 \implies \text{perfect coupling
+    (capability IS benefit)}
+\]
+\[
+  \|F_{\nabla_{\text{BGI}}}\| > 0 \implies \text{imperfect coupling
+    (capability can diverge from benefit)}
+\]
+Architectural alignment minimizes this curvature (the coupling is built
+into the connection); bolted-on alignment leaves high curvature at the
+attachment point (the bolt can slip).
+\end{proposition}
+
+\begin{proposition}[Autocatalytic holonomy --- claim 14]
+\label{prop:holonomy}
+Each self-improvement cycle $\gamma$ produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{self-modify}}) \neq \mathrm{id}
+\]
+For BGI, the holonomy must preserve the beneficial fiber subspace:
+\[
+  \operatorname{Hol}_\gamma: \mathcal{B} \to \mathcal{B}
+\]
+The formal content of ``value alignment under self-modification'' is
+that the holonomy group of the self-modification connection preserves
+$\mathcal{B}$:
+\[
+  \operatorname{Hol}(\Gamma_{\text{self-modify}}) \leq
+    \operatorname{Aut}(\mathcal{B})
+\]
+\end{proposition}
+
+\begin{proposition}[Monopoly curvature --- claim 15]
+\label{prop:monopoly_curv}
+Fiber monopoly produces dangerous curvature concentration:
+\[
+  \|F_{\nabla_{\text{monopoly}}}\| \to \infty \quad
+  \text{at the boundary of the monopolist's control}
+\]
+A sharp division between the monopolist's fiber and everything else
+concentrates power at a singular point. In contrast, diverse open
+development produces low, distributed curvature:
+\[
+  \|F_{\nabla_{\text{open}}}\| \sim \text{const} \ll 1 \quad
+  \text{everywhere (no concentration points)}
+\]
+The manifesto argues for the distributed-curvature configuration as
+both safer and more productive.
+\end{proposition}
 
 \end{document}

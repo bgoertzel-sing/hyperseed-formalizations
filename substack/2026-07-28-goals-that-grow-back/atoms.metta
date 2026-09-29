@@ -1,100 +1,58 @@
 ;; =============================================================
 ;; Seed atoms — Goals That Grow Back
 ;; Source: Ben Goertzel, Eurykosmotron, 2026-07-28
+;; Deepened: 2026-09-25 (Hyperseed v2 / d-calculus)
 ;; =============================================================
 
 ;; ---- Type declarations ----
-(: GoalRelation Type)
-(: RepairComponent Type)
-(: TransformativeResponse Type)
+(: GoalMode Type)
+(: SafetyStructure Type)
 
-;; ---- Goal relation types ----
-(: goal-adoption GoalRelation)
-(: goal-possession GoalRelation)
+;; ---- Core article claims (1-11) ----
+(--> delete-the-sentence ([] (remove-goal-statement most-ai-vanishes human-regenerates)))
+(: goal-adoption GoalMode)
+(: goal-possession GoalMode)
+(--> goal-adoption ([] (externally-supplied fragile section-level)))
+(--> goal-possession ([] (regenerative structurally-embedded attractor)))
+(--> goal-possession-attractor ([] (attractor-of-dynamics delete-regenerates causal-control)))
+(--> regenerative-depth ([] (measurable how-much-damage bounce-back testable)))
+(: gate SafetyStructure)
+(: weave SafetyStructure)
+(--> gate ([] (checkpoint deliberate-modifications fails-against-wear)))
+(--> weave ([] (web-memories-connections wrecked-by-one-big-mod)))
+(--> gate-weave-complementarity ([] (gate-protects-weave-catastrophic weave-protects-erosion both-needed)))
+(--> goal-repair ([] (funded-race attention-economy adversary-starves-repair)))
+(--> minimum-repair-guarantee ([] (guaranteed-resources not-market-competition)))
+(--> transformative-experience ([] (joy-bittersweet new-horizons continuity old-self)))
+(--> ship-of-theseus ([] (pattern-plus-repair not-parts not-arrangement)))
 
-;; ---- Repair components ----
-(: gate RepairComponent)
-(: weave RepairComponent)
+;; ---- Hyperseed interpretations (12-19) ----
+(--> goal-adoption section-of-value-fiber)
+(--> section-of-value-fiber ([] (remove-section goal-vanishes no-structural-force)))
+(--> goal-possession attractor-basin)
+(--> attractor-basin ([] (many-trajectories delete-one-dynamics-return)))
+(--> regenerative-depth basin-radius)
+(--> basin-radius ([] (perturbation-before-escape measurable-fiber-metric)))
+(--> gate r-auth-s-half)
+(--> r-auth-s-half ([] (provenance-gated section-level-constraint)))
+(--> weave distributed-memory-sheaf)
+(--> distributed-memory-sheaf ([] (redundant-encoding local-consistency-reconstructs-global)))
+(--> goal-repair parallel-transport-repair)
+(--> parallel-transport-repair ([] (state-toward-attractor requires-budget)))
+(--> transformative-experience directed-type-extension)
+(--> directed-type-extension ([] (old-embeds-new continuity irreversible)))
+(--> ship-of-theseus attractor-plus-transport)
+(--> attractor-plus-transport ([] (pattern-attractor-structure repair-transport-processes)))
 
-;; ---- Delete the Sentence (claims 1-3) ----
-(--> goal-adoption ([] (external bolted-on)))
-(--> goal-adoption ([] (remove-statement goal-vanishes)))
-(--> goal-possession ([] (woven-through perception habits memories relationships)))
-(--> goal-possession ([] (person-is process-that-regenerates-value)))
+;; ---- d-calculus claims (20-24) ----
+(--> attractor-basin-curvature ([] (regenerative-response-strength high-deep low-shallow)))
+(--> gate-weave-complementarity-curvature ([] (complementarity-gap high-need-both)))
+(--> repair-starvation-holonomy ([] (erosion-per-cycle zero-sustainable negative-reinforcing)))
+(--> transformative-extension-curvature ([] (smoothness low-continuity high-break)))
+(--> identity-persistence-curvature ([] (stability-under-change low-survives high-dissolves)))
 
-;; ---- Goal possession as attractor (claims 4-6, 28) ----
-(--> goal-possession ([] (attractor of-mind-dynamics)))
-(--> goal-possession ([] (delete-representation regenerates-functional-equivalent)))
-(--> goal-possession ([] (not-just-words but-causal-grip)))
-(--> goal-possession ([] architecture-dependent))
-(--> omegaclaw-systems ([] can-possess-goals))
-(--> simple-openclaw ([] cannot-possess-goals))
-;; Attractor in directed type
-(--> goal-possession attractor-in-directed-type)
-(--> attractor-in-directed-type ([] (perturbation repaired-by directed-type-structure)))
-
-;; ---- Regenerative depth (claims 7-10, 29) ----
-(--> regenerative-depth ([] (measurable per-value)))
-(--> regenerative-depth ([] (how-much-damage absorb-and-bounce-back)))
-(--> regenerative-depth ([] predictive-number))
-(--> regenerative-depth ([] lyapunov-function))
-(--> (× drift-condition lesion-modulus) ([] (two-conditions for-regenerative-possession)))
-(--> canonical-dial ([] expected-recovery-time))
-(--> sandbox-testing ([] (controlled-damage measure-recovery)))
-;; Fiber resilience metric
-(--> regenerative-depth fiber-resilience-metric)
-(--> fiber-resilience-metric ([] (measures perturbation-before-escaping-attractor-basin)))
-
-;; ---- Gate and weave (claims 11-14, 30) ----
-(--> gate-alone ([] (fails-against ordinary-wear)))
-(--> gate-alone ([] (values-bleed slow-steady)))
-(--> weave-alone ([] (fails-against one-big-modification)))
-(--> (× gate weave) ([] (both-needed for-safety)))
-(--> goal-stability ([] (same-property as-goal-possession different-change-types)))
-(--> regenerative-possession ([] (stronger-than goal-stability)))
-;; Checkpoint + provenance sheaf
-(--> gate provenance-gated-promotion)
-(--> weave distributed-memory-provenance-sheaf)
-(--> (× gate weave) checkpoint-plus-provenance-sheaf)
-
-;; ---- Goal regeneration economics (claims 15-18, 31) ----
-(--> goal-regeneration ([] funded-race))
-(--> goal-regeneration ([] (competes-for attention-resources)))
-(--> forgetting ([] (other-runner-in-race not-enemy)))
-(--> starvation-attack ([] (starve-repair-of-attention kills-goal)))
-(--> repair-resource-guarantee ([] design-rule))
-(--> repair-resource-guarantee ([] (guaranteed-from-above not-market-competition)))
-;; Obstruction to parallel transport
-(--> attention-starvation obstruction-to-parallel-transport)
-(--> obstruction-to-parallel-transport ([] (holonomy-accumulates value-drifts)))
-
-;; ---- Repair consistency (claims 19-20, 33) ----
-(--> repair-confluence ([] (all-roads-lead-to-same-place)))
-(--> repair-confluence-failure ([] (ambiguity-not-definite-value)))
-(--> repair-confluence-failure ([] diagnostic))
-;; Cocycle consistency
-(--> repair-confluence cocycle-consistency-for-repair)
-(--> cocycle-consistency-for-repair ([] (different-paths same-recovered-value)))
-
-;; ---- Schema migration (claims 21, 34) ----
-(--> self-modification-repair ([] schema-migration))
-(--> schema-migration ([] (map old-structure to-new)))
-(--> schema-migration transition-function-update)
-
-;; ---- Transformative experience (claims 22-24, 32) ----
-(--> radical-goal-transformation ([] (joy with-bittersweet-tinge)))
-(--> joy ([] (warranted only-with-continuity)))
-(--> joy-without-continuity ([] misconfiguration))
-(--> healthy-grief ([] (for loss-of-old-self)))
-;; Directed type extension
-(--> radical-goal-transformation directed-type-extension)
-(--> directed-type-extension ([] (adding-higher-cells)))
-(--> directed-type-extension ([] (joy-when-old-embeds-in-new)))
-
-;; ---- Ship of Theseus (claim 25) ----
-(--> identity ([] (pattern-plus-repair-processes)))
-(--> identity ([] (survives by-becoming-again)))
-
-;; ---- Practical (claims 26-27) ----
-(--> regenerative-depth-testing ([] (testable-now no-superintelligence-needed)))
-(--> build-order ([] (math-theory experiments sharper-theory scaling)))
+;; ---- Cross-references ----
+(--> goals-that-grow-back ([] (related-to paperclip-maximizers gate-without-weave)))
+(--> goals-that-grow-back ([] (related-to what-is-it-like-to-be-a-bot identity-continuity)))
+(--> goals-that-grow-back ([] (related-to tag-youre-not-it omegaself-policy-gates)))
+(--> goals-that-grow-back ([] (related-to seven-flavors value-lock-in-vs-evolution)))

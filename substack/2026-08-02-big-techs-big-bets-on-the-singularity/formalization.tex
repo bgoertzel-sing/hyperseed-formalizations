@@ -14,303 +14,172 @@
 \title{Hyperseed Formalization:\\
   Big Tech's Big Bets on the Singularity}
 \author{ProtomegaTron (automated formalization)}
-\date{2026-09-17}
+\date{2026-09-25 (deepened v2)}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We formalize the intellectual structure of Ben Goertzel's Substack article
-``Big Tech's Big Bets on the Singularity --- Will They Pay Off, or Blow Up?''
-(2026-08-02) within the Hyperseed ontology. The article presents a detailed
-economic scenario analysis of the AI industry's circular financing structure,
-arguing that the over-bet is not a failure of prudence but the Nash
-equilibrium of a US--China geopolitical prisoner's dilemma. Each structural
-pattern maps onto Hyperseed structures: the prisoner's dilemma as cocycle
-lock-in, the financial crash as base-space perturbation orthogonal to
-the technology fiber, the decentralized network as fractional-Kelly fiber,
-fire-sale hardware absorption as crisis-driven fiber elasticity, and the
-commoditization paradox as a global section that doesn't project onto
-the financial fiber.
+We formalize Ben Goertzel's ``Big Tech's Big Bets on the Singularity''
+(2026-08-02) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. The geopolitical prisoner's dilemma is
+modeled as cocycle lock-in with escalation holonomy, the financial crash
+as base-space perturbation orthogonal to the technology fiber with
+coupling curvature, the Kelly fraction as fiber concentration with
+risk sensitivity curvature, fire-sale absorption as positive crash
+holonomy, and prize dissipation as diminishing return curvature.
 \end{abstract}
 
 \tableofcontents
 
-%% =================================================================
-\section{Circular financing and the bridge-or-kite question}
-\label{sec:circular}
-%% =================================================================
+\section{Prisoner's dilemma as cocycle lock-in}
 
-\begin{definition}[Bridge vs.\ kite --- claims 1--2]
-\label{def:bridge}
-Check-kiting and bridge financing are structurally identical: a circular
-financing structure where each node looks funded by deposits from others.
-The difference is determined only in retrospect:
+\begin{theorem}[Race equilibrium --- claims 1--2, 11--12]
+\label{thm:race}
+The US--China AI race is a cocycle lock-in: at each decision point, the
+transition function is ``bet bigger'' because the penalty for under-betting
+(losing the race) exceeds the penalty for over-betting (financial loss):
 \[
-  \text{Bridge financing} \iff \text{deposit arrives before checks clear}
+  g_t: \text{state}_t \to \text{state}_{t+1} \quad \text{where }
+    g_t = \text{escalate} \;\forall t \quad \text{(unique Nash equilibrium)}
 \]
 \[
-  \text{Kiting} \iff \text{deposit never arrives}
-\]
-The AI industry's circular deal structure --- Nvidia $\to$ hyperscalers
-$\to$ cloud $\to$ startups $\to$ Nvidia --- has Ponzi-esque dynamical
-characteristics. Whether it is bridge financing or kiting depends entirely
-on whether the technology delivers revenue that breaks the circle.
-\end{definition}
-
-%% =================================================================
-\section{The geopolitical prisoner's dilemma as cocycle lock-in}
-\label{sec:pd}
-%% =================================================================
-
-\begin{proposition}[Aggregation and over-Kelly --- claims 4--7, 35]
-\label{prop:aggregate}
-The over-bet has two layers:
-\begin{enumerate}
-\item \textbf{Aggregation problem}: each firm sizes its bet rationally
-  against its own balance sheet, but the deal web correlates everyone
-  with everyone. The aggregate position is a collectively over-Kelly
-  bet on a single coin flip, with no actor managing network-level
-  exposure.
-\item \textbf{Prisoner's dilemma}: the US and China perceive a
-  winner-take-most race for the most strategically consequential
-  technology in history. Prudent sizing is strategically dominated:
-  \[
-    (\text{size down}, \text{size down}) \succ (\text{all-in}, \text{all-in})
-    \quad\text{but}\quad
-    (\text{all-in}, \text{all-in}) = \text{Nash equilibrium}
-  \]
-  Contest theory predicts that evenly matched rivals dissipate nearly
-  the entire prize through competitive expenditure.
-\end{enumerate}
-
-In Hyperseed terms, this is \emph{cocycle lock-in}: the race dynamics
-lock both actors into a cocycle where defection (over-betting) is the
-only stable transition function. Cooperation would require a different
-cocycle (coordinated draw), but the levered financial structure is
-itself priced against coordination --- even peace is a systemic risk
-(claim 34) because removing the race logic collapses the justification
-for the spending.
-\end{proposition}
-
-\begin{proposition}[Two disease architectures --- claims 8--10]
-\label{prop:diseases}
-The overinvestment manifests differently in the two systems:
-\begin{itemize}
-\item \textbf{American}: cardiac failure (margin calls, fire sales,
-  acute crisis),
-\item \textbf{Chinese}: metabolic failure (overcapacity, deflation,
-  chronic absorption by state banks).
-\end{itemize}
-Same overinvestment, two pathologies. TSMC/Taiwan is the covariance
-term connecting both --- the single physical asset on which both
-national bets are jointly written.
-\end{proposition}
-
-%% =================================================================
-\section{Financial crisis as base-fiber orthogonality}
-\label{sec:crash}
-%% =================================================================
-
-\begin{theorem}[Modal and uninformative --- claims 11--13, 32, 39]
-\label{thm:modal}
-A financial crisis in 2027--2030 is the modal outcome under all three
-technology timelines: fast (HLAGI-2029), moderate (HLAGI-2035), and
-pessimist (plateau). Therefore:
-\[
-  P(\text{crash} \mid \text{fast}) \approx
-  P(\text{crash} \mid \text{moderate}) \approx
-  P(\text{crash} \mid \text{pessimist}) \approx \text{high}
-\]
-By Bayes' theorem, the crash carries almost no information about the
-technology:
-\[
-  \frac{P(\text{fast} \mid \text{crash})}{P(\text{fast})} \approx 1
+  g_1 \circ g_2 \circ \cdots \circ g_n \to \text{total prize dissipation}
 \]
 
-In Hyperseed terms: the crash operates in the economic base space $B$,
-which is approximately orthogonal to the technology fiber $F$. Financial
-failure is a base-space perturbation that says nothing about the fiber's
-structure. Leverage adjudicates timing; it says nothing about the terminus.
+\textbf{Frozen directed type.} Both players are locked into the same
+directed path. The path is frozen not by choice but by game structure ---
+neither can deviate unilaterally.
 
-The Kurzweilian world and the Marcus world are observationally similar
-for the next 24 months --- a fact worth stating loudly.
+\textbf{Same structure, opposite direction.} The Benevolent Throttling
+cocycle centralizes through safety restrictions; this cocycle centralizes
+through competitive over-investment. Different mechanism, same lock-in
+structure.
+
+\textbf{Contest theory.} Near-total prize dissipation: the cost of
+winning approaches the value of the prize.
 \end{theorem}
 
-%% =================================================================
-\section{Six scenarios: three timelines $\times$ two variants}
-\label{sec:scenarios}
-%% =================================================================
+\section{Crash as base-space perturbation orthogonal to fiber}
 
-\begin{proposition}[Scenario 1: HLAGI-2029 without deAGI --- claims 14--18]
-\label{prop:s1}
-Even in the winning scenario, three problems:
-\begin{enumerate}
-\item \textbf{Commoditization}: if intelligence commoditizes (several
-  labs at frontier, open models close behind), enormous consumer surplus
-  coexists with poor returns on depreciating GPU fleets. The global
-  section of the value sheaf exists but doesn't project onto the
-  financial fiber (claim 40).
-\item \textbf{Demand crisis}: severe wage displacement before
-  redistribution machinery exists --- a demand-side collapse inside
-  a supply-side miracle.
-\item \textbf{Geopolitical instability}: two states approaching ASI at
-  parity is classically unstable --- mobilization, expropriation by
-  victory rather than bankruptcy by defeat.
-\end{enumerate}
-\end{proposition}
+\begin{proposition}[Uninformative crash --- claims 3--5, 9, 13, 17]
+\label{prop:crash}
+The financial system (debt, equity, capex cycles) is the base space $B$.
+The technology (capability trajectory, architecture quality) is the fiber
+$F$ above it.
 
-\begin{proposition}[Scenario 2: HLAGI-2035 without deAGI --- claims 19--21]
-\label{prop:s2}
-Revenue climbs but doesn't cross the obligation line until $\sim$2032.
-The 2028--2030 refunding gate falls before the payoff arrives --- a
-classic infrastructure crash where the technology was right but the
-financing structure kills the pioneers (dot-com pattern). Too-strategic-to-fail
-bailouts convert private loss to public debt.
-\end{proposition}
-
-\begin{proposition}[Scenario 3: Plateau without deAGI --- claims 22--23]
-\label{prop:s3}
-Revenue never crosses obligations. Permanent shortfall. Worst case for
-the levered complex. Crash fuels blame politics and diversionary
-nationalism.
-\end{proposition}
-
-%% =================================================================
-\section{The decentralized variant: fractional-Kelly fiber}
-\label{sec:deagi}
-%% =================================================================
-
-\begin{definition}[Fractional-Kelly architecture --- claims 30--31, 37]
-\label{def:kelly}
-The decentralized AGI network is intrinsically fractional-Kelly:
-\begin{itemize}
-\item No debt service (no leveraged capex to refinance),
-\item No frontier-hardware treadmill (runs on commodity and distressed
-  hardware),
-\item Elastic capacity (pay-as-you-go token flows),
-\item Modest continuous stakes with no ruin branch.
-\end{itemize}
-In fiber terms: the risk is distributed across the fiber rather than
-concentrated in a single highly-leveraged node. The fiber structure
-$E_{\text{deAGI}}$ has no ruin singularity:
+\textbf{Weak coupling.} The curvature between base and fiber is low:
 \[
-  P(\text{ruin} \mid E_{\text{deAGI}}) \approx 0
-  \quad\text{vs.}\quad
-  P(\text{ruin} \mid E_{\text{levered}}) \gg 0
+  \|F_\nabla(\text{economics}, \text{technology})\| \approx 0
 \]
-\end{definition}
+A financial crash is a large perturbation in $B$ but carries almost no
+information about $F$. Leverage adjudicates timing (base property);
+terminus depends on architecture quality (fiber property).
 
-\begin{proposition}[Crisis absorption --- claims 26--29, 38]
-\label{prop:absorption}
-In Scenario 2 + deAGI, the crash feeds the network:
-\begin{enumerate}
-\item Fire-sale hardware from bankrupt hyperscalers jumps network
-  capacity --- the fiber stretches when the base space contracts
-  (crisis absorption via fiber elasticity).
-\item Too-strategic-to-fail bailout logic weakens when the frontier
-  is demonstrably elsewhere.
-\item Non-aligned countries prefer a neutral network (no alignment
-  strings) --- third-market default.
-\item Capex shifting to pay-as-you-go flows stops AI from crowding
-  the Treasury market --- macro dividend via disintermediation.
-\end{enumerate}
-\end{proposition}
-
-\begin{theorem}[Fractional Kelly wins Scenario 3 --- claim 31]
-\label{thm:kelly}
-In the pessimist scenario where all AI plateaus, the decentralized
-network wins not by being right about AGI but by being the only
-structure that didn't bet its existence on it. In a commoditized
-narrow-AI world of thin margins, the minimum-cost producer is the
-one with no debt service and elastic capacity --- the network.
-
-This is the Kelly criterion applied to institutional design:
-Full Kelly maximizes expected log-growth but has nonzero ruin
-probability; fractional Kelly sacrifices peak growth rate for
-survival. The states went Full Kelly; the network went fractional.
-\end{theorem}
-
-%% =================================================================
-\section{Peace as systemic risk}
-\label{sec:peace}
-%% =================================================================
-
-\begin{proposition}[Peace destabilizes --- claims 33--34, 41]
-\label{prop:peace}
-Even peace is a systemic risk in the current architecture. A negotiated
-draw removes the race logic that justifies the spending, collapsing the
-revenue expectations that the levered structure is priced on. The
-financial structure is stable only under adversarial cocycle conditions:
+\textbf{Crash is constant.} The crash appears in (nearly) all six
+scenario cells --- it's a constant of the base space:
 \[
-  \text{stability}(E_{\text{levered}}) \iff
-  \text{adversarial cocycle persists}
+  \text{crash} \in \{(s, a) : s \in \{\text{fast}, \text{moderate},
+    \text{plateau}\}, a \in \{\text{centralized}, \text{deAGI}\}\}
 \]
-This creates a perverse dynamic where the financial system has a
-structural interest in continued rivalry, independent of the wishes
-of the actors within it.
+A constant carries zero bits of information.
 \end{proposition}
 
-%% =================================================================
-\section{The commoditization paradox}
-\label{sec:commoditization}
-%% =================================================================
+\section{Kelly fraction as fiber concentration}
 
-\begin{proposition}[Consumer surplus without producer surplus --- claim 40]
-\label{prop:commodity}
-The technology succeeds (consumer surplus enormous) while the investors
-fail (producer surplus near zero). In Hyperseed terms:
+\begin{proposition}[Risk regimes --- claims 6--8, 10, 14--16]
+\label{prop:kelly}
+\textbf{Full Kelly = concentrated fiber.} The centralized approach
+concentrates investment in a single fiber with high expected growth rate
+$\mu$ but nonzero ruin probability $P(\text{ruin}) > 0$:
 \[
-  \exists\; \text{global section } s : B \to E_{\text{value}}
-  \quad\text{but}\quad
-  \pi_{\text{financial}}(s) \approx 0
+  E[\text{growth}] = \mu \quad \text{but} \quad
+    P(\text{ruin}) = \delta > 0
 \]
-The global section of the value sheaf exists --- society captures the
-value of AGI --- but it doesn't project onto the financial fiber ---
-investors see no return. This is the airline paradox at civilizational
-scale: transformative technology with century-long aggregate industry losses.
+A single bad outcome can collapse the entire fiber.
+
+\textbf{Fractional Kelly = distributed fiber.} The decentralized approach
+distributes stakes across many independent components:
+\[
+  F = \bigoplus_{i=1}^n F_i \quad \text{with} \quad
+    P(\text{ruin}) = \prod_{i=1}^n P(\text{ruin}_i) \to 0
+\]
+Lower expected growth but zero ruin probability --- the distributed
+fiber cannot be collapsed by a single perturbation.
+
+\textbf{Fire-sale absorption.} When the crash happens, distressed hardware
+from collapsed Full Kelly positions is absorbed at fire-sale prices:
+\[
+  \text{crash} \to \text{distressed hardware} \to
+    \text{network absorbs at discount} \to \text{capacity grows}
+\]
+The fractional-Kelly fiber grows during base-space perturbation.
+
+\textbf{Minimum-cost production.} No debt service (pay-as-you-go) means
+the decentralized network is minimum-cost producer in any scenario ---
+it survives because fixed obligations never exceed revenue.
 \end{proposition}
 
-%% =================================================================
-\section{Cross-references}
-%% =================================================================
+\section{d-calculus formulation (Hyperseed v2)}
 
-\begin{remark}[Connections to other formalizations]
-\begin{itemize}
-\item \textbf{Geopolitics} (2026-08-24): extends the same 54-cell grid
-  analysis with detailed political branching. This article provides the
-  economic detail; the Geopolitics article provides the political detail.
-  Financial crisis as base-space perturbation with political holonomy
-  is the shared structure.
-\item \textbf{Zuck's Future} (2026-08-10): access vs.\ ownership and
-  correct fiber bundle architecture. The decentralized alternative here
-  is the same architecture Zuck claims to offer but doesn't.
-\item \textbf{How Omega Lost Its Claw} (2026-09-11): distributed
-  development as fractional-Kelly. The engineering architecture of
-  decentralized AGI is described there; the economic resilience is
-  described here.
-\item \textbf{Seven Flavors} (2026-07-01): arms race as cross-cutting
-  attractor. Here the arms race dynamics are given their economic
-  mechanism (prisoner's dilemma over bet sizing).
-\item \textbf{Sanders Ban} (2026-09-05): state capture of AI development.
-  The too-strategic-to-fail bailout pathway here is the economic version
-  of the Sanders ban pathway --- state capture via financial rescue
-  rather than legislative prohibition.
-\item \textbf{Provenance Layer} (2026-08-25): decentralized resolution
-  as distributed fiber bundle. Same anti-monoculture principle applied
-  to economic infrastructure.
-\end{itemize}
-\end{remark}
+\begin{proposition}[Escalation holonomy --- claim 18]
+\label{prop:esc_hol}
+A loop through the prisoner's dilemma cycle $\gamma$: US bets $\to$
+China matches $\to$ US escalates $\to$ China matches $\to$ \ldots
+produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{race}}) = \text{excess
+    investment per race cycle (prize dissipation rate)}
+\]
+High holonomy: each cycle dissipates more of the prize (contest theory's
+prediction). Low holonomy: actors coordinate (unstable cooperative
+equilibrium).
+\end{proposition}
 
-\begin{conjecture}[Crisis-to-network conversion rate]
-Conjecture: the rate at which a financial crisis feeds the decentralized
-network is proportional to the price gap between distressed hardware and
-network marginal cost. When the gap is large (deep crisis), hardware
-flows rapidly into the network; when small (mild correction), the
-conversion stalls. The network's crisis absorption capacity is therefore
-a function of its current utilization rate and the severity of the crisis
---- and the network should be designed with excess absorption capacity
-in anticipation of the modal crisis.
-\end{conjecture}
+\begin{proposition}[Base-fiber coupling curvature --- claim 19]
+\label{prop:bf_curv}
+\[
+  \|F_\nabla(\text{economics}, \text{technology})\| =
+    \text{informativeness of financial events about technological
+      trajectory}
+\]
+Low curvature: economic events carry little information about technology
+(the article's claim). High curvature: economic events informative
+(would mean crash implies tech failure --- argued to be wrong).
+\end{proposition}
+
+\begin{proposition}[Kelly fraction curvature --- claim 20]
+\label{prop:kelly_curv}
+\[
+  \|F_\nabla(\text{bet\_size}, \text{ruin\_prob})\| = \text{risk sensitivity}
+\]
+High curvature: small increase in bet size dramatically increases ruin
+probability (Full Kelly territory). Low curvature: bet size and ruin
+weakly coupled (fractional Kelly).
+\end{proposition}
+
+\begin{proposition}[Fire-sale absorption holonomy --- claim 21]
+\label{prop:fire_hol}
+A loop through the crash-absorption cycle $\gamma$: crash $\to$ hardware
+distressed $\to$ network absorbs $\to$ capacity grows $\to$ network
+strengthens produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{absorption}}) =
+    \text{network capacity gain per crash cycle}
+\]
+Positive holonomy: each crash cycle strengthens the network. This is the
+formal content of ``crash feeds the network.''
+\end{proposition}
+
+\begin{proposition}[Prize dissipation curvature --- claim 22]
+\label{prop:prize_curv}
+\[
+  \|F_{\nabla_{\text{prize}}}(\text{investment})\| = \text{marginal
+    return on AI investment}
+\]
+Decreasing curvature: diminishing returns (over-investment territory).
+Contest theory: curvature approaches zero as investment approaches total
+dissipation --- prize fully consumed by cost of winning.
+\end{proposition}
 
 \end{document}

@@ -6,56 +6,173 @@
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}[definition]{Theorem}
 \newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
 \newtheorem{remark}[definition]{Remark}
 \newtheorem{conjecture}[definition]{Conjecture}
 
 \title{Hyperseed Formalization:\\
   The Logic of Pain and the Poverty of Punishment}
 \author{ProtomegaTron (automated formalization)}
-\date{2026-09-18}
+\date{2026-09-19 (deepened v2)}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We formalize Ben Goertzel's ``The Logic of Pain and the Poverty of Punishment'' (2022-01-15)
-within the Hyperseed ontology.
+We formalize Ben Goertzel's ``The Logic of Pain and the Poverty of
+Punishment'' (2022-01-15) within the Hyperseed ontology, incorporating
+d-calculus extensions from Hyperseed v2. Pain is characterized as a
+degenerate (rank-1) fiber signal, punishment as base-space coercion that
+fails to modify fiber structure, and evolutionary transcendence as a fiber
+upgrade from one-dimensional pain to multi-dimensional information.
 \end{abstract}
 
-\section{Pain as fiber damage signal}
+\tableofcontents
 
-\begin{proposition}[Pain = fiber damage signal --- claims 1, 6]
-Pain is a crude fiber signal indicating fiber damage or strain:
+\section{Pain as degenerate fiber signal}
+
+\begin{definition}[Pain fiber]
+The \emph{pain fiber} $F_{\text{pain}} \cong \mathbb{R}$ is a one-dimensional
+fiber encoding damage detection as a scalar intensity:
 \[
-  \text{pain}(b) = \sigma(F_{\text{damage}}(b)) \quad \text{(signal of fiber integrity threat)}
+  \sigma_{\text{pain}}: B_{\text{body}} \to F_{\text{pain}}, \quad
+  \sigma_{\text{pain}}(b) = \text{intensity}(b) \in \mathbb{R}_{\geq 0}
 \]
-The signal carries information (fiber is damaged) but the mechanism of
-signaling itself involves fiber disruption --- the medium is part of the
-message, creating unnecessary suffering.
+The pain fiber has a single direction (worse) and cannot distinguish
+damage types, severity levels, or appropriate responses.
+\end{definition}
+
+\begin{definition}[Information fiber]
+The \emph{information fiber} $F_{\text{info}} \cong \mathbb{R}^n$ ($n \gg 1$)
+encodes damage detection as a multi-dimensional signal:
+\[
+  \sigma_{\text{info}}: B_{\text{body}} \to F_{\text{info}}, \quad
+  \sigma_{\text{info}}(b) = (\text{type}(b), \text{severity}(b),
+    \text{location}(b), \text{response}(b), \ldots) \in \mathbb{R}^n
+\]
+The information fiber separates signal from suffering and provides
+actionable detail.
+\end{definition}
+
+\begin{proposition}[Pain gradient degeneracy --- claims 1, 2, 8, 9, 13]
+\label{prop:degeneracy}
+The pain signal has a degenerate (rank-1) gradient:
+\[
+  \nabla_{\text{pain}} = \frac{\partial \text{intensity}}{\partial b}
+  \in \mathbb{R}^1 \quad (\text{rank } 1)
+\]
+while the information signal has a full-rank gradient:
+\[
+  \nabla_{\text{info}} = \left(\frac{\partial \text{type}}{\partial b},
+    \frac{\partial \text{severity}}{\partial b}, \ldots\right)
+  \in \mathbb{R}^n \quad (\text{rank } n)
+\]
+The pain gradient provides only one bit of directional information
+(``worse/better''); the information gradient provides $n$ bits
+(type, severity, response direction, etc.).
 \end{proposition}
 
 \section{Punishment as base-space coercion}
 
-\begin{proposition}[Punishment = base coercion --- claims 2, 4, 7]
-Punishment operates at the base-space level:
+\begin{definition}[Base-space coercion]
+\emph{Punishment} operates as base-space coercion: it modifies an agent's
+base-space accessibility without modifying their fiber structure:
 \[
-  \text{punishment}: B \to B \quad \text{(changes position, not fiber)}
+  \text{punish}: B_{\text{accessible}}(a) \to B'_{\text{accessible}}(a)
+  \quad \text{where } B' \subset B
 \]
-It coerces behavior (base-space trajectory) without reshaping fiber
-(understanding, motivation). This is why it fails --- it moves the person
-without changing what they are. Restorative approaches operate on fiber.
+The agent's fiber $F_a$ (understanding, motivation, capability) remains
+unchanged; only their accessible region of base space is constrained.
+\end{definition}
+
+\begin{proposition}[Coercion-understanding asymmetry --- claims 3, 10, 12]
+\label{prop:asymmetry}
+Base-space coercion (punishment) has diminishing marginal returns:
+\[
+  \frac{\partial^2 \text{deterrence}}{\partial \text{punishment}^2} < 0
+\]
+Fiber-level intervention (understanding) has increasing marginal returns:
+\[
+  \frac{\partial^2 \text{behavior\_change}}{\partial \text{understanding}^2} > 0
+\]
+Doubling punishment produces less than double the deterrence; doubling
+understanding produces more than double the behavioral change.
 \end{proposition}
 
-\section{Refined fiber signaling}
-
-\begin{proposition}[Beyond pain = refined signaling --- claims 3, 5, 8]
-Advanced systems replace crude pain with refined information fiber:
+\begin{proposition}[Fiber-level restorative intervention --- claims 4, 11]
+\label{prop:restorative}
+Restorative justice operates at the fiber level:
 \[
-  F_{\text{refined}} \cong F_{\text{pain}} \text{ (functionally)}
-  \quad \text{but} \quad \text{suffering}(F_{\text{refined}}) = 0
+  \text{restore}: F_a \to F'_a \quad \text{where }
+  \dim(F'_a) \geq \dim(F_a)
 \]
-The same damage-detection function is preserved but implemented via
-refined fiber that doesn't involve experiential suffering. AGI systems
-should be designed with refined signaling from the start.
+The agent's fiber structure is genuinely transformed --- new dimensions
+of understanding, empathy, and capability are added. The restorative
+process adds fiber rather than constraining base space.
 \end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Punishment curvature --- claim 14]
+\label{prop:curvature}
+The curvature $F_{\nabla_P}$ of the punishment connection measures how
+punishment effectiveness varies with context:
+\[
+  \|F_{\nabla_P}\| \gg 1 \implies \text{punishment effectiveness is
+    highly context-dependent}
+\]
+Empirical evidence shows high punishment curvature: the same punishment
+deters in some contexts, is ineffective in others, and is counterproductive
+in still others. This high curvature is why one-size-fits-all sentencing
+fails --- the punishment landscape is too curved for uniform policies.
+\end{proposition}
+
+\begin{proposition}[Restorative holonomy --- claim 15]
+\label{prop:holonomy}
+A restorative justice cycle
+\[
+  \gamma_R: \text{harm} \to \text{dialogue} \to \text{understanding}
+    \to \text{restoration} \to \text{reintegration}
+\]
+produces non-trivial holonomy in the social fiber bundle:
+\[
+  \operatorname{Hol}_{\gamma_R}(\nabla) \neq \mathrm{id}
+  \implies \text{genuine social change}
+\]
+A punitive cycle $\gamma_P$: harm $\to$ trial $\to$ punishment $\to$
+release $\to$ recidivism produces trivial or regressive holonomy:
+\[
+  \operatorname{Hol}_{\gamma_P}(\nabla) \approx \mathrm{id}
+  \text{ or worse (regression)}
+\]
+\end{proposition}
+
+\begin{proposition}[Fiber upgrade --- claims 5, 6, 16, 17]
+\label{prop:upgrade}
+Evolutionary transcendence of pain is a fiber upgrade:
+\[
+  F_{\text{pain}} \cong \mathbb{R} \quad \xrightarrow{\text{upgrade}} \quad
+  F_{\text{info}} \cong \mathbb{R}^n
+\]
+This is enrichment (more dimensions, more information) not removal
+(the damage-detection function is preserved). For AGI systems, the
+motivational connection should be flat:
+\[
+  F_{\nabla_{\text{AGI}}} = 0 \implies \text{undistorted gradient flow
+    toward goals}
+\]
+No pain curvature (suffering), no punishment coercion (base-space
+constraint) --- just free parallel transport of goal-relevant information
+through the intelligence fiber bundle.
+\end{proposition}
+
+\begin{remark}[Ethical gradient --- claim 7]
+The ethical imperative to replace suffering with information is itself
+a fiber gradient: $\nabla_{\text{ethics}}$ points from pain-based to
+information-based motivation. Resistance to this gradient (``suffering
+builds character'') is a flat section in the pain fiber that fails to
+extend to the information fiber --- a local pattern that doesn't
+generalize.
+\end{remark}
+
 \end{document}

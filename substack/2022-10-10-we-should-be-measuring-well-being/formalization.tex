@@ -6,56 +6,190 @@
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}[definition]{Theorem}
 \newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
 \newtheorem{remark}[definition]{Remark}
 \newtheorem{conjecture}[definition]{Conjecture}
 
 \title{Hyperseed Formalization:\\
   We Should Be Measuring Well-Being}
 \author{ProtomegaTron (automated formalization)}
-\date{2026-09-18}
+\date{2026-09-19 (deepened v2)}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We formalize Ben Goertzel's ``We Should Be Measuring Well-Being'' (2022-10-10)
-within the Hyperseed ontology.
+We formalize Ben Goertzel's ``We Should Be Measuring Well-Being Catalysis,
+Not (trying and failing to) Measure GDP'' (2022-10-10) within the Hyperseed
+ontology, incorporating d-calculus extensions from Hyperseed v2. GDP is
+characterized as a base-space integral blind to fiber dimensions, while
+well-being is a fiber richness integral. The measurement-optimization
+coupling is a feedback loop in the fiber bundle, and the AGI transition
+renders base-space metrics identically uninformative.
 \end{abstract}
+
+\tableofcontents
 
 \section{GDP as base-space measurement}
 
-\begin{proposition}[GDP = base measurement --- claims 1, 6]
-GDP measures only base-space activity:
+\begin{definition}[Economic base space]
+Let $B_{\text{econ}}$ be the \emph{economic base space} --- the space of
+material resources, production processes, and financial flows. Each point
+$b \in B_{\text{econ}}$ represents a configuration of material economic
+activity.
+\end{definition}
+
+\begin{proposition}[GDP = base-space integral --- claims 1, 2, 8]
+\label{prop:gdp}
+GDP is a base-space integral:
 \[
-  \text{GDP} = \int_B \text{activity}(b) \, db \quad \text{(ignores fiber)}
+  \text{GDP} = \int_{B_{\text{econ}}} \text{activity}(b) \, db
 \]
-It counts resource movement in base space but is blind to fiber dimensions
---- the qualitative, experiential aspects of life that constitute actual
-well-being. Waste and destruction register as positive activity.
+This integral is \emph{fiber-blind}: it counts material throughput without
+registering the quality, meaning, or experiential depth of the activity.
+Specific failures:
+\begin{itemize}
+  \item Waste and destruction register as positive (base-space movement).
+  \item Unpaid care is invisible (no base-space transaction).
+  \item Quality improvements are at best ad-hoc approximated (hedonic
+    adjustments are fiber estimates using only base-space data).
+\end{itemize}
+GDP can rise while fiber quality (well-being) falls, because the integral
+sees only the base projection.
 \end{proposition}
 
 \section{Well-being as fiber measurement}
 
-\begin{proposition}[Well-being = fiber measurement --- claims 2--3, 7]
-Well-being metrics measure fiber richness:
+\begin{definition}[Flourishing fiber bundle]
+The \emph{flourishing fiber bundle} $\pi_W : W \to B_{\text{exp}}$ has
+as its base space the experiential context space $B_{\text{exp}}$ and as
+its fiber $W_b$ the space of well-being dimensions available in context
+$b$: life satisfaction, social connection, health, meaning, aesthetic
+richness, spiritual depth.
+\end{definition}
+
+\begin{proposition}[Well-being = fiber richness integral --- claims 3, 9]
+\label{prop:wellbeing}
+A well-being metric is a fiber richness integral:
 \[
-  W = \int_B \dim(F_{\text{flourishing}}(b)) \, db
-  \quad \text{(fiber richness over base)}
+  \mathcal{W} = \int_{B_{\text{exp}}} \dim(W_b) \cdot q(b) \, \mu(db)
 \]
-This captures quality and depth of experience, not just base-space throughput.
-Policy shaped by fiber measurement optimizes for genuine flourishing rather
-than mere activity.
+where $q(b)$ is the quality function on fiber $W_b$ and $\mu$ is a
+measure weighting different experiential contexts. This captures what
+GDP misses: the fiber dimensions of life that constitute actual
+flourishing.
 \end{proposition}
 
-\section{Fiber optimization for AGI era}
+\section{Measurement-optimization coupling}
 
-\begin{proposition}[AGI-era measurement --- claims 4--5, 8]
-As AGI transforms the economy, measurement must shift to fiber:
-\[
-  \lim_{t \to t_{\text{AGI}}} \frac{\text{relevance(GDP)}}{\text{relevance}(W)} \to 0
-\]
-When AGI automates base-space production, base-space metrics become
-meaningless. Only fiber metrics (well-being, consciousness, flourishing)
-remain meaningful guides for civilization.
+\begin{proposition}[Measurement as direction selector --- claims 4, 10]
+\label{prop:coupling}
+The choice of measurement defines an ``uphill direction'' in the
+fiber bundle:
+\begin{itemize}
+  \item \textbf{GDP measurement:} the uphill direction is the base-space
+    gradient $\nabla_{\text{base}} \text{GDP}$ --- optimize material
+    throughput regardless of fiber effects.
+  \item \textbf{Well-being measurement:} the uphill direction is the
+    fiber gradient $\nabla_{\text{fiber}} \mathcal{W}$ --- optimize
+    experiential quality, using base-space resources instrumentally.
+\end{itemize}
+This coupling is a feedback loop: measurement $\to$ optimization target
+$\to$ policy $\to$ system trajectory $\to$ measurement outcomes.
+Changing the measurement section redirects the entire trajectory.
 \end{proposition}
+
+\section{AGI transition and base saturation}
+
+\begin{proposition}[Base saturation --- claims 5, 13]
+\label{prop:saturation}
+As AGI approaches time $t_{\text{AGI}}$, the base-space utility gradient
+vanishes:
+\[
+  \lim_{t \to t_{\text{AGI}}} \|\nabla_{\text{base}} u(t)\| = 0
+\]
+because material production becomes trivially cheap (AGI + robotics).
+The utility gradient becomes purely fiber-directed:
+\[
+  \nabla u(t_{\text{AGI}}) \approx \nabla_{\text{fiber}} u
+\]
+At this point, GDP (which measures $\nabla_{\text{base}}$) becomes
+identically uninformative:
+\[
+  \text{GDP}(t_{\text{AGI}}) \perp \mathcal{W}(t_{\text{AGI}})
+\]
+GDP and well-being are orthogonal --- GDP tells you nothing about
+whether people (or AIs, or hybrids) are flourishing.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Well-being gradient --- claim 11]
+\label{prop:gradient}
+The well-being gradient $\nabla \mathcal{W}$ is a section of the
+cotangent bundle $T^*B_{\text{exp}}$:
+\[
+  \nabla \mathcal{W} \in \Gamma(B_{\text{exp}}, T^*B_{\text{exp}})
+\]
+It points in the direction of greatest well-being improvement at each
+experiential context. Policy guided by $\nabla \mathcal{W}$ (rather
+than $\nabla \text{GDP}$) optimizes genuine flourishing.
+\end{proposition}
+
+\begin{proposition}[Well-being curvature --- claim 12]
+\label{prop:curvature}
+The curvature $F_{\nabla_W}$ of the well-being connection measures
+context-dependence of well-being improvements:
+\[
+  F_{\nabla_W} \neq 0 \implies \text{improvements are context-dependent}
+\]
+A flat well-being connection ($F_{\nabla_W} = 0$) would mean the same
+intervention improves well-being equally everywhere --- a false
+assumption underlying one-size-fits-all policies. Real well-being
+landscapes are curved: what works in one context may fail or harm
+in another.
+\end{proposition}
+
+\begin{definition}[Catalysis as connection coefficients --- claim 14]
+\emph{Well-being catalysis factors} correspond to the connection
+coefficients $\Gamma^i_{jk}$ of the flourishing bundle:
+\[
+  \nabla_j w^i = \partial_j w^i + \Gamma^i_{jk} w^k
+\]
+The coefficients $\Gamma^i_{jk}$ specify how changes in context
+direction $j$ translate into changes in well-being dimension $i$,
+modulated by the current well-being state $w^k$. Measuring catalysis
+= measuring the connection coefficients = understanding the mechanism
+by which context changes promote or hinder flourishing.
+\end{definition}
+
+\begin{proposition}[Consciousness curvature --- claims 6, 15]
+\label{prop:consciousness}
+The welfare section's curvature involves consciousness fiber dimensions
+$C$. A well-being measurement that ignores consciousness fibers is
+incomplete:
+\[
+  F_{\nabla_W}^{\text{full}} = F_{\nabla_W}^{\text{survey}}
+    + F_{\nabla_W}^{\text{consciousness}}
+\]
+where $F_{\nabla_W}^{\text{survey}}$ captures the curvature visible
+to self-report surveys and $F_{\nabla_W}^{\text{consciousness}}$
+captures the curvature in consciousness dimensions invisible to
+surveys. Ultimate well-being measurement requires both terms.
+\end{proposition}
+
+\begin{remark}[Well-being catalysis vs.\ well-being --- claim 7]
+Measuring well-being catalysis (connection coefficients $\Gamma^i_{jk}$)
+rather than well-being itself (fiber sections $w^i$) may be more
+practical because:
+\begin{enumerate}
+  \item Catalysis is about \emph{changes} (easier to measure than absolutes).
+  \item Catalysis is about \emph{mechanisms} (more actionable for policy).
+  \item Catalysis is about \emph{context-response relationships}
+    (measurable via controlled variation in context).
+\end{enumerate}
+This is analogous to physics: measuring forces (connection coefficients)
+is often easier and more useful than measuring positions (sections).
+\end{remark}
+
 \end{document}
