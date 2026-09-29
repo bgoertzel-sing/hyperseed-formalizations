@@ -5,7 +5,7 @@
 - Publication: Eurykosmotron / Substack
 - Published: 2026-09-10
 - Retrieved: 2026-09-17
-- Status: initial Hyperseed formalization draft
+- Status: deepened Hyperseed formalization (v2, 2026-09-29)
 
 ## Summary
 
@@ -64,6 +64,41 @@ The article's analytical distinctions map directly onto Hyperseed:
   while growing beyond current boundaries.
 - **Disappearance test = autonomy of local sections:** Can local sections
   sustain and extend the sheaf without the original base-space support?
+
+## d-calculus connection (Hyperseed v2, deepened 2026-09-29)
+
+These are interpretive readings. The article itself does not use d-calculus.
+
+- **Continuous gradation = no jump in d(generality).** Generality grows along a
+  smooth path across many fibers. Declaring an "AGI era" picks one level set of
+  that path. It is a labeling choice, not a discontinuity.
+
+- **Episodic memory gap = no per-life record.** Astra keeps no append-only
+  record across its interactions. Each session starts from the same point, so
+  dR = 0 across sessions and there is no directed history of a life.
+
+- **Frozen weights = trivial learning holonomy.** In deployment dθ = 0. Around
+  the loop act -> observe -> act again, the model comes back unchanged:
+  Hol_γ = id.
+
+- **Continual learning = nontrivial holonomy.** A learner that updates is
+  changed by the loop: Hol_γ != id. This is the missing capability the article
+  names.
+
+- **Omega loop = holonomy moved into memory.** A frozen LLM inside an agentic
+  loop with persistent memory gets dR > 0 through the external record even
+  with dθ = 0. It is a partial fix: the record changes, the base cognition
+  does not.
+
+- **Disappearance test = autonomous forward 1-cells.** With every human input
+  removed, does the system keep producing forward 1-cells (new goals, new
+  knowledge, self-maintenance)? Autonomy is d != 0 with the human source term
+  set to zero.
+
+- **Pre-IPO timing = provenance weighting.** The announcement's provenance
+  includes a financial incentive. Under Hyperseed's evidence rules it shares a
+  path with marketing, so it should be weighted as such, not counted as an
+  independent assessment.
 
 ## Files
 

@@ -198,3 +198,26 @@ Eurykosmotron, 2026-09-10.
     the static knowledge fiber from the dynamic reasoning loop — a
     fiber-bundle decomposition where the oracle is a reference section
     consulted but not lived in. *(inferred)*
+
+### d-calculus claims (Hyperseed v2, deepened 2026-09-29)
+
+39. **Continuous gradation = no jump in d(generality).** "AGI era" is a chosen
+    level set. *(hyperseed-interpretation)*
+
+40. **Episodic memory gap = dR = 0 across sessions.** No directed life history.
+    *(hyperseed-interpretation)*
+
+41. **Frozen weights = trivial learning holonomy** (dθ = 0, Hol_γ = id).
+    *(hyperseed-interpretation)*
+
+42. **Continual learning = nontrivial holonomy** (Hol_γ != id).
+    *(hyperseed-interpretation)*
+
+43. **Omega loop = holonomy moved into memory.** dR > 0 via the external record
+    with dθ = 0; a partial fix. *(hyperseed-interpretation)*
+
+44. **Disappearance test = autonomous forward 1-cells** with the human source
+    term set to zero. *(hyperseed-interpretation)*
+
+45. **Pre-IPO timing = provenance weighting.** Shares a path with marketing;
+    not independent evidence. *(hyperseed-interpretation)*

@@ -116,3 +116,14 @@
 (--> radical-innovation nontrivial-higher-cells)
 (--> nontrivial-higher-cells ([] (genuinely-new not-recombination)))
 (--> radical-innovation-test ([] (can-system create-new-task-categories)))
+
+;; ---- d-calculus claims (39-45), Hyperseed v2, deepened 2026-09-29 ----
+(--> general-intelligence ([] (continuous-gradation no-jump-d-generality)))
+(--> agi-era-declaration chosen-level-set)
+(--> episodic-memory-gap ([] (dR-zero-across-sessions no-directed-life-history)))
+(--> frozen-weights trivial-learning-holonomy)
+(--> continual-learning nontrivial-learning-holonomy)
+(--> omega-agentic-loop ([] (holonomy-in-memory dR-positive-d-theta-zero partial-fix)))
+(--> disappearance-test autonomous-forward-1-cells)
+(--> autonomy ([] (d-nonzero human-source-term-zero)))
+(--> pre-ipo-announcement ([] (shares-path-with-marketing not-independent-evidence)))
