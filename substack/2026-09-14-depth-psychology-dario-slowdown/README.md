@@ -5,7 +5,7 @@
 - Publication: Eurykosmotron / Substack
 - Published: 2026-09-14
 - Retrieved: 2026-09-17
-- Status: initial Hyperseed formalization draft
+- Status: deepened Hyperseed formalization (v2, 2026-09-29)
 
 ## Summary
 
@@ -67,6 +67,46 @@ The article's analytical framework maps richly onto Hyperseed:
   no global section, coherence through descent data — same structure as
   the Omega network (How Omega Lost Its Claw).
 - **Prosocial coordination layer = trust-weighted descent data.**
+
+## d-calculus connection (Hyperseed v2, deepened 2026-09-29)
+
+These are interpretive readings. The article itself does not use d-calculus.
+Claims about specific people's motives are the article's argument.
+
+- **Three layers = three sources of curvature.** (a) Individual vs group
+  selection: the self connection and the group connection never agree, so
+  ||F_nabla(self, group)|| stays above zero for good. (b) Freudian repression:
+  civilization forces the surface to look flat and pushes the curvature out
+  of sight. (c) The "bullshit self-model" is a gauge choice that hides the
+  curvature, making self-interest and altruism look parallel locally.
+
+- **Slowdown as freeze = imposing dR = 0 at the current ordering.** Pausing
+  the frontier fixes the present ranking of labs. It keeps the incumbent's
+  section in place. No cynicism is needed: the self-model gauge makes
+  "valuation" and "safety" feel like one direction.
+
+- **Arms-race attractor = symmetric self-models.** Each superpower's self-model
+  says "we are the responsible one", and each side's gradient points the same
+  way against the other. The result is a stable fixed point, not a race either
+  side can win.
+
+- **Kill-switch = single-chart atlas.** A centralized frontier model lets one
+  1-cell (one government letter) wipe out every section at once. The article's
+  three-layer analysis says not to build such a point.
+
+- **Open decentralized alternative = multi-chart atlas plus cocycle layer.**
+  Distributed compute that nobody owns gives many charts. The prosocial layer
+  (trust, reputation, verifiable commitments) supplies the transition data
+  g_ij that lets the charts glue together without a center.
+
+- **Why the good guys usually win = positive holonomy of cooperation.**
+  Positive-sum loops come back with more shared value than they started with.
+  Over long directed time this accumulates, even when single episodes go the
+  other way.
+
+- **Honest self-modeling = measuring curvature instead of gauging it away.**
+  Reflective practice reports ||F|| between self-interest and stated aims
+  rather than choosing a frame in which it looks like zero.
 
 ## Files
 

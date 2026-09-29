@@ -129,3 +129,15 @@
 ;; Scenario analysis = directed type exploration
 (--> scenario-analysis directed-type-exploration)
 (--> directed-type-exploration ([] (rejects f-c-lossy-collapse)))
+
+;; ---- d-calculus claims (41-47), Hyperseed v2, deepened 2026-09-29 ----
+(--> three-layer-screwiness ([] (self-group-curvature repression-displaced-curvature self-model-gauge)))
+(--> bullshit-self-model curvature-hiding-gauge-choice)
+(--> frontier-slowdown ([] (dR-zero-current-ordering preserves-incumbent-section)))
+(--> arms-race-attractor ([] (symmetric-self-models stable-fixed-point)))
+(--> kill-switch single-chart-atlas)
+(--> single-chart-atlas one-1-cell-wipes-all-sections)
+(--> open-decentralized-alternative ([] (multi-chart-atlas cocycle-layer)))
+(--> prosocial-coordination-layer ([] (trust reputation verifiable-commitments transition-data)))
+(--> cooperation positive-holonomy-shared-value)
+(--> honest-self-modeling measure-curvature-not-gauge-away)

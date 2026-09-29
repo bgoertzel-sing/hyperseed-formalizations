@@ -213,3 +213,27 @@ Abortive 'AI Slowdown'," Eurykosmotron, 2026-09-14.
     scenarios rather than computing a single doom probability treats the
     future as a directed type with multiple paths, not a scalar — the
     methodological analogue of rejecting (f,c)-lossy collapse. *(inferred)*
+
+### d-calculus claims (Hyperseed v2, deepened 2026-09-29)
+
+41. **Three layers = three curvature sources:** permanent self/group curvature,
+    repression moving curvature out of sight, and self-model gauge hiding it.
+    *(hyperseed-interpretation)*
+
+42. **Slowdown freeze = dR = 0 at the current ordering**, which preserves the
+    incumbent's section. *(hyperseed-interpretation)*
+
+43. **Arms-race attractor = symmetric self-models**, giving a stable fixed
+    point. *(hyperseed-interpretation)*
+
+44. **Kill-switch = single-chart atlas**: one 1-cell wipes out every
+    section. *(hyperseed-interpretation)*
+
+45. **Open alternative = multi-chart atlas plus cocycle layer** (trust,
+    reputation, commitments as g_ij). *(hyperseed-interpretation)*
+
+46. **Cooperation = positive holonomy** that accumulates over directed time.
+    *(hyperseed-interpretation)*
+
+47. **Honest self-modeling = measuring ||F|| rather than gauging it away.**
+    *(hyperseed-interpretation)*
