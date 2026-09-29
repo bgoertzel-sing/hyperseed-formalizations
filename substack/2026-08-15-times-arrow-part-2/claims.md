@@ -132,3 +132,33 @@ Source: Ben Goertzel, "Time's Arrow, Part 2: Relating Subjective Time-Flow to In
 
 37. **Resonant coordination must retain anchoring.** A highly resonant collective may coordinate with almost no explicit overhead yet must retain enough anchoring and provenance to prevent unaccountable drift.
     - *Epistemic status:* design warning (follows from claim 23)
+
+### X. d-calculus claims (Hyperseed v2, deepened 2026-09-29)
+
+38. **McBride derivative = d on record types.** The contextualization
+    coordinate is a section of dR (one-hole contexts).
+    *(hyperseed-interpretation)*
+
+39. **Insight = mixed second-derivative curvature.** ||F_∇(a,b)|| = 0 iff two
+    jointly inserted distinctions are independent; nonzero = insight.
+    *(hyperseed-interpretation)*
+
+40. **Record-demand floor.** ∫ d(DL) >= I_task after compression; efficiency
+    changes slope, not the bound. *(hyperseed-interpretation)*
+
+41. **Nonattachment = lift to dR then quotient to trivial frame holonomy.**
+    Attachment = Hol_γ(Γ_self) != id. *(hyperseed-interpretation)*
+
+42. **Compassion = flat worth connection + curved need connection.** Creeping
+    exclusion = worth curvature; exception lists = its holonomy.
+    *(hyperseed-interpretation)*
+
+43. **Omega ray = d(values) -> 0 with d(record) > 0.** Frozen endpoint =
+    both -> 0 = subjective heat death. *(hyperseed-interpretation)*
+
+44. **Workspace groupoid-like, autobiography directed.** Revisions are forward
+    1-cells in the provenance record. *(hyperseed-interpretation)*
+
+45. **Shared time = flat inter-agent record connection.** Routing cost =
+    translation curvature; resonance must retain descent data (anchoring).
+    *(hyperseed-interpretation)*
