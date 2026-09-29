@@ -5,7 +5,7 @@
 - Publication: Eurykosmotron / Substack
 - Published: 2026-08-24
 - Retrieved: 2026-09-17
-- Status: initial Hyperseed formalization draft
+- Status: deepened Hyperseed formalization (v2, 2026-09-29)
 
 ## Summary
 
@@ -71,6 +71,59 @@ Key findings:
   Open capability creates paths where malicious actors can transport
   capability to harmful endpoints — nontrivial holonomy that cooperative
   security institutions are designed to detect and damp.
+
+## d-calculus connection (Hyperseed v2, deepened 2026-09-29)
+
+These are interpretive readings. The article itself does not use d-calculus.
+
+- **Preemption pressure = parity curvature.** Put two centralized states on a
+  capability fiber. The curvature between their capability sections,
+
+  ||F_∇(state_A, state_B)|| near parity = preemption pressure
+
+  is highest when the gap is small and closing. That is the formal content of
+  the fast (1914-style) mechanism: the closing-window logic is a curvature
+  spike, not a level.
+
+- **Slow mechanism = holonomy around the crash loop.** Take the loop crash ->
+  blame -> nationalism -> policy -> recovery attempt. The holonomy
+
+  Hol_γ(Γ_politics) = net drift toward diversionary nationalism per cycle
+
+  is the article's "political metabolism". The crash itself (the base-space
+  perturbation) is the same everywhere. The holonomy decides the outcome, and
+  this is why the crash tells us almost nothing about AI.
+
+- **Unownable prize = no global section to seize.** In the decentralized
+  variant the capability sheaf has no single global section a state can own.
+  The preemption functional has no maximizer, so its gradient d(prize) is
+  zero. That is the reason war risk drops.
+
+- **Risk conversion = curvature redistribution.** Decentralization does not
+  remove curvature. It moves it from the state-state block to the
+  network-misuse block:
+
+  ||F_∇(state,state)|| down,  ||F_∇(capability, intent)|| up
+
+  Terror peaks are cells where the misuse block is high and the
+  state-network connection is adversarial.
+
+- **Branch variable = state-network connection form.** The best cells and the
+  worst terror cells differ mainly in the connection A_{state,net}.
+  Co-optability is choosing A so that F_∇(state, net) stays small while
+  the base layer keeps its own flat connection (substrate not surrendered).
+
+- **G2 attractor = fixed point of a shared gauge.** Two sovereignty-based
+  actors facing a non-sovereign holder apply the same transition function
+  to it. The adversarial cocycle is a fixed point of this shared gauge. It
+  is a structural attractor, not a story artifact, because d of the
+  "sovereignty gap" has the same sign for both states.
+
+- **Two-layer architecture = split descent.** The compliant edge and
+  permissionless base carry separate descent data. The d-calculus test for
+  "each survives the other's worst day": a perturbation δ at one layer gives
+  a first-order change of zero at the other layer (d_base(δ_edge) ≈ 0 and
+  d_edge(δ_base) ≈ 0).
 
 ## Files
 

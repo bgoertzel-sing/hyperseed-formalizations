@@ -111,3 +111,19 @@
 ;; ---- Arms control window (claim 28) ----
 (--> arms-control-window ([] (mutual-exhaustion 2029-2032)))
 (--> arms-control-window ([] (verification-regime must-be pre-drafted)))
+
+;; ---- d-calculus claims (45-51), Hyperseed v2, deepened 2026-09-29 ----
+(--> preemption-pressure parity-curvature)
+(--> parity-curvature ([] (small-closing-gap curvature-spike fast-mechanism)))
+(--> political-metabolism crash-loop-holonomy)
+(--> crash-loop-holonomy ([] (crash blame nationalism policy drift-per-cycle)))
+(--> unownable-prize no-seizable-global-section)
+(--> no-seizable-global-section ([] (no-maximizer d-prize-zero war-risk-down)))
+(--> risk-conversion curvature-redistribution)
+(--> curvature-redistribution ([] (state-state-down capability-intent-up)))
+(--> branch-variable state-network-connection-form)
+(--> co-optability ([] (small-state-net-curvature flat-base-connection)))
+(--> g2-attractor shared-gauge-fixed-point)
+(--> shared-gauge-fixed-point ([] (same-sign-sovereignty-gradient structural-not-artifact)))
+(--> two-layer-architecture split-descent)
+(--> split-descent ([] (d-base-of-edge-zero d-edge-of-base-zero)))

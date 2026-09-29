@@ -225,3 +225,34 @@ Eurykosmotron, 2026-08-24.
     compliant edge and permissionless base are two fiber components that
     can be independently perturbed — each survives the other's worst day
     because they're connected but not dependent. *(inferred)*
+
+### d-calculus claims (Hyperseed v2, deepened 2026-09-29)
+
+45. **Preemption pressure = parity curvature.** ||F_∇(state_A, state_B)|| peaks
+    when the capability gap is small and closing. This is the fast mechanism.
+    *(hyperseed-interpretation)*
+
+46. **Political metabolism = crash-loop holonomy.** Hol_γ(Γ_politics) is the
+    drift toward nationalism per crash -> blame -> policy cycle. The crash is
+    the same everywhere, so the holonomy decides the outcome.
+    *(hyperseed-interpretation)*
+
+47. **Unownable prize = no seizable global section.** The preemption
+    functional has no maximizer, d(prize) = 0, so war risk falls.
+    *(hyperseed-interpretation)*
+
+48. **Risk conversion = curvature redistribution.** Decentralization moves
+    curvature from the state-state block to the capability-intent block. It
+    does not remove it. *(hyperseed-interpretation)*
+
+49. **Branch variable = connection form A_{state,net}.** Co-optability means
+    keeping F_∇(state, net) small while the base keeps a flat connection.
+    *(hyperseed-interpretation)*
+
+50. **G2 attractor = shared-gauge fixed point.** Both states' sovereignty
+    gradient has the same sign toward a non-sovereign holder, so the
+    adversarial cocycle is structural. *(hyperseed-interpretation)*
+
+51. **Two-layer architecture = split descent.** d_base(δ_edge) ≈ 0 and
+    d_edge(δ_base) ≈ 0 is the formal "survives the other's worst day"
+    test. *(hyperseed-interpretation)*
