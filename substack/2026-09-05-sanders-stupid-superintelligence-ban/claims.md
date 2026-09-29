@@ -172,3 +172,24 @@ Eurykosmotron, 2026-09-05.
     holonomy on the technology ecosystem: no experiential path should
     change the state. This fails because the ecosystem is a directed
     type with nontrivial holonomy. *(inferred)*
+
+### d-calculus claims (Hyperseed v2, deepened 2026-09-29)
+
+36. **Selection effect = ban on the visible fiber.** d(open) < 0, d(hidden) >= 0;
+    capability shifts to where it cannot be audited. *(hyperseed-interpretation)*
+
+37. **Prohibition = gradient migration.** Local dR = 0 moves the gradient to
+    other jurisdictions. *(hyperseed-interpretation)*
+
+38. **Regulatory capture = cocycle collapse.** g_reg ~ g_incumbent merges the
+    reviewer and reviewed charts. *(hyperseed-interpretation)*
+
+39. **Definitional swamp = no canonical scalar.** The legal threshold is a level
+    set of an arbitrary projection of a multi-fiber quantity.
+    *(hyperseed-interpretation)*
+
+40. **Unstoppability = no inverse 1-cells** in capability diffusion.
+    *(hyperseed-interpretation)*
+
+41. **Positive left agenda = change the connection, not the flow.**
+    *(hyperseed-interpretation)*

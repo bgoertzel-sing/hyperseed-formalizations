@@ -5,7 +5,7 @@
 - Publication: Eurykosmotron / Substack
 - Published: 2026-09-05
 - Retrieved: 2026-09-17
-- Status: initial Hyperseed formalization draft
+- Status: deepened Hyperseed formalization (v2, 2026-09-29)
 
 ## Summary
 
@@ -58,6 +58,37 @@ sentences. Key threads:
   is a directed process; you cannot reverse higher cells once generated.
 - **Open decentralized = distributed fiber bundle:** Same architecture
   as in the Dario and Omega articles.
+
+## d-calculus connection (Hyperseed v2, deepened 2026-09-29)
+
+These are interpretive readings. The article itself does not use d-calculus.
+
+- **Selection effect = a ban acts only on the visible fiber.** Split capability
+  work into an open fiber (published, auditable) and a hidden fiber (classified,
+  offshore, private). A ban forces d(open) < 0 but leaves d(hidden) >= 0. The
+  total keeps growing, and its share moves to the part nobody can see.
+
+- **Prohibition = gradient migration, not a freeze.** A local ban tries to
+  impose dR = 0 in one jurisdiction. The drivers are global, so the gradient
+  moves to other jurisdictions and actors instead of vanishing.
+
+- **Regulatory capture = cocycle collapse.** A pause-until-review agency should
+  be an independent chart. When its transition function is set by the
+  incumbents it reviews (g_reg ~ g_incumbent), the two charts collapse into one,
+  and review becomes a gate only incumbents can pass.
+
+- **Definitional swamp = no canonical scalar.** "Surpass human intelligence"
+  needs a threshold on a scalar. Intelligence is multi-fiber, and any
+  projection to a scalar is a choice. The legal boundary is then a level set of
+  an arbitrary projection, contestable wherever the choice matters.
+
+- **Unstoppability = no inverse 1-cells.** Diffusion of knowledge, hardware and
+  trained weights is directed with no inverse. A ban can slow some 1-cells but
+  cannot undo ones already taken.
+
+- **Positive left agenda = change the connection, not the flow.** Digital
+  dividends, open infrastructure and public compute change how benefits are
+  transported along the path (who gains), instead of trying to stop the path.
 
 ## Files
 

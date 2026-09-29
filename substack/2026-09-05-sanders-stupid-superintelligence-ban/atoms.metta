@@ -100,3 +100,14 @@
 ;; ---- Prohibition = trivial holonomy enforcement (claim 35) ----
 (--> (× prohibition agi-development) trivial-holonomy-enforcement)
 (--> trivial-holonomy-enforcement ([] (fails-because nontrivial-holonomy-inherent)))
+
+;; ---- d-calculus claims (36-41), Hyperseed v2, deepened 2026-09-29 ----
+(--> superintelligence-ban ([] (d-open-negative d-hidden-nonneg acts-on-visible-fiber)))
+(--> selection-effect capability-shift-to-unauditable-fiber)
+(--> local-prohibition gradient-migration)
+(--> regulatory-capture cocycle-collapse)
+(--> cocycle-collapse ([] (reviewer-chart-equals-incumbent-chart gate-only-incumbents-pass)))
+(--> definitional-swamp no-canonical-scalar)
+(--> legal-threshold level-set-of-arbitrary-projection)
+(--> capability-diffusion no-inverse-1-cells)
+(--> positive-left-agenda change-connection-not-flow)
