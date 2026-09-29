@@ -168,3 +168,27 @@ Playbook," Eurykosmotron, 2026-09-13.
     return to the same scalar objective. Real ethical development requires
     nontrivial holonomy: genuine change in values through experience.
     *(inferred)*
+
+### d-calculus claims (Hyperseed v2, deepened 2026-09-29)
+
+33. **Coordinated amplification = homotopic evidence.** Shared-funding
+    endorsements count about once. *(hyperseed-interpretation)*
+
+34. **Scalar collapse = projection pi of multi-fiber value onto R.** Harmless
+    when fibers align; at cosmological scale d(decision)/d(p) blows up.
+    *(hyperseed-interpretation)*
+
+35. **Longtermism = tail-dominated integral** of p * V with no stable value.
+    *(hyperseed-interpretation)*
+
+36. **Doom loop = closed loop with no outside source**; it cannot update
+    (extends claim 32). *(hyperseed-interpretation)*
+
+37. **Career pipeline = correlated placement paths**, which reduces insider
+    independence. *(hyperseed-interpretation)*
+
+38. **Plural ethics = open directed type**; no fixed utility is a
+    permanent section. *(hyperseed-interpretation)*
+
+39. **Network mapping = provenance-graph computation (E_pi).**
+    *(hyperseed-interpretation)*

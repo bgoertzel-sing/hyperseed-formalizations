@@ -129,3 +129,16 @@
 ;; RL doom = trivial holonomy
 (--> (× rl-formalism ethical-reasoning) trivial-holonomy)
 (--> (× plural-revisable-ethics ethical-reasoning) nontrivial-holonomy)
+
+;; ---- d-calculus claims (33-39), Hyperseed v2, deepened 2026-09-29 ----
+(--> coordinated-amplification homotopic-evidence)
+(--> homotopic-evidence ([] (shared-provenance-segment count-once)))
+(--> scalar-collapse projection-multi-fiber-value-to-R)
+(--> projection-multi-fiber-value-to-R ([] (harmless-when-aligned decision-sensitivity-blowup-cosmological)))
+(--> longtermism tail-dominated-integral)
+(--> doom-loop ([] (closed-loop no-outside-source cannot-update)))
+(--> career-pipeline correlated-placement-paths)
+(--> correlated-placement-paths reduced-insider-independence)
+(--> plural-ethics open-directed-type)
+(--> open-directed-type ([] (d-values-nonzero no-permanent-utility-section)))
+(--> network-mapping provenance-graph-computation)

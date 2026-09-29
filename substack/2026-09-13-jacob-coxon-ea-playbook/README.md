@@ -5,7 +5,7 @@
 - Publication: Eurykosmotron / Substack
 - Published: 2026-09-13
 - Retrieved: 2026-09-17
-- Status: initial Hyperseed formalization draft
+- Status: deepened Hyperseed formalization (v2, 2026-09-29)
 
 ## Summary
 
@@ -60,6 +60,46 @@ Hyperseed's analysis of reductionist epistemology:
   and grows and gets argued over and revised by beings who are themselves
   changing" aligns with identity-preserving self-modification: ethical
   frameworks must evolve while maintaining coherence.
+
+## d-calculus connection (Hyperseed v2, deepened 2026-09-29)
+
+These are interpretive readings. The article itself does not use d-calculus.
+Factual claims about people and funding are the article's; the readings
+below formalize its argument without independently verifying them.
+
+- **Coordinated amplification = homotopic evidence.** The article argues that
+  the accounts amplifying the resignation share funding paths. If so, their
+  endorsements are homotopic: they pass through a shared provenance segment.
+  They should count roughly once, not N times. Consensus from one network is
+  one piece of evidence, however many voices carry it.
+
+- **Scalar collapse = projection of multi-fiber value onto R.** Expected-value
+  ethics picks a projection pi from plural values to a single number. Where the
+  value fibers are nearly aligned (short-horizon charity), little is lost. At
+  cosmological scale the projection is ruled by tiny-probability,
+  huge-magnitude terms, so the decision is extremely sensitive to guesses:
+  d(decision)/d(p) blows up. This is the article's "numerology".
+
+- **Longtermism = tail-dominated integral.** The sum of p * V over futures has
+  no stable value. It is controlled by its tails, not by anything anyone can
+  estimate.
+
+- **Doom loop = closed loop with no outside source.** Assume minds are reward
+  maximizers, conclude a smarter one is dangerous, then read new evidence
+  through the same assumption. The loop never takes in outside data, so it
+  cannot update (this extends claim 32).
+
+- **Career pipeline = correlated placement paths.** "Change from within"
+  sends people along common paths into several labs. Insiders at different
+  labs then share upstream provenance and are less independent than they
+  look.
+
+- **Plural, revisable ethics = open directed type.** Values form a directed
+  type that keeps growing: d(values) != 0 is expected, and no fixed utility
+  function is a section of it for all time.
+
+- **Network mapping = computing the provenance graph.** Tracing who funded and
+  amplified whom is the job Hyperseed's E_pi stratum is meant to make routine.
 
 ## Files
 
