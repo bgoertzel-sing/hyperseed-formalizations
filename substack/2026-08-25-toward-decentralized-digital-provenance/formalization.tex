@@ -271,4 +271,60 @@ because the watermark only needs to point to the sheaf entry, not to
 carry the evidence itself.
 \end{conjecture}
 
+
+%======================================================================
+\section{d-calculus formulation (Hyperseed v2)}
+\emph{Interpretive readings added 2026-09-29; the article itself does not use d-calculus.}
+
+\begin{proposition}[Provenance chain as directed path --- claim 31]
+Each signed claim is a forward 1-cell $c_k$; the provenance of an artifact is
+the composite $c_n\circ\cdots\circ c_1$. The record functional satisfies
+$dR(c_k)\ge 0$ for all $k$.
+\end{proposition}
+
+\begin{proposition}[Detection arms race --- claim 32]
+For the loop $\gamma$: detector update $\to$ generator adaptation $\to$
+detector update,
+\[
+  \mathbb{E}\bigl[\operatorname{Hol}_\gamma(\Gamma_{\mathrm{detect}})\bigr]\approx 0 .
+\]
+Detection yields no lasting advantage; signatures are structural records
+not in the generator's learnable feature space.
+\end{proposition}
+
+\begin{proposition}[Stripping and watermark --- claim 33]
+Metadata stripping is a forgetful projection $p$ from (content, path) to
+content. A robust watermark supplies a lift $\ell$ with $p\circ\ell=\mathrm{id}$
+up to resolver lookup.
+\end{proposition}
+
+\begin{proposition}[Trust-policy curvature --- claim 34]
+\[
+  \|F_\nabla(\mathrm{policy}_i,\mathrm{policy}_j)\| = \text{verdict divergence on shared evidence}.
+\]
+A shared claim grammar is a shared connection form; verdicts are sections.
+Imposing $F_\nabla=0$ globally is the rejected ``Ministry of Truth''.
+\end{proposition}
+
+\begin{proposition}[Liar's dividend --- claim 35]
+If the evidence sheaf has no sections, $d(\mathrm{cost}_{\mathrm{denial}})=0$.
+Provenance restores $d(\mathrm{cost}_{\mathrm{denial}})>0$.
+\end{proposition}
+
+\begin{proposition}[Resolver atlas --- claim 36]
+Resolvers $U_i$ form an atlas; key histories and revocations must satisfy
+$g_{ij}g_{jk}=g_{ik}$ on triple overlaps. A single repository is a one-chart
+atlas and reintroduces the bottleneck.
+\end{proposition}
+
+\begin{proposition}[Revocation --- claim 37]
+Revocation is a forward 1-cell that lowers the trust weight of earlier
+claims without deleting them; the trail remains append-only.
+\end{proposition}
+
+\begin{proposition}[Reputation gaming --- claim 38]
+A Sybil endorsement loop $\gamma$ has $\operatorname{Hol}_\gamma(\Gamma_{\mathrm{trust}})>0$
+without external evidence. AI reputation management is holonomy detection.
+\end{proposition}
+
 \end{document}

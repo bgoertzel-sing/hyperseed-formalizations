@@ -5,7 +5,7 @@
 - Publication: Eurykosmotron / Substack
 - Published: 2026-08-25
 - Retrieved: 2026-09-17
-- Status: initial Hyperseed formalization draft
+- Status: deepened Hyperseed formalization (v2, 2026-09-29)
 
 ## Summary
 
@@ -69,6 +69,59 @@ framework for digital media provenance. Key threads:
 - **AI for reputation = holonomy detection in the trust bundle:** AI
   detects when an actor's reputation trajectory has nontrivial holonomy
   (gaming behavior that returns to "trustworthy" via a deceptive path).
+
+## d-calculus connection (Hyperseed v2, deepened 2026-09-29)
+
+These are interpretive readings. The article itself does not use d-calculus.
+
+- **Provenance chain = directed path of signed 1-cells.** Each signed claim
+  (capture, AI generation, edit, publish) is a forward 1-cell. The artifact's
+  provenance is the composite path. Signatures make the record functional
+  monotone (dR >= 0): claims accumulate and are never silently removed.
+
+- **Detection arms race = zero-holonomy loop.** Take the loop detector
+  improves -> generator adapts -> detector improves again. The holonomy of
+  detectability around this loop is
+
+  Hol_γ(Γ_detect) ≈ 0 (on average)
+
+  Each cycle returns to parity, so detection gives no lasting advantage.
+  Provenance breaks the loop, because a signature is a structural record
+  and not a statistical feature the generator can learn to imitate.
+
+- **Metadata stripping = forgetful projection; watermark = lift.** Stripping
+  metadata projects the artifact onto its bare content, which forgets the
+  path. The invisible watermark or fingerprint is a lift that restores
+  access to the path through the resolver network.
+
+- **Trust-policy curvature.** Different observers apply different trust
+  policies to the same evidence:
+
+  ||F_∇(policy_i, policy_j)|| = verdict divergence on shared evidence
+
+  Nonzero curvature is allowed and expected. "Shared grammar of evidence,
+  not shared verdict" means a shared connection form (the claim format)
+  with different sections (the verdicts). Forcing zero curvature would be
+  the Ministry of Truth.
+
+- **Liar's dividend = vanishing denial gradient.** In a provenance vacuum
+  the evidence sheaf has no sections, so d(cost of denial) = 0. A powerful
+  actor can deny anything for free. Provenance restores a positive gradient:
+  denying a well-attested artifact means contradicting signed records.
+
+- **Decentralized resolution = atlas, not single chart.** Each resolver is
+  a chart. Key histories and revocations must satisfy the cocycle condition
+  g_ij g_jk = g_ik across resolvers. A centralized repository is a single
+  chart, which is the same bottleneck rebuilt one layer up.
+
+- **Revocation = directed reweighting, not deletion.** Revoking a key adds
+  a forward 1-cell that lowers the trust weight of earlier claims. It does
+  not delete them, so the record stays append-only.
+
+- **Reputation gaming = nontrivial holonomy in the trust bundle.** A Sybil
+  ring of mutual endorsements is a loop along which trust grows without
+  outside evidence: Hol_γ(Γ_trust) > 0. AI's job, in the article's framing,
+  is detecting this holonomy, not judging pixels.
 
 ## Files
 

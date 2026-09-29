@@ -166,3 +166,32 @@ Eurykosmotron, 2026-08-25.
     absence-guilt) prevents a specific mode of cocycle collapse that would
     reduce the distributed sheaf to a centralized section.
     *(inferred)*
+
+### d-calculus claims (Hyperseed v2, deepened 2026-09-29)
+
+31. **Provenance chain = directed path of signed 1-cells.** Signatures make
+    the record functional monotone (dR >= 0). *(hyperseed-interpretation)*
+
+32. **Detection arms race = zero-holonomy loop.** Hol_γ(Γ_detect) ≈ 0 on
+    average, so detection has no lasting advantage. Provenance breaks the
+    loop structurally. *(hyperseed-interpretation)*
+
+33. **Metadata stripping = forgetful projection; watermark = lift.**
+    *(hyperseed-interpretation)*
+
+34. **Trust-policy curvature.** ||F_∇(policy_i, policy_j)|| = verdict
+    divergence on shared evidence. Nonzero is allowed; a shared grammar is a
+    shared connection form. *(hyperseed-interpretation)*
+
+35. **Liar's dividend = vanishing denial gradient.** No provenance means
+    d(cost of denial) = 0. *(hyperseed-interpretation)*
+
+36. **Decentralized resolution = atlas with cocycle condition.** Key
+    histories and revocations satisfy g_ij g_jk = g_ik across resolvers.
+    *(hyperseed-interpretation)*
+
+37. **Revocation = directed reweighting, not deletion.** The record stays
+    append-only. *(hyperseed-interpretation)*
+
+38. **Reputation gaming = trust holonomy.** Sybil endorsement loops have
+    Hol_γ(Γ_trust) > 0. AI detects this holonomy. *(hyperseed-interpretation)*
