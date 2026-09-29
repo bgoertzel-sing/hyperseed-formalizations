@@ -5,7 +5,7 @@
 - Publication: Eurykosmotron / Substack
 - Published: 2026-09-02
 - Retrieved: 2026-09-17
-- Status: initial Hyperseed formalization draft
+- Status: deepened Hyperseed formalization (v2, 2026-09-29)
 
 ## Summary
 
@@ -75,6 +75,45 @@ The article's framework maps richly onto Hyperseed:
   consideration.
 - **Symbiocratic governance = trust-weighted descent data in the political
   fiber bundle.**
+
+## d-calculus connection (Hyperseed v2, deepened 2026-09-29)
+
+These are interpretive readings. The article itself does not use d-calculus.
+
+- **Unbundled rights = multi-fiber qualification.** Welfare, identity, legal
+  standing, civic participation and franchise are separate fibers over the
+  space of minds. A given AI can have a local section in some fibers and not
+  others. No single scalar "personhood score" is needed.
+
+- **Rights expansion = directed growth of the moral circle.** Over long
+  timescales d(circle) >= 0, with reversals as local negative steps. The
+  article's point is that nothing marks 2026 as the place where d(circle)
+  goes to zero.
+
+- **Copy problem = forking directed history.** Copying an AI is a fork
+  1-cell: one path becomes two. Identity then means continuity of a path,
+  not equality of type. So rights attach to paths (authenticated continuity),
+  not to bare type.
+
+- **Evaluation ecology = no global scalar, independence counts.** Each
+  evaluator gives a local section, and curvature between evaluators is
+  their disagreement. Evaluations that trace back to the manufacturer are
+  homotopic evidence and must not be double-counted. Truly independent
+  evaluations are non-homotopic and can be fused freely.
+
+- **Versioned identity = append-only record.** A version bump is a forward
+  1-cell in the provenance record. For rights to carry over, d(self-model)
+  across a version step has to stay bounded.
+
+- **Treatment shapes minds = holonomy of development.** How a mind is treated
+  during development returns as changed dispositions. The development loop
+  has nontrivial holonomy, which is the article's reason for acting before
+  minds are fully formed.
+
+- **Symbiocracy = descent data.** AI-assisted deliberation helps glue local
+  human positions into shared global sections. It doesn't force zero
+  curvature: it finds the agreement that exists and leaves real
+  disagreement visible.
 
 ## Files
 

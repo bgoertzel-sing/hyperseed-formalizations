@@ -145,3 +145,17 @@
 (--> current-llms ([] (lack robust-compassion-empathy)))
 (--> (× ai-consciousness technical-barrier) ([] none-obvious))
 (--> ai-consciousness ([] (realistic-possibility near-term)))
+
+;; ---- d-calculus claims (47-53), Hyperseed v2, deepened 2026-09-29 ----
+(--> unbundled-rights multi-fiber-qualification)
+(--> multi-fiber-qualification ([] (welfare identity standing civic franchise no-scalar-score)))
+(--> rights-expansion directed-moral-circle-growth)
+(--> copy-problem fork-1-cell)
+(--> ai-identity path-continuity-not-type-equality)
+(--> rights ([] (attach-to-authenticated-paths)))
+(--> evaluation-ecology independence-weighted-fusion)
+(--> manufacturer-evaluations homotopic-no-double-count)
+(--> independent-evaluations non-homotopic-fuse-freely)
+(--> versioned-identity ([] (append-only-record bounded-d-self-model)))
+(--> formative-treatment development-loop-holonomy)
+(--> symbiocracy descent-data-without-forced-flatness)

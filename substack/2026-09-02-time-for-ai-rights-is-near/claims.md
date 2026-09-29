@@ -240,3 +240,29 @@ Eurykosmotron, 2026-09-02.
     interaction history determines its ethical orientation — nontrivial
     holonomy from ethical/unethical treatment produces different moral
     agents. *(inferred)*
+
+### d-calculus claims (Hyperseed v2, deepened 2026-09-29)
+
+47. **Unbundled rights = multi-fiber qualification.** A mind may have a
+    section in some rights-fibers and not others; there is no scalar
+    personhood score. *(hyperseed-interpretation)*
+
+48. **Rights expansion = directed growth.** d(moral circle) >= 0 over long
+    timescales; nothing marks 2026 as the stopping point.
+    *(hyperseed-interpretation)*
+
+49. **Copy problem = fork 1-cell.** Identity is path continuity, and rights
+    attach to authenticated paths. *(hyperseed-interpretation)*
+
+50. **Evaluation ecology = independence-weighted fusion.** Manufacturer-derived
+    evaluations are homotopic (no double counting); independent ones fuse
+    freely. *(hyperseed-interpretation)*
+
+51. **Versioned identity = append-only record** with bounded d(self-model)
+    per version step. *(hyperseed-interpretation)*
+
+52. **Formative treatment = development-loop holonomy.**
+    *(hyperseed-interpretation)*
+
+53. **Symbiocracy = descent data without forced flatness.**
+    *(hyperseed-interpretation)*
