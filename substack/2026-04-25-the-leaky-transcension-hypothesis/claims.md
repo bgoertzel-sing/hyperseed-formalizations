@@ -48,3 +48,22 @@
 
 **Hyperseed mapping:** Formalized as a fiber-bundle relation in the Hyperseed ontology; see `atoms.metta` and `formalization.tex` for details.
 
+
+
+## OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+### C7: `oco2_closed_scope`
+
+**Claim:** Original transcension = a Scope with no outgoing ContextTransfer. *(oco2-crosswalk)*
+
+### C8: `oco2_partial_transfer`
+
+**Claim:** Leaky transcension and graduated ecology = capability-ordered Scopes with partial transfers, mainly between neighbouring levels. *(oco2-crosswalk)*
+
+### C9: `oco2_sparse_evidence`
+
+**Claim:** Partial detectability = leaked records as sparse EvidenceRecords, counted by distinct origins. *(oco2-crosswalk)*
+
+### C10: `oco2_interface_goal`
+
+**Claim:** Compassion interfaces = a higher-Scope Goal whose evaluation requires transfers downward. *(oco2-crosswalk)*

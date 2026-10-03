@@ -53,3 +53,10 @@
 (= (d-section d_the_leaky_transcension_hypothesis info_theoretic_leakiness) (parallel-transport conn_the_leaky_transcension_hypothesis info_theoretic_leakiness))
 (= (d-section d_the_leaky_transcension_hypothesis partial_detectability) (parallel-transport conn_the_leaky_transcension_hypothesis partial_detectability))
 (= (d-section d_the_leaky_transcension_hypothesis compassion_interfaces) (parallel-transport conn_the_leaky_transcension_hypothesis compassion_interfaces))
+;; ---- OCO/2 crosswalk (C7-C10), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> original-transcension no-outgoing-ContextTransfer)
+(--> leaky-transcension partial-cross-level-ContextTransfer)
+(--> graduated-ecology ([] (capability-ordered-Scopes neighbour-transfers)))
+(--> info-theoretic-leakiness attributed-closure-cost-argument)
+(--> partial-detectability ([] (sparse-EvidenceRecords distinct-origin-count)))
+(--> compassion-interfaces transfer-requiring-GoalEvaluation)
