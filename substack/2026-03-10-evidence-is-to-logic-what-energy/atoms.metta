@@ -40,3 +40,10 @@
 (--> evidence-logic-energy ([] (related-to what-is-science evidence-evaluation)))
 (--> evidence-logic-energy ([] (related-to pln-opencog quantum-extension)))
 (--> evidence-logic-energy ([] (related-to paraconsistency contradictory-evidence)))
+
+;; ---- OCO/2 crosswalk (18-21), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> evidence-conservation ReadSet-origin-union-bound)
+(--> hallucination strength-exceeds-ReadSet-mass)
+(--> evidence-monotonicity idempotent-origin-union)
+(--> evidence-noncommutativity order-dependent-Derivation-composition)
+(--> qln-fluqnets attributed-BridgeMapping)

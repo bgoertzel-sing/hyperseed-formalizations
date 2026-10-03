@@ -74,3 +74,13 @@ Eurykosmotron, 2026-03-10.
 
 17. **Entropy gradient (d-calculus).** ∇_entropy ≥ 0 along inference paths.
     Logical arrow of inference. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+18. **Evidence conservation = conclusion mass bounded by the origin-keyed union of its ReadSet.** *(oco2-crosswalk)*
+
+19. **Hallucination = strength exceeding ReadSet evidence mass,** detectable by walking the ReadSet. *(oco2-crosswalk)*
+
+20. **Monotonicity = idempotent union;** repeated reading of one origin adds nothing. *(oco2-crosswalk)*
+
+21. **Non-commutativity = order-dependent Derivation composition, recorded in the ordered log.** *(oco2-crosswalk)*

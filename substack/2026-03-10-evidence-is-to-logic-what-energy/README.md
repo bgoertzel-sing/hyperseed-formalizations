@@ -150,6 +150,21 @@ may not commute:
   This is the logical analog of the physical second law — the
   arrow of inference.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Quantale Noether theorem, evidence conservation (claims 1, 10) | along a Derivation chain, a conclusion's evidence mass is bounded by the origin-keyed union of its ReadSet's evidence | Conservation becomes a checkable property of recorded Derivations. |
+| Hallucination bound (claims 2, 11) | a Claim whose strength exceeds the evidence mass of its ReadSet | Detectable by walking the ReadSet: standing with no recorded source. |
+| Evidence monotonicity (claim 4) | set union is idempotent, so re-reading the same origin adds nothing | Capsule-respecting inference cannot manufacture evidence. |
+| Weakness-bounded leakage, non-commutativity (claims 3, 6, 13) | reordering Derivation steps changes the result; the ordered log records which order happened | Leakage is bounded when steps nearly commute. |
+| Join-collision entropy (claim 5) | attributed Claim (logical second law) | |
+| QLN and FluQNets (claims 7-8) | attributed BridgeMapping from evidence records to density-matrix states | See rethinking-classical-quantum-brain. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
