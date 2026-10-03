@@ -64,3 +64,10 @@
 (--> semantic-primitives ([] (related-to general-theory-gi common-substrate)))
 (--> semantic-primitives ([] (related-to consciousness-explosion irreducible-consciousness)))
 (--> semantic-primitives ([] (related-to paraconsistent-interzones resist-decomposition)))
+
+;; ---- OCO/2 crosswalk (16-19), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> semantic-primitive primitive-Catalog-entry)
+(--> concept-reduction Derivation-chain-to-primitives)
+(--> embodied-grounding sensorimotor-EvidenceRecord)
+(--> metaphorical-extension concrete-to-abstract-BridgeMapping)
+(--> irreducible-concept recorded-unreduced)

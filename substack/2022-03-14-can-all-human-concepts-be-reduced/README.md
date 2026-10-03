@@ -137,6 +137,22 @@ Embodiment grounding anchors abstract fibers to sensorimotor fibers:
   primitives are truly universal; it introduces holonomy if the
   "universal" primitives are actually culture-dependent.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Semantic primitives, primitives as base fibers, fiber basis (claims 1, 7-8) | primitive Catalog entries; other concepts reached from them by recorded Derivation chains | Same reduction reading as hyperseed-v2 and introducing-hyperseed-1. |
+| Practical utility (claim 2) | an approximate primitive Catalog whose coverage is itself Assessed | |
+| Embodiment grounding (claims 3, 9, 13) | primitives anchored by EvidenceRecords from sensorimotor Executions | |
+| Recursive composition, compositional holonomy (claims 4, 14) | Derivations composing entries; where composition order changes the result, the order is recorded | |
+| Metaphorical extension (claim 10) | BridgeMapping from a concrete Catalog region to an abstract one | |
+| CogPrime/Hyperon application (claim 5) | attributed Plan, origin = author | |
+| Limits of reduction (claim 6) | concepts with no Derivation chain to primitives are recorded as unreduced, not forced | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

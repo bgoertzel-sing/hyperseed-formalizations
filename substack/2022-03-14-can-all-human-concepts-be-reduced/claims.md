@@ -77,3 +77,13 @@ Eurykosmotron, 2022-03-14.
     cultural fiber bundles using primitives as connection. Faithful if
     primitives truly universal; holonomy if culture-dependent.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+16. **Primitives = Catalog entries from which other concepts have recorded Derivation chains.** *(oco2-crosswalk)*
+
+17. **Grounding = primitives anchored by sensorimotor EvidenceRecords.** *(oco2-crosswalk)*
+
+18. **Metaphor = BridgeMapping from a concrete to an abstract Catalog region.** *(oco2-crosswalk)*
+
+19. **Limits of reduction = concepts with no chain to primitives, recorded as unreduced.** *(oco2-crosswalk)*
