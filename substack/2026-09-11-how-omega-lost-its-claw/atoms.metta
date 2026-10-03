@@ -104,3 +104,16 @@
 ;; ---- Synergy (claim 7) ----
 (--> (× hyperon frontier-llms) ([] synergetic))
 (--> (× hyperon frontier-llms) ([] (produces smarter-ai)))
+
+;; ---- OCO/2 crosswalk (33-40), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> metta-self-rewriting ([] (provisional-definition review-event catalog-activation new-context-snapshot)))
+(--> persistent-memory ([] (MemoryEvent LifecycleEvent append-only-ledger)))
+(--> agent-opinion attributed-Interpretation)
+(--> attributed-Interpretation ([] (admitted-only-via-EvidenceRecord-Justification)))
+(--> self-debugging Challenge-targeting-Justification)
+(--> taught-values event-sourced-MotivationSnapshot)
+(--> system-prompt-values Catalog-Definition-edit)
+(--> omega-to-omega-exchange ContextTransfer)
+(--> ContextTransfer ([] (preserve-origin-ids typed-losses no-double-count)))
+(--> decentralization ([] (peer-Scopes brokered-AuthorizationRecord no-self-issued-capability)))
+(--> incremental-integration ExperimentRun-gated-catalog-activation)

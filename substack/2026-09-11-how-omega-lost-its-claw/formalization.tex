@@ -322,4 +322,48 @@ fibers are ``too different,'' the bundle may not be trivializable,
 requiring a genuinely non-abelian structure group.
 \end{conjecture}
 
+
+%======================================================================
+\section{OCO/2 crosswalk (oco/2:2.0.0-alpha.1)}
+\emph{Added 2026-10-03. Interpretive mapping onto the Omega Core Ontology
+record registry; OCO/2 is an unfrozen alpha candidate.}
+
+\begin{proposition}[Self-modification as a new cut --- claim 33]
+A self-rewrite yields a new ContextSnapshot $\kappa'$ whose Catalog activates
+reviewed Definitions; the prior cut $\kappa$ is immutable, so every
+historical derivation remains reproducible under $\kappa$.
+\end{proposition}
+
+\begin{proposition}[Memory as event log --- claim 34]
+Standing at time $t$ is the reduction of the append-only event sequence
+$e_1,\dots,e_n$ with $\mathrm{time}(e_n)\le t$; the directed history of
+claim 27 is this sequence.
+\end{proposition}
+
+\begin{proposition}[Opinion vs.\ evidence --- claim 35]
+An agent assertion enters as an attributed Interpretation; it contributes
+evidence mass only via a Justification whose premises include an admitted
+EvidenceRecord.
+\end{proposition}
+
+\begin{proposition}[Undercut --- claim 36]
+A Challenge targets a Justification $j$ for Claim $c$; defeat of $j$ removes
+that route without altering the identity of $c$.
+\end{proposition}
+
+\begin{proposition}[Taught values --- claim 37]
+Value change by interaction is a sequence of MotivationSnapshot events with
+provenance, distinct from a Catalog edit.
+\end{proposition}
+
+\begin{proposition}[Inter-agent transfer --- claim 38]
+A ContextTransfer between Scopes $S_a,S_b$ preserves origin identifiers, so
+evidence with a shared origin is combined by set union rather than summed.
+\end{proposition}
+
+\begin{proposition}[Decentralization --- claims 39--40]
+Instances are peer Scopes; authority is an authenticated broker mirror, never
+self-issued; new components are activated only after a recorded ExperimentRun.
+\end{proposition}
+
 \end{document}

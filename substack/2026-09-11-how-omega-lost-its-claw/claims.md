@@ -160,3 +160,33 @@ Eurykosmotron, 2026-09-11.
     components incrementally and testing for improvement is a sheaf
     extension operation: each new component must be compatible with
     existing sections on overlaps. *(inferred)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+33. **Self-rewriting = new ContextSnapshot/Catalog via provisional Definition,
+    review and activation events**; prior catalogs stay immutable.
+    *(oco2-crosswalk)*
+
+34. **Persistent memory = append-only MemoryEvent/LifecycleEvent ledger**;
+    the directed history of claim 27 is the event log. *(oco2-crosswalk)*
+
+35. **Agent opinion = attributed Interpretation**; it gains admitted standing
+    only through EvidenceRecord + Justification routes, not by being
+    LLM-generated. *(oco2-crosswalk)*
+
+36. **Self-debugging = Challenge against a Justification**, answered by an
+    alternative route; Claim identity is preserved. *(oco2-crosswalk)*
+
+37. **Taught values = event-sourced MotivationSnapshot changes** with
+    provenance, distinct from a Catalog/Definition edit (system prompt).
+    *(oco2-crosswalk)*
+
+38. **Omega-to-Omega exchange = ContextTransfer** preserving origin IDs and
+    typed losses, which prevents double-counting shared-origin evidence.
+    *(oco2-crosswalk)*
+
+39. **Decentralization = many peer Scopes with brokered
+    AuthorizationRecords**; no self-issued capability. *(oco2-crosswalk)*
+
+40. **Incremental integration = ExperimentRun-gated Catalog activation**,
+    with ValidityThreat records. *(oco2-crosswalk)*

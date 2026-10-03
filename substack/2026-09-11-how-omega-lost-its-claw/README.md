@@ -63,6 +63,24 @@ This article is a direct manifesto for the Omega/Hyperseed architecture:
 - **Open/decentralized = distributed fiber bundle:** Many independent
   fibers (Omegas) over a shared base space (shared infrastructure/protocols).
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Self-rewriting in MeTTa (claim 26) | provisional Definition -> review events -> Catalog activation in a new ContextSnapshot; code change as ActionOperator / Execution / ExecutionReceipt | Old Catalog stays immutable; self-modification makes a new reasoning cut, it never edits history (proof-plan K05-K07 row). |
+| Months of memory, "will it remember us?" (claims 11, 27) | MemoryEvent in the shared host ledger; LifecycleEvent; WorkspaceSnapshot | Append-only: standing changes by events, contracts stay fixed. Directed history is literally the event log. |
+| "Its opinion became relevant" (claim 12) | Interpretation (attributed reading) + Assessment | Under the admission policy an LLM assertion is exploratory attributed testimony, not evidence, until an EvidenceRecord + Justification route supports it. "Relevance" = admitted standing, a lifecycle projection. |
+| Self-debugging episode (claim 10) | Challenge targeting a Justification; new Justification as alternative route | An undercut targets the route, not the proposition; the Claim identity is unchanged. |
+| Values through sustained interaction (claims 23, 29) | MotivationSnapshot changes via events; Goal (immutable success spec) + separate VerifierSpec / GoalEvaluation | A system prompt would be a Catalog/Definition edit; taught values are event-sourced standing with provenance. |
+| Omega-to-Omega network (claims 22, 30) | ContextTransfer (cross-scope, preserves origins and typed losses); BridgeMapping | Received statements keep home/origin IDs, so shared-origin evidence is set-unioned, not double-counted (ωPLN row of Section 13). |
+| Decentralization (claims 19, 31) | one Scope per instance (tenant, observer); AuthorizationRecord | Authority is an authenticated mirror of a broker, "never a self-issued capability". No single Scope is privileged. |
+| Incremental integration, test for improvement (claims 16, 32) | ExperimentDesign / Factor / ExperimentRun / ValidityThreat; Catalog activation | A component enters only after a run is recorded; validity objections are first-class records. |
+| AGI timeline estimates (claims 5-6) | Claim + Assessment, origin = author testimony | Kept as attributed forecasts with their source, not as admitted evidence. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
