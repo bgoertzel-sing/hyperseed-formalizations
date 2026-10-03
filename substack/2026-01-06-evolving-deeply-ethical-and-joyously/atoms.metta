@@ -53,3 +53,10 @@
 (= (d-section d_evolving_deeply_ethical_and_joyously joy_consciousness_ethics) (parallel-transport conn_evolving_deeply_ethical_and_joyously joy_consciousness_ethics))
 (= (d-section d_evolving_deeply_ethical_and_joyously ethics_from_architecture) (parallel-transport conn_evolving_deeply_ethical_and_joyously ethics_from_architecture))
 (= (d-section d_evolving_deeply_ethical_and_joyously paraconsistent_edge_cases) (parallel-transport conn_evolving_deeply_ethical_and_joyously paraconsistent_edge_cases))
+;; ---- OCO/2 crosswalk (C7-C10), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> paraconsistent-ethics ([] (both-Claims-kept separate-Assessments contradiction-record no-explosion)))
+(--> nonlinear-resonance ([] (multi-value-GoalEvaluation attributed-mechanism)))
+(--> utilitarian-framework single-scalar-GoalEvaluation)
+(--> deontological-framework fixed-rule-Catalog)
+(--> joy-consciousness-ethics attributed-speculative-Claim)
+(--> ethics-from-architecture record-rule-property)

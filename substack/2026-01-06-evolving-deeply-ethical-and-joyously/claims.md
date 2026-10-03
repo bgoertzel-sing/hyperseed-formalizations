@@ -48,3 +48,21 @@
 
 **Hyperseed mapping:** Formalized as a fiber-bundle relation in the Hyperseed ontology; see `atoms.metta` and `formalization.tex` for details.
 
+
+## OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+### C7: `oco2_paraconsistent`
+
+**Claim:** Paraconsistent ethics = contradictory Claims kept with separate Assessments and an explicit contradiction record, without explosion. *(oco2-crosswalk)*
+
+### C8: `oco2_multi_goal`
+
+**Claim:** Value harmonization = several separately evaluated value Goals, never fused into one scalar. *(oco2-crosswalk)*
+
+### C9: `oco2_rigid_frameworks`
+
+**Claim:** Rigid frameworks = a single scalar GoalEvaluation (utilitarian) or a fixed, unrevisable rule Catalog (deontological). *(oco2-crosswalk)*
+
+### C10: `oco2_architectural_ethics`
+
+**Claim:** Ethics from architecture = ethical behaviour as a property of the record rules, not an appended rule list. *(oco2-crosswalk)*
