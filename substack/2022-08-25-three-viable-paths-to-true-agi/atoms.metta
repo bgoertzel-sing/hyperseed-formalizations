@@ -82,3 +82,9 @@
 (--> three-paths ([] (related-to closed-ended-quasi-agi not-scaling)))
 (--> three-paths ([] (related-to consciousness-explosion-diverse-types)))
 (--> three-paths ([] (related-to hyperon-architecture path-1)))
+
+;; ---- OCO/2 crosswalk (16-19), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> three-agi-paths ([] (designed-Catalog copied-Catalog evolved-Catalog)))
+(--> path-complementarity cross-Plan-BridgeMapping)
+(--> path-risk-profiles per-Plan-ValidityThreat)
+(--> agi-resource-misallocation single-Plan-budget-concentration)

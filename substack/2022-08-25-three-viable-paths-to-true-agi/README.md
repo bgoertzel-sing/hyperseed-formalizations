@@ -162,6 +162,19 @@ The complementarity of the three paths is fiber cross-pollination:
   curvature, self-modification holonomy, etc.) that don't emerge from
   increasing the volume of a fixed-curvature architecture.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Three paths: hybrid, emulation, evolutionary (claims 1-3, 8-10) | three Plans of distinct origin: designed Catalog, copied Catalog, evolved Catalog | |
+| Complementary paths, cross-pollination (claims 4, 11) | BridgeMappings letting results from one Plan be read by the others | Results from distinct origins count as independent evidence. |
+| Risk profiles differ (claim 5) | each Plan carries its own ValidityThreats, assessed separately | Not fused into one risk score. |
+| Scaling is not AGI, resource misallocation (claims 6-7, 15) | attributed Claims; funding = budget allocation across Plans, concentrated on one | Same portfolio reading as three-things-world-doesnt-understand. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

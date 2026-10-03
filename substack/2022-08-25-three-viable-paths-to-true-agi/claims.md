@@ -73,3 +73,13 @@ Eurykosmotron, 2022-08-25.
     without changing curvature. AGI requires specific curvature patterns
     (cognitive synergy, self-modification holonomy) absent from scaled fixed
     architectures. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+16. **Three AGI paths = three Plans of distinct origin (designed, copied, evolved Catalogs).** *(oco2-crosswalk)*
+
+17. **Complementarity = BridgeMappings letting each Plan read the others' results.** *(oco2-crosswalk)*
+
+18. **Risk profiles = per-Plan ValidityThreats, assessed separately.** *(oco2-crosswalk)*
+
+19. **Misallocation = budget concentrated on one Plan, leaving others unevaluated.** *(oco2-crosswalk)*
