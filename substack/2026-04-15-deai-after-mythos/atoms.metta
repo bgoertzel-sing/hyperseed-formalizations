@@ -31,3 +31,13 @@
 (--> deai-after-mythos ([] (related-to bgi-manifesto decentralized-security)))
 (--> deai-after-mythos ([] (related-to evidence-logic-energy formal-reasoning)))
 (--> deai-after-mythos ([] (related-to energy-ai-wars resource-bottleneck)))
+
+;; ---- OCO/2 crosswalk (15-22), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> model-found-vulnerability attributed-Interpretation)
+(--> vulnerability-reproduction ([] (ExperimentRun ExecutionReceipt admitted-evidence)))
+(--> formal-reasoning-scarcity high-grade-warrant-demand)
+(--> omegaclaw-validation-layer ([] (Obligation typed-Guard recorded-premises)))
+(--> explicit-trust-boundary ([] (ActionOperator-envelope brokered-AuthorizationRecord)))
+(--> patching ([] (LifecycleEvent ReadSet-invalidation)))
+(--> loss-of-base-obscurity Challenge-to-cost-premise)
+(--> crisis-opportunity ([] (one-Claim separate-Goals separate-GoalEvaluations)))

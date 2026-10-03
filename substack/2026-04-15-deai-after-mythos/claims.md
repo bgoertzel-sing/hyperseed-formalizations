@@ -61,3 +61,31 @@ Eurykosmotron, 2026-04-15.
 14. **Crisis-opportunity curvature (d-calculus).** Same event is both
     crisis and opportunity; curvature measures transformation needed.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+15. **Model-found vulnerability = attributed Interpretation**, not admitted
+    evidence, until reproduced. *(oco2-crosswalk)*
+
+16. **Reproduction = ExperimentRun / ExecutionReceipt**; the receipt is what
+    is admitted. *(oco2-crosswalk)*
+
+17. **Formal reasoning scarcity = demand for high-grade warrant kinds**
+    (machine-checked proofs, finite calculations) in Justifications.
+    *(oco2-crosswalk)*
+
+18. **Validation layer = Obligations with typed Guards** discharged under
+    recorded premises. *(oco2-crosswalk)*
+
+19. **Trust boundaries = declared ActionOperator envelopes and brokered
+    AuthorizationRecords.** *(oco2-crosswalk)*
+
+20. **Patching = LifecycleEvent + ReadSet invalidation** of dependent
+    assessments. *(oco2-crosswalk)*
+
+21. **Loss of base obscurity = Challenge to the "discovery is expensive"
+    premise**, which removes standing from dependent assessments.
+    *(oco2-crosswalk)*
+
+22. **Crisis/opportunity = one Claim under separate Goals and
+    GoalEvaluations.** *(oco2-crosswalk)*

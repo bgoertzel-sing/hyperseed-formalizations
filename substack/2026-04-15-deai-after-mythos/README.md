@@ -149,6 +149,23 @@ The post-Mythos world is a base-level security collapse:
   become essential). The curvature measures how much organizational
   transformation is needed to convert crisis into opportunity.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Mythos-style bug discovery (claims 1, 7) | Interpretation (attributed reading) with EvidenceRecord origin = model run | Under the admission policy, a model-reported vulnerability is exploratory attributed testimony. It becomes evidence only once reproduced. |
+| Reproducing a finding | ExperimentDesign / ExperimentRun; Execution + ExecutionReceipt of the exploit test | The receipt, including an "unknown" outcome, is what gets admitted, not the model's say-so. |
+| Formal reasoning as the scarce resource (claims 2, 11) | Justification with typed warrant kinds (machine-checked proof, finite calculation, mathematical argument vs. empirical assessment, attributed endorsement) | Section 13.1 keeps these warrant kinds distinct. Cheap discovery makes the high-grade warrant kinds the bottleneck. |
+| OmegaClaw as reasoning-and-validation layer (claims 3, 8) | Obligation with typed Guard; Assessment + Recipe | Each finding opens an Obligation (is it real, is it exploitable, is it contained) that is satisfied only under recorded premises. |
+| Narrow attack surface, explicit trust boundaries (claim 4) | ActionOperator envelope; AuthorizationRecord; Scope | The operator envelope covers undeclared fine-grained effects. Authority is a brokered mirror, never self-issued. Boundaries are declared, not implicit. |
+| Patching and disclosure | LifecycleEvent; ReadSet-based invalidation (proof-plan K17-K18 row) | A patch is a new event that invalidates assessments whose ReadSet depended on the old code; history is not rewritten. |
+| Loss of friction / base obscurity (claims 6, 9) | Assessment whose premises included "discovery is expensive" | That premise is now challenged; OCO/2 represents this as a Challenge to the route, so dependent security assessments lose standing explicitly. |
+| Crisis = opportunity (claims 5, 14) | One Claim, separate Goals and GoalEvaluations | The same event is evaluated against different success specs (attacker, defender), each with its own verifier. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
