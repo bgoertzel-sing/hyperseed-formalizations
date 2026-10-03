@@ -48,3 +48,17 @@
 
 **Hyperseed mapping:** Formalized as a fiber-bundle relation in the Hyperseed ontology; see `atoms.metta` and `formalization.tex` for details.
 
+
+## OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+### C7: `oco2_scalar_goal`
+
+**Claim:** The doom argument assumes one scalar GoalEvaluation maximized without limit. *(oco2-crosswalk)*
+
+### C8: `oco2_convergence_conditional`
+
+**Claim:** Instrumental convergence needs every Goal to reward resource acquisition; multi-Goal sets with per-Scope authority limits break this. *(oco2-crosswalk)*
+
+### C9: `oco2_decentralized_hedge`
+
+**Claim:** Decentralized hedge = many Scopes and issuers, so no single Goal contract governs all capability. *(oco2-crosswalk)*

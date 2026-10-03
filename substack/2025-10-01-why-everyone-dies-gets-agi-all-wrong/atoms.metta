@@ -53,3 +53,9 @@
 (= (d-section d_why_everyone_dies_gets_agi_all_wrong beneficial_architectures) (parallel-transport conn_why_everyone_dies_gets_agi_all_wrong beneficial_architectures))
 (= (d-section d_why_everyone_dies_gets_agi_all_wrong fear_more_dangerous) (parallel-transport conn_why_everyone_dies_gets_agi_all_wrong fear_more_dangerous))
 (= (d-section d_why_everyone_dies_gets_agi_all_wrong decentralized_hedge) (parallel-transport conn_why_everyone_dies_gets_agi_all_wrong decentralized_hedge))
+;; ---- OCO/2 crosswalk (C7-C9), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> doom-assumption unbounded-scalar-GoalEvaluation)
+(--> instrumental-convergence ([] (all-Goals-reward-resources conditional)))
+(--> beneficial-architecture explicit-Goal-authorization-evaluator-records)
+(--> fear-policy attributed-Assessment)
+(--> decentralized-hedge ([] (many-Scopes many-issuers no-single-Goal-contract)))
