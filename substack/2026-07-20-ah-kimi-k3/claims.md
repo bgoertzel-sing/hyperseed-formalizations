@@ -75,3 +75,24 @@ Eurykosmotron, 2026-07-20.
 15. **Authority provenance curvature (d-calculus).**
     ||F_∇(granted, deserved)|| = authority calibration error.
     Low = well-calibrated R_auth. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+16. **Model commoditization = interchangeable ActionOperators**; the model
+    identity is an origin attribute, not part of any contract. *(oco2-crosswalk)*
+
+17. **The five scarce properties = five OCO/2 record families** (MemoryEvent
+    ledger, Justification routes, Goal + VerifierSpec, AuthorizationRecord,
+    reviewed Catalog activation). *(oco2-crosswalk)*
+
+18. **Single-network insufficiency = no lone Interpretation is admitted
+    evidence**; DecisionRecords integrate multiple routes. *(oco2-crosswalk)*
+
+19. **Granted authority = brokered AuthorizationRecord**, never self-issued.
+    *(oco2-crosswalk)*
+
+20. **Self-improvement with brakes = review-gated Catalog activation in a new
+    ContextSnapshot.** *(oco2-crosswalk)*
+
+21. **Export-control claim = attributed forecast** (Claim + Assessment,
+    author-testimony origin). *(oco2-crosswalk)*

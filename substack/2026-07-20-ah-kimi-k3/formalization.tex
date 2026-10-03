@@ -165,4 +165,25 @@ Low curvature: granted authority tracks actual trustworthiness
 over- or under-trusted).
 \end{proposition}
 
+
+%======================================================================
+\section{OCO/2 crosswalk (oco/2:2.0.0-alpha.1)}
+\emph{Added 2026-10-03. Interpretive mapping onto the Omega Core Ontology
+record registry; OCO/2 is an unfrozen alpha candidate.}
+
+\begin{proposition}[Model invariance --- claims 16--17]
+Replacing model backend $m$ by $m'$ changes only origin attributes of new
+EvidenceRecords; no Goal, Definition or Claim contract changes. The durable
+value lies in the record families (memory ledger, Justifications, Goals with
+verifiers, AuthorizationRecords, reviewed Catalogs), which are model-independent.
+\end{proposition}
+
+\begin{proposition}[Integration over sections --- claims 18--20]
+A single model output is an attributed Interpretation with no admitted evidence
+mass; a DecisionRecord is well-founded only through Justification routes whose
+ReadSet may span several operators. Authority and self-modification are both
+gated by records the agent cannot issue to itself.
+\end{proposition}
+
+
 \end{document}

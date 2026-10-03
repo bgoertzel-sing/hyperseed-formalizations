@@ -148,6 +148,21 @@ The cognitive architecture composes interchangeable models:
   calibrated R_auth). High curvature: granted authority diverges from
   trustworthiness (miscalibrated — either over-trusted or under-trusted).
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Commodity transition (claims 1, 6) | model backend = an ActionOperator; model identity recorded in EvidenceRecord origin | Swapping the LLM changes an origin attribute, not the record schema. Contracts are model-independent. |
+| Value migrates upward: five scarce properties (claims 2, 7) | persistent memory = MemoryEvent ledger; reasoning that shows its work = Justification routes; explicit goals = Goal + separate VerifierSpec; granted authority = AuthorizationRecord; self-improvement with brakes = provisional Definition -> review events -> Catalog activation | Each property the article lists corresponds to a distinct OCO/2 record family. |
+| Hyperon/OmegaClaw validation (claim 3) | Section 13 crosswalk (OmegaPLN, Hyperseed proof plans, GOLEM-Iter, Relevance Governor, PMR) | The "mind around the models" is what OCO/2 specifies as records. |
+| Single network insufficiency (claims 4, 8-9) | LLM output = attributed Interpretation; DecisionRecord ReadSet spans many operators | No single model output is admitted evidence by itself. Decisions integrate several routes. |
+| Authority granted, not assumed (claims 10, 15) | brokered AuthorizationRecord, never self-issued | Direct statement of the claim in OCO/2 terms. |
+| Export control futility (claims 5, 13) | Claim + Assessment, origin = author testimony | Kept as an attributed policy forecast, not admitted evidence. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

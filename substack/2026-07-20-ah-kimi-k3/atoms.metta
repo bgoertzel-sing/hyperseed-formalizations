@@ -41,3 +41,12 @@
 (--> ah-kimi-k3 ([] (related-to tag-youre-not-it omegaclaw-architecture)))
 (--> ah-kimi-k3 ([] (related-to fable-farce capability-diffusion export-controls)))
 (--> ah-kimi-k3 ([] (related-to avoiding-catastrophe architecture-hinge)))
+
+;; ---- OCO/2 crosswalk (16-21), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> llm-commoditization interchangeable-ActionOperator)
+(--> model-identity EvidenceRecord-origin-attribute)
+(--> scarce-mind-properties ([] (MemoryEvent-ledger Justification-routes Goal-VerifierSpec AuthorizationRecord reviewed-catalog-activation)))
+(--> single-network-insufficiency ([] (lone-Interpretation-not-evidence multi-route-DecisionRecord)))
+(--> granted-authority brokered-AuthorizationRecord)
+(--> self-improvement-with-brakes review-gated-catalog-activation)
+(--> export-control-claim attributed-forecast)
