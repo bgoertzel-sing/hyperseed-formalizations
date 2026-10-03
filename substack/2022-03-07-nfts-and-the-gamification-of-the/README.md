@@ -130,6 +130,23 @@ Social signaling via NFTs is fiber projection:
   directions vanishes (∇_base ≈ 0) and all interesting dynamics
   happen in fiber directions (∇_fiber ≠ 0).
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Gamification megatrend, base-to-fiber shift (claims 1, 8) | attributed Claim, origin = author | |
+| Digital ownership, NFTs as markers, section registration (claims 2, 9-10) | ownership = AuthorizationRecord on an append-only ledger, with origin | The ledger records who holds what and since when. |
+| Ownership holonomy (claim 14) | transfer history = ordered chain of LifecycleEvents; provenance is that chain | |
+| Social signaling (claims 3, 12) | a holder's portfolio read by others as an Assessment of the holder | |
+| Creator empowerment, royalties (claims 4, 11) | creator origin kept on the record; royalty = rule applied at each transfer LifecycleEvent | |
+| Speculative excess, value curvature (claims 6, 13) | price Assessments diverging from use-value Assessments | Bubble and innovation kept as separate Assessments. |
+| AI-generated content (claim 7) | attribution records for generated outputs, origin = generator and prompter | |
+| Post-scarcity transition (claim 5) | attributed forecast Claim | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

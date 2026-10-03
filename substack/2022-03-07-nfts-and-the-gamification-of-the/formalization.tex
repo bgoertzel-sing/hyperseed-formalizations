@@ -171,4 +171,15 @@ AI-human collaborative sections and purely AI-generated sections,
 each with distinct provenance metadata.
 \end{remark}
 
+
+
+%======================================================================
+\section{OCO/2 crosswalk (oco/2:2.0.0-alpha.1)}
+\emph{Added 2026-10-03. Interpretive mapping onto the Omega Core Ontology
+record registry; OCO/2 is an unfrozen alpha candidate.}
+
+\begin{proposition}[Ledger ownership --- claims 16--19]
+Let $e_1,\dots,e_n$ be the transfer LifecycleEvents of a token. Current ownership is the holder after $e_n$, and provenance is the whole ordered chain; a royalty rule is evaluated at each $e_k$ against the creator origin recorded at $e_1$. Price and use-value are separate Assessments, so a fall in one says nothing on its own about the other.
+\end{proposition}
+
 \end{document}

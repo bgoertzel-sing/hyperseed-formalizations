@@ -74,3 +74,10 @@
 (--> nft-gamification ([] (related-to decentralization-trend)))
 (--> nft-gamification ([] (related-to consciousness-explosion-play)))
 (--> nft-gamification ([] (related-to well-being-measurement)))
+
+;; ---- OCO/2 crosswalk (16-19), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> nft ledger-ownership-AuthorizationRecord)
+(--> nft-provenance ordered-transfer-LifecycleEvent-chain)
+(--> nft-royalty creator-origin-transfer-rule)
+(--> speculative-bubble price-use-value-divergence)
+(--> ai-content-attribution generator-prompter-origin)

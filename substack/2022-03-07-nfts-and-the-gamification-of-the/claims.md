@@ -75,3 +75,13 @@ Eurykosmotron, 2022-03-07.
 15. **Post-scarcity as base saturation (d-calculus).** Post-scarcity =
     base-space saturated; ∇_base ≈ 0; all interesting dynamics in fiber
     directions. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+16. **NFT = ownership AuthorizationRecord on an append-only ledger.** *(oco2-crosswalk)*
+
+17. **Provenance = ordered chain of transfer LifecycleEvents.** *(oco2-crosswalk)*
+
+18. **Royalty = rule applied at each transfer, keyed to creator origin.** *(oco2-crosswalk)*
+
+19. **Bubble vs innovation = price and use-value Assessments kept separate.** *(oco2-crosswalk)*
