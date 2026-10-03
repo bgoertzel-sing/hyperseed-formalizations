@@ -92,3 +92,13 @@ Eurykosmotron, 2021-06-04.
     scale with fiber richness; the curvature of the welfare section
     indicates how rapidly ethical weight changes with fiber structure.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+18. **Consciousness vs intelligence = two separate Assessment axes.** *(oco2-crosswalk)*
+
+19. **Zombie singularity = capability rising while experience stays near zero; no VerifierSpec for experience exists yet.** *(oco2-crosswalk)*
+
+20. **Ethical expansion = widening the set of principals whose Goals are evaluated.** *(oco2-crosswalk)*
+
+21. **Decentralized explosion = many Scopes and issuers linked by ContextTransfer.** *(oco2-crosswalk)*

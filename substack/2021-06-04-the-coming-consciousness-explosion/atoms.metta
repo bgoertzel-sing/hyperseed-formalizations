@@ -89,3 +89,10 @@
 (--> consciousness-explosion ([] (related-to eurykosmotron-vision)))
 (--> consciousness-explosion ([] (related-to opencog-hyperon-architecture)))
 (--> consciousness-explosion ([] (related-to paraconsistent-logic)))
+
+;; ---- OCO/2 crosswalk (18-21), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> consciousness-vs-intelligence ([] (capability-axis experience-axis)))
+(--> zombie-singularity ([] (rising-capability flat-experience no-experience-VerifierSpec)))
+(--> ethical-expansion wider-principal-set)
+(--> decentralized-consciousness-explosion ([] (many-Scopes many-issuers ContextTransfer)))
+(--> spiritual-tech-convergence attributed-Claim)

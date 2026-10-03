@@ -133,6 +133,24 @@ nodes glue together into a global section only when they satisfy
 compatibility conditions. The emergent group consciousness exists
 precisely when the sheaf has a non-trivial global section.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Beyond intelligence explosion, consciousness is not intelligence (claims 1-2) | two separate Assessment axes: capability and experience | Not fused into one score. |
+| Variety of forms, branching, distributed consciousness (claims 3, 11, 16) | many Scopes of different kinds linked by ContextTransfer |  |
+| Depth and breadth axes, fiber thickening (claims 4-5, 10) | experience Assessment with depth and breadth components |  |
+| Spiritual-technological convergence (claim 6) | attributed Claim, origin = author |  |
+| Ethical expansion (claim 7) | a wider set of principals whose Goals are evaluated |  |
+| Decentralized explosion (claim 8) | many issuers across Scopes |  |
+| Genuine AGI requires experience, zombie singularity (claims 9, 13) | capability axis rising while experience axis stays near zero; no VerifierSpec for experience exists yet | Attributed Claim. |
+| Substrate independence (claim 12) | VerifierSpecs defined over functional records | Same reading as reflections-on-the-world-crystal. |
+| Consciousness curvature, holonomy of experience (claims 14-15) | attributed speculative Claims |  |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
