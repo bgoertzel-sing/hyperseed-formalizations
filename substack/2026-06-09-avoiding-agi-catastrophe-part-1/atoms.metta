@@ -86,3 +86,16 @@
 (--> avoiding-catastrophe-pt1 ([] (related-to openbgi asi-chain-infrastructure)))
 (--> avoiding-catastrophe-pt1 ([] (related-to bernies-nationalize centralization-critique)))
 (--> avoiding-catastrophe-pt1 ([] (related-to seven-flavors-catastrophe risk-catalog)))
+
+;; ---- OCO/2 crosswalk (44-49), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> single-lever-framing one-Goal-Plan-evaluation)
+(--> seven-hinges ([] (seven-Factor-design joint-profile no-scalar)))
+(--> chokepoint single-authority-issuer)
+(--> observability ([] (readable-records outside-Challenge)))
+(--> gradual-takeoff review-gated-Catalog-activation)
+(--> low-forkability cross-Scope-standing)
+(--> lead-scaling distinct-contributor-origin-growth)
+(--> distributed-stewardship many-principal-authority)
+(--> goal-preservation ([] (reviewed-BridgeMapping old-ContextSnapshot-kept)))
+(--> inference-control ([] (next-Derivation-policy cross-Scope-derived)))
+(--> pln-dialectic ([] (contradictory-records-kept Challenge)))

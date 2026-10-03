@@ -165,3 +165,17 @@ Eurykosmotron, 2026-06-09.
 43. **Dialectic curvature (d-calculus).** ||F_∇(thesis, antithesis)|| =
     dialectic productive tension. High = genuinely novel synthesis.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+44. **Single-lever framings = Plans evaluated on one Goal.** *(oco2-crosswalk)*
+
+45. **Seven Hinges = seven-Factor design;** the basin depends on the joint profile, not on a scalar. *(oco2-crosswalk)*
+
+46. **Chokepoint = single authority issuer;** observability = records outside verifiers can read and Challenge. *(oco2-crosswalk)*
+
+47. **Gradual takeoff = Catalog activations that each pass a review gate.** *(oco2-crosswalk)*
+
+48. **Low forkability and lead-scaling = cross-Scope standing whose evidence grows with distinct contributor origins.** *(oco2-crosswalk)*
+
+49. **Goal preservation = reviewed BridgeMapping;** dialectic = contradictory records kept with Challenges. *(oco2-crosswalk)*

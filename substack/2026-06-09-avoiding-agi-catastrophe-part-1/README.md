@@ -197,6 +197,26 @@ Inference control is super-additive:
   (unproductive compromise). PLN's non-invertible composition
   enables high dialectic curvature.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Slow-down vs race-defensively, single lever (claim 1) | Plans evaluated on one Goal only | Each framing optimizes one lever; OCO/2 evaluates Plans across several Goals. |
+| Seven Hinges, joint configuration (claims 14-21, 32-33) | design with seven Factors; outcome basin = profile over the joint setting | No single hinge, and no scalar summary, decides the basin. |
+| Chokepoint, distributed hardware (claims 14, 22) | one Scope holding the compute and authority vs many Scopes | A chokepoint is a single authority issuer. |
+| Observability (claims 15, 23) | open records that outside verifiers can read and Challenge | Inspectable reasoning = Derivations with readable ReadSets. |
+| Takeoff speed (claims 16, 24) | rate of Catalog activations and whether each passes a review gate | Gradual takeoff = gated, recorded activations. |
+| Forkability, lead-scaling (claims 17-18, 25-26) | standing that needs cross-Scope ReadSets; evidence mass growing with distinct contributor origins | Bigger-together wins when new contributors bring new origins. |
+| Offense-defense, stewardship (claims 19-20, 27-28) | many verifiers counted by origin; authority issued by many principals | Distributed defense and stewardship. |
+| Goal preservation (claim 13) | Goal contract changing only through reviewed BridgeMapping, old snapshot kept | Goals survive self-modification by being embedded, not frozen. |
+| Inference control as crown jewel, learned (claims 29-31) | the policy choosing the next Derivation, itself derived from many Scopes' records | Hard to fork because its standing is cross-Scope. |
+| PLN dialectic (claim 36) | contradictory evidence kept as separate records with Challenges, not overwritten | Conflict stays on record. |
+| Decentralization not automatically safe (claim 12) | attributed Claim | Some pathologies remain and need their own verifiers. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
