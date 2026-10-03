@@ -84,3 +84,10 @@
 (--> closed-ended-quasi-agi ([] (related-to general-theory-gi open-endedness)))
 (--> closed-ended-quasi-agi ([] (related-to cognitive-synergy hybrid-path)))
 (--> closed-ended-quasi-agi ([] (related-to chatgpt-progress-article)))
+
+;; ---- OCO/2 crosswalk (16-19), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> closed-ended-quasi-agi fixed-training-Catalog)
+(--> interpolation existing-entry-recombination)
+(--> extrapolation new-Catalog-entry)
+(--> open-ended-agi self-driven-Catalog-growth)
+(--> quasi-agi-conflation unsupported-standing)

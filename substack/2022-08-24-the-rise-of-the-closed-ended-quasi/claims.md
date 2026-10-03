@@ -72,3 +72,13 @@ Eurykosmotron, 2022-08-24.
 15. **Novelty curvature (d-calculus).** Fiber bundle curvature at base point
     b measures novelty relative to training. Quasi-AGI fails at high-novelty
     points; true AGI adapts. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+16. **Quasi-AGI = outputs drawn from a Catalog fixed at training time.** *(oco2-crosswalk)*
+
+17. **Extrapolation = recorded creation of a new Catalog entry; interpolation = recombination.** *(oco2-crosswalk)*
+
+18. **Open-ended AGI = Catalog growth by self-driven LifecycleEvents.** *(oco2-crosswalk)*
+
+19. **Conflation = growing-Catalog standing assigned without supporting records.** *(oco2-crosswalk)*

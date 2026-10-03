@@ -144,6 +144,20 @@ the conflation so tempting and so dangerous.
   curvature = highly novel situation = far from training distribution.
   Quasi-AGI fails at high-novelty points; true AGI adapts.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Closed-ended quasi-AGI, bounded fiber (claims 1-2, 7) | outputs drawn from a fixed Catalog fixed at training time; no new entries added in use | Competence is real inside the Catalog. |
+| Interpolation vs extrapolation (claims 9-10) | interpolation = recombining existing Catalog entries; extrapolation = recorded creation of a new Catalog entry | |
+| Missing open-endedness, growing fiber (claims 3, 8, 12, 14) | true AGI = a Catalog that grows by LifecycleEvents driven by its own experience | Growth is visible in the log. |
+| Dangerous conflation (claims 4, 11) | assigning growing-Catalog standing to a fixed-Catalog system: standing without the records to support it | |
+| Hybrid path, historical pattern (claims 5-6) | attributed Plan and historical Claim | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
