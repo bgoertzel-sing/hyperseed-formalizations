@@ -160,3 +160,15 @@ Eurykosmotron, 2024-11-27.
     by the ontology construction process itself are emergent fiber — structure
     that arises from the act of building the bundle, not imported from outside.
     This is a form of creative self-organization in the fiber. *(inferred)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+33. **Primitive-ontology lineage = successive proposed primitive Catalogs.** *(oco2-crosswalk)*
+
+34. **Cyc's lesson = Catalog size without per-entry Assessment or tractable Derivation.** *(oco2-crosswalk)*
+
+35. **First-class uncertainty = every Claim carries (strength, confidence) from creation.** *(oco2-crosswalk)*
+
+36. **A priori derivability = Derivation chains from a small primitive Catalog, relative to the reasoner's rules.** *(oco2-crosswalk)*
+
+37. **Hyperseed-1 = seed Catalog of core entries, extended by learning and revised by BridgeMapping.** *(oco2-crosswalk)*

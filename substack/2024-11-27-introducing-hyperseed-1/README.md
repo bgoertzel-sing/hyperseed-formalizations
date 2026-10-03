@@ -48,6 +48,22 @@ It describes the first version of the framework that all other articles
 are interpreted through. The key concepts (semantic primitives, inference
 acceleration, adaptive ontology) carry through to v2.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Leibniz, Carnap lineage (claims 1, 9) | each project = a proposed Catalog of primitives; attributed historical Claims | |
+| Cyc's lesson, reasoning difficulty (claims 2-3) | a very large Catalog of logical assertions with no per-entry Assessment and no tractable Derivation path | Size without reasoning support. |
+| Uncertainty as afterthought (claim 4) | (strength, confidence) Assessment attached to every Claim from creation | Uncertainty built in, not bolted on. |
+| SUMO (claim 5) | compact upper Catalog; attributed comparison | |
+| Chalmers PQTI, a priori derivability, smart reasoner (claims 6-8) | small primitive Catalog plus Derivation chains; derivability is relative to the reasoner's Derivation rules | A weak reasoner leaves derivable truths underived. |
+| Wierzbicka semantic primes (claims 10-13) | primitive Catalog entries supported by cross-language EvidenceRecords, counted by origin | Related languages count once. |
+| Not all knowledge, for Hyperon minds, semi-formal (claims 14-16) | a seed Catalog of core entries, extended by learned entries; entries may carry informal glosses next to formal ones | Hyperseed v2 relates to it by a review-gated BridgeMapping (see hyperseed-v2). |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

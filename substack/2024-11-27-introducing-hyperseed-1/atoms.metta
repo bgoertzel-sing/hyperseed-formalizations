@@ -42,3 +42,11 @@
 (--> diverse-perspectives-multiple-sections ([] (different-organizations different-paths same-base)))
 (--> predecessor-to-v2 ([] (intuitions-explored v2-builds-on fiber-bundle d-calculus)))
 (--> hallucinated-perspectives-emergent ([] (arises-from-building self-organization creative)))
+
+;; ---- OCO/2 crosswalk (33-37), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> primitive-ontology-lineage proposed-primitive-Catalogs)
+(--> cyc-lesson ([] (large-Catalog no-per-entry-Assessment intractable-Derivation)))
+(--> first-class-uncertainty strength-confidence-at-creation)
+(--> pqti-derivability ([] (primitive-Catalog Derivation-chain reasoner-relative)))
+(--> semantic-primes origin-counted-cross-language-evidence)
+(--> hyperseed-1 ([] (seed-Catalog learned-extension informal-glosses)))

@@ -245,4 +245,18 @@ conceptual ``accents'' --- different ways of carving up the world that
 persist even after extensive learning.
 \end{conjecture}
 
+
+
+%======================================================================
+\section{OCO/2 crosswalk (oco/2:2.0.0-alpha.1)}
+\emph{Added 2026-10-03. Interpretive mapping onto the Omega Core Ontology
+record registry; OCO/2 is an unfrozen alpha candidate.}
+\begin{proposition}[Derivability --- claims 33--36]
+Let $P$ be a primitive Catalog and $\mathcal{R}$ a set of Derivation rules. A truth $t$ is derivable relative to $\mathcal{R}$ if a recorded chain from $P$ to $t$ exists using $\mathcal{R}$; a weaker $\mathcal{R}'\subset\mathcal{R}$ can leave $t$ underived, so a priori derivability does not guarantee practical derivation.
+\end{proposition}
+
+\begin{proposition}[Seed --- claim 37]
+A seed Catalog $\kappa_0$ is extended by learned entries $\kappa_0\subseteq\kappa_1\subseteq\cdots$; revisions of core entries go through a BridgeMapping, so interpretations written against $\kappa_0$ stay readable.
+\end{proposition}
+
 \end{document}
