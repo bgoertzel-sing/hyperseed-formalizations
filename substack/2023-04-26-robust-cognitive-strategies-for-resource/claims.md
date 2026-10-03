@@ -48,3 +48,22 @@
 
 **Hyperseed mapping:** Formalized as a fiber-bundle relation in the Hyperseed ontology; see `atoms.metta` and `formalization.tex` for details.
 
+
+
+## OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+### C7: `oco2_parallel_derivations`
+
+**Claim:** Speculative parallel reasoning = many parallel Derivation Executions with separate ReadSets; discarded paths stay in the log. *(oco2-crosswalk)*
+
+### C8: `oco2_internal_diversity`
+
+**Claim:** Internal diversity = strategies of distinct internal origin whose agreement counts as independent evidence. *(oco2-crosswalk)*
+
+### C9: `oco2_adaptive_budget`
+
+**Claim:** Adaptive allocation = per-strategy budgets revised by recorded LifecycleEvents driven by GoalEvaluations. *(oco2-crosswalk)*
+
+### C10: `oco2_scoped_heuristic`
+
+**Claim:** A heuristic = a cheap Derivation rule whose validity Assessment is scoped to a low-budget regime. *(oco2-crosswalk)*

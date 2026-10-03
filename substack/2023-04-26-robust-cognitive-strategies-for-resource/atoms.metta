@@ -53,3 +53,9 @@
 (= (d-section d_robust_cognitive_strategies_for_resource adaptive_allocation) (parallel-transport conn_robust_cognitive_strategies_for_resource adaptive_allocation))
 (= (d-section d_robust_cognitive_strategies_for_resource heuristics_resource_poverty) (parallel-transport conn_robust_cognitive_strategies_for_resource heuristics_resource_poverty))
 (= (d-section d_robust_cognitive_strategies_for_resource different_strategies) (parallel-transport conn_robust_cognitive_strategies_for_resource different_strategies))
+;; ---- OCO/2 crosswalk (C7-C10), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> speculative-parallelism ([] (parallel-Derivation-Executions separate-ReadSets logged-losers)))
+(--> internal-cognitive-diversity distinct-internal-origin-strategies)
+(--> adaptive-allocation GoalEvaluation-driven-budget-LifecycleEvent)
+(--> human-heuristic low-budget-scoped-Derivation-rule)
+(--> superintelligent-strategies attributed-forecast-Claim)
