@@ -142,3 +142,14 @@
 (--> plural-ethics open-directed-type)
 (--> open-directed-type ([] (d-values-nonzero no-permanent-utility-section)))
 (--> network-mapping provenance-graph-computation)
+
+;; ---- OCO/2 crosswalk (40-45), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> coordinated-amplification ([] (origin-keyed-set-union shared-funding-origin)))
+(--> apparent-corroboration single-origin-collapse)
+(--> thin-utilitarianism scalar-fusion-of-GoalEvaluations)
+(--> longtermist-numerology Assessment-without-admitted-premises)
+(--> rl-doom-model ([] (fixed-Goal-contract verifier-substituted-for-success-spec)))
+(--> plural-self-revising-ethics ([] (BridgeMapping old-ContextSnapshot-kept)))
+(--> auditor-capture verifier-actor-origin-overlap)
+(--> doom-loop self-derived-records-only)
+(--> network-mapping provenance-graph-computation)

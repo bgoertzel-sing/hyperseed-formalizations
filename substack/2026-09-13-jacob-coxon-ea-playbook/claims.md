@@ -192,3 +192,17 @@ Playbook," Eurykosmotron, 2026-09-13.
 
 39. **Network mapping = provenance-graph computation (E_pi).**
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+40. **Coordinated amplification = one origin under set union;** apparent corroboration collapses. *(oco2-crosswalk)*
+
+41. **Thin utilitarianism = scalar fusion of separate GoalEvaluations,** which OCO/2 forbids. *(oco2-crosswalk)*
+
+42. **Longtermist calculus = Assessment whose decisive premises have no admitted evidence.** *(oco2-crosswalk)*
+
+43. **RL doom model = fixed Goal contract with verifier in place of success spec;** real minds revise Goals via review-gated Catalog activation. *(oco2-crosswalk)*
+
+44. **Auditor capture = verifier origin not disjoint from actor origin.** *(oco2-crosswalk)*
+
+45. **Doom loop = Scope admitting only self-derived records,** so it gains no evidence mass. *(oco2-crosswalk)*

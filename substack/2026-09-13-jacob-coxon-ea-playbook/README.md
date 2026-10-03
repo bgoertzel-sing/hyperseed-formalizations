@@ -101,6 +101,26 @@ below formalize its argument without independently verifying them.
 - **Network mapping = computing the provenance graph.** Tracing who funded and
   amplified whom is the job Hyperseed's E_pi stratum is meant to make routine.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Surface vs actual narrative, pre-lab affiliations (claims 1-4) | EvidenceRecord origin attributes | The affiliation is part of the origin and stays on the record. |
+| Timed release, first reposters, Coefficient Giving amplification, not organic (claims 5-9, 21, 33) | origin-keyed set union; shared-funding routes = homotopic evidence | Amplification from one funding network counts once. Apparent independent corroboration collapses to one origin. |
+| Thin utilitarianism, scalar collapse (claims 10, 27, 34) | separate Goals, each with its own GoalEvaluation, never fused into a scalar | OCO/2 does not reduce plural Goals to one number. |
+| Longtermist numerology, Pascal's mugging (claims 12-13, 35) | Assessment with no admitted evidence for its decisive premises | Tail-dominated expected values rest on premises no verifier can check. |
+| Doom = RL model; bad model of minds (claims 14-16) | fixed Goal contract with verifier standing in for the success spec | The RL picture leaves out the possibility that a mind's Goals change through review-gated Catalog activation. |
+| Plural, self-revising ethics (claims 30, 38) | Goal contracts that change only via BridgeMapping to a new Catalog, with old ContextSnapshots kept | Ethics that revises itself while preserving identity. |
+| Funding chains, Amodei and Hubinger backgrounds (claims 18-20) | origin attributes | Recorded, not hidden. |
+| Auditor capture (claims 22, 31) | verifier/actor separation: the verifier's origin must be disjoint from the actor's | "Independent evaluators" sharing the actor's funding origin are not independent. |
+| Doom loop with no outside source (claim 36) | Scope admitting only its own derived records | Self-derived records add no new evidence mass, so the loop cannot update. |
+| Network mapping (claim 39) | provenance-graph computation over origins | The article's forensic tracing is the computation OCO/2 assumes. |
+| Competence and sincerity acknowledged (claims 23-24) | origin attributes, not evidence | Kept separate from the evidence count. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
