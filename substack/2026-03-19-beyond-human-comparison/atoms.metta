@@ -31,3 +31,10 @@
 (--> beyond-human-comparison ([] (related-to superhuman-superminds four-factor-eval)))
 (--> beyond-human-comparison ([] (related-to bgi-manifesto non-anthropocentric-metrics)))
 (--> beyond-human-comparison ([] (related-to three-paths different-factor-profiles)))
+
+;; ---- OCO/2 crosswalk (14-17), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> human-comparison forbidden-scalar-fusion)
+(--> four-factor-model ([] (Generality Autonomy Resourcefulness Self-Improvement product-order)))
+(--> incommensurability product-order-incomparable)
+(--> evaluation-holonomy test-order-recorded)
+(--> non-anthropocentric-eval functional-record-VerifierSpec)

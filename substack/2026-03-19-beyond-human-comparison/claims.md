@@ -61,3 +61,13 @@ Eurykosmotron, 2026-03-19.
 13. **Beyond-comparison gradient (d-calculus).** AI moves toward greater
     incommensurability with human cognition. Accelerates post-Singularity.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+14. **Human comparison = forbidden scalar fusion of a multi-axis Assessment.** *(oco2-crosswalk)*
+
+15. **Four-Factor Model = four-axis Assessment under the product order.** *(oco2-crosswalk)*
+
+16. **Incommensurability = incomparable profiles, kept as such.** *(oco2-crosswalk)*
+
+17. **Non-anthropocentric evaluation = VerifierSpecs over functional records, with test order recorded.** *(oco2-crosswalk)*

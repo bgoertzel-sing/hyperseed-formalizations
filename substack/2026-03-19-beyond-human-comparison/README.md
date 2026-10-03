@@ -152,6 +152,21 @@ fiber types:
   less human-like as they become more capable in non-human
   dimensions. This gradient accelerates post-Singularity.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Anthropocentric bias, human comparison as projection (claims 1, 7, 9) | a multi-axis Assessment collapsed onto one human-referenced scalar | The scalar fusion OCO/2 forbids. |
+| Four-Factor Model (claims 2, 6) | Assessment with four axes: Generality, Autonomy, Resourcefulness, Self-Improvement | |
+| Orthogonal dimensions (claims 3, 10) | axes kept separate and compared under the product order | |
+| Incommensurability (claims 8, 12) | profiles that are incomparable under the product order | Recorded as incomparable rather than forced into a ranking. |
+| Evaluation holonomy (claim 11) | Assessment that depends on test order; the order is part of the record | |
+| Evaluation implications (claim 5) | VerifierSpecs defined over functional records, not over resemblance to humans | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
