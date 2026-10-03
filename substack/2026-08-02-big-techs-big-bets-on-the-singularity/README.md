@@ -188,6 +188,22 @@ Six scenarios as a 3×2 matrix:
   investment approaches total dissipation — the prize is fully consumed
   by the cost of winning it.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Circular financing (claim 1) | BudgetAccount transfers forming a cycle, with origins tracked | Revenue that loops back from the same origin is not independent demand, just as evidence from one origin counts once. |
+| Geopolitical prisoner's dilemma, cocycle lock-in (claims 2, 11-12) | two state Scopes, each choosing Plans under its own Goals | The Nash analysis is an attributed Assessment. Lock-in = neither Scope has an AuthorizationRecord binding the other. |
+| Six scenarios, scenario matrix (claims 3-8, 17) | design with two Factors (timeline x3, deAGI x2); one conditional Assessment per cell | A factorial layout of hypotheticals, attributed to the author. |
+| Financial crisis is uninformative (claim 9) | an observation predicted by every cell does not change the relative standing of the cells | A crash happens in all scenarios, so seeing one does not tell you which scenario you are in. |
+| Full vs fractional Kelly (claims 10, 14-15) | BudgetAccount policy: full Kelly = whole budget committed to one Plan; fractional = reserve kept across Plans | Fractional sizing is a non-preemptible reserve; it gives up growth to avoid ruin. |
+| Fire-sale absorption (claims 7, 16) | transfer of distressed hardware resources into network Scopes | Crash-released resources move to Scopes with no debt-service Obligations. |
+| Unownable prize (claim 6) | no principal with authority over the whole commons | Removes the target of preemption. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

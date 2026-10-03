@@ -56,3 +56,13 @@
 (--> big-techs-big-bets ([] (related-to fable-farce concentration-decentralization)))
 (--> big-techs-big-bets ([] (related-to avoiding-catastrophe architecture-hinge)))
 (--> big-techs-big-bets ([] (related-to seven-flavors humanity-stupid all-in-bet)))
+
+;; ---- OCO/2 crosswalk (23-28), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> circular-financing ([] (BudgetAccount-cycle shared-origin-revenue)))
+(--> geopolitical-prisoners-dilemma ([] (two-state-Scopes no-cross-binding-authority attributed-Assessment)))
+(--> scenario-matrix ([] (two-Factor-design conditional-Assessment-per-cell)))
+(--> crash-uninformative non-discriminating-observation)
+(--> full-kelly whole-budget-one-Plan)
+(--> fractional-kelly non-preemptible-reserve)
+(--> fire-sale-absorption resource-transfer-to-debt-free-Scopes)
+(--> unownable-prize no-whole-commons-authority)

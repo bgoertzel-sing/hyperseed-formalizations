@@ -95,3 +95,17 @@ Pay Off, or Blow Up?" Eurykosmotron, 2026-08-02.
 22. **Prize dissipation curvature (d-calculus).**
     ||F_∇_prize(investment)|| = marginal return. Approaches zero at
     total dissipation. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+23. **Circular financing = BudgetAccount cycle;** looped revenue from one origin is not independent demand. *(oco2-crosswalk)*
+
+24. **Prisoner's dilemma = two state Scopes with no authority binding each other;** the Nash reading is attributed. *(oco2-crosswalk)*
+
+25. **Scenario matrix = two-Factor design with conditional Assessments per cell.** *(oco2-crosswalk)*
+
+26. **Crash is uninformative: an observation predicted in every cell does not change the cells' relative standing.** *(oco2-crosswalk)*
+
+27. **Full Kelly = whole budget on one Plan;** fractional Kelly = non-preemptible reserve. *(oco2-crosswalk)*
+
+28. **Fire-sale absorption = resource transfer into Scopes without debt Obligations;** unownable prize = no whole-commons authority. *(oco2-crosswalk)*
