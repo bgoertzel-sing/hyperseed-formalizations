@@ -190,6 +190,22 @@ Attention is the resource that enables genuine understanding:
   for AGI education specifically because the field is so cross-
   disciplinary.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Mind, Brain, Experience; not just engineering (claims 1-2, 10) | three separate Goals, each with its own GoalEvaluation | Competence on one level is evaluated separately and does not stand in for the others. |
+| Vibe coding vs deep thinking (claims 3-4, 11-13) | Executions reusing existing Plans vs new Plans with recorded Justifications and DecisionRecords | Deep thinking leaves new Plans and reasons on record; vibe coding only produces Executions of old ones. |
+| Guardrails vs value possession (claims 5, 14-15) | external gate (envelope + AuthorizationRecord) vs Goal with distributed standing | Same distinction as in goals-that-grow-back: a gate is checked from outside, a possessed value is re-derivable from many records. |
+| Evolving value systems (claim 6) | BridgeMapping between Catalogs, old ContextSnapshots kept | Values change without losing the earlier record. |
+| Attention as scarce resource (claims 7, 17) | BudgetAccount | Attention is budgeted like any other resource. |
+| Degree program, cohort (claims 8, 18) | shared cohort Scope; members exchange records by ContextTransfer | Cohort learning = shared records among members. |
+| Open curriculum (claim 9) | publicly released Artifacts | The materials are open; enrollment adds membership in the cohort Scope. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

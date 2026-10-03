@@ -100,3 +100,15 @@ Dawn of the AGI Era?" Eurykosmotron, 2026-07-23.
 23. **Cohort collaboration curvature (d-calculus).**
     ||F_∇(individual, collaborative)|| = collaboration value-add.
     High for AGI because cross-disciplinary. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+24. **Mind, Brain, Experience = three Goals with separate GoalEvaluations.** *(oco2-crosswalk)*
+
+25. **Deep thinking = new Plans with recorded Justifications;** vibe coding = Executions of existing Plans. *(oco2-crosswalk)*
+
+26. **Guardrail = external gate;** possessed value = Goal re-derivable from distributed standing. *(oco2-crosswalk)*
+
+27. **Evolving values = BridgeMapping between Catalogs with old snapshots kept.** *(oco2-crosswalk)*
+
+28. **Attention = BudgetAccount;** cohort = shared Scope with ContextTransfer; open curriculum = public Artifacts. *(oco2-crosswalk)*

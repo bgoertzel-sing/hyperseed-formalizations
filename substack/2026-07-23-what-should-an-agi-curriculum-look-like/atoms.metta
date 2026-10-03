@@ -54,3 +54,14 @@
 (--> agi-curriculum ([] (related-to what-is-it-like-to-be-a-bot experience-level)))
 (--> agi-curriculum ([] (related-to avoiding-catastrophe education-hinge)))
 (--> agi-curriculum ([] (related-to tag-youre-not-it architecture-understanding)))
+
+;; ---- OCO/2 crosswalk (24-28), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> three-level-curriculum ([] (mind-Goal brain-Goal experience-Goal separate-GoalEvaluation)))
+(--> vibe-coding Execution-of-existing-Plan)
+(--> deep-thinking ([] (new-Plan recorded-Justification DecisionRecord)))
+(--> guardrail external-gate)
+(--> value-possession distributed-standing-re-derivable)
+(--> evolving-values ([] (BridgeMapping old-ContextSnapshot-kept)))
+(--> attention BudgetAccount)
+(--> cohort ([] (shared-Scope ContextTransfer)))
+(--> open-curriculum public-Artifact)
