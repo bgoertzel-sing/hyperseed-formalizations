@@ -115,6 +115,21 @@ Due diligence is verifying the base before building fiber on it:
   the provenance honestly. Avoiding the loop (hiding provenance)
   prevents the holonomy — no growth from an unconfronted history.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Funding context, no personal involvement (claims 1-2) | attributed Claims, origin = author (self-report) | Recorded as the author's account. |
+| Due diligence failure (claims 3, 7) | no recorded Assessment of the funder's origin before the funding was accepted | The gap is a missing record, which is the author's own point. |
+| Transparency, moral reckoning (claims 4-5, 11) | disclosure = funding records appended to the readable log; correction appended, history not rewritten | The append-only log keeps both the original events and the later reckoning. |
+| Provenance (claim 6) | funding source kept as origin metadata on research records | |
+| Fiber-base separation (claim 8) | a research Claim's standing comes from its evidence and VerifierSpec, not from its funder; funder origin is still recorded as a possible ValidityThreat (conflict of interest) | Separation does not mean erasing the funding link. |
+| Trust suppression (claim 10) | a tainted origin lowers trust Assessments of the source, not the verification result of an independently checked Claim | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

@@ -27,3 +27,11 @@
 ;; ---- Cross-references ----
 (--> goertzel-vs-epstein ([] (related-to bgi-manifesto transparency-principle)))
 (--> goertzel-vs-epstein ([] (related-to what-is-science social-epistemology-provenance)))
+
+;; ---- OCO/2 crosswalk (12-15), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> funding-account attributed-self-report-Claim)
+(--> due-diligence pre-acceptance-funder-origin-Assessment)
+(--> transparency ([] (appended-funding-records no-history-rewrite)))
+(--> funding-provenance origin-metadata)
+(--> fiber-base-separation ([] (evidence-VerifierSpec-standing funder-ValidityThreat-recorded)))
+(--> trust-suppression source-trust-not-verification-result)

@@ -54,3 +54,13 @@ Eurykosmotron, 2026-02-20.
 11. **Provenance holonomy (d-calculus).** Honest reckoning loop produces
     non-trivial holonomy = moral/epistemic growth. Avoidance prevents
     growth. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+12. **Funding account = attributed self-report Claims, origin = author.** *(oco2-crosswalk)*
+
+13. **Due diligence = an Assessment of the funder's origin recorded before acceptance;** its absence is the failure. *(oco2-crosswalk)*
+
+14. **Transparency = appending funding records and the reckoning to the log, without rewriting history.** *(oco2-crosswalk)*
+
+15. **Fiber-base separation = Claim standing from evidence and verification, with funder origin kept as a recorded ValidityThreat.** *(oco2-crosswalk)*
