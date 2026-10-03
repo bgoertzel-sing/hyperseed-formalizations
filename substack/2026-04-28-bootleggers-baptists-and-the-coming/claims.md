@@ -66,3 +66,15 @@ Eurykosmotron, 2026-04-28.
 15. **Baptist-Bootlegger curvature (d-calculus).** Hidden divergence between
     stated and actual purpose. Effective because invisible.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+16. **Bootleggers and Baptists = one Plan endorsed under different Goals.** *(oco2-crosswalk)*
+
+17. **Baptist cover = safety Justifications on a Plan whose benefit accrues to another Goal.** *(oco2-crosswalk)*
+
+18. **Capture = regulator origin overlapping incumbent origin.** *(oco2-crosswalk)*
+
+19. **Compliance barrier = fixed per-Scope authorization cost,** heavier for small Scopes. *(oco2-crosswalk)*
+
+20. **Concentration = shrinking set of Scopes and issuers,** itself a safety risk. *(oco2-crosswalk)*

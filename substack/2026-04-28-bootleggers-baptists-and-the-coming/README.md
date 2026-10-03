@@ -148,6 +148,23 @@ Regulatory capture causes the innovation fiber bundle to collapse:
   the curvature is hidden — the Baptists are genuine, which makes the
   divergence invisible.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Bootleggers and Baptists, AI parallel (claims 1-2) | two principals endorsing one Plan under different Goals | Agreement on the Plan, divergence on the Goal; recording the Goal per endorser exposes it. |
+| Not a conspiracy (claim 4) | an outcome visible in the combined records with no coordinating record | Structural, not planned. |
+| Regulatory capture (claims 3, 7, 11) | regulator or verifier origin overlapping incumbent origin | Same test as bernies-proposal-to-nationalize-agi. |
+| Baptist cover (claims 8, 15) | Justifications citing a safety Goal attached to a Plan whose benefit Assessment accrues to a market-share Goal | The divergence is hidden only when Goals are not recorded per endorser. |
+| Compliance cost barrier (claims 9, 12) | AuthorizationRecord requirements with a fixed cost per Scope | Small Scopes pay more per unit of activity. |
+| Concentration as safety risk (claims 5, 10, 14) | fewer Scopes and fewer authority issuers | Tends toward a single issuer, which is itself a risk. |
+| Capture holonomy (claim 13) | each regulatory cycle a LifecycleEvent, with incumbent share recorded per cycle | Amplification is visible as a trend in the log. |
+| Decentralized alternative (claim 6) | open standards = declared ContextTransfer interfaces | Attributed Plan. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

@@ -32,3 +32,12 @@
 (--> bootleggers-baptists ([] (related-to bgi-manifesto corporate-capture)))
 (--> bootleggers-baptists ([] (related-to three-things default-path-reinforced)))
 (--> bootleggers-baptists ([] (related-to energy-ai-wars centralization-force)))
+
+;; ---- OCO/2 crosswalk (16-20), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> bootleggers-baptists one-Plan-different-Goals)
+(--> baptist-cover ([] (safety-Justification benefit-to-other-Goal)))
+(--> regulatory-capture regulator-incumbent-origin-overlap)
+(--> compliance-barrier fixed-per-Scope-authorization-cost)
+(--> concentration shrinking-Scopes-and-issuers)
+(--> capture-holonomy per-cycle-incumbent-share-trend)
+(--> decentralized-alternative declared-ContextTransfer-interface)
