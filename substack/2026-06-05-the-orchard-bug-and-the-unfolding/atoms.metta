@@ -32,3 +32,12 @@
 (--> orchard-bug-article ([] (related-to openbgi correct-by-construction-blockchain)))
 (--> orchard-bug-article ([] (related-to llm-consciousness neural-symbolic-reasoning)))
 (--> orchard-bug-article ([] (related-to grand-unified-physics formal-mathematical-structure)))
+
+;; ---- OCO/2 crosswalk (16-21), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> orchard-bug composition-without-VerifierSpec)
+(--> ai-bug-discovery audit-ValidityThreat)
+(--> formal-verification all-input-checked-Derivation)
+(--> testing sampled-Execution-Assessment)
+(--> correct-by-construction spec-to-impl-Derivation-chain)
+(--> ai-plus-fv ([] (generator-proposal separate-checker)))
+(--> on-chain-loss no-rollback-Execution)

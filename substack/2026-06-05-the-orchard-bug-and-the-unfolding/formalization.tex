@@ -182,4 +182,22 @@ discovery power increases, pushing all software toward formal
 verification or catastrophic failure.
 \end{proposition}
 
+
+%======================================================================
+\section{OCO/2 crosswalk (oco/2:2.0.0-alpha.1)}
+\emph{Added 2026-10-03. Interpretive mapping onto the Omega Core Ontology
+record registry; OCO/2 is an unfrozen alpha candidate.}
+
+\begin{proposition}[Composition --- claims 16--17]
+If components $c_1,c_2$ each satisfy their VerifierSpecs $V_1,V_2$ and no VerifierSpec covers $c_1\circ c_2$, the composite has no verified property beyond what $V_1$ and $V_2$ jointly imply. As search cost falls, the expected time to find a flaw in that unverified part falls with it.
+\end{proposition}
+
+\begin{proposition}[Proofs and construction --- claims 18--19]
+A test Assessment rests on finitely many sampled Executions; a checked proof covers every input of its spec. An implementation derived from the spec by recorded steps has a ReadSet chain ending in the spec, so any divergence must appear in a recorded step.
+\end{proposition}
+
+\begin{proposition}[Checking --- claims 20--21]
+A proof proposed by a generator gains standing only from a checker whose origin is distinct from the generator's. When an Execution has no rollback, that check must happen before it.
+\end{proposition}
+
 \end{document}

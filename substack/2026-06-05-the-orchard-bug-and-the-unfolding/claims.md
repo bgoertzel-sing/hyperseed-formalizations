@@ -74,3 +74,17 @@ Eurykosmotron, 2026-06-05.
 15. **Reckoning gradient (d-calculus).** ∇_reckoning = AI_discovery ×
     codebase_value × attack_surface × verification_debt. Crypto at
     steep end. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+16. **Composition failure = components each verified, composition without a VerifierSpec.** *(oco2-crosswalk)*
+
+17. **AI bug discovery = ValidityThreat on audit-based Assessments.** *(oco2-crosswalk)*
+
+18. **Proof = Derivation checked over all inputs;** test = Assessment over sampled Executions. *(oco2-crosswalk)*
+
+19. **Correct by construction = implementation whose Derivation chain reaches the spec,** leaving no unrecorded gap. *(oco2-crosswalk)*
+
+20. **AI-assisted verification = generator proposals checked by a separate verifier.** *(oco2-crosswalk)*
+
+21. **On-chain loss has no rollback,** so verification precedes release. *(oco2-crosswalk)*

@@ -180,6 +180,22 @@ Proving correctness is inspecting the fiber structure:
   gradient. The reckoning moves along this gradient as AI discovery
   power increases.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Orchard bug = composition failure (claims 1, 7) | each component passes its own VerifierSpec; the composition has none | The gap sits between verified parts, where no verifier looks. |
+| AI-accelerated discovery (claims 2, 9) | attacker Executions searching for flaws at falling cost; recorded as a ValidityThreat on any "audited, therefore safe" Assessment | Cheaper search means an unverified gap is found sooner. |
+| Crypto is the canary (claim 3) | Claim + Assessment, origin = author | Attributed forecast. |
+| Formal verification vs testing/audit (claims 4, 10) | proof = Derivation checked by a VerifierSpec covering all inputs; test = Assessment over sampled Executions | Tests give finite evidence; a checked proof covers the whole input space of its spec. |
+| Correct by construction (claims 5, 8, 14) | implementation Artifact derived from the spec by recorded Derivations, so its ReadSet chain reaches the spec | No unrecorded step between spec and code, hence no gap to hide a bug. |
+| AI + formal verification (claim 6) | generator proposes code and proofs; a separate checker Assesses them | Verifier/actor separation: the proof checker does not trust the generator. |
+| Value loss on chain | Execution with no rollback LifecycleEvent | Irreversibility is why verification must come before release. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
