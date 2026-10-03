@@ -125,6 +125,23 @@ These are interpretive readings. The article itself does not use d-calculus.
   a first-order change of zero at the other layer (d_base(δ_edge) ≈ 0 and
   d_edge(δ_base) ≈ 0).
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| 54-cell scenario grid (claim 37) | design with three Factors (timeline, centralization, political outcome); each cell = a conditional Assessment | The grid is a factorial layout of hypotheticals, not of runs. Each cell's judgment is attributed to the author. |
+| War risk vs terror risk, risk conversion (claims 13, 17-18, 21, 48) | separate Goals with separate GoalEvaluations | Decentralization changes the risk profile. OCO/2 keeps the components apart instead of fusing them into one risk number. |
+| Unownable prize (claims 14, 47) | no principal can issue authority over the commons as a whole | There is no single AuthorizationRecord to seize, so preemption has no target. |
+| State-network relationship as design choice, co-optability (claims 32-33, 39, 49) | interfaces between a state Scope and a network Scope: brokered AuthorizationRecords and ContextTransfers | Legible ways in = declared transfer and authority records; not surrendering the substrate = no transfer of authority over the core. |
+| Two-layer architecture (claims 36, 44, 51) | compliant-edge Scope under jurisdictional authority; permissionless-core Scope with its own authority; linked by ContextTransfer | The edge can comply without the core changing its records. |
+| Build the immune system first (claim 35) | verifiers, ValidityThreats and Challenges in place before capability spreads | Security as recorded verification. |
+| Not a story artifact (claim 23) | the same conclusion reached by Justification routes with independent origins | Convergence counts only if the routes really are independent. |
+| Policy recommendations (claims 27-31) | Plans, origin = author | Kept as attributed proposals. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

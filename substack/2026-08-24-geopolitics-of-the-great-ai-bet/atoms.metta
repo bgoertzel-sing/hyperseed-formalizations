@@ -127,3 +127,14 @@
 (--> shared-gauge-fixed-point ([] (same-sign-sovereignty-gradient structural-not-artifact)))
 (--> two-layer-architecture split-descent)
 (--> split-descent ([] (d-base-of-edge-zero d-edge-of-base-zero)))
+
+;; ---- OCO/2 crosswalk (52-57), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> scenario-grid ([] (three-Factor-design conditional-Assessment-per-cell attributed)))
+(--> risk-conversion multi-Goal-profile-change)
+(--> war-vs-terror-risk separate-GoalEvaluations)
+(--> unownable-prize no-whole-commons-authority)
+(--> state-network-relationship ([] (brokered-AuthorizationRecord ContextTransfer-interface)))
+(--> two-layer-architecture ([] (compliant-edge-Scope permissionless-core-Scope ContextTransfer)))
+(--> immune-system-first ([] (VerifierSpec ValidityThreat Challenge)))
+(--> not-story-artifact independent-origin-convergence)
+(--> policy-recommendations attributed-Plans)

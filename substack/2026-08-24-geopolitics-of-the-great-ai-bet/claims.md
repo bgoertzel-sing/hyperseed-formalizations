@@ -256,3 +256,17 @@ Eurykosmotron, 2026-08-24.
 51. **Two-layer architecture = split descent.** d_base(δ_edge) ≈ 0 and
     d_edge(δ_base) ≈ 0 is the formal "survives the other's worst day"
     test. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+52. **Scenario grid = three-Factor design with one conditional Assessment per cell,** attributed to the author. *(oco2-crosswalk)*
+
+53. **Risk conversion = change of a multi-Goal evaluation profile,** not of one fused risk score. *(oco2-crosswalk)*
+
+54. **Unownable prize = no principal with authority over the whole commons.** *(oco2-crosswalk)*
+
+55. **Designable state-network relationship = declared brokered-authority and ContextTransfer interfaces between Scopes.** *(oco2-crosswalk)*
+
+56. **Two-layer architecture = compliant-edge Scope + permissionless-core Scope linked by ContextTransfer.** *(oco2-crosswalk)*
+
+57. **Robust conclusion = convergence of independent-origin Justification routes.** *(oco2-crosswalk)*
