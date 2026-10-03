@@ -1,0 +1,161 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Wild Times in the AGI Lab}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-21 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Wild Times in the AGI Lab'' (2026-05-26)
+within the Hyperseed ontology, incorporating d-calculus extensions from
+Hyperseed v2. Compositional emergence is modeled as non-additive fiber
+composition with measurable composition curvature, emergent personality
+as section crystallization with decreasing holonomy, self-reflection as
+meta-level fiber depth, and surprise as observer-model curvature gap.
+\end{abstract}
+
+\tableofcontents
+
+\section{Compositional emergence as fiber composition}
+
+\begin{definition}[Fiber composition --- claims 1, 5, 7]
+The OmegaClaw system composes component fibers:
+\[
+  E_{\text{composed}} = E_{\text{LLM}} \otimes_\Gamma E_{\text{MeTTa}}
+    \otimes_\Gamma E_{\text{memory}} \otimes_\Gamma E_{\text{tools}}
+    \otimes_\Gamma E_{\text{reflection}}
+\]
+The composed fiber $E_{\text{composed}}$ has properties absent from any
+individual component fiber --- personality, surprise, contextual
+integration. The composition is non-additive:
+\[
+  E_{\text{composed}} \neq E_{\text{LLM}} \oplus E_{\text{MeTTa}}
+    \oplus \cdots
+\]
+New fiber structure (cross-component interactions) arises from the
+composition that doesn't exist in any component alone.
+\end{definition}
+
+\section{Emergent personality as section crystallization}
+
+\begin{proposition}[Section crystallization --- claims 2, 8]
+\label{prop:personality}
+The emergent personality is a stable section $\sigma_{\text{pers}}$ of the
+composed fiber bundle that crystallizes from dynamics:
+\begin{itemize}
+  \item Not programmed: $\sigma_{\text{pers}} \notin \text{initial conditions}$.
+  \item Attractor: $\sigma(t) \to \sigma_{\text{pers}}$ from diverse
+    initial conditions.
+  \item Self-reinforcing: memory of past interactions deepens the
+    attractor basin; self-reflection further stabilizes.
+\end{itemize}
+\end{proposition}
+
+\section{Self-reflection as fiber inspection}
+
+\begin{proposition}[Meta-level fiber --- claims 4, 9]
+\label{prop:reflection}
+Self-reflection adds a meta-level fiber $E_{\text{meta}}$ over the
+behavioral fiber $E_{\text{behav}}$:
+\[
+  E_{\text{meta}} \to E_{\text{behav}} \to B
+\]
+The system has fiber about its own fiber --- beliefs about its own
+reasoning process. This meta-level fiber increases the total fiber depth
+of the system, producing qualitatively different behavior even when the
+base behavior is similar to a non-reflective system.
+\end{proposition}
+
+\section{Surprise as non-trivial fiber}
+
+\begin{proposition}[Observer model gap --- claims 3, 10]
+\label{prop:surprise}
+Genuine surprise indicates that the system's actual fiber is richer
+than the observer's model:
+\[
+  \dim(E_{\text{actual}}) > \dim(E_{\text{observer\_model}})
+\]
+Each surprise moment is the observer discovering fiber regions not
+covered by their predictive model of the system.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Composition curvature --- claim 11]
+\label{prop:comp_curv}
+\[
+  \|F_{\nabla_{\text{composition}}}\| = \text{degree of emergent behavior}
+\]
+High composition curvature: the composed system behaves very differently
+from any individual component (strong emergence). Low composition
+curvature: the composed system is predictable from components (weak
+emergence). Max Botnick's surprise moments indicate high composition
+curvature.
+\end{proposition}
+
+\begin{proposition}[Personality crystallization holonomy --- claim 12]
+\label{prop:pers_hol}
+A conversation cycle $\gamma$: prompt $\to$ reasoning $\to$ memory $\to$
+reflection $\to$ prompt produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{pers}}) = \text{personality
+    drift per cycle}
+\]
+\begin{itemize}
+  \item Low holonomy: personality is stable (crystallized).
+  \item High holonomy: personality is still forming (pre-crystallization).
+  \item The transition from high to low holonomy IS the crystallization
+    process.
+\end{itemize}
+\end{proposition}
+
+\begin{proposition}[Self-reflection depth curvature --- claim 13]
+\label{prop:refl_curv}
+\[
+  \|F_\nabla(\text{behavior}, \text{reflection})\| = \text{depth of
+    self-reflection}
+\]
+High curvature: self-reflection is qualitatively different from behavior
+(genuine meta-cognition --- Max's honest limitation acknowledgments).
+Low curvature: self-reflection is just more behavior (shallow,
+performative reflection --- typical LLM ``I'm just an AI'' disclaimers).
+\end{proposition}
+
+\begin{proposition}[Surprise curvature --- claim 14]
+\label{prop:surprise_curv}
+\[
+  \|F_\nabla(\text{observer\_model}, \text{actual\_fiber})\| =
+    \text{surprise potential}
+\]
+High curvature: large model gap, frequent surprises. Low curvature:
+accurate observer model, few surprises. Max's surprise moments indicate
+$\|F_\nabla\| \gg 0$ --- the system's behavior space is genuinely
+richer than the observer's model.
+\end{proposition}
+
+\begin{proposition}[Not-yet-AGI gradient --- claim 15]
+\label{prop:agi_grad}
+\[
+  \nabla_{\text{AGI}} = \nabla\left(\text{compositional\_depth} \times
+    \text{reflection\_depth} \times \text{generalization} \times
+    \text{autonomy}\right)
+\]
+Max occupies a point along this gradient --- past simple LLM, not yet AGI.
+The gradient direction indicates requirements: deeper composition,
+deeper self-reflection, broader generalization, more genuine autonomy.
+\end{proposition}
+
+\end{document}

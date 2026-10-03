@@ -1,0 +1,166 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Symbolic Ruminations on Non-Symbolic Awareness}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Symbolic Ruminations on Non-Symbolic
+Awareness'' (2022-08-06) within the Hyperseed ontology, incorporating
+d-calculus extensions from Hyperseed v2. Non-symbolic awareness is
+modeled as direct base experience with fiber suspended, the paradox
+of description as fiber self-negation, and meditative practice as
+calibration holonomy that improves fiber-base alignment.
+\end{abstract}
+
+\tableofcontents
+
+\section{Non-symbolic awareness as base without fiber}
+
+\begin{definition}[Fibered cognition --- claim 1]
+\emph{Normal cognition} is fiber-mediated perception: the subject
+perceives base space $B$ through the fiber $F$:
+\[
+  \text{perception}(b) = \sigma(b) \in F(b) \quad \text{(fiber section)}
+\]
+The fiber structures, categorizes, and filters base experience.
+\end{definition}
+
+\begin{definition}[Non-symbolic awareness --- claims 1, 6]
+\emph{Non-symbolic awareness} is base perception with fiber suspended:
+\[
+  \text{perception}_{\text{ns}}(b) = b \quad \text{(direct base contact)}
+\]
+The fiber $F$ is not destroyed but temporarily set aside --- the section
+$\sigma$ is suspended, and the subject contacts the base directly.
+\end{definition}
+
+\begin{proposition}[Paradox of description --- claims 2, 5, 7]
+\label{prop:paradox}
+Describing non-symbolic awareness symbolically is fiber self-negation:
+\[
+  \sigma_{\text{describe}}(b) = ``\text{there is no } \sigma(b)''
+\]
+This is a section that asserts the absence of sections --- fiber content
+whose meaning is the absence of fiber content. In classical logic this
+is contradictory; in paraconsistent logic it is a productive paradox
+that inhabits the interzone between symbolic and non-symbolic.
+\end{proposition}
+
+\section{Fiber-base calibration}
+
+\begin{definition}[Fiber-base alignment --- claims 3, 8, 9]
+The \emph{alignment} between fiber and base measures how accurately the
+fiber represents the base:
+\[
+  \text{align}(F, B) = \text{corr}(\sigma(b), b) \quad
+  \text{(correlation between section and base point)}
+\]
+Misaligned fiber ($\text{align} \ll 1$) produces distorted perception.
+Non-symbolic awareness recalibrates alignment by providing direct base
+contact that reveals where the fiber has drifted.
+\end{definition}
+
+\begin{proposition}[Post-calibration enhancement --- claim 9]
+\label{prop:enhance}
+After a non-symbolic calibration episode, the restored fiber has
+improved alignment:
+\[
+  \text{align}(F_{t+\epsilon}, B) > \text{align}(F_t, B)
+\]
+The enhancement comes from correcting drift, not from adding new fiber.
+The fiber is the same dimension but better positioned relative to the
+base.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Fiber suspension curvature --- claim 10]
+\label{prop:suspension}
+The curvature of the fiber suspension transition:
+\[
+  \|F_{\nabla_{\text{suspend}}}\| = \text{difficulty of entering
+    non-symbolic awareness}
+\]
+\begin{itemize}
+  \item Experienced meditators: $\|F_{\nabla_{\text{suspend}}}\| \ll 1$
+    (smooth, easy transition).
+  \item Beginners: $\|F_{\nabla_{\text{suspend}}}\| \gg 1$ (sharp,
+    effortful transition).
+\end{itemize}
+Practice reduces suspension curvature --- the transition becomes smoother
+with repeated traversal (the connection ``wears in'' like a path through
+a forest).
+\end{proposition}
+
+\begin{proposition}[Base-fiber alignment gradient --- claim 11]
+\label{prop:gradient}
+The alignment gradient points toward better fiber-base correlation:
+\[
+  \nabla_{\text{align}} = \nabla \text{corr}(F, B)
+\]
+Non-symbolic awareness moves the system along this gradient. The
+gradient is steepest where fiber-base misalignment is worst ---
+non-symbolic awareness provides the most benefit where it's most needed.
+\end{proposition}
+
+\begin{proposition}[Calibration holonomy --- claim 12]
+\label{prop:holonomy}
+A calibration cycle $\gamma$: fiber $\to$ suspend $\to$ base contact
+$\to$ restore fiber produces non-trivial holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{calibrate}}) \neq \mathrm{id}
+  \implies \text{fiber is changed by calibration}
+\]
+The holonomy magnitude measures improvement:
+\begin{itemize}
+  \item $\|\operatorname{Hol}_\gamma - \mathrm{id}\| \gg 1$:
+    transformative meditation (large fiber change).
+  \item $\|\operatorname{Hol}_\gamma - \mathrm{id}\| \approx 0$:
+    ineffective meditation (negligible fiber change).
+\end{itemize}
+\end{proposition}
+
+\begin{proposition}[Paradox curvature --- claim 13]
+\label{prop:boundary}
+The curvature at the symbolic/non-symbolic boundary is inherently
+non-zero:
+\[
+  \|F_{\nabla_{\text{boundary}}}\| > 0 \quad \text{(always)}
+\]
+because the boundary is between fundamentally different modes (fibered
+vs.\ unfibered). A paraconsistent connection $\Gamma_{\text{para}}$ at
+this boundary enables productive traversal despite non-zero curvature
+--- the paradox is navigable even though it can't be eliminated.
+\end{proposition}
+
+\begin{proposition}[Non-symbolic gradient --- claim 14]
+\label{prop:null}
+The direction of non-symbolic awareness in fiber space is the null
+direction:
+\[
+  \nabla_{\text{nonsymbolic}} = -\nabla \|F\| \quad
+  \text{(toward zero fiber)}
+\]
+This is a legitimate direction with well-defined d-calculus geometry:
+curvature, holonomy, and parallel transport are all defined along the
+approach to zero fiber. The geometry of approaching emptiness is as
+rich as the geometry of any other direction --- the d-calculus doesn't
+degenerate at $F = 0$, it reveals new structure.
+\end{proposition}
+
+\end{document}

@@ -1,0 +1,201 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  What Should an AGI Curriculum Look Like?}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-25 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``What Should an AGI Curriculum Look Like''
+(2026-07-23) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. The three curriculum levels are modeled as
+a fiber decomposition with inter-fiber curvature, deep thinking vs vibe
+coding as directed-type depth with depth curvature, value possession as
+fiber-level property with integration curvature, and attention as
+parallel transport budget with learning holonomy and cohort collaboration
+curvature.
+\end{abstract}
+
+\tableofcontents
+
+\section{Three levels as fiber decomposition}
+
+\begin{theorem}[Fiber decomposition --- claims 1--2, 10]
+\label{thm:fibers}
+AGI understanding decomposes into three independent fiber components:
+\[
+  F_{\text{AGI}} = F_{\text{Mind}} \oplus F_{\text{Brain}} \oplus
+    F_{\text{Experience}}
+\]
+\begin{itemize}
+  \item $F_{\text{Mind}}$: conceptual/philosophical level --- what is
+    intelligence? What are the design principles, goals, values?
+  \item $F_{\text{Brain}}$: neural/computational substrate --- algorithms,
+    training procedures, engineering constraints.
+  \item $F_{\text{Experience}}$: phenomenology, consciousness,
+    what-it's-like --- the first-person perspective of AGI.
+\end{itemize}
+Collapsing to any single fiber loses essential structure. This is the
+anti-scalar-collapse principle applied to AGI education: the understanding
+bundle is multi-dimensional; no single dimension suffices.
+\end{theorem}
+
+\section{Deep thinking vs vibe coding as directed-type depth}
+
+\begin{proposition}[Directed-type levels of understanding --- claims 3--4, 11--13]
+\label{prop:depth}
+\textbf{Vibe coding = 0-cell operations.} Surface pattern matching from
+the training distribution:
+\[
+  \text{vibe}: \text{prompt} \to \text{response} \in \mathcal{D}^0
+  \quad \text{(immediate, no directed history)}
+\]
+
+\textbf{Deep thinking = 1-cells and higher.}
+\begin{itemize}
+  \item 1-cells: novel reasoning trajectories --- directed paths through
+    problem space that don't follow the training distribution.
+  \item 2-cells: reflection on reasoning --- transformations between
+    reasoning paths (which approach is better? why?).
+  \item Higher cells: genuine understanding --- the full directed type
+    of comprehension.
+\end{itemize}
+Building AGI requires navigating novel 1-cells and evaluating them from
+the 2-cell level. Minor variations on existing approaches stay near the
+0-cell surface and won't produce AGI.
+\end{proposition}
+
+\section{Value possession as fiber-level property}
+
+\begin{proposition}[Guardrails vs genuine values --- claims 5--6, 14--16]
+\label{prop:values}
+\textbf{Guardrails = section-level constraint.} External rules imposed
+on the system --- a specific section $s: B \to E_{\text{ethics}}$ that
+can be overridden by changing the base point (new context, new pressure,
+jailbreak):
+\[
+  s \text{ safe} \not\Rightarrow s' \text{ safe} \quad \text{(section
+    change overrides)}
+\]
+
+\textbf{Value possession = fiber-level property.} The value is integrated
+into the system's fiber structure --- how it processes information, not
+an external constraint on outputs. Preserved under any base
+transformation:
+\[
+  \text{value}(E) \implies \text{value}(\phi^* E) \quad \forall \phi
+\]
+
+The deeper ethics questions (what does it mean for AGI to have a value?
+how do human-AI value systems co-evolve?) require fiber-level
+understanding, not section-level rules. Education's role is to produce
+fiber-level understanding in the students.
+\end{proposition}
+
+\section{Attention as parallel transport budget}
+
+\begin{proposition}[Organized transport --- claims 7--9, 17--18]
+\label{prop:attention}
+Understanding a topic requires transporting one's epistemic state along
+a directed path through the topic's structure:
+\[
+  P_\gamma: F_{\text{student}}(t_0) \to F_{\text{student}}(t_1)
+  \quad \text{(transport along curriculum path } \gamma\text{)}
+\]
+This transport requires computational budget: attention, time, effort.
+
+\textbf{Attention scarcity.} In the AGI era, information is abundant but
+attention is scarce. The degree program's value is allocating attention
+--- the precious transport budget --- to productive paths.
+
+\textbf{Cohort as organized transport.} The program organizes a cohort
+to transport together along curated paths. The paths are curated
+(curriculum), the transport is collaborative (discussion, peer
+interaction), and the quality is assessed (expert evaluation). The
+curriculum is freely available; the organized transport experience
+is the enrolled value.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Fiber decomposition curvature --- claim 19]
+\label{prop:fib_curv}
+\[
+  \|F_\nabla(\text{Mind}, \text{Brain})\|, \quad
+  \|F_\nabla(\text{Mind}, \text{Experience})\|, \quad
+  \|F_\nabla(\text{Brain}, \text{Experience})\|
+  \quad \text{all high}
+\]
+High inter-fiber curvature: the three fibers are genuinely independent
+(understanding one doesn't give you the others). This high curvature is
+the formal content of ``all three levels required'' --- if any pair had
+low curvature, one fiber would be redundant.
+\end{proposition}
+
+\begin{proposition}[Thinking depth curvature --- claim 20]
+\label{prop:depth_curv}
+\[
+  \|F_{\nabla_{\text{understanding}}}(\text{depth})\| =
+    \text{understanding gain per additional level of directed reasoning}
+\]
+High curvature: each level of deeper reasoning adds substantial
+understanding (worth investing in deep thinking --- the article's
+argument). Low curvature: additional depth adds little (surface
+sufficient --- the vibe coding assumption, argued to be wrong for AGI).
+\end{proposition}
+
+\begin{proposition}[Value integration curvature --- claim 21]
+\label{prop:val_curv}
+\[
+  \|F_\nabla(\text{guardrail}, \text{possessed})\| = \text{depth gap
+    between superficial and genuine ethical understanding}
+\]
+High curvature: guardrail understanding diverges sharply from genuine
+value possession (the ethics course needs to bridge this gap --- surface
+ethics is insufficient). Low curvature: guardrails track genuine values
+(surface ethics sufficient --- the article argues this is wrong).
+\end{proposition}
+
+\begin{proposition}[Attention allocation holonomy --- claim 22]
+\label{prop:attn_hol}
+A loop through the learning cycle $\gamma$: attend $\to$ understand
+$\to$ apply $\to$ reflect $\to$ attend produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{learning}}) =
+    \text{understanding gain per learning cycle}
+\]
+High holonomy: each cycle produces substantial new understanding
+(effective curriculum). Low holonomy: cycles produce little (ineffective
+--- transport along paths that don't reach new territory). Curriculum
+design optimizes for high learning holonomy.
+\end{proposition}
+
+\begin{proposition}[Cohort collaboration curvature --- claim 23]
+\label{prop:collab_curv}
+\[
+  \|F_\nabla(\text{individual}, \text{collaborative})\| =
+    \text{collaboration value-add}
+\]
+High curvature: collaborative understanding substantially exceeds
+individual (the degree program's unique value --- focused group
+attention produces emergent understanding). Low curvature: collaboration
+adds little (self-study suffices). The article argues this curvature is
+high for AGI education specifically because the field is so
+cross-disciplinary that no individual covers all three fibers.
+\end{proposition}
+
+\end{document}

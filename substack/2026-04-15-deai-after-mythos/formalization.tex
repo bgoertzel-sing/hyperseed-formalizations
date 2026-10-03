@@ -1,0 +1,148 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  DeAI After Mythos}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``DeAI After Mythos'' (2026-04-15) within
+the Hyperseed ontology, incorporating d-calculus extensions from
+Hyperseed v2. Historical software security is modeled as base-level
+obscurity that collapses under Mythos-class discovery tools. OmegaClaw
+provides reasoning fiber over the discovery base. The post-Mythos
+regime is a curvature spike requiring transition to fiber-level
+(formal verification) security.
+\end{abstract}
+
+\tableofcontents
+
+\section{Friction as base obscurity}
+
+\begin{definition}[Base-level security --- claims 1, 6, 7]
+Historical software security relied on base-level obscurity:
+\[
+  \text{security}_{\text{pre-Mythos}} = f(\text{friction}) =
+    f(\text{cost of bug discovery})
+\]
+The bugs existed in the fiber but were hidden by base-level friction
+(cost of analysis, code complexity, limited tooling). Mythos-class
+models collapse this friction:
+\[
+  \text{friction}_{\text{post-Mythos}} \ll \text{friction}_{\text{pre-Mythos}}
+\]
+exposing the fiber vulnerabilities that were always present.
+\end{definition}
+
+\begin{proposition}[Fiber-level security --- claim 2]
+\label{prop:fiber}
+Genuine security must be fiber-level --- structural guarantees about
+the fiber itself:
+\[
+  \text{security}_{\text{fiber}} = \text{proof}(\text{properties}(E))
+\]
+independent of base-level visibility. Formal verification provides
+fiber-level security: proofs about fiber structure that don't degrade
+when discovery tools improve.
+\end{proposition}
+
+\section{OmegaClaw: reasoning fiber over discovery base}
+
+\begin{proposition}[Fiber over base --- claims 3, 8]
+\label{prop:omegaclaw}
+OmegaClaw provides reasoning fiber over the discovery base:
+\begin{itemize}
+  \item \textbf{Discovery base:} Mythos-class models find vulnerabilities
+    at scale (base-level capability).
+  \item \textbf{Reasoning fiber:} MeTTa reasoning and Hyperon integration
+    interpret, validate, assess, and prioritize discoveries (fiber-level
+    capability).
+  \item \textbf{Value = fiber:} The competitive advantage is the fiber
+    (interpretation), not the base (discovery).
+\end{itemize}
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Security obscurity curvature --- claim 10]
+\label{prop:obscurity}
+\[
+  \|F_{\nabla_{\text{obscurity}}}\| = \text{reliability of
+    security-through-obscurity}
+\]
+\begin{itemize}
+  \item Pre-Mythos: $\|F_{\nabla_{\text{obscurity}}}\|$ moderate
+    (obscurity provided real, if imperfect, security).
+  \item Post-Mythos: $\|F_{\nabla_{\text{obscurity}}}\| \to \infty$
+    (obscurity provides no security --- connection collapsed).
+\end{itemize}
+\end{proposition}
+
+\begin{proposition}[Formal verification curvature --- claim 11]
+\label{prop:formal}
+\[
+  \|F_{\nabla_{\text{formal}}}\| \ll 1 \quad \text{(low and stable)}
+\]
+Unlike obscurity curvature, formal verification curvature doesn't
+degrade with improved discovery tools. Proofs remain valid regardless
+of how easy bugs are to find --- they guarantee the bugs aren't there.
+This is why formal methods become \emph{more} valuable post-Mythos.
+\end{proposition}
+
+\begin{proposition}[Discovery-interpretation holonomy --- claim 12]
+\label{prop:holonomy}
+The security improvement cycle $\gamma$: discover $\to$ interpret $\to$
+remediate $\to$ verify $\to$ discover produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{security}}) =
+    \text{security improvement per cycle}
+\]
+\begin{itemize}
+  \item Pre-Mythos: slow cycles, high per-cycle cost (discovery was
+    the bottleneck).
+  \item Post-Mythos: fast cycles, low discovery cost, high interpretation
+    demand (interpretation is the bottleneck).
+\end{itemize}
+OmegaClaw accelerates the interpretation step, enabling faster security
+improvement holonomy.
+\end{proposition}
+
+\begin{proposition}[Regime change gradient --- claim 13]
+\label{prop:gradient}
+\[
+  \nabla_{\text{regime}} = \nabla\left(\text{formal\_verification} \times
+    \text{reasoning\_validation} \times \text{explicit\_trust}\right)
+\]
+Following this gradient requires investment in formal methods and
+reasoning infrastructure. Organizations that don't follow the gradient
+face increasing exposure as base obscurity erodes.
+\end{proposition}
+
+\begin{proposition}[Crisis-opportunity curvature --- claim 14]
+\label{prop:crisis}
+\[
+  \|F_\nabla(\text{crisis}, \text{opportunity})\| =
+    \text{transformation difficulty}
+\]
+The same event (Mythos) is simultaneously a crisis (more vulnerability
+exposure) and an opportunity (reasoning systems become essential). The
+curvature measures how much organizational transformation is needed to
+convert crisis into opportunity. High curvature organizations (rigid,
+obscurity-dependent) face existential crisis; low curvature organizations
+(formal-methods-ready, reasoning-equipped) face opportunity.
+\end{proposition}
+
+\end{document}

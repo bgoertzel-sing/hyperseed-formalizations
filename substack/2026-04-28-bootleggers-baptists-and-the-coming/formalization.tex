@@ -1,0 +1,133 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Bootleggers, Baptists, and the Coming AI Regulation}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Bootleggers, Baptists, and the Coming AI
+Regulation'' (2026-04-28) within the Hyperseed ontology, incorporating
+d-calculus extensions from Hyperseed v2. Regulatory capture is modeled
+as connection hijacking, compliance costs as scale-dependent barrier
+curvature, and concentration as fiber bundle collapse driven by
+self-reinforcing capture holonomy.
+\end{abstract}
+
+\tableofcontents
+
+\section{Regulatory capture as connection hijacking}
+
+\begin{definition}[Connection hijacking --- claims 1--4, 7, 8]
+The regulatory connection $\Gamma_{\text{reg}}$ is \emph{captured} when:
+\[
+  \Gamma_{\text{reg}}^{\text{actual}} \neq \Gamma_{\text{reg}}^{\text{stated}}
+\]
+The stated connection transports public-safety fiber; the actual connection
+transports incumbent-protection fiber. The Baptists (safety advocates)
+provide genuine moral fiber that conceals the hijacking:
+\[
+  \text{visibility}(\Gamma_{\text{actual}} - \Gamma_{\text{stated}}) \approx 0
+  \quad \text{(because Baptists are genuine)}
+\]
+\end{definition}
+
+\section{Compliance cost as barrier curvature}
+
+\begin{proposition}[Scale-dependent curvature --- claims 3, 9]
+\label{prop:barrier}
+Each regulation adds curvature to the innovation path. The curvature is
+scale-dependent:
+\[
+  \|F_{\nabla_{\text{compliance}}}(\text{BigTech})\| \ll
+  \|F_{\nabla_{\text{compliance}}}(\text{startup})\| \ll
+  \|F_{\nabla_{\text{compliance}}}(\text{open-source})\|
+\]
+The same regulation creates different curvature for different actors ---
+this is the structural mechanism of regulatory capture.
+\end{proposition}
+
+\section{Concentration as fiber bundle collapse}
+
+\begin{proposition}[Bundle collapse --- claims 5, 10]
+\label{prop:collapse}
+Regulatory capture collapses the innovation fiber bundle:
+\begin{itemize}
+  \item \textbf{Healthy:} diverse bundle with many independent sections
+    (approaches, organizations, architectures).
+  \item \textbf{Captured:} sections that can't navigate compliance
+    curvature are eliminated, reducing diversity.
+  \item \textbf{Collapsed:} monoculture --- few sections surviving,
+    vulnerable to common failure modes.
+\end{itemize}
+The real safety risk (claim~5): a collapsed bundle is less safe than
+a diverse one, because diversity provides resilience against correlated
+failures.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Capture curvature --- claim 11]
+\label{prop:capture}
+\[
+  \|F_{\nabla_{\text{capture}}}\| = \text{deviation of }
+    \Gamma_{\text{reg}} \text{ from public-interest transport}
+\]
+Zero: regulations perfectly serve public interest. High: regulations
+primarily serve incumbent interest while maintaining public-interest
+appearance.
+\end{proposition}
+
+\begin{proposition}[Capture holonomy --- claim 13]
+\label{prop:holonomy}
+The regulatory cycle $\gamma$: propose $\to$ lobby $\to$ enact $\to$
+enforce $\to$ evaluate $\to$ propose produces capture holonomy:
+\[
+  \|\operatorname{Hol}_{\gamma_n}(\Gamma_{\text{capture}})\| >
+  \|\operatorname{Hol}_{\gamma_{n-1}}(\Gamma_{\text{capture}})\|
+  \quad \text{(amplifies with each cycle)}
+\]
+Each cycle increases incumbent advantage. Incumbents use advantage from
+previous cycles to influence next cycle's regulations --- positive
+feedback loop.
+\end{proposition}
+
+\begin{proposition}[Diversity collapse gradient --- claim 14]
+\label{prop:gradient}
+\[
+  \nabla_{\text{collapse}} = -\nabla(\text{compliance\_barrier} \times
+    \text{scale\_dependence})
+\]
+Following the negative gradient (away from diversity) is the natural
+dynamics under capture. Resisting collapse requires deliberate
+counter-regulation: open standards, interoperability requirements,
+and anti-monopoly provisions that create positive gradient toward
+diversity.
+\end{proposition}
+
+\begin{proposition}[Baptist-Bootlegger curvature --- claim 15]
+\label{prop:bb}
+\[
+  \|F_\nabla(\text{Baptist}, \text{Bootlegger})\| =
+    \text{hidden divergence between stated and actual purpose}
+\]
+Low curvature: aligned (genuine public-interest regulation). High
+curvature: divergent (captured regulation). The capture is effective
+\emph{because} the curvature is hidden --- the Baptists' genuine
+concern makes the divergence invisible to public scrutiny.
+\end{proposition}
+
+\end{document}

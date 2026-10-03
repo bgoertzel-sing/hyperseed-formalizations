@@ -1,0 +1,192 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  The General Theory of General Intelligence}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``The General Theory of General Intelligence:
+A Pragmatic Patternist Perspective'' (2021-06-02, arXiv:2103.15100) within the
+Hyperseed ontology, incorporating d-calculus extensions from Hyperseed v2. The
+central idea---that general intelligence is a structural property characterized
+by pattern recognition/creation, cognitive synergy, and self-modification---is
+given a fiber-geometric interpretation where intelligence is fiber richness,
+learning is fiber homotopy, and cognitive synergy is fiber curvature.
+\end{abstract}
+
+\tableofcontents
+
+\section{Intelligence as fiber richness}
+
+\begin{definition}[Environmental base space]
+Let $B_{\text{env}}$ be the \emph{environmental base space}: the space of
+possible environmental states an agent may encounter. Each point
+$b \in B_{\text{env}}$ is a specific environmental configuration.
+\end{definition}
+
+\begin{definition}[Intelligence fiber bundle]
+An \emph{intelligence fiber bundle} is $\pi : I \to B_{\text{env}}$ where
+each fiber $I_b = \pi^{-1}(b)$ is the space of response patterns
+available to the agent in environmental state $b$.
+\end{definition}
+
+\begin{proposition}[Fiber richness = general intelligence --- claims 1, 2, 9, 11]
+\label{prop:richness}
+General intelligence corresponds to rich fiber structure:
+\begin{itemize}
+  \item \textbf{Thickness:} $\dim(I_b) \gg 1$ for generic $b$ --- many
+    available response patterns per environmental state.
+  \item \textbf{Coverage:} $\{b \in B_{\text{env}} : \dim(I_b) > 0\}$ is
+    a large subset of $B_{\text{env}}$ --- the agent can respond in
+    diverse environments.
+  \item \textbf{Narrow AI:} $\dim(I_b) \leq k$ for small $k$, and coverage
+    is concentrated on a small region of $B_{\text{env}}$.
+\end{itemize}
+\end{proposition}
+
+\begin{definition}[Pattern as flat section --- claim 8, 19]
+A \emph{pattern} for region $U \subseteq B_{\text{env}}$ is a flat section
+$\sigma : U \to I$ such that $\nabla \sigma = 0$ on $U$. The section
+captures the local structure of the intelligence bundle while ignoring
+curvature details. Pattern recognition is the construction of flat
+sections; pattern creation is their extension to new regions.
+\end{definition}
+
+\section{Intelligence functor as fiber morphism}
+
+\begin{definition}[Intelligence functor]
+Let $\mathcal{E}$ be the category of environmental states (objects) and
+transitions (morphisms), and $\mathcal{A}$ be the category of actions.
+An \emph{intelligence functor} $F: \mathcal{E} \to \mathcal{A}$ maps
+environmental patterns to appropriate actions, preserving compositional
+structure.
+\end{definition}
+
+\begin{proposition}[Functor = fiber bundle morphism --- claim 3, 12]
+\label{prop:functor}
+The intelligence functor corresponds to a fiber bundle morphism
+$\hat{F}: I_{\text{env}} \to I_{\text{act}}$ mapping environmental fibers
+to action fibers:
+\[
+  \hat{F}_b : I_b^{\text{env}} \to I_b^{\text{act}}
+  \quad \text{for each } b \in B
+\]
+Structure preservation by the functor corresponds to the morphism
+commuting with the bundle projections.
+\end{proposition}
+
+\section{Learning as fiber homotopy}
+
+\begin{proposition}[Learning = natural transformation = fiber homotopy --- claim 13]
+\label{prop:learning}
+A natural transformation $\eta: F_1 \Rightarrow F_2$ between intelligence
+functors corresponds to a fiber bundle homotopy --- a continuous family of
+morphisms:
+\[
+  H_t : I_{\text{env}} \to I_{\text{act}}, \quad t \in [0,1],
+  \quad H_0 = \hat{F}_1, \quad H_1 = \hat{F}_2
+\]
+Learning is the continuous deformation of the intelligence morphism from
+a less-adapted to a more-adapted mapping.
+\end{proposition}
+
+\section{Self-modification and metatransparency}
+
+\begin{proposition}[Self-modification = fiber endomorphism --- claims 3, 4, 14, 15]
+\label{prop:selfmod}
+Self-modification is an endomorphism $\Phi: I \to I$ of the intelligence
+bundle --- the system reshapes its own fiber structure:
+\[
+  \Phi_b : I_b \to I_b \quad \text{(reshaping available responses at each } b\text{)}
+\]
+Metatransparency adds a \emph{meta-fiber} --- a section of the bundle
+$\pi_{\text{meta}} : M \to I$ where $M_i$ (for $i \in I_b$) represents
+the system's understanding of response pattern $i$. The system doesn't
+just modify its fibers; it has a fiber-level model of its own fiber structure.
+\end{proposition}
+
+\section{Cognitive synergy}
+
+\begin{definition}[Multi-type fiber bundle --- claim 6, 10]
+The intelligence bundle $I$ decomposes into fiber types corresponding to
+cognitive modalities:
+\[
+  I = I^{\text{perc}} \oplus I^{\text{reas}} \oplus I^{\text{act}}
+    \oplus I^{\text{mem}} \oplus I^{\text{learn}} \oplus I^{\text{att}}
+\]
+Cognitive synergy is the interaction between these fiber types producing
+emergent structure not present in any individual summand.
+\end{definition}
+
+\begin{proposition}[Cognitive synergy as fiber interaction]
+The synergistic interaction is captured by the ``cross-curvature'' of the
+multi-type connection:
+\[
+  F_\nabla^{ij} \neq 0 \quad \text{for } i \neq j
+  \implies \text{synergistic interaction between modalities } i, j
+\]
+Flat cross-curvature ($F_\nabla^{ij} = 0$) means modalities $i$ and $j$
+operate independently; non-zero cross-curvature means they interact
+synergistically. General intelligence requires substantial cross-curvature.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Transfer learning curvature --- claim 16]
+\label{prop:transfer}
+Transfer learning between domains $b_1, b_2 \in B_{\text{env}}$ succeeds
+when the intelligence connection has low curvature along the path
+$\gamma: b_1 \to b_2$:
+\[
+  \|F_\nabla(\dot\gamma, \cdot)\| \ll 1
+  \implies \text{good pattern transfer along } \gamma
+\]
+High curvature indicates that patterns deform significantly during
+transport --- transfer fails because the intelligence structure varies
+too rapidly between domains.
+\end{proposition}
+
+\begin{proposition}[Self-modification holonomy --- claim 18]
+\label{prop:holonomy}
+Iterating self-modification around a closed loop of cognitive tasks
+$\gamma: b_1 \to b_2 \to \cdots \to b_1$ produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\nabla) \neq \mathrm{id}
+  \implies \text{genuine learning (system changed by the cycle)}
+\]
+\[
+  \operatorname{Hol}_\gamma(\nabla) = \mathrm{id}
+  \implies \text{mere cycling (no net change)}
+\]
+The holonomy group of the intelligence connection characterizes the
+system's capacity for genuine self-improvement through experience.
+\end{proposition}
+
+\begin{remark}[CogPrime/Hyperon realization --- claim 7]
+In the CogPrime/Hyperon architecture:
+\begin{itemize}
+  \item The AtomSpace/Atomese hypergraph is the total space $I$.
+  \item PLN provides the reasoning fiber $I^{\text{reas}}$.
+  \item MOSES provides the evolutionary learning fiber $I^{\text{learn}}$.
+  \item Pattern mining constructs flat sections (patterns).
+  \item Deep learning provides perception fibers $I^{\text{perc}}$.
+  \item Cognitive synergy is implemented by the interaction between these
+    components through the shared hypergraph.
+\end{itemize}
+\end{remark}
+
+\end{document}

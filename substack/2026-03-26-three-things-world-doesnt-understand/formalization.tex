@@ -1,0 +1,128 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Three Things the World Doesn't Understand About AGI}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Three Things the World Doesn't Understand
+About AGI'' (2026-03-26) within the Hyperseed ontology, incorporating
+d-calculus extensions from Hyperseed v2. The three things are modeled as:
+(1)~the single-fiber assumption constraining AGI path diversity,
+(2)~fiber topology choice determining governance outcomes, and
+(3)~topological emergence of collective consciousness from open-source
+architecture.
+\end{abstract}
+
+\tableofcontents
+
+\section{The default path: single-fiber assumption}
+
+\begin{definition}[Fiber type diversity --- claims 1, 4, 5]
+The space of possible cognitive fiber types is:
+\[
+  \mathcal{F} = \{F_{\text{LLM}},\; F_{\text{Hyperon}},\; F_{\text{pred-coding}},\;
+    F_{\text{evolutionary}},\; \ldots\}
+\]
+The ``default path'' assumption is $|\mathcal{F}| = 1$, restricting
+development to $F_{\text{LLM}}$. In reality, $|\mathcal{F}| \gg 1$,
+and the full space offers portfolio diversification against path
+dependence.
+\end{definition}
+
+\section{Open-source as fiber topology choice}
+
+\begin{proposition}[Topology determines outcomes --- claims 2, 6]
+\label{prop:topology}
+The choice between centralized and decentralized development is a
+topology choice on the fiber bundle:
+\begin{itemize}
+  \item \textbf{Centralized:} Single controlled fiber bundle with
+    proprietary connection. All transport goes through the controller.
+  \item \textbf{Decentralized:} Distributed bundle with fork/merge
+    topology. Multiple independent sections, permeable boundaries.
+\end{itemize}
+The topology (not the content) determines who benefits, who controls,
+and how safe the system is.
+\end{proposition}
+
+\section{Collective consciousness as topological emergence}
+
+\begin{proposition}[Topological emergence --- claims 3, 7]
+\label{prop:emergence}
+Higher collective consciousness emerges from fiber bundle topology:
+\[
+  \text{Location}(\text{org}) = f\bigl(\text{fork-ability} \times
+    \text{transparency} \times \text{voluntary} \times
+    (1 - \text{self-preservation})\bigr)
+\]
+Fork-merge topology eliminates rigid ego boundaries. Transparency makes
+fiber inspectable. Voluntary connection produces non-coercive dynamics.
+The result is Location~1+ collective behavior from Location~Zero
+individuals.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Fiber diversity curvature --- claim 8]
+\label{prop:diversity}
+The curvature between AGI fiber types:
+\[
+  \|F_\nabla(F_A, F_B)\| = \text{structural distance between approaches}
+\]
+High curvature: fundamentally different approaches (good diversification).
+Low curvature: similar approaches (limited diversification benefit).
+A healthy AGI ecosystem maximizes inter-type curvature.
+\end{proposition}
+
+\begin{proposition}[Path dependence holonomy --- claim 9]
+\label{prop:lock}
+A development cycle committed to a single fiber type produces lock-in
+holonomy:
+\[
+  \|\operatorname{Hol}_\gamma(\Gamma_{\text{single-path}})\| \propto
+    \text{investment} \times \text{time}
+\]
+Lock-in grows with investment. Fiber diversity reduces the consequences
+by ensuring alternative paths remain viable even if the primary path
+encounters fundamental limitations.
+\end{proposition}
+
+\begin{proposition}[Centralization-decentralization curvature --- claim 10]
+\label{prop:central}
+\[
+  \|F_\nabla(\text{central}, \text{decentral})\| \gg 1
+\]
+The topologies are fundamentally different, and switching is a major
+structural change. The choice is made early in development and is
+difficult to reverse --- another argument for getting it right from
+the start.
+\end{proposition}
+
+\begin{proposition}[Emergence gap gradient --- claim 11]
+\label{prop:emergence_grad}
+\[
+  \nabla_{\text{emergence}} = \nabla\bigl(\|\text{collective} -
+    \text{individual}\|\bigr)
+\]
+Open-source architecture steepens this gradient: the emergence gap
+between individual participants and collective behavior is larger
+in open-source than in traditional organizations, producing more
+emergent collective consciousness.
+\end{proposition}
+
+\end{document}

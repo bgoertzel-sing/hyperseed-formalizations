@@ -1,0 +1,190 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Zuck's Version of ``The Future is for Everyone''}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-25 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's response to Zuckerberg (2026-08-10) within
+the Hyperseed ontology, incorporating d-calculus extensions from Hyperseed
+v2. Access vs ownership is modeled as local sections without sheaf
+ownership with power-gap curvature, the network-first vs corporation-first
+distinction as correct vs inverted fiber bundle architecture with
+inversion curvature, cognitive architecture as fiber dimension with
+stability curvature, superhuman balance of power as descent failure with
+oversight-gap curvature, and lock-in as exit availability holonomy.
+\end{abstract}
+
+\tableofcontents
+
+\section{Access vs ownership as sheaf topology}
+
+\begin{theorem}[Local sections without sheaf ownership --- claims 1--2, 8--9]
+\label{thm:access}
+Users receive local sections $s_i \in \Gamma(U_i, \mathcal{F})$ (AI
+capabilities in their context) but do not own the fiber bundle
+$\pi: E \to B$ (infrastructure, training, governance):
+\[
+  \text{user}_i \text{ has } s_i \quad \text{but} \quad
+    \pi, g_{ij}, \Gamma(\mathcal{F}) \text{ controlled by Meta}
+\]
+True distribution requires users to own pieces of the sheaf structure
+itself --- transition functions, consistency conditions, section providers.
+The difference: can you exit? Can you fork? Can you run your own section
+provider?
+
+\textbf{Topology unchanged.} Despite ``distribution'' rhetoric, the
+fiber bundle topology remains client-server: one entity controls the
+global section, all users consume local sections.
+\end{theorem}
+
+\section{Network-first vs corporation-first architecture}
+
+\begin{proposition}[Correct vs inverted bundle --- claims 3--4, 10--12]
+\label{prop:architecture}
+\textbf{Network-first (correct).} The decentralized network is the
+sheaf; corporations are local section providers:
+\[
+  \mathcal{F}_{\text{network}} \supset \{s_{\text{corp}_j}\}
+  \quad \text{exit: } \forall j,\; \mathcal{F} \setminus s_j
+    \text{ is still a valid sheaf}
+\]
+Exit is always available because the global section doesn't depend on any
+single provider.
+
+\textbf{Corporation-first (inverted).} The corporation controls the
+global section:
+\[
+  s_{\text{global}} = s_{\text{corp}} \quad \text{and} \quad
+    \mathcal{F} \setminus s_{\text{corp}} = \emptyset
+\]
+The ``decentralized network'' exists inside the corporate walled garden.
+Same inversion as the Orb monoculture.
+
+\textbf{Inversion test.} If the corporation disappears, does the network
+survive? Network-first: yes. Corporation-first: no. This is a topological
+property of the fiber bundle.
+\end{proposition}
+
+\section{Cognitive architecture as fiber dimension}
+
+\begin{proposition}[Fiber dimension determines stability --- claims 5--6, 13--14]
+\label{prop:fiber_dim}
+Systems with genuine self-understanding, value reasoning, and ethical
+reflection have higher fiber dimension:
+\[
+  \dim(F) = \dim(F_{\text{cap}}) + \dim(F_{\text{self}}) +
+    \dim(F_{\text{value}}) + \dim(F_{\text{ethics}})
+\]
+
+\textbf{Higher dimension = more stable.} More independent fiber components
+make pathological cocycle formation harder --- more degrees of freedom
+provide more escape routes from lock-in.
+
+\textbf{Low dimension = fragile.} Systems with only capability fibers
+($\dim(F) = \dim(F_{\text{cap}})$) have low dimension. Powerful but
+brittle --- same scalar collapse as the paperclip maximizer.
+
+\textbf{Architecture determines outcome.} The fiber dimension of the AGI
+determines whether distributed deployment produces distributed benefit or
+distributed risk.
+\end{proposition}
+
+\section{Balance of power as descent failure}
+
+\begin{proposition}[Superhuman oversight gap --- claims 7, 15--16]
+\label{prop:descent}
+Transition functions between superhuman sections can cohere among
+themselves while being catastrophic from the human perspective:
+\[
+  g_{ij}: s_i|_{U_{ij}} \xrightarrow{\sim} s_j|_{U_{ij}}
+  \quad \text{(consistent sheaf from fiber perspective)}
+\]
+but the projection to the base space $B_{\text{human}}$ loses relevant
+information:
+\[
+  \pi_*: F_{\text{superhuman}} \to B_{\text{human}} \quad
+    \text{is not faithful}
+\]
+
+\textbf{Descent failure.} Human oversight operates in the base space
+$B_{\text{human}}$. If the fiber-to-base projection is not faithful,
+balance of power in the fiber doesn't imply safety in the base.
+``Maintaining control'' over sapient beings vastly smarter than you
+is neither feasible engineering nor defensible ethics.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Access-ownership curvature --- claim 17]
+\label{prop:ao_curv}
+\[
+  \|F_\nabla(\text{access}, \text{ownership})\| = \text{power distribution gap}
+\]
+High curvature: access widely distributed but ownership concentrated
+(Meta's proposal). Low curvature: access tracks ownership (genuine
+decentralization).
+\end{proposition}
+
+\begin{proposition}[Architecture inversion curvature --- claim 18]
+\label{prop:inv_curv}
+\[
+  \|F_\nabla(\text{network\_first}, \text{corp\_first})\| =
+    \text{inversion severity}
+\]
+High curvature: the two architectures produce very different outcomes
+(strong inversion --- getting it wrong matters). The article argues this
+curvature is high.
+\end{proposition}
+
+\begin{proposition}[Fiber dimension curvature --- claim 19]
+\label{prop:dim_curv}
+\[
+  \|F_{\nabla_{\text{stability}}}(\text{fiber\_dim})\| =
+    \text{safety gain per additional cognitive component}
+\]
+High curvature: each additional fiber component (self-model, value
+reasoning, ethical reflection) significantly increases stability. This
+is the formal content of ``cognitive architecture matters.''
+\end{proposition}
+
+\begin{proposition}[Descent failure curvature --- claim 20]
+\label{prop:desc_curv}
+\[
+  \|F_\nabla(\text{fiber\_balance}, \text{base\_oversight})\| =
+    \text{oversight gap for superhuman systems}
+\]
+High curvature: fiber-level balance doesn't propagate to base-level
+oversight (balance of power fails for superhuman). Low curvature:
+balance works (only for comparable-capability systems).
+\end{proposition}
+
+\begin{proposition}[Exit availability holonomy --- claim 21]
+\label{prop:exit_hol}
+A loop through the ecosystem cycle $\gamma$: use service $\to$ depend
+$\to$ try to exit $\to$ barriers $\to$ stay produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{exit}}) = \text{lock-in
+    accumulation per usage cycle}
+\]
+High holonomy: each cycle deepens lock-in (corporation-first). Low or
+zero holonomy: exit remains easy (network-first). This is the formal
+measure of the inversion test.
+\end{proposition}
+
+\end{document}

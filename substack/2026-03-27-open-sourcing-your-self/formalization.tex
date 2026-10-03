@@ -1,0 +1,155 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Open-Sourcing Your Self}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Open-Sourcing Your Self'' (2026-03-27)
+within the Hyperseed ontology, incorporating d-calculus extensions from
+Hyperseed v2. Monolithic upload is modeled as fiber substrate change
+preserving ego topology, open-source upload as fiber topology
+transformation producing distributed non-self, and identity as a
+topological invariant that genuinely changes in the transition.
+\end{abstract}
+
+\tableofcontents
+
+\section{Monolithic upload: fiber substrate change}
+
+\begin{definition}[Substrate transfer --- claims 1, 6]
+A \emph{monolithic upload} is a fiber substrate change:
+\[
+  \phi: (E, \pi, B_{\text{bio}}) \to (E, \pi, B_{\text{comp}})
+\]
+The base changes ($B_{\text{bio}} \to B_{\text{comp}}$) but the fiber
+$(E, \pi)$ is preserved as faithfully as possible. The ego structure
+(self-model, boundary, self-preservation) is part of $E$ and is
+therefore preserved. The consciousness location, being a topological
+property of $E$, is also preserved.
+\end{definition}
+
+\section{Open-source upload: topology transformation}
+
+\begin{definition}[Decomposition --- claims 2, 7]
+An \emph{open-source upload} decomposes the monolithic fiber bundle
+into modules:
+\[
+  E \to \bigoplus_{i=1}^{n} E_i \quad \text{(modular decomposition)}
+\]
+Each module $E_i$ is an independent sub-bundle that can be separately
+maintained, forked, and merged. The decomposition imposes fork-merge
+topology on the collection of modules.
+\end{definition}
+
+\begin{proposition}[Distributed self --- claims 3, 4, 7]
+\label{prop:distributed}
+The collection of modules with fork-merge dynamics constitutes a
+\emph{distributed self}:
+\[
+  \text{Self}_{\text{dist}} = \left(\bigoplus_i E_i,\;
+    \text{fork},\; \text{merge},\; \Gamma_{\text{inter}}\right)
+\]
+where $\Gamma_{\text{inter}}$ is the inter-module connection. The
+distributed self's identity is the pattern of relationships between
+modules, not any single module. No single fork is authoritative;
+the collective pattern is the self.
+\end{proposition}
+
+\section{Identity as topological invariant}
+
+\begin{proposition}[Identity transformation --- claims 5, 8]
+\label{prop:identity}
+Identity is a topological invariant of the fiber bundle:
+\begin{itemize}
+  \item \textbf{Monolithic:} identity $= E$ (the bundle itself).
+    Trivial invariant --- one version, one identity.
+  \item \textbf{Distributed:} identity $= \text{Inv}(\bigoplus E_i,
+    \text{fork}, \text{merge})$ --- the topological pattern preserved
+    across fork-merge operations.
+\end{itemize}
+The transition from monolithic to distributed is a genuine change of
+the identity invariant. It is not the same person in a different form
+but a different kind of entity whose relationship to the original is
+topological descent, not identity preservation.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Substrate transfer curvature --- claim 9]
+\label{prop:substrate}
+\[
+  \|F_{\nabla_{\text{substrate}}}\| = \text{information lost in upload}
+\]
+\begin{itemize}
+  \item $\|F_{\nabla_{\text{substrate}}}\| = 0$: perfect isomorphic
+    transfer (ideal upload).
+  \item $\|F_{\nabla_{\text{substrate}}}\| > 0$: lossy transfer
+    (some fiber distortion).
+\end{itemize}
+\end{proposition}
+
+\begin{proposition}[Decomposition curvature --- claim 10]
+\label{prop:decompose}
+\[
+  \|F_{\nabla_{\text{decompose}}}\| = \text{difficulty of modularization}
+\]
+Naturally modular fiber: low decomposition curvature (easy to
+separate into independent modules). Deeply entangled fiber: high
+decomposition curvature (modularization is lossy or distorting).
+The brain is likely high decomposition curvature --- neural
+representations are deeply entangled across regions.
+\end{proposition}
+
+\begin{proposition}[Fork-merge holonomy --- claim 11]
+\label{prop:holonomy}
+Each fork-merge cycle produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{fork-merge}}) \neq \mathrm{id}
+  \implies \text{distributed self changes through each cycle}
+\]
+This is topology-level learning: unlike monolithic learning (which
+changes fiber content within fixed topology), distributed learning
+changes the topology itself --- modules fork, explore, and merge
+back, altering the pattern of relationships.
+\end{proposition}
+
+\begin{proposition}[Identity invariant gradient --- claim 12]
+\label{prop:gradient}
+\[
+  \nabla_{\text{identity}} = \nabla(\text{topological complexity of self})
+\]
+The transition follows this gradient from simple (monolithic) to
+complex (distributed) topology. The gradient is steep at the
+transition point --- a small step past monolithic produces
+dramatically different identity topology.
+\end{proposition}
+
+\begin{proposition}[Ego dissolution curvature --- claim 13]
+\label{prop:ego}
+\[
+  \|F_{\nabla_{\text{ego-dissolve}}}\| = \text{difficulty of ego
+    dissolution}
+\]
+This is the structural analog of meditative ego dissolution (cf.\
+``Symbolic Ruminations on Non-Symbolic Awareness'') achieved through
+architectural means rather than contemplative practice. The
+architecture (fork-merge topology) does the ego-dissolving work that
+meditation does psychologically.
+\end{proposition}
+
+\end{document}

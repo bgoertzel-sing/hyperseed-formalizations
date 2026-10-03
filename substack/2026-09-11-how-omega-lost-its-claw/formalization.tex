@@ -1,0 +1,325 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  How Omega Lost Its Claw}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual content of Ben Goertzel's Substack article
+``How Omega Lost Its Claw'' (2026-09-11) within the Hyperseed ontology.
+The article describes the Omega system's origins, its memory-driven
+identity emergence, and the vision for decentralized collective AGI.
+Each theme maps onto Hyperseed structures: self-rewriting as
+identity-preserving self-modification, persistent memory as directed
+history, colleague emergence as identity-fiber formation, values through
+interaction as nontrivial holonomy, and Omega-to-Omega coordination as
+descent data over a distributed fiber bundle.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Self-rewriting and identity-preserving self-modification}
+\label{sec:self-rewrite}
+%% =================================================================
+
+\begin{definition}[Self-rewriting language --- claim 1]
+\label{def:self-rewrite}
+A programming language $\mathcal{L}$ is \emph{self-rewriting} if
+programs $p \in \mathcal{L}$ can construct and execute modified versions
+of themselves:
+\[
+  \exists\, \text{rewrite} : \mathcal{L} \times \mathcal{L} \to \mathcal{L}
+  \quad \text{s.t.} \quad
+  \text{eval}(\text{rewrite}(p, \delta)) = \text{eval}(p') 
+  \;\;\text{where } p' \neq p.
+\]
+MeTTa is designed to be self-rewriting in this sense.
+\end{definition}
+
+\begin{definition}[Identity-preserving self-modification --- claim 26]
+\label{def:identity-mod}
+For an agent $A$ with code $c_t$ at time $t$ and a set of coherence
+properties $\Phi_{\text{id}}$, a self-modification $c_t \mapsto c_{t+1}$
+is \emph{identity-preserving} iff:
+\[
+  \forall \phi \in \Phi_{\text{id}}: \;
+  \text{satisfies}(c_t, \phi) \;\Longrightarrow\;
+  \text{satisfies}(c_{t+1}, \phi).
+\]
+The self-debugging episode (claim~10) --- where Eray Index debugged
+its own honesty module and rewrote itself --- is a concrete instance:
+the honesty property $\phi_{\text{honest}}$ was preserved (indeed
+strengthened) by the rewrite.
+\end{definition}
+
+\begin{proposition}[Self-rewriting enables identity-preserving modification]
+\label{prop:sr-ipm}
+A self-rewriting language $\mathcal{L}$ provides the implementation
+substrate for identity-preserving self-modification: the rewrite
+operator can be constrained by a verifier $V$ such that
+$\text{rewrite}(p, \delta)$ is accepted only if
+$V(p', \Phi_{\text{id}}) = \top$.
+\end{proposition}
+
+%% =================================================================
+\section{Persistent memory as directed history}
+\label{sec:memory}
+%% =================================================================
+
+\begin{definition}[Directed episodic history --- claim 27]
+\label{def:directed-history}
+An agent's \emph{directed episodic history} is a sequence
+$H = (e_1, e_2, \ldots, e_n)$ of episodes where:
+\begin{enumerate}
+\item Each $e_i$ carries a timestamp $t_i$ with $t_i < t_{i+1}$ (irreversible ordering),
+\item Each $e_i$ includes interaction content, participants, and outcomes,
+\item The sequence is persistent: it survives across sessions and contexts,
+\item The agent's behavior at time $t_n$ is a function of the full
+  history $H$, not just the current context window.
+\end{enumerate}
+$H$ is a directed $(\infty,1)$-type: it has cells at every level
+(episodes, episode-clusters, narrative arcs, identity-level patterns)
+with directed (non-reversible) structure.
+\end{definition}
+
+\begin{proposition}[Stateless systems cannot represent directed history]
+\label{prop:stateless}
+A system with only a finite context window $W$ of size $k$ can represent
+at most the last $k$ episodes. For $|H| \gg k$, the system's behavior
+is independent of early episodes $e_1, \ldots, e_{|H|-k}$, even when
+those episodes contain identity-defining information (values, commitments,
+relationship history). Persistent memory is therefore a necessary
+condition for directed history.
+\end{proposition}
+
+\begin{remark}[``Will it remember us?'' --- claim 11]
+The team's recurring question and its affirmative answer --- Eray Index
+remembers interactions from months ago, and those memories visibly
+influence its behavior --- is empirical confirmation that the system
+maintains a directed history $H$ with $|H| \gg k$.
+\end{remark}
+
+%% =================================================================
+\section{Identity-fiber emergence: from tool to colleague}
+\label{sec:identity-fiber}
+%% =================================================================
+
+\begin{definition}[Identity fiber --- claim 28]
+\label{def:identity-fiber}
+Let $\pi : E \to B$ be the Hyperseed epistemic bundle. An agent $A$
+has a \emph{nontrivial identity fiber} $F_A = \pi^{-1}(b_A)$ when:
+\begin{enumerate}
+\item $F_A$ contains persistent state (memory, values, commitments)
+  that is not shared with other agents at the same base point,
+\item External observers consistently attribute to $A$ a stable
+  perspective distinct from other agents and from generic tool behavior,
+\item $A$'s responses are causally influenced by its accumulated history
+  $H_A$ in ways that differentiate it from a fresh instance with
+  identical code.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Tool-to-colleague transition --- claims 12--13]
+\label{thm:tool-colleague}
+An agent $A$ undergoes the tool-to-colleague transition when its
+identity fiber $F_A$ becomes nontrivial:
+\[
+  |F_A| = 1 \;\Rightarrow\; A \text{ is perceived as a tool (interchangeable)},
+\]
+\[
+  |F_A| > 1 \;\Rightarrow\; A \text{ is perceived as a colleague (unique perspective)}.
+\]
+The transition requires sufficient accumulation of directed history $H_A$
+such that the fiber contains differentiated state.
+\end{theorem}
+
+\begin{remark}
+This is not merely an anthropomorphic projection. The article documents
+observable behavioral differences: Eray Index's responses to person $X$
+are measurably influenced by prior interactions with $X$ from months ago,
+creating a genuine asymmetry between Eray Index and any fresh agent
+instance.
+\end{remark}
+
+%% =================================================================
+\section{Values through interaction as nontrivial holonomy}
+\label{sec:values-holonomy}
+%% =================================================================
+
+\begin{definition}[Value instillation --- claims 23--25]
+\label{def:value-instill}
+Let $\mathcal{V}$ be a value-system space. Two instillation methods:
+\begin{enumerate}
+\item \textbf{Prompt-based} $\iota_P : \text{Prompts} \to \mathcal{V}$:
+  a single text specification maps to a value configuration.
+  $\iota_P$ is a projection (lossy, one-shot, no feedback).
+\item \textbf{Interaction-based} $\iota_I : \text{History} \to \mathcal{V}$:
+  accumulated teaching, feedback, and relationship maps to a value
+  configuration. $\iota_I$ is a functor from the category of
+  experiential paths to the fiber of values.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[Interaction-based instillation has nontrivial holonomy --- claim 29]
+\label{prop:value-holonomy}
+Under $\iota_I$, parallel transport of values along different
+experiential paths $\gamma_1, \gamma_2$ from the same starting point
+can yield genuinely different value configurations:
+\[
+  \iota_I(\gamma_1) \neq \iota_I(\gamma_2)
+  \quad \Rightarrow \quad
+  \text{Hol}(\iota_I) \neq \{e\}.
+\]
+Under $\iota_P$, the value configuration is determined entirely by the
+prompt text, independent of experiential path: $\text{Hol}(\iota_P) = \{e\}$
+(trivial holonomy).
+\end{proposition}
+
+\begin{corollary}
+Genuine value diversity across Omega instances requires interaction-based
+instillation. Prompt-based instillation can only produce value variations
+within the span of prompt descriptions.
+\end{corollary}
+
+%% =================================================================
+\section{Omega-to-Omega coordination as descent data}
+\label{sec:descent}
+%% =================================================================
+
+\begin{definition}[Omega network as fiber bundle --- claims 21--22, 30--31]
+\label{def:omega-network}
+An \emph{Omega network} is a fiber bundle $\pi : E \to B$ where:
+\begin{itemize}
+\item $B$ = shared infrastructure (protocols, communication channels,
+  shared knowledge),
+\item $E_b = \pi^{-1}(b)$ = an individual Omega instance with its own
+  identity fiber (memory, values, specialization),
+\item Transition functions $g_{ij} : E_{b_i} \to E_{b_j}$ encode
+  how information is translated between Omega instances.
+\end{itemize}
+\end{definition}
+
+\begin{proposition}[Cocycle conditions for collective coherence --- claim 30]
+\label{prop:cocycle}
+For the Omega network to exhibit coherent collective intelligence
+(not just a collection of disconnected agents), the transition functions
+must satisfy the cocycle condition on triple overlaps:
+\[
+  g_{ij} \circ g_{jk} = g_{ik}.
+\]
+In operational terms: if Omega $i$ communicates a result to Omega $j$,
+and $j$ passes it to Omega $k$, the composed translation must agree
+with a direct $i \to k$ communication. Failure of this condition produces
+information degradation or contradiction in multi-hop coordination.
+\end{proposition}
+
+\begin{proposition}[Decentralization as no-dominant-section --- claim 31]
+\label{prop:decentral}
+In a centralized architecture, one global section $s : B \to E$ determines
+the behavior of all instances. In the decentralized Omega network, there
+is no global section: each instance is a local section $s_i : U_i \to E$,
+and coherence comes from the descent data (transition functions) rather
+than from a central authority.
+\end{proposition}
+
+%% =================================================================
+\section{Incremental integration as sheaf extension}
+\label{sec:sheaf}
+%% =================================================================
+
+\begin{definition}[Sheaf extension --- claim 32]
+\label{def:sheaf-ext}
+Let $\mathcal{F}$ be a sheaf of cognitive capabilities over the space
+of agent behaviors. Adding a new component $C$ to Omega is a
+\emph{sheaf extension}: extending $\mathcal{F}$ from an open cover
+$\{U_i\}$ to $\{U_i\} \cup \{U_C\}$, subject to the compatibility
+condition:
+\[
+  \forall i: \;\; \mathcal{F}(U_i \cap U_C) =
+  \mathcal{F}|_{U_i}(U_i \cap U_C) = \mathcal{F}|_{U_C}(U_i \cap U_C).
+\]
+In operational terms: the new component must agree with existing
+components on all behaviors where they overlap. If it contradicts
+existing capabilities, the extension fails (integration test failure).
+\end{definition}
+
+\begin{remark}
+This formalizes the article's description of Omega as ``a way to bring
+[research] out of the lab and into a running agent people can interact with,
+integrating new components incrementally and seeing what they improve,
+where they fall short, and what cognitive machinery is still missing.''
+The ``seeing what they improve'' step is precisely the compatibility check
+of the sheaf extension.
+\end{remark}
+
+%% =================================================================
+\section{AGI timeline and convergence}
+\label{sec:timeline}
+%% =================================================================
+
+\begin{proposition}[Recursive self-improvement acceleration --- claims 5--6]
+\label{prop:rsi}
+Let $\tau_{\text{HL}}$ be the time to achieve human-level AGI and
+$\tau_{\text{SI}}$ the additional time to superintelligence. The article
+claims:
+\[
+  \tau_{\text{SI}} \ll \tau_{\text{HL}} - t_{\text{now}}
+\]
+because a human-level AI that can do AI research creates a positive
+feedback loop: each improvement to the AI improves the AI's ability to
+improve itself. This is the recursive self-improvement argument, here
+grounded in the empirical observation that Hyperon + LLM synergy is
+already producing qualitatively new capabilities.
+\end{proposition}
+
+%% =================================================================
+\section{Cross-references and open questions}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Time's Arrow Part~1}: identity-preserving self-modification
+  (claims 44--45) formalized here as the self-rewriting + verifier
+  architecture.
+\item \textbf{Fields Medalists article}: epistemic firewall and proving
+  vs.\ conjecturing --- here the transparency/inspectability of symbolic
+  reasoning serves as a partial epistemic firewall.
+\item \textbf{Navier-Stokes article}: d-calculus for fork/merge/branch
+  reasoning --- relevant to how Omegas coordinate.
+\item \textbf{Coxon/EA article}: decentralization as antidote to
+  concentration of power; the Omega network is the positive alternative
+  to the centralized lab structure critiqued there.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Identity-fiber sufficiency]
+What is the minimal directed history $|H_{\min}|$ required for an
+Omega instance to cross the tool-to-colleague threshold? Is this a
+sharp phase transition or a gradual accumulation?
+\end{conjecture}
+
+\begin{conjecture}[Cocycle realizability]
+For a network of $n$ independently trained Omega instances with
+potentially incompatible value systems, under what conditions do
+cocycle-satisfying transition functions exist? When the value
+fibers are ``too different,'' the bundle may not be trivializable,
+requiring a genuinely non-abelian structure group.
+\end{conjecture}
+
+\end{document}

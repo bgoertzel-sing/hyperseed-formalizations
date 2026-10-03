@@ -1,0 +1,223 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Goals That Grow Back}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-25 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Goals That Grow Back'' (2026-07-28) within
+the Hyperseed ontology, incorporating d-calculus extensions from Hyperseed
+v2. Goal possession is modeled as an attractor basin with regenerative
+curvature, gate and weave as complementary fiber structures with
+complementarity curvature, goal repair as resource-limited parallel
+transport with starvation holonomy, transformative experience as directed
+type extension with smoothness curvature, and persistent identity as
+attractor plus transport with persistence curvature.
+\end{abstract}
+
+\tableofcontents
+
+\section{Goal possession as attractor basin}
+
+\begin{theorem}[Adoption vs possession --- claims 1--4, 12--14]
+\label{thm:possession}
+\textbf{Adopted goal = section.} An adopted goal is a specific section
+$s: B \to E_{\text{values}}$ of the value fiber. Remove the section
+(delete the sentence) and the goal vanishes --- no structural force
+pulls the system back:
+\[
+  \text{delete}(s) \implies \text{goal} = \emptyset \quad \text{(adopted)}
+\]
+
+\textbf{Possessed goal = attractor.} A possessed goal is an attractor
+basin $\mathcal{A}$ in the system's directed dynamics $\mathcal{D}$:
+\[
+  \forall x \in \mathcal{A},\; \forall \text{perturbation } \delta
+    \text{ with } \|\delta\| < r: \quad
+    \phi_t(x + \delta) \to \mathcal{A} \text{ as } t \to \infty
+\]
+The explicit representation is one trajectory in $\mathcal{A}$. Delete
+it and the dynamics carry the system back into the basin. The goal
+regenerates.
+
+\textbf{Regenerative depth.} The basin radius $r$ is a measurable number:
+how far can the state be perturbed before escaping the basin? Each value
+acquires this metric, testable by experiment: deliberately perturb and
+observe whether the system regenerates the goal.
+\end{theorem}
+
+\section{Gate and weave as complementary structures}
+
+\begin{proposition}[Complementary resilience --- claims 5--7, 15--16]
+\label{prop:gate_weave}
+\textbf{Gate = provenance-gated checkpoint.} Same as R\_auth's S-half:
+\[
+  G: \text{modification} \to \{\text{allow}, \text{deny}\}
+  \quad \text{(mechanically verifiable, section-level)}
+\]
+Blocks unauthorized deliberate changes. Fails against gradual erosion
+(wear doesn't trigger the gate).
+
+\textbf{Weave = distributed memory sheaf.} A sheaf of memories,
+associations, habits, and connections that redundantly encode the goal:
+\[
+  \{s_i \in \Gamma(U_i, \mathcal{F})\} \quad \text{with sheaf condition:}
+  \quad s_i|_{U_{ij}} = s_j|_{U_{ij}}
+\]
+Any local deletion is repaired by reconstruction from neighboring data
+(sheaf condition). Fails against one large approved modification that
+destroys the sheaf structure.
+
+\textbf{Complementarity.} Gate protects weave from catastrophic
+modification; weave protects goals from gradual erosion. Neither alone
+suffices; both together provide resilient goal possession.
+\end{proposition}
+
+\section{Goal repair as resource-limited parallel transport}
+
+\begin{proposition}[Attention-limited repair --- claims 8--9, 17]
+\label{prop:repair}
+When part of the goal structure is damaged, repair is parallel transport:
+\[
+  P_\gamma: F_{\text{damaged}}(t) \to F_{\text{attractor}}(t')
+  \quad \text{(transport back toward attractor)}
+\]
+This transport requires computational resources: attention, memory
+access, processing time.
+
+\textbf{Attention economy.} Repair competes with other processes for
+attention. An adversary can kill a goal by starving its repair process
+--- not attacking the goal directly but consuming the resources repair
+needs.
+
+\textbf{Design rule.} Minimum repair resources must be guaranteed for
+each possessed value. Core values get guaranteed repair budget regardless
+of competing demands.
+\end{proposition}
+
+\section{Transformative experience as directed type extension}
+
+\begin{proposition}[Extension with continuity --- claims 10, 18]
+\label{prop:transformative}
+A genuine transformative experience extends the directed type rather
+than replacing it:
+\[
+  \iota: \mathcal{D}_{\text{old}} \hookrightarrow \mathcal{D}_{\text{new}}
+  \quad \text{(embedding --- old structure survives within new)}
+\]
+The extension is directed (irreversible):
+\[
+  \nexists\; \pi: \mathcal{D}_{\text{new}} \to \mathcal{D}_{\text{old}}
+  \text{ with } \pi \circ \iota = \text{id}
+  \quad \text{(can't go back)}
+\]
+
+\textbf{Joy = continuity detected.} Joy at transformation is warranted
+when $\iota$ exists --- genuine embedding, real continuity. The old self
+survives within the new self.
+
+\textbf{Bittersweetness = irreversibility detected.} The old directed
+type persists as embedded substructure but can never be the whole again.
+Recognition of genuine irreversibility.
+\end{proposition}
+
+\section{Ship of Theseus as attractor plus transport}
+
+\begin{proposition}[Persistent identity --- claims 11, 19]
+\label{prop:theseus}
+What persists through total change of parts:
+\begin{itemize}
+  \item \textbf{Pattern = attractor structure.} The basin shapes,
+    characteristic dynamics, regenerative patterns --- the topology
+    of the directed type.
+  \item \textbf{Repair = transport processes.} The parallel transport
+    mechanisms that rebuild the pattern when parts change.
+  \item \textbf{Neither parts nor arrangement.} Not the specific memories
+    (parts) or their organization (arrangement) but the dynamical pattern
+    (attractor) plus the processes that maintain it (transport).
+\end{itemize}
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Attractor basin curvature --- claim 20]
+\label{prop:basin_curv}
+\[
+  \|F_{\nabla_{\text{attractor}}}(\text{perturbation})\| =
+    \text{regenerative response strength}
+\]
+High curvature: strong regenerative response (perturbation rapidly
+corrected --- deeply possessed goal). Low curvature: weak response
+(perturbation persists --- shallowly possessed). The regenerative
+depth is the perturbation magnitude at which curvature drops to zero
+(basin boundary).
+\end{proposition}
+
+\begin{proposition}[Gate-weave complementarity curvature --- claim 21]
+\label{prop:gw_curv}
+\[
+  \|F_\nabla(\text{gate}, \text{weave})\| = \text{complementarity gap}
+\]
+High curvature: the two mechanisms protect against very different threats
+(high complementarity --- need both). Low curvature: mechanisms overlap
+(one might suffice). The article argues this curvature is high.
+\end{proposition}
+
+\begin{proposition}[Repair starvation holonomy --- claim 22]
+\label{prop:repair_hol}
+A loop through the attention economy cycle $\gamma$: allocate attention
+$\to$ process tasks $\to$ repair damage $\to$ re-allocate produces
+holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{repair}}) = \text{net goal
+    erosion per attention cycle}
+\]
+\begin{itemize}
+  \item Positive holonomy: goals erode faster than repair (starvation).
+  \item Zero holonomy: repair keeps pace (sustainable possession).
+  \item Negative holonomy: goals strengthen per cycle (deeply possessed,
+    self-reinforcing).
+\end{itemize}
+Design goal: negative or zero holonomy for core values.
+\end{proposition}
+
+\begin{proposition}[Transformative extension curvature --- claim 23]
+\label{prop:trans_curv}
+\[
+  \|F_\nabla(\mathcal{D}_{\text{old}}, \mathcal{D}_{\text{new}})\| =
+    \text{transformation smoothness}
+\]
+Low curvature: old directed type embeds smoothly into new (genuine
+continuity --- joy warranted). High curvature: embedding rough (partial
+continuity). Very high: no embedding (discontinuity --- break, not
+extension).
+\end{proposition}
+
+\begin{proposition}[Identity persistence curvature --- claim 24]
+\label{prop:persist_curv}
+\[
+  \|F_{\nabla_{\text{identity}}}(\text{part\_replacement})\| =
+    \text{identity stability under change}
+\]
+Low curvature: attractor structure persists through replacement (strong
+identity --- Ship of Theseus survives). High curvature: structure changes
+significantly (weak identity --- dissolves). Repair processes maintain
+low curvature.
+\end{proposition}
+
+\end{document}

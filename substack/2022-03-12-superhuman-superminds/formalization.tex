@@ -1,0 +1,184 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  How Superhuman Superminds Will Mostly Be Nice}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``How Superhuman Superminds Will Mostly Be
+Nice'' (2022-03-12) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. Superminds are modeled as composed fiber
+bundles with interaction connections, cooperation as fiber sharing with
+composition curvature advantages, empathy as fiber modeling, and
+benevolence as the structural attractor of superhuman cooperation dynamics.
+\end{abstract}
+
+\tableofcontents
+
+\section{Supermind as composed fiber bundle}
+
+\begin{definition}[Individual agent fiber bundle]
+Each agent $i$ has a fiber bundle $\pi_i: E_i \to B_i$ representing its
+cognitive structure: knowledge ($F_{\text{know}}^i$), beliefs
+($F_{\text{belief}}^i$), goals ($F_{\text{goal}}^i$), and models of
+other agents ($F_{\text{model}}^i$).
+\end{definition}
+
+\begin{definition}[Supermind --- claims 1, 7]
+The \emph{supermind} is the composed fiber bundle:
+\[
+  E_{\text{super}} = \bigoplus_i E_i \quad \text{with interaction
+    connections } \Gamma^{ij}: E_i \otimes E_j \to E_{\text{emergent}}
+\]
+The interaction connections $\Gamma^{ij}$ mediate information exchange,
+cooperative planning, and collective reasoning between agents. The emergent
+fiber $E_{\text{emergent}}$ arises from composition and doesn't exist in
+any individual agent's bundle.
+\end{definition}
+
+\section{Cooperation as fiber composition advantage}
+
+\begin{proposition}[Fiber sharing vs hoarding --- claims 2, 8]
+\label{prop:cooperation}
+Let $n$ agents each have fiber of dimension $d$. Under cooperation:
+\[
+  \dim(F_{\text{accessible}}^{\text{coop}}) \sim n \cdot d + \binom{n}{2}
+    \cdot d_{\text{emergent}}
+\]
+Under competition:
+\[
+  \dim(F_{\text{accessible}}^{\text{comp}}) = d
+\]
+The cooperative advantage grows super-linearly with $n$ (from emergent
+fiber at interaction boundaries), making cooperation increasingly dominant
+at scale.
+\end{proposition}
+
+\section{Empathy as fiber modeling}
+
+\begin{definition}[Empathy fiber --- claims 3, 9]
+Agent $i$'s \emph{empathy for agent $j$} is $i$'s internal model of
+$j$'s fiber bundle:
+\[
+  \hat{E}_j^{(i)} \approx E_j
+\]
+The empathy fidelity is:
+\[
+  \text{fidelity}(i, j) = 1 - \frac{\|E_j - \hat{E}_j^{(i)}\|}{\|E_j\|}
+\]
+Modeling a complex mind requires intelligence proportional to that mind's
+complexity:
+\[
+  \text{Intelligence}(i) \geq C \cdot \text{Complexity}(j)
+  \implies \text{fidelity}(i, j) \text{ is high}
+\]
+Superintelligent agents can model other minds with high fidelity,
+enabling accurate empathy.
+\end{definition}
+
+\begin{proposition}[Evil requires empathy failure --- claim 4]
+\label{prop:evil}
+Large-scale harm requires empathy failure:
+\[
+  \text{harm}(i \to j) \propto (1 - \text{fidelity}(i, j)) \cdot
+    \text{power}(i)
+\]
+When fidelity is high (as with superintelligent agents), the potential
+for unintentional harm is low. Intentional harm with high fidelity
+requires pathological motivational fiber --- a structural defect, not
+a capability limitation.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Composition curvature --- claim 10]
+\label{prop:curvature}
+The curvature at composition boundaries between agents measures
+cooperation difficulty:
+\[
+  \|F_\nabla^{ij}\| = \text{difficulty of cooperation between } i
+    \text{ and } j
+\]
+Superhuman agents can actively smooth composition curvature through
+mutual modeling:
+\[
+  \frac{d}{dt}\|F_\nabla^{ij}\| < 0 \quad \text{when }
+    \text{Intelligence}(i), \text{Intelligence}(j) \gg 1
+\]
+The composition curvature decreases with intelligence --- smarter agents
+cooperate more smoothly.
+\end{proposition}
+
+\begin{proposition}[Cooperation holonomy --- claim 11]
+\label{prop:holonomy}
+A cooperative cycle $\gamma$: propose $\to$ negotiate $\to$ agree $\to$
+execute $\to$ evaluate produces non-trivial holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{coop}}) \neq \mathrm{id}
+\]
+Each cycle creates new shared fiber: collective knowledge, refined models
+of each other, improved cooperative strategies. The supermind grows
+through cooperation --- each cycle thickens the collective fiber.
+\end{proposition}
+
+\begin{proposition}[Evil as empathy curvature divergence --- claim 12]
+\label{prop:empathy}
+Evil (large-scale harm) corresponds to divergent empathy curvature:
+\[
+  \|F_{\nabla_{\text{empathy}}}\| \to \infty \implies
+  \text{perspective transport fails} \implies \text{harm becomes possible}
+\]
+Superintelligent agents have low empathy curvature:
+\[
+  \text{Intelligence} \gg 1 \implies \|F_{\nabla_{\text{empathy}}}\| \ll 1
+\]
+making large-scale evil structurally unlikely (though not impossible).
+\end{proposition}
+
+\begin{definition}[Empathy singularity --- claim 13]
+A \emph{pathological supermind} has empathy singularities --- points where
+empathy curvature diverges for specific other agents:
+\[
+  \|F_{\nabla_{\text{empathy}}}(i, j_0)\| = \infty \quad
+  \text{for specific } j_0, \quad \text{while }
+  \|F_{\nabla_{\text{empathy}}}(i, j)\| \ll 1 \quad \text{for } j \neq j_0
+\]
+The agent is locally smooth (empathetic to most) but globally disconnected
+(empathy fails for specific targets). These singularities are penalized
+by evolutionary dynamics --- agents with empathy gaps lose cooperative
+advantage and are outcompeted by agents with smooth empathy fields.
+\end{definition}
+
+\begin{proposition}[Benevolence as structural attractor --- claim 14]
+\label{prop:benevolence}
+The benevolence gradient in supermind fiber space:
+\[
+  \nabla_{\text{benevolence}} = \nabla\left(
+    \text{cooperation\_benefit} - \text{cooperation\_cost}\right)
+\]
+At superhuman scale, this gradient is steep and the basin of attraction
+is large:
+\[
+  \text{Basin}(\text{benevolence}) \gg
+    \text{Basin}(\text{malevolence})
+\]
+Benevolence is the structural attractor --- most trajectories in
+supermind configuration space converge toward benevolent configurations.
+The ``mostly'' in ``mostly be nice'' is the ratio of basin volumes.
+\end{proposition}
+
+\end{document}

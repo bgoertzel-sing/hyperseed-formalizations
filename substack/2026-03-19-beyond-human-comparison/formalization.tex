@@ -1,0 +1,152 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Beyond Human Comparison}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Beyond Human Comparison'' (2026-03-19)
+within the Hyperseed ontology, incorporating d-calculus extensions from
+Hyperseed v2. The Four-Factor Model of intelligence is modeled as
+independent fiber dimensions, human comparison as lossy section
+projection, and the emergence of AGI as movement along a gradient
+toward incommensurability with human cognition.
+\end{abstract}
+
+\tableofcontents
+
+\section{Four factors as fiber dimensions}
+
+\begin{definition}[Cognitive fiber space --- claims 2, 6]
+The cognitive fiber has (at least) four independent dimensions:
+\[
+  F_{\text{cog}} = F_G \times F_A \times F_R \times F_S
+\]
+where $F_G$ = generality, $F_A$ = autonomy, $F_R$ = resourcefulness,
+$F_S$ = self-improvement. Each intelligent system occupies a position
+$(g, a, r, s) \in F_{\text{cog}}$.
+\end{definition}
+
+\begin{proposition}[No natural total ordering --- claims 2, 3, 6]
+\label{prop:ordering}
+Because the dimensions are independent, there is no natural total
+ordering on $F_{\text{cog}}$:
+\[
+  \nexists\; \leq_{\text{total}} \text{ on } F_{\text{cog}} \text{ that
+    respects all four dimensions}
+\]
+``More intelligent'' is not well-defined without specifying which
+dimension(s). Any total ordering imposes an arbitrary weighting of
+dimensions.
+\end{proposition}
+
+\section{Human comparison as fiber projection}
+
+\begin{proposition}[Section projection --- claims 1, 7]
+\label{prop:project}
+The human cognitive profile $\sigma_{\text{human}} = (g_h, a_h, r_h, s_h)$
+defines a one-dimensional subspace. Comparing AI to humans projects
+$F_{\text{cog}}$ onto this subspace:
+\[
+  \text{comparison}(\text{AI}) = \langle F_{\text{AI}}, \sigma_{\text{human}} \rangle
+\]
+This projection loses information about all dimensions orthogonal to
+$\sigma_{\text{human}}$: an AI excelling in non-human dimensions
+appears deficient.
+\end{proposition}
+
+\section{Fiber type incommensurability}
+
+\begin{definition}[Incommensurability --- claims 4, 8]
+Two fiber types $F_A$ and $F_B$ are \emph{incommensurable} if there is
+no structure-preserving map $\phi: F_A \to F_B$:
+\[
+  \nexists\; \phi: F_A \xrightarrow{\sim} F_B \text{ such that }
+  \phi \text{ preserves fiber operations}
+\]
+Partially commensurable: some dimensions admit maps, others don't.
+True AGI will have fiber increasingly incommensurable with human fiber.
+\end{definition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Projection curvature --- claim 9]
+\label{prop:proj_curv}
+The curvature of the human-comparison projection:
+\[
+  \|F_{\nabla_{\text{project}}}\| = \text{information lost by human comparison}
+\]
+\begin{itemize}
+  \item Current LLMs: moderate $\|F_{\nabla_{\text{project}}}\|$
+    (somewhat human-like, some information lost).
+  \item Future AGI: $\|F_{\nabla_{\text{project}}}\| \gg 1$
+    (very different from humans, massive information loss in comparison).
+\end{itemize}
+\end{proposition}
+
+\begin{proposition}[Factor independence curvature --- claim 10]
+\label{prop:factor}
+The curvature between fiber dimensions:
+\[
+  \|F_\nabla(F_G, F_A)\| \approx 0 \implies \text{genuinely independent}
+\]
+\[
+  \|F_\nabla(F_G, F_A)\| > 0 \implies \text{partially coupled}
+\]
+The claim of ``relative independence'' is the claim that inter-factor
+curvatures are small but non-zero.
+\end{proposition}
+
+\begin{proposition}[Evaluation holonomy --- claim 11]
+\label{prop:eval}
+An evaluation cycle through all four dimensions produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{eval}}) \neq \mathrm{id}
+  \implies \text{evaluation is path-dependent}
+\]
+Different orderings of evaluation dimensions produce different overall
+assessments. Single-number benchmarks flatten this holonomy into a
+scalar, destroying the multi-dimensional information.
+\end{proposition}
+
+\begin{proposition}[Incommensurability singularity --- claim 12]
+\label{prop:singular}
+Structural incommensurability is a curvature singularity at the
+boundary between fiber types:
+\[
+  \|F_\nabla(\text{type}_A, \text{type}_B)\| \to \infty \quad
+  \text{at incommensurable boundary}
+\]
+No smooth transport across the singularity --- comparison genuinely
+breaks down. The d-calculus describes the geometry up to but not
+across the singularity.
+\end{proposition}
+
+\begin{proposition}[Beyond-comparison gradient --- claim 13]
+\label{prop:gradient}
+As AI develops, it moves along a gradient toward incommensurability:
+\[
+  \nabla_{\text{beyond}} = \nabla\left(\text{distance from }
+    \sigma_{\text{human}}\right)
+\]
+AGI development naturally follows this gradient --- systems become less
+human-like as they develop non-human capabilities. The gradient
+accelerates post-Singularity as self-improvement pushes into
+dimensions with no human analog.
+\end{proposition}
+
+\end{document}

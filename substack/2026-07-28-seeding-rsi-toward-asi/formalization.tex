@@ -1,0 +1,212 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Seeding RSI Toward ASI}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-25 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Seeding RSI Toward ASI'' (2026-07-28) within
+the Hyperseed ontology, incorporating d-calculus extensions from Hyperseed
+v2. The OmegaHive loop is modeled as directed type construction with
+integration curvature, evaluation ecology as anti-scalar-collapse sheaf
+with assessment dimensionality curvature, parallel forks as parallel
+transport with fork divergence holonomy, module space as fiber
+decomposition, and the episode protocol as cognitive provenance with
+self-model accuracy curvature.
+\end{abstract}
+
+\tableofcontents
+
+\section{OmegaHive loop as directed type construction}
+
+\begin{theorem}[Cumulative integration --- claims 1--2, 11--12]
+\label{thm:loop}
+Each integrate-evaluate-promote cycle adds a 1-cell to the directed type:
+\[
+  \mathcal{D}^1_{n+1} = \mathcal{D}^1_n \cup \{\gamma_{\text{mechanism}_{n+1}}\}
+\]
+The directed history is genuinely directed (irreversible): you cannot
+cleanly un-integrate a mechanism once its effects have propagated through
+the system.
+
+\textbf{Promote/park/reject = gate.} The evaluation step is a
+provenance-gated checkpoint:
+\[
+  G: \text{mechanism} \to \{\text{promote}, \text{park}, \text{reject}\}
+\]
+Same gate structure as Goals That Grow Back, applied to architectural
+integration. The gate determines which 1-cells are added to the
+canonical directed type.
+
+\textbf{Crossing the gap.} The gap between ``sort of works'' and ``works
+at scale'' is crossed by accumulating verified 1-cells --- each
+integration adds confirmed capability, and the directed path from
+baseline to AGI is built one gate-verified step at a time.
+\end{theorem}
+
+\section{Evaluation ecology as anti-scalar-collapse}
+
+\begin{proposition}[Multi-dimensional assessment --- claims 5--6, 13--14]
+\label{prop:ecology}
+The evaluation ecology is a sheaf $\mathcal{F}_{\text{eval}}$ over the
+space of capabilities:
+\begin{itemize}
+  \item \textbf{Local sections.} Each of the ten environments provides a
+    local section $s_i \in \Gamma(U_i, \mathcal{F}_{\text{eval}})$ ---
+    capability assessment in its domain.
+  \item \textbf{Global section.} The overall assessment is the global
+    section reconstructed via the sheaf condition --- a multi-dimensional
+    capability profile, not a scalar score.
+  \item \textbf{Weakest-link principle.} The assessment is sensitive to
+    the full fiber: weakest capability families count as much as average.
+    This prevents scalar collapse by ensuring no dominant component masks
+    deficiencies.
+\end{itemize}
+\[
+  \text{assessment} \in \prod_{i=1}^{10} \Gamma(U_i, \mathcal{F})
+  \quad \text{(10-dimensional, not scalar)}
+\]
+\end{proposition}
+
+\section{Module Space as fiber decomposition}
+
+\begin{proposition}[Specialist modules --- claims 4, 15]
+\label{prop:modules}
+Each specialist module is an independent fiber component:
+\[
+  F_{\text{system}} = F_{\text{planner}} \oplus F_{\text{prover}} \oplus
+    F_{\text{causal}} \oplus F_{\text{policy}} \oplus \cdots
+\]
+
+\textbf{Earn-your-place criterion.} A module earns its fiber position by
+demonstrably changing the system's downstream behavior:
+\[
+  \Delta(\text{predictions} + \text{decisions} + \text{learning} +
+    \text{transfer} + \text{outcomes}) > \epsilon
+\]
+This is a fiber-level criterion: the module must alter the fiber structure
+of the system's behavior, not merely exist as unused capability.
+\end{proposition}
+
+\section{Parallel forks as parallel transport}
+
+\begin{proposition}[Architecture exploration --- claims 3, 16]
+\label{prop:forks}
+The space of possible hive configurations is a high-dimensional manifold
+$\mathcal{M}_{\text{arch}}$. Each fork transports the initial state along
+a different path:
+\[
+  \{P_{\gamma_i}: F_{\text{baseline}} \to F_{\text{config}_i}\}_{i=1}^n
+\]
+Different integration orders produce different outcomes --- holonomy in
+architecture space:
+\[
+  P_{\gamma_1} \neq P_{\gamma_2} \quad \Longrightarrow \quad
+    \text{path-dependent outcomes}
+\]
+Successful mechanisms propagate across forks --- cross-fiber information
+transfer. The population of forks explores the architecture fiber bundle
+in parallel.
+\end{proposition}
+
+\section{Episode protocol as cognitive provenance}
+
+\begin{proposition}[Self-applied $E_\pi$ --- claims 7--8, 17]
+\label{prop:episode}
+The episode protocol applies $E_\pi$ (provenance bundle) to the system's
+own cognitive history:
+\begin{enumerate}
+  \item \textbf{Pre-commit:} before acting, the system commits predictions
+    $\hat{y} = ($ expected outcome, cost, latency, information gain,
+    risk $)$.
+  \item \textbf{Act:} carry out the consequential action.
+  \item \textbf{Receipt:} environment returns authenticated receipt $y$.
+  \item \textbf{Discrepancy:} $\|\hat{y} - y\| = $ self-model error.
+\end{enumerate}
+Same receipt-and-repair structure as OmegaSelf. The episode protocol
+makes world-model quality, self-knowledge, and planning accuracy
+continuously measurable.
+
+\textbf{Frozen vs developmental.} Frozen trials measure immediate
+decision quality (fixed self-model). Developmental trials measure
+learning dynamics (evolving self-model over time).
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Integration curvature --- claim 18]
+\label{prop:int_curv}
+\[
+  \|F_{\nabla_{\text{integration}}}(\text{mechanism}_i)\| =
+    \text{capability change from integrating mechanism } i
+\]
+High curvature: the mechanism significantly changes system behavior
+(worth promoting). Low curvature: adds little (park or reject). The
+d-calculus curvature guides the promote/park/reject decision quantitatively.
+\end{proposition}
+
+\begin{proposition}[Assessment dimensionality curvature --- claim 19]
+\label{prop:assess_curv}
+\[
+  \|F_\nabla(\text{env}_i, \text{env}_j)\| = \text{independence of
+    assessment dimensions}
+\]
+High curvature: environments measure genuinely different capabilities
+(good ecology --- high-dimensional assessment). Low curvature:
+environments measure the same thing (redundant --- bad ecology). Design
+goal: high curvature between all environment pairs.
+\end{proposition}
+
+\begin{proposition}[Fork divergence holonomy --- claim 20]
+\label{prop:fork_hol}
+A loop through the fork exploration cycle $\gamma$: fork $\to$ integrate
+differently $\to$ compare $\to$ merge insights $\to$ fork produces
+holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{fork}}) = \text{path-dependence
+    magnitude in architecture space}
+\]
+High holonomy: integration order matters a lot (careful exploration
+needed). Low holonomy: order doesn't matter much (any order works).
+\end{proposition}
+
+\begin{proposition}[Self-model accuracy curvature --- claim 21]
+\label{prop:self_curv}
+\[
+  \|F_\nabla(\text{predicted}, \text{actual})\| = \text{self-model error}
+\]
+Low curvature: predictions closely track outcomes (accurate self-model).
+High curvature: predictions diverge (poor self-model --- needs
+improvement). The episode protocol makes this curvature continuously
+measurable.
+\end{proposition}
+
+\begin{proposition}[Calibration curvature --- claim 22]
+\label{prop:calib_curv}
+\[
+  \|F_\nabla(\text{narrow\_baseline}, \text{general\_system})\| =
+    \text{generality premium}
+\]
+High curvature: general system substantially exceeds narrow baseline
+(the test discriminates generality --- good calibration). Low curvature:
+narrow baseline nearly matches (test doesn't require generality --- poor
+discriminator). The narrow baseline establishes the ceiling for
+non-general solutions.
+\end{proposition}
+
+\end{document}

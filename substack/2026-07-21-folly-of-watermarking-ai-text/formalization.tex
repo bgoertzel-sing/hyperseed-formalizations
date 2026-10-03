@@ -1,0 +1,212 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  The Folly of Statistically Watermarking AI-Generated Text}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-25 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``The Folly of Statistically Watermarking
+AI-Generated Text'' (2026-07-21) within the Hyperseed ontology,
+incorporating d-calculus extensions from Hyperseed v2. Statistical
+watermarking is modeled as 0-cell detection (observable property) vs
+1-cell provenance (directed history) with watermark-provenance curvature,
+the watermarking arms race as a centralizing cocycle with concentration
+holonomy, the split ecosystem as fiber bundle fracture with boundary
+curvature, absence-as-guilt as detection-without-provenance with false
+inference curvature, and removal pathways as holonomy measurements
+of watermark degradation.
+\end{abstract}
+
+\tableofcontents
+
+\section{Watermark as 0-cell detection vs 1-cell provenance}
+
+\begin{theorem}[Detection vs provenance --- claims 1--5, 21]
+\label{thm:0cell_1cell}
+A statistical watermark operates on 0-cell properties of the current
+text --- statistical patterns in word choice at this moment:
+\[
+  W: \text{text} \to [0, 1] \quad \text{(0-cell observable property)}
+\]
+Provenance is a 1-cell property --- the directed path through which
+the text came to exist:
+\[
+  \pi: \text{text} \mapsto \gamma \in \mathcal{D}^1
+  \quad \text{(directed path: authorship, reasoning, editing, sources)}
+\]
+The watermark captures which sampler produced the tokens, not the causal
+history of the ideas. Two texts with identical content but different
+generation paths are indistinguishable in directed history --- the
+watermark only marks one path, not the content.
+
+\textbf{Structural limitations:} Constrained factual writing escapes
+(no dice to load when there's one right way). Short passages lack
+statistical evidence. The watermark is not a mark of origin but a signal
+of unreflective use of one company's service.
+\end{theorem}
+
+\section{Five removal pathways}
+
+\begin{proposition}[Removal taxonomy --- claims 6--11]
+\label{prop:removal}
+Five pathways from easiest to hardest:
+\begin{enumerate}
+  \item \textbf{Paraphrase (closed API):} replace enough word choices;
+    no key knowledge needed. Watermark destroyed by surface rewriting.
+  \item \textbf{Sampler swap (open weights):} swap in standard sampler;
+    whoever controls inference controls downstream.
+  \item \textbf{Retraining (weight-baked):} capability-preserving
+    retraining on clean data. Harder but feasible for motivated actor.
+  \item \textbf{Reasoning-path modification:} change how the model
+    thinks, not just how it talks. Hardest category.
+  \item \textbf{Detector feedback:} adaptive optimization against
+    detector. Enduring arms race.
+\end{enumerate}
+\textbf{Radioactivity decay:} student model trained on watermarked
+teacher absorbs faint traces, but reliance on fresh data, RL, or
+preference tuning rewrites inherited biases.
+\end{proposition}
+
+\section{Arms race as centralizing cocycle}
+
+\begin{proposition}[Centralizing ratchet --- claims 12, 22]
+\label{prop:ratchet}
+Each escalation step is a transition function in a centralizing cocycle:
+\[
+  g_1 \circ g_2 \circ \cdots \circ g_n \to \text{text production monopoly}
+\]
+\begin{itemize}
+  \item $g_1$: better watermarks (individually reasonable)
+  \item $g_2$: better scrubbers (adversary response)
+  \item $g_3$: more intrusive watermarking (escalation)
+  \item $g_4$: detector secrecy (security through obscurity)
+  \item $g_5$: trusted-computing lockdown (hardware control)
+\end{itemize}
+Each step is individually defensible; the composition concentrates control
+over text production into fewer hands. Same structure as the Benevolent
+Throttling ratchet, applied to text rather than model access.
+\end{proposition}
+
+\section{Split ecosystem as fiber bundle fracture}
+
+\begin{proposition}[Class structure in text --- claims 17--18, 23]
+\label{prop:fracture}
+The compliance perimeter fractures the text production bundle into two
+disconnected fibers:
+\[
+  F_{\text{text}} = F_{\text{compliant}} \sqcup F_{\text{non-compliant}}
+\]
+\begin{itemize}
+  \item $F_{\text{compliant}}$: certified models, signed runtimes,
+    watermarked outputs --- full institutional oversight.
+  \item $F_{\text{non-compliant}}$: open models, modified derivatives,
+    locally run systems --- invisible to institutional detection.
+\end{itemize}
+This creates a class structure: ``approved'' text (from the controlled
+fiber) vs ``suspect'' text (from the uncontrolled fiber). The
+classification is structural (which fiber produced it), not quality-based
+(what the text says).
+\end{proposition}
+
+\section{Absence-as-guilt and cryptographic provenance}
+
+\begin{proposition}[Broken inference --- claims 13--16, 24--25]
+\label{prop:absence}
+\textbf{Absence-as-guilt:} treating absence of watermark as evidence of
+suspicion is the same error as treating absence of KYC as criminal intent:
+\[
+  \neg\text{marker} \not\Rightarrow \text{guilt}
+\]
+Absence is a 0-cell observable; guilt is a 1-cell property. The inference
+from 0-cell absence to 1-cell judgment is structurally invalid.
+
+\textbf{Cryptographic provenance:} genuine 1-cell tracking. A
+cryptographic signature records that a specific entity endorsed this
+content at a specific time --- a point on the directed path:
+\[
+  \text{sig}(e, t, \text{content}) \in \mathcal{D}^1
+  \quad \text{(genuine 1-cell data)}
+\]
+Positive evidence only: signatures prove; absence proves nothing.
+OpenWater provides decentralized 1-cell infrastructure without centralized
+control, compliance perimeters, or absence-as-guilt.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Watermark-provenance curvature --- claim 26]
+\label{prop:wp_curv}
+\[
+  \|F_\nabla(\text{watermark}, \text{provenance})\| = \text{provenance
+    information loss from using watermarks instead of signatures}
+\]
+High curvature: watermarks capture almost none of actual provenance (the
+real situation --- a watermark tells about the sampler, not the ideas).
+Low curvature: watermarks track provenance well (hypothetical only).
+\end{proposition}
+
+\begin{proposition}[Arms race holonomy --- claim 27]
+\label{prop:race_hol}
+A loop through the watermark arms race cycle $\gamma$: better watermark
+$\to$ better scrubber $\to$ more intrusive watermark $\to$ detection
+feedback $\to$ escalation produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{watermark\_race}}) =
+    \text{control concentration per escalation cycle}
+\]
+Increasing holonomy: each cycle concentrates more control (the article's
+prediction). The d-calculus holonomy tracks the centralizing tendency.
+\end{proposition}
+
+\begin{proposition}[Ecosystem fracture curvature --- claim 28]
+\label{prop:frac_curv}
+\[
+  \|F_\nabla(\text{compliant}, \text{non-compliant})\| =
+    \text{sharpness of the ecosystem split}
+\]
+High curvature: sharp boundary (binary in/out of the certified ecosystem).
+Low curvature: gradual spectrum (cryptographic provenance --- anyone can
+sign, no certification required). Watermarking produces high boundary
+curvature; cryptographic provenance produces low.
+\end{proposition}
+
+\begin{proposition}[Absence-as-guilt curvature --- claim 29]
+\label{prop:ag_curv}
+\[
+  \|F_\nabla(\text{absence}, \text{guilt})\| = \text{false inference severity}
+\]
+High curvature: absence of marker strongly predicts guilt in the system's
+judgment (the watermarking regime). Zero curvature: absence is
+informationless (the correct Bayesian stance). Design goal: zero.
+\end{proposition}
+
+\begin{proposition}[Removal pathway holonomy --- claim 30]
+\label{prop:removal_hol}
+Each removal pathway $i$ (paraphrase, sampler swap, retraining,
+reasoning-path, detector feedback) produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{removal}_i}) =
+    \text{watermark degradation per removal attempt}
+\]
+High holonomy: watermark degrades rapidly (easy removal --- paraphrase,
+sampler swap). Low holonomy: watermark persists (hard removal ---
+reasoning-path). The d-calculus provides a unified metric for comparing
+pathway effectiveness.
+\end{proposition}
+
+\end{document}

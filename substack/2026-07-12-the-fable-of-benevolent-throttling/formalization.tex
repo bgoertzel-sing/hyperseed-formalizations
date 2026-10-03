@@ -1,0 +1,206 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  The Fable of Benevolent Throttling}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-23 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``The Fable of Benevolent Throttling''
+(2026-07-12) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. Safety-competitive indistinguishability
+is modeled as cocycle ambiguity with zero distinguishability curvature,
+the incentive ratchet as a centralizing cocycle with concentration
+holonomy, government-corporate fusion as fiber entanglement with
+entanglement curvature, and decentralization as a broken monopoly
+cocycle with a visibility gradient.
+\end{abstract}
+
+\tableofcontents
+
+\section{Safety-competitive indistinguishability as cocycle ambiguity}
+
+\begin{theorem}[Cocycle ambiguity --- claims 1--3, 11--12]
+\label{thm:ambiguity}
+Let $g_{\text{safety}}: \text{capability} \to \text{access}$ be the
+transition function motivated by safety (restrict dangerous capabilities)
+and $g_{\text{competitive}}: \text{capability} \to \text{access}$ the
+transition function motivated by competition (restrict competitive
+capabilities). The article observes:
+\[
+  g_{\text{safety}} = g_{\text{competitive}}
+\]
+The same classifier, the same throttle, the same moat. An outside
+observer sees only the transition function, not the generating fiber.
+This is a \emph{cocycle ambiguity}: the cocycle does not uniquely
+determine which fiber generated it.
+
+The indistinguishability is \emph{structural}, not intentional. Even
+if every individual actor genuinely acts on safety grounds, the
+structural outcome is identical to competitive throttling. Intent
+is irrelevant because the cocycle is the same.
+\end{theorem}
+
+\section{Incentive ratchet as centralizing cocycle}
+
+\begin{proposition}[Centralizing composition --- claims 4, 7--8, 13--14]
+\label{prop:ratchet}
+Each safety restriction $g_i$ is individually defensible. The composition
+is centralizing:
+\[
+  g_1 \circ g_2 \circ \cdots \circ g_n \to \text{monopoly}
+\]
+Each $g_i$ satisfies the cocycle condition with the previous restrictions
+(each is consistent with the existing policy framework). But the holonomy
+of the composed cycle is centralizing: after traversing all restrictions,
+control has concentrated.
+
+\textbf{No villain required.} This is the emergent-evil pattern from
+``Seven Flavors'': each actor follows local incentives (legal liability
+reduction, safety compliance, competitive positioning); the global
+outcome is concentration. The centralizing cocycle is an emergent
+property, not a conspiracy.
+
+\textbf{Ratchet endpoint.} The most powerful cognitive technology in
+history administered by a handful of companies and one or two governments
+--- a frozen directed type maintained by the accumulated ratchet.
+\end{proposition}
+
+\section{Government-corporate fusion as fiber entanglement}
+
+\begin{proposition}[Non-separable governance fiber --- claims 5--6, 17]
+\label{prop:entanglement}
+Two distinct governance fibers:
+\begin{itemize}
+  \item \textbf{Corporate governance fiber} $F_{\text{corp}}$: internal
+    policies, safety reviews, deployment decisions. Determined by
+    corporate incentives (profit, reputation, liability).
+  \item \textbf{State security fiber} $F_{\text{state}}$: export controls,
+    national interest, security policy. Determined by state incentives
+    (military advantage, geopolitical positioning).
+\end{itemize}
+The export-control directive entangles these fibers:
+\[
+  F_{\text{joint}} \not\cong F_{\text{corp}} \oplus F_{\text{state}}
+\]
+Corporate deployment decisions become state security decisions and vice
+versa. The two fibers can no longer be separated --- a non-separable
+joint fiber where corporate and state interests are structurally
+intertwined.
+\end{proposition}
+
+\section{Decentralization as broken monopoly cocycle}
+
+\begin{proposition}[Structural remedy --- claims 9--10, 15--16]
+\label{prop:decentral}
+Open systems break the centralizing ratchet:
+\begin{itemize}
+  \item \textbf{Traversable transitions.} Open weights make the
+    transition functions (capability $\to$ deployment) traversable
+    by anyone. No single entity controls the transitions.
+  \item \textbf{Visible slippage.} In an open system, the fiber
+    structure is inspectable. If $g_{\text{safety}} \neq
+    g_{\text{competitive}}$ (which they should be for honest safety),
+    this difference is detectable. In a closed system, the difference
+    is hidden behind proprietary access.
+\end{itemize}
+Open systems don't prevent safety measures --- they prevent the slippage
+from safety to moat by making the slippage visible.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Cocycle ambiguity curvature --- claim 18]
+\label{prop:ambig_curv}
+\[
+  \|F_\nabla(\text{safety}, \text{competitive})\| = \text{distinguishability
+    of safety from competitive throttling}
+\]
+Zero curvature: safety and competitive throttling are perfectly
+indistinguishable (the actual situation --- identical classifiers,
+identical throttles). Nonzero curvature: the two are distinguishable
+(different classifiers, different throttle points). The article argues
+this curvature is zero in current centralized systems.
+\end{proposition}
+
+\begin{proposition}[Ratchet holonomy --- claim 19]
+\label{prop:ratchet_hol}
+A loop through the ratchet cycle $\gamma$: safety concern $\to$
+restriction $\to$ concentration $\to$ new capability $\to$ new concern
+produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{ratchet}}) = \text{concentration
+    gain per ratchet turn}
+\]
+\begin{itemize}
+  \item Increasing holonomy: each turn concentrates more than the previous
+    (accelerating monopolization --- positive feedback).
+  \item Constant holonomy: steady ratchet (linear concentration).
+  \item The mechanism produces monotonically non-decreasing concentration
+    --- each turn is individually defensible but the holonomy accumulates.
+\end{itemize}
+\end{proposition}
+
+\begin{proposition}[Corporate-state entanglement curvature --- claim 20]
+\label{prop:entangle_curv}
+\[
+  \|F_\nabla(\text{corporate}, \text{state})\| = \text{degree of
+    government-corporate fusion}
+\]
+Low curvature: fibers approximately independent (healthy separation of
+corporate and government decision-making). High curvature: fibers
+strongly entangled (each corporate decision has state security
+implications, each state decision has corporate governance implications).
+The export-control directive sharply increased this curvature.
+\end{proposition}
+
+\begin{proposition}[Visibility gradient --- claim 21]
+\label{prop:vis_grad}
+\[
+  \nabla_{\text{visibility}} = \nabla\left(\text{fiber\_inspectability}
+    \times \text{transition\_transparency} \times
+    \text{cocycle\_auditability}\right)
+\]
+\begin{itemize}
+  \item \textbf{Open systems:} flat high visibility (all components
+    inspectable, no hidden transitions, auditable cocycle).
+  \item \textbf{Closed systems:} steep visibility gradient (some
+    components inspectable, key transitions hidden, cocycle opaque).
+\end{itemize}
+The design goal: maximize visibility uniformly --- make the slippage
+from safety to moat visible by construction.
+\end{proposition}
+
+\begin{proposition}[Ratchet reversibility curvature --- claim 22]
+\label{prop:rev_curv}
+\[
+  \|F_{\nabla_{\text{reversibility}}}(\text{turn}_i)\| = \text{difficulty
+    of undoing restriction } i
+\]
+\begin{itemize}
+  \item Low curvature: restriction easily reversible (healthy policy
+    --- can be adjusted when evidence changes, no entrenched
+    dependencies).
+  \item High curvature: restriction nearly irreversible (legal precedent,
+    infrastructure dependency, regulatory capture, institutional inertia).
+\end{itemize}
+The ratchet mechanism produces increasing reversibility curvature:
+each turn becomes harder to undo than the previous, because later
+restrictions build on (and depend on) earlier ones.
+\end{proposition}
+
+\end{document}

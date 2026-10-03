@@ -1,0 +1,141 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  OpenBGI Is Building Its Initial Network}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``OpenBGI Is Building Its Initial Network''
+(2026-05-07) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. The decentralized network is modeled as a
+distributed fiber bundle with open-protocol transition functions,
+reputation-weighted governance as fiber-weighted governance, and
+structural openness as maximized fork-ability gradient.
+\end{abstract}
+
+\tableofcontents
+
+\section{Distributed fiber bundle}
+
+\begin{definition}[Network as bundle --- claims 1, 6]
+OpenBGI is a distributed fiber bundle:
+\[
+  E_{\text{OpenBGI}} = \bigcup_{i \in \text{nodes}} E_i
+\]
+where each node $i$ contributes fiber $E_i$ (cognitive capability, data,
+compute, expertise). The bundle structure ensures:
+\begin{itemize}
+  \item No single node's fiber dominates the bundle.
+  \item The bundle's capability exceeds any individual node.
+  \item The base is distributed across jurisdictions and organizations.
+\end{itemize}
+\end{definition}
+
+\section{Open protocols as transition functions}
+
+\begin{proposition}[Protocol mediation --- claims 3, 5, 7]
+\label{prop:protocols}
+Open protocols provide universal transition functions:
+\[
+  \phi_{ij}: E_i|_{U_{ij}} \to E_j|_{U_{ij}}
+\]
+mediating fiber composition between any two nodes. Properties:
+\begin{itemize}
+  \item \textbf{Universal:} any node can compose with any other.
+  \item \textbf{Open:} protocols are public, forkable, modifiable.
+  \item \textbf{Interoperable:} transition functions compose transitively.
+\end{itemize}
+\end{proposition}
+
+\section{Reputation-weighted governance}
+
+\begin{proposition}[Fiber-weighted governance --- claims 4, 8]
+\label{prop:governance}
+Governance weight is proportional to fiber contribution:
+\[
+  w_i = \frac{\text{contribution}(E_i)}{\sum_j \text{contribution}(E_j)}
+\]
+where contribution measures code, data, research, and compute provided
+to the network. This resists capital gravity (the OpenAI failure mode)
+because governance power derives from demonstrated capability, not
+financial stake.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Network diversity curvature --- claim 9]
+\label{prop:diversity}
+\[
+  \|F_\nabla(E_i, E_j)\| = \text{structural difference between nodes}
+\]
+High inter-node curvature: diverse network with different approaches,
+capabilities, and perspectives. Low curvature: homogeneous network with
+limited diversity benefit. A healthy network maximizes average inter-node
+curvature.
+\end{proposition}
+
+\begin{proposition}[Protocol universality curvature --- claim 10]
+\label{prop:protocol}
+\[
+  \|F_{\nabla_{\text{protocol}}}\| = \text{friction in cross-node
+    fiber composition}
+\]
+Well-designed protocols minimize this curvature, enabling smooth
+interoperability. Poorly designed protocols create high curvature ---
+friction that prevents effective composition of different nodes' fiber.
+\end{proposition}
+
+\begin{proposition}[Governance holonomy --- claim 11]
+\label{prop:holonomy}
+The governance cycle $\gamma$: propose $\to$ deliberate $\to$ decide $\to$
+implement $\to$ evaluate $\to$ propose produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{gov}}) =
+    \text{governance evolution per cycle}
+\]
+\begin{itemize}
+  \item Healthy: governance adapts to network growth and changing needs
+    while maintaining structural openness.
+  \item Pathological: governance drifts toward capture by a subset of
+    nodes (the OpenAI pattern).
+\end{itemize}
+\end{proposition}
+
+\begin{proposition}[Anchor independence curvature --- claim 12]
+\label{prop:anchor}
+\[
+  \|F_\nabla(\text{OpenBGI}, \text{SingularityNET})\|(t) \to 0
+    \quad \text{as } t \to \infty
+\]
+The design goal: decreasing coupling to the founding anchor over time.
+This is the structural opposite of the OpenAI pattern, where
+$\|F_\nabla(\text{OpenAI}, \text{Microsoft})\|$ increased monotonically.
+\end{proposition}
+
+\begin{proposition}[Fork-ability gradient --- claim 13]
+\label{prop:fork}
+\[
+  \nabla_{\text{fork}} = \nabla\left(\text{protocol\_openness} \times
+    \text{data\_openness} \times \text{code\_openness}\right)
+\]
+OpenBGI maximizes this gradient across all components. Fork-ability is
+the structural foundation of organizational non-self: when every
+component can be forked, no component has existential privilege, and
+the network as a whole exhibits non-self properties.
+\end{proposition}
+
+\end{document}

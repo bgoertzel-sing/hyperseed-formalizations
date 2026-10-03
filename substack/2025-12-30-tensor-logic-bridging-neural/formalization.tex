@@ -1,0 +1,239 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Tensor Logic for Bridging Neural and Symbolic AI}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the intellectual structure of Ben Goertzel's Substack article
+``Tensor Logic for Bridging Neural and Symbolic AI'' (2025-12-16) within
+the Hyperseed ontology. The article describes how tensor logic bridges
+symbolic reasoning and neural networks by representing logical databases
+as sparse tensors and inference rules as tensor contractions. Key mappings:
+logic-as-tensor as fiber-as-matrix, the integration problem as fiber-base
+interface gap, tensor contraction as fiber transport, PLN truth values as
+fiber density, unified substrate as fiber-base unification, and gradient
+flow as differentiable fiber.
+\end{abstract}
+
+\tableofcontents
+
+%% =================================================================
+\section{Fiber-as-matrix: logic is linear algebra}
+\label{sec:fiber}
+%% =================================================================
+
+\begin{theorem}[Logic as tensor operations --- claims 5--9, 26]
+\label{thm:logic}
+The fundamental observation: logical databases are sparse tensors, and
+logical rules are tensor contractions. A relation $P(x,y)$ is a sparse
+Boolean matrix $P_{xy}$. A rule like ``$P(x,y) \wedge P(y,z) \Rightarrow
+G(x,z)$'' becomes matrix multiplication:
+\[
+  G_{xz} = H\left(\sum_y P_{xy} \cdot P_{yz}\right)
+\]
+where $H$ is a threshold function. This is exactly what GPUs excel at.
+
+In Hyperseed terms, this is \emph{fiber-as-matrix}: the fiber (logical
+structure --- relations, rules, inference chains) can be represented as
+a tensor (matrix), enabling GPU-accelerated fiber operations:
+\[
+  F_{\text{logic}} \xrightarrow{\text{encode}} T_{\text{sparse}}
+  \xrightarrow{\text{GPU}} T'_{\text{sparse}}
+  \xrightarrow{\text{decode}} F'_{\text{logic}}
+\]
+
+The fiber's discrete relational structure maps to sparse tensor entries;
+fiber transport (inference) maps to tensor contractions. This isn't a
+notational trick --- it means logical reasoning can genuinely run on GPU
+hardware at GPU speeds, using the same kernels that power deep learning.
+
+The consequence: neural computations and logical inference can be seamlessly
+mixed in the same computational graph. Both are tensor operations; the
+distinction between ``neural'' and ``logical'' dissolves at the hardware
+level.
+\end{theorem}
+
+%% =================================================================
+\section{Fiber-base interface: the integration problem}
+\label{sec:interface}
+%% =================================================================
+
+\begin{proposition}[Integration problem --- claims 1--4, 27]
+\label{prop:integration}
+Symbolic systems love discrete structures (graphs, trees, logical formulas).
+Neural networks love dense matrices and tensors. When you build hybrid
+systems, you get awkward translation layers and serialization bottlenecks.
+
+In Hyperseed terms, this is a \emph{fiber-base interface gap}: neural
+networks operate on the base (continuous tensor space) while logic operates
+on the fiber (discrete relational structure). They represent the same
+underlying cognitive structure in incompatible forms:
+\[
+  F_{\text{discrete}} \neq B_{\text{continuous}}
+  \quad \text{but} \quad
+  F_{\text{discrete}} \xrightarrow{\text{tensor logic}}
+  T_{\text{compatible with } B}
+\]
+
+Tensor logic bridges the gap by representing the fiber in base-compatible
+form (tensors). The fiber retains its logical structure but gains
+base-compatible representation, eliminating the translation bottleneck.
+
+The Hyperon project (MORK metagraph database, PeTTa/MM2 MeTTa interpreters,
+PRIMUS cognitive architecture) needs this bridge: all components need
+efficient neural-symbolic interoperation, which tensor logic provides.
+\end{proposition}
+
+%% =================================================================
+\section{Fiber transport as tensor contraction}
+\label{sec:transport}
+%% =================================================================
+
+\begin{theorem}[Tensor contraction = fiber transport --- claims 6--7, 28]
+\label{thm:transport}
+Inference rules as tensor contractions are fiber transport operations in
+matrix form. Applying a rule ``if $P(x,y)$ then $Q(x)$'' is transporting
+fiber content from the $P$-fiber to the $Q$-fiber via contraction:
+\[
+  Q_x = \sum_y P_{xy} \cdot w_{y} \qquad \text{(fiber transport)}
+\]
+
+The Einstein summation (einsum) notation provides a general language for
+expressing arbitrary fiber transport patterns. Any inference rule ---
+no matter how complex --- can be expressed as an einsum operation over
+the relevant tensors.
+
+This connects to the d-calculus: fiber transport in the d-calculus
+(connection maps that move meaning along paths) corresponds to tensor
+contractions that propagate truth values along inference paths. The
+d-calculus provides the geometric interpretation; tensor logic provides
+the computational implementation.
+\end{theorem}
+
+%% =================================================================
+\section{Fiber density: PLN truth values}
+\label{sec:pln}
+%% =================================================================
+
+\begin{proposition}[PLN as tensor logic --- claims 11, 15--18, 29]
+\label{prop:pln}
+PLN naturally fits tensor logic. The key extension: from Boolean (0/1)
+to real-valued truth values for uncertain reasoning:
+\[
+  T_{xy} = (s_{xy}, c_{xy}) \in [0,1]^2
+  \quad \text{(strength, confidence)}
+\]
+
+In Hyperseed terms, PLN's (strength, confidence) truth values correspond
+to \emph{fiber density}: how much evidential weight the fiber carries at
+each point. Boolean tensors give binary fiber (present/absent); real-valued
+tensors give graded fiber (degrees of evidence).
+
+PLN inference rules (deduction, induction, abduction, revision) can all
+be expressed as tensor operations:
+\begin{itemize}
+\item \textbf{Deduction:} matrix multiplication with truth-value formulas.
+\item \textbf{Revision:} weighted averaging of tensor entries.
+\item \textbf{Induction/abduction:} transposed contractions with appropriate
+  truth-value formulas.
+\end{itemize}
+
+This enables GPU-accelerated PLN reasoning --- orders of magnitude faster
+than sequential symbolic PLN execution. For large knowledge bases with
+millions of atoms, the speedup is transformative.
+\end{proposition}
+
+%% =================================================================
+\section{Fiber-base unification: unified substrate}
+\label{sec:unification}
+%% =================================================================
+
+\begin{theorem}[Unified substrate --- claims 19--22, 30--31]
+\label{thm:unified}
+Tensor logic provides a \emph{unified computational substrate}: both neural
+and logical operations are tensor operations, running on the same hardware.
+
+In Hyperseed terms, this is \emph{fiber-base unification}: the distinction
+between fiber (logic) and base (neural) dissolves when both are represented
+as tensor operations:
+\[
+  F_{\text{logic}} \cong T_{\text{logical}} \quad \text{and} \quad
+  B_{\text{neural}} \cong T_{\text{neural}} \quad \implies \quad
+  F \cup B \subset \text{Tensor}
+\]
+
+\textbf{Gradient flow = differentiable fiber:} If logical operations are
+tensor operations, gradients can flow through logical inference. The fiber
+becomes differentiable --- its structure can be optimized by gradient descent:
+\[
+  \nabla_\theta \mathcal{L}(\text{inference}(T_\theta))
+  \quad \text{exists and is computable}
+\]
+
+This enables learning of logical rules from data: the fiber structure
+itself becomes learnable, not just the fiber content.
+
+\textbf{Attention as inference:} Transformer attention mechanisms can be
+seen as logical inference in tensor form. The attention matrix $A_{ij}$
+resembles a soft relational tensor; the attention operation resembles
+tensor-logic inference. This connects transformers to logic at the
+tensor level, suggesting that transformer ``reasoning'' is a form of
+soft tensor-logic inference.
+
+\textbf{Sparse optimization:} Logical tensors are typically very sparse
+(most entities aren't related). Sparse tensor optimizations are crucial
+for practical performance --- dense representations would waste memory
+and compute on zero entries.
+\end{theorem}
+
+%% =================================================================
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Hyperseed v2} (2026-03-05): framework. Tensor logic
+  provides a computational implementation of the Hyperseed fiber
+  bundle --- the fiber's abstract structure gets a concrete tensor
+  representation.
+\item \textbf{Evidence Is to Logic What Energy Is to Physics} (2026-03-10):
+  evidence conservation. Evidence conservation in quantales maps to
+  tensor-norm conservation in tensor logic --- the total ``weight''
+  of evidence is preserved under tensor contractions.
+\item \textbf{OpenClaw: Amazing Hands for a Brain} (2026-02-03):
+  brain improvement. Tensor logic is a fiber (brain) improvement,
+  not a base (hands) improvement --- it makes the reasoning engine
+  faster and more capable, not just the tool interface.
+\item \textbf{Seeding RSI} (2026-07-28): architecture. Tensor logic
+  as a key architectural component of Hyperon's reasoning engine.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Tensor logic as universal fiber representation]
+Conjecture: any fiber structure that can be expressed in first-order
+(or higher-order) logic can be faithfully represented as a sparse
+tensor, and any fiber transport operation can be expressed as a
+tensor contraction.
+
+If this conjecture holds, tensor logic provides a \emph{universal}
+computational representation for Hyperseed fibers --- every fiber
+structure has a tensor representation, and every fiber operation has
+a tensor implementation. The Hyperseed ontology's abstract fiber
+bundles become concrete tensor bundles, computable on GPU hardware.
+\end{conjecture}
+
+\end{document}

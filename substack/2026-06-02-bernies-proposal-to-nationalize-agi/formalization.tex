@@ -1,0 +1,179 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Bernie's Proposal to Nationalize AGI}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-22 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Bernie's Proposal to Nationalize AGI''
+(2026-06-02) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. Centralized governance (corporate or
+government) is modeled as trivial fiber bundle with pathologically zero
+curvature, decentralized governance as non-trivial fiber with positive
+curvature, regulatory capture as corrupted parallel transport with
+measurable holonomy, and international sovereignty conflicts as a
+topological obstruction to global trivialization.
+\end{abstract}
+
+\tableofcontents
+
+\section{Centralization as trivial fiber}
+
+\begin{definition}[Trivial governance fiber --- claims 1--2, 7]
+Both corporate and government ownership produce trivial fiber:
+\[
+  E_{\text{governance}} \cong B \times \{p\}
+\]
+where $p$ is the single controlling entity. The fiber at every base
+point (every decision, deployment, user context) is the same single
+point --- no internal governance structure, no diversity of input.
+
+Nationalization is a section swap:
+\[
+  \sigma_{\text{corporate}} \mapsto \sigma_{\text{government}}
+\]
+but the bundle topology is unchanged: $E \cong B \times \{p\}$ for
+both. The problem is in the fiber topology (trivial), not in which
+section is selected.
+\end{definition}
+
+\section{Decentralization as non-trivial fiber}
+
+\begin{proposition}[Non-trivial governance --- claims 5--6, 8--9]
+\label{prop:decentral}
+Distributed governance creates a non-trivial bundle:
+\[
+  E_{\text{governance}} \not\cong B \times F
+\]
+globally, though locally trivializable over each participant's
+domain. The fiber dimension at each base point measures governance
+diversity:
+\[
+  \dim(F_b) = \text{number of independent governance inputs at } b
+\]
+
+Transition functions between local trivializations encode
+coordination protocols:
+\[
+  g_{\alpha\beta}: U_\alpha \cap U_\beta \to \text{Aut}(F)
+\]
+The ASI Alliance's open protocols ARE these transition functions ---
+they define how the globally non-trivial bundle is glued together
+from locally simple contributions.
+\end{proposition}
+
+\section{Regulatory capture as fiber corruption}
+
+\begin{proposition}[Corrupted transport --- claims 3, 10]
+\label{prop:capture}
+Regulatory capture is a pathological connection on the governance
+bundle: base-point changes (political power shifts) produce fiber
+changes (regulatory intent shifts) through non-legitimate channels:
+\[
+  \nabla_{\text{captured}} \neq \nabla_{\text{intended}}
+\]
+Parallel transport along the intended connection preserves
+regulatory intent. Parallel transport along the captured connection
+distorts it: industry-friendly regulation emerges from consumer-protection
+intent.
+\end{proposition}
+
+\section{International coordination as non-trivializable bundle}
+
+\begin{proposition}[Topological obstruction --- claims 4, 11]
+\label{prop:sovereignty}
+The bundle of national interests has non-trivial topology:
+\[
+  c_1(E_{\text{sovereignty}}) \neq 0
+\]
+No single nation's ownership can serve as a global section ---
+competing sovereignty claims, different value systems, and different
+development stages create a topological obstruction to
+trivialization. Nationalization tries to trivialize a
+non-trivializable bundle. Decentralization works because it doesn't
+require trivialization --- it works with the non-trivial topology.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Centralization curvature --- claim 12]
+\label{prop:central_curv}
+\[
+  \|F_{\nabla_{\text{centralized}}}\| = 0
+\]
+Trivial bundle has zero curvature. This seems good (flat = simple)
+but is pathological: it means zero governance structure, zero checks
+and balances, zero diversity of perspective. All transport is trivial
+because there's only one section to transport.
+\end{proposition}
+
+\begin{proposition}[Decentralization curvature --- claim 13]
+\label{prop:decentral_curv}
+\[
+  \|F_{\nabla_{\text{decentralized}}}\| > 0
+\]
+Positive curvature indicates genuine governance structure: different
+sections, non-trivial transition functions, real coordination
+requirements. The curvature measures governance richness --- how much
+real deliberation is needed, how many perspectives must be reconciled.
+\end{proposition}
+
+\begin{proposition}[Capture holonomy --- claim 14]
+\label{prop:capture_hol}
+A regulatory cycle $\gamma$: propose $\to$ legislate $\to$ implement
+$\to$ evaluate $\to$ propose produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{regulation}}) =
+    \text{regulatory drift per cycle}
+\]
+\begin{itemize}
+  \item Large holonomy: captured system (regulation drifts far from
+    intent each cycle, converging to industry preferences).
+  \item Small holonomy: well-governed system (regulation stays close
+    to intent, genuine democratic accountability).
+  \item Zero holonomy: unrealistic ideal (perfect implementation,
+    no drift whatsoever).
+\end{itemize}
+\end{proposition}
+
+\begin{proposition}[Sovereignty obstruction class --- claim 15]
+\label{prop:sovereignty_class}
+\[
+  c_1(E_{\text{sovereignty}}) \neq 0
+\]
+The nonzero first characteristic class is the d-calculus formulation
+of why nationalization fails internationally. The sovereignty fiber
+bundle has a genuine topological obstruction to global trivialization.
+Decentralization works because it doesn't require trivialization ---
+it works with the non-trivial topology rather than against it.
+\end{proposition}
+
+\begin{proposition}[Governance gradient --- claim 16]
+\label{prop:governance_grad}
+\[
+  \nabla_{\text{governance}} = \nabla\left(\text{fiber\_dim} \times
+    \text{transition\_transparency} \times
+    \text{participation\_breadth} \times
+    \text{capture\_resistance}\right)
+\]
+The article argues for moving along this gradient toward higher values.
+The ASI Alliance model occupies the high end; corporate and government
+ownership occupy the low end. The gradient direction defines the reform
+trajectory from centralization to genuine distributed governance.
+\end{proposition}
+
+\end{document}

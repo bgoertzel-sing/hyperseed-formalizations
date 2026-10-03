@@ -266,3 +266,37 @@ Eurykosmotron, 2026-08-15.
     history a record for itself is a designed component; the specious present
     width is a parameter; temporal experience correlates are an engineering
     surface. *(source-paraphrase)*
+
+### d-calculus claims (Hyperseed v2, deepened 2026-09-29)
+
+48. **Strict arrow = directed monotone record functional.** dR >= 0 on every
+    forward 1-cell, and no inverse 1-cells. The three graphtropy strengths
+    correspond to E[dR] >= 0, dR >= lambda R, and pointwise dR >= 0.
+    *(hyperseed-interpretation)*
+
+49. **Entropy production = forward/reverse holonomy.**
+    Hol_γ(Γ_FR) = log P_F/P_R. Zero means detailed balance. A positive mean
+    is the on-average second law. *(hyperseed-interpretation)*
+
+50. **Freshness = flat correlation connection.** No returning correlation
+    loops. In 3D, Huygens puts the curvature on the light cone.
+    *(hyperseed-interpretation)*
+
+51. **Arrow alignment = trivial Z/2 orientation holonomy.** Inheritance from
+    the pump is parallel transport of orientation. Aligned iff the holonomy
+    is trivial on every influence loop. *(hyperseed-interpretation)*
+
+52. **Janus point = critical point dC = 0.** The orientation bundle has two
+    sheets meeting at the critical point. No imposed low-entropy section is
+    needed. *(hyperseed-interpretation)*
+
+53. **Felt duration = integral of d(DL).** Boredom means small d(DL).
+    Subjective heat death means d(DL) -> 0. Curiosity keeps d(DL) > 0.
+    *(hyperseed-interpretation)*
+
+54. **Reader-disagreement curvature.** ||F_∇(reader_i, reader_j)|| measures
+    disagreement about recordhood. Shared time is the flat case.
+    *(hyperseed-interpretation)*
+
+55. **Append-only trail = directed type without inverses.** The strict arrow
+    is structural, not statistical. *(hyperseed-interpretation)*

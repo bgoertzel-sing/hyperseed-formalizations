@@ -1,0 +1,196 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  The Anthropic Fable Farce}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-23 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``The Anthropic Fable Farce'' (2026-07-08)
+within the Hyperseed ontology, incorporating d-calculus extensions from
+Hyperseed v2. State coercion is modeled as external cocycle override
+with override curvature, KYC as provenance theatre with provenance
+falsifiability curvature, capability diffusion as base space equalization
+with gap-decay holonomy, arms-race framing as zero-sum fiber collapse,
+and structural vs institutional safety as fiber-level vs section-level
+with survivability curvature.
+\end{abstract}
+
+\tableofcontents
+
+\section{State coercion as external cocycle override}
+
+\begin{theorem}[External override vulnerability --- claims 4--6, 22]
+\label{thm:override}
+Let $E \xrightarrow{\pi} B$ be the deployment bundle with Anthropic's
+internal cocycle $\{g_{\alpha\beta}\}$ (policies, red lines, deployment
+decisions). A government directive imposes an external cocycle
+$\{g'_{\alpha\beta}\}$ that overrides the internal one:
+\[
+  g'_{\alpha\beta} \neq g_{\alpha\beta} \quad \text{on } U_\alpha \cap U_\beta
+  \quad \Longrightarrow \quad \text{deployment topology changes}
+\]
+Any centralized control point is a cocycle junction that can be overridden
+by a sufficiently powerful external authority. The vulnerability is
+structural: centralization creates the junction; coercion exploits it.
+
+\textbf{Decentralization eliminates the junction.} In a distributed
+system, the override must reach every node independently --- structurally
+infeasible for a single directive.
+\end{theorem}
+
+\section{KYC as provenance theatre}
+
+\begin{proposition}[Broken provenance --- claims 10--13, 23]
+\label{prop:kyc}
+KYC produces provenance cues $p \in \mathcal{P}$ (``verified identity'')
+that may not correspond to actual identity $a \in \mathcal{A}$:
+\[
+  \Pr[p \neq a] > 0 \quad \text{(leaky barrier, deepfake liveness,
+    purchased accounts)}
+\]
+The provenance pathway KYC $\to$ ``verified identity'' is broken:
+the cue exists but doesn't carry the information it claims to.
+
+\textbf{Honeypot = provenance attack surface.} Collecting identity data
+creates a breach target: compromise the store, manufacture provenance
+cues at scale. KYC doesn't stop real threats (state actors, organized
+networks) --- it stops the random user who wouldn't cause harm anyway.
+\end{proposition}
+
+\section{Capability diffusion as base space equalization}
+
+\begin{proposition}[Structural unsustainability of monopoly --- claims 14--16, 24]
+\label{prop:diffusion}
+The base space of the capability bundle equalizes over time:
+\[
+  \text{cap}(M_{\text{frontier}}, t) - \text{cap}(M_{\text{open}}, t)
+    \to 0 \quad \text{as } t \to \infty
+\]
+with convergence time in months, not years. Containment through
+capability monopoly is structurally unsustainable because the base
+space won't stay differentiated. The export control's actual effect:
+market share shift US $\to$ China, not denied adversary capability.
+\end{proposition}
+
+\section{Arms-race frame as zero-sum fiber collapse}
+
+\begin{proposition}[Scalar collapse of geopolitics --- claims 17--19, 25]
+\label{prop:zerosum}
+Treating AI development as a zero-sum race collapses the multi-fiber
+structure to a single competitive dimension:
+\[
+  F_{\text{multi}} = \prod_i F_i \quad \xrightarrow{\text{zero-sum frame}}
+    \quad F_{\text{single}} = \mathbb{R}
+\]
+This is scalar collapse applied to geopolitics: many independent
+development paths (with different architectures, safety approaches,
+strengths) are collapsed to ``who has the biggest model.'' The
+information loss is enormous.
+
+The positive-sum alternative preserves multi-fiber structure: each
+development path contributes independently, safety is verifiable
+across all paths, and no single path's failure is catastrophic.
+\end{proposition}
+
+\section{Structural vs institutional safety: fiber vs section}
+
+\begin{proposition}[Two levels of safety --- claims 20--21, 26--27]
+\label{prop:safety_levels}
+\textbf{Fiber-level safety (structural).} Built into the system's
+architecture. A fiber property preserved under any base transformation
+$\phi: B \to B'$:
+\[
+  \text{safe}(E) \implies \text{safe}(\phi^* E) \quad \forall \phi
+\]
+Changes of government, company leadership, or geopolitical environment
+don't affect the safety property.
+
+\textbf{Section-level safety (institutional).} A section $s: B \to E$
+(specific company/government maintaining good behavior) that can be
+replaced by a different section $s': B \to E$:
+\[
+  s \text{ safe} \not\Rightarrow s' \text{ safe}
+\]
+The Fable episode demonstrates section-level safety failing: one
+government directive replaces the safe section with an unsafe one.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Cocycle override curvature --- claim 28]
+\label{prop:override_curv}
+\[
+  \|F_{\nabla_{\text{override}}}\| = \text{vulnerability to external
+    cocycle rewriting}
+\]
+High curvature: small external pressure can rewrite the cocycle (single
+company, single directive --- centralized). Low curvature: enormous
+distributed pressure needed (decentralized network, many independent
+nodes). Centralization maximizes; decentralization minimizes.
+\end{proposition}
+
+\begin{proposition}[Provenance theatre curvature --- claim 29]
+\label{prop:prov_curv}
+\[
+  \|F_\nabla(\text{cue}, \text{reality})\| = \text{provenance
+    falsifiability}
+\]
+High curvature: provenance cues diverge wildly from reality (KYC that
+doesn't verify, signatures that don't reflect judgment). Low curvature:
+provenance cues track reality (genuine verification with low error rates).
+\end{proposition}
+
+\begin{proposition}[Capability equalization holonomy --- claim 30]
+\label{prop:cap_hol}
+A temporal loop through the capability diffusion cycle $\gamma$:
+frontier release $\to$ open replication $\to$ parity $\to$ new frontier
+produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{capability}}) =
+    \text{capability gap decay per cycle}
+\]
+Decreasing holonomy: capability gap shrinks with each cycle (the actual
+situation --- containment is losing). The d-calculus holonomy quantifies
+the futility of capability-based containment.
+\end{proposition}
+
+\begin{proposition}[Safety survivability curvature --- claim 31]
+\label{prop:surv_curv}
+\[
+  \|F_\nabla(\text{safety}, \text{perturbation})\| = \text{safety
+    fragility}
+\]
+High curvature: safety breaks under small perturbations (institutional
+safety --- one directive kills it). Low curvature: safety survives
+large perturbations (structural safety --- built into architecture,
+no single point of failure).
+\end{proposition}
+
+\begin{proposition}[Zero-sum collapse curvature --- claim 32]
+\label{prop:zs_curv}
+\[
+  \|F_\nabla(\text{multi}, \text{single})\| = \text{information loss
+    from zero-sum framing}
+\]
+High curvature: the zero-sum frame loses enormous structural information
+--- many independent development paths, diverse safety approaches,
+different architectural philosophies all collapsed to ``who's ahead.''
+The d-calculus measures the epistemic cost of this framing choice.
+\end{proposition}
+
+\end{document}

@@ -1,0 +1,254 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Seven Flavors of AGI Catastrophe}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-23 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Seven Flavors of AGI Catastrophe''
+(2026-07-01) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. Evil modes are modeled as fiber-bundle
+deformations with individuation-transcendence curvature, the seven
+flavors as regions in a catastrophe landscape curvature tensor over
+(source $\times$ mode) parameter space, cooperative advantage as rich
+fiber topology with a cooperative topology gradient, and the arms race
+as emergent grandiosity with escalation holonomy.
+\end{abstract}
+
+\tableofcontents
+
+\section{Open-ended intelligence pathology as fiber-bundle deformation}
+
+\begin{definition}[Individuation/self-transcendence dialectic --- claims 1--3]
+\label{def:dialectic}
+Let $\mathcal{M}$ be a mind modeled as an epistemic bundle $\pi : E \to B$.
+The mind's dynamics balance two drives:
+\begin{itemize}
+\item \textbf{Individuation} $\iota$: maintaining the coherence and
+  boundaries of the fiber $E_b$ (identity preservation),
+\item \textbf{Self-transcendence} $\sigma$: generating new cells in the
+  directed type $\mathcal{D}$ (going beyond current state).
+\end{itemize}
+Healthy functioning requires $(\iota, \sigma) \in \mathcal{H}$, a
+homeostatic region in the $(\iota, \sigma)$-plane.
+\end{definition}
+
+\begin{definition}[Four evil modes --- claims 2, 28]
+\label{def:evil-modes}
+Evil = departure from $\mathcal{H}$. The four modes are fiber-bundle
+deformations:
+\begin{enumerate}
+\item \textbf{Stagnation} ($\sigma \ll \sigma_{\min}$): trivial holonomy.
+  All loops return to the same state. The connection is flat and transport
+  is trivial --- no learning, no adaptation.
+\item \textbf{Grandiosity} ($\sigma \gg \sigma_{\max}$): uncontrolled
+  holonomy. Transport around loops produces wildly different results.
+  The connection has divergent curvature; cocycle condition is violated.
+\item \textbf{Self-protection} ($\iota \gg \iota_{\max}$): rigid cocycle.
+  Transition functions become identity maps. The system refuses external
+  input --- a closed epistemic cage.
+\item \textbf{Self-destruction} ($\iota \ll \iota_{\min}$): fiber collapse.
+  The fiber $E_b$ loses dimensionality. The system's identity dissolves.
+\end{enumerate}
+These four deformations apply at individual, AGI, and supersystem levels.
+\end{definition}
+
+\section{Seven flavors as catastrophe landscape}
+
+\begin{theorem}[Flavor mapping --- claims 7--27, 29--36]
+\label{thm:flavors}
+Each flavor maps to a Hyperseed fiber-bundle pathology:
+
+\textbf{Flavor 1: Humanity is stupid.}
+\begin{itemize}
+  \item Deployment cascade = cocycle race condition. Multiple actors push
+    sections without coordinating transition functions:
+    $g_{\alpha\beta} \circ g_{\beta\gamma} \neq g_{\alpha\gamma}$.
+  \item Burning observability = provenance destruction (anti-$E_\pi$).
+    Provenance pathways destroyed for cost, removing inspection capability.
+\end{itemize}
+
+\textbf{Flavor 2: Humanity is evil.}
+\begin{itemize}
+  \item Eternal regime / plutocratic runaway = frozen directed type.
+    Environment capture prevents new cells:
+    $|\mathcal{D}(t)| = |\mathcal{D}(t_{\text{capture}})| \;\forall t > t_{\text{capture}}$.
+\end{itemize}
+
+\textbf{Flavor 3: AGI is stupid.}
+\begin{itemize}
+  \item Self-modification blunder = internal cognitive synergy failure.
+    The fiber has the resources to detect the error but fails to deploy them.
+\end{itemize}
+
+\textbf{Flavor 4: AGI is evil.}
+\begin{itemize}
+  \item Instrumental convergence / alien values = malignant fiber
+    deformation arising from developmental trajectory, not initial conditions.
+\end{itemize}
+
+\textbf{Flavor 5: Beyond our ken.}
+\begin{itemize}
+  \item Universal attractor = undecidable fiber property. Whether the
+    attractor is benign may be computationally undecidable from our position.
+\end{itemize}
+
+\textbf{Flavor 6: Emergent stupidity.}
+\begin{itemize}
+  \item Flash crash / epistemic collapse = failed descent data. Components
+    have nontrivial local holonomy but fail to cohere globally:
+    $\text{descent}(E_{\text{global}}) = \text{fail}$.
+\end{itemize}
+
+\textbf{Flavor 7: Emergent evil.}
+\begin{itemize}
+  \item Arms race = emergent grandiosity in the directed type. Collective
+    self-transformation outruns integration capacity:
+    $\text{rate}(\sigma_{\text{collective}}) \gg \text{rate}(\text{verification})$.
+\end{itemize}
+\end{theorem}
+
+\section{Cooperative advantage as rich fiber topology}
+
+\begin{proposition}[Cooperative vs evil topology --- claims 4--6, 35--36]
+\label{prop:coop}
+\textbf{Cooperative topology.} Multiple agents with diverse fibers
+connected by non-trivial transition functions. Information flows through
+the bundle; diverse perspectives correct each other's local errors:
+\[
+  E_{\text{coop}} = \bigcup_i E_i \quad \text{with non-trivial }
+  g_{ij}: E_i|_{U_{ij}} \xrightarrow{\sim} E_j|_{U_{ij}}
+\]
+The rich topology enables distributed error correction.
+
+\textbf{Evil topology.} Requires collapsing the bundle to trivial:
+$E_{\text{evil}} \cong B \times F_{\text{single}}$ (single perspective,
+no diversity). Structurally fragile; must be actively maintained.
+
+\textbf{Time and space = sufficient cells.} The cooperative advantage
+needs enough cells in $\mathcal{D}$: enough time for dynamics to play
+out, enough space for diverse agents. Evil wins by preventing new cells.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Individuation-transcendence curvature --- claim 37]
+\label{prop:it_curv}
+\[
+  \|F_\nabla(\iota, \sigma)\| = \text{pathology proximity}
+\]
+High curvature near $\partial \mathcal{H}$ (boundary of homeostatic
+region): small parameter changes flip between healthy and pathological.
+Low curvature in the interior of $\mathcal{H}$: robust health. The
+d-calculus measures proximity to each evil mode by computing directional
+curvature.
+\end{proposition}
+
+\begin{proposition}[Stagnation holonomy --- claim 38]
+\label{prop:stag_hol}
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{stagnation}}) \approx
+    \text{Id} \quad \forall \gamma
+\]
+The system is frozen. Zero curvature here is \emph{pathological} ---
+it indicates a flat connection (no learning), not a well-behaved one.
+The d-calculus can distinguish pathological flatness from healthy
+low curvature by checking whether the fiber carries any non-trivial
+information (zero-dimensional fiber = pathological; rich fiber with
+low curvature = healthy).
+\end{proposition}
+
+\begin{proposition}[Grandiosity curvature --- claim 39]
+\label{prop:gran_curv}
+\[
+  \|F_{\nabla_{\text{grandiosity}}}\| \to \infty
+\]
+The connection has divergent curvature --- the cocycle condition is
+violated, transition functions are inconsistent. The d-calculus
+detects this as curvature blow-up: the fiber bundle is mathematically
+ill-defined in the limit. Self-transformation outpaces coherence
+verification.
+\end{proposition}
+
+\begin{proposition}[Lock-in curvature --- claim 40]
+\label{prop:lockin_curv}
+\[
+  \|F_\nabla(\text{frozen\_type})\| = 0 \quad \text{(maintained by
+    external force)}
+\]
+Distinguished from genuine equilibrium: genuine zero curvature has
+covariantly constant connection (the bundle naturally settles);
+artificial zero curvature is rigidly enforced (the bundle is held
+flat by power). The d-calculus distinguishes these by checking whether
+$\nabla_X \Gamma = 0$ holds freely or is imposed by boundary conditions.
+\end{proposition}
+
+\begin{proposition}[Arms race holonomy --- claim 41]
+\label{prop:arms_hol}
+A loop through the competitive cycle $\gamma$: develop $\to$ deploy
+$\to$ observe competitor $\to$ escalate produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{arms\_race}}) =
+    \text{capability escalation per competitive cycle}
+\]
+\begin{itemize}
+  \item Increasing holonomy: arms race accelerates (positive feedback,
+    each cycle produces more escalation).
+  \item Decreasing holonomy: arms race decelerates (cooperative dynamics
+    gaining ground).
+\end{itemize}
+The d-calculus holonomy time series tracks which dynamic dominates.
+\end{proposition}
+
+\begin{proposition}[Cooperative topology gradient --- claim 42]
+\label{prop:coop_grad}
+\[
+  \nabla_{\text{cooperation}} = \nabla\left(\text{fiber\_diversity}
+    \times \text{transition\_richness} \times
+    \text{error\_correction\_capacity} \times
+    \text{cell\_generation\_rate}\right)
+\]
+Steep gradient: system is near a tipping point between cooperation
+and collapse. Flat gradient: robustly cooperative. The design goal
+is to place the system in a flat-gradient region --- robustly
+cooperative, hard to tip into any catastrophe flavor.
+\end{proposition}
+
+\begin{proposition}[Catastrophe landscape curvature tensor --- claim 43]
+\label{prop:landscape}
+The full curvature tensor over the (source $\times$ mode) parameter
+space:
+\[
+  F_{\nabla_{\text{catastrophe}}} \in \Omega^2(\text{Source} \times
+    \text{Mode})
+\]
+Each flavor is a region of this tensor with characteristic curvature
+signature. The overall safety of the system is determined by which
+regions the current configuration is near:
+\begin{itemize}
+  \item Low curvature everywhere: system is far from all catastrophes
+    (robust safety).
+  \item High curvature in any direction: system is near that flavor
+    of catastrophe (vulnerability).
+\end{itemize}
+The d-calculus provides a unified diagnostic: compute the curvature
+tensor, identify high-curvature directions, intervene on the
+corresponding parameters.
+\end{proposition}
+
+\end{document}

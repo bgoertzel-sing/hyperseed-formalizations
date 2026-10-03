@@ -1,0 +1,185 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Evidence Is to Logic What Energy Is to Physics}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Evidence Is to Logic What Energy Is to
+Physics'' (2026-03-10) within the Hyperseed ontology, incorporating
+d-calculus extensions from Hyperseed v2. Evidence is modeled as fiber
+content conserved along base geodesics (quantale Noether theorem),
+hallucination as bounded fiber content creation, and the non-commutative
+extension as fiber operations that don't commute, yielding quantum
+logic network structure through curvature splitting.
+\end{abstract}
+
+\tableofcontents
+
+\section{Evidence as fiber content}
+
+\begin{definition}[Evidence fiber --- claims 1, 9]
+At each base point $b$, the fiber $F(b)$ contains \emph{evidence} ---
+the epistemic content that supports beliefs at $b$:
+\[
+  \text{ev}(b) \in F(b) \quad \text{(evidence content at } b \text{)}
+\]
+Evidence is the ``stuff'' in the fiber, distinct from the fiber's
+structural properties (connection, curvature).
+\end{definition}
+
+\begin{theorem}[Quantale Noether theorem --- claims 1, 10, 12]
+\label{thm:noether}
+Along geodesic (optimal) inference paths $\gamma_{\text{geo}}$ in base
+space, the reinforcement $\rho = f \otimes g$ is conserved:
+\[
+  \frac{d\rho}{d\gamma}\bigg|_{\gamma = \gamma_{\text{geo}}} = 0
+\]
+This is the Noether charge of inference translation symmetry: the
+connection $\Gamma$ is translation-invariant along geodesics, and
+by the Noether theorem, this symmetry implies conservation of $\rho$.
+\end{theorem}
+
+\section{Anti-hallucination bounds}
+
+\begin{proposition}[Hallucination bound --- claims 2, 11]
+\label{prop:hallucination}
+Conclusion strength is bounded by premise evidence mass:
+\[
+  \|\text{ev}(\text{conclusion})\| \leq \|\text{ev}(\text{premises})\|
+\]
+Hallucination is fiber content creation without base support:
+$\|\text{ev}(\text{conclusion})\| > \|\text{ev}(\text{premises})\|$.
+The bound says this cannot happen in valid inference.
+\end{proposition}
+
+\begin{proposition}[Evidence monotonicity --- claim 4]
+\label{prop:monotone}
+Capsule-respecting inference cannot increase evidence:
+\[
+  \text{ev}_{\text{out}} \leq \text{ev}_{\text{in}} \quad
+  \text{(for capsule-respecting steps)}
+\]
+\end{proposition}
+
+\begin{proposition}[Logical second law --- claim 5]
+\label{prop:entropy}
+Join-collision entropy does not decrease along valid inference paths:
+\[
+  S(\text{ev}_{t+1}) \geq S(\text{ev}_t) \quad
+  \text{(entropy non-decrease)}
+\]
+This is the logical analog of the physical second law of
+thermodynamics --- the arrow of inference.
+\end{proposition}
+
+\section{Non-commutative extension}
+
+\begin{definition}[Non-commutative evidence --- claims 6, 13]
+When evidence operations do not commute:
+\[
+  A \otimes B \neq B \otimes A
+\]
+the single conservation law splits into left and right conservation
+laws:
+\[
+  \frac{d\rho_L}{d\gamma}\bigg|_{\text{geo}} = 0 \qquad
+  \frac{d\rho_R}{d\gamma}\bigg|_{\text{geo}} = 0
+\]
+Two conserved charges instead of one. This is exactly the
+mathematical structure of quantum mechanics (canonically conjugate
+observables from left/right symmetries).
+\end{definition}
+
+\begin{definition}[Quantum Logic Networks --- claim 7]
+\emph{QLN} generalizes PLN into the non-commutative regime:
+\begin{itemize}
+  \item Evidence states: density matrices $\rho$ (non-commutative
+    analogs of truth values).
+  \item Inference steps: CPTP maps $\mathcal{E}$ (completely positive
+    trace-preserving --- evidence-conserving quantum channels).
+  \item Algebraic setting: non-commutative quantale $(Q, \otimes, e)$.
+\end{itemize}
+\end{definition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Evidence curvature --- claim 14]
+\label{prop:curvature}
+The curvature of the evidence connection measures evidence leakage:
+\[
+  \|F_{\nabla_{\text{ev}}}\| = \text{evidence leakage rate}
+\]
+\begin{itemize}
+  \item $\|F_{\nabla_{\text{ev}}}\| = 0$: perfect evidence conservation
+    (geodesic/optimal inference).
+  \item $\|F_{\nabla_{\text{ev}}}\| > 0$: evidence leaks
+    (sub-optimal inference).
+\end{itemize}
+The anti-hallucination theorems provide upper bounds on this curvature.
+\end{proposition}
+
+\begin{proposition}[Hallucination curvature bound --- claim 14]
+\label{prop:hall_curv}
+The hallucination bound is a curvature bound:
+\[
+  \|F_{\nabla_{\text{hall}}}\| \leq \|\text{ev}(\text{premises})\|
+\]
+The fiber content created by hallucination is bounded by the curvature,
+which is bounded by premise evidence mass. This is the geometric content
+of the anti-hallucination theorem.
+\end{proposition}
+
+\begin{proposition}[Non-commutative curvature splitting --- claim 15]
+\label{prop:split}
+In the non-commutative case, curvature splits:
+\[
+  F_\nabla = F_{\nabla_L} + F_{\nabla_R}
+\]
+Each component has its own conservation law. The two components interact
+through the non-commutativity of $\otimes$, producing interference
+effects --- the quantum-like behavior of QLN.
+\end{proposition}
+
+\begin{proposition}[Evidence holonomy --- claim 16]
+\label{prop:holonomy}
+An inference cycle $\gamma$: premise $\to$ intermediate $\to$
+conclusion $\to$ re-derive premise produces evidence holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{ev}}) = \text{evidence change
+    after reasoning cycle}
+\]
+\begin{itemize}
+  \item Trivial holonomy: reasoning is consistent (returning to premises
+    gives the same evidence).
+  \item Non-trivial holonomy: the system learned something new
+    (constructive) or the reasoning is inconsistent (destructive).
+\end{itemize}
+\end{proposition}
+
+\begin{proposition}[Entropy gradient constraint --- claim 17]
+\label{prop:entropy_grad}
+The logical second law as a gradient constraint:
+\[
+  \nabla_{\text{entropy}} \geq 0 \quad \text{along valid inference paths}
+\]
+Evidence entropy never decreases along valid inference. This defines
+an arrow of inference analogous to the arrow of time --- inference
+has a preferred direction determined by entropy increase.
+\end{proposition}
+
+\end{document}

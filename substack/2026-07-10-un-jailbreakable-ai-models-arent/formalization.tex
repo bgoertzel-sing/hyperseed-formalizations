@@ -1,0 +1,214 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Un-Jailbreakable AI Models Aren't a Thing}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-23 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Un-Jailbreakable AI Models Aren't a Thing''
+(2026-07-10) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. Generate-and-verify is modeled as fiber-base
+verification with gap curvature, campaign-level security as directed-type
+analysis with attacker holonomy, PLN (f,c) as anti-scalar-collapse in
+security judgment with confidence-depth gradient, and diverse verifier
+ensembles as distributed fiber inspection with independence curvature.
+\end{abstract}
+
+\tableofcontents
+
+\section{Two kinds of attack}
+
+\begin{definition}[Attack taxonomy --- claims 1--3]
+\label{def:attacks}
+Two structurally different attack types:
+\begin{enumerate}
+  \item \textbf{Authority attacks} (prompt injection): override the system's
+    instructions. Defense: better instruction following, constitutional AI.
+  \item \textbf{Capability-elicitation attacks}: the system correctly follows
+    instructions but produces dangerous artifacts. Defense: output verification.
+\end{enumerate}
+The Fable context concerns capability-elicitation: the model \emph{can}
+produce bioweapon designs when asked nicely enough. ``Un-jailbreakable''
+demands conflate the two types.
+\end{definition}
+
+\section{Campaign-level security as directed-type analysis}
+
+\begin{theorem}[Campaign probability --- claims 4--6, 24]
+\label{thm:campaign}
+Let $p$ be the per-prompt jailbreak probability. Over a campaign of $Q$
+independent attempts:
+\[
+  \Pr[\text{at least one success}] = 1 - (1-p)^Q \approx Qp
+  \quad \text{for small } p
+\]
+For any $p > 0$ and sufficiently large $Q$, success is near-certain.
+Security must be evaluated at the campaign (1-cell) level, not the
+per-prompt (0-cell) level.
+
+In the directed type $\mathcal{D}$:
+\begin{itemize}
+  \item A single prompt-response pair is a 0-cell (point event).
+  \item An attack campaign is a 1-cell (directed path through attempt space).
+  \item The security property is a 1-cell property, not a 0-cell property.
+\end{itemize}
+\end{theorem}
+
+\section{Generate-and-verify as fiber-base verification}
+
+\begin{proposition}[Two-layer architecture --- claims 7--10, 21]
+\label{prop:gen_verify}
+\textbf{Neural generation = base space exploration.} The LLM generates
+candidate outputs, broadly exploring the space of possible artifacts:
+\[
+  \text{gen}: \text{prompt} \to \{c_1, c_2, \ldots, c_n\} \subset
+    B_{\text{output}}
+\]
+
+\textbf{Symbolic verification = fiber inspection.} The verification
+ensemble inspects each candidate's fiber structure:
+\[
+  \text{verify}: c_i \mapsto (\text{what\_it\_does}, \text{provenance},
+    \text{policy\_compliance}) \in F_{c_i}
+\]
+The judgment layer fuses deductive facts (what the artifact does ---
+formal methods, code analysis) with probabilistic evidence (who is
+asking and why --- PLN uncertain reasoning, provenance tracking).
+
+Neither layer alone suffices: generation without verification is
+dangerous; verification without generation is useless.
+\end{proposition}
+
+\section{PLN (f,c) as anti-scalar-collapse in security}
+
+\begin{proposition}[Two-number security judgment --- claims 11--13, 22]
+\label{prop:pln_security}
+A binary ``safe/dangerous'' classification is scalar collapse applied to
+security. PLN's strength truth value $(f, c)$ provides two independent
+dimensions:
+\begin{itemize}
+  \item $f$ (frequency): how safe does this look?
+  \item $c$ (confidence): how much evidence supports that judgment?
+\end{itemize}
+The critical distinction:
+\[
+  (f=0.95, c=0.9) \neq (f=0.95, c=0.1)
+\]
+``Probably safe, strong evidence'' is fundamentally different from
+``probably safe, nobody checked.'' The verification system gates on
+both dimensions: low-confidence safety triggers additional verification
+rather than acceptance.
+\end{proposition}
+
+\section{Diverse verifier ensemble as distributed fiber inspection}
+
+\begin{proposition}[Structural independence --- claims 14--16, 23]
+\label{prop:diversity}
+Robust verification requires structurally independent inspectors:
+\begin{itemize}
+  \item \textbf{Different methods:} static analysis, formal verification,
+    PLN reasoning, pattern matching --- each inspects different fiber
+    aspects.
+  \item \textbf{Different knowledge bases:} different threat databases,
+    different training, different organizational contexts.
+  \item \textbf{Different perspectives:} security, ethics, domain-specific
+    hazard assessment.
+\end{itemize}
+Correlated verifiers (same training data, same architecture, same blind
+spots) provide false diversity. True diversity requires structural
+independence, which only an open ecosystem can generate: a single company
+produces correlated verifiers by construction.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Verification depth curvature --- claim 25]
+\label{prop:ver_depth_curv}
+\[
+  \|F_{\nabla_{\text{verification}}}\| = \text{information gain per
+    additional verification layer}
+\]
+High curvature: each new verifier adds substantial new information
+(verification is genuinely multi-dimensional, worth investing in more
+layers). Low curvature: additional verifiers add little (verification
+has saturated, diminishing returns). The d-calculus curvature guides
+resource allocation for verification depth.
+\end{proposition}
+
+\begin{proposition}[Campaign-level holonomy --- claim 26]
+\label{prop:campaign_hol}
+A loop through the attack campaign cycle $\gamma$: attempt $\to$ fail
+$\to$ learn $\to$ re-attempt produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{campaign}}) =
+    \text{attacker's information gain per cycle}
+\]
+\begin{itemize}
+  \item \textbf{For attackers:} high holonomy means each failure teaches
+    a lot about the defenses (information leakage). Good security
+    minimizes attacker holonomy.
+  \item \textbf{For defenders:} high holonomy means each attack attempt
+    teaches about the threat landscape. Good monitoring maximizes
+    defender holonomy.
+\end{itemize}
+The asymmetry goal: minimize $\operatorname{Hol}_\gamma^{\text{attacker}}$
+while maximizing $\operatorname{Hol}_\gamma^{\text{defender}}$.
+\end{proposition}
+
+\begin{proposition}[Verifier independence curvature --- claim 27]
+\label{prop:indep_curv}
+\[
+  \|F_\nabla(\text{verifier}_i, \text{verifier}_j)\| = \text{independence
+    between verifiers } i \text{ and } j
+\]
+High curvature: verifiers give genuinely independent assessments (different
+methods, different blind spots --- true diversity). Low curvature:
+verifiers are correlated (same blind spots --- false diversity).
+The design goal is high inter-verifier curvature across all pairs.
+\end{proposition}
+
+\begin{proposition}[Generate-verify gap curvature --- claim 28]
+\label{prop:gap_curv}
+\[
+  \|F_\nabla(\text{generation}, \text{verification})\| = \text{coverage gap}
+\]
+High curvature: the generation space contains regions that verification
+can't reach (blind spots, adversarial examples that evade all verifiers).
+Low curvature: verification covers the generation space well. The
+architecture should minimize this curvature --- no generated output
+should escape verification.
+\end{proposition}
+
+\begin{proposition}[Confidence-depth gradient --- claim 29]
+\label{prop:conf_grad}
+\[
+  \nabla_{\text{confidence}} = \frac{\partial c}{\partial \text{depth}}
+\]
+The gradient of confidence with respect to verification depth:
+\begin{itemize}
+  \item Steep gradient: confidence increases rapidly with depth (shallow
+    verification unreliable, deep verification highly reliable ---
+    worth investing).
+  \item Flat gradient: confidence changes slowly (either already high
+    from shallow verification, or intractable regardless of depth).
+\end{itemize}
+PLN's $(f, c)$ framework makes this gradient explicitly measurable,
+guiding verification resource allocation.
+\end{proposition}
+
+\end{document}

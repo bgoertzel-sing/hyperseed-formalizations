@@ -1,0 +1,162 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  What Is Science, Exactly?}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``What Is Science, Exactly?''
+(2026-01-02) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. Science is modeled as a communal fiber
+bundle with structured quality control on the connection, paradigms as
+connection regimes with discontinuous shifts, and Bayesian updating as
+parallel transport. The reproducibility crisis is high curvature, and
+AGI transforms science by steepening the evidence gradient.
+\end{abstract}
+
+\tableofcontents
+
+\section{Science as communal fiber bundle}
+
+\begin{definition}[Individual scientific fiber]
+Each scientist $i$ has a fiber bundle $\pi_i: E_i \to B$ with fiber
+encoding their knowledge, beliefs, methods, and theories.
+\end{definition}
+
+\begin{definition}[Communal fiber bundle --- claims 1, 2, 7]
+The \emph{scientific community fiber bundle} is:
+\[
+  E_{\text{sci}} = \text{filtered-compose}(\{E_i\}_{i \in \text{community}})
+\]
+where the composition is filtered by structured skepticism: only fiber
+elements that pass peer review, reproducibility checks, and communal
+evaluation are accepted into $E_{\text{sci}}$.
+\end{definition}
+
+\begin{proposition}[Connection quality control --- claims 4, 8]
+\label{prop:qc}
+The scientific connection $\Gamma_{\text{sci}}$ filters fiber transport:
+\[
+  P_\gamma(\Gamma_{\text{sci}}): E_a \to E_b \quad \text{only if }
+  \text{evidence}(\gamma) \text{ passes quality checks}
+\]
+Reproducibility is the primary quality check: fiber elements that can't
+be independently reproduced are blocked from transport. Peer review
+provides secondary quality control.
+\end{proposition}
+
+\section{Paradigm as connection regime}
+
+\begin{definition}[Paradigm --- claim 5, 9]
+A \emph{scientific paradigm} $\mathcal{P}$ is a connection regime ---
+a specific connection $\Gamma_{\mathcal{P}}$ that determines how fiber
+transports through the scientific community:
+\[
+  \mathcal{P} = (\Gamma_{\mathcal{P}}, \text{methods}_{\mathcal{P}},
+    \text{questions}_{\mathcal{P}}, \text{standards}_{\mathcal{P}})
+\]
+Within a paradigm, transport is smooth and well-defined. Across paradigm
+boundaries, transport is discontinuous or blocked.
+\end{definition}
+
+\begin{proposition}[Paradigm shift as discontinuous connection change]
+\label{prop:shift}
+A paradigm shift is:
+\[
+  \Gamma_{\mathcal{P}_{\text{old}}} \to \Gamma_{\mathcal{P}_{\text{new}}}
+  \quad \text{(discontinuous)}
+\]
+The old connection is replaced entirely --- not smoothly deformed but
+abruptly changed. Some fiber elements that transported well under the
+old connection no longer transport under the new one, and vice versa.
+\end{proposition}
+
+\section{Bayesian updating as parallel transport}
+
+\begin{proposition}[Evidence as parallel transport --- claims 3, 10]
+\label{prop:bayes}
+Bayesian updating on shared evidence is parallel transport in the
+communal fiber bundle:
+\begin{itemize}
+  \item \textbf{Evidence} defines a path $\gamma$ in base space.
+  \item \textbf{Prior} $P_0$ is the initial fiber state.
+  \item \textbf{Posterior} $P_1 = P_\gamma(\Gamma_{\text{sci}}) \cdot P_0$
+    is the fiber after transport.
+\end{itemize}
+The connection $\Gamma_{\text{sci}}$ encodes the methodology ---
+different methodologies (connections) transport the same prior differently
+along the same evidence path, producing different posteriors.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Reproducibility curvature --- claim 11]
+\label{prop:reprod}
+The curvature of the scientific connection measures irreproducibility:
+\[
+  \|F_{\nabla_{\text{sci}}}\| = \text{rate of irreproducibility}
+\]
+\begin{itemize}
+  \item $\|F_{\nabla_{\text{sci}}}\| \ll 1$: results reproduce well
+    across labs, contexts, and researchers (healthy science).
+  \item $\|F_{\nabla_{\text{sci}}}\| \gg 1$: results fail to reproduce
+    (reproducibility crisis --- degraded connection).
+\end{itemize}
+The ``reproducibility crisis'' in certain scientific domains is high
+curvature: the connection has degraded, making parallel transport
+path-dependent (different labs get different results from the same
+evidence).
+\end{proposition}
+
+\begin{proposition}[Paradigm shift holonomy --- claim 12]
+\label{prop:holonomy}
+A paradigm shift produces maximal holonomy:
+\[
+  \|\operatorname{Hol}_\gamma(\Gamma_{\text{paradigm}}) - \mathrm{id}\|
+  \text{ is maximal at paradigm shifts}
+\]
+The scientific community's fiber is maximally changed by traversing
+a paradigm shift --- this is Kuhn's ``revolutionary science'' in
+fiber-theoretic language.
+\end{proposition}
+
+\begin{proposition}[Evidence transport gradient --- claim 13]
+\label{prop:gradient}
+The evidence gradient in scientific fiber space:
+\[
+  \nabla_{\text{evidence}} = \nabla\left(\text{evidence\_weight} \times
+    \text{reproducibility} \times \text{peer\_support}\right)
+\]
+Good science follows this gradient (toward well-supported conclusions);
+bad science moves against it (p-hacking, publication bias, cherry-picking
+move against $\nabla_{\text{evidence}}$).
+\end{proposition}
+
+\begin{proposition}[AGI steepens evidence gradient --- claims 6, 14]
+\label{prop:agi}
+AGI transforms science by steepening the evidence gradient:
+\[
+  \|\nabla_{\text{evidence}}\|_{\text{AGI}} \gg
+    \|\nabla_{\text{evidence}}\|_{\text{human}}
+\]
+AGI can process more evidence, generate more hypotheses, and design
+better experiments --- all of which increase the magnitude of
+$\nabla_{\text{evidence}}$, making it easier to follow toward truth
+and harder to move against toward error.
+\end{proposition}
+
+\end{document}

@@ -1,0 +1,205 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Linguistic Universals as Shadows of Cognitive Structure, Part 2}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-22 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Part~2 of Ben Goertzel's ``Linguistic Universals as Shadows
+of Cognitive Structure'' (2026-05-30) within the Hyperseed ontology,
+incorporating d-calculus extensions from Hyperseed v2. Quantale weakness
+is modeled as fiber-minimal explanation with 5-dimensional weakness
+curvature tensor, the five correspondences as fiber morphisms with
+measurable transport curvature, the factorization correspondence as
+automatic fiber product preservation with factorization holonomy, and
+double-counting as scalar collapse with positive causal-correlation
+separation curvature.
+\end{abstract}
+
+\tableofcontents
+
+\section{Quantale weakness as fiber-minimal explanation}
+
+\begin{theorem}[Generalized Occam --- claims 3--9, 18]
+\label{thm:weakness}
+\emph{Quantale weakness} selects the fiber-minimal explanation:
+among all explanations compatible with the data, choose the one with
+least fiber structure beyond what the data requires.
+
+Explanations are compared along five axes simultaneously:
+\begin{enumerate}
+  \item Admissible indistinction preserved.
+  \item Fit to data.
+  \item Computational and representational cost.
+  \item Cross-context confusion introduced.
+  \item Double-counting of dependencies through redundant pathways.
+\end{enumerate}
+
+An explanation wins by dominating competitors in this product order.
+The key result: causal explanations beat correlation-only explanations
+as a theorem --- a causal explanation posits a single genuine mediator
+while correlation-only represents the same dependency through multiple
+redundant pathways.
+\end{theorem}
+
+\section{Double-counting as scalar collapse}
+
+\begin{proposition}[Redundant pathways --- claim 20]
+\label{prop:double}
+Correlation-only explanations double-count dependencies by representing
+the same dependency through multiple redundant pathways. In fiber terms,
+this is \emph{scalar collapse}: the genuine fiber structure (one
+mediator, one dependency) is collapsed into multiple overlapping scalar
+summaries that each partially capture the same thing.
+
+Quantale weakness prevents scalar collapse by penalizing double-counting
+explicitly as one of its five axes.
+\end{proposition}
+
+\section{Transport theorems as fiber morphisms}
+
+\begin{definition}[Externalization functor --- claims 10--14, 19, 22]
+The cognition-to-language externalization map is a bundle morphism:
+\[
+  f_*: E_{\text{cog}} \to E_{\text{ling}}
+\]
+Each of the five correspondences is a structural property preserved by
+this morphism:
+
+\begin{enumerate}
+  \item \textbf{Factorization = identity theorem.} Fiber product structure
+    is automatically preserved:
+    \[
+      f_*(E_A \times E_B) = f_*(E_A) \times f_*(E_B)
+    \]
+    No additional assumptions needed. Strongest result.
+
+  \item \textbf{Hierarchical = closure transport.} Closure operators
+    push forward: $f_*(\text{cl}_{\text{cog}}) = \text{cl}_{\text{ling}}$.
+    Fixed points correspond.
+
+  \item \textbf{Word-order = sparse-energy pushforward.} Sparsity is
+    preserved under pushforward when the externalization map is local
+    enough. Marginalizing over non-externalizing variables preserves
+    the sparse signed-energy structure.
+
+  \item \textbf{Graded = stability-rate transport.} Linguistic stability
+    coefficient is the image of cognitive stability coefficient.
+
+  \item \textbf{Context-indexed = glued-closure transport.} Local closure
+    operators glue via transition maps that respect the closure structure.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[TUG trace quotient --- claim 21]
+\label{prop:tug}
+The TUG trace quotient is a fiber quotient: it identifies sections
+(derivations) that project to the same base point (same observable
+output). The quotient fiber retains only observable distinctions.
+The factorization correspondence says: if cognitive fiber factors,
+then the quotient linguistic fiber factors too.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Weakness curvature --- claim 25]
+\label{prop:weakness_curv}
+The curvature of the weakness functional forms a 5-dimensional tensor:
+\[
+  F_{\nabla_{\text{weakness}}} \in \bigotimes_{i=1}^{5}
+    \Omega^2(\text{axis}_i)
+\]
+The overall strength of the Occam bias:
+\[
+  \|F_{\nabla_{\text{weakness}}}\| = \text{strength of simplicity
+    selection}
+\]
+High weakness curvature: very few explanations survive selection
+(strong Occam). Low weakness curvature: many explanations survive
+(weak Occam). Each axis contributes independently to the total
+curvature.
+\end{proposition}
+
+\begin{proposition}[Transport curvature --- claim 26]
+\label{prop:transport}
+\[
+  \|F_{\nabla_{\text{transport}}}\| = \text{distortion introduced by
+    externalization}
+\]
+Low transport curvature: linguistic structure faithfully reflects
+cognitive structure (the shadow is sharp). High transport curvature:
+linguistic structure distorts cognitive structure (the shadow is
+blurred). The five correspondences hold when transport curvature is
+low along the relevant fiber dimensions.
+\end{proposition}
+
+\begin{proposition}[Factorization holonomy --- claim 27]
+\label{prop:factor_hol}
+A loop through factored cognitive modules produces holonomy in the
+linguistic image:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{factor}}) =
+    \text{factorization leakage in the linguistic image}
+\]
+\begin{itemize}
+  \item Trivial holonomy ($= \mathrm{id}$): factorization perfectly
+    preserved in language (the identity theorem holds exactly).
+  \item Non-trivial holonomy: some cross-module coupling appears in
+    language that doesn't exist in cognition (factorization leaks).
+\end{itemize}
+The identity theorem says this holonomy is trivial under the stated
+conditions --- factorization doesn't leak.
+\end{proposition}
+
+\begin{proposition}[Closure transport curvature --- claim 28]
+\label{prop:closure_transport}
+\[
+  \|F_\nabla(\text{cl}_{\text{cog}}, \text{cl}_{\text{ling}})\| =
+    \text{closure transport fidelity}
+\]
+Low curvature: cognitive closure maps faithfully to linguistic closure
+(hierarchical universals are genuine cognitive shadows). High curvature:
+the closure is distorted in transport --- cognitive hierarchies don't
+cleanly become linguistic hierarchies.
+\end{proposition}
+
+\begin{proposition}[Stability transport gradient --- claim 29]
+\label{prop:stability}
+\[
+  \nabla_{\text{stability}} = \nabla\left(\text{cognitive\_stability}
+    \to \text{linguistic\_stability}\right)
+\]
+The graded universalhood correspondence says this gradient is monotone:
+more cognitively stable features produce more linguistically stable
+patterns. The gradient direction is preserved by the externalization
+functor.
+\end{proposition}
+
+\begin{proposition}[Double-counting curvature --- claim 30]
+\label{prop:double_curv}
+\[
+  \|F_\nabla(\text{causal}, \text{correlation})\| > 0
+\]
+Causal and correlation-only explanations occupy genuinely different
+fiber positions. The positive curvature proves they are not
+interchangeable: causal has lower total weakness (less unnecessary
+fiber) than correlation-only. This is the d-calculus formulation of
+the causal superiority theorem.
+\end{proposition}
+
+\end{document}

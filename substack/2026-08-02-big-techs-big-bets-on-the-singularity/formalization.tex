@@ -1,0 +1,185 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Big Tech's Big Bets on the Singularity}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-25 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Big Tech's Big Bets on the Singularity''
+(2026-08-02) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. The geopolitical prisoner's dilemma is
+modeled as cocycle lock-in with escalation holonomy, the financial crash
+as base-space perturbation orthogonal to the technology fiber with
+coupling curvature, the Kelly fraction as fiber concentration with
+risk sensitivity curvature, fire-sale absorption as positive crash
+holonomy, and prize dissipation as diminishing return curvature.
+\end{abstract}
+
+\tableofcontents
+
+\section{Prisoner's dilemma as cocycle lock-in}
+
+\begin{theorem}[Race equilibrium --- claims 1--2, 11--12]
+\label{thm:race}
+The US--China AI race is a cocycle lock-in: at each decision point, the
+transition function is ``bet bigger'' because the penalty for under-betting
+(losing the race) exceeds the penalty for over-betting (financial loss):
+\[
+  g_t: \text{state}_t \to \text{state}_{t+1} \quad \text{where }
+    g_t = \text{escalate} \;\forall t \quad \text{(unique Nash equilibrium)}
+\]
+\[
+  g_1 \circ g_2 \circ \cdots \circ g_n \to \text{total prize dissipation}
+\]
+
+\textbf{Frozen directed type.} Both players are locked into the same
+directed path. The path is frozen not by choice but by game structure ---
+neither can deviate unilaterally.
+
+\textbf{Same structure, opposite direction.} The Benevolent Throttling
+cocycle centralizes through safety restrictions; this cocycle centralizes
+through competitive over-investment. Different mechanism, same lock-in
+structure.
+
+\textbf{Contest theory.} Near-total prize dissipation: the cost of
+winning approaches the value of the prize.
+\end{theorem}
+
+\section{Crash as base-space perturbation orthogonal to fiber}
+
+\begin{proposition}[Uninformative crash --- claims 3--5, 9, 13, 17]
+\label{prop:crash}
+The financial system (debt, equity, capex cycles) is the base space $B$.
+The technology (capability trajectory, architecture quality) is the fiber
+$F$ above it.
+
+\textbf{Weak coupling.} The curvature between base and fiber is low:
+\[
+  \|F_\nabla(\text{economics}, \text{technology})\| \approx 0
+\]
+A financial crash is a large perturbation in $B$ but carries almost no
+information about $F$. Leverage adjudicates timing (base property);
+terminus depends on architecture quality (fiber property).
+
+\textbf{Crash is constant.} The crash appears in (nearly) all six
+scenario cells --- it's a constant of the base space:
+\[
+  \text{crash} \in \{(s, a) : s \in \{\text{fast}, \text{moderate},
+    \text{plateau}\}, a \in \{\text{centralized}, \text{deAGI}\}\}
+\]
+A constant carries zero bits of information.
+\end{proposition}
+
+\section{Kelly fraction as fiber concentration}
+
+\begin{proposition}[Risk regimes --- claims 6--8, 10, 14--16]
+\label{prop:kelly}
+\textbf{Full Kelly = concentrated fiber.} The centralized approach
+concentrates investment in a single fiber with high expected growth rate
+$\mu$ but nonzero ruin probability $P(\text{ruin}) > 0$:
+\[
+  E[\text{growth}] = \mu \quad \text{but} \quad
+    P(\text{ruin}) = \delta > 0
+\]
+A single bad outcome can collapse the entire fiber.
+
+\textbf{Fractional Kelly = distributed fiber.} The decentralized approach
+distributes stakes across many independent components:
+\[
+  F = \bigoplus_{i=1}^n F_i \quad \text{with} \quad
+    P(\text{ruin}) = \prod_{i=1}^n P(\text{ruin}_i) \to 0
+\]
+Lower expected growth but zero ruin probability --- the distributed
+fiber cannot be collapsed by a single perturbation.
+
+\textbf{Fire-sale absorption.} When the crash happens, distressed hardware
+from collapsed Full Kelly positions is absorbed at fire-sale prices:
+\[
+  \text{crash} \to \text{distressed hardware} \to
+    \text{network absorbs at discount} \to \text{capacity grows}
+\]
+The fractional-Kelly fiber grows during base-space perturbation.
+
+\textbf{Minimum-cost production.} No debt service (pay-as-you-go) means
+the decentralized network is minimum-cost producer in any scenario ---
+it survives because fixed obligations never exceed revenue.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Escalation holonomy --- claim 18]
+\label{prop:esc_hol}
+A loop through the prisoner's dilemma cycle $\gamma$: US bets $\to$
+China matches $\to$ US escalates $\to$ China matches $\to$ \ldots
+produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{race}}) = \text{excess
+    investment per race cycle (prize dissipation rate)}
+\]
+High holonomy: each cycle dissipates more of the prize (contest theory's
+prediction). Low holonomy: actors coordinate (unstable cooperative
+equilibrium).
+\end{proposition}
+
+\begin{proposition}[Base-fiber coupling curvature --- claim 19]
+\label{prop:bf_curv}
+\[
+  \|F_\nabla(\text{economics}, \text{technology})\| =
+    \text{informativeness of financial events about technological
+      trajectory}
+\]
+Low curvature: economic events carry little information about technology
+(the article's claim). High curvature: economic events informative
+(would mean crash implies tech failure --- argued to be wrong).
+\end{proposition}
+
+\begin{proposition}[Kelly fraction curvature --- claim 20]
+\label{prop:kelly_curv}
+\[
+  \|F_\nabla(\text{bet\_size}, \text{ruin\_prob})\| = \text{risk sensitivity}
+\]
+High curvature: small increase in bet size dramatically increases ruin
+probability (Full Kelly territory). Low curvature: bet size and ruin
+weakly coupled (fractional Kelly).
+\end{proposition}
+
+\begin{proposition}[Fire-sale absorption holonomy --- claim 21]
+\label{prop:fire_hol}
+A loop through the crash-absorption cycle $\gamma$: crash $\to$ hardware
+distressed $\to$ network absorbs $\to$ capacity grows $\to$ network
+strengthens produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{absorption}}) =
+    \text{network capacity gain per crash cycle}
+\]
+Positive holonomy: each crash cycle strengthens the network. This is the
+formal content of ``crash feeds the network.''
+\end{proposition}
+
+\begin{proposition}[Prize dissipation curvature --- claim 22]
+\label{prop:prize_curv}
+\[
+  \|F_{\nabla_{\text{prize}}}(\text{investment})\| = \text{marginal
+    return on AI investment}
+\]
+Decreasing curvature: diminishing returns (over-investment territory).
+Contest theory: curvature approaches zero as investment approaches total
+dissipation --- prize fully consumed by cost of winning.
+\end{proposition}
+
+\end{document}

@@ -1,0 +1,185 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  The Orchard Bug and the Unfolding Software-Verification Reckoning}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-22 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``The Orchard Bug and the Unfolding
+Software-Verification Reckoning'' (2026-06-05) within the Hyperseed
+ontology, incorporating d-calculus extensions from Hyperseed v2.
+Composition failure is modeled as cocycle defect with measurable
+boundary curvature, correct-by-construction as fiber-base identity
+with zero spec-impl gap curvature, AI-accelerated discovery as
+base space equalization with high discovery cost curvature, and
+formal verification as full fiber inspection with verification
+coverage holonomy.
+\end{abstract}
+
+\tableofcontents
+
+\section{Composition failure as cocycle defect}
+
+\begin{definition}[Cocycle defect --- claims 1, 7]
+The Orchard bug is a cocycle defect: a violation of the cocycle
+condition on the program's fiber bundle. In a well-formed bundle,
+transition functions satisfy:
+\[
+  g_{\alpha\beta} \cdot g_{\beta\gamma} = g_{\alpha\gamma}
+  \quad \text{on } U_\alpha \cap U_\beta \cap U_\gamma
+\]
+The Orchard bug violates this condition: module~A's output doesn't
+match module~B's expected input on their boundary. The under-constrained
+element means the transition function admits too many possibilities ---
+the cocycle is ``loose'' and some admitted possibilities are exploitable.
+
+\textbf{Local correctness, global failure.} Each module (each local
+trivialization) works correctly in isolation. Unit tests pass because
+they check local behavior. The defect is in the composition --- the
+cocycle condition that connects local patches into a global structure.
+\end{definition}
+
+\section{Correct by construction as fiber-base identity}
+
+\begin{proposition}[Spec-impl identity --- claims 5, 8]
+\label{prop:correct}
+In a correct-by-construction system, specification and implementation
+are identified as two views of the same mathematical object:
+\[
+  E_{\text{spec}} \cong E_{\text{impl}}
+\]
+The fiber (specification: what the system should do) and the base
+(implementation: what the system actually does) are the same structure.
+Proving correctness reduces to type checking: if the implementation
+type-checks against the specification type, correctness follows.
+
+The cocycle condition is built into the type system: module composition
+is verified at compile time. There is no gap for cocycle defects to
+hide in.
+\end{proposition}
+
+\section{AI-accelerated discovery as base space equalization}
+
+\begin{proposition}[Discovery cost collapse --- claims 2--3, 9]
+\label{prop:discovery}
+AI tools equalize the attack surface by collapsing discovery costs:
+\[
+  \text{cost}_{\text{discover}}^{\text{post-AI}} \ll
+    \text{cost}_{\text{discover}}^{\text{pre-AI}}
+\]
+Bugs that were hidden (high discovery cost) become visible (low
+discovery cost). The effective attack surface expands to match the
+theoretical attack surface. This creates existential pressure toward
+formal verification: when bugs are cheap to find, the only defense is
+proving there are no bugs.
+
+Crypto is the canary: high value, open source, discoverable. Legacy
+software faces the same pressure with a lag.
+\end{proposition}
+
+\section{Formal verification as fiber inspection}
+
+\begin{proposition}[Full fiber inspection --- claims 4, 6, 10]
+\label{prop:verification}
+Formal verification inspects every fiber of the program bundle:
+\begin{itemize}
+  \item Every possible execution path (every section of the bundle).
+  \item Every module boundary (every transition function).
+  \item Every composition (every cocycle condition on triple overlaps).
+\end{itemize}
+Unlike testing (which samples fibers) or auditing (which inspects fibers
+heuristically), verification covers \emph{all} fibers by mathematical
+proof. AI makes this practical by automating routine proof obligations
+and suggesting proof strategies for harder cases.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Cocycle defect curvature --- claim 11]
+\label{prop:cocycle_curv}
+\[
+  \|F_\nabla(\text{module}_A, \text{module}_B)\| =
+    \text{composition failure severity}
+\]
+Zero curvature: modules compose correctly (cocycle condition satisfied,
+no defect). Nonzero curvature: modules fail to compose (cocycle defect
+present). The Orchard bug had nonzero curvature at the ZK circuit
+module boundary that was never measured because no formal verification
+was performed at that boundary.
+\end{proposition}
+
+\begin{proposition}[Discovery cost curvature --- claim 12]
+\label{prop:discovery_curv}
+\[
+  \|F_{\nabla_{\text{discovery}}}(\text{pre-AI}, \text{post-AI})\| =
+    \text{AI acceleration of bug finding}
+\]
+High curvature: AI dramatically changes discovery economics (steep
+transition from hidden to visible). The current moment is high
+curvature --- AI tools are rapidly flattening the discovery landscape,
+creating the reckoning.
+\end{proposition}
+
+\begin{proposition}[Verification coverage holonomy --- claim 13]
+\label{prop:coverage_hol}
+A loop through the program's module structure produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{program}}) =
+    \text{unverified composition risk along the loop}
+\]
+\begin{itemize}
+  \item Trivial holonomy ($= \mathrm{id}$): all compositions along the
+    loop are verified (formally verified system).
+  \item Non-trivial holonomy: some compositions are untested, and cocycle
+    defects may lurk (tested-only system).
+\end{itemize}
+The Orchard bug is a non-trivial holonomy that was never measured. A
+formally verified system guarantees trivial holonomy along all loops.
+\end{proposition}
+
+\begin{proposition}[Spec-impl gap curvature --- claim 14]
+\label{prop:gap_curv}
+\[
+  \|F_\nabla(\text{spec}, \text{impl})\| = \text{gap between intent
+    and reality}
+\]
+\begin{itemize}
+  \item Correct-by-construction: $\|F_\nabla\| = 0$ (spec and impl
+    are identified, zero gap).
+  \item Conventional development: $\|F_\nabla\| > 0$ (gap exists,
+    bugs live in it).
+  \item Verified-after-the-fact: $\|F_\nabla\|$ measured and confirmed
+    zero, but the measurement itself is expensive and error-prone.
+\end{itemize}
+\end{proposition}
+
+\begin{proposition}[Reckoning gradient --- claim 15]
+\label{prop:reckoning}
+\[
+  \nabla_{\text{reckoning}} = \nabla\left(\text{AI\_discovery\_power}
+    \times \text{codebase\_value} \times \text{attack\_surface}
+    \times \text{verification\_debt}\right)
+\]
+Crypto sits at the steep end of this gradient (high value, open source,
+discoverable, high verification debt relative to attack surface).
+Legacy banking and infrastructure software is further behind on the
+gradient but facing the same slope. The reckoning advances as AI
+discovery power increases, pushing all software toward formal
+verification or catastrophic failure.
+\end{proposition}
+
+\end{document}

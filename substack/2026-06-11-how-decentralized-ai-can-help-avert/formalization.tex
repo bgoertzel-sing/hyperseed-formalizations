@@ -1,0 +1,243 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  How Decentralized AI Can Help Avert Bioterrorism}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-22 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``How Decentralized AI Can Help Avert
+Bioterrorism'' (2026-06-11) within the Hyperseed ontology, incorporating
+d-calculus extensions from Hyperseed v2. The bits-vs-atoms asymmetry
+is modeled as information-physical fiber curvature, decentralized
+verification as distributed fiber inspection with coverage curvature,
+scoped reputation as multi-fiber trust with reputation curvature,
+neural-symbolic screening as generate-and-verify with screening
+holonomy, and biosurveillance as an immune system with a surveillance
+gradient measuring coverage uniformity.
+\end{abstract}
+
+\tableofcontents
+
+\section{Information fiber vs physical base}
+
+\begin{theorem}[Bits vs atoms --- claims 1--4, 13]
+\label{thm:bits_atoms}
+The fundamental asymmetry:
+\begin{itemize}
+  \item \textbf{Information fiber} (genetic designs, synthesis protocols,
+    model weights) is freely copyable. Cannot be contained by guarding
+    a single copy --- copies propagate at the speed of communication.
+  \item \textbf{Physical base} (DNA synthesis reagents, biological
+    substrates, laboratory equipment) is rivalrous, trackable, and
+    gateable. Has physical scarcity.
+\end{itemize}
+
+Security must live at the base layer when the fiber cannot be contained:
+\[
+  \text{containable}(F_{\text{info}}) = \text{false} \implies
+    \text{security\_layer} = B_{\text{physical}}
+\]
+``Gate the atoms, not the bits'' is the correct identification of which
+bundle layer admits effective control. Cryptographic laterality (from
+Part~2) doesn't apply because the dangerous thing is small copyable
+information, not a networked cognitive process.
+\end{theorem}
+
+\section{Biology vs cybersecurity}
+
+\begin{proposition}[Asymmetric defensibility --- claim 5]
+\label{prop:bio_cyber}
+Biology and cybersecurity have fundamentally different defense profiles:
+\begin{itemize}
+  \item \textbf{Cyber:} Defenders can patch software instantly. The
+    attack surface is human-made and rewritable. Defense is cheap
+    relative to attack (once the patch exists).
+  \item \textbf{Bio:} Cannot patch a human body. Vaccines are slow
+    (months to years), partial (incomplete protection), and limited
+    (fraction of population reached). The attack surface is our own
+    evolved biology --- not rewritable.
+\end{itemize}
+This asymmetry means cyber defense strategies don't transfer directly
+to biosecurity. Bio-specific defenses are needed.
+\end{proposition}
+
+\section{Decentralized verification as distributed fiber inspection}
+
+\begin{proposition}[Distributed inspection --- claims 6--8, 14]
+\label{prop:distributed}
+A central verification database is a trivial bundle (single inspector,
+single point of failure). A distributed verification network is a
+non-trivial bundle:
+\[
+  E_{\text{verification}} \not\cong B \times F
+  \quad \text{(globally non-trivial)}
+\]
+Each verification node inspects the fiber from its own vantage point:
+sequence screening, identity verification, provenance checking,
+reputation assessment. No single inspector sees everything;
+collectively they cover the full fiber.
+
+The non-trivial topology is the security feature: no single compromise
+defeats the system. Device identities (cryptographic key sealed in chip)
+and operator credentials (verifiable without central registry) provide
+the local trivializations; the transition functions between them are
+the verification protocols.
+\end{proposition}
+
+\section{Scoped reputation as multi-fiber trust}
+
+\begin{definition}[Multi-fiber trust --- claims 9, 15]
+\label{def:trust}
+Trust is not a scalar but a multi-dimensional fiber:
+\[
+  F_{\text{trust}} = F_{\text{scope}} \times F_{\text{temporal}}
+    \times F_{\text{delegation}} \times F_{\text{context}}
+\]
+\begin{itemize}
+  \item $F_{\text{scope}}$: what the entity is trusted for (academic
+    research, pathogen work, industrial synthesis).
+  \item $F_{\text{temporal}}$: temporal decay (recent clean record vs
+    ancient certification).
+  \item $F_{\text{delegation}}$: delegation chain (institution vouches
+    for individual).
+  \item $F_{\text{context}}$: context specificity (trusted for this
+    type of synthesis in this jurisdiction).
+\end{itemize}
+Collapsing to a single ``trustworthy/untrustworthy'' scalar is
+scalar collapse --- losing the structural information essential for
+biosecurity decisions.
+\end{definition}
+
+\section{Neural-symbolic screening as generate-and-verify}
+
+\begin{proposition}[Generate-and-verify for biology --- claims 10--11, 16]
+\label{prop:screening}
+The screening architecture follows the generate-and-verify pattern:
+\begin{enumerate}
+  \item \textbf{Generate (LLM).} Pattern recognition identifies
+    potentially dangerous sequences from the vast space of possible
+    designs.
+  \item \textbf{Verify (PLN).} Uncertain reasoning about intent,
+    context, provenance. Strength truth values are essential because
+    most sequences are dual-use --- the screening must reason about
+    probability of malicious intent, not make binary classifications.
+\end{enumerate}
+Distributed screening nodes ensure no single entity holds the master
+watchlist. Each node contributes partial screening from its specialization;
+the collective achieves coverage.
+\end{proposition}
+
+\section{Distributed biosurveillance as immune system}
+
+\begin{proposition}[Immune system architecture --- claim 12, 17]
+\label{prop:immune}
+The biosurveillance system is an immune system, not a watchtower:
+many independent detectors (environmental DNA monitors, wastewater
+sensors, clinical anomaly detectors) sampling the environment, each
+contributing partial information, collectively achieving coverage
+no single detector could.
+
+This is exactly distributed fiber inspection applied to the
+environmental/health domain: many observers sampling the same
+underlying biological threat landscape from different vantage points.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Information-physical asymmetry curvature --- claim 18]
+\label{prop:info_phys_curv}
+\[
+  \|F_\nabla(\text{info}, \text{physical})\| = \text{containability
+    asymmetry}
+\]
+High curvature: strong asymmetry (information freely copyable, physical
+materials scarce --- the actual situation). This high curvature is
+\emph{why} ``gate the atoms not the bits'' is the correct strategy:
+the curvature identifies where control is possible.
+\end{proposition}
+
+\begin{proposition}[Verification coverage curvature --- claim 19]
+\label{prop:coverage_curv}
+\[
+  \|F_{\nabla_{\text{verification}}}\| = \text{coverage quality of
+    distributed inspection}
+\]
+High curvature: good coverage (many independent inspectors, diverse
+vantage points, few blind spots). Low curvature: poor coverage
+(correlated inspectors, shared blind spots --- effective single point
+of failure despite nominal distribution).
+\end{proposition}
+
+\begin{proposition}[Reputation fiber curvature --- claim 20]
+\label{prop:rep_curv}
+\[
+  \|F_{\nabla_{\text{reputation}}}\| = \text{trust dimensionality
+    and context-sensitivity}
+\]
+High curvature: trust is genuinely multi-dimensional (different scopes,
+temporal decay, delegation structure --- rich fiber). Low curvature:
+trust is approximately scalar (collapsed to a single number despite
+nominal dimensions --- effective scalar collapse).
+\end{proposition}
+
+\begin{proposition}[Screening holonomy --- claim 21]
+\label{prop:screening_hol}
+A loop through the screening pipeline $\gamma$: sequence submission
+$\to$ pattern detection $\to$ intent reasoning $\to$ provenance check
+$\to$ decision $\to$ feedback produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{screening}}) =
+    \text{screening drift per cycle}
+\]
+\begin{itemize}
+  \item Low holonomy: screening stays calibrated (stable false
+    positive/negative rates, reliable decisions).
+  \item High holonomy: screening drifts (rates shift, recalibration
+    needed, evolving threats outpace the model).
+\end{itemize}
+The distributed design minimizes screening holonomy through diverse,
+independent nodes that correct each other's drift.
+\end{proposition}
+
+\begin{proposition}[Biosurveillance gradient --- claim 22]
+\label{prop:surv_grad}
+\[
+  \nabla_{\text{surveillance}} = \nabla\left(\text{detection\_sensitivity}
+    \times \text{geographic\_coverage} \times
+    \text{temporal\_resolution} \times \text{pathogen\_breadth}\right)
+\]
+Steep gradient: uneven coverage (some regions/pathogens well-covered,
+others blind --- dangerous gaps). Flat gradient: uniform coverage
+(ideal immune system with no blind spots). The design goal is to
+flatten this gradient: achieve uniform detection capability across
+all dimensions of the threat space.
+\end{proposition}
+
+\begin{proposition}[Attack surface curvature --- claim 23]
+\label{prop:attack_curv}
+\[
+  \|F_\nabla(\text{bio}, \text{cyber})\| = \text{fundamental difference
+    in defensibility}
+\]
+High curvature: biology and cybersecurity are fundamentally different
+in defensibility (can't patch a human body vs.\ can patch software).
+This curvature quantifies why bio-specific defenses are needed ---
+cyber defense strategies don't transfer directly to biosecurity.
+\end{proposition}
+
+\end{document}

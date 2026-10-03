@@ -1,0 +1,215 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Avoiding AGI Catastrophe, Part 2}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-22 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Avoiding AGI Catastrophe, Part 2''
+(2026-06-10) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. Super-additivity is modeled as
+non-separable fiber with laterality curvature, essential laterality as
+$k$-lateral fiber, cognitive-cryptographic alignment as cocycle-access
+alignment with misalignment curvature, distillation defense as
+moving-target fiber with staleness holonomy, and the four-layer
+architecture as fiber depth hierarchy with layer boundary curvature.
+\end{abstract}
+
+\tableofcontents
+
+\section{Super-additivity as non-separable fiber}
+
+\begin{theorem}[Non-separable inference control --- claims 1--3, 25]
+\label{thm:superadd}
+The inference control fiber cannot be factored into independent
+components:
+\[
+  F_{\text{IC}} \not\cong \bigoplus_i F_i
+\]
+The cross-domain interaction patterns that make the network smarter
+than the sum cannot be extracted from any subset. A forked shard
+gets:
+\[
+  \text{IC}(\text{shard}_j) = \pi_j(F_{\text{IC}}) \ll
+    F_{\text{IC}}
+\]
+where $\pi_j$ is the projection onto shard $j$'s local state. The
+projection loses all non-separable information --- the interaction
+effects that constitute the super-additivity.
+\end{theorem}
+
+\section{Essential laterality as $k$-lateral fiber}
+
+\begin{definition}[$k$-lateral fiber --- claims 4--6, 26]
+\label{def:laterality}
+A derivation has essential laterality $\geq k$ if its fiber requires
+$k$ base points to define:
+\[
+  \text{Lat}(d) \geq k \iff \forall S \subset \text{Nodes},\;
+  |S| < k \implies \Pr[\text{reproduce } d \mid S] < \tau
+\]
+This is a structural property of the fiber bundle, not an access
+control choice. The fiber genuinely depends on $k$ base points ---
+not just touches them nominally.
+\end{definition}
+
+\section{Cognitive-cryptographic alignment as cocycle-access alignment}
+
+\begin{proposition}[Cocycle-access alignment --- claims 10--12, 27]
+\label{prop:cocycle_access}
+The cognitive cocycle (which coalition can derive a conclusion) must
+equal the cryptographic access structure (which coalition can
+decrypt the controller):
+\[
+  \Gamma_{\text{cognitive}}(q, x_t) = \Gamma_{\text{crypto}}(q, x_t)
+\]
+These are the same mathematical object viewed from two angles:
+\begin{itemize}
+  \item The cognitive cocycle determines which coalitions can
+    genuinely perform the derivation.
+  \item The cryptographic access structure determines which coalitions
+    are authorized to activate the MPC evaluation.
+\end{itemize}
+Misalignment in either direction creates vulnerability:
+$\Gamma_{\text{crypto}} \supset \Gamma_{\text{cognitive}}$ creates
+a security hole (smaller coalition can extract the secret);
+$\Gamma_{\text{crypto}} \subset \Gamma_{\text{cognitive}}$ creates
+a usability hole (legitimate derivations blocked).
+\end{proposition}
+
+\section{Distillation defense as moving-target fiber}
+
+\begin{proposition}[Moving-target fiber --- claims 13--16, 28]
+\label{prop:moving}
+The controller depends on fresh high-dimensional live state:
+\[
+  \theta_t = f(G_{\text{prov}}(t), R(t), A(t), C(t), \text{Attn}(t))
+\]
+where $G_{\text{prov}}$ is the provenance graph, $R$ is reputation,
+$A$ is node availability, $C$ is recent contradictions, and
+$\text{Attn}$ is attention flows. The fiber at time $t$ depends on
+the full live state, not just historical parameters:
+\[
+  F(t) = f(\text{live\_state}(t)) \neq F(t-\Delta)
+\]
+A distillation snapshot captures $F(t_0)$ but the fiber has moved to
+$F(t_0 + \Delta)$ by deployment time. The temporal non-separability
+makes distillation a degrading approximation.
+\end{proposition}
+
+\section{Four-layer architecture as fiber depth hierarchy}
+
+\begin{definition}[Fiber depth hierarchy --- claims 17--21, 29]
+\label{def:layers}
+The four layers are fiber depth levels with increasing protection:
+\begin{enumerate}
+  \item \textbf{Public (depth 0).} $F_{\text{pub}}$: open knowledge,
+    no protection, anyone can read.
+  \item \textbf{Local-private (depth 1).} $F_{\text{local}}$:
+    agent-specific, moderate protection, single-agent access.
+  \item \textbf{Threshold-control (depth 2).} $F_{\text{thresh}}$:
+    MPC-protected, $k$-of-$n$ coalition required.
+  \item \textbf{Governance-audit (depth 3).} $F_{\text{gov}}$:
+    system-wide oversight, full coalition required.
+\end{enumerate}
+Cognition escalates up the ladder as stakes rise: routine inference
+at depth 0--1, high-stakes control at depth 2, system-level decisions
+at depth 3.
+\end{definition}
+
+\section{Safety from strategy choice}
+
+\begin{proposition}[Near-optimal safety --- claims 22--24]
+\label{prop:strategy}
+If the near-optimal strategy set $S^*_\varepsilon$ contains both a
+portable strategy $s_p$ and a threshold-lateral strategy $s_t$ with
+lower forkability:
+\[
+  \text{fork}(s_t) < \text{fork}(s_p), \quad
+  \text{cap}(s_t) \geq \text{cap}(s_p) - \varepsilon
+\]
+then selecting $s_t$ buys safety (low forkability) at capability cost
+$\leq \varepsilon$. The existence of $s_t \in S^*_\varepsilon$ makes
+safety cheap --- a design choice, not a sacrifice.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Laterality curvature --- claim 30]
+\label{prop:lat_curv}
+\[
+  \|F_{\nabla_{\text{laterality}}}\| = \text{strength of multi-node
+    dependency}
+\]
+High curvature: derivations genuinely depend on many nodes (strong
+laterality, hard to fork). Low curvature: derivations are
+approximately local (weak laterality, easy to fork). The architecture
+should maximize laterality curvature for high-value control inference.
+\end{proposition}
+
+\begin{proposition}[Cocycle-access alignment curvature --- claim 31]
+\label{prop:ca_curv}
+\[
+  \|F_\nabla(\text{cocycle}, \text{access})\| = \text{misalignment
+    between cognitive and cryptographic structure}
+\]
+Zero curvature: perfect alignment (coalition to think = coalition to
+decrypt). Nonzero curvature: misalignment (security or usability hole).
+The design target is zero cocycle-access alignment curvature.
+\end{proposition}
+
+\begin{proposition}[Distillation defense holonomy --- claim 32]
+\label{prop:distill_hol}
+A temporal loop $\gamma$: snapshot $\to$ deploy $\to$ observe $\to$
+re-snapshot produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{distillation}}) =
+    \text{staleness rate of distilled controller}
+\]
+High holonomy: distilled controller goes stale quickly (strong
+defense, moving target effective). Low holonomy: distilled controller
+remains useful (weak defense, moving target ineffective). The
+moving-target design maximizes this holonomy.
+\end{proposition}
+
+\begin{proposition}[Layer depth curvature --- claim 33]
+\label{prop:layer_curv}
+\[
+  \|F_\nabla(\text{layer}_i, \text{layer}_{i+1})\| = \text{protection
+    boundary strength between adjacent layers}
+\]
+High curvature: strong boundary (hard to escalate without
+authorization, clear separation of privilege). Low curvature: weak
+boundary (easy to bypass, privilege escalation risk). Each layer
+boundary should have high curvature.
+\end{proposition}
+
+\begin{proposition}[Safety-capability tradeoff gradient --- claim 34]
+\label{prop:safety_grad}
+\[
+  \nabla_{\text{safety}} = \nabla\left(\frac{\text{forkability\_reduction}}
+    {\text{capability\_cost}}\right)
+\]
+The gradient is favorable in the near-optimal region: substantial
+safety gains (large forkability reduction) at small capability cost
+($\leq \varepsilon$). This means the safety-capability frontier is
+not a sharp tradeoff but a gentle slope near the optimum --- safety
+is cheap when you're already near-optimal.
+\end{proposition}
+
+\end{document}

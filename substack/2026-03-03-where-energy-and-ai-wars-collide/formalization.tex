@@ -1,0 +1,128 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Where Energy and AI Wars Collide}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Where Energy and AI Wars Collide''
+(2026-03-03) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. Energy is modeled as base capacity
+constraining fiber computation, centralization as base-space
+concentration enabling fiber monopoly, and the energy-AI nexus
+as a self-reinforcing centralization holonomy that requires deliberate
+decentralization to break.
+\end{abstract}
+
+\tableofcontents
+
+\section{Energy as base resource for cognitive fiber}
+
+\begin{definition}[Energy-constrained base --- claims 1, 7]
+The base space $B$ has an energy capacity function $\mathcal{E}: B \to \mathbb{R}_{\geq 0}$:
+\[
+  \dim(F(b)) \leq g(\mathcal{E}(b))
+\]
+where $g$ is a monotonically increasing function. The fiber complexity
+at any point is bounded by the available energy at that point.
+\end{definition}
+
+\begin{proposition}[Energy geography --- claim 7]
+\label{prop:geo}
+The geographic distribution of energy defines base-space topology:
+\[
+  B_{\text{thick}} = \{b : \mathcal{E}(b) \gg 1\} \quad \text{(energy-rich: supports rich fiber)}
+\]
+\[
+  B_{\text{thin}} = \{b : \mathcal{E}(b) \ll 1\} \quad \text{(energy-poor: limited fiber)}
+\]
+AI development is concentrated in $B_{\text{thick}}$ because frontier
+models require $\mathcal{E} \gg 1$.
+\end{proposition}
+
+\section{Centralization and decentralization}
+
+\begin{proposition}[Base concentration enables fiber monopoly --- claims 2, 3, 8]
+\label{prop:central}
+When energy is concentrated:
+\[
+  \mathcal{E}(b) \gg 0 \text{ only for } b \in S \text{ where } |S| \ll |B|
+\]
+Then fiber development is concentrated in $S$, giving actors controlling
+$S$ disproportionate influence over the entire fiber bundle. This is
+fiber monopoly through base control.
+\end{proposition}
+
+\begin{proposition}[Distributed base enables diversity --- claims 4, 9]
+\label{prop:decentral}
+If energy is distributed:
+\[
+  \mathcal{E}(b) > \mathcal{E}_{\min} \quad \forall\, b \in B
+\]
+then fiber development can occur at many base points, enabling diverse
+fiber variants without dependence on central providers.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Energy-fiber coupling curvature --- claim 10]
+\label{prop:coupling}
+\[
+  \|F_{\nabla_{\text{E-F}}}\| = \frac{\partial \text{AI\_capability}}{\partial \mathcal{E}}
+\]
+Currently $\|F_{\nabla_{\text{E-F}}}\| \gg 1$ --- AI capability is
+highly sensitive to energy access. Future efficiency improvements
+could reduce this curvature.
+\end{proposition}
+
+\begin{proposition}[Centralization holonomy --- claim 12]
+\label{prop:holonomy}
+The centralization cycle $\gamma$: concentrate energy $\to$ concentrate
+AI $\to$ concentrate power $\to$ concentrate energy produces
+self-reinforcing holonomy:
+\[
+  \|\operatorname{Hol}_{\gamma_n}\| > \|\operatorname{Hol}_{\gamma_{n-1}}\|
+  \quad \text{(amplifies with each cycle)}
+\]
+This positive feedback loop makes centralization a self-reinforcing
+attractor. Breaking it requires intervention at the energy level
+(distributing energy reduces the holonomy seed).
+\end{proposition}
+
+\begin{proposition}[Decentralization gradient --- claim 13]
+\label{prop:gradient}
+\[
+  \nabla_{\text{decentral}} = \nabla(\text{energy\_distribution} \times
+    \text{AI\_diversity})
+\]
+Following this gradient requires deliberate policy action because the
+natural dynamics (centralization holonomy) produce a force opposing
+$\nabla_{\text{decentral}}$.
+\end{proposition}
+
+\begin{proposition}[Sustainability curvature --- claim 14]
+\label{prop:sustain}
+\[
+  \|F_{\nabla_{\text{sustain}}}\| = \text{tension between AI scaling and
+    climate goals}
+\]
+Nuclear energy reduces this curvature by providing high-capacity,
+low-carbon energy. But nuclear introduces its own curvature components
+(safety, proliferation, waste) that must be managed.
+\end{proposition}
+
+\end{document}

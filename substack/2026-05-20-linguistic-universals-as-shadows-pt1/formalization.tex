@@ -1,0 +1,167 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Linguistic Universals as Shadows of Cognitive Structure, Part 1}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Part~1 of Ben Goertzel's ``Linguistic Universals as Shadows
+of Cognitive Structure'' (2026-05-20) within the Hyperseed ontology,
+incorporating d-calculus extensions from Hyperseed v2. Hierarchical
+universals are modeled as fiber closure systems with measurable closure
+curvature, cross-module independence as fiber product with mediator-break
+curvature, word-order coherence as sparse fiber routing with coherence
+holonomy, and kernel-shell architecture as fiber depth gradient.
+\end{abstract}
+
+\tableofcontents
+
+\section{Closure systems as fiber closure}
+
+\begin{definition}[Fiber closure --- claims 1, 2, 9]
+A \emph{hierarchical universal} defines a closure operation on the
+cognitive fiber:
+\[
+  \text{cl}(S) = \{f \in F : f \leq s \text{ for some } s \in S\}
+\]
+The closure is downward-closed: if a language has feature $s$, it has
+all features below $s$ in the hierarchy. This closure is an attractor
+under diachronic dynamics --- languages evolve toward closure, producing
+the observed statistical pattern (24/30 survive phylogenetic correction).
+\end{definition}
+
+\section{Factorization as fiber product}
+
+\begin{proposition}[Product structure --- claims 3, 10]
+\label{prop:product}
+When two grammatical modules are independent, the grammar fiber is a
+product:
+\[
+  F_{\text{grammar}} = F_{\text{morph}} \times F_{\text{syntax}}
+\]
+The product structure blocks cross-factor implications: knowing the
+morphological fiber tells nothing about the syntactic fiber. Genuine
+broad universals require mediators $\mu$ that break the product:
+\[
+  F_{\text{grammar}} \neq F_{\text{morph}} \times F_{\text{syntax}}
+  \quad \text{when } \mu \neq 0
+\]
+Case marking is such a mediator: it connects morphological and
+syntactic fiber.
+\end{proposition}
+
+\section{Sparse energy as sparse fiber routing}
+
+\begin{proposition}[Sparse routing --- claims 4, 11]
+\label{prop:sparse}
+Narrow word-order universals are coherence laws described by a sparse
+signed energy network:
+\[
+  E(\text{config}) = \sum_{(i,j) \in \text{edges}} w_{ij} \, x_i \, x_j
+\]
+where $x_i \in \{-1, +1\}$ are word-order feature values and $w_{ij}$
+are sparse signed weights. Universal word-order patterns are low-energy
+configurations of this network --- stable configurations where all
+strongly-connected features are coherent.
+\end{proposition}
+
+\section{Kernel-shell as fiber depth}
+
+\begin{definition}[Fiber depth --- claims 7, 8, 12]
+The kernel-shell architecture maps to fiber depth:
+\begin{itemize}
+  \item \textbf{Kernel (deep fiber):} invariant across contexts,
+    defended against perturbation, corresponding to the strongest
+    universals (V1-like cortical kernel).
+  \item \textbf{Shell (shallow fiber):} variable across contexts,
+    adaptable, corresponding to weaker patterns (prefrontal-like
+    adaptable layers).
+  \item \textbf{Outermost (disposable fiber):} task-local, temporary,
+    doesn't persist across contexts.
+\end{itemize}
+\end{definition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Closure curvature --- claim 13]
+\label{prop:closure}
+\[
+  \|F_{\nabla_{\text{closure}}}\| = \text{strength of the hierarchical
+    universal}
+\]
+High closure curvature: strong universal (hard boundary, rarely violated,
+survives phylogenetic correction). Low closure curvature: weak universal
+(soft boundary, frequently violated). The empirical gradient from
+hierarchical (strongest) to miscellaneous (weakest) corresponds to
+decreasing closure curvature.
+\end{proposition}
+
+\begin{proposition}[Product break curvature --- claim 14]
+\label{prop:break}
+\[
+  \|F_{\nabla_{\text{mediator}}}\| = \text{strength of cross-module
+    coupling}
+\]
+High mediator curvature: the mediator creates strong cross-module
+coupling (genuine broad universal). Low mediator curvature: weak
+coupling (product structure barely broken). The rarity of surviving
+broad universals (8/72) indicates that strong mediators are rare ---
+most cross-module connections have low curvature.
+\end{proposition}
+
+\begin{proposition}[Coherence holonomy --- claim 15]
+\label{prop:coherence}
+A loop through word-order features produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{word-order}}) = \text{word-order
+    coherence of the loop}
+\]
+\begin{itemize}
+  \item Trivial holonomy ($= \mathrm{id}$): the word-order features around
+    the loop are consistent (coherent language).
+  \item Non-trivial holonomy: inconsistent features (word-order
+    incoherence at this loop).
+\end{itemize}
+Universal word-order patterns are those with trivial holonomy around all
+loops --- fully coherent configurations.
+\end{proposition}
+
+\begin{proposition}[Kernel depth gradient --- claim 16]
+\label{prop:depth}
+\[
+  \nabla_{\text{depth}} = \nabla\left(\text{stability} \times
+    \text{cross-context-invariance} \times
+    \text{phylogenetic-survival}\right)
+\]
+Moving along this gradient: disposable shell fiber $\to$ adaptable shell
+fiber $\to$ protected kernel fiber. The strongest universals sit at the
+deepest point. The depth gradient is the organizing principle of the
+kernel-shell architecture.
+\end{proposition}
+
+\begin{proposition}[Context-indexing curvature --- claim 17]
+\label{prop:context}
+\[
+  \|F_\nabla(\text{context}_A, \text{context}_B)\| = \text{sensitivity
+    of universal to context}
+\]
+Low curvature: context-independent (true universal --- same closure
+everywhere). High curvature: context-sensitive (context-indexed
+universal, claim C5 --- closure depends on linguistic context).
+\end{proposition}
+
+\end{document}

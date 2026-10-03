@@ -1,0 +1,169 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Can All Human Concepts Be Reduced to Semantic Primitives?}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Can All Human Concepts Be Reduced to
+Semantic Primitives?'' (2022-03-14) within the Hyperseed ontology,
+incorporating d-calculus extensions from Hyperseed v2. Semantic primitives
+are modeled as base fibers forming a fiber basis for the concept space,
+embodiment grounding as fiber anchoring, and the limits of reduction as
+gradient singularities and compositional holonomy.
+\end{abstract}
+
+\tableofcontents
+
+\section{Primitives as fiber basis}
+
+\begin{definition}[Primitive fiber set --- claims 1, 7]
+The \emph{primitive fiber set} $\mathcal{P} = \{p_1, \ldots, p_k\}$
+consists of fibers that cannot be decomposed into simpler fibers within
+the system. Each $p_i$ is an atomic fiber element.
+\end{definition}
+
+\begin{definition}[Fiber composition --- claims 4, 7]
+Every compound concept $C$ is a composition of primitives:
+\[
+  C = f(p_{i_1}, p_{i_2}, \ldots, p_{i_n})
+\]
+where $f$ is drawn from a set of composition operations
+$\mathcal{F} = \{\wedge, \vee, \neg, \forall, \exists, \text{metaphor},
+\text{blend}, \ldots\}$.
+\end{definition}
+
+\begin{proposition}[Fiber basis completeness --- claims 1, 2, 8]
+\label{prop:basis}
+The primitives $\mathcal{P}$ form a fiber basis if they span the
+concept fiber space $\mathcal{C}$:
+\[
+  \text{span}_\mathcal{F}(\mathcal{P}) = \mathcal{C}
+\]
+The basis is \emph{complete} if every concept in $\mathcal{C}$ has a
+finite composition in terms of $\mathcal{P}$. If some concepts resist
+finite decomposition, the basis is incomplete and must be extended.
+\end{proposition}
+
+\section{Embodiment grounding as fiber anchoring}
+
+\begin{definition}[Grounding anchor --- claims 3, 9]
+An \emph{embodied primitive} $p_e \in \mathcal{P}$ is anchored to the
+physical base space through sensorimotor interaction:
+\[
+  \text{anchor}: p_e \to B_{\text{sensorimotor}}
+\]
+Anchored primitives have direct physical referents (MOVE $\to$ motor
+action, SEE $\to$ visual perception). They connect the abstract fiber
+bundle to the physical base space.
+\end{definition}
+
+\begin{definition}[Metaphorical extension --- claim 10]
+An \emph{abstract primitive} $p_a$ is constructed from an embodied
+primitive $p_e$ via a fiber morphism:
+\[
+  \mu: p_e \to p_a, \quad \text{where } \mu \text{ preserves structure}
+  \text{ while detaching from sensorimotor content}
+\]
+The metaphorical morphism preserves relational structure (if A relates
+to B as $p_e$ does to its referent, then the abstract A relates to
+abstract B as $p_a$ does to its referent) but strips the specific
+sensorimotor binding.
+\end{definition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Primitive basis curvature --- claim 11]
+\label{prop:curvature}
+The curvature $F_\nabla^\mathcal{P}$ of the primitive fiber basis measures
+composition smoothness:
+\[
+  \|F_\nabla^\mathcal{P}\| \ll 1 \implies \text{compositions well-defined,
+    smooth concept formation}
+\]
+\[
+  \|F_\nabla^\mathcal{P}\| \gg 1 \implies \text{compositions ambiguous or
+    unexpected (primitive interaction effects)}
+\]
+High curvature regions identify primitive pairs whose composition is
+non-trivial --- e.g., combining GOOD and BAD may have high curvature
+(context-dependent, potentially contradictory).
+\end{proposition}
+
+\begin{proposition}[Decomposition gradient --- claims 6, 12]
+\label{prop:gradient}
+The decomposition gradient $\nabla_{\text{decomp}} C$ for concept $C$
+points toward its primitive decomposition in fiber space:
+\[
+  \nabla_{\text{decomp}} C = \sum_i \frac{\partial C}{\partial p_i}\, dp_i
+\]
+When $\nabla_{\text{decomp}} C$ is well-defined and non-singular, $C$ has
+a smooth decomposition. When the gradient is singular:
+\[
+  \det\left(\frac{\partial^2 C}{\partial p_i \partial p_j}\right) = 0
+  \implies C \text{ resists decomposition}
+\]
+This identifies genuinely primitive or basis-incomplete concepts ---
+candidates for extending $\mathcal{P}$.
+\end{proposition}
+
+\begin{proposition}[Grounding connection curvature --- claim 13]
+\label{prop:grounding}
+The grounding connection $\Gamma_{\text{ground}}$ between abstract and
+embodied fiber has curvature measuring metaphorical distortion:
+\[
+  F_{\Gamma_{\text{ground}}} = 0 \implies \text{abstract concept is a
+    perfect lift of embodied one}
+\]
+\[
+  \|F_{\Gamma_{\text{ground}}}\| > 0 \implies \text{metaphorical extension
+    introduces genuinely new content}
+\]
+Non-zero grounding curvature means the abstract concept contains
+information not present in the embodied base --- it is ``more than a
+metaphor.''
+\end{proposition}
+
+\begin{proposition}[Compositional holonomy --- claim 14]
+\label{prop:holonomy}
+Composing primitives around a conceptual loop
+$\gamma: C \xrightarrow{d_1} C' \xrightarrow{d_2} C'' \xrightarrow{d_3} C$
+using different decompositions $d_i$ may produce non-trivial holonomy:
+\[
+  \operatorname{Hol}_\gamma(\nabla) \neq \mathrm{id}
+  \implies \text{decomposition of } C \text{ is ambiguous}
+\]
+Zero holonomy = unique canonical decomposition; non-trivial holonomy =
+multiple valid decompositions, path-dependent meaning.
+\end{proposition}
+
+\begin{proposition}[Cross-cultural parallel transport --- claim 15]
+\label{prop:transport}
+Parallel-transporting a concept $C$ across cultural fiber bundles
+$E_{\text{culture}_1} \to E_{\text{culture}_2}$ using primitives as
+connection:
+\[
+  P_\gamma^{12}(C) = C' \quad \text{where } C' \text{ is } C \text{'s
+    ``translation'' in culture 2}
+\]
+If $\mathcal{P}$ is truly universal, the transport is faithful:
+$C' \approx C$. If $\mathcal{P}$ is culture-dependent, the transport
+introduces holonomy: $C' \neq C$, and the discrepancy $C' - C$ measures
+the cultural specificity of the ``universal'' primitives.
+\end{proposition}
+
+\end{document}

@@ -1,0 +1,200 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Avoiding AGI Catastrophe, Part 1}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-22 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Avoiding AGI Catastrophe, Part 1''
+(2026-06-09) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. The Seven Hinges are modeled as a
+multi-fiber parameter space with a 7-dimensional curvature tensor,
+acatastrophe vs.\ alignment as coarse vs.\ fine fiber with alignment
+resolution curvature, architecture vs.\ politics as fiber vs.\ section,
+PLN dialectic as non-invertible composition with dialectic curvature,
+and super-additivity as non-separable fiber with composition curvature.
+Basin boundary curvature and architecture holonomy complete the
+d-calculus formulation.
+\end{abstract}
+
+\tableofcontents
+
+\section{Acatastrophe vs.\ alignment: coarse and fine fibers}
+
+\begin{definition}[Cold vs.\ warm alignment --- claims 4--7, 34]
+\label{def:alignment}
+Cold alignment (coarse fiber) requires only boundary compliance:
+\[
+  F_{\text{cold}} = \{b \in \mathcal{B} : b \notin \mathcal{C}\}
+  \quad \text{(avoid catastrophe set } \mathcal{C}\text{)}
+\]
+Warm alignment (fine fiber) requires high-dimensional value match:
+\[
+  F_{\text{warm}} \subset \prod_{i=1}^{n} V_i
+  \quad \text{(match across many value dimensions)}
+\]
+Cold alignment is sufficient for acatastrophe. The three rungs
+(acatastrophe $\to$ abundance $\to$ Cosmist) correspond to
+progressively finer fibers, each building on the previous without
+requiring its full structure. Full value-fit (warm alignment) is
+unnecessary and may be unachievable.
+\end{definition}
+
+\begin{proposition}[Dialectic as non-invertible composition --- claims 8, 36]
+\label{prop:dialectic}
+PLN's tolerance of partial inconsistency is non-invertible composition:
+\[
+  e_1 \circ e_2 = j \quad \text{where } e_1, e_2 \text{ may
+  contradict but } j \text{ is locally consistent}
+\]
+The composition is non-invertible: $j$ does not uniquely determine
+$e_1, e_2$. This is the directed-type principle applied to reasoning.
+Thesis and antithesis compose into synthesis as a 2-cell between
+1-cells --- higher-level structure containing both without requiring
+their consistency.
+\end{proposition}
+
+\section{Seven Hinges as multi-fiber parameter space}
+
+\begin{theorem}[Multi-fiber risk space --- claims 14--21, 32--33]
+\label{thm:hinges}
+The catastrophe risk is a function of seven independent fiber dimensions:
+\[
+  \text{Risk}: \mathbb{R}^7 \to [0,1], \quad
+  \vec{h} = (h_{\text{choke}}, h_{\text{obs}}, h_{\text{take}},
+  h_{\text{fork}}, h_{\text{lead}}, h_{\text{off}}, h_{\text{stew}})
+\]
+Collapsing these into a single ``safe/dangerous'' scalar is
+scalar collapse --- losing the structural information that each hinge
+contributes independently. Each hinge is a bifurcation parameter:
+the joint configuration $\vec{h}$ determines which attractor basin
+(acatastrophic or catastrophic) the system falls into.
+\end{theorem}
+
+\section{Architecture vs.\ politics: fiber vs.\ section}
+
+\begin{proposition}[Two levels of intervention --- claims 22--28, 35]
+\label{prop:fiber_section}
+\textbf{Fiber-level (architecture).} Change the bundle structure so
+catastrophe is structurally unlikely regardless of which section
+is selected:
+\[
+  \text{Hyperon/ASI:Chain} \implies E_{\text{governance}} \text{ has
+  non-trivial fiber with acatastrophic topology}
+\]
+\textbf{Section-level (politics).} Choose which entity controls ---
+section selection on an unchanged bundle, vulnerable to the same
+structural pathologies. The Anthropic/OpenAI framings are
+section-level; the Hyperon framing is fiber-level.
+\end{proposition}
+
+\section{Super-additivity as non-separable fiber}
+
+\begin{proposition}[Non-separable inference control --- claims 29--31, 37]
+\label{prop:superadd}
+Inference control is super-additive --- the network's combined
+inference control exceeds the sum of its parts:
+\[
+  IC(\text{network}) > \sum_i IC(\text{agent}_i)
+\]
+In fiber terms, this is non-separable fiber: the inference control
+fiber cannot be factored into independent components:
+\[
+  F_{\text{IC}} \not\cong \bigoplus_i F_i
+\]
+A forked copy loses the interaction effects (the non-separable
+part), making it a husk. This reduces forkability risk.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Hinge curvature tensor --- claim 38]
+\label{prop:hinge_curv}
+The curvature of the seven-dimensional hinge parameter space:
+\[
+  F_{\nabla_{\text{hinges}}} \in \Omega^2(\mathbb{R}^7)
+\]
+High curvature at a point: small changes in that hinge configuration
+flip between attractor basins (critical transition). Low curvature:
+stable basin (robust configuration). The architecture should place
+the system in a low-curvature region of hinge space.
+\end{proposition}
+
+\begin{proposition}[Basin boundary curvature --- claim 39]
+\label{prop:basin_curv}
+\[
+  \|F_{\nabla_{\text{boundary}}}\| = \text{sharpness of the
+    acatastrophe/catastrophe transition}
+\]
+High boundary curvature: sharp transition (brittle safety, no warning).
+Low boundary curvature: gradual transition (robust safety with early
+warning signals). The architecture should minimize boundary curvature
+--- create a wide, gradual transition rather than a cliff.
+\end{proposition}
+
+\begin{proposition}[Architecture holonomy --- claim 40]
+\label{prop:arch_hol}
+A loop through the seven hinges (change one, observe cascading effects,
+return) produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{architecture}}) =
+    \text{cross-hinge coupling per loop}
+\]
+\begin{itemize}
+  \item Low holonomy: hinges approximately independent (each settable
+    independently, the seven-hinge analysis is valid).
+  \item High holonomy: hinges are coupled (setting one forces others,
+    the seven-hinge analysis needs correction for interactions).
+\end{itemize}
+\end{proposition}
+
+\begin{proposition}[Alignment resolution curvature --- claim 41]
+\label{prop:align_curv}
+\[
+  \|F_\nabla(\text{cold}, \text{warm})\| = \text{unnecessary constraint
+    cost of warm over cold alignment}
+\]
+The article argues this curvature is high: warm alignment imposes many
+constraints beyond what cold alignment requires, with most of the extra
+constraints unnecessary for acatastrophe.
+\end{proposition}
+
+\begin{proposition}[Super-additivity curvature --- claim 42]
+\label{prop:superadd_curv}
+\[
+  \|F_{\nabla_{\text{composition}}}\| = \text{degree of super-additivity}
+\]
+High curvature: inference control is strongly super-additive (network
+effects dominate, forked copies lose most value). Low curvature:
+approximately additive (forked copies retain value, forkability is
+dangerous). Hyperon is designed for high super-additivity curvature.
+\end{proposition}
+
+\begin{proposition}[Dialectic curvature --- claim 43]
+\label{prop:dialectic_curv}
+\[
+  \|F_\nabla(\text{thesis}, \text{antithesis})\| = \text{dialectic
+    productive tension}
+\]
+High curvature: the synthesis is genuinely novel (productive dialectic,
+new insight emerges from contradiction). Low curvature: the synthesis
+is just averaging (unproductive compromise, no genuine novelty).
+PLN's non-invertible composition enables high dialectic curvature.
+\end{proposition}
+
+\end{document}

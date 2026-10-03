@@ -1,0 +1,143 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Let's Get Chemical}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Let's Get Chemical'' (2026-05-05) within
+the Hyperseed ontology, incorporating d-calculus extensions from
+Hyperseed v2. Protected release is modeled as fiber-selective eviction
+minimizing value-share curvature, RAF sets as autocatalytic fiber cores
+with amplification holonomy, and conversion bridges as smooth fiber-type
+transitions with minimal bridge curvature.
+\end{abstract}
+
+\tableofcontents
+
+\section{Protected release as fiber-selective eviction}
+
+\begin{definition}[Fiber-selective eviction --- claims 3, 5, 7]
+\emph{Protected release} evicts fiber selectively:
+\begin{itemize}
+  \item For each fiber section $\sigma_i$, compute value-justified share
+    $v_i = \text{functional\_contribution}(\sigma_i) / \sum_j \text{functional\_contribution}(\sigma_j)$.
+  \item Compute actual share $a_i$.
+  \item If $a_i > v_i$: apply anti-precedence pressure (reduce $\sigma_i$'s
+    share toward $v_i$).
+  \item If $a_i \leq v_i$: protect $\sigma_i$ (no eviction).
+\end{itemize}
+This targets identity lock-in (one section dominating beyond its
+justified share) without penalizing functional repetition (multiple
+sections performing the same valuable function).
+\end{definition}
+
+\section{RAF sets as autocatalytic fiber cores}
+
+\begin{definition}[Autocatalytic fiber --- claims 1, 8]
+A \emph{reflexively autocatalytic food-generated (RAF) fiber core} is a
+collection of fiber operations $\{f_i\}$ such that:
+\[
+  \forall\, f_i \in \text{RAF}: \text{inputs}(f_i) \subseteq
+    \text{outputs}(\text{RAF}) \cup \text{food}(B)
+\]
+The fiber core produces all its own inputs (given base resource flow).
+This is the minimal self-sustaining fiber structure --- the fiber
+analog of a living cell.
+\end{definition}
+
+\section{Conversion bridge as fiber-type transition}
+
+\begin{proposition}[Bridge transport --- claims 4, 9]
+\label{prop:bridge}
+A \emph{conversion bridge} provides smooth parallel transport between
+fiber types during transition:
+\[
+  \tau: F_{\text{old}} \xrightarrow{\text{smooth}} F_{\text{new}}
+\]
+maintaining functional continuity: $\text{function}(\tau(t)) \approx
+\text{function}(F_{\text{old}})$ for all $t$ during transition.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Canalization curvature --- claim 10]
+\label{prop:canal}
+\[
+  \|F_{\nabla_{\text{canal}}}\| = \text{degree of implementation lock-in}
+\]
+High canalization curvature: one implementation dominates beyond its
+value-justified share. Protected release acts as curvature reduction:
+\[
+  \frac{d\|F_{\nabla_{\text{canal}}}\|}{dt}\bigg|_{\text{protected\_release}} < 0
+\]
+\end{proposition}
+
+\begin{proposition}[Value-share curvature --- claim 11]
+\label{prop:value}
+\[
+  \|F_\nabla(\text{actual}, \text{value})\| = \sum_i |a_i - v_i|
+\]
+Protected release minimizes this curvature:
+\[
+  \min_{\text{eviction}} \|F_\nabla(\text{actual}, \text{value})\|
+\]
+At the minimum, each section's actual share matches its value-justified
+share.
+\end{proposition}
+
+\begin{proposition}[RAF holonomy --- claim 12]
+\label{prop:raf}
+An autocatalytic cycle $\gamma$: $A \to B \to C \to A$ produces
+holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{RAF}}) = \text{autocatalytic
+    amplification per cycle}
+\]
+\begin{itemize}
+  \item $\operatorname{Hol} > 1$: RAF grows (successful autocatalysis).
+  \item $\operatorname{Hol} = 1$: RAF maintains (steady state).
+  \item $\operatorname{Hol} < 1$: RAF decays (failed autocatalysis).
+\end{itemize}
+\end{proposition}
+
+\begin{proposition}[Conversion bridge curvature --- claim 13]
+\label{prop:bridge_curv}
+\[
+  \|F_{\nabla_{\text{bridge}}}\| = \text{transition roughness}
+\]
+The conversion bridge is designed to minimize this curvature, ensuring
+smooth transition between fiber types with minimal functional disruption.
+\end{proposition}
+
+\begin{proposition}[Identity-function separation curvature --- claim 14]
+\label{prop:id_func}
+\[
+  \|F_\nabla(\text{identity}, \text{function})\| = \text{coupling between
+    identity and function}
+\]
+\begin{itemize}
+  \item Low curvature: identity and function are separable. Different
+    implementations can serve the same function. Protected release
+    works well.
+  \item High curvature: identity and function are tightly coupled. Only
+    one implementation can serve the function. Protected release has
+    limited scope.
+\end{itemize}
+\end{proposition}
+
+\end{document}

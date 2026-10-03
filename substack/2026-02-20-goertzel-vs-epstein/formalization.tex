@@ -1,0 +1,128 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Goertzel vs Epstein}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Goertzel vs Epstein'' (2026-02-20) within
+the Hyperseed ontology, incorporating d-calculus extensions from
+Hyperseed v2. Provenance is modeled as fiber history through base space,
+due diligence as base verification, and the moral reckoning as
+provenance holonomy producing epistemic growth.
+\end{abstract}
+
+\tableofcontents
+
+\section{Provenance as fiber history}
+
+\begin{definition}[Fiber provenance --- claims 1--5, 6]
+Every fiber element $\sigma(b)$ has a \emph{provenance} --- the path
+$\gamma: [0,t] \to B$ through base space that produced it:
+\[
+  \text{prov}(\sigma(b)) = \gamma \quad \text{where }
+  \sigma(b) = P_\gamma(\Gamma) \cdot \sigma_0
+\]
+The provenance is indelible: the path $\gamma$ is a historical fact
+that cannot be retroactively altered. If $\gamma$ passes through a
+base point $b_{\text{bad}}$ that is later revealed to be problematic,
+the provenance includes $b_{\text{bad}}$ permanently.
+\end{definition}
+
+\begin{proposition}[Fiber-base separation --- claim 8]
+\label{prop:separation}
+The quality of fiber is logically independent of base-point quality:
+\[
+  \text{quality}(\sigma(b)) \neq f(\text{ethics}(b_{\text{funding}}))
+\]
+Good fiber can have bad provenance (valid research funded by problematic
+sources) and bad fiber can have good provenance (invalid research from
+reputable sources). However, provenance affects \emph{trust transport}:
+the social fiber bundle requires clean provenance for full acceptance.
+\end{proposition}
+
+\section{Due diligence as base verification}
+
+\begin{definition}[Base verification --- claims 3, 7]
+\emph{Due diligence} is verifying base-point integrity before connecting
+fiber:
+\[
+  \text{verify}(b_{\text{funding}}) \to \{0, 1\} \quad
+  \text{before } \sigma \text{ is connected to } b_{\text{funding}}
+\]
+Due diligence failure is connecting fiber to an unverified base point:
+$\text{verify} = \text{skipped}$ while the connection is made. The
+fiber may be valid but its provenance is tainted.
+\end{definition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Provenance curvature --- claim 9]
+\label{prop:curvature}
+The curvature of the provenance connection measures funding influence
+on research direction:
+\[
+  \|F_{\nabla_{\text{prov}}}\| = \text{influence of funding source
+    on research direction}
+\]
+\begin{itemize}
+  \item $\|F_{\nabla_{\text{prov}}}\| = 0$: funding has no directional
+    influence (ideal independence).
+  \item $\|F_{\nabla_{\text{prov}}}\| > 0$: funding biases research
+    (problematic dependence).
+\end{itemize}
+In this case, Goertzel argues the curvature was near zero --- the
+Epstein funding did not influence research direction.
+\end{proposition}
+
+\begin{proposition}[Trust connection suppression --- claim 10]
+\label{prop:trust}
+When provenance is revealed to include problematic base points, the
+trust connection is suppressed:
+\[
+  \Gamma_{\text{trust}}(\text{researcher} \to \text{community})
+  \downarrow \quad \text{when prov includes } b_{\text{bad}}
+\]
+Transparency (providing complete provenance information) works to
+restore the trust connection by enabling the community to evaluate
+fiber on its merits:
+\[
+  \text{transparency} \implies \Gamma_{\text{trust}} \text{ partially
+    restored}
+\]
+\end{proposition}
+
+\begin{proposition}[Provenance holonomy --- claim 11]
+\label{prop:holonomy}
+Traversing the provenance reckoning loop $\gamma$: create $\to$ fund
+$\to$ produce $\to$ reveal $\to$ reckon produces non-trivial holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{prov}}) \neq \mathrm{id}
+  \implies \text{moral/epistemic growth through honest reckoning}
+\]
+Avoiding the loop (hiding provenance) prevents the holonomy:
+\[
+  \gamma_{\text{avoided}} \implies
+  \operatorname{Hol}_{\gamma_{\text{avoided}}} = \mathrm{id}
+  \implies \text{no growth}
+\]
+The article itself is the reckoning loop --- by documenting and
+confronting the provenance, Goertzel completes the loop and
+undergoes the holonomy.
+\end{proposition}
+
+\end{document}

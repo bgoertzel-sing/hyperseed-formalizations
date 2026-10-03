@@ -1,0 +1,133 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  The OpenAI/Microsoft Shakeup and the Governance Question}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``The OpenAI/Microsoft Shakeup and the
+Governance Question'' (2026-05-01) within the Hyperseed ontology,
+incorporating d-calculus extensions from Hyperseed v2. Capital
+dependence is modeled as fiber capture through capital gravity
+curvature, governance failure as section-fiber convergence, and
+structural independence as near-zero coupling curvature to any
+single interest.
+\end{abstract}
+
+\tableofcontents
+
+\section{Capital gravity as fiber capture}
+
+\begin{definition}[Capital gravity --- claims 2, 6]
+An organization has \emph{capital gravity} when capital dependence
+defines a fiber section $\sigma_{\text{capital}}$ that pulls the
+organization's actual behavior away from its mission section
+$\sigma_{\text{mission}}$:
+\[
+  \frac{d\sigma_{\text{actual}}}{dt} \propto
+    (\sigma_{\text{capital}} - \sigma_{\text{actual}})
+\]
+Over time, $\sigma_{\text{actual}} \to \sigma_{\text{capital}}$
+regardless of $\sigma_{\text{mission}}$.
+\end{definition}
+
+\section{Predictable unwinding as section-fiber convergence}
+
+\begin{proposition}[Section-fiber convergence --- claims 1, 7]
+\label{prop:convergence}
+The stated section converges toward the actual fiber:
+\[
+  \lim_{t \to \infty} \sigma_{\text{stated}}(t) = \sigma_{\text{actual}}(t)
+    \approx \sigma_{\text{capital}}
+\]
+Each ``restructuring'' is a discrete step in this convergence.
+The convergence is predictable because fiber dynamics are determined
+by structure (capital dependencies), not by intent (stated mission).
+\end{proposition}
+
+\section{Fiber-level governance}
+
+\begin{proposition}[Governance levels --- claims 3--5, 8]
+\label{prop:governance}
+\begin{itemize}
+  \item \textbf{Section-level:} governance through policies, mission
+    statements, good intentions. Overridable by fiber dynamics.
+  \item \textbf{Fiber-level:} governance through structural properties
+    (decentralization, multi-stakeholder, fork-ability). Resists capture
+    because the structure itself prevents it.
+\end{itemize}
+AGI governance must be fiber-level because the stakes (infrastructure
+of cognition) are too high for section-level governance that can be
+gradually captured.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Capital gravity curvature --- claim 9]
+\label{prop:capital}
+\[
+  \|F_{\nabla_{\text{capital-mission}}}\| = \text{strength of capital
+    gravity on mission}
+\]
+\begin{itemize}
+  \item High: capital strongly distorts mission (venture-backed AGI lab).
+  \item Low: mission structurally independent of capital (decentralized,
+    multi-source funding).
+\end{itemize}
+\end{proposition}
+
+\begin{proposition}[Governance holonomy --- claim 11]
+\label{prop:holonomy}
+The governance cycle $\gamma$: fund $\to$ develop $\to$ deploy $\to$
+evaluate $\to$ restructure $\to$ fund produces drift holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{gov}}) = \text{governance
+    drift per cycle}
+\]
+In the OpenAI case, each cycle increased drift from the original
+mission --- the holonomy accumulated monotonically toward
+$\sigma_{\text{capital}}$.
+\end{proposition}
+
+\begin{proposition}[Structural independence curvature --- claim 12]
+\label{prop:independence}
+\[
+  \|F_\nabla(\text{org}, \text{interest}_i)\| = \text{coupling
+    strength to interest } i
+\]
+Structural independence requires:
+\[
+  \|F_\nabla(\text{org}, \text{interest}_i)\| \approx 0
+  \quad \forall\, i
+\]
+The OpenAI case: $\|F_\nabla(\text{OpenAI}, \text{Microsoft})\| \gg 1$,
+enabling capital gravity to capture governance.
+\end{proposition}
+
+\begin{proposition}[Governance gradient --- claim 13]
+\label{prop:gradient}
+\[
+  \nabla_{\text{gov}} = \nabla\left(\text{decentralization} \times
+    \text{multi-stakeholder} \times \text{fork-ability} \times
+    \text{structural\_independence}\right)
+\]
+Moving along this gradient requires deliberate structural design ---
+good intentions without structural support converge to
+$\sigma_{\text{capital}}$ through capital gravity.
+\end{proposition}
+
+\end{document}

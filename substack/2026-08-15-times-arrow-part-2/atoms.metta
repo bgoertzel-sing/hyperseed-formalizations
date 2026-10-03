@@ -532,3 +532,22 @@
 ; Article-level summary
 (ArticleSummary times-arrow-part-2
   "Connects surprise-weighted record growth to intelligence (informational floor), weakness/compression (leverage), Omega dynamics (ray not point), consciousness (contextualization coordinate via McBride derivative), nonattachment (contextualize then quotient), compassion (coarse worth × fine need), and collective coordination (shared provenance = shared time).")
+
+;; ---- d-calculus claims (38-45), Hyperseed v2, deepened 2026-09-29 ----
+(--> mcbride-derivative d-on-record-types)
+(--> contextualization-coordinate (section-of d-record-type))
+(--> insight mixed-second-derivative-curvature)
+(--> mixed-second-derivative-curvature ([] (zero-iff-independent nonzero-emergent-reorganization)))
+(--> record-demand-floor ([] (integral-dDL-geq-Itask efficiency-changes-slope-not-bound)))
+(--> nonattachment ([] (lift-to-dR quotient-trivial-frame-holonomy)))
+(--> attachment nontrivial-self-frame-holonomy)
+(--> compassion ([] (flat-worth-connection curved-need-connection)))
+(--> creeping-exclusion worth-connection-curvature)
+(--> exception-list-growth worth-holonomy)
+(--> omega-ray ([] (d-values-to-zero d-record-positive)))
+(--> frozen-endpoint subjective-heat-death)
+(--> workspace groupoid-like-invertible-edits)
+(--> autobiography directed-type-revisions-as-forward-1-cells)
+(--> shared-time flat-inter-agent-record-connection)
+(--> routing-cost translation-curvature)
+(--> resonant-coordination ([] (low-curvature retain-descent-data anchoring)))

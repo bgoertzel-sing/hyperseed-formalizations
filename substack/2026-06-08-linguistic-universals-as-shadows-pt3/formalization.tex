@@ -1,0 +1,240 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Hyperseed Formalization:\\
+  Linguistic Universals as Shadows of Cognitive Structure, Part 3}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-22 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Part~3 of Ben Goertzel's ``Linguistic Universals as Shadows
+of Cognitive Structure'' (2026-06-08) within the Hyperseed ontology,
+incorporating d-calculus extensions from Hyperseed v2. Causal factorization
+is modeled as fiber decomposition with commutator curvature, semantic
+frames as transition functions with bridge curvature, graded stability as
+fiber depth with stability depth curvature, training losses as fiber
+conditions with a combined training convergence gradient, and linguistic
+typology as distributed fiber inspection with a typological inspection
+gradient pointing toward cognitive bedrock.
+\end{abstract}
+
+\tableofcontents
+
+\section{Causal factorization as fiber decomposition}
+
+\begin{theorem}[Cognitive substrate decomposition --- claims 1--5, 27]
+\label{thm:factorization}
+The cognitive substrate decomposes into fibers over different domains:
+\[
+  S_{\text{cognitive}} \cong \bigoplus_{d \in \text{Domains}} F_d
+  \qquad \text{with} \qquad
+  \text{Update}_A \text{ local to } F_{d(A)}
+\]
+
+Small commutators express approximate commutativity of fiber updates:
+\[
+  U_A \circ U_B \approx U_B \circ U_A
+  \qquad \text{when } F_{d(A)} \cap F_{d(B)} = \emptyset
+\]
+
+Non-commutativity (catastrophic forgetting) is a fiber defect: the
+commutator $[U_A, U_B]$ measures the defect. A well-factorized
+architecture has small commutators for updates to unrelated domains.
+Implementation-agnostic: what matters is relevant separability, not
+the mechanism.
+\end{theorem}
+
+\section{Semantic frames as transition functions}
+
+\begin{definition}[Cognition-to-language bundle --- claims 6--7, 28]
+\label{def:frames}
+Semantic frames are the transition functions of the cognition-to-language
+bundle:
+\[
+  E_{\text{cog}} \xrightarrow{g_{\text{frame}}} E_{\text{lang}}
+\]
+
+The frame layer makes the bundle well-defined. Without it, the
+cognition-to-language map is a naked map between incompatible coordinate
+systems --- too rigid to do useful work. Frame types: event, force-dynamic,
+argument-role, person/number, possession, attention.
+\end{definition}
+
+\section{Graded stability as fiber depth}
+
+\begin{proposition}[Fiber depth --- claims 11, 14, 29]
+\label{prop:depth}
+Fiber depth encodes graded stability:
+\begin{itemize}
+  \item \textbf{Deep fiber (protected bedrock).} Person, number, case
+    hierarchies. Slow learning rates. Survive across all languages.
+  \item \textbf{Middle fiber (consolidated preferences).} Word-order
+    regularities. Moderate protection.
+  \item \textbf{Shallow fiber (plastic surface).} Context-bound universals.
+    Fast learning rates. Most variation lives here.
+\end{itemize}
+The three layers of typological universals map directly to three fiber
+depth levels.
+\end{proposition}
+
+\section{Training losses as fiber conditions}
+
+\begin{proposition}[Naturality loss = cocycle condition --- claims 19, 30]
+\label{prop:naturality}
+The naturality loss enforces the cocycle condition: transition functions
+compose consistently. Update-then-readout $\approx$ readout-then-
+linguistic-update. The commuting diagram is the cocycle condition on the
+cognition-to-language bundle.
+\end{proposition}
+
+\begin{proposition}[Closure loss = hierarchical cocycle --- claims 20, 32]
+\label{prop:closure}
+The closure loss enforces hierarchical consistency: fiber structure at
+each level must be consistent with all levels below. If a language marks
+a feature, it must mark all features below it on the hierarchy.
+\end{proposition}
+
+\begin{proposition}[Mediator loss = anti-scalar-collapse --- claims 21, 31]
+\label{prop:mediator}
+The mediator loss enforces anti-scalar-collapse: cross-module coupling
+must be explicit and inspectable through a small number of dedicated
+mediators, not diffuse and dense. Distant modules are conditionally
+independent given the explicit mediator.
+\end{proposition}
+
+\begin{proposition}[Low-frustration loss = sparse compatibility --- claim 22]
+\label{prop:frustration}
+The low-frustration externalization loss enforces sparse compatibility:
+local pulls from different modules must be compatible with a consistent
+linearization over a sparse signed-energy graph.
+\end{proposition}
+
+\begin{proposition}[Stability schedule = fiber depth enforcement --- claim 23]
+\label{prop:stability}
+The stability schedule enforces the deep/shallow fiber distinction: slow
+learning rates for deep fiber (protected bedrock), fast learning rates
+for shallow fiber (plastic surface). This is direct enforcement of the
+fiber depth structure.
+\end{proposition}
+
+\section{Linguistic typology as distributed fiber inspection}
+
+\begin{proposition}[Distributed inspection --- claims 12--15, 33]
+\label{prop:typology}
+Each language externalizes a different cross-section of the cognitive
+fiber. Typological comparison across languages is distributed fiber
+inspection: many observers sampling the same underlying structure from
+different vantage points.
+
+Typological universals (features stable across unrelated languages) are
+the fiber invariants --- the features of cognitive structure that survive
+all externalization maps. Cross-cultural averaging (done by language
+over thousands of years) is fiber extraction.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Commutator curvature --- claim 34]
+\label{prop:commutator_curv}
+\[
+  \|F_{\nabla_{\text{commutator}}}\| = \text{interference between
+    unrelated domains}
+\]
+Zero curvature: perfect factorization (no interference, no catastrophic
+forgetting). Nonzero curvature: imperfect factorization (interference
+present). The training objective minimizes this curvature.
+\end{proposition}
+
+\begin{proposition}[Naturality holonomy --- claim 35]
+\label{prop:naturality_hol}
+A loop through the cognition-to-language bundle $\gamma$:
+encode $\to$ frame $\to$ externalize $\to$ parse $\to$ decode produces
+holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{naturality}}) =
+    \text{round-trip information loss}
+\]
+\begin{itemize}
+  \item Trivial holonomy: perfect naturality (diagram commutes exactly,
+    no information lost in round trip).
+  \item Non-trivial holonomy: information loss (the diagram doesn't
+    quite commute; some cognitive content is destroyed by the
+    encode-decode cycle).
+\end{itemize}
+\end{proposition}
+
+\begin{proposition}[Stability depth curvature --- claim 36]
+\label{prop:depth_curv}
+\[
+  \|F_\nabla(\text{deep}, \text{shallow})\| = \text{protection boundary
+    sharpness}
+\]
+High curvature: sharp boundary between protected bedrock and plastic
+surface (good architecture; bedrock doesn't drift). Low curvature:
+blurry boundary (unstable architecture; bedrock drifts, forgetting
+creeps into core concepts).
+\end{proposition}
+
+\begin{proposition}[Frame bridge curvature --- claim 37]
+\label{prop:frame_curv}
+\[
+  \|F_{\nabla_{\text{frame}}}\| = \text{frame translation fidelity}
+\]
+Low curvature: frames faithfully bridge cognitive and linguistic fiber
+(clean translation, low loss). High curvature: frames distort the
+translation (lossy bridge, cognitive content garbled in externalization).
+\end{proposition}
+
+\begin{proposition}[Typological inspection gradient --- claim 38]
+\label{prop:typology_grad}
+\[
+  \nabla_{\text{typology}} = \nabla\left(\text{universality\_coefficient
+    across language families}\right)
+\]
+Steep gradient: feature is universal (present in all families),
+pointing toward cognitive bedrock. Flat gradient: feature is local
+(family-specific), pointing toward surface variation. The gradient
+direction identifies which cognitive fiber layers are deep (protected)
+versus shallow (plastic).
+\end{proposition}
+
+\begin{proposition}[Training convergence gradient --- claim 39]
+\label{prop:training_grad}
+\[
+  \nabla_{\text{training}} = \nabla\left(\mathcal{L}_{\text{nat}} +
+    \mathcal{L}_{\text{cl}} + \mathcal{L}_{\text{med}} +
+    \mathcal{L}_{\text{frust}} + \mathcal{L}_{\text{stab}}\right)
+\]
+Each term contributes a fiber-geometric force:
+\begin{itemize}
+  \item $\mathcal{L}_{\text{nat}}$: enforces cocycle condition
+    (naturality).
+  \item $\mathcal{L}_{\text{cl}}$: enforces hierarchical consistency
+    (closure).
+  \item $\mathcal{L}_{\text{med}}$: enforces anti-scalar-collapse
+    (mediator).
+  \item $\mathcal{L}_{\text{frust}}$: enforces sparse compatibility
+    (frustration).
+  \item $\mathcal{L}_{\text{stab}}$: enforces depth structure
+    (stability).
+\end{itemize}
+The total gradient moves the architecture toward the categorically
+prescribed fiber structure. Convergence of the training loss corresponds
+to the Transformer acquiring the fiber geometry that linguistic
+universals predict a language-capable cognitive system must have.
+\end{proposition}
+
+\end{document}

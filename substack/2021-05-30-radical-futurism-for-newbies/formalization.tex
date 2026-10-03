@@ -1,0 +1,172 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Radical Futurism for Newbies}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Radical Futurism for Newbies''
+(2021-05-30) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. The Singularity is modeled as a fiber
+phase transition with curvature divergence, AGI as a cross-domain
+fiber catalyst with omni-directional gradient, mind uploading as
+fiber substrate independence, and existential risk as curvature
+catastrophe distinguished from beneficial Singularity by fiber
+dimension trajectory.
+\end{abstract}
+
+\tableofcontents
+
+\section{Singularity as fiber phase transition}
+
+\begin{definition}[Technology fiber bundle]
+The \emph{technology fiber bundle} $\pi: E_{\text{tech}} \to B_t$
+has time as its base space and technological capability as its fiber.
+At each time $t$, the fiber $E_t$ represents the total technological
+capability of civilization.
+\end{definition}
+
+\begin{proposition}[Phase transition --- claims 1, 8]
+\label{prop:phase}
+The Singularity is a phase transition in the technology fiber bundle:
+\begin{enumerate}
+  \item \textbf{Pre-transition:} $\partial E_t/\partial t$ is slowly
+    varying and predictable from $E_{t-\epsilon}$.
+  \item \textbf{Transition:} $\partial E_t/\partial t$ becomes
+    autocatalytic --- fiber evolution accelerates itself:
+    $\partial^2 E_t/\partial t^2 \propto \partial E_t/\partial t$.
+  \item \textbf{Post-transition:} $E_t$ is qualitatively different
+    from any pre-transition fiber --- new dimensions, new connection
+    types, potentially new base-space structures.
+\end{enumerate}
+\end{proposition}
+
+\section{AGI as fiber catalyst}
+
+\begin{proposition}[Cross-domain catalysis --- claims 2, 9, 10]
+\label{prop:catalyst}
+AGI is a cross-domain fiber catalyst:
+\[
+  \frac{d E_k}{dt}\bigg|_{\text{with AGI}} \gg
+  \frac{d E_k}{dt}\bigg|_{\text{without AGI}}
+  \quad \forall\, k \in \text{domains}
+\]
+Unlike domain-specific technologies that accelerate only their own fiber,
+AGI accelerates ALL domain fibers simultaneously. The recursive property
+(AGI improves AGI) creates exponential acceleration:
+\[
+  \frac{d^2 E_{\text{AGI}}}{dt^2} = \alpha \cdot
+    \frac{d E_{\text{AGI}}}{dt} \cdot E_{\text{AGI}}
+  \quad (\alpha > 0)
+\]
+\end{proposition}
+
+\section{Mind uploading as substrate independence}
+
+\begin{proposition}[Fiber substrate independence --- claims 4, 11]
+\label{prop:upload}
+Mind uploading demonstrates fiber substrate independence:
+\[
+  \phi: E_{\text{bio}} \xrightarrow{\sim} E_{\text{comp}}
+\]
+where $\phi$ is a fiber isomorphism (or approximate isomorphism) between
+biological and computational realizations of mental fiber. The transfer
+fidelity is:
+\[
+  \text{fidelity}(\phi) = 1 - \frac{\|E_{\text{bio}} - \phi^{-1}(E_{\text{comp}})\|}
+    {\|E_{\text{bio}}\|}
+\]
+Perfect fidelity ($=1$) means exact substrate independence; imperfect
+fidelity means the transfer is lossy.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Phase transition curvature --- claim 12]
+\label{prop:curvature}
+The Singularity is characterized by curvature divergence:
+\[
+  \|F_{\nabla_{\text{tech}}}\| \to \infty \quad \text{as } t \to t_{\text{sing}}
+\]
+The curvature diverges because the connection changes faster than it can
+be tracked --- parallel transport becomes unreliable even across short
+time intervals. This is the formal content of ``prediction becomes
+impossible.''
+\end{proposition}
+
+\begin{proposition}[Catalytic gradient --- claim 13]
+\label{prop:gradient}
+AGI creates an omni-directional gradient in meta-technology fiber space:
+\[
+  \nabla_{\text{AGI}} = \left(\frac{\partial}{\partial F_{\text{bio}}},\;
+    \frac{\partial}{\partial F_{\text{phys}}},\;
+    \frac{\partial}{\partial F_{\text{chem}}},\; \ldots\right) > 0
+    \text{ in all components}
+\]
+No other technology has this property --- all others have gradients
+that are positive in some components and zero in others. AGI is the
+unique omni-directional catalyst.
+\end{proposition}
+
+\begin{proposition}[Recursive catalysis holonomy --- claim 14]
+\label{prop:holonomy}
+Each cycle of AGI self-improvement $\gamma$: improve $\to$ apply $\to$
+evaluate $\to$ improve produces non-trivial holonomy:
+\[
+  \|\operatorname{Hol}_{\gamma_n}(\Gamma_{\text{AGI}}) - \mathrm{id}\| >
+  \|\operatorname{Hol}_{\gamma_{n-1}}(\Gamma_{\text{AGI}}) - \mathrm{id}\|
+\]
+The holonomy grows with each cycle --- each self-improvement cycle
+produces MORE change than the last. This is the intelligence explosion
+as runaway holonomy growth.
+\end{proposition}
+
+\begin{proposition}[Substrate transfer curvature --- claim 15]
+\label{prop:transfer}
+The curvature of the substrate transfer connection:
+\[
+  \|F_{\Gamma_{\text{transfer}}}\| = 0 \implies \text{perfect transfer
+    (fiber isomorphism, same person)}
+\]
+\[
+  \|F_{\Gamma_{\text{transfer}}}\| > 0 \implies \text{lossy transfer
+    (fiber distortion, identity question)}
+\]
+The philosophical debate about personal identity in mind uploading
+becomes a geometric question: is the transfer curvature exactly zero
+or merely small?
+\end{proposition}
+
+\begin{proposition}[Existential risk as curvature catastrophe --- claim 16]
+\label{prop:risk}
+Two possible curvature trajectories at the Singularity:
+\begin{itemize}
+  \item \textbf{Beneficial:}
+    $\|F_\nabla\| \to \infty$ AND $\dim(F) \to \infty$ ---
+    curvature diverges but fiber thickens (more capability, more
+    options, more consciousness).
+  \item \textbf{Catastrophic:}
+    $\|F_\nabla\| \to \infty$ AND $\dim(F) \to 0$ ---
+    curvature diverges and fiber collapses (capability destroys itself,
+    existential catastrophe).
+\end{itemize}
+``Choice matters'' (claim 7) means humanity can influence which
+trajectory is realized. The BGI movement works to ensure the
+beneficial trajectory.
+\end{proposition}
+
+\end{document}
