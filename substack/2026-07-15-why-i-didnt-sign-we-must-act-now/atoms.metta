@@ -51,3 +51,12 @@
 (--> why-i-didnt-sign ([] (related-to seven-flavors eternal-regime humanity-evil)))
 (--> why-i-didnt-sign ([] (related-to avoiding-catastrophe stewardship-hinge)))
 (--> why-i-didnt-sign ([] (related-to sanders-ban legislative-intent-vs-effect)))
+
+;; ---- OCO/2 crosswalk (21-25), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> letter-surface shared-Claims)
+(--> letter-agenda ([] (divergent-Plan divergent-Goal)))
+(--> job-prediction Assessment-without-VerifierSpec)
+(--> centralized-steering single-authority-Goal-contract)
+(--> signatory-prestige origin-attribute-not-evidence)
+(--> coordinated-letter origin-keyed-set-union-one-source)
+(--> bottom-up-complementarity ([] (per-Scope-ExperimentRun per-Scope-GoalEvaluation ContextTransfer)))

@@ -196,6 +196,20 @@ Human-AI complementarity is a global section from local data:
   using reliable dimensions (real signatures) to imply reliability
   in unreliable dimensions (specific claims).
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Agreeable surface, sharper agenda (claims 1-2, 10) | the same Claims feeding different Plans through different Justifications | Agreeing on the Claims (AI is powerful, the economy will change) does not mean agreeing on the Plan. The disagreement is in the Plan and its Goals. |
+| Prediction impossibility, steam engine, committees (claims 3-5, 12, 18) | Assessment of future job effects with no VerifierSpec and no admitted evidence for its key premises | A committee choosing a Plan on such premises has no check that could correct it. |
+| Centralized steering (claim 11) | Goal contract fixed by one committee's authority, with no review-gated change by others | A single authority issuer for the direction of development. |
+| Genre of deceptive letters, provenance manipulation (claims 6, 14, 20) | signatory prestige = origin attribute, not evidence; coordinated signatures = one origin under set union | Many prestigious signatures from one campaign count once. |
+| Decentralized development, bottom-up complementarity, relationship not specification (claims 7-9, 13, 15, 17, 19) | many Scopes running their own ExperimentRuns; per-Scope GoalEvaluations shared by ContextTransfer | Complementarity is found in many local experiments, not specified in advance. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

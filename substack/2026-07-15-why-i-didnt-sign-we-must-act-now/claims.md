@@ -96,3 +96,15 @@ Eurykosmotron, 2026-07-15.
     ∇_provenance = signature_authenticity × claim_endorsement ×
     agenda_transparency. Genre exploits steep gradient.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+21. **Surface agreement = shared Claims; real disagreement = different Plans and Goals built on them.** *(oco2-crosswalk)*
+
+22. **Job-impact forecast = Assessment with no VerifierSpec;** committee steering on it has no corrective check. *(oco2-crosswalk)*
+
+23. **Centralized steering = Goal contract set by a single authority issuer.** *(oco2-crosswalk)*
+
+24. **Signatory prestige = origin attribute, not evidence;** coordinated signatures collapse to one origin. *(oco2-crosswalk)*
+
+25. **Emergent complementarity = per-Scope ExperimentRuns and GoalEvaluations linked by ContextTransfer.** *(oco2-crosswalk)*
