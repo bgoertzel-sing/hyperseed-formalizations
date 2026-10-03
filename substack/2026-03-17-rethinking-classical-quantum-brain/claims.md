@@ -146,3 +146,13 @@ Eurykosmotron, 2026-03-17.
     only one sheet of a two-sheeted base. The fiber over a single sheet
     can't reproduce the behavior of the fiber over the full two-sheeted base
     — hence the explanatory gaps. *(inferred)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+27. **Conserved fluid = recorded allocation of a conserved budget across Executions.** *(oco2-crosswalk)*
+
+28. **HJB mappings = attributed structure-preserving BridgeMappings between Catalogs.** *(oco2-crosswalk)*
+
+29. **Cross-layer naturality = discrepancy between two Derivation routes;** wu-wei = zero discrepancy. *(oco2-crosswalk)*
+
+30. **Neurofluid brain hypotheses = speculative Claims awaiting a discriminating ExperimentRun.** *(oco2-crosswalk)*

@@ -56,3 +56,12 @@
 ;; Missing base sheet
 (--> missing-computational-substrate missing-base-sheet)
 (--> missing-base-sheet ([] (one-sheet-of-two fiber-cant-reproduce explanatory-gaps)))
+
+;; ---- OCO/2 crosswalk (27-30), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> conserved-computational-fluid recorded-budget-allocation)
+(--> hjb-mappings attributed-structure-preserving-BridgeMapping)
+(--> operator-valued-state ([] (matrix-Assessment order-dependent no-scalar)))
+(--> cross-layer-naturality two-Derivation-route-discrepancy)
+(--> neurofluid-brain speculative-Claim-no-VerifierSpec)
+(--> semantic-corridor low-routing-cost-path)
+(--> wu-wei-state zero-route-discrepancy)
