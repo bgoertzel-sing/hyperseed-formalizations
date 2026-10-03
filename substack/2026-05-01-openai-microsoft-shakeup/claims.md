@@ -59,3 +59,13 @@ Eurykosmotron, 2026-05-01.
 13. **Governance gradient (d-calculus).** Toward decentralization,
     multi-stakeholder, fork-ability. Requires deliberate structural design.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+14. **Predictable unwinding = governance LifecycleEvents each preceded by a predicting Claim.** *(oco2-crosswalk)*
+
+15. **Capital gravity = mission GoalEvaluation issued by capital-dependent principals.** *(oco2-crosswalk)*
+
+16. **Structural independence = evaluator origin disjoint from funder origin.** *(oco2-crosswalk)*
+
+17. **Governance drift = Goal contract change without a recorded BridgeMapping.** *(oco2-crosswalk)*

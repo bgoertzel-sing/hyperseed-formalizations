@@ -139,6 +139,21 @@ Governance of AGI must operate at the fiber level:
   not just good intentions but governance architecture that resists
   capture by any single interest.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Predictable unwinding (claims 1, 7, 10) | sequence of governance LifecycleEvents in the append-only log, each preceded by an attributed Claim that predicted it | The critics' track record can be checked against the log. |
+| Gravitational pull of capital (claims 2, 6, 9) | mission Goal whose GoalEvaluation is issued by principals whose authority depends on capital | The mission ends up evaluated by those it was meant to constrain. |
+| AGI is not enterprise software (claim 3) | attributed Claim, origin = author | |
+| Structural independence (claims 5, 12) | evaluator origin disjoint from funder origin | Same independence test as regulatory capture in bernies-proposal-to-nationalize-agi. |
+| Alternative governance (claims 4, 8, 13) | per-Scope brokered authority with several stakeholder issuers | Attributed Plan. |
+| Governance holonomy (claim 11) | the Goal contract after a restructuring cycle compared with the one before; a legitimate change needs a recorded BridgeMapping | A restructuring with no BridgeMapping is an undeclared Goal change. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

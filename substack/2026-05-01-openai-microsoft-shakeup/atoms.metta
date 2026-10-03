@@ -30,3 +30,10 @@
 (--> openai-shakeup ([] (related-to bgi-manifesto corporate-capture)))
 (--> openai-shakeup ([] (related-to bootleggers-baptists governance-failure)))
 (--> openai-shakeup ([] (related-to three-things path-determination)))
+
+;; ---- OCO/2 crosswalk (14-17), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> predictable-unwinding ([] (governance-LifecycleEvent-sequence predicting-Claim)))
+(--> capital-gravity capital-dependent-GoalEvaluation-issuer)
+(--> structural-independence evaluator-funder-origin-disjoint)
+(--> governance-holonomy Goal-change-without-BridgeMapping)
+(--> alternative-governance multi-stakeholder-brokered-authority)
