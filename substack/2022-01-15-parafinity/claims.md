@@ -90,3 +90,13 @@ Eurykosmotron, 2022-01-15.
     contradictions) and parafinity (boundary of finite/infinite) are
     complementary — paraconsistent reasoning is especially natural in
     the parafinite zone where classical distinctions break down. *(inferred)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+17. **Parafinite standing = Claims checked across all feasible budgets, without a proof for all n.** *(oco2-crosswalk)*
+
+18. **Constructive objects = recorded constructions an Execution can run.** *(oco2-crosswalk)*
+
+19. **Parafinite computation = Executions with finite but unfixed budgets.** *(oco2-crosswalk)*
+
+20. **Parafinity as a zone = attributed Catalog proposal.** *(oco2-crosswalk)*

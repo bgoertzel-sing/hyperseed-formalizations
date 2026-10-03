@@ -48,6 +48,20 @@ Key threads:
   parafinite zone — fiber too complex for finite enumeration but structured
   enough for constructive manipulation.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Mycielski, computable infinitesimals, constructive (claims 1-2, 14) | constructive Derivations: every object has a recorded construction an Execution can run | |
+| Too-sharp dichotomy, naming the zone (claims 4, 7-9) | a Catalog entry for the boundary zone between finite and infinite entries | Attributed proposal, origin = author. |
+| Boundary behavior (claim 5) | Claims whose standing is relative to a resource budget: checked for every feasible case, not proved for all n | |
+| Computation and mind are parafinite (claims 6, 10-11, 13) | every Execution runs within a finite budget whose bound is not fixed in advance | |
+| Underexplored, AGI implications (claims 3, 12, 15) | attributed Plan | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

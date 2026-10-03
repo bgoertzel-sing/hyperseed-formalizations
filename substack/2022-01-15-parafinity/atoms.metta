@@ -28,3 +28,9 @@
 (--> constructive-computable-fiber ([] (executable not-just-defined essential-agi)))
 (--> agi-parafinite-fiber ([] (too-complex constructive d-calculus-zone)))
 (--> paraconsistency-meets-parafinity ([] (complementary classical-break-down natural)))
+
+;; ---- OCO/2 crosswalk (17-20), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> parafinite-standing budget-relative-Claim)
+(--> constructive-object runnable-recorded-construction)
+(--> parafinite-computation finite-unfixed-budget-Execution)
+(--> parafinity attributed-Catalog-proposal)
