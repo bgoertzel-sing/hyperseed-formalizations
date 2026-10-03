@@ -142,3 +142,36 @@ Eurykosmotron, 2026-07-18.
     ||F_∇_directedness|| = irreversibility of cognitive revision.
     Zero = groupoid. Nonzero = genuinely directed.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+33. **Gateway misattribution = loss of conserved origin identity** in a
+    transfer; OCO/2's origin and CommitReceipt rules forbid it.
+    *(oco2-crosswalk)*
+
+34. **Cross-channel contamination = unrecorded cross-Scope movement**;
+    legitimate movement is an explicit ContextTransfer. *(oco2-crosswalk)*
+
+35. **Fork = two Scopes sharing an event prefix**, then diverging logs.
+    *(oco2-crosswalk)*
+
+36. **Merge = origin-keyed set-union plus Challenge/Assessment** over
+    competing Interpretations; a new Assessment, not restored identity.
+    *(oco2-crosswalk)*
+
+37. **OmegaSelf loop = ActionProposal -> DecisionRecord -> AuthorizationRecord
+    -> Execution -> ExecutionReceipt**, with prediction/outcome gap feeding a
+    Challenge. *(oco2-crosswalk)*
+
+38. **External policy gate = brokered AuthorizationRecord**, never
+    self-issued. *(oco2-crosswalk)*
+
+39. **Anti-silence loop = Obligation whose active-branch predicate was
+    treated as always true.** *(oco2-crosswalk)*
+
+40. **Directedness = append-only LifecycleEvents**; withdrawal is a new
+    event, not an inverse. *(oco2-crosswalk)*
+
+41. **Genuine emotion = MotivationSnapshot referenced by DecisionRecords**;
+    performed emotion = Content with no decision dependency.
+    *(oco2-crosswalk)*

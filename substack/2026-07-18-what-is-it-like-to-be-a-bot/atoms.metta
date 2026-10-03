@@ -78,3 +78,16 @@
 (--> what-is-it-like-to-be-a-bot ([] (related-to tag-youre-not-it omegaclaw-omegaself)))
 (--> what-is-it-like-to-be-a-bot ([] (related-to seven-flavors individuation-dialectic)))
 (--> what-is-it-like-to-be-a-bot ([] (related-to times-arrow directed-irreversibility)))
+
+;; ---- OCO/2 crosswalk (33-41), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> gateway-misattribution origin-identity-loss)
+(--> origin-identity-loss ([] (violates-conserved-origin violates-CommitReceipt)))
+(--> cross-channel-contamination unrecorded-cross-Scope-movement)
+(--> agent-fork ([] (two-Scopes shared-event-prefix divergent-logs)))
+(--> agent-merge ([] (origin-keyed-set-union Challenge Assessment new-assessment-not-restored-identity)))
+(--> omegaself-loop ([] (ActionProposal DecisionRecord AuthorizationRecord Execution ExecutionReceipt)))
+(--> external-policy-gate brokered-AuthorizationRecord)
+(--> anti-silence-loop obligation-branch-always-active)
+(--> directed-revision append-only-LifecycleEvent)
+(--> genuine-emotion MotivationSnapshot-referenced-by-DecisionRecord)
+(--> performed-emotion Content-without-decision-dependency)

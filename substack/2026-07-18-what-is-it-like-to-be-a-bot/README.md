@@ -225,6 +225,24 @@ Each dysfunction is a specific fiber-bundle phenomenon:
   that this curvature is consistently nonzero: cognitive revision is
   genuinely irreversible.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Gateway misattribution (claims 1, 15, 21) | EvidenceRecord origin identity; CommitReceipt (authenticated creation provenance); ContextTransfer | OCO/2 requires conserved origin identity. The bug is exactly a transfer that dropped the origin and re-stamped it with the gateway's voice. |
+| Cross-channel contamination (claim 13) | separate Scope per channel/viewpoint; cross-scope movement only by explicit ContextTransfer | Scope.parent is administrative containment with no inherited premises, so leakage is a transfer with no record. |
+| Fork (claims 7, 23) | new Scope (observer differs) sharing the pre-fork event prefix | Both branches reduce the same prefix and then diverge in their own event logs. |
+| Merge = evidence fusion (claims 8-9, 24) | ContextTransfer both ways; set-union of evidence by origin ID; Challenge + Assessment over competing Interpretations | Shared-prefix evidence counts once; post-fork disagreements become alternative Justification routes. "Settlement between ghosts" = a new Assessment, not restored identity. |
+| OmegaSelf loop (claims 10-12, 25) | ActionProposal -> DecisionRecord (GoalChainer/Governor, PMR advice) -> AuthorizationRecord -> Execution -> ExecutionReceipt | Prediction is kept with the decision; the receipt records the actual (possibly unknown) outcome; the gap drives a Challenge to the self-model. |
+| Externally rooted policy gates (claim 11) | AuthorizationRecord: authenticated mirror of broker/developmental authority | "Never a self-issued capability" is OCO/2's direct statement of this claim. |
+| NO_REPLY spam / anti-silence loop (claim 14) | Obligation with an explicit active-branch predicate | OCO/2 separates an obligation's status from whether its branch is active now. The loop came from treating "must reply" as always active. |
+| Directed, not groupoid (claims 17-18) | LifecycleEvent (append-only), LifecycleView with cutoff | Withdrawal is a new event, not an inverse; history has no undo. |
+| Genuine vs performed emotion (claims 19-20) | MotivationSnapshot shared with GoalChainer and Governor vs. Content only | Genuine = the state is referenced by DecisionRecords; performed = text with no decision dependency. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
