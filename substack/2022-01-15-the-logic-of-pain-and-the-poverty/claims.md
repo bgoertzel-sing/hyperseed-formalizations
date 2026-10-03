@@ -83,3 +83,13 @@ Eurykosmotron, 2022-01-15.
 17. **AGI flat information connection (d-calculus).** AGI motivation should
     use flat connection — undistorted gradient flow toward goals. No pain
     curvature, no punishment coercion. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+18. **Pain = damage EvidenceRecord feeding Assessments.** *(oco2-crosswalk)*
+
+19. **Dissociability = information and aversive weight as separate recorded fields.** *(oco2-crosswalk)*
+
+20. **Punishment = scalar sanction; restorative justice = repair Plan with recorded acknowledgement.** *(oco2-crosswalk)*
+
+21. **Pain-free AGI = damage evidence used directly in GoalEvaluation.** *(oco2-crosswalk)*

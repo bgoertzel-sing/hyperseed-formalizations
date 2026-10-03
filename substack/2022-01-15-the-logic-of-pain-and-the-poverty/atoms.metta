@@ -88,3 +88,10 @@
 (--> pain-punishment ([] (related-to consciousness-explosion-transcendence)))
 (--> pain-punishment ([] (related-to wellbeing-measurement-minimize)))
 (--> pain-punishment ([] (related-to beneficial-agi-design)))
+
+;; ---- OCO/2 crosswalk (18-21), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> pain damage-EvidenceRecord)
+(--> signal-suffering-dissociation ([] (information-field aversive-weight-field)))
+(--> punishment scalar-sanction-LifecycleEvent)
+(--> restorative-justice ([] (repair-Plan recorded-acknowledgement)))
+(--> pain-free-agi direct-damage-GoalEvaluation)

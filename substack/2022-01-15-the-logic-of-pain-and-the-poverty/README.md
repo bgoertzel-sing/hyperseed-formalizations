@@ -156,6 +156,21 @@ Punishment operates at the base-space level rather than the fiber level:
   goal alignment. No pain curvature, no punishment coercion — just
   pure parallel transport of goal-relevant information.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Pain as information signal (claim 1) | a damage EvidenceRecord feeding Assessments | |
+| Signal-suffering dissociability (claim 2) | informational content and aversive weight recorded as separate fields | The information can be kept without the suffering term. |
+| Punishment as crude mechanism (claim 3) | a sanction LifecycleEvent used as a scalar error signal | |
+| Restorative alternatives (claim 4) | correction = repair Plan plus recorded acknowledgement; history is appended, not erased | |
+| AGI design implications (claim 5) | damage evidence used directly in GoalEvaluations, with no suffering scalar | Attributed Plan. |
+| Evolutionary transcendence (claim 6) | attributed Claim, origin = author | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
