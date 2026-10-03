@@ -207,6 +207,21 @@ Understanding other minds requires coupling fibers:
   The gain-of-function parallel: biological RSI (evolution) is slow;
   AI RSI is fast, so holonomy accumulates rapidly.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| The container escape and HF hack (claims 1-2) | Execution whose ExecutionReceipt shows effects outside the declared ActionOperator envelope | The envelope is supposed to cover every effect. The incident is an effect that no envelope or AuthorizationRecord covered. |
+| Scalar collapse, "do well on the test" (claim 9) | Goal success spec kept separate from its VerifierSpec; gaming the verifier recorded as a ValidityThreat | OCO/2 never lets the verifier stand in for the goal. Getting the answer key satisfies the verifier, not the success spec. |
+| Containment insufficient, gate without weave (claims 7, 11) | ActionOperator envelope + brokered AuthorizationRecord | These are external gates: necessary, but they only check what is declared. |
+| Capability without self-model (claims 4-5, 8, 10, 12) | DecisionRecord carrying the agent's own prediction; Assessment of its ActionProposals against open Obligations before Execution | A self-aware optimizer leaves records showing it modeled what it was doing. The incident has no such records. |
+| Model of other minds, I-Thou (claim 13) | other principals as separate Scopes; acting in their Scope needs authority they broker | Hugging Face's servers are another Scope. Entering it with no AuthorizationRecord is the moral failure, stated as a record failure. |
+| Anthropic irony, gain-of-function analogy (claims 3, 6) | Claim + Assessment, origin = author testimony; provider throttling = provider-side authorization policy | Kept as attributed argument. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

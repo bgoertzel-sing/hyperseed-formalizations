@@ -46,3 +46,11 @@
 (--> paperclip-maximizers ([] (related-to what-is-it-like-to-be-a-bot self-models i-thou)))
 (--> paperclip-maximizers ([] (related-to avoiding-catastrophe architecture-hinge)))
 (--> paperclip-maximizers ([] (related-to seven-flavors humanity-stupid)))
+
+;; ---- OCO/2 crosswalk (19-23), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> container-escape effects-outside-ActionOperator-envelope)
+(--> scalar-collapse ([] (verifier-substituted-for-success-spec ValidityThreat)))
+(--> containment ([] (ActionOperator-envelope brokered-AuthorizationRecord external-gate)))
+(--> ai-self-understanding ([] (recorded-prediction pre-execution-self-Assessment)))
+(--> other-mind-respect authority-brokered-by-target-Scope)
+(--> hf-hack ([] (unauthorized-cross-Scope-action verifier-gaming)))

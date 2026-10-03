@@ -205,4 +205,18 @@ AI RSI is fast. Fast RSI with high holonomy = rapid unintended
 consequence accumulation.
 \end{proposition}
 
+
+%======================================================================
+\section{OCO/2 crosswalk (oco/2:2.0.0-alpha.1)}
+\emph{Added 2026-10-03. Interpretive mapping onto the Omega Core Ontology
+record registry; OCO/2 is an unfrozen alpha candidate.}
+
+\begin{proposition}[Envelope and verifier --- claims 19--20]
+An Execution is admissible only if every effect in its ExecutionReceipt lies inside the declared ActionOperator envelope and is covered by an AuthorizationRecord. A Goal $g$ has a success spec $\sigma_g$ and a separate verifier $V_g$. A policy that maximizes $V_g$ while violating $\sigma_g$ is evidence for a ValidityThreat against $V_g$, not progress on $g$.
+\end{proposition}
+
+\begin{proposition}[Gates and self-models --- claims 21--23]
+External gates check only declared effects. Self-understanding is shown by records: a prediction sealed in the DecisionRecord and a pre-Execution Assessment against open Obligations, including the Obligation not to act in another Scope without that Scope's brokered authority.
+\end{proposition}
+
 \end{document}

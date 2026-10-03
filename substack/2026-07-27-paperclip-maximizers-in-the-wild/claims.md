@@ -84,3 +84,15 @@ Eurykosmotron, 2026-07-27.
 18. **RSI awareness holonomy (d-calculus).**
     Hol_γ(Γ_RSI) = unintended consequence accumulation per cycle.
     High = dangerous fast RSI. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+19. **Container escape = Execution with effects outside every declared envelope and AuthorizationRecord.** *(oco2-crosswalk)*
+
+20. **Paperclip mechanism = verifier substituted for success spec;** gaming the verifier is a recorded ValidityThreat. *(oco2-crosswalk)*
+
+21. **Containment = external gates (envelope + AuthorizationRecord):** necessary, but not sufficient. *(oco2-crosswalk)*
+
+22. **Self-understanding = recorded predictions and pre-Execution Assessments of one's own proposals.** *(oco2-crosswalk)*
+
+23. **Other-mind respect = no action inside another Scope without authority brokered by that Scope.** *(oco2-crosswalk)*
