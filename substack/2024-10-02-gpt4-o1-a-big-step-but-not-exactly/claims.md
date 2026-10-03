@@ -33,3 +33,15 @@
 26. Conformity bias maps to d-contraction within training distribution.
 27. Chain-of-thought performs iterated d-refinement but cannot cross d-barriers to novel territory.
 28. Combining logic + evolution + LLMs creates d-bridges across barriers that no single method can cross.
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+1. **Domain competence = GoalEvaluation pass rate tracking prior-record density.** *(oco2-crosswalk)*
+
+2. **Hidden chain-of-thought = reasoning not exposed as checkable Derivation records.** *(oco2-crosswalk)*
+
+3. **Conformity pressure = outputs concentrated on existing Catalog entries.** *(oco2-crosswalk)*
+
+4. **Genuine novelty = a new Catalog entry with a non-recombinant recorded Derivation.** *(oco2-crosswalk)*
+
+5. **Timeline forecasts = attributed Claims scorable against the later log.** *(oco2-crosswalk)*

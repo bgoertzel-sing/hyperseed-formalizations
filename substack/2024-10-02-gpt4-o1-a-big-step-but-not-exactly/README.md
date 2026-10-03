@@ -68,3 +68,19 @@ represent a big step toward AGI. Key threads:
 
 - **Hybrid methods as d-bridge:** Logic + evolution + LLMs create bridges
   across d-barriers that any single method alone cannot cross.
+
+
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Strong in dense domains, weak in sparse ones (claims 3-4, 6, 21) | GoalEvaluation pass rate tracks how many prior records the training Catalog holds for the domain | Novel languages (MeTTa) and sparse math have few prior records. |
+| Hidden chain-of-thought (claims 5, 18-19) | internal reasoning not exposed as Derivation records; only a summary Execution output is visible | Steps cannot be checked (see gpt-o1-does-not-know-what-its-doing). |
+| Conformity pressure (claims 7-8, 14-16) | outputs concentrated on existing Catalog entries; new Catalog entries (genres, languages, math branches) are rarely produced | Recombination stays inside the Catalog. |
+| Genuine novelty (claims 17, 22-23) | creation of a new Catalog entry with a recorded Derivation that is not a recombination of existing entries | |
+| Hybrid Hyperon architecture, decentralized (claims 9-11, 24) | several Derivation methods (logic, evolution, LLM) writing into one record space across many Scopes | Attributed Plan, origin = author's project. |
+| Timeline forecasts (claims 12-13, 20) | attributed forecast Claims, scorable later against the log | |
