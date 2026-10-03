@@ -34,3 +34,12 @@
 (--> linguistic-universals-pt1 ([] (related-to grand-unified-physics same-weakness-principle)))
 (--> linguistic-universals-pt1 ([] (related-to beyond-human-comparison multi-dimensional)))
 (--> linguistic-universals-pt1 ([] (related-to lets-get-chemical kernel-shell-identity-function)))
+
+;; ---- OCO/2 crosswalk (18-23), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> phylogenetic-correction origin-keyed-set-union-over-languages)
+(--> hierarchical-universal downward-closed-admission-rule)
+(--> cross-module-mediation declared-ContextTransfer-only)
+(--> coherence-law graded-incoherence-Assessment)
+(--> graded-universalhood strength-confidence-Assessment)
+(--> context-indexed-universal ([] (Scope-local-Claim BridgeMapping-gluing)))
+(--> kernel-shell ([] (review-gated-kernel free-shell)))

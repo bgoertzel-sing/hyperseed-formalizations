@@ -68,3 +68,17 @@ Eurykosmotron, 2026-05-20.
 
 17. **Context-indexing curvature (d-calculus).** Sensitivity of universals
     to context. Low = true universal. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+18. **Phylogenetic correction = origin-keyed set union over languages;** survival = holding after related languages count once. *(oco2-crosswalk)*
+
+19. **Hierarchical universal = downward-closed admission rule in the Catalog.** *(oco2-crosswalk)*
+
+20. **Cross-module mediation = module Scopes coupled only by declared ContextTransfer.** *(oco2-crosswalk)*
+
+21. **Graded universalhood = Assessment with separate strength and confidence.** *(oco2-crosswalk)*
+
+22. **Context-indexed universal = Scope-local Claim glued by BridgeMappings.** *(oco2-crosswalk)*
+
+23. **Kernel-shell = stability tiers defined by Catalog change regime.** *(oco2-crosswalk)*

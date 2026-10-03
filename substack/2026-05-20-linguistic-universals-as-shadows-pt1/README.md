@@ -170,6 +170,22 @@ The kernel-shell architecture maps to fiber depth:
   High curvature: universal is context-sensitive (context-indexed
   universal, claim C5).
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Phylogenetic correction, survival rates (claim 1) | languages = EvidenceRecords; shared descent or contact = shared origin; correction = origin-keyed set union | A universal "survives" if it still holds after related languages are counted once. Hierarchical universals survive best (24/30). |
+| Hierarchical universals = closure systems (claims 2, 9) | Catalog constraint closed downward: admitting a record admits the records it presupposes | Closure is an admission rule, not a frequency. |
+| Cross-module mediation (claims 3, 10) | modules as separate Scopes interacting only through declared ContextTransfer | Undeclared coupling across modules is what the product structure forbids. |
+| Narrow word-order = coherence laws (claims 4, 11) | graded Assessment penalizing incoherent combinations | Soft constraint, not a gate. |
+| Graded universalhood (claims 5, 16) | Assessment with strength and confidence per universal | Never rounded to universal / not universal. |
+| Context-indexed universals (claims 6, 17) | Claims scoped to a context Scope, glued by BridgeMappings between Scopes | A universal can hold locally and fail globally. |
+| Kernel-shell architecture (claims 8, 12) | kernel = Catalog entries changed only by review-gated BridgeMapping; shells = freely changing context-local entries | Stability tier set by the change regime. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
