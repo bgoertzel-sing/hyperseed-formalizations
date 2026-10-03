@@ -77,3 +77,10 @@
 (--> singularitarian-party ([] (related-to consciousness-explosion-beneficial)))
 (--> singularitarian-party ([] (related-to wellbeing-measurement-policy)))
 (--> singularitarian-party ([] (related-to beneficial-agi-political-arm)))
+
+;; ---- OCO/2 crosswalk (15-18), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> singularitarian-party shared-Goal-contract)
+(--> beyond-left-right lost-axis-under-scalar-projection)
+(--> democratic-engagement ([] (member-issued-authority governance-LifecycleEvent)))
+(--> pre-agi-window attributed-forecast-Claim)
+(--> political-coalition shared-Goal-BridgeMapping)

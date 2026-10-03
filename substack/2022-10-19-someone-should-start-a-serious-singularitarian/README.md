@@ -136,6 +136,21 @@ coordination is essential for beneficial outcomes.
   national subregion. Global coverage ensures the fiber structure
   is robust to national-level perturbations.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Political organization, fiber coordination (claims 1, 8) | scattered principals' Plans coordinated under one shared Goal contract | |
+| Key policy positions (claim 2) | attributed Plan, origin = author | |
+| Beyond left-right, orthogonal fiber (claims 3, 9) | an axis missing from the one-dimensional left-right Assessment | Projecting onto left-right is a scalar fusion that loses it. |
+| Democratic engagement, democratic holonomy (claims 4, 12) | authority issued by members; each governance cycle a LifecycleEvent | Platform changes without a recorded BridgeMapping are drift. |
+| Urgency, plastic window (claims 5, 10, 13) | attributed forecast: Goal contracts are easier to revise before AGI than after | |
+| Global coverage, coalitions (claims 6-7, 11, 14) | Scopes across jurisdictions; a coalition = BridgeMapping between partner Goal contracts on shared Goals | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

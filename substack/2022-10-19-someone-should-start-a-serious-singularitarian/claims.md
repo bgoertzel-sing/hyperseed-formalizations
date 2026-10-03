@@ -70,3 +70,13 @@ Political Party," Eurykosmotron, 2022-10-19.
 14. **Global fiber coverage (d-calculus).** Global movement = fiber over
     full geopolitical base space B_geo; robust to national perturbations.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+15. **Movement organization = scattered Plans under one shared Goal contract.** *(oco2-crosswalk)*
+
+16. **Beyond left-right = an axis lost when projecting onto a one-dimensional political scale.** *(oco2-crosswalk)*
+
+17. **Democratic governance = member-issued authority with each cycle a recorded LifecycleEvent.** *(oco2-crosswalk)*
+
+18. **Coalition = BridgeMapping between partner Goal contracts restricted to shared Goals.** *(oco2-crosswalk)*
