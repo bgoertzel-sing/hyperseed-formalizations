@@ -273,4 +273,18 @@ Connections to other formalizations:
 \end{itemize}
 \end{remark}
 
+
+%======================================================================
+\section{OCO/2 crosswalk (oco/2:2.0.0-alpha.1)}
+\emph{Added 2026-10-03. Interpretive mapping onto the Omega Core Ontology
+record registry; OCO/2 is an unfrozen alpha candidate.}
+
+\begin{proposition}[Reduction --- claims 31--33]
+Let $P$ be the primitive entries of a Catalog. A concept $c$ is reduced iff there is a recorded Derivation chain $c\leftarrow\cdots\leftarrow P'$ with $P'\subseteq P$; composition is the same relation read forwards.
+\end{proposition}
+
+\begin{proposition}[Versioning --- claim 34]
+A revision $\kappa_{v1}\to\kappa_{v2}$ of the primitive Catalog is a BridgeMapping; interpretations written against $\kappa_{v1}$ remain readable by transport along it.
+\end{proposition}
+
 \end{document}

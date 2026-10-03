@@ -50,3 +50,9 @@
 (--> d-calculus-is-transport ([] (computational-formalism concept-maps-to-fiber)))
 (--> adaptive-primitives-evolving-base ([] (not-static physics-vs-ethics extension)))
 (--> speedup-is-alignment ([] (well-aligned-fast misaligned-slow highways-high-alignment)))
+
+;; ---- OCO/2 crosswalk (31-34), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> primitive-ontology-project proposed-primitive-Catalog)
+(--> semantic-reduction Derivation-chain-to-primitives)
+(--> compositional-semantics recorded-composition-Derivation)
+(--> hyperseed-version-change review-gated-Catalog-BridgeMapping)

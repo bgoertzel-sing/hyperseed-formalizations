@@ -47,6 +47,20 @@ that all other articles are interpreted through. The fiber bundle structure,
 d-calculus, semantic primitives, and adaptive base space are the core of
 the formalization machinery.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Lineage: Leibniz, Carnap, Wierzbicka, Chalmers (claims 1-4) | each project = a proposed Catalog of primitives; attributed historical Claims | |
+| Practical AI application (claim 5) | attributed Plan: Hyperseed primitives as Catalog core entries used by a reasoner | |
+| Concepts as fibers, reduction as projection (claims 6-7) | a derived concept = Catalog entry with a recorded Derivation chain ending at primitive entries | Reduction is checkable: the chain's ReadSet reaches the primitives. |
+| Compositional semantics (claim 8) | new concepts composed from Catalog entries by recorded Derivations | |
+| v1 to v2 revision | BridgeMapping between the two Catalog versions; core entries change only by review-gated mapping | Old interpretations stay readable through the mapping. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

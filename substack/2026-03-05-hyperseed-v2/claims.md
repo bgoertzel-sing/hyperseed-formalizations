@@ -163,3 +163,13 @@ Eurykosmotron, 2026-03-05.
     primitive are well-aligned, inference follows the fiber-preserving
     path (fast); when misaligned, inference must search (slow). Semantic
     highways are high-alignment paths. *(inferred)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+31. **Primitive-ontology projects = proposed Catalogs of primitives.** *(oco2-crosswalk)*
+
+32. **Reduction = recorded Derivation chain from a concept to primitive Catalog entries.** *(oco2-crosswalk)*
+
+33. **Composition = new Catalog entries derived from existing ones by recorded Derivations.** *(oco2-crosswalk)*
+
+34. **Hyperseed v1 to v2 = review-gated BridgeMapping between Catalog versions.** *(oco2-crosswalk)*
