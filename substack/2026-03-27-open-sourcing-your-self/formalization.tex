@@ -152,4 +152,18 @@ architecture (fork-merge topology) does the ego-dissolving work that
 meditation does psychologically.
 \end{proposition}
 
+
+%======================================================================
+\section{OCO/2 crosswalk (oco/2:2.0.0-alpha.1)}
+\emph{Added 2026-10-03. Interpretive mapping onto the Omega Core Ontology
+record registry; OCO/2 is an unfrozen alpha candidate.}
+
+\begin{proposition}[Fork and merge --- claims 14--16]
+A fork copies snapshot $\kappa$ into Scopes $S_1,S_2$. Merging takes the origin-keyed union of their records, so records predating the fork, sharing an origin, appear once.
+\end{proposition}
+
+\begin{proposition}[Identity --- claim 17]
+A sequence of changes $\kappa_0\to\kappa_1\to\cdots\to\kappa_t$ preserves identity in the declared sense iff each step has a recorded BridgeMapping; identity is the structure those mappings carry.
+\end{proposition}
+
 \end{document}

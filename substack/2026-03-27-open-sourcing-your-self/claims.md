@@ -58,3 +58,13 @@ Eurykosmotron, 2026-03-27.
 13. **Ego dissolution curvature (d-calculus).** Structural analog of
     meditative ego dissolution achieved architecturally.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+14. **Monolithic upload = ContextSnapshot moved to a new substrate, Catalog unchanged.** *(oco2-crosswalk)*
+
+15. **Open-source self = module Scopes with declared ContextTransfer and readable records.** *(oco2-crosswalk)*
+
+16. **Fork = snapshot into a new Scope; merge = origin-keyed union** so shared history counts once. *(oco2-crosswalk)*
+
+17. **Identity = what declared BridgeMappings carry across each change.** *(oco2-crosswalk)*

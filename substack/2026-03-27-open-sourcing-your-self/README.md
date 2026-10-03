@@ -152,6 +152,20 @@ The key insight: identity is a topological invariant of the fiber bundle:
   (symbolic ruminations article) but achieved through architectural
   means rather than psychological/contemplative practice.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Monolithic upload (claims 1, 6) | ContextSnapshot copied to a new substrate with the Catalog and Goal contract unchanged | Substrate changes; structure does not. |
+| Open-source network of self (claim 2) | the mind split into module Scopes linked by declared ContextTransfer, each module's records readable | Transparency = readable records per module. |
+| Forks and merges (claims 4, 11) | fork = ContextSnapshot copied into a new Scope; merge = origin-keyed union, so shared pre-fork history counts once | Merging forks does not double-count what they shared. |
+| Identity (claims 5, 8) | what a declared BridgeMapping carries across a change of Goal contract and Catalog | Identity is preserved if each step has such a mapping. |
+| Architecture produces higher consciousness (claim 3) | attributed speculative Claim, no VerifierSpec | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

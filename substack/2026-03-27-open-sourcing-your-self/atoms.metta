@@ -30,3 +30,11 @@
 (--> open-sourcing-self ([] (related-to collective-non-self architecture-to-individual)))
 (--> open-sourcing-self ([] (related-to radical-futurism consciousness-expansion)))
 (--> open-sourcing-self ([] (related-to symbolic-ruminations non-ego-awareness)))
+
+;; ---- OCO/2 crosswalk (14-17), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> monolithic-upload substrate-moved-ContextSnapshot)
+(--> open-source-self ([] (module-Scopes declared-ContextTransfer readable-records)))
+(--> self-fork ContextSnapshot-into-new-Scope)
+(--> self-merge origin-keyed-union)
+(--> identity BridgeMapping-preserved-structure)
+(--> architecture-consciousness attributed-speculative-Claim)
