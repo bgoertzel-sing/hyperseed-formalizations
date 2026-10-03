@@ -72,3 +72,14 @@
 (--> folly-of-watermarking ([] (related-to decentralized-provenance openwater)))
 (--> folly-of-watermarking ([] (related-to sanders-ban absence-as-guilt)))
 (--> folly-of-watermarking ([] (related-to seven-flavors arms-race-attractor)))
+
+;; ---- OCO/2 crosswalk (31-36), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> statistical-watermark single-Execution-feature)
+(--> cryptographic-signature ([] (CommitReceipt attributable-origin)))
+(--> provenance full-Derivation-ReadSet-chain)
+(--> missing-watermark unknown-not-refuted)
+(--> watermark-removal lossy-ContextTransfer)
+(--> watermark-radioactivity ([] (inherited-feature-without-origin ValidityThreat)))
+(--> detector-feedback verifier-gaming-ValidityThreat)
+(--> compliance-perimeter approved-issuer-only-admission)
+(--> openwater ([] (origin-conserving-EvidenceRecord per-Scope-admission-policy)))

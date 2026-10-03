@@ -195,6 +195,24 @@ Cryptographic signing captures the directed path:
   reasoning-path). The d-calculus provides a unified metric for comparing
   removal pathway effectiveness.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Dice-loading not signing; accent vs signature (claims 1, 13) | statistical feature of one Execution's output vs a signed CommitReceipt from an origin | A watermark is a feature of a sampling process. A signature is an origin making an attributable statement. |
+| Generation path, not causal history (claims 2, 21, 25) | a single Execution vs the full chain of Derivation ReadSets | A watermark reports one step; provenance needs the whole chain of what the text was derived from. |
+| Short passages, constrained writing, not a mark of origin (claims 3-5) | Assessment with too little evidence = unknown | Lack of signal is unknown, not evidence of human authorship. |
+| Paraphrase, sampler swap, retraining (claims 6-8, 30) | ContextTransfer with a typed loss that removes the feature | Each removal pathway is a lossy transfer that wipes the statistical feature. |
+| Watermark radioactivity (claim 9) | feature inherited through Derivation without the origin; ValidityThreat on the detector | A student model carries the teacher's feature, so the detector misattributes origin. |
+| Detector feedback, enduring arms race (claims 11-12, 22, 27) | verifier exposed to the actors it checks = verifier-gaming ValidityThreat | A queryable detector lets actors optimize against it. |
+| Positive evidence only; absence-as-guilt sleight (claims 14-15, 24) | missing record = unknown, never refuted | OCO/2 keeps unknown distinct from refuted. Unsigned text is unknown, not suspect. |
+| Compliance perimeter, two-tier text, institutional control (claims 17-20, 23) | admission policy that only admits records from approved issuers | Turns a provenance system into a single-issuer gate. |
+| OpenWater alternative (claim 16) | origin-conserving signed EvidenceRecords with per-Scope admission policies | Positive evidence from signers, judged by each reader's own policy. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

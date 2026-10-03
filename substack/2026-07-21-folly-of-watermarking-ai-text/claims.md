@@ -136,3 +136,17 @@ Text," Eurykosmotron, 2026-07-21.
     watermark degradation per attempt. High = easy removal (paraphrase).
     Low = hard removal (reasoning-path).
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+31. **Watermark = statistical feature of one Execution;** signature = attributable CommitReceipt from an origin. *(oco2-crosswalk)*
+
+32. **Provenance = full Derivation ReadSet chain,** not one generation step. *(oco2-crosswalk)*
+
+33. **Missing watermark = unknown, not refuted;** absence-as-guilt confuses the two. *(oco2-crosswalk)*
+
+34. **Removal pathways = lossy ContextTransfers;** radioactivity and detector feedback = recorded ValidityThreats on the verifier. *(oco2-crosswalk)*
+
+35. **Compliance perimeter = admission restricted to approved issuers,** i.e. a single-issuer gate. *(oco2-crosswalk)*
+
+36. **OpenWater = signed origin-conserving EvidenceRecords with per-Scope admission.** *(oco2-crosswalk)*
