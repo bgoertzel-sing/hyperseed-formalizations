@@ -70,3 +70,12 @@
 (--> anthropic-fable-farce ([] (related-to avoiding-catastrophe chokepoint-stewardship)))
 (--> anthropic-fable-farce ([] (related-to seven-flavors arms-race-humanity-stupid-evil)))
 (--> anthropic-fable-farce ([] (related-to tag-youre-not-it platform-lock-in)))
+
+;; ---- OCO/2 crosswalk (33-38), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> fable-withdrawal single-issuer-revocation)
+(--> corporate-red-lines overridable-corporate-Goals)
+(--> institutional-safety authority-level-safety)
+(--> kyc-provenance-theatre ([] (fakeable-origin-EvidenceRecord ValidityThreat single-store-honeypot)))
+(--> capability-diffusion cross-Scope-capability-events)
+(--> zero-sum-frame scalar-fusion-relative-lead)
+(--> structural-safety ([] (portable-envelope portable-verifier issuer-independent)))

@@ -137,3 +137,17 @@ Eurykosmotron, 2026-07-08.
 32. **Zero-sum collapse curvature (d-calculus).**
     ||F_∇(multi, single)|| = information loss from zero-sum framing.
     High = enormous structural info lost. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+33. **Centralized control = single authority issuer;** one revocation reaches every user Scope. *(oco2-crosswalk)*
+
+34. **Corporate principles = Goals overridable by a higher issuer's authority;** institutional safety is authority-level. *(oco2-crosswalk)*
+
+35. **KYC = provenance theatre:** EvidenceRecords with buyable or fakeable origins, each a recorded ValidityThreat, held in a single store. *(oco2-crosswalk)*
+
+36. **Capability diffusion = the same capability events appended in other Scopes;** containment moves them, it does not prevent them. *(oco2-crosswalk)*
+
+37. **Zero-sum frame = fusing many Goals into one relative-lead scalar.** *(oco2-crosswalk)*
+
+38. **Structural safety = envelopes and verifiers carried with the system,** holding under any issuer. *(oco2-crosswalk)*

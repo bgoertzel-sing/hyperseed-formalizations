@@ -179,6 +179,22 @@ Two levels of safety with different survivability:
   to "who's ahead"). The d-calculus measures the cost of this
   frame choice.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Wednesday-to-Friday, controlled demonstration (claims 1-2, 20-21) | one AuthorizationRecord revocation removing global access | With a single authority issuer, one revocation reaches every user Scope. |
+| Red lines, government retaliation, principled refusal vulnerable (claims 4-6, 22, 27-28) | company principles = Goals in the corporate Scope; state authority can override the corporate AuthorizationRecords | Institutional safety lives at the level of authority, so a higher issuer can override it. |
+| KYC endpoint, leaky barrier, deepfake liveness, honeypot (claims 3, 10-13, 23, 29) | KYC = EvidenceRecords whose origin can be bought or faked, each a recorded ValidityThreat; central KYC store = single point of compromise | KYC records look like provenance but do not establish who is acting. |
+| Danger-then-release pattern, own-goal (claims 7-9) | Claim + Assessment, origin = author testimony | Kept as attributed pattern. |
+| Smaller models catch up, Chinese open models, market drift (claims 14-16, 24, 30) | capability events appended in other Scopes | Restricting one Scope does not stop the same capability appearing elsewhere; it moves where the events happen. |
+| Wrong frame, zero-sum collapse (claims 17, 25, 32) | many Goals fused into one relative-ranking scalar | OCO/2 keeps Goals separate; a zero-sum frame flattens them into a lead over rivals. |
+| Positive-sum, correct by construction, structural safety (claims 18-19, 26, 31) | safety in envelopes and verifiers that travel with the system into any Scope | Structural safety holds whoever issues authority; institutional safety does not. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

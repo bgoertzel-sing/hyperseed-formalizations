@@ -193,4 +193,22 @@ different architectural philosophies all collapsed to ``who's ahead.''
 The d-calculus measures the epistemic cost of this framing choice.
 \end{proposition}
 
+
+%======================================================================
+\section{OCO/2 crosswalk (oco/2:2.0.0-alpha.1)}
+\emph{Added 2026-10-03. Interpretive mapping onto the Omega Core Ontology
+record registry; OCO/2 is an unfrozen alpha candidate.}
+
+\begin{proposition}[Single issuer --- claims 33--34]
+If every user Scope's access rests on AuthorizationRecords from one issuer $p$, one revocation by $p$, or by any principal with authority over $p$, removes all access. Corporate principles held as Goals inside $p$'s Scope give no protection against such a higher issuer.
+\end{proposition}
+
+\begin{proposition}[KYC and diffusion --- claims 35--36]
+An identity check whose evidence can be bought or faked supplies EvidenceRecords that do not fix the acting principal; each failure mode is a ValidityThreat, and pooling the records creates a single point of compromise. Restricting capability in Scope $S$ leaves the rate of equivalent capability events in other Scopes unchanged or higher.
+\end{proposition}
+
+\begin{proposition}[Structural safety --- claims 37--38]
+Safety properties enforced by envelopes and verifiers carried with the system hold under any change of issuer; properties enforced only by authority hold only while that authority is unchanged.
+\end{proposition}
+
 \end{document}
