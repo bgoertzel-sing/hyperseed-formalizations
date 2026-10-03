@@ -48,3 +48,18 @@
 
 **Hyperseed mapping:** Formalized as a fiber-bundle relation in the Hyperseed ontology; see `atoms.metta` and `formalization.tex` for details.
 
+
+
+## OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+### C7: `oco2_axis_subset`
+
+**Claim:** SAI vs AGI = SAI's Assessment axes form a strict subset of AGI's. *(oco2-crosswalk)*
+
+### C8: `oco2_missing_records`
+
+**Claim:** Missing reasoning/metacognition = absence of Derivation and self-Assessment records from the system. *(oco2-crosswalk)*
+
+### C9: `oco2_nested_catalogs`
+
+**Claim:** False dichotomy = SAI's Catalog embeds into AGI's by a BridgeMapping. *(oco2-crosswalk)*

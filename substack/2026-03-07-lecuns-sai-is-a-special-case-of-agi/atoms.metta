@@ -53,3 +53,9 @@
 (= (d-section d_lecuns_sai_is_a_special_case_of_agi jepa_perception_only) (parallel-transport conn_lecuns_sai_is_a_special_case_of_agi jepa_perception_only))
 (= (d-section d_lecuns_sai_is_a_special_case_of_agi hyperon_subsumes_sai) (parallel-transport conn_lecuns_sai_is_a_special_case_of_agi hyperon_subsumes_sai))
 (= (d-section d_lecuns_sai_is_a_special_case_of_agi false_dichotomy) (parallel-transport conn_lecuns_sai_is_a_special_case_of_agi false_dichotomy))
+;; ---- OCO/2 crosswalk (C7-C9), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> sai-subset-agi strict-Assessment-axis-subset)
+(--> world-model-insufficient ([] (perception-planning-GoalEvaluation no-reasoning-GoalEvaluation)))
+(--> sai-missing-capabilities ([] (no-Derivation-records no-self-Assessment-records)))
+(--> hyperon-subsumes-sai attributed-Assessment)
+(--> sai-agi-false-dichotomy Catalog-embedding-BridgeMapping)
