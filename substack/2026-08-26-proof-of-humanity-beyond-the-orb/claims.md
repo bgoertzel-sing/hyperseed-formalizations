@@ -245,3 +245,17 @@ Eurykosmotron, 2026-08-26.
 
 50. **Protocol not coin = decoupled product bundle** (identity x payment).
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+51. **Composite proof = Justification over independent-origin EvidenceRecords;** monoculture = single shared origin. *(oco2-crosswalk)*
+
+52. **Verifier policy = per-verifier admission policy;** certification = AuthorizationRecord from a principal other than the manufacturer. *(oco2-crosswalk)*
+
+53. **Device revocation = LifecycleEvent + ReadSet invalidation,** leaving identities with other evidence intact. *(oco2-crosswalk)*
+
+54. **Domain nullifiers = per-domain Scopes with no identity ContextTransfer.** *(oco2-crosswalk)*
+
+55. **Agent authorization binding = human-brokered AuthorizationRecord for high-impact ActionProposals.** *(oco2-crosswalk)*
+
+56. **Non-coercion gap = recorded ValidityThreat;** payment kept apart from identity records. *(oco2-crosswalk)*

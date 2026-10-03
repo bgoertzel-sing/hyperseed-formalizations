@@ -110,6 +110,25 @@ These are interpretive readings. The article itself does not use d-calculus.
   payment bundle form a product with no forced connection. Either can change
   without dragging the other along.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Composite proof, not single scan (claims 2, 36, 44) | Justification combining EvidenceRecords from independent origins | Strength comes from distinct origins; repeated scans from one device count once. |
+| Verifier chooses policy (claim 10) | per-verifier admission policy / VerifierSpec | Different applications require different evidence combinations. |
+| Orb monoculture (claims 1, 41, 45) | all evidence sharing one device origin | One compromise removes the standing of everything resting on that origin. |
+| No self-certification, independent labs (claims 16-17, 46) | verifier/actor separation; lab certification = AuthorizationRecord from a separate principal | A manufacturer cannot issue its own certification. |
+| Revocation without identity deletion (claims 18, 43) | LifecycleEvent + ReadSet invalidation | A compromised device loses standing; identities resting on other evidence keep theirs. |
+| Domain nullifiers (claims 20, 42, 47) | one Scope per domain, with no ContextTransfer of identity between them | Unlinkability is the absence of a transfer record. |
+| Agent authorization binding (claim 25) | high-impact agent ActionProposals require an AuthorizationRecord brokered by a verified human principal | Matches OCO/2's rule that authority is brokered, never self-issued. |
+| Liveness / replay (claim 49) | event ordering; a replay reuses an existing event and is rejected | Freshness is checked against the append-only log. |
+| No proof of non-coercion (claim 33) | recorded ValidityThreat on every proof-of-humanity verifier | The limit is kept on record, not hidden. |
+| Protocol not coin (claims 27-29, 50) | BudgetAccount / payment adapters separate from identity records | Identity standing does not depend on any token price. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

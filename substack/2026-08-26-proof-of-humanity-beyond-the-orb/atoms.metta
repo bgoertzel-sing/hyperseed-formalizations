@@ -134,3 +134,15 @@
 (--> liveness directed-freshness)
 (--> replay-attack reuse-old-1-cell)
 (--> protocol-not-coin decoupled-product-bundle)
+
+;; ---- OCO/2 crosswalk (51-56), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> composite-proof-of-humanity independent-origin-Justification)
+(--> orb-monoculture single-shared-origin)
+(--> verifier-policy per-verifier-admission-policy)
+(--> lab-certification ([] (AuthorizationRecord non-manufacturer-principal)))
+(--> device-revocation ([] (LifecycleEvent ReadSet-invalidation)))
+(--> domain-nullifier ([] (per-domain-Scope no-identity-ContextTransfer)))
+(--> agent-authorization-binding human-brokered-AuthorizationRecord)
+(--> liveness replay-rejected-by-event-order)
+(--> coercion-gap ValidityThreat)
+(--> protocol-not-coin payment-separate-from-identity)
