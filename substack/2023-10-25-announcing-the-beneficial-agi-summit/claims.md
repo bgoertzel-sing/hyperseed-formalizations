@@ -74,3 +74,13 @@ Eurykosmotron, 2023-10-25.
 15. **Portfolio curvature (d-calculus).** Curvature across approach
     portfolio measures diversification benefit. Summit maximizes
     portfolio curvature. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+16. **Approach diversity = Plans from distinct origins, giving independent evidence.** *(oco2-crosswalk)*
+
+17. **Beneficial AGI = benefit and capability Goals evaluated separately.** *(oco2-crosswalk)*
+
+18. **Unconference = agenda from participant-appended records, no single issuer.** *(oco2-crosswalk)*
+
+19. **Trust networks = origin-tagged trust Assessments between principals.** *(oco2-crosswalk)*

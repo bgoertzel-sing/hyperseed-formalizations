@@ -145,6 +145,20 @@ from arbitrary AGI.
   maximizes portfolio curvature by bringing together maximally diverse
   approaches.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Open collaboration, diverse approaches, portfolio (claims 1, 5, 8, 15) | Plans pursued by distinct origins | Their results are independent evidence, not duplicates. |
+| Beneficial focus (claims 2, 10) | capability and benefit Goals evaluated separately | |
+| Decentralized governance, counterweight (claims 3, 7, 14) | many authority issuers across Scopes | |
+| Unconference, emergent structure (claims 4, 9, 12) | agenda built from records appended by participants, with no single issuer for the agenda | Structure comes from the records, not from one organizer. |
+| Trust networks (claims 6, 13) | trust Assessments between principals, recorded with origin | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

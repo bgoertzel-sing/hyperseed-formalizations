@@ -75,3 +75,10 @@
 (--> bgi-summit ([] (related-to three-paths-cross-pollination)))
 (--> bgi-summit ([] (related-to singularitarian-politics practical-expression)))
 (--> bgi-summit ([] (related-to wellbeing-measurement benefit-measurement)))
+
+;; ---- OCO/2 crosswalk (16-19), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> approach-diversity distinct-origin-Plans)
+(--> beneficial-focus ([] (capability-GoalEvaluation benefit-GoalEvaluation)))
+(--> decentralized-governance many-authority-issuers)
+(--> unconference participant-appended-agenda)
+(--> trust-network origin-tagged-trust-Assessment)
