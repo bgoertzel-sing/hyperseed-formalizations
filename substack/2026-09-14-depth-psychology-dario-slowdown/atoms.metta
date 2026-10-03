@@ -141,3 +141,15 @@
 (--> prosocial-coordination-layer ([] (trust reputation verifiable-commitments transition-data)))
 (--> cooperation positive-holonomy-shared-value)
 (--> honest-self-modeling measure-curvature-not-gauge-away)
+
+;; ---- OCO/2 crosswalk (48-53), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> bullshit-self-model Assessment-with-unrecorded-premises)
+(--> self-group-conflict separate-competing-Goals)
+(--> slowdown-proposal ([] (attributed-Claim conflict-of-interest-origin per-Goal-evaluation)))
+(--> honest-self-modeling Challenge-own-Justification)
+(--> arms-race-mirroring per-side-attributed-Interpretation)
+(--> centralized-kill-switch single-AuthorizationRecord-issuer)
+(--> open-third-pole per-Scope-brokered-authority)
+(--> trust-layer ([] (admission-policy origin-keyed-evidence)))
+(--> millions-of-experiments ([] (sibling-Scope-ExperimentRuns origin-preserving-ContextTransfer)))
+(--> scenario-analysis ([] (alternative-Plans graded-GoalEvaluation no-scalar-doom)))

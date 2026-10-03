@@ -237,3 +237,17 @@ Abortive 'AI Slowdown'," Eurykosmotron, 2026-09-14.
 
 47. **Honest self-modeling = measuring ||F|| rather than gauging it away.**
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+48. **Bullshit self-model = Assessment with unrecorded premises;** recording them exposes conflicting Goals. *(oco2-crosswalk)*
+
+49. **Slowdown proposal = attributed Claim evaluated separately under safety and incumbent-position Goals,** with conflict of interest as an origin attribute. *(oco2-crosswalk)*
+
+50. **Honest self-modeling = Challenges against one's own Justifications.** *(oco2-crosswalk)*
+
+51. **Kill-switch = single AuthorizationRecord issuer across all Scopes;** the open alternative = per-Scope brokered authority. *(oco2-crosswalk)*
+
+52. **Trust layer = admission policy with origin-keyed evidence;** millions of experiments = sibling-Scope ExperimentRuns sharing results once. *(oco2-crosswalk)*
+
+53. **Scenario analysis = alternative Plans with per-Goal graded evaluations,** not a scalar doom probability. *(oco2-crosswalk)*

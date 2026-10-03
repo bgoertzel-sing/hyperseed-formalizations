@@ -108,6 +108,23 @@ Claims about specific people's motives are the article's argument.
   Reflective practice reports ||F|| between self-interest and stated aims
   rather than choosing a frame in which it looks like zero.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Three layers, bullshit self-models (claims 3-4, 34-35, 41) | Justification routes with recorded premises; competing Goals (self-interest, group aim) kept as separate Goals | A bullshit self-model is an Assessment whose premises are not recorded. OCO/2 requires the premises, so a conflict between Goals shows up instead of being merged into one story. |
+| Slowdown freezes standings (claims 6-7, 42) | Claim + Assessment, origin = proposer testimony, with conflict of interest recorded as an origin attribute | The proposal is evaluated separately under a safety Goal and an incumbent-position Goal; the author's reading is kept as attributed argument. |
+| Honest self-modeling, grandiosity vigilance (claims 10, 26, 47) | Challenges raised against one's own Justifications | Honesty means recording the gap between stated aim and self-interest as a Challenge, not defining it away. |
+| Arms race, mutual mirroring (claims 14-15, 43) | per-side Scopes; each side's reading of the other = attributed Interpretation | Each actor's view of the other is testimony from inside its own Scope. |
+| Centralized model as kill-switch, chokepoint capture (claims 16-18, 37, 44) | a single issuer of AuthorizationRecords for all Scopes | OCO/2 authority is brokered per Scope; one issuer for everything is the single point of capture. |
+| Trust layer (claims 22, 38) | admission policy + origin-keyed evidence; reputation = Assessments with Justification routes | Trust is admitted standing with recorded routes, not an opaque score. |
+| Millions of experiments (claims 23, 39) | many ExperimentRuns in sibling Scopes; results shared by origin-preserving ContextTransfer | Diversity of runs, with shared results counted once. |
+| Scenario analysis over doom probabilities (claims 31, 40) | alternative Plans / ExperimentDesigns, each with graded GoalEvaluations | No ad hoc scalar probability of doom; scenarios are evaluated per Goal. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
