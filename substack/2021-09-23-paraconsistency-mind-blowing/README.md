@@ -163,6 +163,22 @@ Novel fiber emerges from the tension between contradictory sections:
   superposition interpreted as paraconsistent fiber, not as
   epistemic uncertainty.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Beauty as paradox, beauty resonance (claims 1, 9, 12) | an object judged by several Assessments of distinct origin (objective, subjective) that disagree and are all kept | Attributed, origin = author. |
+| Paraconsistent logic, paraconsistent fiber (claims 2, 7) | contradictory Claims kept with separate Assessments and a contradiction record; no rule derives an arbitrary conclusion from the pair | Same handling as evolving-deeply-ethical-and-joyously. |
+| Mind is paraconsistent (claim 3) | attributed Claim about human cognition |  |
+| Reality may be paraconsistent, quantum paraconsistency (claims 4, 15) | attributed speculative Claim, no VerifierSpec |  |
+| AGI needs paraconsistency (claim 5) | Derivation rules that can read contradiction records without explosion |  |
+| Creativity from tension, creative gradient (claims 6, 10, 13) | a new Catalog entry whose Derivation ReadSet contains both sides of a contradiction record | Checkable from the log. |
+| Contradiction as dimension, mind-growth holonomy (claims 8, 14) | each contradiction record is a readable entry later Derivations can build on |  |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

@@ -70,3 +70,10 @@
 (--> paraconsistency ([] (related-to interzones productive-contradiction-space)))
 (--> paraconsistency ([] (related-to open-ended-motivations embrace-contradiction)))
 (--> paraconsistency ([] (related-to consciousness-explosion more-contradictions-held)))
+
+;; ---- OCO/2 crosswalk (16-19), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> paraconsistent-logic ([] (contradiction-record no-explosion)))
+(--> beauty-as-paradox disagreeing-distinct-origin-Assessments)
+(--> creativity-from-tension both-sides-in-ReadSet)
+(--> paraconsistent-reality attributed-speculative-Claim)
+(--> agi-paraconsistency contradiction-reading-Derivation-rules)

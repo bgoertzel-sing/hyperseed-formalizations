@@ -71,3 +71,13 @@ Eurykosmotron, 2021-09-23.
 15. **Quantum paraconsistency (d-calculus).** Base space itself may be
     paraconsistent — superposition as genuine contradiction in fiber.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+16. **Paraconsistent reasoning = contradiction records with no explosion rule.** *(oco2-crosswalk)*
+
+17. **Beauty as paradox = disagreeing Assessments of distinct origin, all kept.** *(oco2-crosswalk)*
+
+18. **Creativity from tension = a new Catalog entry whose ReadSet contains both sides of a contradiction.** *(oco2-crosswalk)*
+
+19. **Paraconsistent reality = attributed speculative Claim without a VerifierSpec.** *(oco2-crosswalk)*
