@@ -119,3 +119,17 @@ Playbook," Eurykosmotron, 2026-09-15.
     The point isn't that he's insincere but that sincerity + organized
     amplification + stripped provenance = manufactured consent.
     *(source-paraphrase)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+22. **Omitted affiliation = dropped origin attributes;** OCO/2 keeps them on the EvidenceRecord. *(oco2-crosswalk)*
+
+23. **Coordinated coverage = one origin under set union,** however many outlets carry it. *(oco2-crosswalk)*
+
+24. **Entryism target = single authority issuer;** the defense is per-Scope brokered authority. *(oco2-crosswalk)*
+
+25. **Unfalsifiable x-risk claim = Claim with no VerifierSpec,** kept as attributed testimony. *(oco2-crosswalk)*
+
+26. **Competence does not transfer:** Assessments are per Claim, so engineering standing adds no mass to forecasts. *(oco2-crosswalk)*
+
+27. **Sincerity = origin attribute, not evidence.** *(oco2-crosswalk)*

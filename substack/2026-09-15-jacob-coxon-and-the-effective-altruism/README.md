@@ -58,6 +58,23 @@ Maps onto Hyperseed's fiber-bundle semantics in several ways:
   the base space topology, making the entryism strategy structurally
   ineffective.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Surface vs actual narrative, pre-existing affiliation (claims 1-3) | EvidenceRecord origin attributes (affiliation, funding, timing) | The public story drops origin attributes. OCO/2 keeps them on the record, so the reader can see them. |
+| Funding network, pre-positioned journalists, movement-media-policy loop (claims 5, 9, 19) | origin-keyed set union of evidence | Many outlets fed from one funding and strategy origin count as one source, not many. |
+| Institutional capture, chokepoint vulnerability (claims 8, 16) | verifier/actor separation; single AuthorizationRecord issuer as point of capture | Entryism works where one lab or regulator issues authority for everything. |
+| Unfalsifiable x-risk beliefs (claim 13) | Claim with no VerifierSpec, kept as attributed testimony | Without a verifier there is no route by which evidence can raise or lower its standing. |
+| Technical competence vs epistemic reliability (claim 14) | Assessments are per Claim and per Goal | Standing earned on engineering Claims transfers no evidence mass to forecasting Claims. |
+| Decentralization defeats entryism (claims 17-18) | per-Scope brokered authority | No single Scope to enter. |
+| Provenance matters, sincerity not questioned (claims 20-21) | conserved origin; sincerity is an origin attribute, not evidence | A sincere testimony is still testimony. |
+| Zar Goertzel's investigation (claim 12) | Claim + Assessment, origin = investigator testimony | Kept as attributed finding. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

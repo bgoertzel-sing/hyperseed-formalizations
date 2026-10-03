@@ -45,3 +45,13 @@
 (--> ea-narrative-as-covering-map ([] (provenance-erasing ideology-to-spontaneity audience-cannot-distinguish)))
 (--> ea-funding-loop-holonomy ([] (closed-loop meaning-changes independent-to-coordinated cocycle-failure)))
 (--> base-space-mismatch-entryism ([] (few-labs-capturable decentralized-topology entryism-ineffective)))
+
+;; ---- OCO/2 crosswalk (22-27), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> surface-narrative dropped-origin-attributes)
+(--> ea-affiliation EvidenceRecord-origin-attribute)
+(--> coordinated-coverage origin-keyed-set-union-one-source)
+(--> institutional-capture ([] (verifier-actor-origin-merge single-authority-issuer)))
+(--> unfalsifiable-xrisk ([] (Claim-without-VerifierSpec attributed-testimony)))
+(--> competence-vs-reliability per-Claim-Assessment)
+(--> decentralization-vs-entryism per-Scope-brokered-authority)
+(--> sincerity origin-attribute-not-evidence)
