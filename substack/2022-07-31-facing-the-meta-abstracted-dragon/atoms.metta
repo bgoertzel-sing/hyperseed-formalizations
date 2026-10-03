@@ -50,3 +50,10 @@
 (--> archetype-balance-as-fiber-homeostasis ([] (four-dimensional-fiber balanced-section degenerate-collapse)))
 (--> evil-as-cocycle-failure ([] (one-archetype-dominates transition-functions-fail composition-error)))
 (--> oei-as-curvature-constraint ([] (individuation-transcendence fiber-bundle-condition adaptive-primitives)))
+
+;; ---- OCO/2 crosswalk (22-25), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> archetype-processes ([] (four-Derivation-processes separate-budgets)))
+(--> archetype-dominance budget-monopoly)
+(--> grandiosity confidence-above-evidence-mass)
+(--> defeatism confidence-below-evidence-mass)
+(--> know-your-limits calibrated-revisable-self-Assessment)

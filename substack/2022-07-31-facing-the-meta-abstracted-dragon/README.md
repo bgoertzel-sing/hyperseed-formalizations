@@ -61,6 +61,22 @@ Key threads:
   intelligence — the same condition that Hyperseed formalizes as the
   curvature constraint on adaptive primitives.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Four archetypes as cognitive processes (claims 1, 3, 12) | four Derivation processes, each with its own budget and GoalEvaluation | Attributed mapping, origin = author (after Moore). |
+| Balance, cognitive synergy, pathology from dominance (claims 2, 13-14, 17) | processes reading each other's records; dominance = one process taking nearly all the budget | Imbalance is visible in the recorded allocation. |
+| Grandiosity, Faustian bargain (claims 4-6, 18) | a Claim of capability held with confidence above its evidence mass | Standing without supporting records. |
+| Know your limits vs breakthroughs (claims 7-8) | self-Assessment of capability, revisable when new evidence arrives | |
+| Probabilistic resolution, uncertainty about uncertainty (claims 9-10) | (strength, confidence) self-Assessments; confidence is itself a recorded quantity | Second-order uncertainty kept, not fused. |
+| Defeatism as false individuation (claim 19) | confidence held below evidence mass: the mirror error | |
+| Open-ended intelligence, practical AGI relevance (claims 15-16, 20-21) | attributed Plan: balanced budgets plus calibrated self-Assessment | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

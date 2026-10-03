@@ -117,3 +117,13 @@ Eurykosmotron, 2022-07-31.
     stable self-model (individuation) with capacity for radical restructuring
     (transcendence), mediated by synergistic cognitive processes that prevent
     any single mode from dominating. *(inferred)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+22. **Archetypes = four Derivation processes with separate budgets and GoalEvaluations.** *(oco2-crosswalk)*
+
+23. **Pathological dominance = one process taking nearly all the recorded budget.** *(oco2-crosswalk)*
+
+24. **Grandiosity = confidence above evidence mass; defeatism = confidence below it.** *(oco2-crosswalk)*
+
+25. **Knowing one's limits = a calibrated, revisable (strength, confidence) self-Assessment.** *(oco2-crosswalk)*
