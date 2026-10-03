@@ -48,3 +48,17 @@
 
 **Hyperseed mapping:** Formalized as a fiber-bundle relation in the Hyperseed ontology; see `atoms.metta` and `formalization.tex` for details.
 
+
+## OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+### C7: `oco2_signature_threat`
+
+**Claim:** Quantum vulnerability = ValidityThreat on all records signed under a breakable scheme. *(oco2-crosswalk)*
+
+### C8: `oco2_reanchor_first`
+
+**Claim:** Quantum-resistant transition = key-rotation LifecycleEvent plus a recorded old-to-new BridgeMapping, before the threat is realized. *(oco2-crosswalk)*
+
+### C9: `oco2_shared_threat`
+
+**Claim:** Broader implications = one ValidityThreat spanning every Scope that uses the scheme. *(oco2-crosswalk)*

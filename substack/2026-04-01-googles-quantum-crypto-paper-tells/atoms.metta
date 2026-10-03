@@ -53,3 +53,8 @@
 (= (d-section d_googles_quantum_crypto_paper_tells broader_implications) (parallel-transport conn_googles_quantum_crypto_paper_tells broader_implications))
 (= (d-section d_googles_quantum_crypto_paper_tells ai_quantum_hybrid) (parallel-transport conn_googles_quantum_crypto_paper_tells ai_quantum_hybrid))
 (= (d-section d_googles_quantum_crypto_paper_tells roadmap_signals) (parallel-transport conn_googles_quantum_crypto_paper_tells roadmap_signals))
+;; ---- OCO/2 crosswalk (C7-C9), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> quantum-timeline attributed-forecast-Claim)
+(--> blockchain-quantum-vulnerability breakable-signature-ValidityThreat)
+(--> quantum-resistant-transition ([] (key-rotation-LifecycleEvent scheme-BridgeMapping before-threat)))
+(--> broader-quantum-implications cross-Scope-ValidityThreat)
