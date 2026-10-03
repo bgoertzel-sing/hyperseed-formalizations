@@ -48,3 +48,21 @@
 
 **Hyperseed mapping:** Formalized as a fiber-bundle relation in the Hyperseed ontology; see `atoms.metta` and `formalization.tex` for details.
 
+
+## OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+### C7: `oco2_known_endpoint`
+
+**Claim:** Origin of life as test case = GoalEvaluation with a known endpoint and an unknown path. *(oco2-crosswalk)*
+
+### C8: `oco2_scale_bridge`
+
+**Claim:** Micro-macro bridging = structure-preserving BridgeMapping between molecular and population Catalogs. *(oco2-crosswalk)*
+
+### C9: `oco2_raf_transition`
+
+**Claim:** Chemistry-to-biology transition = emergence of a self-supporting Derivation set. *(oco2-crosswalk)*
+
+### C10: `oco2_abduce_then_assess`
+
+**Claim:** Abductive abiogenesis = generated pathway Claims Assessed by separate simulation ExperimentRuns; success = a recordless hypothesis passing an experimental VerifierSpec. *(oco2-crosswalk)*

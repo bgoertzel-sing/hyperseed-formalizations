@@ -53,3 +53,9 @@
 (= (d-section d_reverse_engineering_the_origin_of chemistry_biology_transition) (parallel-transport conn_reverse_engineering_the_origin_of chemistry_biology_transition))
 (= (d-section d_reverse_engineering_the_origin_of abductive_abiogenesis) (parallel-transport conn_reverse_engineering_the_origin_of abductive_abiogenesis))
 (= (d-section d_reverse_engineering_the_origin_of novel_hypothesis_generation) (parallel-transport conn_reverse_engineering_the_origin_of novel_hypothesis_generation))
+;; ---- OCO/2 crosswalk (C7-C10), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> origin-of-life-test known-endpoint-unknown-path-GoalEvaluation)
+(--> micro-macro-bridge molecular-to-population-BridgeMapping)
+(--> chemistry-biology-transition self-supporting-Derivation-set)
+(--> abductive-abiogenesis ([] (generated-pathway-Claim simulation-ExperimentRun-Assessment)))
+(--> novel-hypothesis ([] (no-prior-record passes-experimental-VerifierSpec)))
