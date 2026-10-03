@@ -96,3 +96,10 @@
 (--> general-theory-gi ([] (related-to cogprime-hyperon-architecture)))
 (--> general-theory-gi ([] (related-to consciousness-explosion)))
 (--> general-theory-gi ([] (related-to pln-truth-values)))
+
+;; ---- OCO/2 crosswalk (20-23), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> pattern compressive-Derivation-Catalog-entry)
+(--> general-intelligence multi-domain-capability-Assessment)
+(--> metatransparency readable-revisable-Derivation-rules)
+(--> transfer-learning target-scored-ContextTransfer)
+(--> cognitive-synergy distinct-origin-shared-records)

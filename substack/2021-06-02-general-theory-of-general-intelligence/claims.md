@@ -94,3 +94,13 @@ Eurykosmotron, 2021-06-02 (introducing arXiv:2103.15100).
     intelligence bundle; pattern recognition = constructing flat sections;
     pattern creation = extending them to new base-space regions.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+20. **Pattern = Catalog entry whose Derivation reproduces data more cheaply than listing it.** *(oco2-crosswalk)*
+
+21. **Generality = breadth of Goal domains with nonzero capability Assessment.** *(oco2-crosswalk)*
+
+22. **Metatransparency = own Derivation rules as readable, revisable records.** *(oco2-crosswalk)*
+
+23. **Transfer = ContextTransfer of Derivations scored by GoalEvaluation in the target Scope.** *(oco2-crosswalk)*

@@ -128,6 +128,22 @@ morphisms:
   is the construction of flat sections; pattern creation is the
   extension of flat sections to new regions of the base space.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Pragmatic patternism, pattern as compression (claims 1, 8) | a pattern = a Catalog entry whose recorded Derivation reproduces data more cheaply than listing it | Attributed definition, origin = author. |
+| Structural property, fiber richness and coverage (claims 2, 9, 11) | multi-axis capability Assessment over many Goal domains | Generality = breadth of domains with nonzero entries. |
+| Category-theoretic formalization, functor and learning maps (claims 3, 12-13) | BridgeMappings between environment and action Catalogs; learning = recorded revision of those mappings | |
+| Metatransparency, meta-fiber, self-modification (claims 4, 14-15) | the system's own Derivation rules are readable records it can Assess and revise via LifecycleEvents | |
+| Goal diversity and transfer (claims 5, 16) | ContextTransfer of Derivations between Goal Scopes, scored by GoalEvaluation in the target Scope | |
+| Cognitive synergy, fiber diversity (claims 6, 10) | processes of distinct origin reading each other's records | Same reading as facing-the-meta-abstracted-dragon. |
+| CogPrime/Hyperon (claim 7) | attributed Plan | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
