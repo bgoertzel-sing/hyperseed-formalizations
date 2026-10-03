@@ -138,6 +138,21 @@ Creative cognition is navigation through interzones:
   fiber. Skilled interdisciplinary thinkers follow this gradient;
   less skilled ones get lost in unproductive contradictions.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Interzones, Burroughs (claims 1-2) | regions where two Catalogs overlap and no BridgeMapping resolves them | Attributed, origin = author. |
+| Paraconsistency enables interzones, paraconsistent connection (claims 3, 11) | conflicting Claims from both Catalogs kept with contradiction records; any blend of the two Assessments records its weight | The blend is recorded, not hidden. |
+| Interdisciplinary parallels (claim 4) | Derivations whose ReadSets span two disciplines' Catalogs |  |
+| AGI should inhabit interzones (claim 5) | attributed Plan |  |
+| Control vs freedom, control boundary (claims 6, 13) | Scopes with few or no AuthorizationRecord constraints |  |
+| Creativity, novel fiber, interzone holonomy and gradient (claims 7-10, 12, 14) | new Catalog entries from Derivations crossing the overlap; a round trip through both Catalogs that does not return the same Claim marks an unresolved mismatch |  |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

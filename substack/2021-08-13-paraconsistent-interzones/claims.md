@@ -67,3 +67,13 @@ Eurykosmotron, 2021-08-13.
 14. **Interzone gradient (d-calculus).** ∇_I points toward most
     productive contradictions. Skilled thinkers follow this gradient.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+15. **Interzone = overlap of two Catalogs with no resolving BridgeMapping.** *(oco2-crosswalk)*
+
+16. **Interzone reasoning = conflicting Claims kept with contradiction records, any blending weight recorded.** *(oco2-crosswalk)*
+
+17. **Interzone creativity = new Catalog entries from Derivations whose ReadSets span both Catalogs.** *(oco2-crosswalk)*
+
+18. **Control vs freedom = Scopes with few or no AuthorizationRecord constraints.** *(oco2-crosswalk)*

@@ -66,3 +66,10 @@
 (--> interzones ([] (related-to paraconsistency-mind-blowing formal-foundation)))
 (--> interzones ([] (related-to open-ended-motivations exploration-space)))
 (--> interzones ([] (related-to consciousness-explosion beyond-single-framework)))
+
+;; ---- OCO/2 crosswalk (15-18), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> interzone unresolved-Catalog-overlap)
+(--> interzone-reasoning ([] (contradiction-record recorded-blend-weight)))
+(--> interzone-creativity cross-Catalog-ReadSet-new-entry)
+(--> interzone-freedom lightly-authorized-Scope)
+(--> agi-interzones attributed-Plan)
