@@ -27,3 +27,13 @@
 20. The evolutionary + neural + logical composition in the curriculum mirrors Hyperon's fibered architecture.
 21. A well-designed curriculum ensures d-connectedness of the AGI knowledge space.
 22. Each of Mitchell's mistakes corresponds to a specific d-distortion (collapsing or inflating distinctions).
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+23. **Curriculum areas = disciplinary Scopes linked by ContextTransfer.** *(oco2-crosswalk)*
+
+24. **AI history = failure records kept with ValidityThreats so mistakes are not repeated.** *(oco2-crosswalk)*
+
+25. **Insufficient narrow methods = components each covering only some Goal domains.** *(oco2-crosswalk)*
+
+26. **Competing architectures = rival Plans of distinct origin, Assessed separately.** *(oco2-crosswalk)*

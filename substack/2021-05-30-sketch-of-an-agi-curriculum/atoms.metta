@@ -102,3 +102,10 @@
    (fiber-transport ai-algorithms evolutionary-novelty))
 (= (provides-transport dreyfus-what-computers-cant)
    (fiber-transport history-of-ai philosophy-of-mind))
+
+;; ---- OCO/2 crosswalk (23-26), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> agi-curriculum-areas ContextTransfer-linked-Scopes)
+(--> ai-history-lessons failure-record-ValidityThreat)
+(--> narrow-method-insufficiency partial-domain-coverage)
+(--> agi-architectures distinct-origin-rival-Plans)
+(--> neuroscience-constraints architecture-EvidenceRecords)

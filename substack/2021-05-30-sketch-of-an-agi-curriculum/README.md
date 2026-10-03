@@ -77,3 +77,20 @@ Key meta-observations:
 - **Mitchell's mistakes as d-distortion:** Each mistake distorts the
   distinction metric, either collapsing distinctions that should be
   preserved or inflating distinctions that should be bridged.
+
+
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Six curriculum areas, atlas charts (claims 1, 16) | six disciplinary Scopes, each with its own Catalog | Attributed proposal, origin = author. |
+| Cross-cutting books, crude division (claims 2, 17-18) | ContextTransfer between Scopes; overlapping Catalogs with no clean partition | |
+| Learning from AI history (claims 4-5, 19) | past failures kept as records with ValidityThreats; Mitchell's four mistakes = recurring threat types | Erasing failures lets them recur. |
+| Narrow methods relevant but insufficient (claims 7-9, 15) | each method a Derivation component with its own capability Assessment; no single component covers all Goal domains | |
+| Multiple AGI architectures (claim 13) | rival Plans of distinct origin, Assessed separately | |
+| Empirical constraints from neuroscience (claim 11) | EvidenceRecords that architecture Claims must be checked against | |
+| Hyperon/SingularityNET, future of AGI (claims 6, 14) | attributed Plan and Claims | |
