@@ -49,3 +49,11 @@
 (--> bgi-manifesto ([] (related-to bgi-summit intellectual-foundation)))
 (--> bgi-manifesto ([] (related-to superhuman-superminds structural-benevolence)))
 (--> bgi-manifesto ([] (related-to open-ended-motivations architectural-values)))
+
+;; ---- OCO/2 crosswalk (16-20), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> intelligence-explosion recorded-self-revision-LifecycleEvent)
+(--> architectural-alignment in-contract-value-Goal)
+(--> bolted-on-alignment external-output-filter)
+(--> self-modification-integrity Goal-preserving-BridgeMapping)
+(--> open-development independent-origin-VerifierSpec)
+(--> corporate-capture few-authority-issuers)

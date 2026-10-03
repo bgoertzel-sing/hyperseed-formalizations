@@ -169,6 +169,21 @@ Concentration of AGI development is fiber monopoly:
   achieve it. The manifesto is a connection — it connects current
   development fiber to the target beneficial fiber.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| HLAGI near, intelligence explosion (claims 1-2, 10) | attributed forecast Claims; self-improvement = LifecycleEvents in which the system revises its own Catalog and Derivation rules | Each self-revision is recorded, so an explosion would be traceable in the log. |
+| Beneficial vs dangerous (claims 3, 7) | benefit Goals evaluated alongside capability Goals in one Goal contract | Two evaluations, not one fused score. |
+| Architectural vs bolted-on alignment (claims 6, 8) | value Goals inside the Goal contract and checked by the evaluation rules, vs an external filter on outputs | |
+| Integrity under self-modification (claims 9, 14) | each self-modification LifecycleEvent carries a BridgeMapping showing the Goal contract is preserved | An undeclared Goal change is drift. |
+| Open development (claims 4, 11) | readable records checked by VerifierSpecs whose origins are independent of the developer | |
+| Against restriction, corporate capture (claims 5, 12, 15) | few authority issuers across Scopes | Same issuer-topology reading as bernies-proposal-to-nationalize-agi. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

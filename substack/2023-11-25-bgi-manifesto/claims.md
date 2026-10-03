@@ -66,3 +66,15 @@ Eurykosmotron, 2023-11-25.
 15. **Monopoly curvature (d-calculus).** Fiber monopoly produces dangerous
     curvature concentration. Open development produces low, distributed
     curvature. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+16. **Self-improvement = recorded self-revision LifecycleEvents.** *(oco2-crosswalk)*
+
+17. **Architectural alignment = value Goals inside the Goal contract, not an output filter.** *(oco2-crosswalk)*
+
+18. **Integrity under self-modification = each self-revision carries a Goal-preserving BridgeMapping.** *(oco2-crosswalk)*
+
+19. **Open development = readable records checked by verifiers independent of the developer.** *(oco2-crosswalk)*
+
+20. **Corporate capture = few authority issuers.** *(oco2-crosswalk)*
