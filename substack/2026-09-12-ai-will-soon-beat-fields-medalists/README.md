@@ -55,6 +55,23 @@ Part 1) and the governance seam (note 0010). The "drinking from the well
 that trained them" critique of LLM creativity parallels Hyperseed's analysis
 of why pattern completion alone cannot generate genuinely novel structure.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Community goals vs goals of mathematics (main theme) | distinct Goals, each with one success spec and a separate VerifierSpec | The medalists' declaration and the article assess the same events against different Goals; OCO/2 keeps those apart instead of fusing them. |
+| Probabilistic proof plans as intermediate layer (claims 17-18, 37) | Section 13 Hyperseed proof-plan row: Derivations and Justifications with OmegaPLN recipes and grades | The layer between an LLM sketch and Lean is a graded Justification route that can be checked later. |
+| Structured memory with trust (claim 19) | event ledger plus admission policy; exact evidence mass | Trust = admitted standing with recorded recipes, not a free-floating score. |
+| Theorem provers as epistemic firewall (claims 20, 36) | admission policy: only a machine-checked warrant admits a mathematical Claim as proved; LLM proofs are attributed testimony | OCO/2's admission rule is the firewall stated as a record rule. |
+| Omega agents for long-horizon coordination (claims 21, 39) | Plan, Obligation, DecisionRecord | Long-horizon proof work is a tree of open Obligations discharged by recorded decisions. |
+| LLMs as component, not lead (claim 22) | LLM = ActionOperator producing Interpretations | The model proposes; Justification routes and verifiers decide standing. |
+| Interestingness gap: AM, Eurisko, HR, Graffiti (claims 24-26) | Appraisal records over candidate Claims | Interestingness becomes a recorded Appraisal, separate from truth standing. |
+| Verified self-modification (claims 27, 40) | review-gated Catalog activation in a new ContextSnapshot | Same pattern as the Navier-Stokes crosswalk. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

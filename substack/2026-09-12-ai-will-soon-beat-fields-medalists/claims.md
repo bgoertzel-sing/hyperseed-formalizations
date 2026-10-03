@@ -212,3 +212,17 @@ Eurykosmotron, 2026-09-12.
     verifying that self-modification preserves beneficial properties is the
     formal-verification instantiation of identity-preserving self-modification
     from Time's Arrow Part 1 (claims 44–45). *(inferred)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+41. **Community vs mathematics = two Goals with separate success specs and verifiers**, never fused. *(oco2-crosswalk)*
+
+42. **Probabilistic proof plans = graded Justification routes (OmegaPLN recipes) between LLM sketch and Lean.** *(oco2-crosswalk)*
+
+43. **Epistemic firewall = admission rule: only machine-checked warrant admits proved standing**; LLM proofs are testimony. *(oco2-crosswalk)*
+
+44. **Omega coordination = Plans and Obligation trees discharged by DecisionRecords.** *(oco2-crosswalk)*
+
+45. **LLM as component = ActionOperator emitting Interpretations.** *(oco2-crosswalk)*
+
+46. **Interestingness = Appraisal records, separate from truth standing.** *(oco2-crosswalk)*

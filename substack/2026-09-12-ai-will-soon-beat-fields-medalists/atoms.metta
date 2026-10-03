@@ -144,3 +144,12 @@
 (--> math-ai-tools ([] (should-be open-source)))
 (==> (--> math-ai-tools ([] proprietary))
      (--> mathematical-power ([] concentrated)))
+
+;; ---- OCO/2 crosswalk (41-46), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> community-vs-math-goals ([] (distinct-Goals separate-VerifierSpecs no-fusion)))
+(--> probabilistic-proof-plan ([] (graded-Justification OmegaPLN-recipe)))
+(--> epistemic-firewall machine-checked-admission-rule)
+(--> llm-proof attributed-testimony)
+(--> omega-coordination ([] (Plan Obligation-tree DecisionRecord)))
+(--> llm-component ActionOperator-emitting-Interpretation)
+(--> interestingness Appraisal)
