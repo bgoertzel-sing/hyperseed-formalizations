@@ -145,6 +145,20 @@ directions in the bundle are "uphill."
   consciousness fibers, the well-being measurement is incomplete
   (missing curvature terms).
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| GDP measures activity, not well-being (claim 1) | GDP = scalar Assessment of activity used as a proxy GoalEvaluation for a well-being Goal | A proxy, not the Goal. |
+| Hedonic adjustment failures (claim 2) | an ad hoc BridgeMapping from activity to quality with no declared structure | |
+| Well-being metrics exist (claim 3) | multi-axis Assessments of flourishing | |
+| Measurement shapes policy (claim 4) | Plans are optimized against whichever GoalEvaluation is recorded | Record the wrong evaluator and the wrong thing gets optimized. |
+| AGI makes GDP meaningless (claim 5) | a ValidityThreat on the proxy: the activity/well-being link breaks once production decouples from human labour | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

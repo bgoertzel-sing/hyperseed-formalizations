@@ -85,3 +85,10 @@
 (--> wellbeing-measurement ([] (related-to nft-gamification post-scarcity)))
 (--> wellbeing-measurement ([] (related-to singularitarian-politics)))
 (--> wellbeing-measurement ([] (related-to agi-safety beneficial-agi)))
+
+;; ---- OCO/2 crosswalk (16-19), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> gdp proxy-scalar-activity-Assessment)
+(--> hedonic-adjustment undeclared-BridgeMapping)
+(--> well-being-metrics multi-axis-Assessment)
+(--> measurement-shapes-policy recorded-GoalEvaluation-optimization)
+(--> agi-gdp-meaningless proxy-ValidityThreat)

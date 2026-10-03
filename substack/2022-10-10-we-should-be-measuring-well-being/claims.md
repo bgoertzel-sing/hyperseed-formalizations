@@ -81,3 +81,13 @@ Not (trying and failing to) Measure GDP," Eurykosmotron, 2022-10-10.
     involves consciousness fiber dimensions. Without measuring
     consciousness fibers, well-being measurement is incomplete.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+16. **GDP = scalar activity Assessment used as a proxy GoalEvaluation for well-being.** *(oco2-crosswalk)*
+
+17. **Measurement shapes policy = Plans optimized against the recorded GoalEvaluation.** *(oco2-crosswalk)*
+
+18. **Well-being metrics = multi-axis Assessments, not one scalar.** *(oco2-crosswalk)*
+
+19. **AGI and GDP = a ValidityThreat on the proxy once production decouples from labour.** *(oco2-crosswalk)*
