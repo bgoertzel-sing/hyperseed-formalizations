@@ -551,3 +551,16 @@
 (--> shared-time flat-inter-agent-record-connection)
 (--> routing-cost translation-curvature)
 (--> resonant-coordination ([] (low-curvature retain-descent-data anchoring)))
+
+;; ---- OCO/2 crosswalk (46-53), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> workspace WorkspaceSnapshot-view)
+(--> autobiography append-only-event-ledger)
+(--> right-clock ([] (admitted-event-ordering view-cutoff)))
+(--> first-class-contextualization ([] (Scope-binding ContextSnapshot-binding)))
+(--> transweave-identity BridgeMapping-between-Catalogs)
+(--> omega-ray ([] (stable-Goal-contract evolving-standing)))
+(--> shared-time common-event-prefix)
+(--> routing-cost ContextTransfer-typed-losses)
+(--> anchoring Justification-to-admitted-EvidenceRecord)
+(--> resonant-agreement attributed-testimony)
+(--> architectural-compassion ([] (guarded-Obligation adversarial-Challenge)))

@@ -66,6 +66,24 @@ derivative of record types, which is the closest native bridge to d-calculus.
   has low curvature but must keep nonzero descent data (anchoring) to prevent
   unaccountable drift.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Separate workspace from autobiography (claims 30, 44) | WorkspaceSnapshot (mutable view) vs. append-only MemoryEvent / LifecycleEvent ledger | This is OCO/2's core split: views are recomputed, history is only appended to. |
+| Measure the right clock (claim 29) | event ordering in the ledger; LifecycleView with a cutoff | Subjective time in the article's sense tracks admitted, surprising events, not wall-clock records. |
+| Make contextualization first-class (claims 18, 32, 38) | every Assessment/DecisionRecord bound to a Scope and ContextSnapshot | A conclusion without its context cut is not a well-formed OCO/2 record. |
+| Identity across fast change via TransWeave (claim 16) | BridgeMapping between old and new Catalog Definitions | Earlier selves stay readable under their own ContextSnapshot; the bridge is an explicit record. |
+| Omega rays, not frozen endpoints (claims 34, 43) | stable Goal contracts (by digest) with event-sourced standing | "Meaning stays stable; standing evolves through events": values converge as standing, not by freezing the record. |
+| Shared provenance = shared time (claim 35) | shared host ledger; ContextTransfer preserving origin IDs | Agents share a time when they reduce a common event prefix. |
+| Routing pays distinction cost (claim 36) | ContextTransfer with typed losses | The cost of routing is visible as the recorded losses of each transfer. |
+| Resonant coordination must keep anchoring (claim 37) | Justification routes must reach admitted EvidenceRecords | Mutual agreement among agents is attributed testimony, not evidence; anchoring = routes ending in admitted evidence. |
+| Preserve compassion through architecture (claims 25-26, 33) | Obligations with Guards; Challenge records from adversarial moral review | Variant-self evaluation becomes Challenges against the Justifications for a decision. |
+
 ## Files
 
 - `claims.md` — enumerated intellectual claims with labels, paraphrases, and epistemic status.

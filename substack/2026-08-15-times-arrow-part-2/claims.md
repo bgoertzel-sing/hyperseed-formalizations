@@ -162,3 +162,29 @@ Source: Ben Goertzel, "Time's Arrow, Part 2: Relating Subjective Time-Flow to In
 45. **Shared time = flat inter-agent record connection.** Routing cost =
     translation curvature; resonance must retain descent data (anchoring).
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+46. **Workspace vs autobiography = WorkspaceSnapshot view vs append-only
+    event ledger.** *(oco2-crosswalk)*
+
+47. **The right clock = admitted-event ordering with view cutoffs**, not
+    wall-clock record counts. *(oco2-crosswalk)*
+
+48. **First-class contextualization = every conclusion bound to a Scope and
+    ContextSnapshot.** *(oco2-crosswalk)*
+
+49. **TransWeave identity = explicit BridgeMapping between Catalogs**;
+    earlier selves stay readable under their own cut. *(oco2-crosswalk)*
+
+50. **Omega ray = stable Goal contracts with evolving standing.**
+    *(oco2-crosswalk)*
+
+51. **Shared time = reduction of a common event prefix; routing cost =
+    typed losses of ContextTransfers.** *(oco2-crosswalk)*
+
+52. **Anchoring = Justification routes ending in admitted EvidenceRecords**;
+    inter-agent agreement alone is attributed testimony. *(oco2-crosswalk)*
+
+53. **Architectural compassion = guarded Obligations plus Challenge records
+    from adversarial review.** *(oco2-crosswalk)*
