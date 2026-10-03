@@ -186,6 +186,22 @@ The bundle of national interests cannot be trivialized:
   values. The ASI Alliance model sits near the high end; corporate
   and government ownership sit near the low end.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Problem is real (claim 1) | Claim + Assessment, origin = author | Agreement with Sanders' diagnosis, kept as attributed. |
+| Nationalization replaces one centralization with another (claims 2, 7, 12) | the single authority issuer changes from a corporation to the state | Still one issuer for every Scope; the topology is unchanged. |
+| Government competence gap (claim 3) | attributed Assessment | Author's judgment. |
+| International coordination, sovereignty obstruction (claims 4, 11, 15) | several sovereign Scopes, none with authority over the others | A national issuer's AuthorizationRecords are not recognized in other Scopes, so nationalization cannot cover the globe. |
+| Decentralization, ASI Alliance model (claims 5-6, 8, 13) | per-Scope brokered authority; no issuer covers all Scopes | Attributed Plan. |
+| Open protocols as coordination (claim 9) | declared ContextTransfer interfaces between Scopes | Coordination by agreed record exchange, not shared ownership. |
+| Regulatory capture (claims 10, 14) | verifier origin overlapping actor origin | The regulator stops being independent of what it regulates. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

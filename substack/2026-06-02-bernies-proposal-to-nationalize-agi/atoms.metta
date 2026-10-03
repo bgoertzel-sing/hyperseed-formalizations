@@ -33,3 +33,11 @@
 (--> bernies-nationalize ([] (related-to openbgi decentralized-infrastructure)))
 (--> bernies-nationalize ([] (related-to radical-futurism political-emergence)))
 (--> bernies-nationalize ([] (related-to collective-non-self governance-as-collective-model)))
+
+;; ---- OCO/2 crosswalk (17-21), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> nationalization single-issuer-swap)
+(--> corporate-centralization single-authority-issuer)
+(--> international-coordination sovereign-Scopes-no-cross-authority)
+(--> decentralized-alternative per-Scope-brokered-authority)
+(--> open-protocols declared-ContextTransfer-interface)
+(--> regulatory-capture verifier-actor-origin-overlap)

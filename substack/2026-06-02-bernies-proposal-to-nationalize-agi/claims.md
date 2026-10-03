@@ -72,3 +72,15 @@ Eurykosmotron, 2026-06-02.
 16. **Governance gradient (d-calculus).** ∇_governance = fiber_dimension ×
     transition_transparency × participation_breadth × capture_resistance.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+17. **Nationalization = change of single authority issuer,** not removal of it. *(oco2-crosswalk)*
+
+18. **International problem = sovereign Scopes with no cross-Scope authority;** a national issuer does not reach them. *(oco2-crosswalk)*
+
+19. **Decentralization = per-Scope brokered authority, no global issuer.** *(oco2-crosswalk)*
+
+20. **Open protocols = declared ContextTransfer interfaces.** *(oco2-crosswalk)*
+
+21. **Regulatory capture = verifier origin overlapping actor origin.** *(oco2-crosswalk)*
