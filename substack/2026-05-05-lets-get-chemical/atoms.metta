@@ -31,3 +31,12 @@
 (--> lets-get-chemical ([] (related-to evidence-logic anti-hallucination-analog)))
 (--> lets-get-chemical ([] (related-to collective-non-self anti-canalization)))
 (--> lets-get-chemical ([] (related-to radical-futurism origin-of-life-to-mind)))
+
+;; ---- OCO/2 crosswalk (15-19), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> protocell-experiments ([] (ExperimentRun per-metric-GoalEvaluation Pareto-dominance)))
+(--> raf-set ([] (closed-Derivation-set internal-catalysts food-records)))
+(--> backward-potential search-guiding-Assessment)
+(--> protected-release share-exceeds-value-share-eviction)
+(--> identity-function-separation ([] (origin-keyed-penalty content-preserved)))
+(--> conversion-bridge regime-BridgeMapping)
+(--> chemistry-to-agi attributed-BridgeMapping)

@@ -63,3 +63,15 @@ Eurykosmotron, 2026-05-05.
 14. **Identity-function separation curvature (d-calculus).** Low curvature
     = separable (protected release works well). High = coupled.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+15. **Experimental comparison = ExperimentRuns with per-metric GoalEvaluations;** "best by every metric" = Pareto dominance. *(oco2-crosswalk)*
+
+16. **RAF set = Derivation set whose catalysts are produced internally from food records.** *(oco2-crosswalk)*
+
+17. **Backward potential = learned Assessment that guides search, not a verifier.** *(oco2-crosswalk)*
+
+18. **Protected release = eviction only when a pattern's share exceeds its value-share.** *(oco2-crosswalk)*
+
+19. **Identity vs function = diversity penalty keyed on origin, content kept.** *(oco2-crosswalk)*

@@ -148,6 +148,22 @@ The conversion bridge is a mechanism for transitioning between fiber types:
   and function are coupled (only one implementation can serve the
   function). Protected release works best when this curvature is low.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Experiments and metrics (claims 1, 4) | ExperimentRuns with several GoalEvaluations (one per metric) | "Best by every metric" = Pareto dominance, no scalar needed. |
+| RAF sets (claims 1, 8, 12) | closed set of Derivations where every reaction's catalyst is produced inside the set from food records | Self-supporting ReadSets: the set's own outputs keep it running. |
+| Backward potential (claim 2) | learned Assessment used to steer which paths get explored | A guide for search, not a verifier of results. |
+| Protected release (claims 3, 7, 10-11) | eviction or down-weighting only when a pattern's share exceeds its value-share | Penalize excess canalization, not repetition. Same concern as attention eviction keeping epistemic integrity. |
+| Identity vs function (claims 5, 14) | penalty keyed on origin (which lineage), while the function (content) is kept | Diversity pressure acts on who produced a pattern, not on what it does. |
+| Conversion bridge (claims 4, 9, 13) | BridgeMapping between chemistry regimes (vent flow to compartment) | Smooth transfer between record types. |
+| Lessons for AI/AGI (claim 6) | attributed BridgeMapping from chemistry to cognitive dynamics | Kept as the author's analogy. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
