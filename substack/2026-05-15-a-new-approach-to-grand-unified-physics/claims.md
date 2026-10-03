@@ -68,3 +68,15 @@ Eurykosmotron, 2026-05-15.
 15. **Quaternionic gauge curvature (d-calculus).** F_∇_quaternion =
     electroweak field strength. Standard physics in emergence-stack
     context. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+16. **Program status = speculative attributed Claims awaiting a VerifierSpec.** *(oco2-crosswalk)*
+
+17. **Occamistic precedence = Assessment of continuations of an ordered event log by prior pattern frequency.** *(oco2-crosswalk)*
+
+18. **Meta-crystallization stack = Catalog levels linked by coarse-graining BridgeMappings.** *(oco2-crosswalk)*
+
+19. **Wu Wei geodesic = least-representational-cost path under Assessment.** *(oco2-crosswalk)*
+
+20. **Non-commutativity = order-dependent Derivation composition, recordable in an ordered log.** *(oco2-crosswalk)*

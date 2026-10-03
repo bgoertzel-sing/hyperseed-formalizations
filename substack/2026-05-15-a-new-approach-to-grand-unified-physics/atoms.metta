@@ -32,3 +32,12 @@
 (--> grand-unified-physics ([] (related-to linguistic-universals same-weakness-principle)))
 (--> grand-unified-physics ([] (related-to times-arrow causal-ordering-directed)))
 (--> grand-unified-physics ([] (related-to radical-futurism deepest-emergence-layer)))
+
+;; ---- OCO/2 crosswalk (16-20), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> world-crystal-program speculative-Claim-no-VerifierSpec)
+(--> occamistic-precedence ([] (ordered-event-log prior-pattern-frequency-Assessment)))
+(--> meta-crystallization-stack coarse-graining-BridgeMapping-chain)
+(--> world-crystal convergent-stable-pattern)
+(--> wu-wei-geodesic least-representational-cost-path)
+(--> quaternionic-noncommutativity order-dependent-Derivation-composition)
+(--> weakness-geometry product-order-generality-Assessment)

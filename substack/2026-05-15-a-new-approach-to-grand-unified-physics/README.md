@@ -171,6 +171,22 @@ the Hyperseed ontology:
   strength. The Hyperseed framework places this within a larger
   emergence stack rather than taking it as fundamental.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Program status (whole article) | attributed speculative Claims with no VerifierSpec yet | The program becomes testable only once it names predictions a verifier could check. |
+| Causal sets + Occamistic precedence (claims 1, 8) | ordered append-only log of events; Assessment preferring simpler continuations | Precedence = new events weighted by how often similar patterns already occur in the log. |
+| Meta-crystallization stack (claims 3, 7, 11) | levels as Catalogs linked by BridgeMappings (bare order -> selection -> crystal -> spacetime/fields) | Each level is a coarse-grained description of the one below. |
+| Pregeometric world-crystal (claim 2) | stable pattern that many independent selection runs converge on | Its standing comes from convergence, not from a single derivation. |
+| Wu Wei geodesics (claims 4, 9, 14) | paths minimizing representational cost, compared by Assessment | Least-action recast as least-description. |
+| Quaternionic non-commutativity (claims 5, 10, 15) | composition order of Derivations matters: two orders give different results | The log is ordered, so order dependence is recordable rather than lost. |
+| Weakness geometry (claim 6) | Assessment preferring weaker (more general) hypotheses on several axes | Same product-order comparison as the linguistic-universals series. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
