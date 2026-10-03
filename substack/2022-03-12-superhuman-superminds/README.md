@@ -167,6 +167,20 @@ reason about another agent's fiber bundle:
   of attraction for benevolent configurations is large, making
   benevolence the structural attractor.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Superminds not singleton, composed bundle (claims 1, 7) | many agent Scopes and issuers linked by ContextTransfer | |
+| Cooperation dominates, fiber sharing, cooperation holonomy (claims 2, 8, 11) | agents reading each other's records and building Derivations on them | Attributed game-theoretic argument. |
+| Empathy as modeling (claims 3, 9) | agent i's recorded Assessment of agent j's Goals | Checkable: compare the model with j's own Goal records. |
+| Evil requires stupidity, pathological curvature (claims 4, 12-13) | attributed Claim: large-scale harm needs a badly wrong model of others' Goals | |
+| Exceptions, not naive optimism (claims 5-6) | the benevolence Claim carries its known exceptions as ValidityThreats | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

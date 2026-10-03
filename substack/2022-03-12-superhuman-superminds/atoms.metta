@@ -74,3 +74,10 @@
 (--> superhuman-superminds ([] (related-to beneficial-agi designed-plus-structural)))
 (--> superhuman-superminds ([] (related-to open-ended-motivations growth-favors-cooperation)))
 (--> superhuman-superminds ([] (related-to consciousness-explosion empathy-requires-consciousness)))
+
+;; ---- OCO/2 crosswalk (15-18), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> supermind ([] (many-agent-Scopes many-issuers ContextTransfer)))
+(--> supermind-cooperation shared-record-Derivation)
+(--> empathy other-Goal-Assessment)
+(--> evil-requires-stupidity attributed-Claim)
+(--> supermind-exceptions ValidityThreat)

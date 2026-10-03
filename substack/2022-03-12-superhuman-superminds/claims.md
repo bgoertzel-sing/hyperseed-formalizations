@@ -67,3 +67,13 @@ Eurykosmotron, 2022-03-12.
 14. **Benevolence gradient (d-calculus).** ∇_benevolence points toward
     maximal cooperative advantage. At superhuman scale, benevolence is
     the structural attractor with a large basin. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+15. **Supermind = many agent Scopes and issuers linked by ContextTransfer.** *(oco2-crosswalk)*
+
+16. **Empathy = an agent's recorded Assessment of another's Goals, scored against that agent's own records.** *(oco2-crosswalk)*
+
+17. **Cooperation = Derivations built on others' readable records.** *(oco2-crosswalk)*
+
+18. **Benevolence argument = attributed Claim with its exceptions recorded as ValidityThreats.** *(oco2-crosswalk)*
