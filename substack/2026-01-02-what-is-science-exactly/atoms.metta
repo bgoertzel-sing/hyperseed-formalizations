@@ -31,3 +31,11 @@
 (--> what-is-science ([] (related-to evidence-logic-energy formal-foundation)))
 (--> what-is-science ([] (related-to psi-reality paradigm-taboo)))
 (--> what-is-science ([] (related-to bgi-manifesto open-scientific-development)))
+
+;; ---- OCO/2 crosswalk (15-18), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> peer-review origin-disjoint-Assessment)
+(--> reproducibility distinct-origin-ExperimentRun-repeats)
+(--> bayesian-science origin-counted-Assessment-revision)
+(--> paradigm Catalog-version)
+(--> paradigm-shift Catalog-version-BridgeMapping)
+(--> agi-science attributed-Claim)

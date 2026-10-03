@@ -65,3 +65,13 @@ Eurykosmotron, 2026-01-02.
 14. **AGI steepens evidence gradient (d-calculus).** AGI makes it
     easier to follow the gradient toward well-supported conclusions.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+15. **Peer review = Assessment by origins disjoint from the Claim's origin.** *(oco2-crosswalk)*
+
+16. **Reproducibility = the same ExperimentRun repeated by distinct origins;** repeats from one origin count once. *(oco2-crosswalk)*
+
+17. **Paradigm = Catalog version; paradigm shift = BridgeMapping between versions.** *(oco2-crosswalk)*
+
+18. **AGI in science = many fast independent origins for generating and checking Claims** (attributed). *(oco2-crosswalk)*

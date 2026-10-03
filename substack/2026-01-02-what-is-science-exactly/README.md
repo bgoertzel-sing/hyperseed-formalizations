@@ -146,6 +146,21 @@ communal fiber bundle:
   AGI can process more evidence, generate more hypotheses, and design
   better experiments, all of which steepen the gradient toward truth.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Science is not one method (claim 1) | a family of Catalog-governed practices, not one fixed VerifierSpec | |
+| Social epistemology, structured skepticism (claims 2, 8) | Claims from one origin Assessed by reviewers of distinct origin before standing rises | Peer review = origin-disjoint Assessment. |
+| Bayesian core, updating as transport (claims 3, 10) | Assessments revised as EvidenceRecords arrive, with evidence counted once per origin | |
+| Reproducibility (claims 4, 11) | the same ExperimentRun repeated by distinct origins; agreement among independent runs raises standing | A single lab repeating itself counts once. |
+| Paradigms, paradigm shift (claims 5, 9, 12) | Catalog version; a shift = BridgeMapping between Catalog versions, often lossy | Old results stay readable through the mapping. |
+| AGI and science (claims 6, 14) | attributed Claim: AGI as many fast independent origins for generating and checking Claims | |
+
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
