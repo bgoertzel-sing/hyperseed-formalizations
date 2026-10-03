@@ -31,3 +31,12 @@
 (--> openbgi ([] (related-to three-things path-diversity-implemented)))
 (--> openbgi ([] (related-to collective-non-self fork-transparency)))
 (--> openbgi ([] (related-to openai-shakeup structural-alternative)))
+
+;; ---- OCO/2 crosswalk (14-18), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> openbgi ([] (many-Scopes per-Scope-brokered-authority no-global-issuer)))
+(--> anchor-independence no-further-anchor-AuthorizationRecord-needed)
+(--> open-protocols declared-ContextTransfer-interface)
+(--> reputation-governance ([] (per-Scope-contribution-Assessment origin-counted)))
+(--> structural-openness ContextSnapshot-reproducible)
+(--> fork-paradox ([] (code-forkable standing-not-forkable)))
+(--> governance-holonomy governance-LifecycleEvent-sequence)

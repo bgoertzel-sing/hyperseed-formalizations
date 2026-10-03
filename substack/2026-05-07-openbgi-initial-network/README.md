@@ -146,6 +146,22 @@ Governance weight proportional to fiber contribution:
   The fork-ability gradient is the structural foundation of non-self
   at the organizational level.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Decentralized AGI development (claims 1, 6) | many Scopes with per-Scope brokered authority; no issuer covers all | Attributed Plan. |
+| SingularityNET as anchor, anchor independence (claims 2, 12) | initial issuer whose authority must not be needed for the network to continue | Test: can the network go on if the anchor issues no further AuthorizationRecords? |
+| Technical stack (claim 3) | attributed Plan naming components | Kept as description. |
+| Open protocols = shared transition functions (claims 7, 10) | declared ContextTransfer interfaces between node Scopes | Coordination by agreed record exchange. |
+| Reputation-weighted governance (claims 4, 8) | governance weight from per-Scope Assessments of contributions, counted by origin | Many accounts from one origin count once, which is the Sybil defense. |
+| Structural openness, forkability (claims 5, 13) | anyone can reproduce code and Catalog from a ContextSnapshot | Code forkability is compatible with low forkability of cross-Scope standing (see avoiding-agi-catastrophe-part-2): the fork gets the code but not the live records. |
+| Governance holonomy (claim 11) | sequence of governance LifecycleEvents per cycle, kept in the append-only log | Drift is visible in the sequence. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

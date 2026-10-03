@@ -60,3 +60,15 @@ Eurykosmotron, 2026-05-07.
 13. **Fork-ability gradient (d-calculus).** Maximized across all components.
     Structural foundation of organizational non-self.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+14. **OpenBGI = many Scopes with brokered authority and no global issuer.** *(oco2-crosswalk)*
+
+15. **Anchor independence = network continues without further AuthorizationRecords from the anchor.** *(oco2-crosswalk)*
+
+16. **Open protocols = declared ContextTransfer interfaces.** *(oco2-crosswalk)*
+
+17. **Reputation governance = origin-counted per-Scope contribution Assessments** (Sybil-resistant). *(oco2-crosswalk)*
+
+18. **Code forkability coexists with low forkability of cross-Scope standing.** *(oco2-crosswalk)*
