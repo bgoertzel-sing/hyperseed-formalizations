@@ -211,4 +211,22 @@ PLN's $(f, c)$ framework makes this gradient explicitly measurable,
 guiding verification resource allocation.
 \end{proposition}
 
+
+%======================================================================
+\section{OCO/2 crosswalk (oco/2:2.0.0-alpha.1)}
+\emph{Added 2026-10-03. Interpretive mapping onto the Omega Core Ontology
+record registry; OCO/2 is an unfrozen alpha candidate.}
+
+\begin{proposition}[Two attacks --- claims 30--31]
+An authority attack succeeds only if some Content is treated as an AuthorizationRecord; if authority is only brokered, it fails by construction. An elicitation attack involves a properly authorized Execution, so it can only be caught by an Assessment of the output Artifact.
+\end{proposition}
+
+\begin{proposition}[Campaigns --- claim 32]
+If each attempt leaks independently with probability $p$, a campaign of $Q$ attempts leaks with probability $1-(1-p)^Q$, which is about $Qp$ for small $Qp$ and tends to $1$ as $Q$ grows. Per-attempt Assessments therefore understate campaign risk.
+\end{proposition}
+
+\begin{proposition}[Verification --- claims 33--35]
+Release requires an Assessment by verifiers whose origins are disjoint from the generator's. Assessments carry strength and confidence separately, and low confidence is never treated as safety. Ensemble weight is counted over distinct verifier origins; with secret-shared state, extracting the model requires authority from every share-holder.
+\end{proposition}
+
 \end{document}

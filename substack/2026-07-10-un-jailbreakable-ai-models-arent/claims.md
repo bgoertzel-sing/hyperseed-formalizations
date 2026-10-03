@@ -131,3 +131,17 @@ Eurykosmotron, 2026-07-10.
 29. **Confidence-depth gradient (d-calculus).**
     ∇_confidence = ∂c/∂depth. PLN makes this measurable.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+30. **Authority attack = Content posing as an AuthorizationRecord;** defense = authority is only ever brokered. *(oco2-crosswalk)*
+
+31. **Elicitation attack = authorized Execution with a hazardous output Artifact;** defense = Assessment of the Artifact. *(oco2-crosswalk)*
+
+32. **Campaign-level evaluation = Assessment over the Execution sequence;** leak probability 1-(1-p)^Q. *(oco2-crosswalk)*
+
+33. **Generate-and-verify = generator ActionProposals Assessed by separate verifiers before release.** *(oco2-crosswalk)*
+
+34. **Calibrated judgment = graded Assessment with separate strength and confidence;** unknown is not safe. *(oco2-crosswalk)*
+
+35. **Verifier diversity counts by origin;** MPC = no principal holds the full model state. *(oco2-crosswalk)*

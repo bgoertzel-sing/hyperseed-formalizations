@@ -195,6 +195,23 @@ Security at the campaign level is analysis of directed sequences:
   changes slowly with depth (either already high or intractable).
   The PLN (f,c) framework makes this gradient explicitly measurable.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Authority attacks vs capability-elicitation attacks (claims 1-3) | authority attack = Content trying to act as an AuthorizationRecord; elicitation = a properly authorized Execution whose output Artifact is hazardous | Different defenses: authority must be brokered, never read off content; hazardous outputs need an Assessment of the Artifact itself. |
+| Single prompt p, campaign Qp, per-prompt evaluation inadequate (claims 4-6, 24, 26) | Assessment over the whole sequence of Executions in a Scope, not each one alone | Leak probability over Q attempts is 1-(1-p)^Q, about Qp when Qp is small and near 1 when it is large. |
+| Neural generates, symbolic judges (claims 7-10, 21, 28) | generator produces ActionProposals; separate verifiers Assess them before Execution or release | Verifier/actor separation applied inside one system. |
+| PLN strength + confidence, calibrated uncertainty (claims 12-13, 22, 29) | graded Assessment with strength and confidence kept apart; unknown kept distinct from safe | Low confidence is recorded as such, not rounded to safe. |
+| Transformers not inspectable; open weights enable probing (claims 11, 14) | internal-state probes produce EvidenceRecords only when the weights are open | A closed model yields no such records for outside verifiers. |
+| Diverse independent verifier ensembles (claims 15-16, 23, 27) | origin-keyed set union over verifiers | Verifiers sharing an origin (same vendor, same method) count once. |
+| Decision tree, open-and-gated (claims 17-18) | attributed Assessment / Plan | Kept as the author's recommendation. |
+| MPC and secret sharing (claims 19-20) | model state split across Scopes with no single principal holding the full state | Theft needs authority from every share-holder. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

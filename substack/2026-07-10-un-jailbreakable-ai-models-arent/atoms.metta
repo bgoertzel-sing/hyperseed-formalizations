@@ -68,3 +68,13 @@
 (--> un-jailbreakable ([] (related-to fable-farce same-episode technical-impossibility)))
 (--> un-jailbreakable ([] (related-to bioterrorism generate-and-verify-screening)))
 (--> un-jailbreakable ([] (related-to seven-flavors deployment-cascade)))
+
+;; ---- OCO/2 crosswalk (30-35), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> authority-attack Content-posing-as-AuthorizationRecord)
+(--> elicitation-attack ([] (authorized-Execution hazardous-output-Artifact)))
+(--> campaign-evaluation Assessment-over-Execution-sequence)
+(--> generate-and-verify ([] (generator-ActionProposal separate-verifier-Assessment)))
+(--> pln-judgment ([] (graded-Assessment strength-confidence-separate unknown-not-safe)))
+(--> open-weight-probing internal-state-EvidenceRecord)
+(--> verifier-ensemble origin-keyed-set-union)
+(--> mpc-inference no-principal-holds-full-state)
