@@ -68,3 +68,13 @@ Eurykosmotron, 2021-05-30.
 16. **Existential risk = curvature catastrophe (d-calculus).** ||F_∇|| → ∞
     AND dim(F) → 0 = catastrophe. Good Singularity = divergence with
     thickening; bad = divergence with collapse. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+17. **Futurist predictions = attributed forecast Claims scorable later.** *(oco2-crosswalk)*
+
+18. **Recursive self-improvement = recorded self-revision LifecycleEvents.** *(oco2-crosswalk)*
+
+19. **Uploading = substrate BridgeMapping judged by functional VerifierSpecs.** *(oco2-crosswalk)*
+
+20. **Existential risk = ValidityThreats attached to the same Plans as the benefits.** *(oco2-crosswalk)*

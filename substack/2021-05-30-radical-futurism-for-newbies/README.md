@@ -165,6 +165,21 @@ different bases (substrates):
   fiber collapse (bad). The choice between outcomes is the choice
   between these two curvature trajectories.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Singularity, phase transition (claims 1, 8, 12) | attributed forecast Claim, scorable later against the log | |
+| AGI is key, catalyst, recursive catalysis (claims 2, 9-10, 13-14) | self-improvement = LifecycleEvents in which a system revises its own Catalog and Derivation rules | Each revision recorded, so acceleration is traceable. |
+| Life extension, post-scarcity (claims 3, 5) | attributed forecast Claims | |
+| Mind uploading, substrate independence (claims 4, 11, 15) | a BridgeMapping from one substrate's records to another's; VerifierSpecs over functional records decide identity | Same reading as reflections-on-the-world-crystal. |
+| Existential risk, curvature catastrophe (claims 6, 16) | ValidityThreats attached to the same Plans that carry the benefits | |
+| Choice matters (claim 7) | outcome depends on which Plans are funded and how they are evaluated | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

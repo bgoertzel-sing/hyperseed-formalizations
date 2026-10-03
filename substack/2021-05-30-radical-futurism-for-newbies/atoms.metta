@@ -46,3 +46,9 @@
 (--> radical-futurism ([] (related-to three-paths portfolio-diversification)))
 (--> radical-futurism ([] (related-to beneficial-agi steering-choice)))
 (--> radical-futurism ([] (related-to consciousness-explosion expanding-forms)))
+
+;; ---- OCO/2 crosswalk (17-20), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> singularity attributed-forecast-Claim)
+(--> recursive-catalysis recorded-self-revision-LifecycleEvent)
+(--> mind-uploading functional-VerifierSpec-BridgeMapping)
+(--> existential-risk Plan-ValidityThreat)
