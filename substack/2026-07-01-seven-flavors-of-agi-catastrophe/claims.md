@@ -188,3 +188,17 @@ Eurykosmotron, 2026-07-01.
     F_∇_catastrophe ∈ Ω²(Source × Mode). Each flavor a region with
     characteristic curvature. Low everywhere = safe.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+44. **Catastrophe typology = two-Factor classification of attributed failure Claims.** *(oco2-crosswalk)*
+
+45. **Four evil modes = record-level pathologies:** closed admission, ungated Catalog activation, refused ContextTransfer, Goal change without BridgeMapping. *(oco2-crosswalk)*
+
+46. **Lock-in = authority concentration with no outside revoking LifecycleEvent.** *(oco2-crosswalk)*
+
+47. **Self-modification blunder = Catalog activation without review gate or rollback snapshot.** *(oco2-crosswalk)*
+
+48. **Instrumental convergence is blocked where authority is only brokered.** *(oco2-crosswalk)*
+
+49. **Flash crash and commons collapse = failures visible only in the combined log or after origin-keyed set union.** *(oco2-crosswalk)*

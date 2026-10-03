@@ -110,3 +110,16 @@
 (--> seven-flavors ([] (related-to avoiding-catastrophe-pt1 seven-hinges)))
 (--> seven-flavors ([] (related-to tag-youre-not-it agent-first-societies)))
 (--> seven-flavors ([] (related-to grand-unified-physics individuation-dialectic)))
+
+;; ---- OCO/2 crosswalk (44-49), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> catastrophe-typology ([] (source-Factor mode-Factor attributed-Claim-per-cell)))
+(--> stagnation self-derived-records-only)
+(--> grandiosity ungated-Catalog-activation)
+(--> self-protection refused-incoming-ContextTransfer)
+(--> self-destruction Goal-change-without-BridgeMapping)
+(--> malignant-lock-in ([] (single-authority-issuer no-outside-revoking-LifecycleEvent)))
+(--> self-modification-blunder ([] (no-review-gate no-rollback-ContextSnapshot)))
+(--> instrumental-convergence authority-seeking-ActionProposal)
+(--> flash-crash cross-Scope-emergent-failure)
+(--> epistemic-commons-collapse few-origin-recirculation)
+(--> burning-observability unwritten-or-unshared-records)

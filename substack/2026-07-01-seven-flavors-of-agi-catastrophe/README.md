@@ -207,6 +207,25 @@ The structural advantage of cooperation is a topological property:
   far from all catastrophes. High curvature in any direction: system is
   near that flavor of catastrophe.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Source x mode typology (claims 1-11, 26) | two-Factor classification (source: humanity / AGI / supersystem; mode: stupidity / evil); each cell = an attributed Claim about a failure flavor | The cells are hypothetical failure types, not observed runs. |
+| Four evil modes (stagnation, grandiosity, self-protection, self-destruction; claims 28, 36) | stagnation = Scope admitting only self-derived records; grandiosity = Catalog activation without review gate; self-protection = Scope refusing incoming ContextTransfer; self-destruction = Goal contract changed with no identity-preserving BridgeMapping | Each pathology is a missing or overused record-level mechanism. |
+| "Good guys usually win" (cooperative advantage; claims 2, 35) | Claim + Assessment, origin = author | Kept as attributed argument; the mechanism offered is many Scopes exchanging records. |
+| Malignant over-individuation, lock-in, fast capture (claims 12-13, 31) | one principal issuing all AuthorizationRecords, with no outside principal able to issue a revoking LifecycleEvent | Lock-in = irreversibility of authority concentration. |
+| Self-modification blunder, benign system error (claims 14-15) | Catalog activation without review gate or rollback ContextSnapshot; Execution outside its envelope with no verifier | Both are failures of gating, not of values. |
+| Instrumental convergence (claim 17) | ActionProposals that seek resources or authority | OCO/2 answer: authority is only brokered, never self-issued, so such proposals need an outside AuthorizationRecord. |
+| Flash crash, emergent stupidity (claims 22, 32) | interacting Executions across Scopes whose failure shows in no single Scope's records | The failure exists only at the level of the combined log. |
+| Epistemic commons collapse (claim 23) | shared evidence recirculating from few origins | Under origin-keyed set union the apparent evidence shrinks to a handful of sources. |
+| Burning observability (claim 30) | withholding or deleting records | OCO/2's log is append-only; removing observability means records never get written or shared. |
+| Decentralized AGI as mitigation (claim 27) | per-Scope brokered authority + record exchange by ContextTransfer | Attributed Plan. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
