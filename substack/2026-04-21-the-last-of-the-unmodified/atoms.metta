@@ -53,3 +53,9 @@
 (= (d-section d_the_last_of_the_unmodified novel_experience) (parallel-transport conn_the_last_of_the_unmodified novel_experience))
 (= (d-section d_the_last_of_the_unmodified voluntary_enhancement) (parallel-transport conn_the_last_of_the_unmodified voluntary_enhancement))
 (= (d-section d_the_last_of_the_unmodified cognitive_diversity) (parallel-transport conn_the_last_of_the_unmodified cognitive_diversity))
+;; ---- OCO/2 crosswalk (C7-C10), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> enhancement-transition asymmetric-ContextTransfer-capacity)
+(--> voluntary-enhancement self-issued-AuthorizationRecord)
+(--> declined-enhancement recorded-choice)
+(--> enhancement-social-contract declared-Goal-contract-BridgeMapping)
+(--> cognitive-diversity distinct-origin-Justification-routes)
