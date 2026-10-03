@@ -162,3 +162,13 @@ Eurykosmotron, 2026-03-18.
     align. These are the paths through the base along which the fiber operates
     most efficiently — the fiber-base alignment that the d-calculus
     formalizes as fiber-base connection. *(inferred)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+28. **Quantumity = Assessment indexed by the observer Scope.** *(oco2-crosswalk)*
+
+29. **Opacity = small observer ReadSet; incompatibility = order-dependent queries with order recorded.** *(oco2-crosswalk)*
+
+30. **Shared evidence = subsystem records sharing an origin, hence not independent.** *(oco2-crosswalk)*
+
+31. **Contextual identity = query reference fixed by context Scope, glued by BridgeMappings.** *(oco2-crosswalk)*

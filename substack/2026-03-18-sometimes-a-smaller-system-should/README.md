@@ -52,6 +52,21 @@ Key threads:
 - **Opacity = fiber coarse-graining of base:** The fiber can't resolve
   all base states, so it coarse-grains.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Observer-relative quantumity (claims 1-3) | Assessment indexed by observer Scope: one system, different observers, different records | Quantumity belongs to the (observer, system) pair. |
+| Level 1: opacity (claim 4) | observer's ReadSet far smaller than the system's state | |
+| Level 2: incompatibility (claim 5) | query order changes results: order-dependent Executions, with the order recorded | |
+| Level 3: shared evidence (claim 6) | evidence about one subsystem constrains another because their records share an origin | Shared origin means the two are not independent. |
+| Level 4: contextual identity (claim 7) | which record a query picks out depends on the query's context Scope; contexts glued by BridgeMappings | |
+| Classical AI modeling itself as quantum | attributed Plan: a system whose self-ReadSet is small relative to its own state is opaque to itself | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

@@ -61,3 +61,11 @@
 ;; Fiber-base alignment
 (--> semantic-corridors fiber-base-alignment)
 (--> fiber-base-alignment ([] (routing-inference-align efficient-paths d-calculus-connection)))
+
+;; ---- OCO/2 crosswalk (28-31), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> observer-relative-quantumity observer-Scope-indexed-Assessment)
+(--> quantumity-opacity small-observer-ReadSet)
+(--> quantumity-incompatibility order-dependent-query)
+(--> quantumity-shared-evidence shared-origin-subsystem-records)
+(--> quantumity-contextual-identity ([] (context-Scope-reference BridgeMapping-gluing)))
+(--> quantum-self-model small-self-ReadSet)
