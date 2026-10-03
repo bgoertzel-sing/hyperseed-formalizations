@@ -48,3 +48,17 @@
 
 **Hyperseed mapping:** Formalized as a fiber-bundle relation in the Hyperseed ontology; see `atoms.metta` and `formalization.tex` for details.
 
+
+## OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+### C7: `oco2_proof_scope`
+
+**Claim:** A safety proof's standing extends only over its VerifierSpec's scope; that scope must be recorded with the Claim. *(oco2-crosswalk)*
+
+### C8: `oco2_continuing_assurance`
+
+**Claim:** Architectural safety = ongoing Assessments by separate verifiers under per-Scope authorization limits. *(oco2-crosswalk)*
+
+### C9: `oco2_missing_not_negative`
+
+**Claim:** No complete VerifierSpec is a missing record, not a negative GoalEvaluation. *(oco2-crosswalk)*

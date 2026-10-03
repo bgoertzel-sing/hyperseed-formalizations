@@ -53,3 +53,9 @@
 (= (d-section d_provably_safe_agi_is_potentially regulatory_cover) (parallel-transport conn_provably_safe_agi_is_potentially regulatory_cover))
 (= (d-section d_provably_safe_agi_is_potentially adaptive_robustness) (parallel-transport conn_provably_safe_agi_is_potentially adaptive_robustness))
 (= (d-section d_provably_safe_agi_is_potentially impossibility_not_prohibition) (parallel-transport conn_provably_safe_agi_is_potentially impossibility_not_prohibition))
+;; ---- OCO/2 crosswalk (C7-C9), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> verification-intractable no-total-feasible-VerifierSpec)
+(--> false-confidence out-of-scope-proof-standing)
+(--> architectural-safety ([] (ongoing-Assessment separate-verifier per-Scope-authorization)))
+(--> provable-safety-regulatory-cover safety-Justification-restrictive-Plan)
+(--> impossibility-not-prohibition missing-record-not-negative)
