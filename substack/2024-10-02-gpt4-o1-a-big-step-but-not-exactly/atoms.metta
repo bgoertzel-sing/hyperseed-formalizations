@@ -97,7 +97,7 @@
 (= (oss-catches-o1) (within-years 1))
 (= (hyperon-surpasses-o1) (within-years 1 3))
 
-;; ---- OCO/2 crosswalk (1-5), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+;; ---- OCO/2 crosswalk (29-33), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
 (--> o1-domain-competence prior-record-density-GoalEvaluation)
 (--> hidden-cot no-checkable-Derivation-records)
 (--> conformity-pressure existing-Catalog-concentration)

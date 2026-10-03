@@ -36,12 +36,12 @@
 
 ### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
 
-1. **Domain competence = GoalEvaluation pass rate tracking prior-record density.** *(oco2-crosswalk)*
+29. **Domain competence = GoalEvaluation pass rate tracking prior-record density.** *(oco2-crosswalk)*
 
-2. **Hidden chain-of-thought = reasoning not exposed as checkable Derivation records.** *(oco2-crosswalk)*
+30. **Hidden chain-of-thought = reasoning not exposed as checkable Derivation records.** *(oco2-crosswalk)*
 
-3. **Conformity pressure = outputs concentrated on existing Catalog entries.** *(oco2-crosswalk)*
+31. **Conformity pressure = outputs concentrated on existing Catalog entries.** *(oco2-crosswalk)*
 
-4. **Genuine novelty = a new Catalog entry with a non-recombinant recorded Derivation.** *(oco2-crosswalk)*
+32. **Genuine novelty = a new Catalog entry with a non-recombinant recorded Derivation.** *(oco2-crosswalk)*
 
-5. **Timeline forecasts = attributed Claims scorable against the later log.** *(oco2-crosswalk)*
+33. **Timeline forecasts = attributed Claims scorable against the later log.** *(oco2-crosswalk)*
