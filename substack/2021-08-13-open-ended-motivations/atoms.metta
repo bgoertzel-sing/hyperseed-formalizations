@@ -73,3 +73,10 @@
 (--> open-ended-motivations ([] (related-to beneficial-agi motivational-architecture)))
 (--> open-ended-motivations ([] (related-to consciousness-explosion growth-drive)))
 (--> open-ended-motivations ([] (related-to general-theory-gi open-endedness-criterion)))
+
+;; ---- OCO/2 crosswalk (16-19), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> fixed-utility unrevisable-Goal-contract)
+(--> open-ended-motivation ([] (Goal-revision-LifecycleEvent BridgeMapping meta-Goal)))
+(--> anti-wireheading evaluator-separation)
+(--> joy-growth-choice three-separate-GoalEvaluations)
+(--> motivational-growth growing-Goal-contract)

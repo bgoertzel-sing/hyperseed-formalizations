@@ -71,3 +71,13 @@ Eurykosmotron, 2021-08-13.
 15. **Fiber thickening rate (d-calculus).** d(dim F_M)/dt > 0 —
     monotonically increasing dimensionality distinguishes growth from
     mere change. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+16. **Fixed utility = a Goal contract with no revision path.** *(oco2-crosswalk)*
+
+17. **Open-ended motivation = Goal revisions as LifecycleEvents with BridgeMappings, governed by a revisable meta-Goal.** *(oco2-crosswalk)*
+
+18. **Anti-wireheading = evaluator separation: the actor cannot write its own GoalEvaluations.** *(oco2-crosswalk)*
+
+19. **Joy, growth, choice = three separately evaluated Goals.** *(oco2-crosswalk)*

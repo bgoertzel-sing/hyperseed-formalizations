@@ -145,6 +145,22 @@ Open-ended motivation is fiber that evolves:
   This is what distinguishes growth from mere change — growth
   adds dimensions, change merely shifts within existing dimensions.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Against fixed objectives, frozen fiber (claims 1, 7) | a Goal contract with no revision path: no LifecycleEvent can change it |  |
+| Open-ended goals, fiber evolution, motivational flow (claims 2, 8, 11) | Goal contract revised by recorded LifecycleEvents, each with an old-to-new BridgeMapping | Values change, and the change is traceable. |
+| Meta-motivation, autopoiesis (claims 9-10) | a meta-Goal deciding which revisions are admissible, itself revisable by the same mechanism |  |
+| Joy, growth, choice (claims 4, 14) | three Goals evaluated separately, not fused |  |
+| Not relativism (claim 5) | revisions Assessed against the meta-Goal, so some revisions score better than others |  |
+| Avoiding wireheading, anti-wireheading holonomy (claims 6, 13) | evaluator separation: the acting agent cannot write its own GoalEvaluation records |  |
+| Growth, fiber thickening (claims 3, 12, 15) | Goal contract gaining entries over time, visible in the log |  |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
