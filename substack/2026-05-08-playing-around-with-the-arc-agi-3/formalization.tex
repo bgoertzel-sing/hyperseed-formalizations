@@ -97,4 +97,18 @@ The curvature 2-form
 measures the extent to which parallel transport of claims around closed loops in the base space yields non-trivial holonomy --- i.e., the degree to which the article's claims interact non-additively within the Hyperseed ontology.
 \end{proposition}
 
+
+%======================================================================
+\section{OCO/2 crosswalk (oco/2:2.0.0-alpha.1)}
+\emph{Added 2026-10-03. Interpretive mapping onto the Omega Core Ontology
+record registry; OCO/2 is an unfrozen alpha candidate.}
+
+\begin{proposition}[Novelty --- claims C7--C8]
+Call a task novel for a solver if no record in its training ReadSet matches the task's solution. Recall-based Executions cannot solve novel tasks, so a GoalEvaluation over novel tasks measures new Derivation only.
+\end{proposition}
+
+\begin{proposition}[Generate and verify --- claims C9--C10]
+A hypothesis from the generator is accepted only if a verifier with a distinct origin finds it consistent with every example. A composed Plan whose steps are recorded Derivations over Catalog primitives can be checked step by step and reused.
+\end{proposition}
+
 \end{document}

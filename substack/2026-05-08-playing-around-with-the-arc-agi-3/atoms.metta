@@ -53,3 +53,11 @@
 (= (d-section d_playing_around_with_the_arc_agi_3 fluid_intelligence) (parallel-transport conn_playing_around_with_the_arc_agi_3 fluid_intelligence))
 (= (d-section d_playing_around_with_the_arc_agi_3 hyperon_arc_fit) (parallel-transport conn_playing_around_with_the_arc_agi_3 hyperon_arc_fit))
 (= (d-section d_playing_around_with_the_arc_agi_3 compositional_generalization) (parallel-transport conn_playing_around_with_the_arc_agi_3 compositional_generalization))
+;; ---- OCO/2 crosswalk (C7-C10), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> arc-novel-task no-matching-training-record)
+(--> memorization stored-pattern-Execution)
+(--> abstraction new-Derivation)
+(--> fluid-intelligence GoalEvaluation-over-unrecorded-solutions)
+(--> hybrid-neuro-symbolic ([] (neural-hypothesis separate-symbolic-verifier-Assessment)))
+(--> compositional-generalization ([] (Catalog-primitive-Plan recorded-composition-Derivation)))
+(--> hyperon-arc-fit attributed-Assessment)

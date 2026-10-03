@@ -48,3 +48,22 @@
 
 **Hyperseed mapping:** Formalized as a fiber-bundle relation in the Hyperseed ontology; see `atoms.metta` and `formalization.tex` for details.
 
+
+
+## OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+### C7: `oco2_novelty`
+
+**Claim:** A novel ARC task = no matching record in the training ReadSet, so stored-pattern Executions fail. *(oco2-crosswalk)*
+
+### C8: `oco2_fluid_eval`
+
+**Claim:** Fluid intelligence = GoalEvaluation over tasks with no prior solution record. *(oco2-crosswalk)*
+
+### C9: `oco2_generate_verify`
+
+**Claim:** Hybrid approach = neural hypotheses Assessed by a separate symbolic verifier against the examples. *(oco2-crosswalk)*
+
+### C10: `oco2_composition`
+
+**Claim:** Compositional generalization = new Plans from Catalog primitives with recorded composition Derivations. *(oco2-crosswalk)*
