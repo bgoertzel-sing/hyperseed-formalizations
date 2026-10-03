@@ -141,3 +141,17 @@ Eurykosmotron, 2026-06-10.
 34. **Safety-capability tradeoff gradient (d-calculus).**
     ∇_safety = forkability_reduction / capability_cost. Favorable
     gradient in the near-optimal region. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+35. **Super-additivity = inference-control standing resting on cross-Scope ReadSets;** a fork gets a husk. *(oco2-crosswalk)*
+
+36. **Essential laterality >= k = no sufficient ReadSet from fewer than k origins.** *(oco2-crosswalk)*
+
+37. **Threshold control = every use needs AuthorizationRecords from a threshold of share-holders.** *(oco2-crosswalk)*
+
+38. **Cognitive-cryptographic alignment = access structure matching Derivation laterality.** *(oco2-crosswalk)*
+
+39. **Moving-target defense = imitation fixed to an old ContextSnapshot while the log grows.** *(oco2-crosswalk)*
+
+40. **Four layers = Scopes with rising authority requirements;** near-optimal choice picks the least forkable Plan within epsilon. *(oco2-crosswalk)*

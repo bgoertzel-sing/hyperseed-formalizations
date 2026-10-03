@@ -68,3 +68,14 @@
 (--> avoiding-catastrophe-pt2 ([] (related-to avoiding-catastrophe-pt1 seven-hinges)))
 (--> avoiding-catastrophe-pt2 ([] (related-to openbgi asi-chain four-layer)))
 (--> avoiding-catastrophe-pt2 ([] (related-to orchard-bug compositional-correctness)))
+
+;; ---- OCO/2 crosswalk (35-40), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> super-additivity cross-Scope-ReadSet-standing)
+(--> forked-shard husk-without-supporting-records)
+(--> essential-laterality no-sufficient-ReadSet-under-k-origins)
+(--> threshold-control threshold-AuthorizationRecords)
+(--> cocycle-access-alignment access-structure-matches-laterality)
+(--> distillation-defense ([] (stale-ContextSnapshot growing-live-log)))
+(--> four-layer-ladder ([] (public-Scope local-private-Scope threshold-Scope governance-audit-Scope)))
+(--> escalation-by-stakes ActionProposal-routed-to-higher-authority-Scope)
+(--> lowest-forkability-selection least-forkable-Plan-within-epsilon)

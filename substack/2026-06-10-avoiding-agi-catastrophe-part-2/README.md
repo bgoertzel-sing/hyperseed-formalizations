@@ -182,6 +182,22 @@ The four layers are fiber depth levels:
   (low forkability) at capability cost ≤ ε. The gradient is
   favorable — safety is cheap in the near-optimal region.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Super-additivity, not automatic (claims 1-3, 25) | inference-control standing that rests on ReadSets spanning many Scopes | A fork holding a subset of Scopes lacks the records that standing rests on, so it gets a husk. |
+| Essential laterality >= k, genuine vs nominal (claims 4-6, 26) | a Derivation with no sufficient ReadSet drawn from fewer than k distinct origins | Touching many nodes nominally does not count; the ReadSet must actually need them. |
+| Secret-shared controller, threshold evaluation, no portable plaintext (claims 7-9) | each use of the controller requires AuthorizationRecords from a threshold of share-holders | No single principal holds a usable copy. |
+| Coalition alignment; misalignment = vulnerability (claims 10-12, 27) | the access structure (whose authority is needed) should match the Derivation's laterality | Access broader than the laterality is a security hole; narrower blocks legitimate use. |
+| Behavioral imitation, moving target, stale snapshot (claims 13-16, 28) | imitation trains on a ContextSnapshot at some cutoff while the live log keeps growing | The snapshot is reproducible but outdated by construction. |
+| Four layers, escalation by stakes (claims 17-21, 29) | four Scopes with rising authority requirements (public, local-private, threshold, governance-audit); high-stakes ActionProposals routed up | Stakes decide which Scope's authority is required. |
+| Near-optimal set, lowest-forkability choice (claims 22-24) | among Plans whose GoalEvaluation is within epsilon of the best, pick the least forkable | Attributed design rule; safety costs at most epsilon. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
