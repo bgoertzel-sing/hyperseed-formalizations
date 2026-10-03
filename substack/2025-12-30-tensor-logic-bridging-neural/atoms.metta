@@ -48,3 +48,10 @@
 (--> fiber-base-unification ([] (distinction-dissolves same-hardware same-ops)))
 (--> gradient-flow differentiable-fiber)
 (--> differentiable-fiber ([] (optimizable learn-rules gradient-descent)))
+
+;; ---- OCO/2 crosswalk (32-35), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> translation-bottleneck missing-symbolic-neural-BridgeMapping)
+(--> tensor-logic ([] (relation-to-tensor rule-to-einsum-Derivation)))
+(--> seamless-mixing cross-paradigm-ReadSet)
+(--> pln-tensor-truth-values per-entry-strength-confidence)
+(--> hyperon-tensor-extension attributed-Plan)

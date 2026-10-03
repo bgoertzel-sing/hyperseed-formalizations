@@ -151,3 +151,13 @@ Eurykosmotron, 2025-12-16.
     logical inference, the fiber becomes differentiable — its structure
     can be optimized by gradient descent, enabling learning of logical
     rules from data. *(inferred)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+32. **Translation bottleneck = no declared BridgeMapping between symbolic and neural Catalogs.** *(oco2-crosswalk)*
+
+33. **Tensor logic = one declared BridgeMapping: relations to tensors, rules to einsum Derivations.** *(oco2-crosswalk)*
+
+34. **Seamless mixing = shared record format so ReadSets span neural and symbolic steps.** *(oco2-crosswalk)*
+
+35. **PLN on tensors = (strength, confidence) kept per entry, not fused.** *(oco2-crosswalk)*

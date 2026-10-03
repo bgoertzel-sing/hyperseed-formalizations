@@ -236,4 +236,18 @@ a tensor implementation. The Hyperseed ontology's abstract fiber
 bundles become concrete tensor bundles, computable on GPU hardware.
 \end{conjecture}
 
+
+
+%======================================================================
+\section{OCO/2 crosswalk (oco/2:2.0.0-alpha.1)}
+\emph{Added 2026-10-03. Interpretive mapping onto the Omega Core Ontology
+record registry; OCO/2 is an unfrozen alpha candidate.}
+\begin{proposition}[Single bridge --- claims 32--34]
+Let $\beta$ map a relation $P(x,y)$ to a sparse tensor $T_P$ and a rule $P(x,y)\wedge P(y,z)\Rightarrow G(x,z)$ to the contraction $T_G=\mathrm{step}(T_P T_P)$. With $\beta$ declared, a Derivation may alternate symbolic and tensor steps and its ReadSet still records every input.
+\end{proposition}
+
+\begin{proposition}[Truth values --- claim 35]
+Carrying $(s,c)$ per entry needs two tensors $(T^s,T^c)$; contracting them separately keeps strength and confidence apart.
+\end{proposition}
+
 \end{document}

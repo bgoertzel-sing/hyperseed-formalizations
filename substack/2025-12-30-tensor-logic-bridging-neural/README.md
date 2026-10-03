@@ -47,6 +47,20 @@ Key threads:
 - **Tensor contraction = fiber transport:** Inference rules as tensor
   contractions are fiber transport operations in matrix form.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Different languages, translation bottlenecks (claims 1-4) | symbolic and neural Catalogs with no BridgeMapping between them | Each ad-hoc translation is a lossy undeclared mapping. |
+| Databases as sparse tensors, rules as contractions (claims 5-7, 9) | a declared BridgeMapping from relations and rules to tensors and einsum Derivations | One mapping instead of many ad-hoc translations. |
+| Seamless mixing (claim 8) | neural and symbolic Executions sharing one record format, so ReadSets can span both | Provenance survives the crossing. |
+| PLN truth values, strength and confidence (claims 11, 15-16) | Assessments as (strength, confidence) pairs carried per tensor entry, not fused into one number | |
+| Higher-order, variable arity, metagraphs (claims 10, 12-14) | attributed Plan to extend the mapping to the full Hyperon Catalog | Kept as planned work. |
+
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
