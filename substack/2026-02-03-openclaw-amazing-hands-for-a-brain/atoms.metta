@@ -53,3 +53,11 @@
 (= (d-section d_openclaw_amazing_hands_for_a_brain hyperon_openclaw) (parallel-transport conn_openclaw_amazing_hands_for_a_brain hyperon_openclaw))
 (= (d-section d_openclaw_amazing_hands_for_a_brain hands_before_brain) (parallel-transport conn_openclaw_amazing_hands_for_a_brain hands_before_brain))
 (= (d-section d_openclaw_amazing_hands_for_a_brain physical_grounding) (parallel-transport conn_openclaw_amazing_hands_for_a_brain physical_grounding))
+;; ---- OCO/2 crosswalk (C7-C10), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+;; erratum: OpenClaw is an agent runtime, not robotic hardware
+(--> openclaw agent-runtime-Execution-layer)
+(--> better-hands ([] (wider-Execution no-new-Derivation)))
+(--> file-memory provenance-free-records)
+(--> long-term-memory evidence-tracing-ReadSet)
+(--> missing-motivation no-self-issued-Goal)
+(--> moltbook ([] (many-agent-Scopes no-shared-Derivation)))
