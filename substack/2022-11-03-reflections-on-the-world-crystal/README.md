@@ -182,6 +182,20 @@ dynamics over the lattice:
   support the same consciousness — their lattice-level details differ,
   but their coarse-grained fiber bundles are isomorphic.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Discrete reality: Wolfram, LQG, causal sets (claims 1-4) | attributed physics Claims, each proposing a fundamental Catalog | |
+| Emergence of continuity, coarse-graining as morphism (claims 5, 8-10) | BridgeMapping from the lattice-level Catalog to the continuum Catalog | The mapping is many-to-one. |
+| Information loss (claim 11) | the mapping is not invertible: fine records cannot be recovered from coarse ones | Fine records must be kept where they are needed. |
+| Consciousness in discrete physics, fiber resonance (claims 6, 12) | attributed speculative Claim with no VerifierSpec | |
+| Substrate independence, AGI implications (claims 7, 13) | VerifierSpecs defined over functional records, not substrate | Same reading as in-what-sense-might-llms-be-conscious. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

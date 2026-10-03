@@ -83,3 +83,10 @@
 (--> world-crystal ([] (related-to general-theory-gi-structural)))
 (--> world-crystal ([] (related-to parafinity-finite-infinite)))
 (--> world-crystal ([] (related-to paraconsistent-interzones-boundaries)))
+
+;; ---- OCO/2 crosswalk (19-22), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> discrete-physics-programs rival-fundamental-Catalogs)
+(--> continuum-emergence many-to-one-BridgeMapping)
+(--> coarse-graining-loss non-invertible-BridgeMapping)
+(--> discrete-consciousness attributed-speculative-Claim)
+(--> lattice-substrate-independence functional-record-VerifierSpec)

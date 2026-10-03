@@ -87,3 +87,13 @@ Eurykosmotron, 2022-11-03.
     Sufficiently complex lattices produce isomorphic coarse-grained
     fiber bundles — geometric content of substrate independence.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+19. **Discrete physics programs = rival proposed fundamental Catalogs.** *(oco2-crosswalk)*
+
+20. **Continuum emergence = many-to-one BridgeMapping from lattice Catalog to continuum Catalog.** *(oco2-crosswalk)*
+
+21. **Coarse-graining loss = non-invertibility of that mapping.** *(oco2-crosswalk)*
+
+22. **Substrate independence = VerifierSpecs over functional records.** *(oco2-crosswalk)*
