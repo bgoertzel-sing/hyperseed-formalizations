@@ -82,3 +82,13 @@ Eurykosmotron, 2022-01-15.
     systematic error. The fiber bundle formalizes this duality by placing
     logical evidence and physical energy in the same geometric framework.
     *(hypothesis, connecting to later 2026 papers)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+15. **No double-counting = origin-keyed counting: each evidence origin counts once.** *(oco2-crosswalk)*
+
+16. **Overlap detection = Assessments carrying ReadSets compared before fusion.** *(oco2-crosswalk)*
+
+17. **Shared-lemma paths = one origin, not two independent confirmations.** *(oco2-crosswalk)*
+
+18. **Circular confirmation = a Derivation whose output re-enters its own ReadSet adds no evidence.** *(oco2-crosswalk)*

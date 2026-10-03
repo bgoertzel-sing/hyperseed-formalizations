@@ -113,6 +113,20 @@ In the d-calculus extension:
   independent). The flat (zero-curvature) case corresponds to fully
   independent evidence that can be freely fused.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| No double-counting, Bayesian discipline, confidence inflation (claims 1, 3-4) | origin-keyed counting: evidence from one origin counts once however often it is re-derived | |
+| Physics-computation isomorphism, conservation, evidence-energy duality (claims 2, 6, 10, 14) | attributed analogy, origin = author | Same theme as evidence-is-to-logic-what-energy. |
+| AGI design requirement, PLN overlap (claims 5, 7) | Assessments carry ReadSets, so overlap between premises is detectable before fusion | |
+| Fiber independence, homotopy certificate (claims 8-9) | two evidence paths through a shared lemma share an origin and must not both count | |
+| Holonomy as detector, curvature (claims 11-13) | a Derivation cycle that returns to a belief with raised confidence is a double count, visible in the ReadSet | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

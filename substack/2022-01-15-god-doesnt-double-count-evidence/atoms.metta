@@ -86,3 +86,10 @@
 (--> god-doesnt-double-count ([] (precursor-to evidence-is-to-logic-what-energy-is-to-physics)))
 (--> god-doesnt-double-count ([] (implements pln-confidence-design)))
 (--> god-doesnt-double-count ([] (related-to paraconsistent-interzones)))
+
+;; ---- OCO/2 crosswalk (15-18), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> no-double-counting origin-keyed-counting)
+(--> pln-overlap ReadSet-comparison-before-fusion)
+(--> homotopy-independence shared-lemma-single-origin)
+(--> holonomy-detector ([] (Derivation-cycle ReadSet-reentry no-new-evidence)))
+(--> conservation-analogy attributed-Claim)
