@@ -98,3 +98,15 @@ Has a Few Small Issues..." Eurykosmotron, 2026-08-10.
 21. **Exit availability holonomy (d-calculus).**
     Hol_γ(Γ_exit) = lock-in accumulation per usage cycle. High =
     corporation-first. Low = network-first. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+22. **Singleton = single authority issuer across all Scopes.** *(oco2-crosswalk)*
+
+23. **Access without ownership = user Scopes whose records and authority are held by the provider.** *(oco2-crosswalk)*
+
+24. **Inversion test = remove the corporate principal and check which standing survives.** *(oco2-crosswalk)*
+
+25. **Fiber dimension = range of self-model and value record kinds,** beyond capability Executions. *(oco2-crosswalk)*
+
+26. **Exit = portability of a user's records by ContextTransfer.** *(oco2-crosswalk)*

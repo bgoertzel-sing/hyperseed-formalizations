@@ -187,4 +187,18 @@ zero holonomy: exit remains easy (network-first). This is the formal
 measure of the inversion test.
 \end{proposition}
 
+
+%======================================================================
+\section{OCO/2 crosswalk (oco/2:2.0.0-alpha.1)}
+\emph{Added 2026-10-03. Interpretive mapping onto the Omega Core Ontology
+record registry; OCO/2 is an unfrozen alpha candidate.}
+
+\begin{proposition}[Authority and ownership --- claims 22--24]
+Let $\mathrm{iss}(S)$ be the principal issuing authority in Scope $S$. A system is a singleton if $\mathrm{iss}$ is constant across all Scopes. Distributed access with $\mathrm{iss}(S_u)=p$ for every user Scope $S_u$ is still a singleton in authority. Network-first means that deleting $p$ leaves the core Scope's records and authority in place.
+\end{proposition}
+
+\begin{proposition}[Depth and exit --- claims 25--26]
+An agent's self-understanding is bounded by the record kinds it keeps about its own Goals. Users can exit only if their records can be transferred, by ContextTransfer, to a Scope with a different issuer.
+\end{proposition}
+
 \end{document}

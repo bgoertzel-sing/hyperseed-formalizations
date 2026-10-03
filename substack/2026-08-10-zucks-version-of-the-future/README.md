@@ -181,6 +181,21 @@ Why balance of power doesn't scale to superhuman:
   architecture). The d-calculus holonomy is the formal measure of the
   "inversion test."
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Singleton danger, balance of power insufficient (claims 1, 7) | one principal issuing AuthorizationRecords for every Scope | A singleton is a single authority issuer. Checks among a few such issuers still leave each one a single point of capture. |
+| Access is not ownership (claims 2, 8-9) | user Scopes whose Catalog, event log and AuthorizationRecords are all held by the provider principal | Users get Executions; the provider keeps the authority and the records. Same client-server topology. |
+| Network-first vs corporation-first, inversion test (claims 3-4, 10-12) | which principal controls Catalog activation and authority; test = remove the corporate principal and see what standing survives | Network-first: removing the corporate Scope leaves the core records and authority intact. Corporation-first: nothing survives. |
+| Military alignment concern (claim 5) | Goal set fixed by one principal's authority | Kept as attributed concern. |
+| Cognitive architecture, fiber dimension (claims 6, 13-14) | self-model and value records (MotivationSnapshots, DecisionRecord predictions, Goal standing) vs capability-only Executions | More record kinds about its own Goals = higher "fiber dimension"; capability alone leaves only Execution records. |
+| Exit availability (claim 21) | users can ContextTransfer their records to another Scope | Exit is real only if records are portable. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

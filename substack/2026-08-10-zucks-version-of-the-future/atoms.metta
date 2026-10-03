@@ -49,3 +49,12 @@
 (--> zucks-future ([] (related-to proof-of-humanity orb-monoculture)))
 (--> zucks-future ([] (related-to seven-flavors architecture-stability)))
 (--> zucks-future ([] (related-to tag-youre-not-it omegaclaw-correct-architecture)))
+
+;; ---- OCO/2 crosswalk (22-26), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> ai-singleton single-authority-issuer)
+(--> access-not-ownership ([] (provider-held-Catalog provider-held-event-log provider-issued-AuthorizationRecord)))
+(--> network-first core-authority-survives-corporate-removal)
+(--> corporation-first nothing-survives-corporate-removal)
+(--> fiber-dimension ([] (MotivationSnapshot DecisionRecord-prediction Goal-standing)))
+(--> capability-only-ai Execution-records-only)
+(--> exit-availability record-portability-ContextTransfer)
