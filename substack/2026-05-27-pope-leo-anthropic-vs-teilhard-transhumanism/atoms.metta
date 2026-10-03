@@ -53,3 +53,9 @@
 (= (d-section d_pope_leo_anthropic_vs_teilhard_transhumanism transhumanism_spiritual) (parallel-transport conn_pope_leo_anthropic_vs_teilhard_transhumanism transhumanism_spiritual))
 (= (d-section d_pope_leo_anthropic_vs_teilhard_transhumanism restriction_stagnation) (parallel-transport conn_pope_leo_anthropic_vs_teilhard_transhumanism restriction_stagnation))
 (= (d-section d_pope_leo_anthropic_vs_teilhard_transhumanism omega_point_bridge) (parallel-transport conn_pope_leo_anthropic_vs_teilhard_transhumanism omega_point_bridge))
+;; ---- OCO/2 crosswalk (C7-C10), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> safety-conservatism unevaluated-expansion-Goal)
+(--> restriction-stagnation ([] (blocked-Catalog-activation approved-records-only)))
+(--> noosphere ([] (many-Scopes ContextTransfer no-single-issuer)))
+(--> transhumanism-spiritual-compatibility Goal-preserving-BridgeMapping)
+(--> omega-point-bridge attributed-speculative-Claim)
