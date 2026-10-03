@@ -114,3 +114,15 @@
 (--> revocation ([] (directed-reweighting not-deletion append-only)))
 (--> reputation-gaming ([] (trust-holonomy-positive sybil-loop)))
 (--> ai-role-openwater trust-holonomy-detection)
+
+;; ---- OCO/2 crosswalk (39-44), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> signed-provenance-claim ([] (origin-conserving-EvidenceRecord CommitReceipt attributed-testimony)))
+(--> trust-policy per-Scope-admission-policy)
+(--> provenance-verdict graded-Assessment)
+(--> invisible-watermark digest-link-recovers-origin)
+(--> metadata-stripping ContextTransfer-typed-loss)
+(--> missing-watermark unknown-not-refuted)
+(--> liars-dividend no-admitted-evidence-regime)
+(--> plural-resolution ([] (multi-Scope-resolvers ContextTransfer)))
+(--> key-revocation ([] (LifecycleEvent ReadSet-invalidation append-only)))
+(--> sybil-endorsement-loop origin-keyed-set-union-collapse)

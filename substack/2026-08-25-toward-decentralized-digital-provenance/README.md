@@ -123,6 +123,24 @@ These are interpretive readings. The article itself does not use d-calculus.
   outside evidence: Hol_γ(Γ_trust) > 0. AI's job, in the article's framing,
   is detecting this holonomy, not judging pixels.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Signed claims, not truth declarations (claims 5-6, 23, 31) | EvidenceRecord with conserved origin, signed by CommitReceipt; content = what the signer did | Each signature is attributed testimony about an action, which is exactly OCO/2's admission stance. |
+| Trust policy, no global truth authority (claims 9-10, 24) | per-observer admission policy and Assessment in that observer's Scope | OCO/2 has no global truth record; standing is computed per Scope. |
+| Non-binary verdicts (claims 19, 29) | graded Assessment | A provenance verdict is graded, not boolean. |
+| Watermark as persistent link; metadata stripping (claims 7, 33) | digest-referenced Artifact; stripping = a typed loss in a ContextTransfer | The watermark recovers the origin after the loss. |
+| No absence-as-guilt (claim 13) | missing record = unknown, never a negative outcome | OCO/2 keeps unknown distinct from refuted. |
+| Liar's dividend (claims 4, 27, 35) | with no admitted evidence, every Claim is only testimony | When nothing is admitted, denial and assertion cost the same. |
+| Plural decentralized resolution (claims 8, 18, 26, 36) | many resolvers in separate Scopes, linked by ContextTransfer | No single resolver determines standing. |
+| Revocation as reweighting (claim 37) | LifecycleEvent + ReadSet invalidation; history kept | A revoked key changes standing of dependent Assessments without deleting records. |
+| Reputation gaming, Sybil loops (claim 38) | origin-keyed set union | Endorsements that trace back to one origin count once, so loops add no evidence. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

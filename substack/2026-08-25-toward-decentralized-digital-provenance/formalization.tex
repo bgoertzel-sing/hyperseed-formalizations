@@ -327,4 +327,22 @@ A Sybil endorsement loop $\gamma$ has $\operatorname{Hol}_\gamma(\Gamma_{\mathrm
 without external evidence. AI reputation management is holonomy detection.
 \end{proposition}
 
+
+%======================================================================
+\section{OCO/2 crosswalk (oco/2:2.0.0-alpha.1)}
+\emph{Added 2026-10-03. Interpretive mapping onto the Omega Core Ontology
+record registry; OCO/2 is an unfrozen alpha candidate.}
+
+\begin{proposition}[Claims and policies --- claims 39--40]
+A provenance record asserts only the signer's action and carries the signer's origin. Each observer $o$ applies its own admission policy $P_o$, giving a graded verdict $v_o\in[0,1]$; there is no observer-independent verdict.
+\end{proposition}
+
+\begin{proposition}[Loss and absence --- claims 41--42]
+Metadata stripping is a ContextTransfer with a typed loss; a robust watermark is a digest link that lets the origin be recovered. A missing record yields the value unknown, never refuted.
+\end{proposition}
+
+\begin{proposition}[Revocation and Sybils --- claims 43--44]
+Revocation appends a LifecycleEvent invalidating Assessments whose ReadSet used the revoked key. Evidence is combined by origin-keyed set union, so an endorsement loop rooted in one origin contributes the mass of one record.
+\end{proposition}
+
 \end{document}

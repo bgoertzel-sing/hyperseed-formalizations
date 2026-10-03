@@ -195,3 +195,17 @@ Eurykosmotron, 2026-08-25.
 
 38. **Reputation gaming = trust holonomy.** Sybil endorsement loops have
     Hol_γ(Γ_trust) > 0. AI detects this holonomy. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+39. **Signed claim = origin-conserving EvidenceRecord about what the signer did,** admitted as attributed testimony. *(oco2-crosswalk)*
+
+40. **Trust policy = per-Scope admission policy;** verdicts are graded Assessments, with no global truth record. *(oco2-crosswalk)*
+
+41. **Watermark = digest link that recovers origin after a lossy ContextTransfer.** *(oco2-crosswalk)*
+
+42. **Missing provenance = unknown, not refuted;** the liar's dividend is the regime with no admitted evidence. *(oco2-crosswalk)*
+
+43. **Revocation = LifecycleEvent with ReadSet invalidation;** records are kept. *(oco2-crosswalk)*
+
+44. **Sybil endorsement loops collapse under origin-keyed set union.** *(oco2-crosswalk)*
