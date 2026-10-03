@@ -194,6 +194,22 @@ Billing structure creates fiber misalignment:
   OmegaClaw/OmegaHive. Each dimension is independently improvable.
   The gradient direction points toward the fully agent-first design.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Platform-bound vs agent-first (claims 2, 5, 17-18) | Scope keyed by the agent principal (observer), not by channel; channels are ContextTransfer endpoints | In OCO/2 the organizing unit is the Scope. A channel-keyed design makes the platform the Scope. |
+| Service-account principal, attribution collapse (claims 4, 8, 22) | conserved origin identity; CommitReceipt; AuthorizationRecord per principal | Collapsing many agents into one app identity violates conserved origin, so audit-grade attribution is lost. |
+| Opaque vs inspectable memory (claims 6-7, 19-20) | MemoryEvent ledger read through a LifecycleView with cutoff; Justification routes behind every Assessment | Inspectable = every standing value traces to events and routes. Sycophancy or stale context can then be raised as Challenges, with ReadSet invalidation. |
+| Live verification vs boundary/log oversight (claims 9, 21) | VerifierSpec / GoalEvaluation separate from the actor; Challenges raised during the run | Logs are only receipts. Live verification is a separate verifier evaluating while standing evolves. |
+| Tokenmaxxing (claims 10, 23) | BudgetAccount; cost carried on ActionProposal / ExecutionReceipt | Consumption becomes a recorded, budgeted quantity, not an unmetered incentive. |
+| Safe isolated runtime (claim 12) | ActionOperator envelope; Execution / ExecutionReceipt | The envelope declares and covers the effects; isolation is checkable against receipts. |
+| Named persistent principals, OmegaHive, portable societies (claims 13, 15-16) | one Scope per agent with Goals and MotivationSnapshots; ContextTransfer between agents | Portability = the society is Scopes + transfers, with nothing tied to a platform. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

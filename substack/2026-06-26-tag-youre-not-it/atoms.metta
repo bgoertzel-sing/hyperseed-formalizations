@@ -70,3 +70,15 @@
 (--> tag-youre-not-it ([] (related-to avoiding-catastrophe observability-hinge)))
 (--> tag-youre-not-it ([] (related-to openbgi asi-chain decentralized-infrastructure)))
 (--> tag-youre-not-it ([] (related-to hyperon atomspace-substrate)))
+
+;; ---- OCO/2 crosswalk (30-36), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> agent-first Scope-keyed-by-principal)
+(--> platform-bound channel-as-Scope)
+(--> attribution-collapse conserved-origin-violation)
+(--> inspectable-memory ([] (event-ledger Justification-routes LifecycleView-cutoff)))
+(--> opaque-memory no-challengeable-routes)
+(--> live-verification ([] (separate-VerifierSpec in-run-Challenge)))
+(--> log-oversight receipts-only)
+(--> tokenmaxxing-countermeasure BudgetAccount)
+(--> safe-runtime ([] (ActionOperator-envelope ExecutionReceipt-check)))
+(--> portable-agent-society ([] (per-agent-Scopes ContextTransfer platform-independent)))

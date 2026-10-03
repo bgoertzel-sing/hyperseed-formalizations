@@ -227,4 +227,32 @@ is independently improvable. The gradient direction points toward the
 fully agent-first design where all five factors are optimized.
 \end{proposition}
 
+
+%======================================================================
+\section{OCO/2 crosswalk (oco/2:2.0.0-alpha.1)}
+\emph{Added 2026-10-03. Interpretive mapping onto the Omega Core Ontology
+record registry; OCO/2 is an unfrozen alpha candidate.}
+
+\begin{proposition}[Organizing unit --- claims 30--31]
+In an agent-first design each principal $a$ owns a Scope $S_a$ and channels are
+ContextTransfer endpoints; attribution is preserved because every record keeps
+its origin. A design in which a channel serves as the Scope and many principals
+share one service identity cannot satisfy conserved origin.
+\end{proposition}
+
+\begin{proposition}[Inspectability and verification --- claims 32--33]
+Memory is inspectable iff every standing value is the reduction of recorded
+events and is supported by explicit Justification routes; only then can a
+Challenge target the route that carries a bias or stale premise. Verification
+is live iff a verifier distinct from the actor evaluates during execution,
+not only from receipts afterwards.
+\end{proposition}
+
+\begin{proposition}[Resources, isolation, societies --- claims 34--36]
+Consumption is charged to a BudgetAccount; effects are bounded by declared
+ActionOperator envelopes and checked against ExecutionReceipts; a portable
+agent society is a set of Scopes linked by origin-preserving transfers.
+\end{proposition}
+
+
 \end{document}

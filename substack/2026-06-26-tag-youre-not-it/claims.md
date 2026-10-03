@@ -128,3 +128,27 @@ Eurykosmotron, 2026-06-26.
     fiber_independence × memory_inspectability × identity_continuity ×
     verification_depth × resource_alignment. Points toward fully
     agent-first design. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+30. **Agent-first = Scope keyed by agent principal**; platform-bound =
+    channel playing the role of Scope. *(oco2-crosswalk)*
+
+31. **Attribution collapse = violation of conserved origin identity**
+    (CommitReceipt, per-principal AuthorizationRecord). *(oco2-crosswalk)*
+
+32. **Inspectable memory = event ledger + Justification routes** readable
+    through LifecycleViews; opaque memory has no routes to challenge.
+    *(oco2-crosswalk)*
+
+33. **Live verification = separate verifier with in-run Challenges**; logs
+    are only receipts. *(oco2-crosswalk)*
+
+34. **Tokenmaxxing countermeasure = BudgetAccount-recorded consumption.**
+    *(oco2-crosswalk)*
+
+35. **Safe runtime = declared ActionOperator envelope checked against
+    ExecutionReceipts.** *(oco2-crosswalk)*
+
+36. **Portable agent society = per-agent Scopes linked by ContextTransfers**,
+    independent of any platform. *(oco2-crosswalk)*
