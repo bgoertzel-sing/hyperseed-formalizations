@@ -29,3 +29,11 @@
 ;; ---- Cross-references ----
 (--> energy-ai-wars ([] (related-to bgi-manifesto corporate-capture-via-energy)))
 (--> energy-ai-wars ([] (related-to deai-after-mythos decentralized-energy)))
+
+;; ---- OCO/2 crosswalk (15-18), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> energy-bottleneck Execution-limiting-resource-budget)
+(--> energy-geopolitics compute-authorization-issuer-control)
+(--> energy-centralization ([] (few-issuers concentration-LifecycleEvent-trend)))
+(--> energy-decentralization many-issuers)
+(--> nuclear-renaissance attributed-forecast-Claim)
+(--> sustainability-tension ([] (scaling-GoalEvaluation sustainability-GoalEvaluation no-fusion)))

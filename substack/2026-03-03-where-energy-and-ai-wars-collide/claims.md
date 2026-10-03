@@ -59,3 +59,13 @@ Eurykosmotron, 2026-03-03.
 
 14. **Sustainability curvature (d-calculus).** Tension between AI scaling
     and climate goals. Nuclear partially reduces it. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+15. **Energy bottleneck = resource budget limiting admissible Executions per Scope.** *(oco2-crosswalk)*
+
+16. **Energy geopolitics = control of the issuers that compute authorization depends on.** *(oco2-crosswalk)*
+
+17. **Centralization vs decentralization = few vs many energy issuers, traced as LifecycleEvents.** *(oco2-crosswalk)*
+
+18. **Sustainability tension = two separately evaluated Goals, not one fused score.** *(oco2-crosswalk)*

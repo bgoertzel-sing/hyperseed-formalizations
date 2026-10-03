@@ -133,6 +133,21 @@ diversity:
   high-capacity, low-carbon energy. But nuclear introduces its own
   curvature (safety, proliferation, waste).
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Energy as bottleneck, base capacity (claims 1, 7) | energy = resource budget that limits which Executions can run in a Scope | Attributed Claim; capability is capped by the budget, not only by algorithms. |
+| Geopolitics of compute energy (claims 2, 11) | whoever controls energy Scopes effectively issues the AuthorizationRecords that compute depends on | Capability disparity follows issuer disparity. |
+| Centralization pressure, monopoly, holonomy (claims 3, 8, 12) | few energy issuers -> few compute Scopes; each concentration step a LifecycleEvent in the log | The self-reinforcing loop is visible as a trend in the log. |
+| Decentralization opportunity (claims 4, 9, 13) | distributed energy = many issuers, so many Scopes can authorize their own compute | Same issuer-topology reading as three-things-world-doesnt-understand and openbgi-initial-network. |
+| Nuclear renaissance (claim 5) | attributed forecast Claim | |
+| Sustainability tension (claims 6, 14) | two Goals (capability scaling, sustainability), each with its own GoalEvaluation | The tension is recorded, not fused into one score. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
