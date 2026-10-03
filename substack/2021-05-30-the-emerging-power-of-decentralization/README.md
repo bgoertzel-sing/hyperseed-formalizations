@@ -134,6 +134,23 @@ Decentralized resilience has a precise geometric characterization:
   trivial (flat) — trust transports without distortion because it's
   verified at each step.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Decentralization megatrend, distributed bundle (claims 1, 9) | many authority issuers across Scopes instead of one | Attributed Claim, origin = author. |
+| Blockchain consensus, section compatibility (claims 2, 10) | an append-only shared log whose entries need agreement among issuers | |
+| Smart contracts as transition functions (claim 11) | rules executed at each transfer LifecycleEvent, recorded on the log | |
+| Decentralized AI, SingularityNET (claims 3, 8) | AI services as Executions offered by distinct origins, composed by Plans | Attributed Plan. |
+| Governance innovation, governance holonomy (claims 4, 16) | each governance cycle a recorded LifecycleEvent; rule changes without a recorded BridgeMapping are drift | |
+| Resilience through redundancy (claims 5, 12) | records replicated across issuers, so no single issuer's loss erases them | |
+| Coordination without control, flat connection, friction (claims 6, 14-15) | Plans aligned through shared readable records rather than one issuer's AuthorizationRecords | |
+| Cultural shift (claim 7) | attributed Claim | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

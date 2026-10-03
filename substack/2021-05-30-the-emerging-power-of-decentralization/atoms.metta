@@ -87,3 +87,10 @@
 (--> decentralization ([] (related-to singularitynet)))
 (--> decentralization ([] (related-to consciousness-explosion-decentralized)))
 (--> decentralization ([] (related-to singularitarian-political-party)))
+
+;; ---- OCO/2 crosswalk (18-21), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> decentralization many-authority-issuers)
+(--> blockchain-consensus multi-issuer-append-only-log)
+(--> smart-contract transfer-LifecycleEvent-rule)
+(--> decentralized-resilience cross-issuer-replication)
+(--> coordination-without-control shared-record-alignment)

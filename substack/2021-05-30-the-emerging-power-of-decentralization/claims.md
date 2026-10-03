@@ -85,3 +85,13 @@ Eurykosmotron, 2021-05-30.
 17. **Trust transport (d-calculus).** Trustless systems achieve flat trust
     connection — trust transports without distortion because verified at
     each step. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+18. **Decentralization = many authority issuers across Scopes.** *(oco2-crosswalk)*
+
+19. **Blockchain = append-only shared log requiring agreement among issuers.** *(oco2-crosswalk)*
+
+20. **Resilience = records replicated across issuers.** *(oco2-crosswalk)*
+
+21. **Coordination without control = Plans aligned through shared readable records.** *(oco2-crosswalk)*
