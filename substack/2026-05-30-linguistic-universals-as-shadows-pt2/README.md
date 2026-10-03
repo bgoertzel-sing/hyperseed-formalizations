@@ -180,6 +180,22 @@ The trace quotient identifies derivations with the same observable output:
   explanations occupy genuinely different fiber positions, with
   causal having lower total weakness.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Forward and inverse maps, underdetermined inverse (claims 1-2) | one linguistic record consistent with many cognitive Claims | Inference back to cognition is an Assessment among competing Claims. |
+| Quantale weakness, five axes, product order (claims 3-7, 18) | Assessment comparing hypotheses on five separate axes under the product (Pareto) order | No scalar fusion: one hypothesis wins only if it is at least as good on every axis. |
+| Causal beats correlational, double counting (claims 8-9, 20, 30) | correlational explanations count redundant pathways as separate evidence; origin-keyed set union counts them once | The causal explanation wins because it does not double-count. |
+| Transport theorems, externalization functor (claims 10-14, 19, 22) | BridgeMapping from the cognitive Catalog to the linguistic Catalog | Each theorem says what structure the mapping preserves. |
+| Identity theorem (claims 10, 23) | the BridgeMapping preserves factor structure exactly | The strongest correspondence. |
+| Trace quotient (claim 21) | records identified when they share origin and content | Quotienting removes duplicates before evidence is counted. |
+| Convergence of independent lines (claims 15, 24) | Justification routes with independent origins (typology, continual learning) | Counted as two sources because the origins differ. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

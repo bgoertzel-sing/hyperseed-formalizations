@@ -125,3 +125,17 @@ Eurykosmotron, 2026-05-30.
 30. **Double-counting curvature (d-calculus).** ||F_∇(causal, correlation)||
     > 0 proves causal and correlation occupy different fiber positions.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+31. **Inverse inference = Assessment among many cognitive Claims consistent with one linguistic record.** *(oco2-crosswalk)*
+
+32. **Quantale weakness = five-axis product order,** no scalar fusion. *(oco2-crosswalk)*
+
+33. **Causal over correlational = no double counting under origin-keyed set union.** *(oco2-crosswalk)*
+
+34. **Transport theorems = structure preserved by a cognitive-to-linguistic BridgeMapping;** identity theorem = exact preservation. *(oco2-crosswalk)*
+
+35. **Trace quotient = identifying same-origin records before counting.** *(oco2-crosswalk)*
+
+36. **Convergence = independent-origin Justification routes.** *(oco2-crosswalk)*

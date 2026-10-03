@@ -69,3 +69,12 @@
 (--> linguistic-universals-pt2 ([] (related-to grand-unified-physics same-weakness-principle)))
 (--> linguistic-universals-pt2 ([] (related-to linguistic-universals-pt1 empirical-foundation)))
 (--> linguistic-universals-pt2 ([] (related-to linguistic-universals-pt3 application)))
+
+;; ---- OCO/2 crosswalk (31-36), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> inverse-inference Assessment-among-competing-Claims)
+(--> quantale-weakness ([] (five-axis-product-order no-scalar)))
+(--> causal-over-correlational origin-keyed-set-union-no-double-count)
+(--> externalization-functor cognitive-to-linguistic-BridgeMapping)
+(--> identity-theorem factor-structure-preserved)
+(--> trace-quotient same-origin-record-identification)
+(--> convergence independent-origin-Justification-routes)
