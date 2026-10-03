@@ -32,3 +32,10 @@
 (--> wild-times ([] (related-to collective-non-self emergent-selfhood)))
 (--> wild-times ([] (related-to llm-consciousness system-level-questions)))
 (--> wild-times ([] (related-to openbgi omegaclaw-building-block)))
+
+;; ---- OCO/2 crosswalk (16-20), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> omegaclaw-composition multi-operator-DecisionRecord-ReadSet)
+(--> emergent-personality event-sourced-MotivationSnapshot)
+(--> genuine-surprise prediction-receipt-gap)
+(--> self-reflection Challenge-own-Justification)
+(--> not-yet-agi graded-per-Goal-evaluation)

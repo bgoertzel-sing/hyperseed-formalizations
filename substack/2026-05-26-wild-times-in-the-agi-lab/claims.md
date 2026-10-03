@@ -63,3 +63,15 @@ Eurykosmotron, 2026-05-26.
 15. **Not-yet-AGI gradient (d-calculus).** ∇_AGI = compositional_depth ×
     self-reflection_depth × generalization × autonomy.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+16. **OmegaClaw composition = DecisionRecords whose ReadSets span several LLM ActionOperators.** *(oco2-crosswalk)*
+
+17. **Emergent personality = event-sourced MotivationSnapshot** with no Catalog edit. *(oco2-crosswalk)*
+
+18. **Surprise = prediction vs ExecutionReceipt gap from the observer's side.** *(oco2-crosswalk)*
+
+19. **Self-reflection = Challenges against one's own Justifications.** *(oco2-crosswalk)*
+
+20. **Not-yet-AGI = graded per-Goal GoalEvaluations.** *(oco2-crosswalk)*

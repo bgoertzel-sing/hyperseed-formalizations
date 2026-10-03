@@ -163,6 +163,21 @@ Genuine surprise indicates non-trivial fiber:
   deeper composition, deeper self-reflection, broader generalization,
   more genuine autonomy.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| OmegaClaw in practice: many LLMs + MeTTa meta-controller (claims 1, 7) | LLMs as ActionOperators; the controller issues DecisionRecords whose ReadSets span several operators | Compositional emergence corresponds to decisions that depend on more than one operator. |
+| Emergent personality (claims 2, 8) | MotivationSnapshot that stabilizes through event history, with no Definition or Catalog edit | Personality is event-sourced standing, not a programmed contract. |
+| Genuine surprise (claims 3, 10) | gap between the observer's predicted outcome and the ExecutionReceipt; Assessment by the observer | Surprise is recorded relative to an explicit prediction. |
+| Self-reflection quality (claims 4, 9) | Assessments over the agent's own records; Challenges against its own Justifications | Honest self-reflection means raising Challenges on one's own routes. |
+| Not yet AGI (claims 5, 15) | graded GoalEvaluation per Goal | A clear-eyed limitation statement is a set of graded evaluations, not a boolean. |
+| The lab experience (claim 6) | Claim + Assessment, origin = author testimony | Kept as attributed first-person report. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
