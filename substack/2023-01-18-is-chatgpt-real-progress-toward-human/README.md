@@ -129,6 +129,19 @@ insufficient depth:
   is unchanged by scaling. AGI requires new topology (new fiber
   dimensions), not more volume in existing dimensions.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Impressive but limited, pattern matching, fiber shortcut (claims 1-2, 7-8) | outputs as Execution results scored by GoalEvaluation, with no Derivation records and ReadSets behind them | Scores are high inside the training distribution; outside it, nothing in the record supports the output. |
+| Missing components, thin dimensions (claims 3, 9, 11) | capability Assessment with near-zero entries on the memory, embodiment and agency axes | A multi-axis profile, not one score. |
+| Scaling limits, scaling as volume inflation (claims 4, 13) | scaling raises entries on existing axes but adds no new axes | Attributed Claim. |
+| Hybrid needed, useful as component (claims 5-6, 12) | the LLM as one Execution component next to Derivation engines, all writing to a shared record space | Attributed Plan. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

@@ -75,3 +75,9 @@
 (--> chatgpt-analysis ([] (related-to three-paths component-for-path-1)))
 (--> chatgpt-analysis ([] (related-to cognitive-synergy missing-synergy)))
 (--> chatgpt-analysis ([] (related-to general-theory-gi fails-open-endedness)))
+
+;; ---- OCO/2 crosswalk (14-17), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> fiber-shortcut ([] (GoalEvaluation-scored-Execution no-Derivation-record)))
+(--> missing-agi-components near-zero-Assessment-axes)
+(--> scaling-limit no-new-Assessment-axes)
+(--> hybrid-agi ([] (LLM-Execution Derivation-engines shared-record-space)))

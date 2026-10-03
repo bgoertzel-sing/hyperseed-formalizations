@@ -70,3 +70,13 @@ Eurykosmotron, 2023-01-18.
 13. **Scaling as volume inflation (d-calculus).** Scaling inflates fiber
     volume without changing topology: vol(F) scales but π₁(F) doesn't.
     AGI requires new topology, not more volume. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+14. **Shortcut = Execution outputs scored by GoalEvaluation with no Derivation records behind them.** *(oco2-crosswalk)*
+
+15. **Missing components = near-zero entries on some axes of a multi-axis capability Assessment.** *(oco2-crosswalk)*
+
+16. **Scaling = higher entries on existing axes, no new axes.** *(oco2-crosswalk)*
+
+17. **Hybrid AGI = LLM Executions plus Derivation engines sharing one record space.** *(oco2-crosswalk)*
