@@ -60,3 +60,10 @@
 (--> psi-reality ([] (related-to world-crystal information-leakage)))
 (--> psi-reality ([] (related-to consciousness-explosion enhanced-psi)))
 (--> psi-reality ([] (related-to paraconsistency violates-classical-assumptions)))
+
+;; ---- OCO/2 crosswalk (15-18), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> psi-anecdote single-origin-EvidenceRecord)
+(--> psi-meta-analysis origin-keyed-counting)
+(--> psi-interpretations unfused-rival-Assessments)
+(--> psi-physics attributed-speculative-Claim)
+(--> psi-taboo field-record-ValidityThreat)

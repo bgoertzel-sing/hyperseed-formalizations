@@ -68,3 +68,13 @@ Eurykosmotron, 2021-05-30.
 14. **Taboo as connection suppression (d-calculus).** Scientific stigma =
     suppressed trust connection Γ_trust between psi and mainstream
     research. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+15. **Anecdotal psi = single-origin first-person EvidenceRecords.** *(oco2-crosswalk)*
+
+16. **Meta-analysis = origin-keyed counting across studies sharing labs or methods.** *(oco2-crosswalk)*
+
+17. **Rival interpretations = separate Assessments kept unfused.** *(oco2-crosswalk)*
+
+18. **Taboo = a ValidityThreat on how the field records evidence.** *(oco2-crosswalk)*

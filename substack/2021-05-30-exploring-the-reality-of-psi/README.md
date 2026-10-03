@@ -146,6 +146,22 @@ correlation:
   mainstream science is suppressed, preventing parallel transport of
   psi evidence into mainstream fiber.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Personal experience (claim 1) | first-person EvidenceRecords with origin = observer | Weak standing alone: one origin, no independent check. |
+| Statistical evidence (claims 2, 13) | meta-analytic Assessments; studies sharing labs or methods share an origin and must not double-count | |
+| Physics speculation, non-local correlation and curvature (claims 3, 7, 10-12) | attributed speculative Claims with no VerifierSpec | |
+| Two interpretations (claim 8) | rival Claims kept side by side with separate Assessments | Not fused. |
+| Consciousness connection (claims 4, 9) | attributed speculative Claim | |
+| Future science (claim 5) | attributed Plan | |
+| Scientific taboo, connection suppression (claims 6, 14) | an Assessment withheld for reasons outside the evidence: a recorded ValidityThreat on the field's record, not on the phenomenon | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
