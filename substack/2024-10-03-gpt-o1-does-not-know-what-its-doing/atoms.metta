@@ -53,3 +53,9 @@
 (= (d-section d_gpt_o1_does_not_know_what_its_doing metacognitive_awareness) (parallel-transport conn_gpt_o1_does_not_know_what_its_doing metacognitive_awareness))
 (= (d-section d_gpt_o1_does_not_know_what_its_doing useful_traces) (parallel-transport conn_gpt_o1_does_not_know_what_its_doing useful_traces))
 (= (d-section d_gpt_o1_does_not_know_what_its_doing beyond_scaling) (parallel-transport conn_gpt_o1_does_not_know_what_its_doing beyond_scaling))
+;; ---- OCO/2 crosswalk (C7-C9), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> cot-trace Execution-output-not-Derivation)
+(--> performance-comprehension-gap ([] (passing-GoalEvaluation no-self-Assessment)))
+(--> metacognition recorded-self-Assessment)
+(--> useful-traces outcome-scored-not-step-checked)
+(--> beyond-scaling attributed-Claim)

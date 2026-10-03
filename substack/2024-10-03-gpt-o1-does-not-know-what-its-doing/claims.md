@@ -48,3 +48,17 @@
 
 **Hyperseed mapping:** Formalized as a fiber-bundle relation in the Hyperseed ontology; see `atoms.metta` and `formalization.tex` for details.
 
+
+## OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+### C7: `oco2_trace_not_derivation`
+
+**Claim:** A chain-of-thought trace is Execution output, not a Derivation with a checked ReadSet. *(oco2-crosswalk)*
+
+### C8: `oco2_missing_self_assessment`
+
+**Claim:** Performance-comprehension gap = passing GoalEvaluations with no self-Assessment records. *(oco2-crosswalk)*
+
+### C9: `oco2_outcome_scored_traces`
+
+**Claim:** Useful traces are scored by outcome GoalEvaluation, which says nothing about step validity. *(oco2-crosswalk)*
