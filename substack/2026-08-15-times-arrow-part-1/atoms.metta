@@ -620,3 +620,16 @@
 (--> curiosity ([] (keeps-dDL-positive clock-maintenance)))
 (--> reader-disagreement-curvature ([] (recordhood-reader-fiber flat-shared-time)))
 (--> append-only-trail directed-type-without-inverses)
+
+;; ---- OCO/2 crosswalk (56-61), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> strict-arrow append-only-event-log)
+(--> record-writing EvidenceRecord-commit)
+(--> recordhood reader-relative-LifecycleView)
+(--> atomspace-causal-web Derivation-ReadSet-graph)
+(--> b-series ordered-event-log)
+(--> a-series LifecycleView-at-cutoff)
+(--> internal-clock Appraisal-sum-over-events)
+(--> curiosity ([] (exploration-Goal BudgetAccount)))
+(--> subjective-heat-death self-derived-records-only)
+(--> identity-preserving-self-modification ([] (BridgeMapping old-ContextSnapshot-readable)))
+(--> shared-time cross-Scope-ContextTransfer)

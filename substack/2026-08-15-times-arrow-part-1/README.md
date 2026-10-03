@@ -40,6 +40,25 @@ is the internal clock.
 4. *The Origin and Alignment of Time's Arrow*
 5. (Fifth paper on Hyperon AI applications, mentioned but not linked in Part 1)
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Records, append-only trail as strict arrow (claims 37, 41, 48, 55) | append-only event log; standing = reduction over events | OCO/2's ledger is the strict arrow: events are only added, so the log is monotone even when standing goes up and down. |
+| Decoherence as record-writing (claim 20) | writing an EvidenceRecord | A distinction becomes a record when it is committed to the log. |
+| Recordhood is reader-relative, reader disagreement (claims 39, 54) | LifecycleView per observer, with cutoff; per-Scope Assessments | Whether a pattern is a record depends on which view reads it. |
+| AtomSpace as native causal web (claim 40) | Derivation records whose ReadSets point to earlier records | The ReadSet graph is the causal web. |
+| B-series and A-series, specious present (claims 30-31) | B-series = ordered event log; A-series = a LifecycleView at a cutoff ("now"); specious present = the window the view reads | Tensed time is a view on a tenseless log. |
+| Surprise-weighted clock, felt duration (claims 27-28, 42) | Appraisal over admitted MemoryEvents | Interpretive: OCO/2 has no clock record, so the internal clock is an Appraisal sum over events. |
+| Curiosity as clock maintenance (claim 43) | exploration Goal with its own BudgetAccount | Keeps new external-origin events coming in. |
+| Subjective heat death (claim 44) | Scope admitting only self-derived records | Self-derived records add no new origins, so the clock stops. |
+| Self-modification and identity (claim 45) | BridgeMapping to a new Catalog; old ContextSnapshot stays readable | Identity is kept by embedding the old in the new. |
+| Shared record = shared time (claim 46) | ContextTransfer of events between Scopes | Common events give agents a common ordering. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

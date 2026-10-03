@@ -651,4 +651,22 @@ A cryptographically append-only AtomSpace trail is a directed type with no
 record-deleting 1-cells, so its arrow is structural, not statistical.
 \end{proposition}
 
+
+%======================================================================
+\section{OCO/2 crosswalk (oco/2:2.0.0-alpha.1)}
+\emph{Added 2026-10-03. Interpretive mapping onto the Omega Core Ontology
+record registry; OCO/2 is an unfrozen alpha candidate.}
+
+\begin{proposition}[Arrow as ledger --- claims 56--58]
+Let $L_t$ be the event log at time $t$. Then $L_s\subseteq L_t$ for $s\le t$, so $|L_t|$ is monotone even when derived standing is not. A pattern is a record relative to a LifecycleView that reads it; the causal web is the graph with an edge from $r$ to $r'$ whenever $r\in\mathrm{ReadSet}(r')$.
+\end{proposition}
+
+\begin{proposition}[Tense and clocks --- claims 59--60]
+The A-series is the family of views $V_c(L)$ indexed by cutoff $c$. A Scope that admits only records derived from its own records adds no new origins, so any clock defined by surprise over new evidence stops.
+\end{proposition}
+
+\begin{proposition}[Shared time --- claim 61]
+Two Scopes share an ordering on exactly those events transferred between them.
+\end{proposition}
+
 \end{document}

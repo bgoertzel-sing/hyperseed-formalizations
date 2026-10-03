@@ -300,3 +300,17 @@ Eurykosmotron, 2026-08-15.
 
 55. **Append-only trail = directed type without inverses.** The strict arrow
     is structural, not statistical. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+56. **Strict arrow = append-only event log;** standing may fluctuate, the log only grows. *(oco2-crosswalk)*
+
+57. **Recordhood = reader-relative:** a pattern is a record for the LifecycleView that reads it. *(oco2-crosswalk)*
+
+58. **AtomSpace causal web = graph of Derivation ReadSets.** *(oco2-crosswalk)*
+
+59. **A-series = LifecycleView at a cutoff over the B-series log.** *(oco2-crosswalk)*
+
+60. **Subjective heat death = Scope admitting only self-derived records;** curiosity = budgeted exploration Goal. *(oco2-crosswalk)*
+
+61. **Shared time = events shared between Scopes via ContextTransfer.** *(oco2-crosswalk)*
