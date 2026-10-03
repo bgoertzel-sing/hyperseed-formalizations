@@ -156,3 +156,17 @@ Eurykosmotron, 2026-06-08.
     sum of fiber-geometric forces (naturality, closure, mediator,
     frustration, stability). Moves architecture toward categorically
     prescribed fiber structure. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+40. **Causal factorization = update locality:** Derivation ReadSets mostly inside one module Scope. *(oco2-crosswalk)*
+
+41. **Graded stability = per-tier Catalog change regime;** bedrock changes only by review-gated BridgeMapping. *(oco2-crosswalk)*
+
+42. **Typological correction = origin-keyed set union over languages;** related languages count once. *(oco2-crosswalk)*
+
+43. **Universal-derived losses = VerifierSpecs giving graded Assessments,** weak constraints, not gates. *(oco2-crosswalk)*
+
+44. **Naturality loss = discrepancy between two Derivation routes;** mediator loss = coupling only via declared ContextTransfer. *(oco2-crosswalk)*
+
+45. **Two convergences = independent-origin Justification routes to one structure.** *(oco2-crosswalk)*

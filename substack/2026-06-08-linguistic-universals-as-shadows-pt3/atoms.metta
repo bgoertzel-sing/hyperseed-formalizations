@@ -81,3 +81,13 @@
 (--> linguistic-universals-pt3 ([] (related-to linguistic-universals-pt2 categorical-formalism)))
 (--> linguistic-universals-pt3 ([] (related-to grand-unified-physics same-weakness-principle)))
 (--> linguistic-universals-pt3 ([] (related-to gtgi compositional-requirements)))
+
+;; ---- OCO/2 crosswalk (40-45), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> causal-factorization ([] (module-Scopes local-ReadSet)))
+(--> dense-coupling cross-Scope-ReadSet-interference)
+(--> graded-stability ([] (per-tier-Catalog-regime review-gated-BridgeMapping)))
+(--> typological-correction origin-keyed-set-union-over-languages)
+(--> universal-losses graded-VerifierSpec-Assessment)
+(--> naturality-loss two-Derivation-route-discrepancy)
+(--> mediator-loss declared-mediator-ContextTransfer)
+(--> two-convergences independent-origin-Justification-routes)

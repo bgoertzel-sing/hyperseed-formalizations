@@ -200,6 +200,24 @@ Languages are inspecting the same cognitive fiber from different angles:
   stability enforces depth structure. The total gradient moves the
   architecture toward the categorically prescribed fiber structure.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Causally factorized substrate (claims 1, 27) | separate module Scopes; an update Derivation's ReadSet stays mostly inside one Scope | Factorization is locality of updates: changing one module's records leaves the others' standing untouched. |
+| Dense coupling costs (claim 10) | Derivations whose ReadSets span many Scopes | Every cross-Scope read is a point where interference can enter. |
+| Graded stability, stability schedule (claims 11, 23, 29) | different Catalog change regimes per layer: core primitives change only by review-gated BridgeMapping, context-local entries change freely | Slow learning rate = strict review gate; fast = light gate. |
+| Typology as cognitive signal, cross-cultural averaging (claims 12-13, 33) | each language = an EvidenceRecord; languages sharing ancestry or contact share an origin | Genealogical correction is origin-keyed set union: related languages count once, so the corrected typology is cleaner evidence than the raw count. |
+| Three layers (claim 14) | three stability tiers of Catalog entries | Hierarchies = bedrock, word order = consolidated, the rest = context-local. |
+| Training losses as weak constraints (claims 19-24) | each loss = a VerifierSpec producing graded Assessments, not a hard gate | Universals bias training; they do not forbid. |
+| Naturality loss (claims 19, 30) | two Derivation routes to the same readout (update-then-readout vs readout-then-update), discrepancy recorded as an Assessment | Zero discrepancy = the routes commute. |
+| Mediator loss (claims 21, 31) | distant modules interact only through a declared mediator ContextTransfer | Prevents undeclared coupling, i.e. hidden scalar fusion across modules. |
+| Two convergences (claims 25-26) | the same structure supported by Justification routes with independent origins (typology, continual learning) | Convergence counts because the origins are distinct. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
