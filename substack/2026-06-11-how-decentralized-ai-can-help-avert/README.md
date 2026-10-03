@@ -208,6 +208,24 @@ Same architecture pattern across domains:
   curvature quantifies why bio-specific defenses are needed — cyber
   defense strategies don't transfer directly.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Capability diffusing, "stop the models" fails (claims 1-2) | capability events appended in many Scopes | Information-layer restriction in one Scope does not stop equivalent events elsewhere. |
+| Laterality doesn't apply; the danger is the output (claim 3) | hazard lives in the output Artifact (a sequence), not in the control process | So threshold-control defenses miss it; screening the Artifact is needed. |
+| Gate the atoms, not the bits (claims 4, 13) | AuthorizationRecord required for physical synthesis Executions | The physical step is where an authority check can actually bind. |
+| Biology is not cybersecurity (claim 5) | physical Executions with no rollback | No LifecycleEvent can undo a release; recorded as a ValidityThreat on any after-the-fact defense. |
+| Device identity, operator credentials (claims 7-8) | device key = origin signing CommitReceipts; operator credential = AuthorizationRecord from an accrediting principal | Who made it and who was allowed to are separate records. |
+| Scoped reputation, not a score (claims 9, 15) | per-Scope, per-Claim Assessments; delegation = brokered AuthorizationRecord; fading = admission policy weighting recent records | Never fused into one scalar. |
+| Neural-symbolic screening (claims 10, 16) | generator flags candidates; separate verifier gives graded Assessment with strength and confidence | Unknown is not cleared. |
+| Decentralized verification, distributed screening nodes (claims 6, 11, 14) | many screening Scopes; hazard list split so no principal holds it whole | Avoids a single store that is both target and chokepoint. |
+| Distributed biosurveillance, immune system (claims 12, 17) | many sensors as independent-origin EvidenceRecords | Detection strength is counted by distinct origins. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

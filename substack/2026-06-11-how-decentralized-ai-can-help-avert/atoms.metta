@@ -46,3 +46,15 @@
 (--> bioterrorism-article ([] (related-to avoiding-catastrophe-pt2 cryptographic-laterality)))
 (--> bioterrorism-article ([] (related-to openbgi asi-chain-infrastructure)))
 (--> bioterrorism-article ([] (related-to bernies-nationalize centralization-critique)))
+
+;; ---- OCO/2 crosswalk (24-29), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> capability-diffusion cross-Scope-capability-events)
+(--> bio-hazard output-Artifact-hazard)
+(--> gate-the-atoms physical-synthesis-AuthorizationRecord)
+(--> biology-vs-cyber no-rollback-physical-Execution)
+(--> device-identity ([] (device-key-origin CommitReceipt)))
+(--> operator-credential accreditor-AuthorizationRecord)
+(--> scoped-reputation ([] (per-Scope-Assessment per-Claim-Assessment no-scalar)))
+(--> neural-symbolic-screening ([] (generator-flag graded-verifier-Assessment unknown-not-cleared)))
+(--> distributed-screening ([] (many-screening-Scopes split-hazard-list)))
+(--> biosurveillance independent-origin-EvidenceRecords)

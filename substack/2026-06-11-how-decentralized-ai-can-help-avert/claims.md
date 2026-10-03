@@ -103,3 +103,17 @@ Eurykosmotron, 2026-06-11.
 23. **Attack surface curvature (d-calculus).** ||F_∇(bio, cyber)|| =
     fundamental defensibility difference. High = bio-specific defenses
     needed. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+24. **Information restriction fails: equivalent capability events append in other Scopes.** *(oco2-crosswalk)*
+
+25. **Hazard = output Artifact;** screening must assess the Artifact, not the control process. *(oco2-crosswalk)*
+
+26. **Gate the atoms = AuthorizationRecord required for physical synthesis Executions,** which have no rollback. *(oco2-crosswalk)*
+
+27. **Device key = origin; operator credential = accreditor-issued AuthorizationRecord.** *(oco2-crosswalk)*
+
+28. **Scoped reputation = per-Scope, per-Claim Assessments,** never one scalar. *(oco2-crosswalk)*
+
+29. **Distributed screening and biosurveillance = many Scopes and independent-origin EvidenceRecords,** with no principal holding the full hazard list. *(oco2-crosswalk)*
