@@ -221,3 +221,33 @@ Eurykosmotron, 2026-09-10.
 
 45. **Pre-IPO timing = provenance weighting.** Shares a path with marketing;
     not independent evidence. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+46. **"AGI era" = attributed Claim with commercial-context provenance**;
+    standing comes from Assessment, not from the declaration. *(oco2-crosswalk)*
+
+47. **Competing AGI definitions = distinct Definition digests and Goals**,
+    each with its own success spec and separate verifier. *(oco2-crosswalk)*
+
+48. **Continuous gradation = graded GoalEvaluation**; an "era" is a chosen
+    threshold, not a state change. *(oco2-crosswalk)*
+
+49. **Episodic memory = persistent MemoryEvent/LifecycleEvent ledger**;
+    identity is the reduction of that history. *(oco2-crosswalk)*
+
+50. **Frozen base + continual cap = fixed Catalog + event-sourced standing.**
+    *(oco2-crosswalk)*
+
+51. **Oracle output = attributed Interpretation via ContextTransfer**,
+    admitted only through Justification routes. *(oco2-crosswalk)*
+
+52. **Self-upgrade = Catalog activation in a new ContextSnapshot.**
+    *(oco2-crosswalk)*
+
+53. **Disappearance test = self-originated ActionProposals** driven by Goals
+    and MotivationSnapshots, with no human-origin trigger event.
+    *(oco2-crosswalk)*
+
+54. **Radical innovation = ExperimentRun-gated introduction of new
+    Definitions.** *(oco2-crosswalk)*

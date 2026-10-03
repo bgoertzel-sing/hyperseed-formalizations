@@ -100,6 +100,24 @@ These are interpretive readings. The article itself does not use d-calculus.
   path with marketing, so it should be weighted as such, not counted as an
   independent assessment.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| "AGI era" declaration (claims 9-10, 28) | Claim + Assessment, origin = OpenAI testimony | Kept as attributed testimony with commercial-context provenance; the Claim identity is the same whoever asserts it, standing differs. |
+| AGI definitions: jobs vs. generalization (claims 6-7, 11) | two Definitions (immutable, by digest) and two Goals, each with one success spec and a separate VerifierSpec | OCO/2 forbids silently swapping the success spec; "AGI achieved" is only meaningful relative to a pinned Definition digest. |
+| Continuous gradation (claims 1, 30, 39) | GoalEvaluation with graded outcome, not a boolean LifecycleEvent | "Entering an era" is a threshold chosen on a graded evaluation, not a state change in the record. |
+| Episodic memory gap (claims 14-15, 31, 40) | MemoryEvent / LifecycleEvent ledger; WorkspaceSnapshot | Astra has no persistent event log across sessions; Omega's identity-from-memory is literally the reduction of its own event history. |
+| Frozen weights vs. continual-learning cap (claims 16, 21, 32-33, 41-42) | frozen base = fixed Catalog/ContextSnapshot; cap = event-sourced standing that evolves | Contracts stay stable while standing changes through events, which is OCO/2's core slogan. |
+| Astra as knowledge oracle (claims 22, 38) | Interpretation from an external origin; ContextTransfer with typed losses | Oracle output is exploratory attributed testimony, admitted only through an EvidenceRecord + Justification route. |
+| Self-upgrade (claim 23) | provisional Definition -> review events -> Catalog activation in a new ContextSnapshot | Old cuts stay reproducible. |
+| Disappearance test (claims 24-25, 44) | Goal + MotivationSnapshot driving ActionProposal without an external trigger | Prompt dependency = no ActionProposal is ever created except in response to a human-origin event. |
+| Radical innovation (claims 12, 37) | ExperimentDesign / ExperimentRun proposing new Definitions | Innovation = introducing Definitions not in the current Catalog, gated by recorded runs. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

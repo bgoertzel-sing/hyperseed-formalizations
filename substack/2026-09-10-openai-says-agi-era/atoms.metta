@@ -127,3 +127,15 @@
 (--> disappearance-test autonomous-forward-1-cells)
 (--> autonomy ([] (d-nonzero human-source-term-zero)))
 (--> pre-ipo-announcement ([] (shares-path-with-marketing not-independent-evidence)))
+
+;; ---- OCO/2 crosswalk (46-54), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> agi-era-declaration ([] (attributed-Claim commercial-provenance Assessment-standing)))
+(--> agi-definitions ([] (distinct-Definition-digests separate-Goals separate-VerifierSpecs)))
+(--> continuous-gradation graded-GoalEvaluation)
+(--> episodic-memory ([] (MemoryEvent LifecycleEvent persistent-ledger)))
+(--> frozen-base fixed-Catalog)
+(--> continual-learning-cap event-sourced-standing)
+(--> knowledge-oracle ([] (attributed-Interpretation ContextTransfer typed-losses)))
+(--> self-upgrade ([] (catalog-activation new-ContextSnapshot)))
+(--> disappearance-test self-originated-ActionProposal)
+(--> radical-innovation ExperimentRun-gated-new-Definition)
