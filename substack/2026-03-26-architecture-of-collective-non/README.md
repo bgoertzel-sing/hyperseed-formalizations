@@ -155,6 +155,20 @@ not individual fiber content:
   architecture produces high emergence gap (Location 1+ collective
   from Location Zero individuals).
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Location Zero organizations (claims 1, 6) | Scope with one issuer, a self-preservation Goal at the top of its Goal contract, and no permitted forks | Ego = a closed, single-issuer Scope. |
+| Open-source architecture (claims 2, 7) | forkable ContextSnapshots, readable records, voluntary self-issued AuthorizationRecords | Boundaries can be crossed by copying and reading. |
+| Emergent, not individual (claims 3, 8) | a property of the record-exchange structure, not of any one principal's Assessment | Nobody has to be enlightened. |
+| Non-self (claims 4, 11) | no fixed owner of the Goal contract; identity = what BridgeMappings carry across forks and merges | |
+| Architecture as path (claims 5, 12) | authority and Catalog rules changed by LifecycleEvents | Changing the rules changes behaviour whatever the participants are like. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

@@ -60,3 +60,13 @@ Eurykosmotron, 2026-03-26.
 13. **Emergent consciousness curvature (d-calculus).** ||F_∇(individual,
     collective)|| = emergence gap. Open-source produces high gap.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+14. **Location Zero = closed single-issuer Scope with self-preservation as top Goal and no forks.** *(oco2-crosswalk)*
+
+15. **Open-source architecture = forkable snapshots, readable records, self-issued participation.** *(oco2-crosswalk)*
+
+16. **Emergent consciousness = property of the record-exchange structure, not of a principal.** *(oco2-crosswalk)*
+
+17. **Architecture as path = rule changes by LifecycleEvent, independent of participants' states.** *(oco2-crosswalk)*

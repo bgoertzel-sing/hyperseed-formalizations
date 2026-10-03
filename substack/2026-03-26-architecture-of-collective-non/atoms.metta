@@ -36,3 +36,10 @@
 (--> collective-non-self ([] (related-to superhuman-superminds distributed-cooperative)))
 (--> collective-non-self ([] (related-to bgi-manifesto open-source-path)))
 (--> collective-non-self ([] (related-to symbolic-ruminations non-self-parallels)))
+
+;; ---- OCO/2 crosswalk (14-17), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> location-zero-org ([] (single-issuer self-preservation-Goal no-fork)))
+(--> open-source-architecture ([] (forkable-ContextSnapshot readable-records self-issued-AuthorizationRecord)))
+(--> emergent-org-consciousness record-exchange-structure-property)
+(--> non-self ([] (no-Goal-contract-owner BridgeMapping-carried-identity)))
+(--> architecture-as-path rule-change-LifecycleEvent)
