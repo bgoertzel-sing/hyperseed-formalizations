@@ -46,3 +46,10 @@
 (--> counting-as-fiber-dimensionality ([] (higher-dimensional more-capability-space lower-collapsed)))
 (--> composability-as-cocycle ([] (cooperative-transitive adversarial-cocycle-failure)))
 (--> robustness-as-curvature-navigation ([] (full-fiber-structure high-curvature-regions flat-geodesics-fail)))
+
+;; ---- OCO/2 crosswalk (22-25), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> asymmetric-modeling open-Catalog-embeds-closed)
+(--> cooperation-composability mutually-readable-records)
+(--> closed-mind-brittleness single-origin-correlated-evidence)
+(--> open-mind-diversity distinct-origin-evidence)
+(--> good-guys-counting attributed-Claim)

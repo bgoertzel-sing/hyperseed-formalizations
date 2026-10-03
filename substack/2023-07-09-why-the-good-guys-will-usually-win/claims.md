@@ -113,3 +113,13 @@ Eurykosmotron, 2023-07-09.
 21. **Trade vs. nationalism.** The global network of trade and intellectual/
     artistic collaboration has proved more powerful than nationalistic
     urges, time and again. *(source-paraphrase)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+22. **Asymmetric modeling = the open Catalog embeds the closed one, not conversely.** *(oco2-crosswalk)*
+
+23. **Composability = mutually readable records, so Derivations build on others' results.** *(oco2-crosswalk)*
+
+24. **Brittleness = single-origin evidence with correlated errors.** *(oco2-crosswalk)*
+
+25. **Counting argument = attributed Claim, origin = author.** *(oco2-crosswalk)*

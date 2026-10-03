@@ -69,6 +69,20 @@ Key threads:
   full fiber structure; closed-minded systems follow flat geodesics that
   fail when curvature appears.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| More ways to win, multiverse mass (claims 1-2) | attributed counting argument, origin = author | |
+| Asymmetric modeling, larger strategy space (claims 8-9) | the open strategy's Catalog embeds the closed one's by a BridgeMapping, not conversely | The open side can model the closed side; the reverse fails. |
+| Composability, network effects (claims 11-12) | cooperators read each other's records, so Derivations build on others' results | |
+| Internal diversity, brittleness, antifragility (claims 14-16) | open collectives draw evidence from distinct origins; closed ones from one origin, so errors are correlated | |
+| Large systems, Internet, open source (claims 5-6, 13) | attributed Claims and examples | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
