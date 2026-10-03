@@ -28,3 +28,10 @@
 (--> three-things ([] (related-to bgi-manifesto all-three-support)))
 (--> three-things ([] (related-to collective-non-self point-three-developed)))
 (--> three-things ([] (related-to beyond-human-comparison multiple-fiber-types)))
+
+;; ---- OCO/2 crosswalk (12-15), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> default-path single-Plan-unevaluated-alternatives)
+(--> fiber-diversity distinct-origin-Plans)
+(--> topology-determines-outcomes issuer-count-topology)
+(--> path-dependence-lockin growing-switch-BridgeMapping-cost)
+(--> open-source-collective-consciousness attributed-speculative-Claim)

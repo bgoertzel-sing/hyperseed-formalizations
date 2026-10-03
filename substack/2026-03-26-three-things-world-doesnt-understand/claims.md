@@ -55,3 +55,13 @@ Eurykosmotron, 2026-03-26.
 11. **Emergence gap gradient (d-calculus).** Open-source steepens the
     gradient between individual and collective consciousness.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+12. **Default path = one Plan with alternatives left unevaluated.** *(oco2-crosswalk)*
+
+13. **Architecture diversity = Plans with distinct origins, giving independent evidence.** *(oco2-crosswalk)*
+
+14. **Centralized vs decentralized = one authority issuer vs many brokered issuers.** *(oco2-crosswalk)*
+
+15. **Lock-in = switching BridgeMapping cost growing with records built on the incumbent Plan.** *(oco2-crosswalk)*

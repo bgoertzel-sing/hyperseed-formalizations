@@ -125,6 +125,20 @@ Higher collective consciousness emerges from fiber bundle topology:
   between individual participants and collective behavior is larger
   in open-source than in traditional organizations.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Default path, single-fiber assumption (claims 1, 4) | one architecture's Plan treated as the only Plan; alternatives get no GoalEvaluation | Alternatives that are never evaluated cannot compete. |
+| Fiber diversity as portfolio (claims 5, 8) | several architecture Plans pursued by distinct origins | Their results are independent evidence, not duplicates. |
+| Open-source matters, topology determines outcomes (claims 2, 6, 10) | number of authority issuers across Scopes: one (centralized) vs many brokered | Same issuer-topology reading as bernies-proposal-to-nationalize-agi and openbgi-initial-network. |
+| Path-dependence lock-in (claim 9) | each commitment a LifecycleEvent; switching later needs a BridgeMapping whose cost grows with the records built on the old Plan | Lock-in shows up as growing dependency in the log. |
+| Collective consciousness in open source (claims 3, 7) | attributed speculative Claim; fork = ContextSnapshot copy, merge = origin-keyed union | See architecture-of-collective-non. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
