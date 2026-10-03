@@ -266,3 +266,17 @@ Eurykosmotron, 2026-09-02.
 
 53. **Symbiocracy = descent data without forced flatness.**
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+54. **Unbundled rights = one Goal + VerifierSpec + GoalEvaluation per gradation,** with no scalar fusion. *(oco2-crosswalk)*
+
+55. **Evidential proceedings = Justification routes to admitted EvidenceRecords;** votes are attributed testimony. *(oco2-crosswalk)*
+
+56. **Independence weighting = origin-keyed set union;** shared-origin reports count once. *(oco2-crosswalk)*
+
+57. **Versioned identity = append-only log with CommitReceipts;** a copy = new Scope sharing a prefix, with rights attached per Scope. *(oco2-crosswalk)*
+
+58. **Civic identity = authenticated principals with brokered AuthorizationRecords.** *(oco2-crosswalk)*
+
+59. **Symbiocracy = per-Scope Assessments linked by ContextTransfer without forced global merge.** *(oco2-crosswalk)*

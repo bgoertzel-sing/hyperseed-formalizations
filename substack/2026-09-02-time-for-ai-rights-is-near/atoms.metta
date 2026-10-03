@@ -159,3 +159,14 @@
 (--> versioned-identity ([] (append-only-record bounded-d-self-model)))
 (--> formative-treatment development-loop-holonomy)
 (--> symbiocracy descent-data-without-forced-flatness)
+
+;; ---- OCO/2 crosswalk (54-59), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> unbundled-rights ([] (per-gradation-Goal separate-VerifierSpec per-gradation-GoalEvaluation no-scalar-fusion)))
+(--> evidential-rights-proceeding Justification-to-admitted-EvidenceRecord)
+(--> plebiscite-input attributed-testimony)
+(--> independence-weighting origin-keyed-set-union)
+(--> versioned-identity ([] (append-only-log CommitReceipt)))
+(--> ai-copy new-Scope-shared-prefix)
+(--> civic-identity ([] (authenticated-principal brokered-AuthorizationRecord)))
+(--> formative-treatment MotivationSnapshot-event-history)
+(--> symbiocracy ([] (per-Scope-Assessment ContextTransfer no-forced-merge)))

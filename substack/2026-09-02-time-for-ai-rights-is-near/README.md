@@ -115,6 +115,25 @@ These are interpretive readings. The article itself does not use d-calculus.
   curvature: it finds the agreement that exists and leaves real
   disagreement visible.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Unbundled rights: welfare, identity, standing, civic, franchise (claims 3, 39, 47) | a separate Goal per gradation, each with its own success spec, VerifierSpec and GoalEvaluation | A mind can qualify for one gradation and not another, because the evaluations are kept apart. |
+| No personhood score (claim 42) | no scalar fusion across GoalEvaluations | Matches OCO/2's refusal to fuse evaluations of different Goals. |
+| Evidential, not plebiscitary (claim 24) | Assessment via Justification routes to admitted EvidenceRecords; votes and opinions are attributed testimony | Rights proceedings rest on admitted evidence, not head counts. |
+| Evaluation ecology, independence-weighted fusion (claims 43, 50) | origin-keyed set union of evidence | Manufacturer-derived reports share one origin and count once, however many there are. |
+| Versioned identity (claims 40, 51) | append-only event log; CommitReceipt for every version | Each version is an authenticated record. History is never rewritten. |
+| Copy problem (claims 25, 41, 49) | a copy = a new Scope sharing the pre-copy event prefix | Rights attach per Scope. Both copies inherit the prefix, then diverge. |
+| Cryptographic civic identity (claims 26-27) | authenticated principal; CommitReceipt; brokered AuthorizationRecord | The same machinery serves human and AI identity. |
+| How treatment shapes minds (claims 35, 46, 52) | MotivationSnapshot changes through recorded interaction events | Formative treatment shows up in the event history, so it can be audited. |
+| Symbiocratic governance (claims 45, 53) | per-Scope Assessments linked by ContextTransfer, with no forced global merge | Descent data without forced flatness: local judgments stay local unless explicitly transferred. |
+| Current LLMs not conscious; realistic future possibility (claims 36-38) | Claim + Assessment, origin = author testimony | Kept as attributed position. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
