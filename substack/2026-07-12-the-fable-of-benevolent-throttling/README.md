@@ -187,6 +187,21 @@ Two distinct fibers becoming entangled:
   reversibility curvature; the ratchet mechanism produces increasing
   reversibility curvature.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Partial legitimacy (claim 1) | restrictions tied to a specific hazard Goal with its own VerifierSpec (bio/chem, offensive cyber) | These restrictions can be checked against a stated hazard. |
+| Safety-competitive indistinguishability, observational identity (claims 2-3, 11-12, 18) | one Execution consistent with two different Justifications (safety Goal, competitive Goal) | The Execution records alone cannot tell the two apart. Only the recorded Justification routes and who can inspect them make a difference. |
+| Incentive ratchet, no villain (claims 4, 7-8, 13-14, 19) | a sequence of AuthorizationRecord policy changes, each locally justified, whose composition moves all issuance toward one principal | Each step looks fine on its own; the concentration only shows in the sequence, which the append-only log keeps. |
+| Ratchet reversibility (claim 22) | whether a LifecycleEvent can revoke a past policy change | Irreversible if no principal outside the concentrated one can issue that revocation. |
+| Government-corporate fusion, policy blur (claims 5-6, 17, 20) | corporate platform policy and state authority sharing one issuer origin | The verifier/actor separation is lost when the regulator and the regulated issue authority together. |
+| Decentralization remedy, visibility by construction (claims 9-10, 15-16, 21) | open records allow anyone to raise a Challenge; slippage = a gap between the stated Goal and the actual Execution envelope | In open systems the gap is visible in the records; in closed ones it is not recorded where outsiders can read it. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

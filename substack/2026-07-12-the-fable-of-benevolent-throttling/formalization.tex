@@ -203,4 +203,22 @@ each turn becomes harder to undo than the previous, because later
 restrictions build on (and depend on) earlier ones.
 \end{proposition}
 
+
+%======================================================================
+\section{OCO/2 crosswalk (oco/2:2.0.0-alpha.1)}
+\emph{Added 2026-10-03. Interpretive mapping onto the Omega Core Ontology
+record registry; OCO/2 is an unfrozen alpha candidate.}
+
+\begin{proposition}[Ambiguity --- claims 23--24]
+Let $x$ be an Execution and $J_s,J_c$ Justifications under a safety Goal and a competitive Goal. If both $J_s$ and $J_c$ admit $x$, then no evidence drawn only from Execution records separates them. A restriction is checkable when it names a hazard Goal with a VerifierSpec.
+\end{proposition}
+
+\begin{proposition}[Ratchet --- claims 25--27]
+Let $a_1,\dots,a_n$ be policy changes, each justified locally, and let $I_k$ be the set of authority issuers after $a_k$. If $|I_{k+1}|\le|I_k|$ for each $k$, the composition concentrates issuance even though no single step does so markedly. The change is irreversible when every revoking LifecycleEvent would have to be issued by a principal in $I_n$.
+\end{proposition}
+
+\begin{proposition}[Visibility --- claim 28]
+In an open system any principal can read the stated Goal and the Execution envelope and raise a Challenge against the gap between them; in a closed system that gap is recorded only where outsiders cannot read it.
+\end{proposition}
+
 \end{document}

@@ -48,3 +48,12 @@
 (--> benevolent-throttling ([] (related-to seven-flavors eternal-regime humanity-evil)))
 (--> benevolent-throttling ([] (related-to avoiding-catastrophe stewardship-observability-hinges)))
 (--> benevolent-throttling ([] (related-to watermarking centralizing-cocycle)))
+
+;; ---- OCO/2 crosswalk (23-28), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> legitimate-restriction hazard-Goal-with-VerifierSpec)
+(--> safety-competitive-ambiguity ([] (one-Execution two-Justifications)))
+(--> incentive-ratchet ([] (local-AuthorizationRecord-policy-steps composed-issuer-concentration)))
+(--> ratchet-irreversibility no-outside-revoking-LifecycleEvent)
+(--> government-corporate-fusion shared-issuer-origin)
+(--> visibility-by-construction ([] (open-records Challenge stated-Goal-vs-envelope-gap)))
+(--> decentralization-remedy per-Scope-brokered-authority)

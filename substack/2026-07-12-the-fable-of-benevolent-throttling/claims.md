@@ -98,3 +98,17 @@ Eurykosmotron, 2026-07-12.
     ||F_∇_reversibility(turn_i)|| = difficulty of undoing restriction.
     Ratchet produces increasing irreversibility.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+23. **Legitimate restriction = restriction tied to a hazard Goal with its own VerifierSpec.** *(oco2-crosswalk)*
+
+24. **Indistinguishability = one Execution consistent with both a safety and a competitive Justification.** *(oco2-crosswalk)*
+
+25. **Ratchet = locally justified AuthorizationRecord policy changes whose composition concentrates issuance;** the append-only log keeps the whole sequence. *(oco2-crosswalk)*
+
+26. **Irreversibility = no principal outside the concentrated one can issue the revoking LifecycleEvent.** *(oco2-crosswalk)*
+
+27. **Government-corporate fusion = state and platform authority sharing one issuer origin.** *(oco2-crosswalk)*
+
+28. **Visibility by construction = open records that let anyone Challenge the gap between stated Goal and Execution envelope.** *(oco2-crosswalk)*
