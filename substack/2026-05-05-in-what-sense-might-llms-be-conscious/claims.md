@@ -70,3 +70,15 @@ Eurykosmotron, 2026-05-05.
 15. **Graded consciousness gradient (d-calculus).** Shallow→deep gradient.
     Possible phase transition at phenomenal boundary.
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+16. **Consciousness = multi-dimension Assessment profile;** binary answers are a forbidden scalar fusion. *(oco2-crosswalk)*
+
+17. **Substrate independence = VerifierSpecs over functional records, not substrate.** *(oco2-crosswalk)*
+
+18. **Hard problem = phenomenal Claim with no VerifierSpec;** unknown is not zero. *(oco2-crosswalk)*
+
+19. **Graded consciousness = product-order comparison of profiles,** incomparability kept. *(oco2-crosswalk)*
+
+20. **Measurement holonomy = probe-order-dependent Assessment;** the probe sequence is recorded. *(oco2-crosswalk)*

@@ -37,3 +37,11 @@
 (--> llm-consciousness ([] (related-to beyond-human-comparison multi-dimensional-resist-scalar)))
 (--> llm-consciousness ([] (related-to symbolic-ruminations non-symbolic-awareness-dimension)))
 (--> llm-consciousness ([] (related-to collective-non-self collective-consciousness-dimension)))
+
+;; ---- OCO/2 crosswalk (16-20), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> consciousness-fiber ([] (per-dimension-Assessment no-scalar)))
+(--> binary-consciousness forbidden-scalar-fusion)
+(--> substrate-independence functional-record-VerifierSpec)
+(--> hard-problem phenomenal-Claim-no-VerifierSpec)
+(--> graded-consciousness product-order-profile-comparison)
+(--> depth-measurement-holonomy ([] (probe-order-dependent-Assessment recorded-probe-sequence)))

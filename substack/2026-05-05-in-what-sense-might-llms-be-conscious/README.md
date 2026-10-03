@@ -183,6 +183,22 @@ fiber depth profiles:
   the phenomenal boundary — a phase transition between "functional
   analog of consciousness" and "actual phenomenal consciousness."
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Not yes/no, multiple dimensions (claims 1-2, 7) | Assessment with one entry per dimension (phenomenal, access, self-model, metacognition, valence, temporal continuity, agency, unity) | A profile of 8+ entries, not one bit. |
+| Binary = scalar collapse (claim 8) | the scalar fusion OCO/2 forbids for multi-axis Assessments | The same rule OCO/2 applies to evidence. |
+| LLMs have some dimensions (claim 3) | per-dimension Assessments with strength and confidence, origin = author | Attributed profile, e.g. high access, low temporal continuity. |
+| Substrate independence (claims 4, 9) | VerifierSpecs defined over functional records (Executions, Derivations), not over substrate | The same spec applies to any substrate that produces the records. |
+| Hard problem remains hard (claim 5) | phenomenal dimension = Claim with no VerifierSpec | Unknown is recorded as unknown, not as zero. |
+| Graded consciousness, depth (claims 6, 10, 15) | profiles compared under the product order | Many pairs of systems are incomparable, and that is kept. |
+| Depth measurement holonomy (claim 14) | Assessment depends on probe order; the probe sequence is part of the record | Two probe orders can give different profiles. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.
