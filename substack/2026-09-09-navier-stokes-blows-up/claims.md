@@ -196,3 +196,19 @@ Conjecturing and the Road to AGI," Eurykosmotron, 2026-09-09.
     thing" — "only a game in the sense that life itself is a game" — and
     being able to solve it at human level and beyond is a genuine cognitive
     milestone. *(source-paraphrase)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+36. **Lean proof = machine-checked warrant on a digest-referenced Artifact**; the announcement alone is attributed testimony. *(oco2-crosswalk)*
+
+37. **Proving = Goal with a mechanical VerifierSpec; conjecturing = new provisional Definitions/Claims lacking any verifier.** *(oco2-crosswalk)*
+
+38. **LLM conjectures = attributed Interpretations** with no evidence mass until supported. *(oco2-crosswalk)*
+
+39. **Priority/credit = conserved origin identity** through every transfer, including training pipelines. *(oco2-crosswalk)*
+
+40. **Verified self-modification = Catalog activation gated by a machine-checked Justification.** *(oco2-crosswalk)*
+
+41. **Hyperon/Omega conjecturing = graded Derivations plus recorded Plans/DecisionRecords.** *(oco2-crosswalk)*
+
+42. **Milestone-not-AGI = one GoalEvaluation does not discharge other Goals.** *(oco2-crosswalk)*

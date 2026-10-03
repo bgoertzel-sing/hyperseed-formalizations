@@ -424,3 +424,14 @@
 (CitedBy navier-stokes-blows-up cantor-infinite-god)
 (CitedBy navier-stokes-blows-up gpt-6-astra)
 (CitedBy navier-stokes-blows-up gpt-5-1)
+
+;; ---- OCO/2 crosswalk (36-42), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> lean-verified-proof ([] (machine-checked-warrant digest-Artifact)))
+(--> proof-announcement attributed-testimony)
+(--> theorem-proving Goal-with-mechanical-VerifierSpec)
+(--> conjecturing provisional-Definition-without-verifier)
+(--> llm-conjecture attributed-Interpretation)
+(--> priority-credit conserved-origin-identity)
+(--> verified-self-modification machine-checked-gated-catalog-activation)
+(--> hyperon-omega-conjecturing ([] (graded-Derivation Plan DecisionRecord)))
+(--> millennium-milestone single-GoalEvaluation-not-AGI)
