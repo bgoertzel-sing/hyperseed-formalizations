@@ -56,3 +56,13 @@
 (--> goals-that-grow-back ([] (related-to what-is-it-like-to-be-a-bot identity-continuity)))
 (--> goals-that-grow-back ([] (related-to tag-youre-not-it omegaself-policy-gates)))
 (--> goals-that-grow-back ([] (related-to seven-flavors value-lock-in-vs-evolution)))
+
+;; ---- OCO/2 crosswalk (25-30), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> adopted-goal single-supporting-record)
+(--> possessed-goal ([] (immutable-Goal-contract distributed-standing re-derivable)))
+(--> regenerative-depth ablation-ExperimentRun-result)
+(--> goal-gate ([] (review-gated-catalog-activation brokered-AuthorizationRecord)))
+(--> goal-weave independent-origin-Justification-routes)
+(--> minimum-repair-guarantee non-preemptible-repair-BudgetAccount)
+(--> transformative-experience BridgeMapping-between-Catalogs)
+(--> ship-of-theseus-identity ([] (event-log repair-processes)))

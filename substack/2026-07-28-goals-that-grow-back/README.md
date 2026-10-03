@@ -218,6 +218,23 @@ What persists through total change:
   Ship of Theseus dissolves). The repair processes are what maintain low
   curvature.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Adopted goal, Delete the Sentence (claims 1-2, 12) | Goal referenced only by one Content/Definition in the prompt | Delete that one record and nothing left in the standing depends on the Goal. It does not regenerate. |
+| Possessed goal = attractor (claims 3, 13) | Goal contract (immutable by digest) plus standing spread over many MotivationSnapshots, Justifications and DecisionRecords that reference it | Possession lives in standing, not in the contract. Regeneration means re-deriving the Goal from the remaining event history. |
+| Regenerative depth (claims 4, 14) | ExperimentDesign with damage-type Factors; ExperimentRuns that ablate records; GoalEvaluation of recovery | The article's measurable number becomes a recorded experiment, as it proposes. |
+| Gate (claims 5, 15) | review-gated Catalog activation + brokered AuthorizationRecord for deliberate self-modification | Matches the R_auth S-half reading: provenance-checked change to contracts. |
+| Weave (claims 6, 16) | many independent Justification routes with distinct origins supporting the same Goal | Redundancy only counts if origins differ: shared-origin routes are set-unioned, so they give no extra resilience. |
+| Repair as funded race, minimum repair guarantee (claims 8-9, 22) | BudgetAccount reserved for repair; repair Obligation whose budget is not preemptible | Starving repair shows up as an Obligation left unfunded. |
+| Transformative experience (claims 10, 18) | BridgeMapping from old to new Catalog; old ContextSnapshot stays readable | Directed type extension: the old self embeds in the new one and is not overwritten. |
+| Ship of Theseus (claims 11, 19) | identity = the event log + the repair processes acting on it | No single snapshot is the identity. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

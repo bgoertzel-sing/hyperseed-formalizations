@@ -104,3 +104,17 @@ Eurykosmotron, 2026-07-28.
 24. **Identity persistence curvature (d-calculus).**
     ||F_∇_identity(part_replacement)|| = identity stability under change.
     Low = Ship of Theseus survives. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+25. **Adopted goal = Goal with a single supporting record;** deleting it leaves no standing that regenerates it. *(oco2-crosswalk)*
+
+26. **Possessed goal = Goal re-derivable from distributed standing** (MotivationSnapshots, Justifications, DecisionRecords). *(oco2-crosswalk)*
+
+27. **Regenerative depth = result of ablation ExperimentRuns with damage-type Factors.** *(oco2-crosswalk)*
+
+28. **Gate = review-gated Catalog activation with brokered authority;** weave = independent-origin Justification routes. *(oco2-crosswalk)*
+
+29. **Minimum repair guarantee = non-preemptible repair BudgetAccount.** *(oco2-crosswalk)*
+
+30. **Transformative experience = BridgeMapping between Catalogs;** identity = event log plus repair processes. *(oco2-crosswalk)*
