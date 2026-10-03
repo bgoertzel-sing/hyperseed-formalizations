@@ -150,6 +150,20 @@ operates below or outside symbolic representation:
   geometry of approaching zero fiber, including the curvature and
   holonomy of the approach.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Non-symbolic awareness (claims 1, 6) | attributed Claim from first-person reports; states with no Catalog-entry Derivations | Reports are kept with their origin. |
+| Productive paradox, paradox of description (claims 2, 5, 7, 13) | Claims about a state recorded in a Catalog the state itself does not use; kept as a contradiction record without explosion | Same paraconsistent handling as evolving-deeply-ethical-and-joyously. |
+| Not anti-intellectual (claim 3) | symbolic and non-symbolic Scopes coexisting, linked by ContextTransfer | |
+| Calibration through suspension (claims 8-9, 11-12) | pause in Derivation, then Assessments re-run against fresh observations; the before/after difference is recorded | Recalibration as a recorded LifecycleEvent. |
+| AGI implications (claim 4) | attributed Plan: a mode that suspends Derivation and re-grounds Assessments | |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

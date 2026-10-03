@@ -63,3 +63,13 @@ Eurykosmotron, 2022-08-06.
 14. **Non-symbolic gradient (d-calculus).** ∇_nonsymbolic = -∇(||fiber||)
     — direction toward zero fiber. Legitimate direction in fiber space
     with well-defined geometry. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+15. **Non-symbolic awareness = attributed first-person Claims about states with no Catalog Derivations.** *(oco2-crosswalk)*
+
+16. **Paradox of description = contradiction record kept without explosion.** *(oco2-crosswalk)*
+
+17. **Calibration = suspension of Derivation, then re-run Assessments with the change recorded.** *(oco2-crosswalk)*
+
+18. **AGI non-symbolic mode = attributed Plan for periodic re-grounding.** *(oco2-crosswalk)*

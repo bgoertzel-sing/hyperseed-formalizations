@@ -55,3 +55,10 @@
 (--> symbolic-ruminations ([] (related-to interzones symbolic-nonsymbolic-boundary)))
 (--> symbolic-ruminations ([] (related-to consciousness-explosion beyond-symbolic)))
 (--> symbolic-ruminations ([] (related-to open-ended-motivations hidden-dimensions)))
+
+;; ---- OCO/2 crosswalk (15-18), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> non-symbolic-awareness attributed-first-person-Claim)
+(--> description-paradox contradiction-record-no-explosion)
+(--> symbolic-nonsymbolic-coexistence ContextTransfer-linked-Scopes)
+(--> meditative-calibration ([] (Derivation-suspension Assessment-rerun recorded-LifecycleEvent)))
+(--> agi-nonsymbolic-mode attributed-Plan)
