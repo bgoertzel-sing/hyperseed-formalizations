@@ -111,3 +111,13 @@
 (--> legal-threshold level-set-of-arbitrary-projection)
 (--> capability-diffusion no-inverse-1-cells)
 (--> positive-left-agenda change-connection-not-flow)
+
+;; ---- OCO/2 crosswalk (42-46), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> ban-selection-effect enforcement-on-visible-records-only)
+(--> hidden-programs no-shared-ledger-records)
+(--> regulatory-capture verifier-actor-origin-merge)
+(--> definitional-swamp ([] (unpinned-Definition no-VerifierSpec)))
+(--> national-ban single-jurisdiction-Scope)
+(--> agi-unstoppability append-only-event-log)
+(--> progressive-data-rights citizen-owned-origin)
+(--> positive-left-agenda distribution-Goals-with-GoalEvaluation)

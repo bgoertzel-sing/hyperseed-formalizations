@@ -284,4 +284,22 @@ Policies that redistribute benefits modify the connection governing who gains
 along the development path, not the path itself.
 \end{proposition}
 
+
+%======================================================================
+\section{OCO/2 crosswalk (oco/2:2.0.0-alpha.1)}
+\emph{Added 2026-10-03. Interpretive mapping onto the Omega Core Ontology
+record registry; OCO/2 is an unfrozen alpha candidate.}
+
+\begin{proposition}[Visibility filter --- claim 42]
+Let $L_{\mathrm{pub}}\subseteq L$ be the records visible to the regulator. A ban acts only on producers with records in $L_{\mathrm{pub}}$, so it changes the mix of producers toward those with none.
+\end{proposition}
+
+\begin{proposition}[Capture and definitions --- claims 43--44]
+A regulatory verifier is sound only if its origin is disjoint from the regulated actors' origins. A prohibition is well-formed only against a Definition pinned by digest with a VerifierSpec; otherwise it has no decidable check.
+\end{proposition}
+
+\begin{proposition}[Irreversibility and agenda --- claims 45--46]
+Because the log is append-only, policy can reduce the rate of new capability events but cannot remove past ones. Redistribution changes which Goals are evaluated and who owns origins, not the event stream.
+\end{proposition}
+
 \end{document}

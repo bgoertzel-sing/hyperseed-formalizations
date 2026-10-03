@@ -90,6 +90,21 @@ These are interpretive readings. The article itself does not use d-calculus.
   dividends, open infrastructure and public compute change how benefits are
   transported along the path (who gains), instead of trying to stop the path.
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| Selection effect: bans hit the open, spare the hidden (claims 7-9, 29, 34, 36) | enforcement can only act on records in the regulator's view (public ExperimentRuns, EvidenceRecords) | Hidden programs leave no records in the shared ledger, so a ban filters on visibility, not on risk. |
+| Regulatory capture, compliance moat (claims 11-12, 30, 38) | verifier/actor separation: the VerifierSpec must not share an origin with the regulated actor | Capture is the case where the verifier's origin merges with the incumbent's. |
+| Definitional swamp, vague criminal statute (claims 13-14, 31, 39) | a Definition pinned by digest with its own VerifierSpec | "Surpass human intelligence" has no pinned Definition or verifier, so a prohibition on it has no well-formed check. |
+| US ban is not a global ban (claim 17) | jurisdiction = a Scope | A rule in one Scope does not constrain events in others. |
+| Unstoppability (claims 32, 40) | append-only event log | Capability events cannot be retracted; only new events can be added. |
+| Positive left agenda: dividend, data rights, open-source support (claims 23-28, 41) | Goals about who benefits, with GoalEvaluations; data rights = conserved origin | The agenda changes the evaluated Goals and the ownership of origins, not the event stream itself. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

@@ -193,3 +193,15 @@ Eurykosmotron, 2026-09-05.
 
 41. **Positive left agenda = change the connection, not the flow.**
     *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+42. **Ban selection effect = enforcement limited to records visible to the regulator;** hidden programs produce no records to act on. *(oco2-crosswalk)*
+
+43. **Regulatory capture = verifier origin merging with the regulated actor's origin.** *(oco2-crosswalk)*
+
+44. **Definitional swamp = prohibition on a Definition with no pinned digest and no VerifierSpec.** *(oco2-crosswalk)*
+
+45. **Unstoppability = append-only log;** a ban can slow new events but not retract past ones. *(oco2-crosswalk)*
+
+46. **Positive agenda = new distribution Goals plus citizen-owned origins (data rights).** *(oco2-crosswalk)*
