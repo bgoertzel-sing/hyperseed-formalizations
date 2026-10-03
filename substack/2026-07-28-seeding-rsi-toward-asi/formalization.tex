@@ -209,4 +209,34 @@ discriminator). The narrow baseline establishes the ceiling for
 non-general solutions.
 \end{proposition}
 
+
+%======================================================================
+\section{OCO/2 crosswalk (oco/2:2.0.0-alpha.1)}
+\emph{Added 2026-10-03. Interpretive mapping onto the Omega Core Ontology
+record registry; OCO/2 is an unfrozen alpha candidate.}
+
+\begin{proposition}[Cycle as recorded experiment --- claims 23--24]
+Each OmegaHive cycle is an ExperimentRun under a design fixed beforehand;
+its verdict is a LifecycleEvent, and only promotion activates a new Catalog
+in a new ContextSnapshot. Parked and rejected mechanisms remain in the log.
+\end{proposition}
+
+\begin{proposition}[Forks and modules --- claims 25--26]
+Forks are sibling Scopes over a shared event prefix; transferred results keep
+their origin run ID and are combined by set union. A module is load-bearing
+iff its outputs occur in the ReadSet of some DecisionRecord.
+\end{proposition}
+
+\begin{proposition}[No scalar --- claim 27]
+Evaluation is a family $\{v_g\}_{g\in G}$ of GoalEvaluations with separate
+verifiers; the weakest-link principle is $\min_g v_g$ (or a profile), never a
+weighted sum that lets strong families mask weak ones.
+\end{proposition}
+
+\begin{proposition}[Calibration and validity --- claims 28--30]
+A prediction sealed by digest in a DecisionRecord before Execution cannot be
+revised after the ExecutionReceipt. A verifier passed by a narrow baseline
+carries a recorded ValidityThreat.
+\end{proposition}
+
 \end{document}

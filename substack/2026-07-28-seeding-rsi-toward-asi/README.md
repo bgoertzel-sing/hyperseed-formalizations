@@ -202,6 +202,24 @@ Pre-committed predictions + receipts = cognitive provenance:
   narrow baseline nearly matches (the test doesn't require generality —
   poor discriminator).
 
+## OCO/2 crosswalk (Omega Core Ontology oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+Maps this article's concepts to OCO/2 record kinds (Appendix A registry and
+Section 13 crosswalk). OCO/2 is an alpha candidate and is not frozen; these
+mappings are interpretive and pinned to that version.
+
+| Article concept | OCO/2 home | Note |
+|---|---|---|
+| OmegaHive loop (claims 2, 11) | ExperimentDesign / Factor / ExperimentRun per cycle | Each "add one mechanism" step is one recorded run with its design fixed before execution. |
+| Promote / park / reject (claim 12) | Catalog activation LifecycleEvent in a new ContextSnapshot; park/reject = LifecycleEvents with no activation | Rejected mechanisms stay in the log, so later forks can see why they were rejected. |
+| Parallel forks share results (claims 3, 16) | sibling Scopes sharing an event prefix; ContextTransfer with origin IDs | Shared results keep their home run ID, so a result propagated to many forks is not double-counted. |
+| Module Space; a mechanism earns its place (claims 4, 15) | ActionOperator per specialist; DecisionRecord ReadSet | "Changes downstream decisions" is checkable: the module's outputs appear in the ReadSets of DecisionRecords. |
+| Evaluation ecology, weakest link (claims 5, 13-14) | many Goals, each with one success spec and a separate VerifierSpec; per-family GoalEvaluations | No scalar AGI score; OCO/2 keeps evaluations per Goal and never fuses them into one number. |
+| Pre-committed predictions (claims 7, 17) | prediction kept in the DecisionRecord (immutable by digest) before Execution; ExecutionReceipt after | The prediction cannot be edited after the outcome arrives; the receipt-prediction gap feeds calibration. |
+| Frozen vs developmental trials (claim 8) | frozen = fixed ContextSnapshot; developmental = event-sourced standing during the run | The two trial types differ in whether standing is allowed to evolve inside the run. |
+| Testing the tests (claim 9) | ValidityThreat records; narrow-baseline ExperimentRuns as controls | A test that a narrow baseline passes is recorded as a validity threat to that Goal's verifier. |
+| Education through evaluation (claim 10) | episode traces as EvidenceRecords with conserved origin | Released traces stay attributed to the run that produced them. |
+
 ## Files
 
 - `claims.md` — Enumerated intellectual claims with epistemic status.

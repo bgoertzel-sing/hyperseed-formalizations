@@ -58,3 +58,15 @@
 (--> seeding-rsi ([] (related-to what-is-it-like-to-be-a-bot self-lab)))
 (--> seeding-rsi ([] (related-to goals-that-grow-back promote-park-reject-gate)))
 (--> seeding-rsi ([] (related-to avoiding-catastrophe architecture-hinge)))
+
+;; ---- OCO/2 crosswalk (23-30), oco/2:2.0.0-alpha.1, added 2026-10-03 ----
+(--> omegahive-cycle ([] (ExperimentDesign ExperimentRun design-fixed-before-run)))
+(--> promote catalog-activation-new-ContextSnapshot)
+(--> park-or-reject LifecycleEvent-without-activation)
+(--> parallel-forks ([] (sibling-Scopes shared-prefix origin-preserving-ContextTransfer)))
+(--> module-earns-place output-in-DecisionRecord-ReadSet)
+(--> evaluation-ecology ([] (many-Goals separate-VerifierSpecs per-family-GoalEvaluation no-scalar-fusion)))
+(--> precommitted-prediction ([] (sealed-in-DecisionRecord compared-with-ExecutionReceipt)))
+(--> frozen-trial fixed-ContextSnapshot)
+(--> developmental-trial evolving-event-sourced-standing)
+(--> testing-the-tests ValidityThreat-from-baseline-controls)

@@ -104,3 +104,29 @@ Eurykosmotron, 2026-07-28.
 22. **Calibration curvature (d-calculus).**
     ||F_∇(narrow_baseline, general)|| = generality premium. High = test
     discriminates generality. *(hyperseed-interpretation)*
+
+### OCO/2 crosswalk claims (oco/2:2.0.0-alpha.1, added 2026-10-03)
+
+23. **OmegaHive cycle = one ExperimentDesign + ExperimentRun**, design fixed
+    before execution. *(oco2-crosswalk)*
+
+24. **Promote = Catalog activation in a new ContextSnapshot; park/reject =
+    LifecycleEvents without activation**, kept in the log. *(oco2-crosswalk)*
+
+25. **Forks = sibling Scopes with a shared prefix; result sharing =
+    origin-preserving ContextTransfer** (no double-counting). *(oco2-crosswalk)*
+
+26. **A module earns its place iff its outputs enter DecisionRecord
+    ReadSets.** *(oco2-crosswalk)*
+
+27. **Evaluation ecology = many Goals with separate VerifierSpecs and
+    per-family GoalEvaluations**, never fused into a scalar. *(oco2-crosswalk)*
+
+28. **Pre-commitment = prediction sealed in the DecisionRecord before
+    Execution**, compared with the ExecutionReceipt. *(oco2-crosswalk)*
+
+29. **Frozen vs developmental = fixed ContextSnapshot vs evolving
+    event-sourced standing within the run.** *(oco2-crosswalk)*
+
+30. **Testing the tests = ValidityThreat records from narrow-baseline
+    control runs.** *(oco2-crosswalk)*
