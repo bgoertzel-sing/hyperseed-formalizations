@@ -211,6 +211,44 @@ The ontology structure consists of:
 \end{enumerate}
 \end{proposition}
 
+\section{d-calculus formulation (Hyperseed v2)}
+\label{sec:v2}
+
+\begin{definition}[Seed ontology as a $d$-anchored atlas --- claim 33]
+\label{def:v2-atlas}
+Let $(B,d)$ be the base space with the Hyperseed v2 distinction metric $d$.
+A Hyperseed-1 seed is a finite set of primitives $P=\{p_1,\dots,p_k\}\subset B$.
+A concept $c$ is \emph{anchored} at resolution $\epsilon$ if
+$d(c,P)=\min_i d(c,p_i)<\epsilon$. The semi-formal character of
+Hyperseed-1 (claim 28) is then a choice of $\epsilon$: entries are
+meaningful up to distinctions finer than $\epsilon$, not Boolean
+(``$\epsilon=0$'') and not amorphous (``$\epsilon=\infty$'').
+\end{definition}
+
+\begin{proposition}[Inference acceleration as path shortening --- claim 34]
+\label{prop:v2-accel}
+Suppose deriving $c$ from scratch costs a $d$-path of length $\ell_\emptyset(c)$,
+and deriving it from the seed costs $\ell_P(c)\le d(c,P)+\ell_P(\text{nearest } p_i)$.
+If the primitives are themselves cheap to reach (they are given), then
+$\ell_P(c)\approx d(c,P)$ and the speedup in
+Proposition~\ref{prop:acceleration} is the ratio
+$\ell_\emptyset(c)/d(c,P)$. Cross-domain bridges (claim 20) are pairs
+$c,c'$ from different domains with the same nearest primitive and
+$d(c,c')\le d(c,P)+d(c',P)$ small: the triangle inequality makes the
+analogy available without any domain-specific search.
+\end{proposition}
+
+\begin{conjecture}[Perspectives as $d$-diverse sections --- claim 35]
+\label{conj:v2-diverse}
+Model each philosophical perspective as a section $\sigma_j$ of the bundle
+over the anchored region. Multiple perspectives help inference only when they
+are $d$-diverse: $\min_{j\ne j'} \sup_x d(\sigma_j(x),\sigma_{j'}(x))>\epsilon$.
+Below $\epsilon$ two perspectives are indistinguishable at the working
+resolution and add no new paths. Prediction: ``hallucinated'' perspectives
+(claim 26) pay off when, and only when, they raise this minimum distance;
+near-duplicates of existing perspectives should be pruned.
+\end{conjecture}
+
 %% =================================================================
 \section{Cross-references}
 %% =================================================================

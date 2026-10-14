@@ -42,3 +42,10 @@
 (--> diverse-perspectives-multiple-sections ([] (different-organizations different-paths same-base)))
 (--> predecessor-to-v2 ([] (intuitions-explored v2-builds-on fiber-bundle d-calculus)))
 (--> hallucinated-perspectives-emergent ([] (arises-from-building self-organization creative)))
+
+;; ---- Hyperseed v2 / d-calculus (claims 33-35), deepened 2026-10-14 ----
+(--> seed-d-anchored-atlas ([] (finite-primitives d-anchor working-resolution)))
+(==> (--> $c ([] (d-near-primitive below-epsilon))) (--> $c anchored))
+(--> acceleration-d-path-shortening ([] (scratch-length over-seed-distance triangle-inequality)))
+(==> (--> (× $c $k) ([] (shared-nearest-primitive different-domain))) (--> (× $c $k) cross-domain-bridge))
+(--> perspectives-d-diverse ([] (distance-above-epsilon new-paths prune-near-duplicates)))

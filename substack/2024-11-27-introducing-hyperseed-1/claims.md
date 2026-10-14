@@ -160,3 +160,17 @@ Eurykosmotron, 2024-11-27.
     by the ontology construction process itself are emergent fiber — structure
     that arises from the act of building the bundle, not imported from outside.
     This is a form of creative self-organization in the fiber. *(inferred)*
+
+## Hyperseed v2 / d-calculus (deepened 2026-10-14)
+
+33. **Seed = d-anchored atlas.** A concept is anchored when its d-distance to
+    some seed primitive is below the working resolution; "semi-formal" means a
+    finite, nonzero resolution. *(inferred)*
+
+34. **Acceleration = path shortening.** Speedup is the ratio of from-scratch
+    d-path length to distance from the seed; cross-domain bridges follow from
+    the triangle inequality via a shared nearest primitive. *(inferred)*
+
+35. **Perspectives must be d-diverse.** Extra perspectives (incl. hallucinated
+    ones) help only if they are further apart than the working resolution;
+    near-duplicates add no inference paths. *(hypothesis)*
