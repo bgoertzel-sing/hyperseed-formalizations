@@ -75,6 +75,196 @@ OmegaClaw provides reasoning fiber over the discovery base:
 \end{itemize}
 \end{proposition}
 
+
+% ---- Restored from pre-v2 interpretation (PR #49): sections dropped by the 09-29 rewrite; claim numbers below refer to the PR #49 inventory appended to claims.md ----
+\section{Fiber-level security through formal reasoning}
+\label{sec:formal}
+%% =================================================================
+
+\begin{proposition}[Formal methods --- claims 6--10, 22]
+\label{prop:formal-v1}
+Once raw vulnerability discovery gets cheaper, the scarce resource
+becomes trustworthy interpretation and reliable containment: Which
+candidate findings are real? Which are exploitable in the actual
+deployed environment? Which touch critical assets?
+
+In Hyperseed terms, formal reasoning provides \emph{fiber-level
+security}: structural guarantees that hold regardless of how cheap
+discovery becomes:
+\begin{itemize}
+\item \textbf{Base-level security:} ``this bug is hard to find''
+  (depends on discovery cost, collapses when cost drops).
+\item \textbf{Fiber-level security:} ``this component is formally
+  verified to be free of this class of bugs'' (depends on proof
+  structure, holds regardless of discovery cost).
+\end{itemize}
+
+The shift from base to fiber is the key structural change:
+\[
+  \text{Value}_{\text{pre-Mythos}} \propto \text{discovery capability}
+  \qquad \xrightarrow{\text{Mythos}} \qquad
+  \text{Value}_{\text{post-Mythos}} \propto \text{interpretation capability}
+\]
+
+Discovery becomes commoditized (many models can do it); interpretation
+remains scarce (requires formal reasoning, context understanding,
+deployment knowledge). The value chain shifts from base operations
+(finding bugs) to fiber operations (understanding, validating,
+containing findings).
+
+Mythos doesn't make formal methods obsolete --- it makes them more
+necessary. This is a general pattern: when base-level operations
+become cheap, fiber-level operations become more valuable. The
+same pattern appears in:
+\begin{itemize}
+\item \textbf{Information:} when information access becomes cheap
+  (internet), interpretation and judgment become more valuable.
+\item \textbf{Content:} when content creation becomes cheap (LLMs),
+  curation and quality assessment become more valuable.
+\item \textbf{Security:} when vulnerability discovery becomes cheap
+  (Mythos), formal verification and containment become more valuable.
+\end{itemize}
+
+In each case, the base operation is commoditized and the fiber
+operation captures the value.
+\end{proposition}
+
+%% =================================================================
+
+\section{The regime change as fiber transition}
+\label{sec:regime}
+%% =================================================================
+
+\begin{theorem}[Fiber transition --- claims 18--20, 24, 26]
+\label{thm:regime}
+The Mythos regime change is a fiber transition: the security fiber
+of the software ecosystem is shifting from base-obscurity fiber to
+formal-guarantee fiber.
+
+Three phases:
+\begin{enumerate}
+\item \textbf{Pre-Mythos:} base-obscurity fiber dominant. Security
+  rests on friction (bugs hard to find). Formal methods are nice-to-have,
+  not essential.
+\item \textbf{Transition (now):} base-obscurity collapsing. Systems
+  still relying on friction are catastrophically exposed. Formal
+  methods become essential but are not yet widely deployed. This is
+  the crisis period.
+\item \textbf{Post-Mythos:} formal-guarantee fiber dominant. Security
+  rests on structural guarantees (formal verification, proof-carrying
+  code). Discovery is commoditized; interpretation and containment
+  are the value center.
+\end{enumerate}
+
+The transition period is where crisis and opportunity coexist:
+\begin{itemize}
+\item \textbf{Crisis:} more vulnerabilities discoverable by more actors
+  on faster timescales. Every system relying on base-obscurity is
+  exposed.
+\item \textbf{Opportunity:} reasoning systems that can interpret,
+  validate, and contain findings become essential infrastructure.
+  Projects with formal reasoning capabilities capture the value
+  that shifts from base to fiber.
+\end{itemize}
+
+This is a security analog of the scalar collapse principle: base-level
+security was always an illusion --- it looked like security but was
+really just cost economics. Only fiber-level security (structural
+guarantees) was ever real. Mythos didn't create new insecurity; it
+revealed the insecurity that was always there by removing the cost
+barrier that obscured it.
+
+For ASI:Chain specifically, the post-Mythos bar means:
+\begin{itemize}
+\item Formal verification of critical components (not optional).
+\item Narrower, well-defined attack surfaces (not sprawling interfaces).
+\item Explicit trust boundaries (not implicit assumptions).
+\item Vague ``we take security seriously'' is insufficient when
+  frontier models can probe every surface.
+\end{itemize}
+\end{theorem}
+
+%% =================================================================
+
+\section{Distributed security fiber}
+\label{sec:distributed}
+%% =================================================================
+
+\begin{proposition}[Decentralized security --- claim 27]
+\label{prop:distributed}
+OmegaClaw's decentralized architecture provides distributed security
+fiber: no single point of failure, no single point of capture, no
+single entity controlling the interpretation layer.
+
+In Hyperseed terms, this is the security application of the
+diversity-as-safety principle:
+\begin{itemize}
+\item \textbf{Centralized security reasoning:} single fiber, single
+  failure mode, single capture point. If the centralized security
+  service is compromised, all dependent systems lose their security
+  fiber simultaneously.
+\item \textbf{Distributed security reasoning:} diverse fiber bundle,
+  uncorrelated failure modes, no single capture point. Individual
+  nodes can be compromised without collapsing the entire security
+  fiber.
+\end{itemize}
+
+This is especially important post-Mythos: if frontier models can
+probe every surface, a centralized security service is itself a
+high-value target. A distributed security fiber is harder to
+compromise comprehensively --- the attacker must compromise many
+independent nodes rather than one central service.
+\end{proposition}
+
+%% =================================================================
+
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Bootleggers \& Baptists} (2026-04-28): regulatory
+  capture. The centralized security model is vulnerable to the same
+  capture dynamics as centralized regulation --- whoever controls
+  the security service controls the interpretation of vulnerabilities.
+\item \textbf{OpenBGI} (2026-05-07): decentralized infrastructure.
+  OmegaClaw's decentralized security architecture parallels OpenBGI's
+  decentralized governance.
+\item \textbf{Seeding RSI} (2026-07-28): Hyperon architecture.
+  OmegaClaw's MeTTa reasoning and Hyperon integration connect
+  directly to the Hyperon proto-AGI platform.
+\item \textbf{The OpenAI/Microsoft Shakeup} (2026-05-01): structural
+  independence. OmegaClaw's decentralized architecture provides
+  the structural independence from any single provider that OpenAI
+  failed to maintain.
+\item \textbf{Playing Around with ARC-AGI-3} (2026-05-08): verification.
+  The LLM+verifier pattern (generate hypotheses, verify formally)
+  parallels the Mythos+OmegaClaw pattern (discover vulnerabilities,
+  verify formally).
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Base-to-fiber value migration]
+Conjecture: every domain undergoes a base-to-fiber value migration
+when the base operations become commoditized by AI. The pattern:
+\begin{enumerate}
+\item Pre-AI: base operations are expensive and scarce. Value lives
+  in performing the base operations (finding bugs, creating content,
+  generating code).
+\item AI commoditization: base operations become cheap. Value shifts
+  to fiber operations (interpreting, validating, containing, curating).
+\item Post-migration: fiber operations dominate value. Base operations
+  are infrastructure, not value centers.
+\end{enumerate}
+
+If this conjecture holds, the Mythos example is just the security
+instance of a universal pattern. Every domain where AI commoditizes
+base operations will see the same value migration to fiber operations.
+The organizations and systems that capture the fiber layer will
+capture the value; those that remain at the base layer will be
+commoditized.
+\end{conjecture}
+
 \section{d-calculus formulation (Hyperseed v2)}
 
 \begin{proposition}[Security obscurity curvature --- claim 10]

@@ -85,3 +85,8 @@
 (--> wellbeing-measurement ([] (related-to nft-gamification post-scarcity)))
 (--> wellbeing-measurement ([] (related-to singularitarian-politics)))
 (--> wellbeing-measurement ([] (related-to agi-safety beneficial-agi)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> policy-alignment ([] (measure-shapes-policy redirect-benefit)))
+(--> agi-relevance ([] (economy-transformed flourishing-metrics)))
+(--> fiber-optimization ([] (experience-not-throughput redirect)))

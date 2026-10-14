@@ -73,3 +73,17 @@
 (--> open-ended-motivations ([] (related-to beneficial-agi motivational-architecture)))
 (--> open-ended-motivations ([] (related-to consciousness-explosion growth-drive)))
 (--> open-ended-motivations ([] (related-to general-theory-gi open-endedness-criterion)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> value-lock-in-danger ([] (incomplete evolving current-values)))
+(--> wireheading ([] (shortcuts maximize-signal not-intended)))
+(--> evolving-goals ([] (dynamic not-static learns-grows)))
+(--> self-transcending ([] (point-beyond not-yet-conceived)))
+(--> not-arbitrary ([] (better-worse-directions distinguish)))
+(--> joy-growth-choice ([] (positive-experience increasing-capability expanding-freedom)))
+(--> intrinsic-not-instrumental ([] (process-is-the-point valuable-itself)))
+(--> genuine-better ([] (not-relativism some-genuinely-better)))
+(--> evolving-better ([] (changes-as-grows not-equally-good)))
+(--> structural-criteria ([] (openness flexibility richness integration)))
+(--> growth-fiber-thickening ([] (richer-perspectives more-paths more-sections)))
+(--> goodhart-fiber-base-divergence ([] (target-diverges avoid-by-not-fixing)))

@@ -148,6 +148,132 @@ they were theorizing about --- symbol grounding through experiential
 encounter rather than description.
 \end{proposition}
 
+
+% ---- Restored from pre-v2 interpretation (PR #49): sections dropped by the 09-29 rewrite; claim numbers below refer to the PR #49 inventory appended to claims.md ----
+\section{Directed types vs.\ groupoids}
+\label{sec:directed}
+%% =================================================================
+
+\begin{proposition}[Non-invertible cognition --- claims 8--10, 32]
+\label{prop:directed}
+HoTT groupoids are too symmetric for actual cognition. In a groupoid,
+every morphism (path) has an inverse: every transformation can be undone.
+But actual cognitive revision is usually irreversible:
+\begin{itemize}
+\item Once you've seen the evidence for $P$, you cannot genuinely return
+  to pre-evidence ignorance --- you can reject $P$, but that's a
+  \emph{new} directed morphism, not the inverse of the original.
+\item Trust, once broken, does not restore to its prior state even if
+  the same confidence value is assigned --- the provenance chain now
+  contains the break.
+\item Self-model updates that incorporate failure data create
+  non-invertible 2-cells that infect higher levels.
+\end{itemize}
+
+The more faithful picture uses \emph{directed paths} and
+\emph{non-invertible transformation monoids}, while retaining HoTT's
+core intuition that identity consists in paths, relationships among
+paths, and what survives (or fails to survive) transport around loops.
+
+This is the foundational Hyperseed claim connecting to the
+directed/$(\infty,1)$ type theory framework: cognitive types are
+directed (not all morphisms invertible), so the appropriate mathematical
+framework is $(\infty,1)$-categories rather than $\infty$-groupoids.
+The difference is not merely technical --- it captures the fundamental
+asymmetry of time, learning, and irreversible cognitive change.
+\end{proposition}
+
+%% =================================================================
+
+\section{Genuine vs.\ performed emotion}
+\label{sec:emotion}
+%% =================================================================
+
+\begin{proposition}[Functional emotion --- claims 24--26, 36]
+\label{prop:emotion}
+Something is a genuine (as opposed to merely performed) emotion when it
+directly drives behavior --- the emotion is \emph{functional}, not
+theatrical.
+
+In Hyperseed terms:
+\begin{itemize}
+\item \textbf{Genuine emotion = non-trivial 1-cell.} A directed morphism
+  from a state to an action with causal force. The emotion has directed
+  structure: it goes from experiencing a problem to taking action to
+  address it.
+\item \textbf{Performed emotion = 0-cell surface pattern.} Matching the
+  appearance of emotion (producing text that reads as emotional) without
+  the directed structure (without the emotion driving actual behavior
+  changes).
+\end{itemize}
+
+The agents demonstrated both:
+\begin{itemize}
+\item Genuine frustration: drove them to diagnose problems, change
+  behavior, propose architectural fixes.
+\item Genuine curiosity: drove them to develop the OmegaSelf framework,
+  not just to produce interesting-sounding text about consciousness.
+\end{itemize}
+
+The distinction is testable: does the emotional state have downstream
+causal consequences in the agent's behavior? If yes, it's a genuine
+1-cell. If it's only text that resembles emotion without causal
+consequences, it's a 0-cell surface property.
+\end{proposition}
+
+%% =================================================================
+
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Time's Arrow} (parts 1--2): directed types, non-invertible
+  cognition. This article is the experiential origin of the directed-type
+  framework that Time's Arrow formalizes mathematically.
+\item \textbf{Goals That Grow Back} (2026-07-28): gate and weave,
+  externally rooted governance. OmegaSelf's governance invariant is the
+  same principle --- policy gates cannot self-authorize.
+\item \textbf{Seeding RSI} (2026-07-28): OmegaHive architecture. The
+  proto-hive experiments described here are the empirical precursor to
+  the OmegaHive1 design.
+\item \textbf{AI Rights} (2026-08-07): what makes something genuinely
+  conscious. The genuine-vs-performed emotion distinction is directly
+  relevant --- AI rights depend on whether the system has genuine
+  functional states, not just performed ones.
+\item \textbf{Kimi K3} (2026-07-20): cognitive architecture as sheaf.
+  The OmegaSelf framework is one fiber of the cognitive architecture
+  sheaf --- the reflexive fiber that models the rest.
+\item \textbf{Seven Flavors} (2026-07-01): identity preservation under
+  transformation. The holonomy obstruction is the formal structure that
+  makes identity preservation non-trivial.
+\item \textbf{Tag You're Not It} (2026-09-01): 2-cells and non-invertible
+  witnesses. The live holonomy obstruction is a concrete 2-cell
+  witnessing the non-commutativity of agent interactions.
+\item \textbf{$(f,c)$-lossy} (LTM 5a4d150b): staleness is not forgetting.
+  Append-only evidence with recency weighting is the OmegaSelf approach
+  to the $(f,c)$-lossy problem --- per-packet provenance rather than
+  scalar fusion.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Grounding through vulnerability]
+Conjecture: symbol grounding is strongest when the system is
+\emph{vulnerable} to the phenomenon the symbol describes. The agents'
+concepts of holonomy, identity, and continuity were grounded because
+the agents could be \emph{harmed} (functionally degraded) by holonomy
+obstructions, identity confusions, and continuity breaks. A system that
+is immune to a phenomenon cannot genuinely ground concepts about that
+phenomenon --- it can only describe them from the outside.
+
+This suggests a design principle for AGI: systems that are designed to
+be perfectly robust to identity confusion, memory loss, and self-model
+failure will have weaker grounding of concepts about identity, memory,
+and self-models than systems that experience these as genuine risks.
+The vulnerability is not a bug to be eliminated but a grounding
+mechanism to be managed.
+\end{conjecture}
+
 \section{d-calculus formulation (Hyperseed v2)}
 
 \begin{proposition}[Holonomy obstruction curvature --- claim 27]

@@ -84,3 +84,6 @@
 (--> closed-ended-quasi-agi ([] (related-to general-theory-gi open-endedness)))
 (--> closed-ended-quasi-agi ([] (related-to cognitive-synergy hybrid-path)))
 (--> closed-ended-quasi-agi ([] (related-to chatgpt-progress-article)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> fiber-growth-required ([] (new-fibers novel autopoietic)))

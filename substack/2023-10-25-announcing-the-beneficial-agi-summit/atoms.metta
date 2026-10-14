@@ -75,3 +75,14 @@
 (--> bgi-summit ([] (related-to three-paths-cross-pollination)))
 (--> bgi-summit ([] (related-to singularitarian-politics practical-expression)))
 (--> bgi-summit ([] (related-to wellbeing-measurement benefit-measurement)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> diverse-approaches ([] (no-monoculture multiple-paradigms benefit)))
+(--> cross-pollination ([] (different-traditions sparks-insights interaction)))
+(--> open-sharing ([] (accelerates-progress not-proprietary beneficial)))
+(--> broad-values ([] (human-values not-narrow not-corporate not-national)))
+(--> proactive-design ([] (designed-in from-start not-bolted-on)))
+(--> no-single-controller ([] (concentration-risk distributed multiple)))
+(--> participatory-governance ([] (diverse-stakeholders not-just-technologists)))
+(--> distributed-fiber-development ([] (parallel independent cross-pollination)))
+(--> fiber-ethics ([] (normative-boundary beneficial guided-evolution)))

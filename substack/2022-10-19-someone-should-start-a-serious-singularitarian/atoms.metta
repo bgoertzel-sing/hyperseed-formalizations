@@ -77,3 +77,7 @@
 (--> singularitarian-party ([] (related-to consciousness-explosion-beneficial)))
 (--> singularitarian-party ([] (related-to wellbeing-measurement-policy)))
 (--> singularitarian-party ([] (related-to beneficial-agi-political-arm)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> democratic-engagement ([] (public-case not-technocratic)))
+(--> fiber-coordination ([] (distributed-to-coherent collective-action)))

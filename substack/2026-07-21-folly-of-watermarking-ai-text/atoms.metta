@@ -72,3 +72,14 @@
 (--> folly-of-watermarking ([] (related-to decentralized-provenance openwater)))
 (--> folly-of-watermarking ([] (related-to sanders-ban absence-as-guilt)))
 (--> folly-of-watermarking ([] (related-to seven-flavors arms-race-attractor)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(: statistical-detection ProvenanceType)
+(--> higher-cell-fingerprinting ([] (1-cells not-0-cells)))
+(--> centralizing-cocycle ([] (trends-toward centralization)))
+(--> directed-history-record ([] (1-cells transformation-history)))
+(--> compliance-perimeter ([] (tracks institutional-control not-ai-human)))
+(--> regulatory-capture ([] (detector-as-chokepoint)))
+(--> watermark-mandate ([] authoritarian-implications))
+(--> detector-chokepoint cocycle-controller)
+(--> cocycle-controller ([] (controls-transition-function between-halves)))

@@ -70,3 +70,29 @@ Eurykosmotron, 2023-01-18.
 13. **Scaling as volume inflation (d-calculus).** Scaling inflates fiber
     volume without changing topology: vol(F) scales but π₁(F) doesn't.
     AGI requires new topology, not more volume. *(hyperseed-interpretation)*
+
+---
+
+## Pre-v2 claim inventory (PR #49, restored)
+
+The 09-29 v2 rewrite replaced the claim list above. The earlier inventory is kept here because sections restored in `formalization.tex` (marked "Restored from pre-v2 interpretation") cite claims by **this** numbering.
+
+1. **Impressive fluency.** ChatGPT demonstrates remarkable language fluency and broad knowledge coverage. *(source-paraphrase)*
+
+2. **Pattern matching.** Capabilities arise from sophisticated pattern matching, not genuine understanding. *(source-paraphrase)*
+
+3. **Missing persistent memory.** ChatGPT lacks persistent memory across conversations. *(source-paraphrase)*
+
+4. **Missing embodiment.** No embodied grounding — all knowledge is disembodied text. *(source-paraphrase)*
+
+5. **Missing robust reasoning.** Logical reasoning is unreliable, especially multi-step or novel reasoning. *(source-paraphrase)*
+
+6. **Scaling limits.** Scaling current architectures alone is unlikely to produce AGI. *(source-paraphrase)*
+
+7. **Hybrid architectures.** Real AGI likely requires hybrid architectures combining multiple paradigms. *(source-paraphrase)*
+
+8. **Fiber shortcut.** Pattern matching is fiber shortcut — jumping to output without full fiber traversal (understanding). *(inferred)*
+
+9. **Thin fiber.** ChatGPT has thin fiber in key dimensions despite broad base coverage. *(inferred)*
+
+10. **Multi-fiber AGI.** Real AGI requires integrated multi-fiber bundle: neural + symbolic + embodied. *(inferred)*

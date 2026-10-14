@@ -75,3 +75,10 @@
 (--> chatgpt-analysis ([] (related-to three-paths component-for-path-1)))
 (--> chatgpt-analysis ([] (related-to cognitive-synergy missing-synergy)))
 (--> chatgpt-analysis ([] (related-to general-theory-gi fails-open-endedness)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> missing-embodiment ([] (disembodied text-only no-grounding)))
+(--> missing-robust-reasoning ([] (unreliable multi-step novel-fails)))
+(--> hybrid-architectures ([] (multiple-paradigms combined needed)))
+(--> thin-fiber-chatgpt ([] (broad-base thin-depth key-dimensions)))
+(--> multi-fiber-agi ([] (neural symbolic embodied integrated)))

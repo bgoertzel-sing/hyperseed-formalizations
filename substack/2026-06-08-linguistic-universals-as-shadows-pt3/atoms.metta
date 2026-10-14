@@ -81,3 +81,10 @@
 (--> linguistic-universals-pt3 ([] (related-to linguistic-universals-pt2 categorical-formalism)))
 (--> linguistic-universals-pt3 ([] (related-to grand-unified-physics same-weakness-principle)))
 (--> linguistic-universals-pt3 ([] (related-to gtgi compositional-requirements)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> small-commutators ([] (learning-A-then-B approx learning-B-then-A when-independent)))
+(--> frame-layer ([] (not-symbolic-grammar can-be discrete continuous hybrid neural-symbolic)))
+(--> occam-criterion ([] (algebraic-order indistinction fit cost confusion double-counting)))
+(--> occam-criterion ([] (causal-beats-correlation theorem-in-order)))
+(--> small-commutators approximate-fiber-commutativity)

@@ -83,3 +83,25 @@ Eurykosmotron, 2022-01-15.
 17. **AGI flat information connection (d-calculus).** AGI motivation should
     use flat connection — undistorted gradient flow toward goals. No pain
     curvature, no punishment coercion. *(hyperseed-interpretation)*
+
+---
+
+## Pre-v2 claim inventory (PR #49, restored)
+
+The 09-29 v2 rewrite replaced the claim list above. The earlier inventory is kept here because sections restored in `formalization.tex` (marked "Restored from pre-v2 interpretation") cite claims by **this** numbering.
+
+1. **Pain as signal.** Pain evolved as information signal — something is wrong and needs attention. *(source-paraphrase)*
+
+2. **Punishment crude.** Punishment is a crude mechanism that often fails and creates harm cycles. *(source-paraphrase)*
+
+3. **Beyond pain.** Advanced beings can develop better motivational signals than pain. *(source-paraphrase)*
+
+4. **Restorative justice.** Restorative approaches more effective than punitive for most purposes. *(source-paraphrase)*
+
+5. **AGI no pain.** AGI should not use pain/punishment — better motivational architectures exist. *(source-paraphrase)*
+
+6. **Fiber damage signal.** Pain = signal of fiber damage/strain — crude fiber phenomenon. *(inferred)*
+
+7. **Base-space coercion.** Punishment = base-space coercion rather than fiber reshaping. *(inferred)*
+
+8. **Refined fiber signaling.** Advanced systems replace crude pain with refined information fiber. *(inferred)*

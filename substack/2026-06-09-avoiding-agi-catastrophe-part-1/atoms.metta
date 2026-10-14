@@ -86,3 +86,8 @@
 (--> avoiding-catastrophe-pt1 ([] (related-to openbgi asi-chain-infrastructure)))
 (--> avoiding-catastrophe-pt1 ([] (related-to bernies-nationalize centralization-critique)))
 (--> avoiding-catastrophe-pt1 ([] (related-to seven-flavors-catastrophe risk-catalog)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> hyperon ([] (knowledge-metagraph agentic-cognitive-architecture)))
+(--> acatastrophe-floor ([] (pipeline-output governed-by seven-hinges)))
+(--> inference-control-learning ([] (slow-reasoning pattern-extraction guided-next-phase iterate)))

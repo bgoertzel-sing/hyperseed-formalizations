@@ -147,6 +147,82 @@ OpenWater provides decentralized 1-cell infrastructure without centralized
 control, compliance perimeters, or absence-as-guilt.
 \end{proposition}
 
+
+% ---- Restored from pre-v2 interpretation (PR #49): sections dropped by the 09-29 rewrite; claim numbers below refer to the PR #49 inventory appended to claims.md ----
+\section{Statistical watermarking as 0-cell property}
+\label{sec:watermark}
+%% =================================================================
+
+\begin{definition}[Dice-loading, not signing --- claims 1--5, 26]
+\label{def:watermark}
+SynthID-Text works by biasing the model's word choices during generation
+toward patterns detectable by a companion algorithm. This is a
+\emph{fingerprint on one generation process}, not a signature on the
+content. In Hyperseed terms, the watermark is a 0-cell observable
+property:
+\begin{itemize}
+\item It examines observable properties of the current text state
+  (word-choice distributions) without accessing the directed history
+  of how the text was produced.
+\item It tells you about one particular generation path --- not about
+  the full causal history of ideas, research, reasoning, and authorship.
+\item Constrained writing (proofreading, factual reporting) carries
+  almost no watermark because the model has no distributional freedom
+  to exploit.
+\item Short passages lack sufficient statistical evidence for confident
+  detection.
+\end{itemize}
+This is the same detection-vs-provenance distinction from the Provenance
+Layer article: detection examines 0-cells (current observable state);
+provenance asks about 1-cells and higher (transformation history).
+\end{definition}
+
+%% =================================================================
+
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Provenance Layer} (2026-08-25): detection vs.\ provenance
+  as observables vs.\ directed history. Here the same distinction applied
+  to text: statistical watermarking is detection (0-cells); cryptographic
+  provenance is directed history (1-cells).
+\item \textbf{Proof of Humanity} (2026-08-26): OpenWater's four design
+  refusals, including ``no absence-as-guilt.'' Here that refusal is
+  violated by the assumption that unwatermarked text is suspect.
+\item \textbf{Seven Flavors} (2026-07-01): frozen directed type as evil
+  mode. The watermark arms race converges toward frozen directed type ---
+  centralized control over text production that eliminates cooperative
+  dynamics.
+\item \textbf{Sanders Ban} (2026-09-05): state capture of AI development.
+  Mandatory watermark detection is the text-production version of the
+  Sanders ban --- using compliance infrastructure to control who gets to
+  produce what.
+\item \textbf{Big Tech's Bets} (2026-08-02): too-strategic-to-fail
+  dynamics. If watermarking infrastructure becomes too entrenched to
+  dismantle, it becomes a permanent control layer regardless of whether
+  it achieves its stated goals.
+\item \textbf{Zuck's Future} (2026-08-10): access vs.\ ownership. The
+  compliance perimeter creates distributed access to approved AI text
+  without distributed power over what counts as approved.
+\item \textbf{$(f,c)$-lossy critique} (LTM 5a4d150b): binary
+  watermark-detected/not-detected is the ultimate scalar collapse ---
+  reducing the rich provenance question to a single bit.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Reasoning-path watermark persistence]
+Conjecture: reasoning-path watermarks (1-cell fingerprints) are
+exponentially harder to remove than surface watermarks (0-cell fingerprints),
+but also exponentially harder to \emph{inject} reliably. The difficulty
+of injection limits their practical deployment, creating an asymmetry:
+the most robust watermark type is also the least deployable, while the
+most deployable type (sampling-layer) is the least robust. This
+asymmetry means the watermarking approach is fundamentally
+self-undermining at every cell level.
+\end{conjecture}
+
 \section{d-calculus formulation (Hyperseed v2)}
 
 \begin{proposition}[Watermark-provenance curvature --- claim 26]

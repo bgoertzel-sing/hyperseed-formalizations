@@ -108,6 +108,136 @@ non-trivializable bundle. Decentralization works because it doesn't
 require trivialization --- it works with the non-trivial topology.
 \end{proposition}
 
+
+% ---- Restored from pre-v2 interpretation (PR #49): sections dropped by the 09-29 rewrite; claim numbers below refer to the PR #49 inventory appended to claims.md ----
+\section{Section swap vs.\ fiber change}
+\label{sec:section-swap}
+%% =================================================================
+
+\begin{theorem}[Corporate vs.\ government ownership --- claims 1--6, 18]
+\label{thm:section-swap}
+The article's central structural argument: both corporate ownership and
+government ownership of AGI are \emph{sections of the same fiber bundle}
+--- the fiber is ``centralized control,'' and the sections differ only
+in which base point (which entity) the control is anchored to.
+
+Let $E \xrightarrow{\pi} B$ be the governance bundle over the space
+$B$ of possible controlling entities. The fiber $F$ at each point is
+the set of control structures (decisions about development, access,
+safety, deployment). Corporate ownership is a section
+$s_{\text{corp}}: B_{\text{corp}} \to E$ and government ownership is
+a section $s_{\text{gov}}: B_{\text{gov}} \to E$, but both are
+sections of the \emph{same bundle} with the \emph{same fiber}
+$F = \text{CentralizedControl}$:
+\[
+  s_{\text{corp}} \in \Gamma(E|_{B_{\text{corp}}}) \qquad
+  s_{\text{gov}} \in \Gamma(E|_{B_{\text{gov}}})
+\]
+
+Sanders' proposal is a \emph{section swap}: moving from $s_{\text{corp}}$
+to $s_{\text{gov}}$ without changing the bundle structure. The failure
+modes differ (corporate: profit over safety, monopoly extraction,
+shareholder capture; government: bureaucratic ossification, political
+weaponization, regulatory capture) but the structural vulnerability
+--- single point of control --- is identical.
+
+The article acknowledges that Sanders is right about the problem:
+concentration of transformative technology in private hands creates
+unprecedented power asymmetry and a democratic deficit. But the solution
+must change the \emph{fiber}, not just the \emph{section}.
+\end{theorem}
+
+%% =================================================================
+
+\section{The false binary as scalar collapse}
+\label{sec:scalar}
+%% =================================================================
+
+\begin{proposition}[Governance scalar collapse --- claim 22]
+\label{prop:scalar}
+The private-vs-public framing of AGI ownership collapses a
+multi-dimensional governance space into a single binary dimension.
+The actual governance space has at least the following dimensions:
+\begin{itemize}
+\item \textbf{Ownership:} who holds the assets?
+\item \textbf{Governance:} who makes decisions?
+\item \textbf{Participation:} who can contribute?
+\item \textbf{Auditing:} who can inspect?
+\item \textbf{Benefit:} who receives the value?
+\item \textbf{Accountability:} who is responsible for harm?
+\end{itemize}
+
+Collapsing these six dimensions into a single binary
+(private/public) loses the structure that determines actual
+outcomes. A system can be publicly owned but privately governed
+(captured agency), privately owned but publicly auditable
+(regulated utility), or community-governed with no single owner
+(decentralized protocol).
+
+This is the same anti-scalar-collapse principle that appears
+throughout the Hyperseed ontology: the Seven Hinges (risk
+assessment), $(f,c)$ vs.\ scalar truth, scoped reputation vs.\
+scalar trust. The governance problem cannot be meaningfully
+addressed by a single binary choice because the relevant
+structure is multi-dimensional.
+\end{proposition}
+
+%% =================================================================
+
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Avoiding AGI Catastrophe Part 1} (2026-06-09): Seven
+  Hinges. The stewardship hinge directly addresses who governs ---
+  this article argues that neither corporate nor governmental
+  stewardship is structurally adequate; distributed stewardship
+  is needed.
+\item \textbf{The Fable of Benevolent Throttling} (2026-07-12):
+  centralized control failure. The Fable's throttling regime is
+  the corporate-ownership version of centralized control; Sanders'
+  proposal is the governmental version. Both fail for the same
+  structural reasons.
+\item \textbf{The Anthropic Fable Farce} (2026-07-08): institutional
+  capture. The Fable Farce demonstrates how institutional
+  interests (Anthropic's market position) distort the stated
+  purpose (safety). This is the corporate version of the
+  regulatory capture described here.
+\item \textbf{Toward a Truly Decentralized Digital} (2026-08-06):
+  ASI:Chain. The decentralized alternative proposed here is built
+  on the ASI:Chain infrastructure described in the Decentralized
+  Digital article.
+\item \textbf{The Geopolitics of the Great AI Bet} (2026-08-10):
+  international dynamics. The non-trivializable bundle of
+  national interests is analyzed in geopolitical detail.
+\item \textbf{Zuck's Version of the Future} (2026-08-14):
+  corporate concentration. Meta's version of AGI ownership is
+  the corporate section that Sanders wants to replace with a
+  governmental section.
+\item \textbf{$(f,c)$-lossy} (LTM 5a4d150b): anti-scalar-collapse.
+  The private-vs-public binary is governance scalar collapse ---
+  the same principle applied to institutional design.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Section-swap futility]
+Conjecture: for any centralized-control fiber bundle $E$ over
+the space of possible controlling entities $B$, every section
+swap $s_1 \to s_2$ preserves the structural vulnerability
+(single point of failure) while changing only the failure mode
+distribution. Formally, if $V(s)$ is the vulnerability profile
+of section $s$:
+\[
+  \|V(s_1)\|_1 \approx \|V(s_2)\|_1 \quad
+  \text{while} \quad V(s_1) \neq V(s_2)
+\]
+The total vulnerability is approximately conserved under section
+swaps; only its distribution across failure modes changes. Genuine
+vulnerability reduction requires fiber change (decentralization),
+not section swap (different owner).
+\end{conjecture}
+
 \section{d-calculus formulation (Hyperseed v2)}
 
 \begin{proposition}[Centralization curvature --- claim 12]

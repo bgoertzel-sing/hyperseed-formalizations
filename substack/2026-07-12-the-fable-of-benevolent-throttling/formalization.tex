@@ -122,6 +122,160 @@ Open systems don't prevent safety measures --- they prevent the slippage
 from safety to moat by making the slippage visible.
 \end{proposition}
 
+
+% ---- Restored from pre-v2 interpretation (PR #49): sections dropped by the 09-29 rewrite; claim numbers below refer to the PR #49 inventory appended to claims.md ----
+\section{Moral fluency as provenance laundering}
+\label{sec:laundering}
+%% =================================================================
+
+\begin{proposition}[Provenance laundering --- claims 8--9, 24]
+\label{prop:laundering}
+``Put smart, sincere people inside a trillion-dollar pressure cooker
+and they will discover morally fluent reasons to do what the pressure
+cooker rewards.''
+
+In Hyperseed terms, this is \emph{provenance laundering}: the actual
+origin of a decision (competitive pressure, board-level terror at
+losing the lead) is wrapped in a provenance chain (safety review,
+red-team findings, responsible AI framework) that makes it appear to
+be a different kind of decision.
+
+The laundering is effective because:
+\begin{enumerate}
+\item The participants are sincere --- they genuinely believe their
+  safety reasoning. The provenance chain is not fabricated but
+  \emph{selected}: among many possible framings, the one that
+  aligns with competitive interest is the one that gets developed,
+  funded, and implemented.
+\item The safety reasoning is often locally valid --- the individual
+  steps in the provenance chain are sound. What's laundered is not
+  the reasoning but the \emph{selection pressure} that determines
+  which safety concerns get prioritized and which get deprioritized.
+\item The laundering is invisible from inside --- the participants
+  experience themselves as doing safety work, not competitive
+  positioning. The provenance chain looks clean from the inside.
+\end{enumerate}
+
+This is the same $R_{\text{auth}}$ failure mode identified in the
+deceptive open letters analysis: stated origin (safety) doesn't
+match actual origin (competitive pressure). But here the failure is
+more subtle --- the stated origin is \emph{partially} genuine,
+making the provenance laundering harder to detect.
+
+An $R_{\text{auth}}$ system designed to detect this would need to
+check not just whether the safety reasoning is valid but whether the
+\emph{selection} of which safety concerns to prioritize correlates
+with competitive interest --- a second-order provenance check.
+\end{proposition}
+
+%% =================================================================
+
+\section{Decentralization as structural remedy}
+\label{sec:decentral}
+%% =================================================================
+
+\begin{theorem}[Broken monopoly cocycle --- claims 16--21, 25--26]
+\label{thm:decentral}
+The article argues that the only reliable remedies are structural:
+open weights, transparent infrastructure, cryptographic verification,
+distributed governance. These remedies work by \emph{breaking the
+monopoly cocycle}:
+
+\begin{enumerate}
+\item \textbf{Open weights} make transition functions traversable by
+  anyone --- the centralizing cocycle cannot form because no single
+  entity controls the functions.
+\item \textbf{Transparent infrastructure} makes the fiber structure
+  inspectable --- the cocycle ambiguity is lifted because the actual
+  fiber (safety vs.\ competition) becomes observable.
+\item \textbf{Cryptographic verification} provides trustless
+  provenance --- trust is grounded in mathematics rather than
+  institutional authority, making provenance laundering detectable.
+\item \textbf{Distributed governance} prevents any single entity from
+  holding the kill switch or nerf dial --- the centralizing attractor
+  is eliminated because control is distributed by construction.
+\end{enumerate}
+
+The key insight: ``Visibility does not solve everything --- but it
+does prevent lies from getting secretly baked into infrastructure.''
+In Hyperseed terms, visibility is \emph{provenance transparency} ---
+the $R_{\text{auth}}$ principle applied to infrastructure itself.
+Trust in the system is earned through inspectable provenance (open
+code, public logs, verifiable inference) rather than inherited from
+institutional authority (corporate brand, government endorsement).
+
+The article also argues that decentralized safety mechanisms will
+prove \emph{more robust} than centralized ones, ``precisely because
+they don't require trusting any single conflicted party.'' This is
+the same argument as the anti-scalar-collapse principle: distributing
+safety across many independent mechanisms is more robust than
+concentrating it in a single mechanism, because the single mechanism
+is vulnerable to the cocycle ambiguity (its safety function may be
+co-opted for competitive purposes).
+\end{theorem}
+
+%% =================================================================
+
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Watermarking Folly} (2026-07-21): centralizing cocycle.
+  The throttling ratchet is the same centralizing dynamic as the
+  watermarking escalation --- different mechanism, same structural
+  outcome.
+\item \textbf{Kimi K3} (2026-07-20): broken monopoly cocycle. Open
+  weights breaking the centralizing cocycle is the same structure in
+  both analyses --- commoditization of the base space makes
+  centralization unsustainable.
+\item \textbf{Why I Didn't Sign} (2026-07-15): deceptive provenance.
+  Moral fluency under pressure is the corporate version of deceptive
+  open letters --- provenance laundering where the stated origin
+  doesn't match the actual selection pressure.
+\item \textbf{Sanders Ban} (2026-09-05): state control. The
+  government-corporate fusion is the soft version of legislative
+  bans --- both concentrate control over AI development in
+  state-aligned entities.
+\item \textbf{Decentralized Digital} (2026-08-06): infrastructure.
+  The decentralized remedy described here is the same infrastructure
+  being built: SingularityNET, ASI Alliance, ASI:Chain.
+\item \textbf{Seven Flavors} (2026-07-01): attractor dynamics. The
+  oligopolistic endpoint is one of the catastrophe flavors ---
+  concentration of cognitive power in too few hands, regardless of
+  their intentions.
+\item \textbf{Proof of Humanity} (2026-08-04): cryptographic
+  verification. The trustless provenance mechanisms are the same
+  technology applied to different problems --- identity (PoH) vs.\
+  inference (throttling remedy).
+\item \textbf{Goals That Grow Back} (2026-07-28): $R_{\text{auth}}$.
+  Provenance-gated trust is the structural solution to both the
+  throttling cocycle ambiguity and the goals-that-grow-back
+  governance problem.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Cocycle ambiguity resolution theorem]
+Conjecture: the cocycle ambiguity between safety and competitive
+fibers can be resolved if and only if the system satisfies:
+\begin{enumerate}
+\item \textbf{Provenance transparency}: every restriction can be
+  traced to its originating decision process, including the selection
+  criteria for which risks to prioritize.
+\item \textbf{Adversarial audit}: independent parties can test
+  whether the restriction's scope extends beyond its stated safety
+  justification.
+\item \textbf{Distributed control}: no single entity controls both
+  the restriction mechanism and the evaluation of the restriction's
+  scope.
+\end{enumerate}
+Formally: the fiber degeneracy is lifted when the structure group
+of the bundle is extended from $G$ (which acts identically on both
+fibers) to $G \times H$ (where $H$ distinguishes the fibers).
+The three conditions above are the observable consequences of the
+$H$-extension.
+\end{conjecture}
+
 \section{d-calculus formulation (Hyperseed v2)}
 
 \begin{proposition}[Cocycle ambiguity curvature --- claim 18]

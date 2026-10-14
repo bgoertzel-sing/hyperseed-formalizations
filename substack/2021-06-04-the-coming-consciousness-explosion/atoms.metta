@@ -89,3 +89,10 @@
 (--> consciousness-explosion ([] (related-to eurykosmotron-vision)))
 (--> consciousness-explosion ([] (related-to opencog-hyperon-architecture)))
 (--> consciousness-explosion ([] (related-to paraconsistent-logic)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> substrate-diversity ([] (biological silicon hybrid distributed)))
+(--> depth-breadth ([] (intensity richness variety modes)))
+(--> ethical-consciousness ([] (welfare diverse-beings consideration)))
+(--> fiber-thickening-consciousness ([] (more-fibers thicker new-types)))
+(--> substrate-independence ([] (structure-not-material determines-quality)))

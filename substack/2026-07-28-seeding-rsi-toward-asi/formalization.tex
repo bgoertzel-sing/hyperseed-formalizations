@@ -147,6 +147,187 @@ decision quality (fixed self-model). Developmental trials measure
 learning dynamics (evolving self-model over time).
 \end{proposition}
 
+
+% ---- Restored from pre-v2 interpretation (PR #49): sections dropped by the 09-29 rewrite; claim numbers below refer to the PR #49 inventory appended to claims.md ----
+\section{The gap: why blind composition fails}
+\label{sec:gap}
+%% =================================================================
+
+\begin{proposition}[Intractable blind composition --- claims 1--3]
+\label{prop:gap}
+The attempt to build AGI by mashing research papers together into a
+single codebase fails because:
+\begin{enumerate}
+\item The gap between ``works in small test'' and ``works at scale''
+  is not hyperparameter tuning --- it requires algorithmic adjustment,
+  knowledge-representation rethinking, and inter-component communication
+  redesign.
+\item Doing this for dozens of components simultaneously is an
+  intractable global optimization problem: the interaction space
+  grows combinatorially while the evaluation signal is sparse.
+\end{enumerate}
+The solution is to decompose the global optimization into a sequence
+of local integrations, each evaluated independently before the next
+begins.
+\end{proposition}
+
+%% =================================================================
+
+\section{Evaluation ecology as sheaf of assessment sections}
+\label{sec:eval}
+%% =================================================================
+
+\begin{definition}[Evaluation ecology --- claims 14--17, 30]
+\label{def:eval}
+The ProtoAGI test suite is an evaluation ecology, not a leaderboard.
+It produces a multi-dimensional capability profile:
+\[
+  \text{Profile}(H) = (b, l, t, c, m, g, \kappa, \lambda) \in
+  \mathbb{R}^{\dim(\text{capability fiber})}
+\]
+where $b$ = breadth, $l$ = learning, $t$ = transfer, $c$ = calibration,
+$m$ = multi-agent performance, $g$ = governability, $\kappa$ = cost,
+$\lambda$ = latency. No single score --- the weakest capability families
+count for at least as much as the average.
+
+This is a sheaf of assessment sections: each of the ten environments
+provides a local section of the capability fiber, and no global section
+collapses to a scalar. Same anti-scalar-collapse stance as:
+\begin{itemize}
+\item Trust policy in OpenWater (per-observer fiber evaluation),
+\item Rejection of single personhood score (AI Rights),
+\item $(f,c)$-lossy critique (visible STV fusion vs.\ per-packet provenance).
+\end{itemize}
+\end{definition}
+
+%% =================================================================
+
+\section{Trial types and factorial design}
+\label{sec:trials}
+%% =================================================================
+
+\begin{proposition}[Frozen vs.\ developmental --- claims 22--24]
+\label{prop:trials}
+The evaluation suite distinguishes:
+\begin{enumerate}
+\item \textbf{Frozen-state trials}: does the candidate make better
+  decisions immediately? Static capability assessment at a fixed
+  point in the directed type.
+\item \textbf{Developmental trials}: start variants from the same
+  snapshot, expose to the same sequence of experiences, measure
+  learning rate, forgetting, transfer, and reusable knowledge. Dynamic
+  capability assessment along a path in the directed type.
+\item \textbf{Factorial comparisons}: when several mechanisms ($X, Y, Z$)
+  are under study, test all $2^k$ combinations to separate individual
+  value from synergy and interference. This is the experimental design
+  that resolves holonomy questions: does the benefit of $X$ depend on
+  the presence of $Y$?
+\end{enumerate}
+\end{proposition}
+
+%% =================================================================
+
+\section{Testing the tests: calibrating the fiber metric}
+\label{sec:calibration}
+%% =================================================================
+
+\begin{proposition}[Narrow baselines --- claims 25--26, 34]
+\label{prop:baselines}
+For each test in each environment, train narrow AI systems (ML model,
+Bayesian reasoner, evolutionary algorithm) as baselines. The narrow
+system establishes a ceiling for what can be solved without general
+intelligence, calibrating:
+\begin{itemize}
+\item Each test's difficulty (how hard is it even with a specialist?),
+\item Each test's discriminative power (does performance correlate with
+  general intelligence or with a specific narrow hack?).
+\end{itemize}
+In Hyperseed terms, this calibrates the fiber metric: establishing the
+coordinates of the capability fiber before measuring general intelligence
+along them. Without this calibration, the fiber metric is undefined and
+comparisons between mechanisms are meaningless.
+\end{proposition}
+
+%% =================================================================
+
+\section{Education through evaluation: coinductive accumulation}
+\label{sec:education}
+%% =================================================================
+
+\begin{definition}[Suite as school --- claims 27--28, 35]
+\label{def:school}
+Once an episode has been scored and sealed, much of its trace is released
+back into the curriculum: successful procedures, failed plans, proof
+lemmas, fault diagnoses, calibration records, maps, reusable memories.
+The suite acts partly as an exam and partly as a school.
+
+Three tiers of challenge:
+\begin{enumerate}
+\item \textbf{Curriculum}: public, can be studied and learned from,
+\item \textbf{Promotion}: fresh hidden structural instances,
+\item \textbf{Sentinel}: reserved until after candidate code is frozen.
+\end{enumerate}
+
+This creates a coinductive knowledge accumulation loop: evaluation
+produces knowledge that improves the system that produces better
+evaluations. The directed type grows through its own assessment history,
+creating a self-referential but grounded growth process.
+\end{definition}
+
+%% =================================================================
+
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{How Omega Lost Its Claw} (2026-09-11): distributed AGI
+  development as distributed fiber bundle. OmegaHive is the specific
+  development methodology; Omega's architecture is the deployment target.
+\item \textbf{Seven Flavors} (2026-07-01): cognitive architecture
+  determines pathology probability. OmegaHive is the engineering
+  methodology for building the right architecture incrementally.
+\item \textbf{Provenance Layer} (2026-08-25): provenance sheaf for media.
+  The episode protocol applies the same sheaf to the system's own
+  cognitive history.
+\item \textbf{Proof of Humanity} (2026-08-26): role-specific certification
+  as fiber decomposition. Module Space applies the same unbundling to
+  cognitive mechanisms.
+\item \textbf{AI Rights} (2026-09-02): evaluation ecology as sheaf of
+  assessment sections. The same anti-scalar-collapse principle applied
+  to AGI evaluation rather than personhood evaluation.
+\item \textbf{Zuck's Future} (2026-08-10): cognitive architecture matters
+  more than compute. OmegaHive is the engineering answer to the question
+  ``how do you actually build the right architecture?''
+\item \textbf{$(f,c)$-lossy critique} (LTM 5a4d150b): anti-scalar-collapse.
+  The evaluation ecology's refusal to produce a single score is the same
+  principle.
+\item \textbf{$R_{\text{auth}}$ split} (LTM b6ac2932): provenance-decidable
+  trust. Mechanism promotion is provenance-gated by the same logic.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Integration order holonomy]
+Conjecture: different integration orders produce measurably different
+capability profiles even when the same set of mechanisms is eventually
+integrated. The holonomy is nonzero because early mechanisms shape the
+learning trajectory of later mechanisms --- a reasoning engine integrated
+before an attention mechanism encounters different training dynamics than
+one integrated after. This holonomy is reduced but not eliminated by
+post-integration tuning, because the directed type records the
+integration history and that history affects the system's priors.
+\end{conjecture}
+
+\begin{conjecture}[Coinductive convergence]
+Does the evaluation-education coinductive loop converge? Conjecture:
+it converges to a fixed-point capability profile only if the challenge
+generators are themselves upgraded as the system improves --- otherwise
+the system saturates the fixed difficulty and the learning gradient
+vanishes. The coinductive loop is healthy only when the evaluation
+ecology co-evolves with the evaluated system, maintaining a productive
+zone of proximal development.
+\end{conjecture}
+
 \section{d-calculus formulation (Hyperseed v2)}
 
 \begin{proposition}[Integration curvature --- claim 18]

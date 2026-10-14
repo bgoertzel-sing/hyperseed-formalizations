@@ -107,6 +107,59 @@ proof. AI makes this practical by automating routine proof obligations
 and suggesting proof strategies for harder cases.
 \end{proposition}
 
+
+% ---- Restored from pre-v2 interpretation (PR #49): sections dropped by the 09-29 rewrite; claim numbers below refer to the PR #49 inventory appended to claims.md ----
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Un-Jailbreakable AI} (2026-07-10): generate-and-verify.
+  AI-assisted formal verification uses the same architecture:
+  neural generation of candidates, symbolic verification of
+  correctness.
+\item \textbf{Avoiding AGI Catastrophe Part 2} (2026-06-10): MPC and
+  correct-by-construction. The ASI:Chain infrastructure described
+  here is the same infrastructure that the MPC-based cryptographic
+  laterality runs on.
+\item \textbf{Decentralized Digital} (2026-08-06): ASI:Chain
+  infrastructure. The correct-by-construction consensus mechanism
+  is part of the broader ASI:Chain layer-1 development.
+\item \textbf{Seeding RSI} (2026-07-28): MeTTa as implementation
+  language. MeTTa's mathematical foundations are what make the
+  correct-by-construction derivation tractable.
+\item \textbf{How Decentralized AI Can Help Avert Bioterrorism}
+  (2026-06-11): neural-symbolic screening. The AI-assisted
+  verification described here uses the same neural-symbolic
+  architecture applied to DNA sequence screening there.
+\item \textbf{The Anthropic Fable Farce} (2026-07-08): capability
+  diffusion. AI-accelerated bug discovery is capability diffusion
+  applied to the vulnerability landscape --- the same base-space
+  equalization dynamic.
+\item \textbf{Non-invertible 2-cells} (LTM 85c02e32): cocycle defects.
+  The Orchard bug is a concrete instance of the non-invertible
+  witness infecting higher levels --- the local module correctness
+  (1-cell) doesn't guarantee global composition correctness (2-cell).
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Verification reckoning timeline]
+Conjecture: the software-verification reckoning will follow the
+base-space-equalization timeline observed in AI capability
+diffusion --- months, not years. The convergence will be driven
+by AI-accelerated bug discovery making the cost of unverified
+code exceed the cost of verification:
+\[
+  t_{\text{reckoning}} \approx t_0 + \Delta t \cdot
+  \log\left(\frac{C_{\text{verify}}}{C_{\text{exploit}}}\right)
+\]
+where $C_{\text{verify}}$ is the cost of formal verification (decreasing
+as AI improves) and $C_{\text{exploit}}$ is the expected cost of
+exploitation (increasing as AI makes discovery cheaper). The reckoning
+arrives when $C_{\text{verify}} < C_{\text{exploit}}$, at which point
+the economic incentive flips from ``ship fast'' to ``ship proven.''
+\end{conjecture}
+
 \section{d-calculus formulation (Hyperseed v2)}
 
 \begin{proposition}[Cocycle defect curvature --- claim 11]

@@ -82,3 +82,7 @@
 (--> three-paths ([] (related-to closed-ended-quasi-agi not-scaling)))
 (--> three-paths ([] (related-to consciousness-explosion-diverse-types)))
 (--> three-paths ([] (related-to hyperon-architecture path-1)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> different-risks ([] (design-errors unknown-requirements unpredictable)))
+(--> three-fiber-methods ([] (construction different-approaches)))

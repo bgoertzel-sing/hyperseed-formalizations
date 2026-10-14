@@ -94,3 +94,27 @@ Eurykosmotron, 2021-06-02 (introducing arXiv:2103.15100).
     intelligence bundle; pattern recognition = constructing flat sections;
     pattern creation = extending them to new base-space regions.
     *(hyperseed-interpretation)*
+
+---
+
+## Pre-v2 claim inventory (PR #49, restored)
+
+The 09-29 v2 rewrite replaced the claim list above. The earlier inventory is kept here because sections restored in `formalization.tex` (marked "Restored from pre-v2 interpretation") cite claims by **this** numbering.
+
+1. **Structural property.** General intelligence is a structural property, not a specific algorithm. *(source-paraphrase)*
+
+2. **Category-theoretic formalization.** Intelligence can be formalized via category theory — functors and natural transformations. *(source-paraphrase)*
+
+3. **Self-modification required.** General intelligence requires self-modification — adapting internal structure. *(source-paraphrase)*
+
+4. **Goal diversity.** Generality means effectiveness across diverse goals, not single-objective optimization. *(source-paraphrase)*
+
+5. **Emergent.** Intelligence emerges from interaction of simpler components. *(source-paraphrase)*
+
+6. **CogPrime connection.** CogPrime/Hyperon implements these principles via multiple interacting learning algorithms. *(source-paraphrase)*
+
+7. **Intelligence = fiber richness.** General intelligence is thick, diverse fiber enabling flexible response to varied base-space conditions. *(inferred)*
+
+8. **Functors = fiber maps.** Category-theoretic functors are fiber maps — coherent fiber transport across environment categories. *(inferred)*
+
+9. **Self-modification = fiber evolution.** Self-modification is autopoietic fiber dynamics — the fiber reshapes itself. *(inferred)*

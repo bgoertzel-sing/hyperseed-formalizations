@@ -86,3 +86,7 @@
 (--> god-doesnt-double-count ([] (precursor-to evidence-is-to-logic-what-energy-is-to-physics)))
 (--> god-doesnt-double-count ([] (implements pln-confidence-design)))
 (--> god-doesnt-double-count ([] (related-to paraconsistent-interzones)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> information-theoretic ([] (inflates-confidence beyond-warranted)))
+(--> bayesian-discipline ([] (correct-updating practical-failures)))

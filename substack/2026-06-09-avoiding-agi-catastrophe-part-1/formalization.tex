@@ -121,6 +121,128 @@ A forked copy loses the interaction effects (the non-separable
 part), making it a husk. This reduces forkability risk.
 \end{proposition}
 
+
+% ---- Restored from pre-v2 interpretation (PR #49): sections dropped by the 09-29 rewrite; claim numbers below refer to the PR #49 inventory appended to claims.md ----
+\section{How Hyperon sets the hinges}
+\label{sec:hyperon-hinges}
+%% =================================================================
+
+\begin{theorem}[Architectural hinge-setting --- claims 25--31]
+\label{thm:hyperon}
+The article argues that the Hyperon architecture on ASI:Chain
+pushes each of the seven hinges toward the configuration that
+minimizes catastrophe probability:
+
+\begin{enumerate}
+\item \textbf{Chokepoint $\to$ eliminated.} Distributed hardware
+  means no single chokepoint. Predictive coding's localized
+  learning means no dependence on hyperscaler GPU clusters.
+
+\item \textbf{Observability $\to$ maximized.} Open architecture,
+  open knowledge graph, inspectable reasoning chains.
+  Neural-symbolic means reasoning is more transparent than
+  black-box neural nets --- the fiber structure is inspectable
+  by construction.
+
+\item \textbf{Takeoff $\to$ gradual.} Integrative architecture
+  with multiple subsystems (neural, symbolic, evolutionary)
+  makes single-capability explosion less likely. Improvement
+  requires coordinated advance across subsystems.
+
+\item \textbf{Forkability $\to$ low (super-additivity).} The whole
+  is more than the sum of parts. Stolen copy is a husk ---
+  stale, cut off, far weaker than the running system. Dangerous
+  capabilities don't fit inside a copied shard.
+
+\item \textbf{Lead-scaling $\to$ high.} Distributed network's lead
+  scales with participation. More contributors = more diverse
+  inference control patterns = smarter system. Breakaway copies
+  fall behind.
+
+\item \textbf{Offense--defense $\to$ defense.} Open/distributed
+  means more defenders, more eyes, more diverse verification.
+  Structural defense advantage grows with network size.
+
+\item \textbf{Stewardship $\to$ distributed.} Governance
+  distributed across jurisdictions and communities. No single
+  steward to corrupt or coerce. ASI Alliance provides the
+  governance framework.
+\end{enumerate}
+
+The claim is not that each hinge is optimally set, but that the
+architecture pushes each one in the acatastrophic direction ---
+and that no alternative architecture (closed/centralized) pushes
+\emph{all seven} in the right direction. Closed architectures
+may set stewardship well (good intentions) but set chokepoint
+(single target), observability (opaque by design), and
+offense-defense (few defenders) in the wrong direction.
+\end{theorem}
+
+%% =================================================================
+
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Avoiding AGI Catastrophe Part 2} (2026-06-09):
+  companion article. Part 2 extends the analysis with
+  super-additivity proofs, cryptographic laterality, and the
+  bio-risk branch (leading to the bioterrorism article).
+\item \textbf{How Decentralized AI Can Help Avert Bioterrorism}
+  (2026-06-11): bio-specific application. Part 1's forkability
+  analysis explains why forkability is the wrong tool for bio
+  (dangerous capability fits in a tiny shard) --- leading to
+  the physical-layer gating approach.
+\item \textbf{Seven Flavors of AGI Catastrophe} (2026-07-01):
+  catastrophe taxonomy. The Seven Hinges framework provides the
+  analytical tool for evaluating each flavor's probability
+  under different architectures.
+\item \textbf{The Anthropic Fable Farce} (2026-07-08): fiber vs.\
+  section. The Fable episode demonstrates section-level safety
+  failing; this article provides the fiber-level alternative.
+\item \textbf{Un-Jailbreakable AI} (2026-07-10): generate-and-verify.
+  The neural-symbolic architecture described here is the same
+  framework whose security application is the generate-and-verify
+  architecture.
+\item \textbf{Seeding RSI} (2026-07-28): Hyperon architecture.
+  Detailed description of the Hyperon framework whose safety
+  properties this article analyzes.
+\item \textbf{Goals That Grow Back} (2026-07-28): goal preservation.
+  The goal-system architecture referenced here is analyzed in
+  detail in the goals article.
+\item \textbf{Kimi K3} (2026-07-20): capability diffusion.
+  The chokepoint analysis connects to the capability-diffusion
+  argument --- if capability runs on ordinary hardware, the
+  chokepoint is already eliminated.
+\item \textbf{$(f,c)$-lossy} (LTM 5a4d150b): anti-scalar-collapse.
+  The Seven Hinges are the risk-assessment analog of keeping
+  both $f$ and $c$ rather than collapsing to a scalar.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Hinge dominance theorem]
+Conjecture: among the seven hinges, forkability ($\phi$) and
+lead-scaling ($\lambda$) are the dominant bifurcation parameters
+--- the ones most sensitive to architectural choices and with the
+largest effect on catastrophe probability. Formally:
+\[
+  \frac{\partial P_{\text{catastrophe}}}{\partial \phi} \cdot
+  \frac{\partial P_{\text{catastrophe}}}{\partial \lambda} \gg
+  \prod_{h \in \{\chi, \omega, \tau, \delta, \sigma\}}
+  \frac{\partial P_{\text{catastrophe}}}{\partial h}
+\]
+near the bifurcation surface. This is because forkability and
+lead-scaling together determine whether a dangerous breakaway
+is possible and whether the main network can outrun it ---
+the two most direct determinants of whether catastrophe
+dynamics can be initiated.
+
+If this conjecture holds, architectural design should
+prioritize super-additivity (low forkability, high lead-scaling)
+above all other hinge-setting objectives.
+\end{conjecture}
+
 \section{d-calculus formulation (Hyperseed v2)}
 
 \begin{proposition}[Hinge curvature tensor --- claim 38]

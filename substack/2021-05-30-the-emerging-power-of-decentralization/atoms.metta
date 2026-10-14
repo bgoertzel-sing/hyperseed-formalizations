@@ -87,3 +87,8 @@
 (--> decentralization ([] (related-to singularitynet)))
 (--> decentralization ([] (related-to consciousness-explosion-decentralized)))
 (--> decentralization ([] (related-to singularitarian-political-party)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> decentralization-trend ([] (technology fundamental-shift distributed)))
+(--> governance-alternatives ([] (daos liquid-democracy non-hierarchical)))
+(--> fiber-coordination-protocol ([] (coherence-without-center blockchain)))

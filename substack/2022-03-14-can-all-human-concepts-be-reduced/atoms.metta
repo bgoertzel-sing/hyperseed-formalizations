@@ -64,3 +64,16 @@
 (--> semantic-primitives ([] (related-to general-theory-gi common-substrate)))
 (--> semantic-primitives ([] (related-to consciousness-explosion irreducible-consciousness)))
 (--> semantic-primitives ([] (related-to paraconsistent-interzones resist-decomposition)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> jackendoff-conceptual ([] (richer finite primitive-categories)))
+(--> appeal-of-reduction ([] (finite manageable foundation)))
+(--> difficulty-of-reduction ([] (resist-decomposition larger-than-hoped imperfect)))
+(--> approximate-useful ([] (imperfect structure agi-knowledge-rep)))
+(--> cross-cultural-comm ([] (universal shared ground-communication)))
+(--> knowledge-representation ([] (structured-basis reasoning agi)))
+(--> not-purely-abstract ([] (connect-experience grounded)))
+(--> primitives-base-fibers ([] (composed-via products sums pullbacks)))
+(--> composition-fiber-product ([] (categorical complex-from-simple)))
+(--> grounding-base-attachment ([] (physical experiential meaning)))
+(--> approximate-spanning-set ([] (generates-most not-all not-basis)))

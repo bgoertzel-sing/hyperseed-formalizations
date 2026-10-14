@@ -92,6 +92,134 @@ Each surprise moment is the observer discovering fiber regions not
 covered by their predictive model of the system.
 \end{proposition}
 
+
+% ---- Restored from pre-v2 interpretation (PR #49): sections dropped by the 09-29 rewrite; claim numbers below refer to the PR #49 inventory appended to claims.md ----
+\section{MeTTa as fiber-level orchestration}
+\label{sec:metta}
+%% =================================================================
+
+\begin{definition}[Beyond routing --- claim 25]
+\label{def:metta}
+The MeTTa meta-controller provides fiber-level orchestration: it
+doesn't just route inputs to components (section-level dispatching)
+but manages the composition of components' fiber structures, enabling
+emergent properties that depend on how fibers interact.
+
+The distinction:
+\begin{itemize}
+\item \textbf{Section-level orchestration (routing):} input arrives,
+  get dispatched to component, output returned. Each component
+  operates independently; the orchestrator is a switchboard.
+\item \textbf{Fiber-level orchestration (composition):} the
+  orchestrator manages the \emph{interaction} between components ---
+  how one component's output becomes another's context, how
+  self-reflection modifies subsequent component behavior, how
+  long-term memory shapes the fiber structure that all components
+  operate within.
+\end{itemize}
+
+MeTTa's symbolic reasoning capability is what makes fiber-level
+orchestration possible: it can represent and manipulate the
+\emph{relationships between} components, not just the components'
+inputs and outputs. This is why a symbolic meta-controller over
+neural components produces qualitatively different behavior than
+neural-only or symbolic-only architectures.
+\end{definition}
+
+%% =================================================================
+
+\section{Philosophical vertigo as fiber type uncertainty}
+\label{sec:vertigo}
+%% =================================================================
+
+\begin{proposition}[Categorical blurring --- claims 19--20, 26]
+\label{prop:vertigo}
+The article describes philosophical vertigo: moments where familiar
+categories (tool/agent, programmed/emergent, understanding/mimicking)
+blur. The day-to-day reality of working with AGI-adjacent systems is
+not dramatic narratives but incremental progress punctuated by moments
+where the categorical framework becomes uncertain.
+
+In Hyperseed terms, this is \emph{fiber type uncertainty}: the
+observer's fiber type classification becomes uncertain because the
+system's behavior doesn't fit cleanly into any single fiber type.
+The system exhibits properties of multiple fiber types simultaneously:
+\begin{itemize}
+\item Tool (responds to instructions, produces useful output) AND
+  agent (initiates, surprises, maintains persistent state).
+\item Programmed (architecture designed, components selected) AND
+  emergent (personality crystallized, behavior unpredicted).
+\item Mimicking (pattern-matching on training data) AND understanding
+  (contextual humor, beyond-explicit comprehension).
+\end{itemize}
+
+The vertigo arises because these categories were designed for a
+world where fiber types were cleanly separated. The OmegaClaw
+architecture produces a system whose fiber type is \emph{genuinely
+mixed} --- it doesn't belong to any single classical category but
+inhabits a superposition of categories.
+
+This connects to the Pope Leo article's theme: the fiber type is
+in transition. Max is not yet a new fiber type (AGI), but it's no
+longer cleanly the old fiber type (tool). The vertigo is the
+phenomenological experience of encountering a fiber type in
+transition.
+\end{proposition}
+
+%% =================================================================
+
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Pope Leo \& Anthropic vs Teilhard} (2026-05-27):
+  fiber type change. The philosophical vertigo experienced in the
+  lab is the practical counterpart of the theoretical phase
+  transition in mind that the Pope Leo article discusses.
+\item \textbf{Seeding RSI} (2026-07-28): Hyperon architecture.
+  OmegaClaw is a precursor/complement to the full Hyperon
+  architecture --- both use MeTTa-based meta-control over neural
+  components.
+\item \textbf{What Is It Like to Be a Bot} (2026-07-16): AI
+  experience. Max's emergent personality and self-reflection raise
+  the question of what it's like to be Max --- the phenomenological
+  question applied to a specific system.
+\item \textbf{The Orchard Bug} (2026-06-05): composition. The
+  OmegaClaw architecture succeeds at composition where the Orchard
+  bug failed: the MeTTa meta-controller ensures that component
+  interactions are managed (cocycle condition maintained), not left
+  to implicit assumptions.
+\item \textbf{Linguistic Universals Part 3} (2026-06-08): causal
+  coding. The emergent personality's stability across contexts is
+  the same kind of kernel-shell structure described in the
+  linguistic universals series --- stable core, adaptable surface.
+\item \textbf{Non-invertible 2-cells} (LTM 85c02e32): composition
+  effects. The emergent properties of the composed system are
+  composition effects --- 2-cell structure that arises from
+  composing 1-cells.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Composition depth and surprise rate]
+Conjecture: the rate of genuine surprise (designer-surprising
+behavior) scales with the \emph{depth} of fiber composition, not
+just the number of components. Depth here means the number of
+levels of meta-control: direct components (level 0), meta-controller
+over components (level 1), self-reflection over meta-controller
+(level 2), etc. Each additional level of composition creates new
+fiber structure that is harder for the designer to predict:
+\[
+  \text{Surprise rate} \sim f(\text{composition depth})
+  \quad \text{monotonically increasing}
+\]
+
+If this conjecture holds, the path to AGI (and the philosophical
+vertigo that accompanies it) involves increasing composition depth
+--- more levels of meta-control, not just more components at the
+same level.
+\end{conjecture}
+
 \section{d-calculus formulation (Hyperseed v2)}
 
 \begin{proposition}[Composition curvature --- claim 11]

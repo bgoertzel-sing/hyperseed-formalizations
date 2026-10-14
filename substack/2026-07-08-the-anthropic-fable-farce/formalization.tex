@@ -130,6 +130,108 @@ The Fable episode demonstrates section-level safety failing: one
 government directive replaces the safe section with an unsafe one.
 \end{proposition}
 
+
+% ---- Restored from pre-v2 interpretation (PR #49): sections dropped by the 09-29 rewrite; claim numbers below refer to the PR #49 inventory appended to claims.md ----
+\section{The Fable episode as controlled experiment}
+\label{sec:experiment}
+%% =================================================================
+
+\begin{definition}[External cocycle override --- claims 1--6, 22]
+\label{def:override}
+The Fable episode demonstrates a fundamental vulnerability of
+centralized AI systems: a single government directive can override
+the provider's own policies and kill global access.
+
+In Hyperseed terms, this is an \emph{external cocycle override}: the
+transition functions of the capability bundle are rewritten by an
+authority external to the bundle's own governance structure:
+\[
+  g_{ij}^{\text{Anthropic}} \xrightarrow{\text{directive}}
+  g_{ij}^{\text{government}}
+\]
+
+The centralized architecture makes this possible because the entire
+bundle passes through a single control point (Anthropic's API). Any
+entity that can coerce that control point can rewrite the bundle's
+transition functions. The override works regardless of the provider's
+intentions --- Anthropic held principled red lines (no mass surveillance,
+no autonomous weapons) but was overridden anyway.
+
+The episode demonstrates three structural vulnerabilities of
+centralized control:
+\begin{enumerate}
+\item \textbf{Single point of coercion.} All users depend on one API;
+  controlling that API controls all users.
+\item \textbf{Principled refusal is insufficient.} The provider's
+  principles can be overridden by controlling its market access,
+  regulatory status, or supply chain designation.
+\item \textbf{Collateral damage is total.} The directive intended to
+  restrict foreign nationals ended up restricting everyone --- the
+  granularity of centralized control is too coarse for targeted
+  policy.
+\end{enumerate}
+
+This is why structural (fiber-level) safety is needed: it doesn't
+depend on any single institution maintaining good behavior under
+political pressure.
+\end{definition}
+
+%% =================================================================
+
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Fable of Benevolent Throttling} (2026-07-12): same
+  episode analyzed at a deeper structural level. The throttling
+  analysis identifies the cocycle ambiguity (safety vs.\ competition);
+  this article focuses on the geopolitical dynamics.
+\item \textbf{Un-Jailbreakable AI} (2026-07-10): constructive
+  alternative. Where this article diagnoses the failure of centralized
+  control, the un-jailbreakable article provides the neural-symbolic
+  generate-and-verify architecture as the constructive response.
+\item \textbf{Geopolitics of the Great AI Bet} (2026-08-13):
+  geopolitical context. The arms-race frame and government-corporate
+  fusion analyzed here are part of the broader geopolitical dynamics.
+\item \textbf{Why I Didn't Sign} (2026-07-15): provenance theatre.
+  KYC as broken provenance is the same structural pattern as
+  deceptive open letters --- stated provenance doesn't match actual
+  provenance.
+\item \textbf{Proof of Humanity} (2026-08-04): alternative identity
+  verification. The cryptographic provenance mechanisms described
+  there (zero-knowledge proofs, reputation histories) are the
+  constructive alternative to KYC's broken provenance.
+\item \textbf{Big Tech's Big Bets} (2026-07-25): competitive
+  dynamics. The arms-race frame and danger-as-marketing pattern
+  are part of the broader big-tech competitive landscape.
+\item \textbf{Decentralized Digital} (2026-08-06): structural remedy.
+  The open/decentralized infrastructure being built (ASI Alliance,
+  SingularityNET) is the fiber-level safety alternative to
+  institutional (section-level) safety.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Fiber-level safety sufficiency]
+Conjecture: a system with fiber-level safety (safety mechanisms
+built into architecture, not dependent on institutional behavior)
+is robust to any base-space transformation that preserves the fiber
+structure --- i.e., any change that doesn't require rebuilding the
+system from scratch. Formally:
+\[
+  \forall \phi : B \to B' \text{ (base change)}, \quad
+  \text{Safety}(E, \nabla) \implies
+  \text{Safety}(\phi^* E, \phi^* \nabla)
+\]
+where $\phi^* E$ is the pullback bundle and $\phi^* \nabla$ the
+pullback connection. The safety property is preserved because it
+lives in the fiber, not at any particular base point.
+
+Institutional (section-level) safety fails this test: it's a property
+of specific sections $s : B \to E$, and there's no guarantee that
+$\phi^* s$ exists or preserves the safety property.
+\end{conjecture}
+
 \section{d-calculus formulation (Hyperseed v2)}
 
 \begin{proposition}[Cocycle override curvature --- claim 28]

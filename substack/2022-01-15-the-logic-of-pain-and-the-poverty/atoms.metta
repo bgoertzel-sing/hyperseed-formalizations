@@ -88,3 +88,8 @@
 (--> pain-punishment ([] (related-to consciousness-explosion-transcendence)))
 (--> pain-punishment ([] (related-to wellbeing-measurement-minimize)))
 (--> pain-punishment ([] (related-to beneficial-agi-design)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> beyond-pain ([] (advanced better-signals no-suffering)))
+(--> fiber-damage-signal ([] (integrity-threatened crude-phenomenon)))
+(--> refined-fiber-signaling ([] (information-fiber no-suffering same-function)))

@@ -148,6 +148,64 @@ $\leq \varepsilon$. The existence of $s_t \in S^*_\varepsilon$ makes
 safety cheap --- a design choice, not a sacrifice.
 \end{proposition}
 
+
+% ---- Restored from pre-v2 interpretation (PR #49): sections dropped by the 09-29 rewrite; claim numbers below refer to the PR #49 inventory appended to claims.md ----
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Avoiding AGI Catastrophe Part 1} (2026-06-09):
+  companion article. Part 1 establishes the Seven Hinges framework;
+  Part 2 provides the technical mechanisms (super-additivity,
+  essential laterality, MPC) that set the forkability and
+  lead-scaling hinges.
+\item \textbf{How Decentralized AI Can Help Avert Bioterrorism}
+  (2026-06-11): bio-specific application. Part 2's forkability
+  analysis explains why these mechanisms don't help in bio
+  (dangerous capability is small and copyable), motivating the
+  physical-layer approach.
+\item \textbf{Seeding RSI} (2026-07-28): Hyperon architecture.
+  The inference-control patterns described here are the same
+  patterns whose architecture is detailed in the RSI article.
+\item \textbf{Goals That Grow Back} (2026-07-28): goal preservation.
+  The super-additivity argument connects to goal stability: if
+  the goal system's inference control is super-additive, a fork
+  that changes goals also loses capability.
+\item \textbf{Decentralized Digital} (2026-08-06): ASI:Chain
+  infrastructure. The MeTTa-as-smart-contract mechanism runs on
+  the ASI:Chain infrastructure described there.
+\item \textbf{Proof of Humanity} (2026-08-04): reputation system.
+  The live reputation state that the moving-target defense depends
+  on uses the same reputation infrastructure.
+\item \textbf{Un-Jailbreakable AI} (2026-07-10): MPC aspiration.
+  The cryptographic laterality described here is the aspiration
+  mentioned in the jailbreak article --- ``not how things work now''
+  but the direction being built toward.
+\item \textbf{$(f,c)$-lossy} (LTM 5a4d150b): the essential laterality
+  criterion (genuine dependency, not just participation) is the
+  anti-$(f,c)$-lossy principle applied to distributed computation:
+  don't confuse ``touched many nodes'' (high $f$, low $c$) with
+  ``genuinely depends on many nodes'' (high $f$, high $c$).
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Essential laterality scaling]
+Conjecture: in a well-designed Hyperon network with $n$ domain-specialized
+nodes, the essential laterality of catastrophe-relevant inference-control
+decisions scales as $\Omega(\sqrt{n})$ --- growing with network size,
+making forking progressively harder as the network grows. The growth
+rate is sublinear because not every node contributes essentially to
+every decision, but it grows unboundedly because the cross-domain
+meta-patterns that constitute general intelligence draw from an
+ever-widening base of domain-specific expertise as the network expands.
+
+If this conjecture holds, the safety moat widens with network growth
+--- a positive feedback loop where more participation makes the system
+both smarter (more inference control patterns) and safer (higher
+essential laterality for critical decisions).
+\end{conjecture}
+
 \section{d-calculus formulation (Hyperseed v2)}
 
 \begin{proposition}[Laterality curvature --- claim 30]

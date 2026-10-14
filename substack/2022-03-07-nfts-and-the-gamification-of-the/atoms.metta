@@ -74,3 +74,6 @@
 (--> nft-gamification ([] (related-to decentralization-trend)))
 (--> nft-gamification ([] (related-to consciousness-explosion-play)))
 (--> nft-gamification ([] (related-to well-being-measurement)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> post-scarcity-transition ([] (experience-economy meaning beyond-material)))

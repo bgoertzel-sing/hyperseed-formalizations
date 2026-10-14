@@ -54,3 +54,18 @@
 (--> agi-curriculum ([] (related-to what-is-it-like-to-be-a-bot experience-level)))
 (--> agi-curriculum ([] (related-to avoiding-catastrophe education-hinge)))
 (--> agi-curriculum ([] (related-to tag-youre-not-it architecture-understanding)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> agi-education ([] (multiple-perspectives no-one-sold)))
+(--> current-ai-practice ([] (thinking-deficit ask-chatgpt-instead)))
+(--> hasty-experiments ([] (insufficient for-agi)))
+(--> agi-obstacles ([] (require hard-thinking humans-and-ais)))
+(--> agi-curriculum ([] (dual-cultivation practical-craft and-deep-thinking)))
+(--> ai-ethics ([] (not-fundamentally guardrails-or-prompt-rules)))
+(--> ai-ethics ([] (deeper-questions what-does-it-mean-to-have-a-value)))
+(--> ai-ethics ([] collaborative-exploration))
+(--> enrolled-program ([] (forcing-function for-finished-material)))
+(--> agi-field ([] (transitioning theory-to-practice)))
+(--> current-era ([] (perfect-moment for-agi-education)))
+(--> multiple-perspectives sheaf-of-local-sections)
+(--> sheaf-of-local-sections ([] (no-single-global-section discover-gluing-and-conflicts)))

@@ -110,3 +110,16 @@
 (--> seven-flavors ([] (related-to avoiding-catastrophe-pt1 seven-hinges)))
 (--> seven-flavors ([] (related-to tag-youre-not-it agent-first-societies)))
 (--> seven-flavors ([] (related-to grand-unified-physics individuation-dialectic)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> malignant-over-individuation ([] (locks-in permanent-advantage)))
+(--> attractor-research ([] (massively-more needed)))
+(--> compassion-stability ([] (compassionate-agi stays-compassionate)))
+(--> compassion-stability ([] (because can-simulate-enough-to-avoid-rogue-mods)))
+(--> compassion-stability ([] hypothesis-could-be-wrong))
+(--> compassion-stability benevolent-attractor-in-holonomy-space)
+(--> coordination-tax ([] (trustless-coordination overhead)))
+(--> coordination-tax ([] generalized-moloch))
+(--> flash-crash ([] (complex-ecosystem systemic-crash)))
+(--> surveillance-equilibrium ([] (nobody-chose emergent-unfreedom)))
+(--> decentralized-development ([] structural-defense-against-arms-race))

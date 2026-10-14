@@ -135,6 +135,111 @@ independence, which only an open ecosystem can generate: a single company
 produces correlated verifiers by construction.
 \end{proposition}
 
+
+% ---- Restored from pre-v2 interpretation (PR #49): sections dropped by the 09-29 rewrite; claim numbers below refer to the PR #49 inventory appended to claims.md ----
+\section{Decision spine as fiber routing}
+\label{sec:spine}
+%% =================================================================
+
+\begin{definition}[Structural routing --- claims 18--22, 31]
+\label{def:spine}
+The article provides a structured decision tree for whether open or
+closed is safer for a given dangerous capability. Each decision node
+corresponds to a fiber property:
+
+\begin{enumerate}
+\item \textbf{Containable?} Is the dangerous capability separable
+  from the rest of the model (fiber factorization)? Or is it latent
+  in the weights and re-derivable from public knowledge (fiber
+  reconstruction from base)?
+
+\item \textbf{Armed anyway?} Does a determined adversary get the
+  capability regardless of the open/closed choice? If yes, closing
+  changes how many \emph{defenders} get the tool, not how many
+  attackers. This is fiber symmetry: the same fiber serves both
+  offense and defense.
+
+\item \textbf{Defense balance?} Is the capability defense-symmetric
+  (helps defenders as much as attackers)? Is harm diffuse (many small
+  attacks, statistical defense works) or catastrophic-tail (one
+  irreversible success, statistical defense insufficient)?
+
+\item \textbf{Gate reliable?} In the rare case of genuine monopoly,
+  is the closed gate both jailbreak-robust and politically stable?
+  The Fable episode demonstrates that neither holds in practice.
+\end{enumerate}
+
+Under conditions that actually hold today, most cases route to the
+open-and-gated leaves: the dangerous capabilities are either
+re-derivable (not containable), already available through other
+models (adversary armed anyway), defense-symmetric with diffuse
+harm (software exploitation), or behind unreliable gates (Fable
+episode). Closure mostly reaches the same security floor by a worse
+road --- losing the diversity advantage without gaining containment.
+
+The one branch where closed wins (genuine monopoly, reliable gate)
+requires conditions that are empirically rare and unstable.
+\end{definition}
+
+%% =================================================================
+
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Fable of Benevolent Throttling} (2026-07-12): the
+  Fable episode this article responds to. The throttling analysis
+  identifies the cocycle ambiguity (safety vs. competition); this
+  article provides the constructive alternative (generate-and-verify).
+\item \textbf{Watermarking Folly} (2026-07-21): statistical detection
+  as 0-cell analysis. Both watermarking and per-prompt security
+  fail because they analyze 0-cells (individual events) when the
+  relevant structure is in 1-cells (directed sequences). Campaign-level
+  security is the jailbreak analog of the watermarking critique.
+\item \textbf{Kimi K3} (2026-07-20): diverse model ecosystem. The
+  diverse verifier ensemble argument mirrors the diverse model
+  argument --- both are anti-scalar-collapse through multiplicity.
+\item \textbf{Why I Didn't Sign} (2026-07-15): decentralized
+  development. The diverse verifier ecosystem is the security
+  specialization of the general argument for decentralized AI
+  development.
+\item \textbf{Goals That Grow Back} (2026-07-28): gate and weave.
+  The generate-and-verify architecture is a gate-and-weave system:
+  the verification ensemble is the gate; the generation model
+  is the weave.
+\item \textbf{Seeding RSI} (2026-07-28): Hyperon architecture. The
+  generate-and-verify architecture uses Hyperon components (PLN,
+  ECAN) --- it's a security application of the Hyperon cognitive
+  framework.
+\item \textbf{Decentralized Digital} (2026-08-06): cryptographic
+  laterality. The MPC/secret-sharing aspiration connects to the
+  broader decentralized infrastructure vision.
+\item \textbf{$(f,c)$-lossy} (LTM 5a4d150b): the PLN two-number
+  system is the constructive response to the $(f,c)$-lossy
+  critique --- keeping both numbers rather than collapsing to one.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Verification diversity theorem]
+Conjecture: the jailbreak resistance of a deployment is bounded below
+by a function of the verification ensemble's diversity, not by any
+individual verifier's capability. Formally, if the ensemble has $n$
+independent verifiers with individual false-negative rates
+$\epsilon_1, \ldots, \epsilon_n$, the ensemble's false-negative rate
+is bounded by:
+\[
+  \epsilon_{\text{ensemble}} \leq \prod_{i=1}^{n} \epsilon_i
+\]
+under independence. The key is that independence is a \emph{structural}
+property of the ecosystem --- open ecosystems achieve it naturally
+(different teams, codebases, incentives); closed ecosystems cannot
+(shared institutional context). The diversity bound explains why
+``more eyeballs on the bugs'' works specifically for security: it's
+not that each eyeball is better, but that independent eyeballs have
+uncorrelated failure modes.
+\end{conjecture}
+
 \section{d-calculus formulation (Hyperseed v2)}
 
 \begin{proposition}[Verification depth curvature --- claim 25]

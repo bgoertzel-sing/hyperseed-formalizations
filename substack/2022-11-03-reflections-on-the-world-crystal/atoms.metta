@@ -83,3 +83,7 @@
 (--> world-crystal ([] (related-to general-theory-gi-structural)))
 (--> world-crystal ([] (related-to parafinity-finite-infinite)))
 (--> world-crystal ([] (related-to paraconsistent-interzones-boundaries)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> consciousness-structure ([] (computational-patterns structural-property)))
+(--> fiber-coarse-graining ([] (average macro-scale continuous-emerges)))

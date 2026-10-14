@@ -70,3 +70,6 @@
 (--> anthropic-fable-farce ([] (related-to avoiding-catastrophe chokepoint-stewardship)))
 (--> anthropic-fable-farce ([] (related-to seven-flavors arms-race-humanity-stupid-evil)))
 (--> anthropic-fable-farce ([] (related-to tag-youre-not-it platform-lock-in)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> cocycle-contradiction ([] (danger-framing composed-with export-control contradicts-intended-trajectory)))

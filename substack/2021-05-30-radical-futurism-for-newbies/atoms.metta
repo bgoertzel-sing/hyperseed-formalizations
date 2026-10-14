@@ -46,3 +46,18 @@
 (--> radical-futurism ([] (related-to three-paths portfolio-diversification)))
 (--> radical-futurism ([] (related-to beneficial-agi steering-choice)))
 (--> radical-futurism ([] (related-to consciousness-explosion expanding-forms)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> accelerating-progress ([] (each-decade more-change trajectory)))
+(--> plausibly-near ([] (decades not-centuries trajectory)))
+(--> not-inevitable ([] (delayed-possible catastrophe regulation dead-ends)))
+(--> multiple-approaches ([] (neural symbolic hybrid emulation viable)))
+(--> singularitynet ([] (decentralized open accessible not-one-entity)))
+(--> opencog-hyperon ([] (hybrid-architecture multiple-paradigms combining)))
+(--> agi-accelerates-longevity ([] (biological-problems beyond-current dramatically)))
+(--> healthspan-not-just-lifespan ([] (living-healthier not-just-longer)))
+(--> substrate-independence ([] (computational not-just-biological consciousness)))
+(--> identity-questions ([] (is-upload-you continuity profound)))
+(--> gradual-transition ([] (brain-computer-interface smoother gradual-replacement)))
+(--> decentralization-helps ([] (reduces-capture narrow-interests)))
+(--> existential-risk-fiber-catastrophe ([] (destruction millennia-built civilization consciousness)))

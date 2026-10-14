@@ -157,6 +157,62 @@ environmental/health domain: many observers sampling the same
 underlying biological threat landscape from different vantage points.
 \end{proposition}
 
+
+% ---- Restored from pre-v2 interpretation (PR #49): sections dropped by the 09-29 rewrite; claim numbers below refer to the PR #49 inventory appended to claims.md ----
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Un-Jailbreakable AI} (2026-07-10): generate-and-verify
+  architecture. The neural-symbolic screening system for DNA synthesis
+  is the same architecture applied to a different domain. Both fuse
+  neural pattern recognition with symbolic provenance reasoning.
+\item \textbf{Avoiding AGI Catastrophe Parts 1--2} (2026-06-09):
+  companion articles. Part 2 introduces super-additivity and
+  cryptographic laterality for AGI safety; this article explains
+  why those tools don't apply to biosecurity (information is too
+  small and copyable) and identifies the physical-layer alternative.
+\item \textbf{Fable of Benevolent Throttling} (2026-07-12): central
+  vs.\ distributed control. The central authority problems identified
+  here (single point of failure, honeypot, political non-starter)
+  are the same structural vulnerabilities of the throttling regime.
+\item \textbf{Proof of Humanity} (2026-08-04): identity verification.
+  The cryptographic device identity and operator credentials described
+  here use the same infrastructure (ASI:Chain) and principles
+  (zero-knowledge proofs, verifiable credentials) as the Proof of
+  Humanity system.
+\item \textbf{Decentralized Digital} (2026-08-06): ASI Alliance
+  infrastructure. The ASI:Chain infrastructure underlying the
+  identity and reputation layers is part of the broader decentralized
+  AI infrastructure being built.
+\item \textbf{Goals That Grow Back} (2026-07-28): reputation as trust.
+  The scoped, fading, delegable reputation system is a concrete
+  implementation of provenance-gated trust --- the $R_{\text{auth}}$
+  principle applied to biosecurity governance.
+\item \textbf{$(f,c)$-lossy} (LTM 5a4d150b): multi-fiber trust.
+  The scoped reputation system is anti-$(f,c)$-lossy by construction:
+  each trust dimension has its own $(f,c)$ values, preserving the
+  structure that a scalar trust score would collapse.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Physical-layer security sufficiency]
+Conjecture: when the information fiber is uncontainable (the dangerous
+capability is small, copyable, and un-recallable), the security floor
+achievable through physical-layer gating alone is bounded below by:
+\[
+  S_{\text{floor}} \geq 1 - \prod_{j \in \text{gates}}
+  (1 - s_j)
+\]
+where $s_j$ is the effectiveness of gate $j$ (reagent supply control,
+synthesis screening, equipment tracking). The bound is tight when the
+gates are independent --- another instance of the anti-scalar-collapse
+principle: multiple independent gates provide multiplicative security
+improvement, while a single centralized gate provides only additive
+improvement and is vulnerable to single-point failure.
+\end{conjecture}
+
 \section{d-calculus formulation (Hyperseed v2)}
 
 \begin{proposition}[Information-physical asymmetry curvature --- claim 18]

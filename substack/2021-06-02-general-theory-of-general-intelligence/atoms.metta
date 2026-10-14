@@ -96,3 +96,7 @@
 (--> general-theory-gi ([] (related-to cogprime-hyperon-architecture)))
 (--> general-theory-gi ([] (related-to consciousness-explosion)))
 (--> general-theory-gi ([] (related-to pln-truth-values)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> emergent-intelligence ([] (interaction simpler-components collective)))
+(--> functors-fiber-maps ([] (coherent transport across-categories)))

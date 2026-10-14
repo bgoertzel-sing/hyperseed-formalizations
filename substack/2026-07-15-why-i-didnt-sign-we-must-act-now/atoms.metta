@@ -51,3 +51,16 @@
 (--> why-i-didnt-sign ([] (related-to seven-flavors eternal-regime humanity-evil)))
 (--> why-i-didnt-sign ([] (related-to avoiding-catastrophe stewardship-hinge)))
 (--> why-i-didnt-sign ([] (related-to sanders-ban legislative-intent-vs-effect)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> complement-humans-framing ([] (tell encodes anti-agi-steering)))
+(--> tools-only-ai ([] (fine but-not-to-exclusion-of autonomous-agi)))
+(--> expert-steering ([] hubris))
+(--> intermediate-cases ([] (enormous-space eludes-foresight)))
+(--> agi-transition ([] (worked-out-as-we-go tap-dancing)))
+(--> broken-provenance ([] (stated-origin doesnt-match actual-origin)))
+(--> broken-provenance ([] (r-auth-split designed-to-detect)))
+(--> ai-development ([] (global-brain guides not-expert-panel)))
+(--> complementarity ([] (emerges from-bottom-up-ferment)))
+(--> human-ai-complementarity ([] (worked-out-in-doing billions-of-interactions)))
+(--> human-ai-complementarity ([] (unanticipatable forking remixing)))

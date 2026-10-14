@@ -60,3 +60,15 @@
 (--> psi-reality ([] (related-to world-crystal information-leakage)))
 (--> psi-reality ([] (related-to consciousness-explosion enhanced-psi)))
 (--> psi-reality ([] (related-to paraconsistency violates-classical-assumptions)))
+
+; ---- Restored from pre-v2 interpretation (PR #49): atoms dropped by the 09-29 rewrite (near-duplicates of v2 atoms skipped) ----
+(--> witnessed-psi ([] (direct-observation robust not-second-hand)))
+(--> not-easily-dismissed ([] (insufficient-conventional resist-explanation)))
+(--> replication-issues ([] (individual-hard aggregate-consistent)))
+(--> rigorous-methodology ([] (double-blind pre-registered automated)))
+(--> psi-information-transfer ([] (unrecognized-channels)))
+(--> psi-consciousness-link ([] (deep poorly-captured both)))
+(--> observer-effects ([] (quantum consciousness-interacting beyond-classical)))
+(--> consciousness-fiber-self-reference ([] (self-referential aware-of-structure)))
+(--> expanded-base-space ([] (beyond-4D additional-dimensions non-local)))
+(--> agi-psi-investigation ([] (large-datasets thick-fiber thin-evidence)))
