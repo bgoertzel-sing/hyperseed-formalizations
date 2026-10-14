@@ -212,3 +212,21 @@ Eurykosmotron, 2026-09-12.
     verifying that self-modification preserves beneficial properties is the
     formal-verification instantiation of identity-preserving self-modification
     from Time's Arrow Part 1 (claims 44–45). *(inferred)*
+
+## Hyperseed v2 / d-calculus (deepened 2026-10-14)
+
+41. **Verifier resolution and d-holonomy defect.** Well-definedness = how
+    finely a verifier can decide distance to the success set; holonomy defect
+    = how far a research loop moves a fiber element in d; noise floor =
+    run-to-run spread. *(inferred)*
+
+42. **Verification turns competence into cost.** With a sound verifier at
+    resolution eps, every accepted output is within eps of a solution and
+    expected attempts are 1/p; generator competence only sets cost. Without a
+    verifier, competence sets correctness. One mechanism for the
+    proving/conjecturing gradient. *(inferred; short proof given)*
+
+43. **Conjecturing needs holonomy above the noise floor.** Training-data-only
+    systems should show loop displacement within run-to-run spread; hybrid
+    systems with extra-distributional input should exceed it on some loops.
+    *(hypothesis)*

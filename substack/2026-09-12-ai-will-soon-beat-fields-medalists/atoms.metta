@@ -144,3 +144,9 @@
 (--> math-ai-tools ([] (should-be open-source)))
 (==> (--> math-ai-tools ([] proprietary))
      (--> mathematical-power ([] concentrated)))
+
+;; ---- Hyperseed v2 / d-calculus (claims 41-43), deepened 2026-10-14 ----
+(--> verifier-d-resolution ([] (distance-to-success-set well-definedness holonomy-defect noise-floor)))
+(--> verification-competence-to-cost ([] (sound-verifier geometric-attempts correctness-guaranteed)))
+(==> (--> $t ([] (sound-verifier finite-resolution))) (--> $t ([] competence-sets-cost-only)))
+(--> conjecturing-holonomy-above-noise ([] (loop-displacement run-spread hybrid-exceeds)))

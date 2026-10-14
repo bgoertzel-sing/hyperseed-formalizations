@@ -271,6 +271,54 @@ $\ll$ the prize value, the motivational function of $M$ collapses:
 The intrinsic mathematical value of the problems remains unchanged.
 \end{proposition}
 
+\section{d-calculus formulation (Hyperseed v2)}
+\label{sec:v2}
+
+\begin{definition}[Verifier resolution and $d$-holonomy defect --- claim 41]
+\label{def:v2-resolution}
+Let $(X_\tau,d)$ be the space of candidate outputs for a task $\tau$, with
+the Hyperseed v2 distinction metric $d$, and let $S_\tau\subseteq X_\tau$ be
+its success set. A verifier for $\tau$ has \emph{resolution} $\epsilon_\tau$
+if it accepts $x$ only when $d(x,S_\tau)\le\epsilon_\tau$. The
+well-definedness of Definition~\ref{def:well-definedness} is then read as
+a decreasing function of $\epsilon_\tau$: formal conjectures have
+$\epsilon_\tau=0$, open-ended research has no finite $\epsilon_\tau$.
+For a loop $\gamma$ in the base of research contexts with transport
+$P_\gamma$ on a fiber (Definition~\ref{def:fiber-holonomy}), the
+\emph{$d$-holonomy defect} is $h(\gamma)=\sup_x d(x,P_\gamma x)$, and the
+\emph{noise floor} $\eta$ is the largest $d$-distance between two runs of
+the same loop from the same start.
+\end{definition}
+
+\begin{proposition}[Verification turns competence into cost --- claim 42]
+\label{prop:v2-verify}
+Let a generator with success probability $p>0$ per attempt (landing within
+$\epsilon_\tau$ of $S_\tau$) be gated by a verifier of resolution
+$\epsilon_\tau$, retrying until acceptance. Then every accepted output
+satisfies $d(x,S_\tau)\le\epsilon_\tau$, whatever the generator's quality,
+and the expected number of attempts is $1/p$ (geometric distribution).
+So for well-defined tasks the competence $\kappa_L$ of
+Definition~\ref{def:llm-competence} only sets \emph{cost}. Without a
+verifier, $\kappa_L$ sets \emph{correctness} directly. This gives one
+mechanism for the gradient of Proposition~\ref{prop:gradient}: well-defined
+mathematics benefits from the epistemic firewall
+(Definition~\ref{def:firewall}), and conjecturing does not have one.
+\end{proposition}
+
+\begin{conjecture}[Conjecturing needs holonomy above the noise floor --- claim 43]
+\label{conj:v2-noise}
+Theorem~\ref{thm:trivial-holonomy} says training-data variation $V_D$ has
+trivial holonomy ``modulo stochastic noise.'' In $d$-terms:
+$h(\gamma)\le\eta$ for every loop. Prediction: run the same research loop
+(explore area $A$, move to $B$, return to $A$) several times with
+different seeds, and measure how far the returned conjecture sets are from
+the starting ones. For a $V_D$-only system this displacement stays within
+the run-to-run spread $\eta$. A hybrid system with an extra-distributional
+source ($E_R$) should show $h(\gamma)>\eta$ on some loops. This turns
+``genuinely novel mathematical structure'' into a quantity one can measure,
+and it is consistent with claim 38 (the training-data well).
+\end{conjecture}
+
 %% =================================================================
 \section{Open questions and connections}
 %% =================================================================
