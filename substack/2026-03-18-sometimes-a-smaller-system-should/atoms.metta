@@ -61,3 +61,9 @@
 ;; Fiber-base alignment
 (--> semantic-corridors fiber-base-alignment)
 (--> fiber-base-alignment ([] (routing-inference-align efficient-paths d-calculus-connection)))
+
+;; ---- Hyperseed v2 / d-calculus (claims 28-30), deepened 2026-10-14 ----
+(--> quantumity-levels-d ([] (covering-over-budget commutator-defect observer-resolution)))
+(--> subresolution-noncommutativity-invisible ([] (lipschitz-probes swap-bound appears-classical)))
+(==> (--> $o ([] (defect-below-resolution))) (--> $o ([] sees-classical)))
+(--> quantum-selfmodel-threshold ([] (planning-depth commutator-defect beats-classical)))

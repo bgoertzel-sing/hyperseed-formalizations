@@ -162,3 +162,19 @@ Eurykosmotron, 2026-03-18.
     align. These are the paths through the base along which the fiber operates
     most efficiently — the fiber-base alignment that the d-calculus
     formalizes as fiber-base connection. *(inferred)*
+
+## Hyperseed v2 / d-calculus (deepened 2026-10-14)
+
+28. **Quantumity levels in d.** Opacity = covering number at observer
+    resolution exceeds observer budget; incompatibility = probe commutator
+    defect (in d) exceeds observer resolution. *(inferred)*
+
+29. **Sub-resolution non-commutativity is invisible.** With 1-Lipschitz probes,
+    reordering k probes moves the state by at most C(k,2) times the max
+    commutator defect; below resolution the system looks classical, so the
+    same system can be classical or quantum depending on resolution and
+    experiment depth. *(inferred; short proof given)*
+
+30. **When a quantum self-model pays.** A non-commutative self-model should beat
+    a classical one per bit exactly when C(k,2)*max-defect >= resolution at the
+    system's planning depth k. *(hypothesis)*

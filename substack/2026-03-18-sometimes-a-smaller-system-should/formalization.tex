@@ -236,6 +236,55 @@ The system should preferentially self-observe along its semantic corridors
 self-observation yields the most useful information per bandwidth unit.
 \end{proposition}
 
+\section{d-calculus formulation (Hyperseed v2)}
+\label{sec:v2}
+
+\begin{definition}[Observer resolution and quantumity levels in $d$ --- claim 28]
+\label{def:v2-resolution}
+Let $(B,d)$ be the system's state space with the Hyperseed v2 distinction
+metric $d$. An observer $O$ has a working resolution $\epsilon_O>0$ and an
+evidential budget $R_O$ (how many distinguishable states it can track).
+Let $N_d(B,\epsilon)$ be the covering number of $B$ at resolution $\epsilon$.
+Probes are maps $P_a:B\to B$, because probing changes caches, locks and
+scheduling. Then the first two levels of Definition~\ref{def:levels} become:
+\begin{itemize}
+\item \textbf{Level 1 (opacity):} $N_d(B,\epsilon_O) > R_O$, so the observer
+  must merge $d$-distinct states.
+\item \textbf{Level 2 (incompatibility):} the commutator defect
+  $\kappa_{ab}=\sup_{x\in B} d(P_aP_bx,\;P_bP_ax)$ exceeds $\epsilon_O$ for some
+  pair of probes $a,b$.
+\end{itemize}
+\end{definition}
+
+\begin{proposition}[Sub-resolution non-commutativity is invisible --- claim 29]
+\label{prop:v2-invisible}
+If $\kappa_{ab}<\epsilon_O$ for all probe pairs, then no pair of two-probe
+experiments run in different orders gives outcomes that $O$ can tell apart.
+Assume further that each probe is $1$-Lipschitz in $d$. Then for any word
+of $k$ probes, every reordering moves the final state by at most
+$\binom{k}{2}\max\kappa$. This holds because a reordering is a product of at
+most $\binom{k}{2}$ adjacent swaps. Each swap moves the state by at most
+$\kappa$, and later probes do not amplify that change. So $O$ sees classical
+(order-independent) behaviour on depth-$k$ experiments whenever
+$\binom{k}{2}\max\kappa<\epsilon_O$. Quantumity is relative to the observer
+(Theorem~\ref{thm:relative}) in a quantitative way: refining $\epsilon_O$ or
+running longer experiments can move the same system from Level 0 to Level 2.
+\end{proposition}
+
+\begin{conjecture}[When a quantum self-model pays --- claim 30]
+\label{conj:v2-selfmodel}
+For self-observation (Theorem~\ref{thm:self}), the observer is a
+subsystem, so $R_O < N_d(B,\epsilon_O)$ automatically, and its own probes
+are internal operations with nonzero $\kappa$. Prediction: a
+non-commutative (density-matrix) self-model beats a classical
+probabilistic self-model, measured as predictive loss per bit of
+self-model, exactly in the regime where
+$\binom{k}{2}\max\kappa\ge\epsilon_O$ for the planning depth $k$ the system
+actually uses. Below that threshold, a classical self-model should be just
+as good and cheaper. This makes claims 14--16 testable on a running system
+by measuring $\kappa$ between its internal operations.
+\end{conjecture}
+
 %% =================================================================
 \section{Cross-references}
 %% =================================================================
