@@ -48,3 +48,9 @@
 (--> fiber-base-unification ([] (distinction-dissolves same-hardware same-ops)))
 (--> gradient-flow differentiable-fiber)
 (--> differentiable-fiber ([] (optimizable learn-rules gradient-descent)))
+
+;; ---- Hyperseed v2 / d-calculus (claims 32-34), deepened 2026-10-14 ----
+(--> truth-tensor-d-metric ([] (max-diff confidence-weighted-strength boolean-special-case)))
+(--> contraction-non-expansive ([] (row-substochastic error-additive linear-in-depth)))
+(==> (--> $p ([] row-substochastic)) (--> $p ([] d-non-expansive)))
+(--> sparsity-threshold-resolution ([] (delta-eps-over-mk bounded-error prune-safe)))

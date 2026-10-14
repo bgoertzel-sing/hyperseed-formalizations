@@ -200,6 +200,50 @@ for practical performance --- dense representations would waste memory
 and compute on zero entries.
 \end{theorem}
 
+\section{d-calculus formulation (Hyperseed v2)}
+\label{sec:v2}
+
+\begin{definition}[Distinction metric on truth tensors --- claim 32]
+\label{def:v2-tensor-metric}
+For PLN truth tensors $T,T'$ over the same index set, with entries
+$(s,c)\in[0,1]^2$, let the evidence-weighted strength be $e=s\cdot c$ and set
+\[
+  d(T,T') \;=\; \max_{x} \,|e_x - e'_x| .
+\]
+Here $d$ is the Hyperseed v2 distinction metric restricted to the fiber of
+truth values. Two knowledge bases are indistinguishable at resolution
+$\epsilon$ when $d(T,T')<\epsilon$. Boolean tensors are the special case
+$c=1$, $s\in\{0,1\}$, where $d$ only takes the values $0$ and $1$.
+\end{definition}
+
+\begin{proposition}[Contraction is non-expansive in $d$ --- claim 33]
+\label{prop:v2-nonexp}
+Let a rule tensor $P$ be row-substochastic ($P_{xy}\ge 0$,
+$\sum_y P_{xy}\le 1$) and let $w,w'\in[0,1]^n$. Then for the transport
+$Q=Pw$ of Theorem~\ref{thm:transport},
+\[
+  \|Pw-P'w'\|_\infty \;\le\; \|P-P'\|_{\infty} + \|w-w'\|_\infty ,
+\]
+where $\|\cdot\|_\infty$ on matrices is the maximum row sum. Proof: write
+$Pw-P'w' = (P-P')w + P'(w-w')$; then use $\|w\|_\infty\le 1$ and
+$\|P'\|_\infty\le 1$. Consequence: along a chain of $k$ contractions,
+the error in $d$ is at most the sum of the per-step perturbations. It grows
+linearly in inference depth, never exponentially. This is the d-calculus
+reading of ``fiber transport preserves distinctions up to bounded loss.''
+\end{proposition}
+
+\begin{conjecture}[Sparsity threshold = working resolution --- claim 34]
+\label{conj:v2-sparsity}
+Prune every entry of $P$ with $P_{xy}<\delta$. If each row has at most $m$
+such entries, Proposition~\ref{prop:v2-nonexp} bounds the extra transport
+error by $m\delta$ per step. Choosing $\delta=\epsilon/(mk)$ for depth-$k$
+inference keeps pruned and unpruned results within the working resolution
+$\epsilon$. Prediction: the sparse optimization of claim 22 is safe exactly
+when the pruning threshold is tied to resolution and depth in this way.
+Pruning more aggressively than that should produce detectable
+d-distinctions in the conclusions.
+\end{conjecture}
+
 %% =================================================================
 \section{Cross-references}
 %% =================================================================

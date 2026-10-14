@@ -151,3 +151,17 @@ Eurykosmotron, 2025-12-16.
     logical inference, the fiber becomes differentiable — its structure
     can be optimized by gradient descent, enabling learning of logical
     rules from data. *(inferred)*
+
+## Hyperseed v2 / d-calculus (deepened 2026-10-14)
+
+32. **Distinction metric on truth tensors.** The v2 metric d on the truth-value
+    fiber is the max difference of confidence-weighted strengths; Boolean
+    logic is the 0/1 special case. *(inferred)*
+
+33. **Contraction is non-expansive.** For row-substochastic rule tensors,
+    transport error is at most rule error plus input error, so error grows
+    linearly with inference depth. *(inferred; short proof given)*
+
+34. **Sparsity threshold = working resolution.** Pruning below delta = eps/(m k)
+    keeps depth-k conclusions within resolution eps; more aggressive pruning
+    should create detectable distinctions. *(hypothesis)*
