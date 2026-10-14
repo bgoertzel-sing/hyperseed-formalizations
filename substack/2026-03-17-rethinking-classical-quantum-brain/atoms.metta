@@ -56,3 +56,10 @@
 ;; Missing base sheet
 (--> missing-computational-substrate missing-base-sheet)
 (--> missing-base-sheet ([] (one-sheet-of-two fiber-cant-reproduce explanatory-gaps)))
+
+;; ---- Hyperseed v2 / d-calculus (claims 27-29), deepened 2026-10-14 ----
+(--> neurofluid-d-metric ([] (total-variation trace-distance two-layer)))
+(--> conservation-no-new-distinction ([] (stochastic-routing cptp-update d-non-expansive)))
+(==> (--> $s ([] (closed conserved))) (--> $s ([] only-merges-distinctions)))
+(--> wuwei-cross-layer-defect ([] (geodesics-coincide low-defect performance-per-dissipation)))
+(--> psi-inter-bundle-path ([] (unsupported-by-dpi speculative)))

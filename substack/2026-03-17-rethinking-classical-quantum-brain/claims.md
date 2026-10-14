@@ -146,3 +146,20 @@ Eurykosmotron, 2026-03-17.
     only one sheet of a two-sheeted base. The fiber over a single sheet
     can't reproduce the behavior of the fiber over the full two-sheeted base
     — hence the explanatory gaps. *(inferred)*
+
+## Hyperseed v2 / d-calculus (deepened 2026-10-14)
+
+27. **Two-layer distinction metric.** d = total variation on the fluid layer
+    plus max trace distance on the local density matrices. *(inferred)*
+
+28. **Conservation forbids creating distinctions.** Mass-conserving routing
+    and CPTP local updates are both non-expansive in d (contraction of TV;
+    data-processing inequality), so a closed neurofluid system only merges
+    distinctions; new ones enter via input/measurement. *(inferred; standard
+    inequalities)*
+
+29. **Wu-wei = vanishing cross-layer defect.** Semantic corridors are paths
+    where fluid-layer and operator-layer d-geodesics coincide; predicted:
+    more mass on low-defect paths gives more performance per unit dissipation.
+    Psi would need inter-bundle low-defect paths, which d-calculus does not
+    supply. *(hypothesis)*

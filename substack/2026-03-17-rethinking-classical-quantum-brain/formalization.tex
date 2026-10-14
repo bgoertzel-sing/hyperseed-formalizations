@@ -270,6 +270,60 @@ between where information goes and what happens to it along the way.
 The d-calculus is the mathematical language for this relationship.
 \end{proposition}
 
+\section{d-calculus formulation (Hyperseed v2)}
+\label{sec:v2}
+
+\begin{definition}[Two-layer distinction metric --- claim 27]
+\label{def:v2-dual}
+Take the dual-layer base of Proposition~\ref{prop:brain} with a finite set
+of nodes $V$. A state is a pair $(\rho,\{\omega_v\}_{v\in V})$. Here $\rho$ is
+a distribution of computational fluid over $V$ (total mass $1$) and
+$\omega_v$ is the local density matrix at node $v$. Define the Hyperseed v2
+distinction metric
+\[
+  d\big((\rho,\omega),(\rho',\omega')\big) \;=\;
+  \tfrac12\|\rho-\rho'\|_1 \;+\; \max_{v}\,\tfrac12\|\omega_v-\omega'_v\|_1 ,
+\]
+which is total variation on the fluid layer plus the largest trace distance
+on the operator layer.
+\end{definition}
+
+\begin{proposition}[Conservation forbids creating distinctions --- claim 28]
+\label{prop:v2-dpi}
+Let routing be a column-stochastic matrix $K$ (mass-conserving, as in
+Theorem~\ref{thm:fluqnets}), and let each local update be a completely
+positive trace-preserving map $\Phi_v$. Then
+\[
+  \tfrac12\|K\rho-K\rho'\|_1 \le \tfrac12\|\rho-\rho'\|_1,
+  \qquad
+  \tfrac12\|\Phi_v\omega_v-\Phi_v\omega'_v\|_1 \le \tfrac12\|\omega_v-\omega'_v\|_1 .
+\]
+The first inequality holds because stochastic maps contract total variation.
+The second is the data-processing inequality for trace distance. So one
+step of conserved routing combined with local inference never increases $d$.
+In d-calculus terms, a closed neurofluid system can only merge
+distinctions. New distinctions have to come in through inputs or
+measurement. This gives a precise reading of ``fluid is routed, not
+created'' (claims 1, 20).
+\end{proposition}
+
+\begin{conjecture}[Wu-wei as vanishing cross-layer defect --- claim 29]
+\label{conj:v2-wuwei}
+For a path $\gamma$ in the network, let $\ell_f(\gamma)$ be its length under
+the fluid-layer metric (routing cost) and $\ell_\omega(\gamma)$ its length
+under the operator-layer metric (loss of inference coherence). Define the
+cross-layer defect
+$\delta(\gamma)=|\ell_f(\gamma)-\lambda\,\ell_\omega(\gamma)|$ for the best
+scale $\lambda>0$. Semantic corridors (Theorem~\ref{thm:wuwei}) are paths
+whose $d$-geodesics in the two layers coincide, so $\delta\approx 0$. The
+wu-wei state is the regime where most routed mass travels along such paths.
+Prediction: as the fraction of mass on low-defect paths increases, task
+performance per unit of dissipation should increase. The psi extension
+(Conjecture~\ref{conj:psi}) would need low-defect paths \emph{between}
+separate bundles. Proposition~\ref{prop:v2-dpi} does not supply these,
+so that extension remains speculative (claim 16).
+\end{conjecture}
+
 %% =================================================================
 \section{Cross-references}
 %% =================================================================
