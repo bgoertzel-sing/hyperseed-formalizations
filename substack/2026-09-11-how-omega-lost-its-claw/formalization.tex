@@ -288,6 +288,54 @@ grounded in the empirical observation that Hyperon + LLM synergy is
 already producing qualitatively new capabilities.
 \end{proposition}
 
+\section{d-calculus formulation (Hyperseed v2)}
+\label{sec:v2}
+
+\begin{definition}[Identity radius under self-rewriting --- claim 33]
+\label{def:v2-identity}
+Let $(\mathcal{S},d)$ be the space of agent states (code, memory, values)
+with the Hyperseed v2 distinction metric $d$. A self-rewrite is a map
+$r:\mathcal{S}\to\mathcal{S}$. It has step size
+$\delta_r=\sup_s d(s,r(s))$. An identity anchor $a\in\mathcal{S}$ (e.g.\ the
+consolidated directed history of Definition~\ref{def:directed-history}) and a
+radius $\rho>0$ define identity preservation: the state $s$ is ``the same
+agent'' while $d(s,a)\le\rho$.
+\end{definition}
+
+\begin{proposition}[Memory consolidation bounds identity drift --- claim 34]
+\label{prop:v2-drift}
+Without an anchor, $n$ rewrites of step size at most $\delta$ can move the
+agent by up to $n\delta$, by the triangle inequality. That bound is
+unbounded in $n$. Now suppose each cycle is rewrite followed by
+consolidation $c$, where $c$ is a contraction toward the anchor:
+$d(c(s),a)\le q\,d(s,a)$ with $q<1$. Then
+\[
+  d(s_{n+1},a)\;\le\;q\,\big(d(s_n,a)+\delta\big)
+  \;\Rightarrow\;
+  d(s_n,a)\;\le\;q^n d(s_0,a)+\frac{q\,\delta}{1-q}.
+\]
+So identity is preserved forever whenever $q\delta/(1-q)\le\rho$ and
+$d(s_0,a)\le\rho$. This is the d-calculus reading of why persistent
+memory (Proposition~\ref{prop:stateless}) is needed for identity-preserving
+self-modification (claim 26). The anchor provides the contraction; a
+stateless system has $q=1$.
+\end{proposition}
+
+\begin{conjecture}[Multi-hop coordination degrades linearly in cocycle defect --- claim 35]
+\label{conj:v2-cocycle}
+Relax the exact cocycle condition of Proposition~\ref{prop:cocycle} to a
+defect $\kappa=\max_{i,j,k}\sup_x d(g_{ij}\circ g_{jk}(x),\,g_{ik}(x))$.
+If every translation $g_{ij}$ is $1$-Lipschitz in $d$, a message relayed
+through $m$ Omegas differs from the direct translation by at most
+$(m-2)\kappa$. Each intermediate hop can be collapsed with one use of the
+defect bound, and Lipschitz maps do not amplify earlier errors. Prediction:
+in an Omega-to-Omega network (claim 22), relay fidelity falls at most
+linearly with hop count, with slope given by the measured triple-overlap
+defect. If a network shows faster-than-linear decay, some translation is
+expanding distinctions (not $1$-Lipschitz), and that translation can be
+located by measuring each $g_{ij}$ separately.
+\end{conjecture}
+
 %% =================================================================
 \section{Cross-references and open questions}
 %% =================================================================

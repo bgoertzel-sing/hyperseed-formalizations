@@ -160,3 +160,19 @@ Eurykosmotron, 2026-09-11.
     components incrementally and testing for improvement is a sheaf
     extension operation: each new component must be compatible with
     existing sections on overlaps. *(inferred)*
+
+## Hyperseed v2 / d-calculus (deepened 2026-10-14)
+
+33. **Identity radius under self-rewriting.** An agent stays "the same" while
+    its state is within d-radius rho of an identity anchor (consolidated
+    history); each self-rewrite has a d step size. *(inferred)*
+
+34. **Memory consolidation bounds identity drift.** Unanchored rewrites can
+    drift by n*delta; with consolidation contracting toward the anchor by
+    factor q<1, drift stays below q*delta/(1-q) forever. Stateless = q=1.
+    *(inferred; short proof given)*
+
+35. **Multi-hop coordination degrades linearly in cocycle defect.** With
+    1-Lipschitz translations, relaying through m Omegas deviates by at most
+    (m-2)*kappa; faster decay locates a distinction-expanding translation.
+    *(hypothesis)*

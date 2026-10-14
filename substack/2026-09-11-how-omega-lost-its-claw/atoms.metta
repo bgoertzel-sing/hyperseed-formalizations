@@ -104,3 +104,9 @@
 ;; ---- Synergy (claim 7) ----
 (--> (× hyperon frontier-llms) ([] synergetic))
 (--> (× hyperon frontier-llms) ([] (produces smarter-ai)))
+
+;; ---- Hyperseed v2 / d-calculus (claims 33-35), deepened 2026-10-14 ----
+(--> identity-d-radius ([] (anchor consolidated-history rewrite-step-size)))
+(--> consolidation-bounds-drift ([] (contraction-toward-anchor bounded-drift stateless-unbounded)))
+(==> (--> $a ([] (consolidating-memory small-rewrite-steps))) (--> $a ([] identity-preserved)))
+(--> multihop-cocycle-defect ([] (lipschitz-translation linear-in-hops locate-expanding-map)))
