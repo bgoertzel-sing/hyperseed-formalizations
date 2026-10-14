@@ -77,6 +77,51 @@ distinctions (finite/infinite, consistent/inconsistent) soften into
 gradients.
 \end{conjecture}
 
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{definition}[Resolution budget and covering number --- claim 17]
+\label{def:covering}
+Let $(B,d)$ be a base space with Hyperseed v2 distinction metric $d$.
+For a structure $S \subseteq B$ and resolution $\epsilon>0$, let
+$N_d(S,\epsilon)$ be the least size of an $\epsilon$-net of $S$ under $d$.
+Fix an operational budget $R \in \mathbb{N}$ (what a reasoner can
+enumerate). Then $S$ is
+\begin{itemize}
+\item \emph{finite} if $N_d(S,\epsilon) \le R$ for every operationally relevant $\epsilon$;
+\item \emph{parafinite} if $N_d(S,\epsilon) < \infty$ for every $\epsilon>0$
+  (totally bounded), a computable map $\epsilon \mapsto$ ($\epsilon$-net) exists,
+  but $N_d(S,\epsilon) > R$ for some relevant $\epsilon$;
+\item \emph{classically infinite} otherwise (not totally bounded, or no computable net).
+\end{itemize}
+This turns the chain finite $\subsetneq$ parafinite $\subsetneq$ infinite
+of the parafinite-zone theorem above into statements about $d$.
+\end{definition}
+
+\begin{proposition}[Computable infinitesimals as vanishing $d$-increments --- claim 18]
+\label{prop:dincrement}
+A constructive infinitesimal is a computable sequence of points $(x_n)$ with
+$d(x_n,x_{n+1}) \to 0$ and a computable modulus $\mu$ such that
+$d(x_m,x_n) < 2^{-k}$ for all $m,n \ge \mu(k)$. Fiber transport along
+such $d$-paths then has a computable limit: if the connection is
+$L$-Lipschitz in $d$, the transported section after step $n$ differs from
+the limit by at most $L\cdot 2^{-k}$ once $n \ge \mu(k)$. So
+``computable fiber'' (claim 14) is exactly a fiber whose transport has a
+computable modulus in $d$.
+\end{proposition}
+
+\begin{conjecture}[Paraconsistency as a sub-resolution effect --- claim 19]
+\label{conj:subres}
+In the parafinite zone a reasoner works at resolution $\epsilon$ with
+$N_d(S,\epsilon) > R$, so some pairs with $d(\sigma_1,\sigma_2) < \epsilon$
+cannot be told apart within budget. Contradictory sections held together
+there are tolerated, not because they explode, but because the distinction
+between them is below the operating resolution. Prediction: contradiction
+curvature (cf.\ The Mind-Blowing Paraconsistency, 2021-09-23) is supported
+where $N_d$ exceeds the budget, and shrinks when $R$ grows or $\epsilon$
+shrinks constructively. This makes claim 16 (paraconsistency meets
+parafinity) a statement that can be tested.
+\end{conjecture}
+
 \section{Cross-references}
 
 \begin{remark}[Connections]

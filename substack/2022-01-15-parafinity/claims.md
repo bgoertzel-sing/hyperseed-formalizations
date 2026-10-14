@@ -90,3 +90,19 @@ Eurykosmotron, 2022-01-15.
     contradictions) and parafinity (boundary of finite/infinite) are
     complementary — paraconsistent reasoning is especially natural in
     the parafinite zone where classical distinctions break down. *(inferred)*
+
+## Hyperseed v2 / d-calculus (deepened 2026-10-14)
+
+17. **Parafinite = totally bounded but over budget.** Under the distinction
+    metric $d$, a structure is parafinite when every $\epsilon$-covering is
+    finite and computable, but exceeds the reasoner's enumeration budget $R$
+    at relevant resolutions. *(inferred)*
+
+18. **Computable infinitesimals = vanishing d-increments with computable
+    modulus.** Fiber transport along such paths has a computable limit
+    under a Lipschitz connection. *(inferred)*
+
+19. **Paraconsistency as sub-resolution effect.** Contradictions are tolerated
+    where their d-distance is below operating resolution; contradiction
+    curvature should be supported where covering numbers exceed budget.
+    *(hypothesis)*

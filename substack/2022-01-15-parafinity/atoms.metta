@@ -28,3 +28,16 @@
 (--> constructive-computable-fiber ([] (executable not-just-defined essential-agi)))
 (--> agi-parafinite-fiber ([] (too-complex constructive d-calculus-zone)))
 (--> paraconsistency-meets-parafinity ([] (complementary classical-break-down natural)))
+
+;; ---- Hyperseed v2 / d-calculus (claims 17-19), deepened 2026-10-14 ----
+;; Claim 17: parafinite as covering-number band (d-calculus)
+(--> parafinite-d-band ([] (totally-bounded computable-net over-budget)))
+(==> (--> $s ([] (totally-bounded computable-net over-budget)))
+     (--> $s parafinite))
+;; Claim 18: computable infinitesimal (d-calculus)
+(--> computable-infinitesimal-d ([] (vanishing-d-increment computable-modulus)))
+(--> computable-fiber-d ([] (transport-limit computable lipschitz-connection)))
+;; Claim 19: paraconsistency sub-resolution (d-calculus)
+(--> paraconsistency-subresolution ([] (below-epsilon tolerated no-explosion)))
+(==> (--> $z ([] (parafinite over-budget)))
+     (--> $z ([] contradiction-curvature-support)))
