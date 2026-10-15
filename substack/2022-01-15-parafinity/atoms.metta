@@ -30,8 +30,8 @@
 (--> paraconsistency-meets-parafinity ([] (complementary classical-break-down natural)))
 
 ;; ---- Hyperseed v2 / d-calculus (claims 17-19) -- agent extension, rewritten 2026-10-15 against dcalculus_v2.tex ----
-(--> parafinite ([] (finite-cover-every-resolution computable-cover)))
-(--> unit-interval-tolerance ([] (finite-cover-every-resolution computable-cover)))
-(==> (--> $s ([] (finite-cover-every-resolution computable-cover))) (--> $s ([] parafinite-set)))
-(--> computable-approach ([] (cauchy-in-closure-metric lipschitz-transport computable-modulus)))
-(--> paraconsistency-on-sorites ([] (sorites-kernel-positive tolerated-contradiction metric-observer-none)))
+(==> (--> $s ([] (not-finite totally-bounded computable-net))) (--> $s parafinite))
+(--> unit-interval ([] (not-finite totally-bounded computable-net)))
+(--> computable-cauchy-transport ([] (computable-modulus lipschitz-transport computable-limit)))
+(==> (--> $p ([] (contradictory positive-sorites))) (--> $p ([] tolerated-without-explosion)))
+(--> parafinite-zone-pair ([] (contradictory positive-sorites)))

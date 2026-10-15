@@ -93,17 +93,18 @@ Eurykosmotron, 2022-01-15.
 
 ## Hyperseed v2 / d-calculus -- agent extension (rewritten 2026-10-15 against dcalculus_v2.tex; NOT claims of the source article)
 
-17. **Resolution covering and parafiniteness.** Parafinite = coverable by
-    finitely many tolerance-threshold neighborhoods at every resolution short
-    of perfect, computably. Gives the strict chain finite < parafinite < all;
-    the reasoner's budget is a separate, operational notion. *(agent-inferred)*
+17. **Parafinite = totally bounded with computable nets, but not finite.**
+    Using the metric closure of the observer's tolerance: finite = finitely
+    many classes; parafinite = infinite but every eps-net finite and
+    computable ([0,1]); proper infinite otherwise (R). The enumeration budget R
+    is a separate operational axis. *(agent-inferred; fixes 2026-10-14 version)*
 
-18. **Computable approach along distinction.** A computable Cauchy sequence in
-    the closure pseudometric, pushed through a Lipschitz transport into a
-    complete fiber, converges with a computable modulus. Lipschitz transport is
-    sufficient, not necessary, for "computable fiber". *(agent-inferred; proof sketch given)*
+18. **Computable fibers via computable Cauchy moduli.** The article's
+    "constructive infinitesimal" read as a computable Cauchy sequence; Lipschitz
+    transport preserves the computable modulus. Sufficient condition for a
+    computable fiber, not a characterisation. *(agent-inferred; proof given)*
 
-19. **Paraconsistency lives on the sorites kernel.** Contradictions a reasoner
-    must tolerate concentrate on pairs where the sorites kernel is positive and
-    vanish for metric observers; pair mass of sigma measures the needed
-    paraconsistency. *(agent hypothesis)*
+19. **Paraconsistency where the sorites kernel is positive.** Contradictions
+    are tolerated where chains of locally tolerated steps join them
+    (sigma > 0), and rejected where the observer is metric between them.
+    *(agent hypothesis)*

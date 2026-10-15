@@ -82,58 +82,65 @@ gradients.
 
 \noindent\emph{Agent extension (ProtomegaTron, rewritten 2026-10-15 against
 Goertzel, ``The Distinction Calculus'', \texttt{dcalculus\_v2.tex}). Not a
-claim of the source article. Notation follows \texttt{docs/d-calculus.md}.}
+claim of the source article. Notation follows \texttt{docs/d-calculus.md}.
+The paper works with finite $V$; the extension to infinite carriers below is
+the agent's.}
 
-\begin{definition}[Resolution covering and parafiniteness --- claim 17]
+\begin{definition}[Parafinite as totally bounded but not finite --- claim 17]
 \label{def:covering}
-Let an observer carry a tolerance $\alpha$ on a set $B$ (symmetric,
-$\alpha(x,x)=1$). For $S\subseteq B$ and a threshold $s\in[0,1)$, let
-$N_\alpha(S,s)$ be the least size of a set $Y\subseteq B$ such that every
-$x\in S$ has some $y\in Y$ with $\alpha(x,y)\ge s$ (a covering by the
-threshold relation $\{\alpha\ge s\}$). Call $S$
+Let a reasoner observe a carrier $B$ through a tolerance $\alpha$ (symmetric,
+$\alpha(x,x)=1$), distinction kernel $\bar\alpha=1-\alpha$, and let
+$\bar\alpha^{\flat}$ be the shortest-path pseudometric of its metric closure
+$\alpha^{\flat}$. For $S\subseteq B$ and $\epsilon>0$ let $N(S,\epsilon)$ be
+the least size of an $\epsilon$-net of $S$ under $\bar\alpha^{\flat}$. Call $S$
 \begin{itemize}
-\item \emph{finite} if $|S|<\infty$;
-\item \emph{parafinite} if $N_\alpha(S,s)<\infty$ for every $s<1$ and the map
-  $s\mapsto$ (a covering of that size) is computable: finite at every
-  resolution short of perfect;
-\item \emph{wildly infinite} otherwise.
+\item \emph{finite} if $S$ has finitely many $\bar\alpha^{\flat}$-classes;
+\item \emph{parafinite} if it is not finite, but $N(S,\epsilon)<\infty$ for
+  every $\epsilon>0$ and $\epsilon\mapsto$ ($\epsilon$-net) is computable;
+\item \emph{infinite} (proper) otherwise: not totally bounded, or no computable nets.
 \end{itemize}
-Every finite set is parafinite (cover by $S$ itself). The inclusion is strict:
-$[0,1]$ with $\alpha(x,y)=1-|x-y|$ is parafinite and infinite. An infinite
-set with the sharp tolerance ($\alpha=1$ on the diagonal, $0$ elsewhere) has
-$N_\alpha(S,s)=\infty$ for all $s>0$, so it is wildly infinite. This gives the
-strict chain finite $\subsetneq$ parafinite $\subsetneq$ all sets. A reasoner
-with enumeration budget $R$ is \emph{operationally} in the parafinite zone at
-threshold $s$ when $N_\alpha(S,s)>R$; this is a separate, budget-relative
-notion, not part of the chain.
+The three classes are disjoint, every finite set is totally bounded, and
+$[0,1]$ with $\bar\alpha^{\flat}(x,y)=\min\{1,|x-y|\}$ is parafinite while
+$\mathbb{R}$ is properly infinite, so the chain finite $\subsetneq$ finite
+$\cup$ parafinite $\subsetneq$ all is strict. A reasoner's enumeration budget
+$R$ is a separate, operational axis: at resolution $\epsilon$ the reasoner
+copes iff $N(S,\epsilon)\le R$. (This corrects the 2026-10-14 version, where
+budget and cardinality were mixed, so a large finite set counted as
+parafinite and $[0,1]$ as finite.) The nets use $\alpha^{\flat}$ rather than
+$\alpha$ because ``within $\epsilon$ of a net point'' needs the triangle
+inequality; for a non-metric observer the sorites kernel
+$\sigma=\alpha^{\flat}-\alpha$ measures the gap.
 \end{definition}
 
-\begin{proposition}[Computable approach along distinction --- claim 18]
+\begin{proposition}[Computable fibers via computable Cauchy moduli --- claim 18]
 \label{prop:dincrement}
-Let $\bar\alpha^{\flat}=1-\alpha^{\flat}$ be the shortest-path pseudometric of
-the metric closure. Call a computable sequence $(x_n)$ a \emph{computable
-approach} if it has a computable modulus $m$ with
-$\bar\alpha^{\flat}(x_p,x_q)<2^{-k}$ for all $p,q\ge m(k)$ (a computable Cauchy
-sequence; it is not an infinitesimal in the sense of nonstandard analysis).
-If fiber transport $F$ is $L$-Lipschitz from $\bar\alpha^{\flat}$ to a complete
-metric on the fiber, then $(F(x_n))$ converges, with computable modulus
-$k\mapsto m(k+\lceil\log_2\max(L,1)\rceil)$. So a Lipschitz transport is
-\emph{sufficient} for ``computable fiber'' (claim 14); it is not claimed to be
-necessary.
+Read the article's ``constructive infinitesimal'' as a computable Cauchy
+sequence (not an infinitesimal in the nonstandard sense): computable points
+$(x_n)$ with a computable modulus $m$ such that
+$\bar\alpha^{\flat}(x_i,x_j)<2^{-k}$ for all $i,j\ge m(k)$. If transport $P$ on
+the fiber is $L$-Lipschitz from $\bar\alpha^{\flat}$ and the limit $x^*$
+exists (e.g.\ in the completion), then
+$\|P x_n-P x^*\|\le L\,2^{-k}$ for $n\ge m(k)$, so the transported values
+inherit the computable modulus $m$ with constant $L$. Hence a fiber whose
+transport is Lipschitz has computable limits along computable Cauchy
+sequences; this is one sufficient reading of ``computable fiber'' (claim 14),
+not a characterisation.
 \end{proposition}
 
-\begin{conjecture}[Paraconsistency lives on the sorites kernel --- claim 19]
+\begin{conjecture}[Paraconsistency where the sorites kernel is positive --- claim 19]
 \label{conj:subres}
-The sorites kernel $\sigma=\alpha^{\flat}-\alpha\ge0$ is positive exactly on
-pairs $(x,z)$ joined by a chain of steps each less distinct than the direct
-comparison (the sorites paradox, Sec.\ \texttt{sec:transitivity} of the
-paper). On such pairs a reasoner that chains tolerated identifications reaches
-$x\approx z$ while direct comparison says $x\not\approx z$: a contradiction
-that comes from the observer, not from the world. Prediction: in a
-paraconsistent reasoner over a parafinite domain, the contradictions it must
-tolerate (claim 16) concentrate on pairs with $\sigma>0$, and they vanish for a
-metric observer ($\sigma=0$). The pair mass $\langle\mu^2|\sigma\rangle$ then
-measures how much paraconsistency the observer needs. Untested.
+Let two contradictory sections $s_1,s_2$ be held by the reasoner. In the paper,
+$\sigma(s_1,s_2)>0$ means there is a chain $s_1=y_0,\dots,y_k=s_2$ of steps
+each less distinct than the direct comparison: locally every step is
+tolerated, but the ends are distinguishable. Prediction: contradictions are
+tolerated without explosion exactly where they are joined by such a chain
+(sorites mass), and are rejected where $\alpha$ is already metric along all
+paths between them ($\sigma=0$). In a parafinite zone the reasoner works
+over budget, $N(S,\epsilon)>R$, so it cannot check all chains, and sorites
+mass between distant states goes undetected. Growing $R$ or refining $\alpha$
+toward $\alpha^{\flat}$ should shrink the tolerated set. This links claim 16
+(paraconsistency meets parafinity) to a measurable quantity, $\|\sigma\|$
+restricted to contradictory pairs. Untested.
 \end{conjecture}
 
 \section{Cross-references}
