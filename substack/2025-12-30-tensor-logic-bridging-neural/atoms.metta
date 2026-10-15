@@ -49,8 +49,8 @@
 (--> gradient-flow differentiable-fiber)
 (--> differentiable-fiber ([] (optimizable learn-rules gradient-descent)))
 
-;; ---- Hyperseed v2 / d-calculus (claims 32-34), deepened 2026-10-14 ----
-(--> truth-tensor-d-metric ([] (max-diff confidence-weighted-strength boolean-special-case)))
-(--> contraction-non-expansive ([] (row-substochastic error-additive linear-in-depth)))
-(==> (--> $p ([] row-substochastic)) (--> $p ([] d-non-expansive)))
-(--> sparsity-threshold-resolution ([] (delta-eps-over-mk bounded-error prune-safe)))
+;; ---- Hyperseed v2 / d-calculus (claims 32-34) -- agent extension, rewritten 2026-10-15 against dcalculus_v2.tex ----
+(--> truth-tensor-observer ([] (metric-observer sorites-zero coarse-on-sc)))
+(==> (--> $p ([] (substochastic linear-transport))) (--> $p ([] linear-error-growth)))
+(--> tensor-logic-transport ([] (substochastic linear-transport)))
+(--> depth-aware-pruning ([] (threshold-eps-over-mk worst-case conservative-hypothesis)))

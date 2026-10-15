@@ -152,16 +152,17 @@ Eurykosmotron, 2025-12-16.
     can be optimized by gradient descent, enabling learning of logical
     rules from data. *(inferred)*
 
-## Hyperseed v2 / d-calculus (deepened 2026-10-14)
+## Hyperseed v2 / d-calculus -- agent extension (rewritten 2026-10-15 against dcalculus_v2.tex; NOT claims of the source article)
 
-32. **Distinction metric on truth tensors.** The v2 metric d on the truth-value
-    fiber is the max difference of confidence-weighted strengths; Boolean
-    logic is the 0/1 special case. *(inferred)*
+32. **A metric observer on truth tensors.** Tolerance 1 - max|e - e'| on
+    evidence-weighted strengths e = s*c is a metric observer (sorites kernel
+    zero). It is coarse: it cannot separate truth values with equal s*c.
+    *(agent-inferred)*
 
-33. **Contraction is non-expansive.** For row-substochastic rule tensors,
-    transport error is at most rule error plus input error, so error grows
-    linearly with inference depth. *(inferred; short proof given)*
+33. **Contraction is non-expansive for this observer.** Substochastic
+    transport errors add up linearly with inference depth. Holds for the linear
+    transport only, not for nonlinear PLN rules on (s,c). *(agent-inferred; proof given)*
 
-34. **Sparsity threshold = working resolution.** Pruning below delta = eps/(m k)
-    keeps depth-k conclusions within resolution eps; more aggressive pruning
-    should create detectable distinctions. *(hypothesis)*
+34. **Depth-aware pruning threshold.** Pruning entries below delta = eps/(m k)
+    keeps depth-k conclusions within eps (proved). That this worst-case
+    threshold is conservative in practice is an agent hypothesis.
