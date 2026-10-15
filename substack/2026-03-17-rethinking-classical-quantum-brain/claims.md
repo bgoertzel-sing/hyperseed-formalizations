@@ -147,19 +147,19 @@ Eurykosmotron, 2026-03-17.
     can't reproduce the behavior of the fiber over the full two-sheeted base
     — hence the explanatory gaps. *(inferred)*
 
-## Hyperseed v2 / d-calculus (deepened 2026-10-14)
+## Hyperseed v2 / d-calculus -- agent extension (rewritten 2026-10-15 against dcalculus_v2.tex; NOT claims of the source article)
 
-27. **Two-layer distinction metric.** d = total variation on the fluid layer
-    plus max trace distance on the local density matrices. *(inferred)*
+27. **A metric observer on two-layer states.** Distinction = max of fluid total
+    variation and largest local trace distance; this is a metric observer
+    (sorites kernel zero). *(agent-inferred)*
 
-28. **Conservation forbids creating distinctions.** Mass-conserving routing
-    and CPTP local updates are both non-expansive in d (contraction of TV;
-    data-processing inequality), so a closed neurofluid system only merges
-    distinctions; new ones enter via input/measurement. *(inferred; standard
-    inequalities)*
+28. **Decoupled conservative dynamics is an emergent level.** If routing and
+    local CPTP updates are fixed and independent of each other, the dynamics is
+    non-expansive, so production P >= 0: a closed system only merges
+    distinctions. Generic data processing, not neurofluid-specific; can fail
+    when the layers are coupled. *(agent-inferred; proof given)*
 
-29. **Wu-wei = vanishing cross-layer defect.** Semantic corridors are paths
-    where fluid-layer and operator-layer d-geodesics coincide; predicted:
-    more mass on low-defect paths gives more performance per unit dissipation.
-    Psi would need inter-bundle low-defect paths, which d-calculus does not
-    supply. *(hypothesis)*
+29. **Wu-wei as agreement of the two layers' clocks.** Semantic corridors are
+    histories where fluid and operator subjective durations agree up to scale;
+    performance per unit dissipation should track mass on such histories.
+    *(agent hypothesis)*
