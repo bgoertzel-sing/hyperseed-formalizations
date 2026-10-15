@@ -62,8 +62,8 @@
 (--> semantic-corridors fiber-base-alignment)
 (--> fiber-base-alignment ([] (routing-inference-align efficient-paths d-calculus-connection)))
 
-;; ---- Hyperseed v2 / d-calculus (claims 28-30), deepened 2026-10-14 ----
-(--> quantumity-levels-d ([] (covering-over-budget commutator-defect observer-resolution)))
-(--> subresolution-noncommutativity-invisible ([] (lipschitz-probes swap-bound appears-classical)))
-(==> (--> $o ([] (defect-below-resolution))) (--> $o ([] sees-classical)))
-(--> quantum-selfmodel-threshold ([] (planning-depth commutator-defect beats-classical)))
+;; ---- Hyperseed v2 / d-calculus (claims 28-30) -- agent extension, rewritten 2026-10-15 against dcalculus_v2.tex ----
+(--> quantumity-levels ([] (observer-tolerance covering-budget probe-order-defect)))
+(==> (--> $s ([] (lipschitz-probes sub-resolution-defect))) (--> $s ([] observer-sees-classical)))
+(--> shallow-probe-system ([] (lipschitz-probes sub-resolution-defect)))
+(--> quantum-self-model-payoff ([] (bound-fails-at-planning-depth hypothesis)))

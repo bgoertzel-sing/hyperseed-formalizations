@@ -163,18 +163,19 @@ Eurykosmotron, 2026-03-18.
     most efficiently — the fiber-base alignment that the d-calculus
     formalizes as fiber-base connection. *(inferred)*
 
-## Hyperseed v2 / d-calculus (deepened 2026-10-14)
+## Hyperseed v2 / d-calculus -- agent extension (rewritten 2026-10-15 against dcalculus_v2.tex; NOT claims of the source article)
 
-28. **Quantumity levels in d.** Opacity = covering number at observer
-    resolution exceeds observer budget; incompatibility = probe commutator
-    defect (in d) exceeds observer resolution. *(inferred)*
+28. **Observer tolerance and quantumity levels.** Opacity = the observer's
+    covering number at its resolution exceeds its budget; incompatibility =
+    probe-order defect kappa above resolution. kappa is not the paper's
+    commutator theorem. *(agent-inferred)*
 
-29. **Sub-resolution non-commutativity is invisible.** With 1-Lipschitz probes,
-    reordering k probes moves the state by at most C(k,2) times the max
-    commutator defect; below resolution the system looks classical, so the
-    same system can be classical or quantum depending on resolution and
-    experiment depth. *(inferred; short proof given)*
+29. **Sub-resolution non-commutativity is invisible.** With probes 1-Lipschitz
+    for the observer, reordering k probes changes the observer's distinction by
+    at most C(k,2) kappa + (C(k,2)-1) s, where s is the sorites sup (0 for
+    metric observers). Bounds what the observer distinguishes, not raw state
+    distance. *(agent-inferred; proof given)*
 
-30. **When a quantum self-model pays.** A non-commutative self-model should beat
-    a classical one per bit exactly when C(k,2)*max-defect >= resolution at the
-    system's planning depth k. *(hypothesis)*
+30. **When a quantum self-model pays.** Only where that bound fails at the
+    system's planning depth; otherwise a classical self-model suffices.
+    *(agent hypothesis)*
