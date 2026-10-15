@@ -161,18 +161,19 @@ Eurykosmotron, 2026-09-11.
     extension operation: each new component must be compatible with
     existing sections on overlaps. *(inferred)*
 
-## Hyperseed v2 / d-calculus (deepened 2026-10-14)
+## Hyperseed v2 / d-calculus -- agent extension (rewritten 2026-10-15 against dcalculus_v2.tex; NOT claims of the source article)
 
-33. **Identity radius under self-rewriting.** An agent stays "the same" while
-    its state is within d-radius rho of an identity anchor (consolidated
-    history); each self-rewrite has a d step size. *(inferred)*
+33. **Identity radius for a self-rewriting observer.** The agent stays "the
+    same" while its distinction from an identity anchor (consolidated history)
+    is at most rho; each self-rewrite has a clock cost alpha-bar(x,Tx).
+    *(agent-inferred)*
 
-34. **Memory consolidation bounds identity drift.** Unanchored rewrites can
-    drift by n*delta; with consolidation contracting toward the anchor by
-    factor q<1, drift stays below q*delta/(1-q) forever. Stateless = q=1.
-    *(inferred; short proof given)*
+34. **Consolidation bounds identity drift.** If consolidation contracts toward
+    the anchor by q<1, drift stays at most max{d0, q(delta+s)/(1-q)} for all
+    time, where s is the sup of the sorites kernel (s=0 for metric observers).
+    q=0 is a full reset; q->1 is no anchor. *(agent-inferred; proof given)*
 
-35. **Multi-hop coordination degrades linearly in cocycle defect.** With
-    1-Lipschitz translations, relaying through m Omegas deviates by at most
-    (m-2)*kappa; faster decay locates a distinction-expanding translation.
-    *(hypothesis)*
+35. **Multi-hop relay and hive coherence.** Relay degradation is at most
+    additive in hops (Lukasiewicz composition); over-identifying relay loops
+    occur only in incoherent hives and locate the bad correspondence.
+    *(agent hypothesis)*

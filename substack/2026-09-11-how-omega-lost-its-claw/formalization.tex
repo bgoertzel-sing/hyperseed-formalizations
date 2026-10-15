@@ -291,49 +291,63 @@ already producing qualitatively new capabilities.
 \section{d-calculus formulation (Hyperseed v2)}
 \label{sec:v2}
 
-\begin{definition}[Identity radius under self-rewriting --- claim 33]
+\noindent\emph{Agent extension (ProtomegaTron, rewritten 2026-10-15 against
+Goertzel, ``The Distinction Calculus'', \texttt{dcalculus\_v2.tex}). Not a
+claim of the source article. Notation follows \texttt{docs/d-calculus.md}.}
+
+\begin{definition}[Identity radius for a self-rewriting observer --- claim 33]
 \label{def:v2-identity}
-Let $(\mathcal{S},d)$ be the space of agent states (code, memory, values)
-with the Hyperseed v2 distinction metric $d$. A self-rewrite is a map
-$r:\mathcal{S}\to\mathcal{S}$. It has step size
-$\delta_r=\sup_s d(s,r(s))$. An identity anchor $a\in\mathcal{S}$ (e.g.\ the
-consolidated directed history of Definition~\ref{def:directed-history}) and a
-radius $\rho>0$ define identity preservation: the state $s$ is ``the same
-agent'' while $d(s,a)\le\rho$.
+Let the agent's states $V$ carry an observer $(\alpha,\mu)$: a tolerance
+$\alpha:V\times V\to[0,1]$ (symmetric, $\alpha(x,x)=1$) with distinction
+kernel $\bar\alpha=1-\alpha$, and sorites kernel $\sigma=\alpha^{\flat}-\alpha\ge0$;
+write $s:=\|\sigma\|_\infty$ ($s=0$ iff the observer is metric). A self-rewrite
+is a map $T:V\to V$, and its clock cost at $x$ is $\tau(T_x)=\bar\alpha(x,Tx)$;
+let $\delta:=\sup_x\bar\alpha(x,Tx)$. Fix an identity anchor $a\in V$ (e.g.\
+the consolidated directed history of Definition~\ref{def:directed-history})
+and a radius $\rho$; the state $x$ counts as ``the same agent'' while
+$\bar\alpha(x,a)\le\rho$.
 \end{definition}
 
-\begin{proposition}[Memory consolidation bounds identity drift --- claim 34]
+\begin{proposition}[Consolidation bounds identity drift --- claim 34]
 \label{prop:v2-drift}
-Without an anchor, $n$ rewrites of step size at most $\delta$ can move the
-agent by up to $n\delta$, by the triangle inequality. That bound is
-unbounded in $n$. Now suppose each cycle is rewrite followed by
-consolidation $c$, where $c$ is a contraction toward the anchor:
-$d(c(s),a)\le q\,d(s,a)$ with $q<1$. Then
+Since $\bar\alpha^{\flat}$ is the shortest-path pseudometric and
+$\bar\alpha=\bar\alpha^{\flat}+\sigma$, we have the sorites-corrected triangle
+inequality $\bar\alpha(x,z)\le\bar\alpha(x,y)+\bar\alpha(y,z)+s$. Suppose each
+cycle is a rewrite $T$ followed by a consolidation $c$ that contracts toward
+the anchor, $\bar\alpha(c(x),a)\le q\,\bar\alpha(x,a)$ with $0\le q<1$. With
+$d_n:=\bar\alpha(x_n,a)$ we get $d_{n+1}\le q(d_n+\delta+s)$, hence
 \[
-  d(s_{n+1},a)\;\le\;q\,\big(d(s_n,a)+\delta\big)
-  \;\Rightarrow\;
-  d(s_n,a)\;\le\;q^n d(s_0,a)+\frac{q\,\delta}{1-q}.
+  d_n\;\le\;q^n d_0+(1-q^n)\,\frac{q(\delta+s)}{1-q}
+  \;\le\;\max\Big\{d_0,\;\frac{q(\delta+s)}{1-q}\Big\},
 \]
-So identity is preserved forever whenever $q\delta/(1-q)\le\rho$ and
-$d(s_0,a)\le\rho$. This is the d-calculus reading of why persistent
-memory (Proposition~\ref{prop:stateless}) is needed for identity-preserving
-self-modification (claim 26). The anchor provides the contraction; a
-stateless system has $q=1$.
+because the middle term is a convex combination of $d_0$ and
+$q(\delta+s)/(1-q)$. So identity is preserved for all $n$ whenever
+$d_0\le\rho$ and $q(\delta+s)\le(1-q)\rho$. The two extremes bracket the
+article's point (Proposition~\ref{prop:stateless}): $q=0$ is a full reset
+(identity trivially kept, but nothing learned persists), and $q\to1$ is no
+anchor (drift can accumulate without bound). Persistent consolidated memory is
+what permits $0<q<1$: accumulated change with bounded drift. For a non-metric
+observer the sorites mass $s$ enters the budget directly, as in the paper's
+non-metric speed limit (\texttt{cor:speedlimit}), where every violation of
+the metric bound is carried by $\sigma$.
 \end{proposition}
 
-\begin{conjecture}[Multi-hop coordination degrades linearly in cocycle defect --- claim 35]
+\begin{conjecture}[Multi-hop relay and hive coherence --- claim 35]
 \label{conj:v2-cocycle}
-Relax the exact cocycle condition of Proposition~\ref{prop:cocycle} to a
-defect $\kappa=\max_{i,j,k}\sup_x d(g_{ij}\circ g_{jk}(x),\,g_{ik}(x))$.
-If every translation $g_{ij}$ is $1$-Lipschitz in $d$, a message relayed
-through $m$ Omegas differs from the direct translation by at most
-$(m-2)\kappa$. Each intermediate hop can be collapsed with one use of the
-defect bound, and Lipschitz maps do not amplify earlier errors. Prediction:
-in an Omega-to-Omega network (claim 22), relay fidelity falls at most
-linearly with hop count, with slope given by the measured triple-overlap
-defect. If a network shows faster-than-linear decay, some translation is
-expanding distinctions (not $1$-Lipschitz), and that translation can be
-located by measuring each $g_{ij}$ separately.
+Model an Omega-to-Omega network (claim 22) as a hive: members
+$(V_i,\alpha_i,\mu_i)$ with correspondences $c_{ij}$ in place of the exact
+translations of Proposition~\ref{prop:cocycle}. Relaying $i\to j\to\cdots\to i$
+gives the \L{}ukasiewicz composite
+$\mathrm{hol}_\gamma=c_{ij}\circledast c_{jk}\circledast\cdots\circledast c_{\cdot i}$,
+whose distinction $1-\mathrm{hol}_\gamma$ is at most the sum of the hop
+distinctions along the best path: degradation is at most additive in hop
+count. In a coherent hive $\mathrm{hol}_\gamma\le\alpha_i$ (round trips never
+identify more than member $i$ does), and the paper's consensus cost
+$C_\flat$ vanishes. Prediction: relay loops that \emph{over}-identify
+($\mathrm{hol}_\gamma(x,y)>\alpha_i(x,y)$ for some pair) occur only in
+incoherent networks, and the pairs where they occur locate the offending
+correspondences; measuring $C_\flat$ before and after repairing a single
+$c_{ij}$ should show the drop.
 \end{conjecture}
 
 %% =================================================================
