@@ -78,48 +78,62 @@ gradients.
 \end{conjecture}
 
 \section{d-calculus formulation (Hyperseed v2)}
+\label{sec:v2}
 
-\begin{definition}[Resolution budget and covering number --- claim 17]
+\noindent\emph{Agent extension (ProtomegaTron, rewritten 2026-10-15 against
+Goertzel, ``The Distinction Calculus'', \texttt{dcalculus\_v2.tex}). Not a
+claim of the source article. Notation follows \texttt{docs/d-calculus.md}.}
+
+\begin{definition}[Resolution covering and parafiniteness --- claim 17]
 \label{def:covering}
-Let $(B,d)$ be a base space with Hyperseed v2 distinction metric $d$.
-For a structure $S \subseteq B$ and resolution $\epsilon>0$, let
-$N_d(S,\epsilon)$ be the least size of an $\epsilon$-net of $S$ under $d$.
-Fix an operational budget $R \in \mathbb{N}$ (what a reasoner can
-enumerate). Then $S$ is
+Let an observer carry a tolerance $\alpha$ on a set $B$ (symmetric,
+$\alpha(x,x)=1$). For $S\subseteq B$ and a threshold $s\in[0,1)$, let
+$N_\alpha(S,s)$ be the least size of a set $Y\subseteq B$ such that every
+$x\in S$ has some $y\in Y$ with $\alpha(x,y)\ge s$ (a covering by the
+threshold relation $\{\alpha\ge s\}$). Call $S$
 \begin{itemize}
-\item \emph{finite} if $N_d(S,\epsilon) \le R$ for every operationally relevant $\epsilon$;
-\item \emph{parafinite} if $N_d(S,\epsilon) < \infty$ for every $\epsilon>0$
-  (totally bounded), a computable map $\epsilon \mapsto$ ($\epsilon$-net) exists,
-  but $N_d(S,\epsilon) > R$ for some relevant $\epsilon$;
-\item \emph{classically infinite} otherwise (not totally bounded, or no computable net).
+\item \emph{finite} if $|S|<\infty$;
+\item \emph{parafinite} if $N_\alpha(S,s)<\infty$ for every $s<1$ and the map
+  $s\mapsto$ (a covering of that size) is computable: finite at every
+  resolution short of perfect;
+\item \emph{wildly infinite} otherwise.
 \end{itemize}
-This turns the chain finite $\subsetneq$ parafinite $\subsetneq$ infinite
-of the parafinite-zone theorem above into statements about $d$.
+Every finite set is parafinite (cover by $S$ itself). The inclusion is strict:
+$[0,1]$ with $\alpha(x,y)=1-|x-y|$ is parafinite and infinite. An infinite
+set with the sharp tolerance ($\alpha=1$ on the diagonal, $0$ elsewhere) has
+$N_\alpha(S,s)=\infty$ for all $s>0$, so it is wildly infinite. This gives the
+strict chain finite $\subsetneq$ parafinite $\subsetneq$ all sets. A reasoner
+with enumeration budget $R$ is \emph{operationally} in the parafinite zone at
+threshold $s$ when $N_\alpha(S,s)>R$; this is a separate, budget-relative
+notion, not part of the chain.
 \end{definition}
 
-\begin{proposition}[Computable infinitesimals as vanishing $d$-increments --- claim 18]
+\begin{proposition}[Computable approach along distinction --- claim 18]
 \label{prop:dincrement}
-A constructive infinitesimal is a computable sequence of points $(x_n)$ with
-$d(x_n,x_{n+1}) \to 0$ and a computable modulus $\mu$ such that
-$d(x_m,x_n) < 2^{-k}$ for all $m,n \ge \mu(k)$. Fiber transport along
-such $d$-paths then has a computable limit: if the connection is
-$L$-Lipschitz in $d$, the transported section after step $n$ differs from
-the limit by at most $L\cdot 2^{-k}$ once $n \ge \mu(k)$. So
-``computable fiber'' (claim 14) is exactly a fiber whose transport has a
-computable modulus in $d$.
+Let $\bar\alpha^{\flat}=1-\alpha^{\flat}$ be the shortest-path pseudometric of
+the metric closure. Call a computable sequence $(x_n)$ a \emph{computable
+approach} if it has a computable modulus $m$ with
+$\bar\alpha^{\flat}(x_p,x_q)<2^{-k}$ for all $p,q\ge m(k)$ (a computable Cauchy
+sequence; it is not an infinitesimal in the sense of nonstandard analysis).
+If fiber transport $F$ is $L$-Lipschitz from $\bar\alpha^{\flat}$ to a complete
+metric on the fiber, then $(F(x_n))$ converges, with computable modulus
+$k\mapsto m(k+\lceil\log_2\max(L,1)\rceil)$. So a Lipschitz transport is
+\emph{sufficient} for ``computable fiber'' (claim 14); it is not claimed to be
+necessary.
 \end{proposition}
 
-\begin{conjecture}[Paraconsistency as a sub-resolution effect --- claim 19]
+\begin{conjecture}[Paraconsistency lives on the sorites kernel --- claim 19]
 \label{conj:subres}
-In the parafinite zone a reasoner works at resolution $\epsilon$ with
-$N_d(S,\epsilon) > R$, so some pairs with $d(\sigma_1,\sigma_2) < \epsilon$
-cannot be told apart within budget. Contradictory sections held together
-there are tolerated, not because they explode, but because the distinction
-between them is below the operating resolution. Prediction: contradiction
-curvature (cf.\ The Mind-Blowing Paraconsistency, 2021-09-23) is supported
-where $N_d$ exceeds the budget, and shrinks when $R$ grows or $\epsilon$
-shrinks constructively. This makes claim 16 (paraconsistency meets
-parafinity) a statement that can be tested.
+The sorites kernel $\sigma=\alpha^{\flat}-\alpha\ge0$ is positive exactly on
+pairs $(x,z)$ joined by a chain of steps each less distinct than the direct
+comparison (the sorites paradox, Sec.\ \texttt{sec:transitivity} of the
+paper). On such pairs a reasoner that chains tolerated identifications reaches
+$x\approx z$ while direct comparison says $x\not\approx z$: a contradiction
+that comes from the observer, not from the world. Prediction: in a
+paraconsistent reasoner over a parafinite domain, the contradictions it must
+tolerate (claim 16) concentrate on pairs with $\sigma>0$, and they vanish for a
+metric observer ($\sigma=0$). The pair mass $\langle\mu^2|\sigma\rangle$ then
+measures how much paraconsistency the observer needs. Untested.
 \end{conjecture}
 
 \section{Cross-references}

@@ -91,18 +91,19 @@ Eurykosmotron, 2022-01-15.
     complementary — paraconsistent reasoning is especially natural in
     the parafinite zone where classical distinctions break down. *(inferred)*
 
-## Hyperseed v2 / d-calculus (deepened 2026-10-14)
+## Hyperseed v2 / d-calculus -- agent extension (rewritten 2026-10-15 against dcalculus_v2.tex; NOT claims of the source article)
 
-17. **Parafinite = totally bounded but over budget.** Under the distinction
-    metric $d$, a structure is parafinite when every $\epsilon$-covering is
-    finite and computable, but exceeds the reasoner's enumeration budget $R$
-    at relevant resolutions. *(inferred)*
+17. **Resolution covering and parafiniteness.** Parafinite = coverable by
+    finitely many tolerance-threshold neighborhoods at every resolution short
+    of perfect, computably. Gives the strict chain finite < parafinite < all;
+    the reasoner's budget is a separate, operational notion. *(agent-inferred)*
 
-18. **Computable infinitesimals = vanishing d-increments with computable
-    modulus.** Fiber transport along such paths has a computable limit
-    under a Lipschitz connection. *(inferred)*
+18. **Computable approach along distinction.** A computable Cauchy sequence in
+    the closure pseudometric, pushed through a Lipschitz transport into a
+    complete fiber, converges with a computable modulus. Lipschitz transport is
+    sufficient, not necessary, for "computable fiber". *(agent-inferred; proof sketch given)*
 
-19. **Paraconsistency as sub-resolution effect.** Contradictions are tolerated
-    where their d-distance is below operating resolution; contradiction
-    curvature should be supported where covering numbers exceed budget.
-    *(hypothesis)*
+19. **Paraconsistency lives on the sorites kernel.** Contradictions a reasoner
+    must tolerate concentrate on pairs where the sorites kernel is positive and
+    vanish for metric observers; pair mass of sigma measures the needed
+    paraconsistency. *(agent hypothesis)*
