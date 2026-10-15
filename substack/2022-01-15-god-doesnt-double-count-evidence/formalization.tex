@@ -1,0 +1,220 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  God Doesn't Double-Count Evidence}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``God Doesn't Double-Count Evidence'' (2022-01-15)
+within the Hyperseed ontology, incorporating d-calculus extensions from
+Hyperseed v2. The central claim---that rational inference must not count
+the same evidence twice, and that this principle is mirrored by conservation
+laws in physics---is given a fiber-geometric interpretation where evidence
+independence is characterized by homotopy class membership and evidence
+conservation becomes a divergence-free current condition.
+\end{abstract}
+
+\tableofcontents
+
+\section{Evidence bundle and fiber independence}
+
+\begin{definition}[Evidence bundle]
+Let $B$ be the epistemic base space (the space of propositions or hypotheses).
+An \emph{evidence bundle} is a fiber bundle $\pi : E \to B$ where each fiber
+$E_b = \pi^{-1}(b)$ consists of the evidence items bearing on hypothesis $b$.
+\end{definition}
+
+\begin{definition}[Evidence independence]
+Two evidence items $e_1, e_2 \in E_b$ are \emph{independent} if there exists
+no derivation path connecting them within the total space $E$:
+\[
+  e_1 \perp e_2 \iff \nexists\, \gamma : [0,1] \to E \text{ with }
+  \gamma(0) = e_1,\; \gamma(1) = e_2,\;
+  \pi \circ \gamma = \text{const.}
+\]
+\end{definition}
+
+\begin{proposition}[No double-counting = fiber independence --- claims 1, 3, 6, 8]
+\label{prop:nodc}
+Independent evidence corresponds to independent fibers:
+\[
+  e_1 \perp e_2 \implies \text{fuse freely}; \quad
+  e_1 \not\perp e_2 \implies \text{single count (dedup required)}
+\]
+Double-counting is the error of treating dependent evidence items
+($e_1 \not\perp e_2$) as independent, which inflates confidence
+beyond what the evidence warrants.
+\end{proposition}
+
+\begin{proof}[Sketch]
+If $e_1$ and $e_2$ share a derivation path $\gamma$, then they carry
+overlapping information. Counting both at full weight assigns total
+weight $w_1 + w_2$ when the actual information content is at most
+$w_1 + w_2 - w_\gamma$ where $w_\gamma$ is the weight of the shared
+path. The inflation is $w_\gamma > 0$.
+\end{proof}
+
+\section{Homotopy independence certificate}
+
+\begin{definition}[Evidence path]
+An \emph{evidence path} from source $s$ to hypothesis $b$ is a path
+$\gamma : [0,1] \to E$ with $\gamma(0) \in E_s$ (source data) and
+$\pi(\gamma(1)) = b$.
+\end{definition}
+
+\begin{proposition}[Homotopy criterion --- claims 4, 7, 9]
+\label{prop:homotopy}
+Two evidence paths $\gamma_1, \gamma_2$ that are homotopic
+(connected by a continuous deformation through shared intermediate
+evidence) must not be counted separately:
+\[
+  \gamma_1 \simeq \gamma_2 \implies \text{single count}; \quad
+  \gamma_1 \not\simeq \gamma_2 \implies \text{independent contributions}
+\]
+The homotopy class $[\gamma]$ serves as the \emph{canonical independence
+certificate}: evidence contributions are counted per homotopy class,
+not per path.
+\end{proposition}
+
+\begin{remark}
+This gives a principled geometric answer to ``when does evidence overlap?''
+Two derivation paths overlap exactly when they are homotopic---i.e., when
+one can be continuously deformed into the other through shared intermediate
+lemmas. The answer is topological, not syntactic.
+\end{remark}
+
+\begin{corollary}[Evidence weight formula]
+The correct total evidence weight for hypothesis $b$ from sources
+$\{s_i\}$ is:
+\[
+  W(b) = \sum_{[\gamma] \in \pi_1(E, b)} w_{[\gamma]}
+\]
+where the sum runs over \emph{homotopy classes} of evidence paths,
+not over individual paths. Each class contributes its weight once.
+\end{corollary}
+
+\section{Base-space conservation constraint}
+
+\begin{proposition}[Information budget --- claims 2, 5, 10]
+\label{prop:budget}
+Physical laws enforce non-redundancy as a base-space constraint.
+At each base point $b \in B$, the total evidence weight is bounded:
+\[
+  W(b) = \sum_{[\gamma]} w_{[\gamma]} \leq W_{\max}(b)
+\]
+where $W_{\max}(b)$ is the information capacity at base point $b$,
+determined by physical constraints (channel capacity, observation
+time, detector resolution, etc.).
+\end{proposition}
+
+\begin{remark}[Physics as bookkeeping]
+Conservation laws (energy, momentum, charge) are reinterpreted as
+the universe's mechanism for enforcing $W(b) \leq W_{\max}(b)$
+within every local reference frame. ``God doesn't cook the books.''
+\end{remark}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{definition}[Evidence connection]
+An \emph{evidence connection} on the bundle $\pi : E \to B$ is a
+connection $\nabla$ that specifies how evidence transforms under
+parallel transport between base points (change of reference frame
+or hypothesis).
+\end{definition}
+
+\begin{proposition}[Divergence-free evidence current --- claim 11]
+\label{prop:divfree}
+Evidence conservation is expressed as a divergence-free current
+condition:
+\[
+  \nabla \cdot J_{\text{evidence}} = 0
+\]
+where $J_{\text{evidence}}$ is the evidence current (flux of
+evidential weight through the base space). No evidence is
+created or destroyed in transport.
+\end{proposition}
+
+\begin{proposition}[Holonomy detector --- claim 12]
+\label{prop:holonomy}
+Non-trivial holonomy in the evidence connection reveals
+double-counting:
+\[
+  \operatorname{Hol}_\gamma(\nabla) \neq \mathrm{id}
+  \implies \text{evidence ``leak'' along loop } \gamma
+\]
+Transporting evidence around a closed loop and getting a different
+answer means the books are being cooked. The no-double-counting
+principle demands:
+\[
+  \operatorname{Hol}_\gamma(\nabla) = \mathrm{id}
+  \quad \forall \text{ contractible loops } \gamma
+\]
+within each reference frame.
+\end{proposition}
+
+\begin{proposition}[Curvature = evidence interaction --- claim 13]
+\label{prop:curvature}
+The curvature $F_\nabla$ of the evidence connection measures
+evidence interaction:
+\[
+  F_\nabla = 0 \implies \text{fully independent evidence (free fusion)}
+\]
+\[
+  F_\nabla \neq 0 \implies \text{interacting evidence (holonomy correction needed)}
+\]
+In the flat case, all evidence can be fused without adjustment.
+In the curved case, fusion requires a holonomy correction factor
+$\operatorname{Hol}_\gamma(\nabla)$ to compensate for evidence
+interaction along the path.
+\end{proposition}
+
+\begin{corollary}[Corrected fusion formula]
+When the evidence connection has non-zero curvature, the corrected
+fusion weight for two evidence paths $\gamma_1, \gamma_2$ arriving
+at the same hypothesis $b$ is:
+\[
+  w_{\text{fused}} = w_1 + w_2
+    - \langle w_1, \operatorname{Hol}_{\gamma_1^{-1} \cdot \gamma_2}(\nabla) \cdot w_2 \rangle
+\]
+where the correction term accounts for the shared derivation content
+detected by the holonomy along the composite path $\gamma_1^{-1} \cdot \gamma_2$.
+\end{corollary}
+
+\section{Evidence-energy duality}
+
+\begin{conjecture}[Evidence-energy isomorphism --- claim 14]
+Evidence is to logic what energy is to physics. Both are conserved
+quantities whose conservation prevents systematic error:
+\begin{itemize}
+  \item Energy conservation prevents perpetual motion machines.
+  \item Evidence conservation prevents perpetual confidence machines
+    (systems that generate unbounded confidence from finite data).
+\end{itemize}
+The fiber bundle framework places both in the same geometric setting:
+physical energy as a section of a physical bundle, logical evidence
+as a section of the epistemic bundle $E \to B$, with parallel
+conservation laws in each.
+\end{conjecture}
+
+\begin{remark}
+This conjecture is developed into a full mathematical framework in
+Goertzel's later ``Evidence Is to Logic What Energy Is to Physics''
+(2026), which derives aspects of quantum-mechanical structure from
+evidence conservation axioms.
+\end{remark}
+
+\end{document}

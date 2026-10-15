@@ -1,0 +1,174 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  NFTs and the Gamification of the Economy}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``NFTs and the Gamification of the Economy''
+(2022-03-07) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. The central observation---that NFTs and
+economic gamification represent a structural shift from base-space
+survival toward fiber-space play---is given a fiber-geometric
+interpretation involving section registration, fiber projection for
+social signaling, and value curvature for speculative dynamics.
+\end{abstract}
+
+\tableofcontents
+
+\section{Base-to-fiber economic shift}
+
+\begin{definition}[Economic base space and fiber]
+Let $B_{\text{econ}}$ be the \emph{economic base space} of material
+resources and survival needs, and let $\pi : V \to B_{\text{econ}}$ be
+the \emph{value fiber bundle} where each fiber $V_b$ contains the
+experiential, social, and aesthetic dimensions of economic activity
+at resource level $b$.
+\end{definition}
+
+\begin{proposition}[Gamification as base-to-fiber shift --- claims 1, 5, 8]
+\label{prop:gamification}
+Economic gamification is the structural shift from base-space optimization
+to fiber exploration:
+\[
+  \text{pre-gamification}: \quad \max_{b \in B} u(b)
+  \quad \longrightarrow \quad
+  \text{gamified}: \quad \max_{v \in V_b} u(v) \text{ for fixed } b
+\]
+When base-space needs are met ($b \geq b_{\text{sufficient}}$), agents
+shift to optimizing within the fiber --- seeking experience, meaning,
+status, and play rather than material accumulation.
+\end{proposition}
+
+\begin{definition}[Post-scarcity as base saturation --- claim 15]
+Post-scarcity is the condition $b \geq b_{\text{saturated}}$ for all
+agents, where:
+\[
+  \nabla_{\text{base}} u \approx 0, \quad
+  \nabla_{\text{fiber}} u \neq 0
+\]
+The utility gradient in base directions vanishes (more material resources
+add negligible utility) while fiber gradients remain large (experiential
+improvements remain valuable).
+\end{definition}
+
+\section{NFTs as fiber section registration}
+
+\begin{definition}[Creative fiber bundle]
+A \emph{creative fiber bundle} $\pi_C : C \to B_{\text{creator}}$ has
+as its base space the space of creators, and each fiber $C_c$ is the
+space of digital artifacts created by creator $c$.
+\end{definition}
+
+\begin{proposition}[NFT = registered section --- claims 2, 10]
+\label{prop:nft}
+An NFT is a \emph{registered section} of the creative fiber bundle:
+\begin{itemize}
+  \item The digital artifact is a section $\sigma \in \Gamma(U, C)$.
+  \item The NFT is a public registration of $\sigma$ on a distributed
+    ledger, providing section individuation: even if copies exist, the
+    canonical section is unambiguously identified.
+  \item Ownership is a morphism $\text{own}: \text{NFT} \to B_{\text{owner}}$
+    mapping each registered section to its current owner.
+\end{itemize}
+\end{proposition}
+
+\begin{proposition}[Royalties as fiber rent --- claims 4, 11]
+\label{prop:royalties}
+Smart-contract royalties are fiber rent: when a registered section is
+parallel-transported from owner $o_1$ to owner $o_2$:
+\[
+  P_{o_1 \to o_2}(\sigma) = \sigma' \in C_{o_2}
+\]
+the original creator $c$ receives compensation:
+\[
+  r(\sigma, o_1 \to o_2) = \alpha \cdot \|P_{o_1 \to o_2}(\sigma)\|
+\]
+where $\alpha \in (0,1)$ is the royalty rate encoded in the smart contract.
+This is ``rent'' paid for the ongoing use of the creator's section.
+\end{proposition}
+
+\section{Social signaling as fiber projection}
+
+\begin{proposition}[NFT portfolio as fiber projection --- claims 3, 12]
+\label{prop:signaling}
+An agent's NFT portfolio defines a fiber projection:
+\[
+  \pi_{\text{signal}}: V_{\text{full}} \to V_{\text{public}}
+\]
+mapping the agent's full fiber state (all private preferences, beliefs,
+experiences) to a publicly visible fiber subspace (community membership,
+aesthetic taste, status). The projection satisfies:
+\begin{itemize}
+  \item \textbf{Partial revelation:} $\dim(V_{\text{public}}) < \dim(V_{\text{full}})$
+    --- the signal reveals some but not all of the agent's fiber state.
+  \item \textbf{Costly acquisition:} credible signals require costly
+    fiber acquisition: $\text{cost}(\sigma) > 0$ ensures that the signal
+    carries information. Cheap signals would be noise.
+  \item \textbf{Community detection:} agents with similar projections
+    (similar NFT portfolios) are detected as community members ---
+    the projection clusters agents in public fiber space.
+\end{itemize}
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Value curvature --- claim 13]
+\label{prop:curvature}
+The \emph{value connection} $\nabla_V$ on the value fiber bundle tracks
+how NFT value transforms under change of market context:
+\begin{itemize}
+  \item \textbf{Low curvature} ($\|F_{\nabla_V}\| \ll 1$): stable value ---
+    the NFT's worth changes smoothly and predictably with market conditions.
+  \item \textbf{High curvature} ($\|F_{\nabla_V}\| \gg 1$): speculative
+    regime --- value changes rapidly and unpredictably. Speculative
+    bubbles are regions of extreme value curvature.
+\end{itemize}
+The transition from stable to speculative is a curvature phase transition
+in the value connection.
+\end{proposition}
+
+\begin{proposition}[Ownership holonomy --- claim 14]
+\label{prop:holonomy}
+Transporting an NFT through a sequence of owners
+\[
+  \gamma: c \xrightarrow{\text{mint}} o_1
+    \xrightarrow{\text{sell}} o_2
+    \xrightarrow{\text{sell}} o_3
+    \xrightarrow{\text{buyback}} c
+\]
+produces ownership holonomy:
+\[
+  \operatorname{Hol}_\gamma(\nabla_V) \neq \mathrm{id}
+\]
+The NFT's value after traversing the owner loop differs from its initial
+value. This holonomy is the \emph{geometric content of provenance} ---
+the ownership history itself creates (or destroys) value through the
+social and cultural significance of the trajectory.
+\end{proposition}
+
+\begin{remark}[AI content and future fiber --- claim 7]
+As AGI generates creative content, the creative fiber bundle $C$
+develops AI-authored sections alongside human-authored ones. NFTs
+provide the registration mechanism for AI-created sections, enabling
+attribution, ownership, and economic participation for AI creators
+(or their human principals). The fiber structure expands to include
+AI-human collaborative sections and purely AI-generated sections,
+each with distinct provenance metadata.
+\end{remark}
+
+\end{document}

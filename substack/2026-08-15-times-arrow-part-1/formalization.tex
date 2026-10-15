@@ -592,4 +592,63 @@ phenomenology of recording and inherits the recording's arrow.
     observer-relativity of recordhood?
 \end{enumerate}
 
+
+\section{d-calculus formulation (Hyperseed v2)}
+\emph{Interpretive readings added 2026-09-29; the article itself does not use d-calculus.}
+
+\begin{proposition}[Strict arrow as directed monotone record --- claim 48]
+Let $R$ be the record functional. A strict arrow is a directed 1-cell
+structure with $dR(\gamma)\ge 0$ for every forward 1-cell $\gamma$ and no
+inverse 1-cells. The three graphtropy strengths correspond to
+$\mathbb{E}[dR]\ge 0$ (on-average), $dR\ge\lambda R$ (exponential-rate), and
+pointwise $dR\ge 0$ (monotone). Only the last is a directed type in the
+strict sense.
+\end{proposition}
+
+\begin{proposition}[Entropy production as holonomy --- claim 49]
+For a loop $\gamma$ made of forward transport followed by time-reversed transport,
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{FR}) = \log\frac{P_F[\gamma]}{P_R[\tilde\gamma]}
+  = \Sigma[\gamma]\quad\text{(signed entropy production)}.
+\]
+Vanishing holonomy means detailed balance. Positive mean holonomy is the
+fluctuation-theorem second law.
+\end{proposition}
+
+\begin{proposition}[Freshness as flatness --- claim 50]
+Freshness means the system--environment correlation connection has no
+returning loops, so $F_\nabla^{\mathrm{sys}}=0$. In $3$ spatial dimensions,
+Huygens' principle puts the curvature on the light cone.
+\end{proposition}
+
+\begin{proposition}[Alignment as trivial orientation holonomy --- claim 51]
+Let $\mathcal{O}\to G_{\mathrm{infl}}$ be the $\mathbb{Z}/2$ orientation bundle
+over the influence graph. Inheritance from the pump is parallel transport in
+$\mathcal{O}$, and local arrows align iff $\operatorname{Hol}_\gamma(\mathcal{O})=+1$
+for every influence loop $\gamma$.
+\end{proposition}
+
+\begin{proposition}[Janus point as critical point --- claim 52]
+At the Janus point $dC=0$ and $\operatorname{sgn}(dC)$ flips, so $\mathcal{O}$
+is two-sheeted with the sheets meeting there. The past hypothesis is
+replaced by a critical point of $C$.
+\end{proposition}
+
+\begin{proposition}[Felt duration --- claim 53]
+$\tau_{\mathrm{felt}} \propto \int d(\mathrm{DL})$, the surprise-weighted
+growth of the compressed causal record. Subjective heat death is
+$d(\mathrm{DL})\to 0$. Curiosity keeps $d(\mathrm{DL})$ bounded away from $0$.
+\end{proposition}
+
+\begin{proposition}[Reader-disagreement curvature --- claim 54]
+Recordhood is a section over the space of readers.
+$\|F_\nabla(\mathrm{reader}_i,\mathrm{reader}_j)\|$ measures disagreement about
+which correlations are records. Shared record (shared time) is the flat case.
+\end{proposition}
+
+\begin{proposition}[Append-only trail --- claim 55]
+A cryptographically append-only AtomSpace trail is a directed type with no
+record-deleting 1-cells, so its arrow is structural, not statistical.
+\end{proposition}
+
 \end{document}

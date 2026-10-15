@@ -1,0 +1,315 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Let's Get Chemical}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Let's Get Chemical'' (2026-05-05) within
+the Hyperseed ontology, incorporating d-calculus extensions from
+Hyperseed v2. Protected release is modeled as fiber-selective eviction
+minimizing value-share curvature, RAF sets as autocatalytic fiber cores
+with amplification holonomy, and conversion bridges as smooth fiber-type
+transitions with minimal bridge curvature.
+\end{abstract}
+
+\tableofcontents
+
+\section{Protected release as fiber-selective eviction}
+
+\begin{definition}[Fiber-selective eviction --- claims 3, 5, 7]
+\emph{Protected release} evicts fiber selectively:
+\begin{itemize}
+  \item For each fiber section $\sigma_i$, compute value-justified share
+    $v_i = \text{functional\_contribution}(\sigma_i) / \sum_j \text{functional\_contribution}(\sigma_j)$.
+  \item Compute actual share $a_i$.
+  \item If $a_i > v_i$: apply anti-precedence pressure (reduce $\sigma_i$'s
+    share toward $v_i$).
+  \item If $a_i \leq v_i$: protect $\sigma_i$ (no eviction).
+\end{itemize}
+This targets identity lock-in (one section dominating beyond its
+justified share) without penalizing functional repetition (multiple
+sections performing the same valuable function).
+\end{definition}
+
+\section{RAF sets as autocatalytic fiber cores}
+
+\begin{definition}[Autocatalytic fiber --- claims 1, 8]
+A \emph{reflexively autocatalytic food-generated (RAF) fiber core} is a
+collection of fiber operations $\{f_i\}$ such that:
+\[
+  \forall\, f_i \in \text{RAF}: \text{inputs}(f_i) \subseteq
+    \text{outputs}(\text{RAF}) \cup \text{food}(B)
+\]
+The fiber core produces all its own inputs (given base resource flow).
+This is the minimal self-sustaining fiber structure --- the fiber
+analog of a living cell.
+\end{definition}
+
+\section{Conversion bridge as fiber-type transition}
+
+\begin{proposition}[Bridge transport --- claims 4, 9]
+\label{prop:bridge}
+A \emph{conversion bridge} provides smooth parallel transport between
+fiber types during transition:
+\[
+  \tau: F_{\text{old}} \xrightarrow{\text{smooth}} F_{\text{new}}
+\]
+maintaining functional continuity: $\text{function}(\tau(t)) \approx
+\text{function}(F_{\text{old}})$ for all $t$ during transition.
+\end{proposition}
+
+
+% ---- Restored from pre-v2 interpretation (PR #49): sections dropped by the 09-29 rewrite; claim numbers below refer to the PR #49 inventory appended to claims.md ----
+\section{Identity vs.\ function as section vs.\ fiber}
+\label{sec:identity}
+%% =================================================================
+
+\begin{definition}[The crucial distinction --- claims 18--20, 22]
+\label{def:identity}
+The article identifies the conceptual key: \emph{identity} (which
+specific implementation occupies a niche) vs.\ \emph{function} (what
+it does for the organism). Anti-precedence should target identity
+lock-in, not functional repetition.
+
+\begin{itemize}
+\item \textbf{Identity} = the specific autocatalytic cycle (expendable,
+  replaceable). A particular RAF set that happens to catalyze the right
+  reactions.
+\item \textbf{Function} = membrane conversion machinery (essential,
+  must be preserved across identity changes). The shared infrastructure
+  that maintains individuation.
+\end{itemize}
+
+In Hyperseed terms:
+\begin{itemize}
+\item \textbf{Identity = section.} A specific implementation is a
+  section of the fiber bundle --- one particular assignment of
+  implementations to functional roles. Sections are expendable:
+  you can change which implementation occupies a role without
+  changing the role itself.
+\item \textbf{Function = fiber.} The functional role is the fiber ---
+  the abstract structure that any section must instantiate. The fiber
+  persists across section changes. Membrane conversion is a fiber
+  property; which RAF set performs it is a section choice.
+\end{itemize}
+
+Anti-precedence targets sections (specific implementations), not fibers
+(functional roles). This is the same section/fiber distinction that
+appears throughout the Hyperseed ontology:
+\begin{itemize}
+\item In linguistics: specific linguistic forms (sections) vs.\
+  cognitive functions they express (fibers).
+\item In governance: specific office-holders (sections) vs.\
+  governance functions (fibers).
+\item In AI: specific model weights (sections) vs.\ capabilities
+  they implement (fibers).
+\end{itemize}
+\end{definition}
+
+%% =================================================================
+
+\section{Biphasic memory failure as indiscriminate eviction}
+\label{sec:failure}
+%% =================================================================
+
+\begin{proposition}[The wrong eviction rule --- claims 5--6, 27]
+\label{prop:failure}
+The broad biphasic memory rule failed because it penalized repetition
+itself --- and repetition is how a chemical individual forms. Without
+recurrence, there is no self-maintaining organization.
+
+In Hyperseed terms, this is \emph{indiscriminate fiber eviction}:
+treating all repetition as potentially problematic, which evicts
+essential fiber (membrane conversion machinery) along with excess
+fiber (over-canalized identity).
+
+The lesson is general: any eviction/forgetting/anti-precedence rule
+must distinguish between:
+\begin{itemize}
+\item \textbf{Essential repetition} (functional fiber): repetition
+  that maintains the system's core capabilities. Evicting this
+  destroys the system.
+\item \textbf{Excess repetition} (over-canalized section): repetition
+  that locks in a specific implementation beyond its justified share.
+  Evicting this improves the system's adaptability.
+\end{itemize}
+
+The biphasic rule couldn't make this distinction because it operated
+on raw repetition counts, not on value-relative shares. The protected
+release rule can make the distinction because it separates the
+\emph{function} question (``is this repetition functionally valuable?'')
+from the \emph{identity} question (``is this implementation
+over-represented?'').
+
+This connects to the attentional projection failure mode: an attention
+system that evicts based on recency or frequency alone (without
+considering functional importance) will eventually evict essential
+knowledge. The chemical experiment provides computational evidence
+that this failure mode is real and that the fiber-selective alternative
+works.
+\end{proposition}
+
+%% =================================================================
+
+\section{Value-justified share as fiber-weighted allocation}
+\label{sec:allocation}
+%% =================================================================
+
+\begin{definition}[Fiber budget management --- claims 8--9, 24--25]
+\label{def:allocation}
+Each pathway's share should be proportional to its fiber contribution
+(value). Excess canalization is fiber over-representation: a pathway
+taking up more fiber space than its contribution justifies.
+
+In Hyperseed terms, the value-justified share is \emph{fiber-weighted
+allocation}: the same principle as reputation-weighted governance in
+OpenBGI, applied to chemical ecology:
+\[
+  S^*_g(t) = \frac{\exp(V_g(t) / \tau)}{\sum_{g'} \exp(V_{g'}(t) / \tau)}
+\]
+where $V_g(t)$ is the value (membrane-conversion payoff per unit cost)
+of pathway family $g$ at time $t$.
+
+The anti-canalization rule is a fiber-budget management principle:
+the total fiber space (ecological capacity) is finite, and each
+pathway should occupy a share proportional to its contribution.
+Over-representation of low-value pathways crowds out high-value
+alternatives.
+
+The motif-neighborhood kernel (claim 26) ensures that release
+pressure follows \emph{local transition functions}: it flows to
+structurally similar alternatives, not random reassignment. This
+preserves the topology of the implementation space --- nearby
+implementations are more likely to be functionally compatible.
+\end{definition}
+
+%% =================================================================
+
+\section{Cross-references}
+%% =================================================================
+
+\begin{remark}[Connections to other formalizations]
+\begin{itemize}
+\item \textbf{Attentional projection} (LTM 7aef7064): eviction
+  integrity. The chemical experiment validates the principle that
+  eviction must preserve functional fiber.
+\item \textbf{OpenBGI} (2026-05-07): fiber-weighted governance.
+  Value-justified share in chemistry parallels reputation-weighted
+  governance: allocation proportional to contribution.
+\item \textbf{Goals That Grow Back} (2026-07-20): anti-canalization.
+  Goals that resist over-commitment to specific implementations
+  --- the organizational analog of protected release.
+\item \textbf{Seeding RSI} (2026-07-28): Hyperon architecture.
+  The neural-symbolic architecture that could implement
+  fiber-selective eviction in AI systems.
+\item \textbf{The Orchard Bug} (2026-06-05): composition.
+  The conversion bridge's success depends on maintaining
+  the cocycle condition (functional continuity) during
+  the transition.
+\item \textbf{Grand Unified Physics} (2026-05-15): weakness
+  principle. Value-relative anti-precedence is a form of
+  weakness: the system favors implementations with least
+  unnecessary dominance.
+\end{itemize}
+\end{remark}
+
+\begin{conjecture}[Universal protected release]
+Conjecture: the protected release principle (penalize excess
+canalization, not repetition; protect shared function; release
+toward neighbors) is universal across adaptive systems. In
+chemistry, it governs evolutionary transitions between
+autocatalytic sets. In AI, it should govern the replacement of
+learned representations. In organizations, it should govern
+leadership transitions. In ecosystems, it governs species
+replacement.
+
+If this conjecture holds, protected release is a fiber-bundle
+invariant of adaptive systems: any system that maintains
+individuation through functional repetition while remaining
+adaptable through identity flexibility must implement some
+form of fiber-selective eviction with functional protection.
+\end{conjecture}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Canalization curvature --- claim 10]
+\label{prop:canal}
+\[
+  \|F_{\nabla_{\text{canal}}}\| = \text{degree of implementation lock-in}
+\]
+High canalization curvature: one implementation dominates beyond its
+value-justified share. Protected release acts as curvature reduction:
+\[
+  \frac{d\|F_{\nabla_{\text{canal}}}\|}{dt}\bigg|_{\text{protected\_release}} < 0
+\]
+\end{proposition}
+
+\begin{proposition}[Value-share curvature --- claim 11]
+\label{prop:value}
+\[
+  \|F_\nabla(\text{actual}, \text{value})\| = \sum_i |a_i - v_i|
+\]
+Protected release minimizes this curvature:
+\[
+  \min_{\text{eviction}} \|F_\nabla(\text{actual}, \text{value})\|
+\]
+At the minimum, each section's actual share matches its value-justified
+share.
+\end{proposition}
+
+\begin{proposition}[RAF holonomy --- claim 12]
+\label{prop:raf}
+An autocatalytic cycle $\gamma$: $A \to B \to C \to A$ produces
+holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{RAF}}) = \text{autocatalytic
+    amplification per cycle}
+\]
+\begin{itemize}
+  \item $\operatorname{Hol} > 1$: RAF grows (successful autocatalysis).
+  \item $\operatorname{Hol} = 1$: RAF maintains (steady state).
+  \item $\operatorname{Hol} < 1$: RAF decays (failed autocatalysis).
+\end{itemize}
+\end{proposition}
+
+\begin{proposition}[Conversion bridge curvature --- claim 13]
+\label{prop:bridge_curv}
+\[
+  \|F_{\nabla_{\text{bridge}}}\| = \text{transition roughness}
+\]
+The conversion bridge is designed to minimize this curvature, ensuring
+smooth transition between fiber types with minimal functional disruption.
+\end{proposition}
+
+\begin{proposition}[Identity-function separation curvature --- claim 14]
+\label{prop:id_func}
+\[
+  \|F_\nabla(\text{identity}, \text{function})\| = \text{coupling between
+    identity and function}
+\]
+\begin{itemize}
+  \item Low curvature: identity and function are separable. Different
+    implementations can serve the same function. Protected release
+    works well.
+  \item High curvature: identity and function are tightly coupled. Only
+    one implementation can serve the function. Protected release has
+    limited scope.
+\end{itemize}
+\end{proposition}
+
+\end{document}
