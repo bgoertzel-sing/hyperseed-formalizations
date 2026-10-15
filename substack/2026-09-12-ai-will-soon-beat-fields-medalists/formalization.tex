@@ -274,49 +274,58 @@ The intrinsic mathematical value of the problems remains unchanged.
 \section{d-calculus formulation (Hyperseed v2)}
 \label{sec:v2}
 
-\begin{definition}[Verifier resolution and $d$-holonomy defect --- claim 41]
+\noindent\emph{Agent extension (ProtomegaTron, rewritten 2026-10-15 against
+Goertzel, ``The Distinction Calculus'', \texttt{dcalculus\_v2.tex}). Not a
+claim of the source article. Notation follows \texttt{docs/d-calculus.md}.}
+
+\begin{definition}[Verifier as an observer --- claim 41]
 \label{def:v2-resolution}
-Let $(X_\tau,d)$ be the space of candidate outputs for a task $\tau$, with
-the Hyperseed v2 distinction metric $d$, and let $S_\tau\subseteq X_\tau$ be
-its success set. A verifier for $\tau$ has \emph{resolution} $\epsilon_\tau$
-if it accepts $x$ only when $d(x,S_\tau)\le\epsilon_\tau$. The
-well-definedness of Definition~\ref{def:well-definedness} is then read as
-a decreasing function of $\epsilon_\tau$: formal conjectures have
-$\epsilon_\tau=0$, open-ended research has no finite $\epsilon_\tau$.
-For a loop $\gamma$ in the base of research contexts with transport
-$P_\gamma$ on a fiber (Definition~\ref{def:fiber-holonomy}), the
-\emph{$d$-holonomy defect} is $h(\gamma)=\sup_x d(x,P_\gamma x)$, and the
-\emph{noise floor} $\eta$ is the largest $d$-distance between two runs of
-the same loop from the same start.
+Let $X_\tau$ be the candidate outputs for a task $\tau$, with success set
+$S_\tau\subseteq X_\tau$, and let the task carry an observer
+$(\alpha_\tau,\mu)$: a tolerance $\alpha_\tau$ on $X_\tau$ (symmetric,
+$\alpha_\tau(x,x)=1$) with distinction kernel $\bar\alpha_\tau=1-\alpha_\tau$,
+and $\mu$ the generator's output distribution. Write
+$\bar\alpha_\tau(x,S_\tau):=\min_{y\in S_\tau}\bar\alpha_\tau(x,y)$. A verifier
+is \emph{sound at resolution} $\epsilon$ if it accepts $x$ only when
+$\bar\alpha_\tau(x,S_\tau)\le\epsilon$, and \emph{complete} if it accepts
+every $x\in S_\tau$. The well-definedness of
+Definition~\ref{def:well-definedness} is read as the existence of a sound and
+complete verifier with small $\epsilon$: formal conjectures admit $\epsilon=0$;
+open-ended research admits no such verifier.
 \end{definition}
 
 \begin{proposition}[Verification turns competence into cost --- claim 42]
 \label{prop:v2-verify}
-Let a generator with success probability $p>0$ per attempt (landing within
-$\epsilon_\tau$ of $S_\tau$) be gated by a verifier of resolution
-$\epsilon_\tau$, retrying until acceptance. Then every accepted output
-satisfies $d(x,S_\tau)\le\epsilon_\tau$, whatever the generator's quality,
-and the expected number of attempts is $1/p$ (geometric distribution).
-So for well-defined tasks the competence $\kappa_L$ of
-Definition~\ref{def:llm-competence} only sets \emph{cost}. Without a
-verifier, $\kappa_L$ sets \emph{correctness} directly. This gives one
-mechanism for the gradient of Proposition~\ref{prop:gradient}: well-defined
-mathematics benefits from the epistemic firewall
-(Definition~\ref{def:firewall}), and conjecturing does not have one.
+Let independent attempts from the generator land in $S_\tau$ with probability
+$p>0$, and retry until the verifier accepts. If the verifier is sound at
+resolution $\epsilon$, every accepted output satisfies
+$\bar\alpha_\tau(x,S_\tau)\le\epsilon$, whatever the generator. If it is also
+complete, the acceptance probability per attempt is $p_{\mathrm{acc}}\ge p$,
+so the number of attempts is geometric with mean $1/p_{\mathrm{acc}}\le1/p$.
+Soundness alone does \emph{not} bound the cost: a sound verifier that rejects
+all of $S_\tau$ never terminates. So, given a sound and complete verifier, the
+competence $\kappa_L$ of Definition~\ref{def:llm-competence} sets only cost;
+without one, it sets correctness. This is one mechanism for the gradient of
+Proposition~\ref{prop:gradient}: well-defined mathematics has the epistemic
+firewall of Definition~\ref{def:firewall}, and conjecturing does not.
 \end{proposition}
 
-\begin{conjecture}[Conjecturing needs holonomy above the noise floor --- claim 43]
+\begin{conjecture}[Conjecturing needs learning above the noise floor --- claim 43]
 \label{conj:v2-noise}
-Theorem~\ref{thm:trivial-holonomy} says training-data variation $V_D$ has
-trivial holonomy ``modulo stochastic noise.'' In $d$-terms:
-$h(\gamma)\le\eta$ for every loop. Prediction: run the same research loop
-(explore area $A$, move to $B$, return to $A$) several times with
-different seeds, and measure how far the returned conjecture sets are from
-the starting ones. For a $V_D$-only system this displacement stays within
-the run-to-run spread $\eta$. A hybrid system with an extra-distributional
-source ($E_R$) should show $h(\gamma)>\eta$ on some loops. This turns
-``genuinely novel mathematical structure'' into a quantity one can measure,
-and it is consistent with claim 38 (the training-data well).
+Run a research loop $T$ (explore area $A$, move to $B$, return to $A$) and
+track the observer $(\alpha_t,\mu_t)$ on candidate conjectures. The paper's
+balance law (\texttt{thm:balance}) splits the change in graphtropy as
+$g_{t+1}-g_t=P_t-L_t$: production $P_t$ from the dynamics acting on a fixed
+observer, and learning $L_t=\langle\mu_{t+1}^2|\alpha_t-\alpha_{t+1}\rangle$
+from the observer acquiring new distinctions. Theorem~\ref{thm:trivial-holonomy}
+says training-data variation has trivial holonomy ``modulo stochastic noise''.
+In these terms, for a training-data-only system the loop acts as an approximate
+symmetry and $|L_t|$ stays within the run-to-run spread $\eta$ (the spread of
+$L_t$ over seeds). Prediction: a hybrid system with an extra-distributional
+source shows $L_t>\eta$ on some loops: it ends the loop drawing distinctions
+between conjectures that it could not draw before. This requires fixing
+$\alpha_t$ operationally (e.g.\ an embedding-similarity tolerance) and is
+untested.
 \end{conjecture}
 
 %% =================================================================

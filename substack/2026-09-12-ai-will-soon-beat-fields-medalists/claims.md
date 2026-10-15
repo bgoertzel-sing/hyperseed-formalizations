@@ -213,20 +213,19 @@ Eurykosmotron, 2026-09-12.
     formal-verification instantiation of identity-preserving self-modification
     from Time's Arrow Part 1 (claims 44–45). *(inferred)*
 
-## Hyperseed v2 / d-calculus (deepened 2026-10-14)
+## Hyperseed v2 / d-calculus -- agent extension (rewritten 2026-10-15 against dcalculus_v2.tex; NOT claims of the source article)
 
-41. **Verifier resolution and d-holonomy defect.** Well-definedness = how
-    finely a verifier can decide distance to the success set; holonomy defect
-    = how far a research loop moves a fiber element in d; noise floor =
-    run-to-run spread. *(inferred)*
+41. **Verifier as an observer.** A task carries a tolerance on candidate
+    outputs; a verifier is sound at resolution eps if it accepts only outputs
+    within distinction eps of the success set, and complete if it accepts every
+    success. Well-definedness = a sound, complete verifier with small eps.
+    *(agent-inferred)*
 
-42. **Verification turns competence into cost.** With a sound verifier at
-    resolution eps, every accepted output is within eps of a solution and
-    expected attempts are 1/p; generator competence only sets cost. Without a
-    verifier, competence sets correctness. One mechanism for the
-    proving/conjecturing gradient. *(inferred; short proof given)*
+42. **Verification turns competence into cost.** Soundness guarantees accepted
+    outputs are within eps; soundness plus completeness gives expected attempts
+    at most 1/p. Soundness alone does not bound cost. *(agent-inferred; proof given)*
 
-43. **Conjecturing needs holonomy above the noise floor.** Training-data-only
-    systems should show loop displacement within run-to-run spread; hybrid
-    systems with extra-distributional input should exceed it on some loops.
-    *(hypothesis)*
+43. **Conjecturing needs learning above the noise floor.** By the balance law
+    g' - g = P - L, a training-data-only system's learning term stays within
+    run-to-run spread on research loops; a hybrid system with
+    extra-distributional input should exceed it on some loops. *(agent hypothesis)*
