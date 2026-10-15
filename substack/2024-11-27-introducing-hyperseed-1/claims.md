@@ -161,16 +161,20 @@ Eurykosmotron, 2024-11-27.
     that arises from the act of building the bundle, not imported from outside.
     This is a form of creative self-organization in the fiber. *(inferred)*
 
-## Hyperseed v2 / d-calculus (deepened 2026-10-14)
+## Hyperseed v2 / d-calculus -- agent extension (rewritten 2026-10-15 against dcalculus_v2.tex; NOT claims of the source article)
 
-33. **Seed = d-anchored atlas.** A concept is anchored when its d-distance to
-    some seed primitive is below the working resolution; "semi-formal" means a
-    finite, nonzero resolution. *(inferred)*
+33. **Seed ontology as anchors for an observer.** A concept is anchored when
+    its tolerance to some seed primitive is at least a threshold s; the
+    semi-formal character is a choice of s between sharp and trivial.
+    *(agent-inferred)*
 
-34. **Acceleration = path shortening.** Speedup is the ratio of from-scratch
-    d-path length to distance from the seed; cross-domain bridges follow from
-    the triangle inequality via a shared nearest primitive. *(inferred)*
+34. **Shared anchors bound, but do not find, bridges.** Concepts sharing an
+    anchor at threshold s are within closure distinction 2(1-s), which gives a
+    cheap filter for cross-domain bridges, not a certificate (the sorites
+    kernel can separate them directly). The speedup ratio rests on an assumed
+    cost model. *(agent-inferred; proof given)*
 
-35. **Perspectives must be d-diverse.** Extra perspectives (incl. hallucinated
-    ones) help only if they are further apart than the working resolution;
-    near-duplicates add no inference paths. *(hypothesis)*
+35. **What an extra perspective can add.** Joint perspective = pointwise min of
+    tolerances; its logical-entropy gain is at most the mu^2-mass of
+    (alpha_j - alpha_j')^+, so near-duplicates add at most epsilon. Payoff of
+    hallucinated perspectives tracks this gain. *(bound proved; payoff is agent hypothesis)*

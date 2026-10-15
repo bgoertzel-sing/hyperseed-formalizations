@@ -214,40 +214,58 @@ The ontology structure consists of:
 \section{d-calculus formulation (Hyperseed v2)}
 \label{sec:v2}
 
-\begin{definition}[Seed ontology as a $d$-anchored atlas --- claim 33]
+\noindent\emph{Agent extension (ProtomegaTron, rewritten 2026-10-15 against
+Goertzel, ``The Distinction Calculus'', \texttt{dcalculus\_v2.tex}). Not a
+claim of the source article. Notation follows \texttt{docs/d-calculus.md}.}
+
+\begin{definition}[Seed ontology as anchors for an observer --- claim 33]
 \label{def:v2-atlas}
-Let $(B,d)$ be the base space with the Hyperseed v2 distinction metric $d$.
-A Hyperseed-1 seed is a finite set of primitives $P=\{p_1,\dots,p_k\}\subset B$.
-A concept $c$ is \emph{anchored} at resolution $\epsilon$ if
-$d(c,P)=\min_i d(c,p_i)<\epsilon$. The semi-formal character of
-Hyperseed-1 (claim 28) is then a choice of $\epsilon$: entries are
-meaningful up to distinctions finer than $\epsilon$, not Boolean
-(``$\epsilon=0$'') and not amorphous (``$\epsilon=\infty$'').
+Let an observer carry a tolerance $\alpha$ on a concept space $B$ (symmetric,
+$\alpha(x,x)=1$), with metric closure $\alpha^{\flat}$ and closure
+pseudometric $\bar\alpha^{\flat}=1-\alpha^{\flat}\le\bar\alpha$ (shortest-path
+distinction). A Hyperseed-1 seed is a finite set of primitives
+$P=\{p_1,\dots,p_k\}\subset B$. A concept $c$ is \emph{anchored at threshold}
+$s$ if $\max_i\alpha(c,p_i)\ge s$. The semi-formal character of Hyperseed-1
+(claim 28) is a choice of $s$ strictly between the sharp observer (only
+identity is tolerated, $s=1$) and the trivial one ($s=0$).
 \end{definition}
 
-\begin{proposition}[Inference acceleration as path shortening --- claim 34]
+\begin{proposition}[Shared anchors bound, but do not find, bridges --- claim 34]
 \label{prop:v2-accel}
-Suppose deriving $c$ from scratch costs a $d$-path of length $\ell_\emptyset(c)$,
-and deriving it from the seed costs $\ell_P(c)\le d(c,P)+\ell_P(\text{nearest } p_i)$.
-If the primitives are themselves cheap to reach (they are given), then
-$\ell_P(c)\approx d(c,P)$ and the speedup in
-Proposition~\ref{prop:acceleration} is the ratio
-$\ell_\emptyset(c)/d(c,P)$. Cross-domain bridges (claim 20) are pairs
-$c,c'$ from different domains with the same nearest primitive and
-$d(c,c')\le d(c,P)+d(c',P)$ small: the triangle inequality makes the
-analogy available without any domain-specific search.
+For any $c,c'\in B$ and primitive $p$,
+$\bar\alpha^{\flat}(c,c')\le\bar\alpha^{\flat}(c,p)+\bar\alpha^{\flat}(p,c')$,
+since $\bar\alpha^{\flat}$ is a pseudometric. So two concepts from different
+domains anchored to the same primitive at threshold $s$ are within closure
+distinction $2(1-s)$: the seed gives a cheap \emph{filter} for candidate
+cross-domain bridges (claim 20), by checking shared anchors instead of all
+pairs. It does not certify the bridge. The bound is on $\bar\alpha^{\flat}$,
+and the direct distinction exceeds it by the sorites kernel,
+$\bar\alpha(c,c')=\bar\alpha^{\flat}(c,c')+\sigma(c,c')$, so a candidate may still be
+directly distinguishable. If, as a cost model, deriving $c$ from the seed
+costs about $\bar\alpha^{\flat}(c,P)$ and from scratch $\ell_\emptyset(c)$,
+the speedup of Proposition~\ref{prop:acceleration} is about
+$\ell_\emptyset(c)/\bar\alpha^{\flat}(c,P)$; this is an assumption, not a
+consequence.
 \end{proposition}
 
-\begin{conjecture}[Perspectives as $d$-diverse sections --- claim 35]
+\begin{proposition}[What an extra perspective can add --- claim 35]
 \label{conj:v2-diverse}
-Model each philosophical perspective as a section $\sigma_j$ of the bundle
-over the anchored region. Multiple perspectives help inference only when they
-are $d$-diverse: $\min_{j\ne j'} \sup_x d(\sigma_j(x),\sigma_{j'}(x))>\epsilon$.
-Below $\epsilon$ two perspectives are indistinguishable at the working
-resolution and add no new paths. Prediction: ``hallucinated'' perspectives
-(claim 26) pay off when, and only when, they raise this minimum distance;
-near-duplicates of existing perspectives should be pruned.
-\end{conjecture}
+Model perspective $j$ as a tolerance $\alpha_j$ on $B$ with common valuation
+$\mu$. Holding two perspectives jointly distinguishes whatever either
+distinguishes: $\alpha_{jj'}:=\min(\alpha_j,\alpha_{j'})$, again a tolerance.
+Its logical entropy $h=\langle\mu^2|\bar\alpha\rangle$ satisfies
+\[
+  0\;\le\;h(\mu,\alpha_{jj'})-h(\mu,\alpha_j)
+  \;=\;\langle\mu^2\,|\,\alpha_j-\alpha_{jj'}\rangle
+  \;\le\;\langle\mu^2\,|\,(\alpha_j-\alpha_{j'})^+\rangle .
+\]
+So a new perspective adds distinctions only on pairs that it separates more
+than the existing one does, weighted by how likely those pairs are under
+$\mu$. A near-duplicate ($\alpha_{j'}\ge\alpha_j-\epsilon$ everywhere) adds at
+most $\epsilon$. Prediction (agent hypothesis): ``hallucinated'' perspectives
+(claim 26) pay off in proportion to this gain, and pruning perspectives with
+gain below a threshold costs little inference quality.
+\end{proposition}
 
 %% =================================================================
 \section{Cross-references}
