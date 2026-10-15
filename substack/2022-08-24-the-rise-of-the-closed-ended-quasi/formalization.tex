@@ -1,0 +1,179 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  The Rise of the Closed-Ended Quasi-AGI}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-19 (deepened v2)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``The Rise of the Closed-Ended Quasi-AGI''
+(2022-08-24) within the Hyperseed ontology, incorporating d-calculus
+extensions from Hyperseed v2. The central distinction between closed-ended
+quasi-AGI and true open-ended AGI is formalized as the difference between
+bounded (static) and growing (autopoietic) fiber bundles, with the
+dangerous conflation characterized as a fiber-type error.
+\end{abstract}
+
+\tableofcontents
+
+\section{Bounded fiber: closed-ended quasi-AGI}
+
+\begin{definition}[Training fiber space]
+Let $B$ be the environmental base space. The \emph{training fiber space}
+$F_{\text{train}}$ is the fiber subspace determined by the training
+distribution $\mathcal{D}_{\text{train}}$:
+\[
+  F_{\text{train}} = \operatorname{conv}\{\phi(x) : x \in \mathcal{D}_{\text{train}}\}
+\]
+where $\phi$ maps training examples to response patterns (fiber elements)
+and $\operatorname{conv}$ denotes the convex hull in fiber space.
+\end{definition}
+
+\begin{proposition}[Bounded fiber = quasi-AGI --- claims 1, 2, 7, 9]
+\label{prop:bounded}
+A closed-ended quasi-AGI has \emph{bounded fiber}: its response space is
+fixed at training time:
+\[
+  F_{\text{quasi}}(b, t) \subseteq F_{\text{train}} \quad \forall\, b \in B,\; t \geq t_{\text{train}}
+\]
+The system can reach any point within $F_{\text{train}}$ (interpolation)
+but cannot produce responses outside it (no extrapolation). Its competence
+is:
+\begin{itemize}
+  \item \textbf{Real} within $F_{\text{train}}$ --- impressive, useful, not illusory.
+  \item \textbf{Zero} outside $F_{\text{train}}$ --- the system either fails
+    silently, confabulates, or produces nonsense.
+\end{itemize}
+\end{proposition}
+
+\section{Growing fiber: true open-ended AGI}
+
+\begin{definition}[Autopoietic fiber growth]
+An \emph{autopoietic fiber bundle} is one whose fiber space grows over time:
+\[
+  \frac{\partial}{\partial t} \dim(F(b, t)) > 0 \quad \text{at novelty events}
+\]
+New fiber dimensions emerge in response to genuinely novel stimuli ---
+situations not representable within the current fiber space.
+\end{definition}
+
+\begin{proposition}[Growing fiber = true AGI --- claims 3, 8, 10]
+\label{prop:growing}
+True AGI has \emph{growing fiber}: its response space expands autopoietically:
+\[
+  F_{\text{AGI}}(b, t) \not\subseteq F_{\text{train}} \quad \text{for } t \gg t_{\text{train}}
+\]
+The system can:
+\begin{enumerate}
+  \item Create genuinely new fiber dimensions (new concepts).
+  \item Extend existing fibers into previously unreachable regions
+    (genuine transfer learning).
+  \item Modify the fiber bundle's connection (self-modification ---
+    changing how responses relate to each other).
+\end{enumerate}
+\end{proposition}
+
+\section{The conflation as fiber-type error}
+
+\begin{proposition}[Fiber-type error --- claims 4, 6, 11]
+\label{prop:conflation}
+The dangerous conflation of quasi-AGI with true AGI is a \emph{fiber-type error}:
+\[
+  \exists\, U \subset B \text{ (training distribution)}: \quad
+  F_{\text{quasi}}|_U \approx F_{\text{AGI}}|_U
+\]
+Within the training distribution $U$, bounded and growing fiber are
+indistinguishable --- both produce competent responses. The divergence
+appears only at the boundary $\partial F_{\text{train}}$:
+\[
+  b \in \partial F_{\text{train}} \implies
+  F_{\text{quasi}}(b) \to 0, \quad F_{\text{AGI}}(b) \to F_{\text{new}}(b)
+\]
+Bounded fiber stops; growing fiber grows. The indistinguishability within
+$U$ is what makes the conflation tempting; the divergence at $\partial U$
+is what makes it dangerous.
+\end{proposition}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Fiber growth rate --- claim 12]
+\label{prop:growth-rate}
+The fiber growth rate $\dot{F} = \partial F / \partial t$ is a section of
+the tangent bundle $TF$ to the fiber bundle:
+\[
+  \dot{F} \in \Gamma(B, TF)
+\]
+\begin{itemize}
+  \item Quasi-AGI: $\dot{F} = 0$ everywhere (static fiber, no growth).
+  \item True AGI: $\dot{F} \neq 0$ at novelty events (dynamic fiber growth).
+\end{itemize}
+The distinction is not about the \emph{size} of the fiber but about its
+\emph{derivative} --- whether it can change.
+\end{proposition}
+
+\begin{proposition}[Boundary curvature --- claim 13]
+\label{prop:boundary}
+The boundary $\partial F_{\text{train}}$ is a hypersurface in fiber space.
+Its Gaussian curvature $\kappa$ determines competence drop-off:
+\begin{itemize}
+  \item High $\kappa$ (sharp boundary): competence cliff --- the system
+    goes from expert to clueless in one small step beyond training.
+  \item Low $\kappa$ (smooth boundary): gradual degradation --- competence
+    decreases smoothly as distance from training increases.
+\end{itemize}
+LLMs typically have high boundary curvature in some directions (sharp
+failure on out-of-distribution reasoning) and low in others (gradual
+quality degradation on distant topics).
+\end{proposition}
+
+\begin{definition}[Autopoietic connection --- claim 14]
+An \emph{autopoietic connection} $\nabla_t$ is a time-varying connection
+on the fiber bundle:
+\[
+  \frac{\partial}{\partial t} \nabla_t \neq 0
+\]
+The connection itself evolves, allowing new parallel transport paths to
+emerge. Quasi-AGI has $\partial \nabla / \partial t = 0$ (static connection);
+true AGI has $\partial \nabla / \partial t \neq 0$ (evolving connection).
+\end{definition}
+
+\begin{proposition}[Novelty curvature --- claim 15]
+\label{prop:novelty}
+The curvature $F_\nabla(b)$ of the fiber bundle at base point $b$ measures
+the ``novelty'' of $b$ relative to training:
+\[
+  \|F_\nabla(b)\| \propto d(b, \mathcal{D}_{\text{train}})
+\]
+where $d$ is a distance to the training distribution. High novelty
+curvature means the situation is far from anything seen in training.
+\begin{itemize}
+  \item Quasi-AGI fails at high-novelty points: $\|F_\nabla(b)\| \gg 1
+    \implies$ response quality $\to 0$.
+  \item True AGI adapts at high-novelty points: the autopoietic connection
+    generates new fiber to handle the novel situation.
+\end{itemize}
+\end{proposition}
+
+\begin{remark}[Historical pattern --- claim 6]
+The historical pattern of AI-breakthrough conflation has a fiber interpretation:
+each breakthrough expands $F_{\text{train}}$ dramatically, making bounded
+fiber temporarily indistinguishable from growing fiber over a much larger
+region $U$. The conflation is then ``refreshed'' with each breakthrough ---
+the new, larger $U$ is again mistaken for unbounded. True AGI will be
+recognized by the absence of a boundary, not by the size of the bounded region.
+\end{remark}
+
+\end{document}

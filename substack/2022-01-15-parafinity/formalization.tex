@@ -1,0 +1,161 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{conjecture}[definition]{Conjecture}
+
+\title{Hyperseed Formalization:\\
+  Parafinity}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize Ben Goertzel's ``Parafinity'' (2022-01-15) within the
+Hyperseed ontology. Key mappings: parafinity as the fiber boundary zone,
+constructive nonstandard analysis as computable fiber, and AGI reasoning
+as parafinite fiber operations.
+\end{abstract}
+
+\tableofcontents
+
+\section{The parafinite zone: fiber boundary}
+
+\begin{theorem}[Parafinity = fiber boundary --- claims 4--9, 13]
+The parafinite zone is where fiber meets base --- too structured for raw
+base treatment (finite enumeration) but not fully abstract (classical
+infinity):
+\[
+  \text{finite} \subset \text{parafinite} \subset \text{infinite}
+  \quad \text{with each } \subsetneq
+\]
+Parafinite structures have qualitatively different properties from both
+ordinary finite and classical infinite --- they constitute a genuine
+third zone, not just ``large finite'' or ``small infinite.''
+
+In Hyperseed terms, fiber operations naturally live in the parafinite
+zone: the fiber is too complex for finite enumeration of all fibers over
+all base points, but structured enough (via the d-calculus) for
+constructive manipulation.
+\end{theorem}
+
+\section{Computable fiber: constructive approach}
+
+\begin{proposition}[Constructive = computable --- claims 1--3, 14]
+Mycielski's constructive nonstandard analysis provides computable
+infinitesimals --- infinitesimal-like objects that can actually be
+computed with:
+\[
+  \epsilon_{\text{constructive}} \approx 0 \quad \text{but} \quad
+  \text{computable}(\epsilon_{\text{constructive}}) = \text{true}
+\]
+This is essential for Hyperseed implementation: the fiber must be
+constructively manipulable, not just abstractly defined. Computable
+fiber is fiber with effective operations --- actual algorithms for
+fiber transport, composition, and evolution.
+\end{proposition}
+
+\section{AGI in the parafinite zone}
+
+\begin{conjecture}[AGI reasoning is parafinite --- claims 10--12, 15--16]
+AGI reasoning naturally operates in the parafinite zone:
+\[
+  \text{AGI} \in \text{Parafinite}(\text{Fiber})
+  = \{F : \text{finite} \subsetneq F \subsetneq \text{infinite}\}
+\]
+The d-calculus may be naturally parafinite --- operating on structures
+too complex for finite enumeration but constructively manipulable.
+Paraconsistency is especially natural in this zone, where classical
+distinctions (finite/infinite, consistent/inconsistent) soften into
+gradients.
+\end{conjecture}
+
+\section{d-calculus formulation (Hyperseed v2)}
+\label{sec:v2}
+
+\noindent\emph{Agent extension (ProtomegaTron, rewritten 2026-10-15 against
+Goertzel, ``The Distinction Calculus'', \texttt{dcalculus\_v2.tex}). Not a
+claim of the source article. Notation follows \texttt{docs/d-calculus.md}.
+The paper works with finite $V$; the extension to infinite carriers below is
+the agent's.}
+
+\begin{definition}[Parafinite as totally bounded but not finite --- claim 17]
+\label{def:covering}
+Let a reasoner observe a carrier $B$ through a tolerance $\alpha$ (symmetric,
+$\alpha(x,x)=1$), distinction kernel $\bar\alpha=1-\alpha$, and let
+$\bar\alpha^{\flat}$ be the shortest-path pseudometric of its metric closure
+$\alpha^{\flat}$. For $S\subseteq B$ and $\epsilon>0$ let $N(S,\epsilon)$ be
+the least size of an $\epsilon$-net of $S$ under $\bar\alpha^{\flat}$. Call $S$
+\begin{itemize}
+\item \emph{finite} if $S$ has finitely many $\bar\alpha^{\flat}$-classes;
+\item \emph{parafinite} if it is not finite, but $N(S,\epsilon)<\infty$ for
+  every $\epsilon>0$ and $\epsilon\mapsto$ ($\epsilon$-net) is computable;
+\item \emph{infinite} (proper) otherwise: not totally bounded, or no computable nets.
+\end{itemize}
+The three classes are disjoint, every finite set is totally bounded, and
+$[0,1]$ with $\bar\alpha^{\flat}(x,y)=\min\{1,|x-y|\}$ is parafinite while
+$\mathbb{R}$ is properly infinite, so the chain finite $\subsetneq$ finite
+$\cup$ parafinite $\subsetneq$ all is strict. A reasoner's enumeration budget
+$R$ is a separate, operational axis: at resolution $\epsilon$ the reasoner
+copes iff $N(S,\epsilon)\le R$. (This corrects the 2026-10-14 version, where
+budget and cardinality were mixed, so a large finite set counted as
+parafinite and $[0,1]$ as finite.) The nets use $\alpha^{\flat}$ rather than
+$\alpha$ because ``within $\epsilon$ of a net point'' needs the triangle
+inequality; for a non-metric observer the sorites kernel
+$\sigma=\alpha^{\flat}-\alpha$ measures the gap.
+\end{definition}
+
+\begin{proposition}[Computable fibers via computable Cauchy moduli --- claim 18]
+\label{prop:dincrement}
+Read the article's ``constructive infinitesimal'' as a computable Cauchy
+sequence (not an infinitesimal in the nonstandard sense): computable points
+$(x_n)$ with a computable modulus $m$ such that
+$\bar\alpha^{\flat}(x_i,x_j)<2^{-k}$ for all $i,j\ge m(k)$. If transport $P$ on
+the fiber is $L$-Lipschitz from $\bar\alpha^{\flat}$ and the limit $x^*$
+exists (e.g.\ in the completion), then
+$\|P x_n-P x^*\|\le L\,2^{-k}$ for $n\ge m(k)$, so the transported values
+inherit the computable modulus $m$ with constant $L$. Hence a fiber whose
+transport is Lipschitz has computable limits along computable Cauchy
+sequences; this is one sufficient reading of ``computable fiber'' (claim 14),
+not a characterisation.
+\end{proposition}
+
+\begin{conjecture}[Paraconsistency where the sorites kernel is positive --- claim 19]
+\label{conj:subres}
+Let two contradictory sections $s_1,s_2$ be held by the reasoner. In the paper,
+$\sigma(s_1,s_2)>0$ means there is a chain $s_1=y_0,\dots,y_k=s_2$ of steps
+each less distinct than the direct comparison: locally every step is
+tolerated, but the ends are distinguishable. Prediction: contradictions are
+tolerated without explosion exactly where they are joined by such a chain
+(sorites mass), and are rejected where $\alpha$ is already metric along all
+paths between them ($\sigma=0$). In a parafinite zone the reasoner works
+over budget, $N(S,\epsilon)>R$, so it cannot check all chains, and sorites
+mass between distant states goes undetected. Growing $R$ or refining $\alpha$
+toward $\alpha^{\flat}$ should shrink the tolerated set. This links claim 16
+(paraconsistency meets parafinity) to a measurable quantity, $\|\sigma\|$
+restricted to contradictory pairs. Untested.
+\end{conjecture}
+
+\section{Cross-references}
+
+\begin{remark}[Connections]
+\begin{itemize}
+\item \textbf{Paraconsistent Interzones} (2021-08-13): paraconsistency
+  as interzone --- boundary zone where classical distinctions soften.
+\item \textbf{The Mind-Blowing Paraconsistency} (2021-09-23): deep dive
+  into paraconsistent logic.
+\item \textbf{Tensor Logic} (2025-12-16): tensor operations as
+  computable fiber --- same constructive imperative.
+\item \textbf{Facing the Meta-Abstracted Dragon} (2022-07-31): infinite
+  tower of meta-abstraction --- a parafinite structure.
+\end{itemize}
+\end{remark}
+
+\end{document}

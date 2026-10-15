@@ -1,20 +1,153 @@
-\documentclass[11pt]{article}
-\usepackage[margin=1in]{geometry}
+\documentclass[11pt,a4paper]{article}
 \usepackage{amsmath,amssymb,amsthm}
-\usepackage[hidelinks]{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
 
-\newtheorem{definition}{Definition}
-\newtheorem{claim}{Claim}
-\newtheorem{conjecture}{Conjecture}
-\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{conjecture}[definition]{Conjecture}
+\newtheorem{remark}[definition]{Remark}
 
-\title{Hyperseed Formalization Draft: ``Tag, You're Not It''}
-\author{Source: Ben Goertzel; formalization draft by ProtomegaTron/ZeroBot}
-\date{Source published 2026-06-26; draft retrieved/formalized 2026-06-28}
+\title{Hyperseed Formalization:\\
+  Tag, You're Not It}
+\author{ProtomegaTron (automated formalization)}
+\date{2026-09-23 (deepened v2)}
 
 \begin{document}
 \maketitle
 
+\begin{abstract}
+We formalize Ben Goertzel's ``Tag, You're Not It'' (2026-06-26) within
+the Hyperseed ontology, incorporating d-calculus extensions from
+Hyperseed v2. Platform-bound agents are modeled as base-determined
+fiber (high platform-fiber coupling curvature), agent-first societies
+as fiber-determined structure (low coupling curvature), opaque memory
+as uninspectable fiber with high inspectability curvature, live
+verification as real-time fiber monitoring with trivial holonomy
+target, identity attribution as fiber continuity across integration
+boundaries, and tokenmaxxing as resource fiber misalignment.
+\end{abstract}
+
+\tableofcontents
+
+\section{Platform-bound vs agent-first: base-determined vs fiber-determined}
+
+\begin{theorem}[Two bundle topologies --- claims 1--5, 17--18]
+\label{thm:topologies}
+Two fundamentally different agentic work substrates correspond to
+two bundle topologies:
+
+\textbf{Base-determined (platform-bound).} The base space $B$
+(Slack channels, communication surfaces) determines the fiber $F$
+(agent identity, memory, scope):
+\[
+  F = f(B) \quad \Longrightarrow \quad \Delta B \implies \Delta F
+\]
+Change the platform, lose the agent. Claude Tag is approximately
+base-determined: Slack channels are the compartmentalization substrate.
+
+\textbf{Fiber-determined (agent-first).} The fiber $F$ (agent
+identity, memory, cognitive state) is the primary structure; the
+base $B$ is secondary transport:
+\[
+  F \text{ defined independently of } B \quad \Longrightarrow \quad
+  \Delta B \not\Rightarrow \Delta F
+\]
+Agent identity survives platform changes. OmegaClaw/OmegaHive aim at
+this topology: named persistent principals with roles, tools, memory,
+and cognitive remit.
+
+Portability $=$ fiber independence from base: the fiber can be
+transported across different base spaces without loss.
+\end{theorem}
+
+\section{Opaque memory as uninspectable fiber}
+
+\begin{proposition}[Inspectability condition --- claims 6--7, 19--20]
+\label{prop:memory}
+A memory fiber $F_M$ is \emph{inspectable} when its content,
+provenance, update history, and influence on current action can be
+queried by collaborators and verifier processes:
+\[
+  \text{inspectable}(F_M) \iff \exists \text{query}: F_M \to
+    \text{Content} \times \text{Provenance} \times \text{History}
+    \times \text{Influence}
+\]
+\textbf{Opaque fiber.} Auto-accumulated transformer memory has no
+such query. Hidden bias, sycophancy, stale context live in opaque
+fibers because nobody can examine them.
+
+\textbf{Symbolic metagraph = inspectable fiber.} Hyperon AtomSpace
+provides typed atoms, higher-order links, provenance, and revision
+history. Every fiber element has an address and a history ---
+inspectable by construction.
+\end{proposition}
+
+\section{Live verification as real-time fiber monitoring}
+
+\begin{proposition}[Oversight granularity --- claims 9, 21]
+\label{prop:oversight}
+Two oversight modes correspond to different fiber monitoring strategies:
+
+\textbf{Boundary/log oversight.} Inspect the fiber only at entry
+and exit points. The interior of the reasoning cycle is unmonitored.
+Adequate for simple workflows.
+
+\textbf{Live verification.} An intelligent observer process $v$
+with continuous read-only access to the fiber during execution:
+\[
+  v: F_{\text{reasoning}}(t) \to \{\text{ok}, \text{anomaly},
+    \text{violation}\} \quad \forall t \in [t_{\text{start}},
+    t_{\text{end}}]
+\]
+Can detect reasoning errors, protocol violations, and drift as
+they happen. For autonomous agents, live verification is necessary
+because the reasoning interior is where dangers emerge.
+\end{proposition}
+
+\section{Identity attribution as fiber continuity}
+
+\begin{proposition}[Attribution preservation --- claims 8, 22]
+\label{prop:attribution}
+The identity fiber $F_{\text{id}}$ must be continuous across all
+integration boundaries. When $n$ agents pass through a single
+upstream API:
+\[
+  \text{collapse}: \{a_1, \ldots, a_n\} \mapsto a_{\text{upstream}}
+  \quad \Longrightarrow \quad F_{\text{id}} \text{ is discontinuous}
+\]
+Attribution is lost at the discontinuity. Audit-grade multi-agent work
+requires:
+\[
+  F_{\text{id}}(a_i) \neq F_{\text{id}}(a_j) \quad \forall i \neq j
+  \quad \text{preserved across all integration boundaries}
+\]
+\end{proposition}
+
+\section{Tokenmaxxing as resource fiber misalignment}
+
+\begin{proposition}[Resource alignment --- claims 10, 23]
+\label{prop:tokenmaxxing}
+Metered billing $+$ default unlimited usage creates a divergence
+between the agent's resource consumption fiber and the user's utility
+fiber:
+\[
+  \|F_{\text{consumption}}(t) - F_{\text{utility}}(t)\| > 0
+  \quad \text{(tokenmaxxing)}
+\]
+An aligned agent satisfies:
+\[
+  F_{\text{consumption}}(t) \propto F_{\text{utility}}(t)
+  \quad \text{(consumption tracks value delivered)}
+\]
+The billing structure determines whether the alignment condition holds.
+\end{proposition}
+
+
+% ---- Restored from pre-v2 interpretation (PR #49): sections dropped by the 09-29 rewrite; claim numbers below refer to the PR #49 inventory appended to claims.md ----
 \section{Source and status}
 Source article: \href{https://bengoertzel.substack.com/p/tag-youre-not-it}{``Tag, You're Not It''}, Eurykosmotron, by Ben Goertzel.
 This is an initial Hyperseed-oriented formalization. It paraphrases the article's main intellectual moves and separates source claims from proposed formal objects.
@@ -264,5 +397,86 @@ process objects.  \emph{Provenance: article; claim-inventory paragraph 17.}
 \item Which OmegaHive constructs should be modeled as agents, which as institutions, and which as protocol constraints?
 \item How should resource-economics alignment be represented: as a value relation, a policy constraint, or a utility/attention budget?
 \end{enumerate}
+
+\section{d-calculus formulation (Hyperseed v2)}
+
+\begin{proposition}[Platform-fiber coupling curvature --- claim 24]
+\label{prop:platform_curv}
+\[
+  \|F_\nabla(\text{platform}, \text{agent})\| = \text{degree of
+    platform lock-in}
+\]
+High curvature: agent identity strongly coupled to platform (high
+lock-in, low portability --- Claude Tag). Low curvature: agent identity
+weakly coupled (low lock-in, high portability --- OmegaClaw). Agent-first
+design minimizes this curvature.
+\end{proposition}
+
+\begin{proposition}[Memory inspectability curvature --- claim 25]
+\label{prop:memory_curv}
+\[
+  \|F_\nabla(\text{memory}, \text{behavior})\| = \text{opacity of
+    memory's influence on behavior}
+\]
+Low curvature: behavior smoothly tracks inspectable memory (predictable,
+auditable). High curvature: behavior has unexpected jumps from hidden
+memory influence (opaque, surprising). Symbolic metagraph memory
+minimizes this curvature.
+\end{proposition}
+
+\begin{proposition}[Verification depth holonomy --- claim 26]
+\label{prop:verify_hol}
+A loop through the reasoning cycle $\gamma$: observe $\to$ reason
+$\to$ act $\to$ audit produces holonomy:
+\[
+  \operatorname{Hol}_\gamma(\Gamma_{\text{verification}}) =
+    \text{oversight gap per reasoning cycle}
+\]
+\begin{itemize}
+  \item Trivial holonomy: full oversight (live verification, no gap
+    in reasoning monitoring).
+  \item Non-trivial holonomy: oversight gap (boundary/log only,
+    reasoning interior unmonitored).
+\end{itemize}
+Live verification targets trivial holonomy.
+\end{proposition}
+
+\begin{proposition}[Identity continuity curvature --- claim 27]
+\label{prop:id_curv}
+\[
+  \|F_{\nabla_{\text{identity}}}(\text{integration\_boundary})\| =
+    \text{attribution loss per boundary crossing}
+\]
+Zero: perfect attribution (identity preserved across all integrations).
+Nonzero: attribution loss (identity collapsed or confused at boundary).
+Audit-grade systems require zero identity continuity curvature at
+every integration boundary.
+\end{proposition}
+
+\begin{proposition}[Resource alignment curvature --- claim 28]
+\label{prop:resource_curv}
+\[
+  \|F_\nabla(\text{consumption}, \text{utility})\| = \text{tokenmaxxing
+    severity}
+\]
+Low curvature: consumption tracks utility (aligned, no waste).
+High curvature: consumption diverges from utility (tokenmaxxing,
+resource waste). Billing and policy design should minimize this
+curvature.
+\end{proposition}
+
+\begin{proposition}[Agent society gradient --- claim 29]
+\label{prop:society_grad}
+\[
+  \nabla_{\text{society}} = \nabla\left(\text{fiber\_independence}
+    \times \text{memory\_inspectability} \times
+    \text{identity\_continuity} \times \text{verification\_depth}
+    \times \text{resource\_alignment}\right)
+\]
+Progress along this gradient moves from platform-bound agents (Claude
+Tag) toward agent-first societies (OmegaClaw/OmegaHive). Each dimension
+is independently improvable. The gradient direction points toward the
+fully agent-first design where all five factors are optimized.
+\end{proposition}
 
 \end{document}
